@@ -189,9 +189,6 @@ if [ -x /usr/bin/grc ]; then
 	alias traceroute="grc --colour=auto traceroute"
 	alias netstat="grc --colour=auto netstat"
 fi
-if [ -x /usr/bin/colorgcc ]; then
-	export CC="colorgcc"
-fi
 if [ -x /usr/bin/colormake ]; then
 	alias make="colormake"
 fi
