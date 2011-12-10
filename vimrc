@@ -1,3 +1,5 @@
+colorscheme solarized
+
 set hlsearch
 
 set listchars=tab:<-,trail:.
