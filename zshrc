@@ -8,9 +8,6 @@ setopt SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_SPACE
 
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
-
 # Proper keyboard configuration
 autoload zkbd
 [[ ! -d ~/.zkbd ]] && mkdir ~/.zkbd
@@ -81,6 +78,9 @@ EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
 
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+
 # List all directories leading up to a filename; this is useful to see
 # if some permissions are blocking access to a file.
 lspath () {
@@ -141,7 +141,7 @@ extract () {
 }
 
 # Universal archive pack
-pk () {
+pack () {
 	if [ $1 ] ; then
 		case $1 in
 			tbz) tar cjvf $2.tar.bz2 $2   ;;
@@ -184,14 +184,20 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # More colors
-[ -f /usr/bin/grc ] && {
+if [ -x /usr/bin/grc ]; then
 	alias ping="grc --colour=auto ping"
 	alias traceroute="grc --colour=auto traceroute"
-	alias make="grc --colour=auto make"
-	alias diff="grc --colour=auto diff"
 	alias netstat="grc --colour=auto netstat"
-	alias gcc='grc --color=auto gcc'
-}
+fi
+if [ -x /usr/bin/colorgcc ]; then
+	export CC="colorgcc"
+fi
+if [ -x /usr/bin/colormake ]; then
+	alias make="colormake"
+fi
+if [ -x /usr/bin/colordiff ]; then
+	alias diff="colordiff"
+fi
 
 # Color man
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -226,7 +232,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion::complete:*' use-cache true
 
 # Magic for sudo
-xhost + 2>&1 > /dev/null
+if [ -n "$DISPLAY" ]; then
+	xhost + 2>&1 > /dev/null
+fi
 
 # Workaround precmd change by mc (part 3)
 alias precmd="noglob fakeprecmd"
