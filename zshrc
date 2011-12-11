@@ -195,6 +195,9 @@ fi
 if [ -x /usr/bin/colordiff ]; then
 	alias diff="colordiff"
 fi
+if [ -x /usr/bin/colortail ]; then
+	alias diff="colortail"
+fi
 
 # Color man
 export LESS_TERMCAP_mb=$'\E[01;31m'
