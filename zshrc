@@ -192,9 +192,6 @@ fi
 if [ -x /usr/bin/colormake ]; then
 	alias make="colormake"
 fi
-if [ -x /usr/bin/colordiff ]; then
-	alias diff="colordiff"
-fi
 if [ -x /usr/bin/colortail ]; then
 	alias diff="colortail"
 fi
