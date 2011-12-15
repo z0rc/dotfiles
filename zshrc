@@ -193,7 +193,7 @@ if [ -x /usr/bin/colormake ]; then
 	alias make="colormake"
 fi
 if [ -x /usr/bin/colortail ]; then
-	alias diff="colortail"
+	alias tail="colortail"
 fi
 
 # Color man
