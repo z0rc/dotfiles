@@ -77,6 +77,9 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/ga
 EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
+DEBEMAIL="z0rc3r@gmail.com"
+DEBFULLNAME="Igor Urazov"
+export DEBEMAIL DEBFULLNAME
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -100,6 +103,7 @@ lspath () {
 	ls -ld "$allpaths[@]"
 }
 
+# Grep from ps output
 psg () {
 	FST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
 	RST=`echo $1 | sed -e 's/^.\(.*\)/\1/'`
@@ -133,7 +137,7 @@ extract () {
 			*.zip)     unzip $1      ;;
 			*.Z)       uncompress $1 ;;
 			*.7z)      7z x $1       ;;
-			*)         echo "Unknown archive type '$1'..." ;;
+			*)         echo "Unknown archive type '$1'" ;;
 		esac
 	else
 		echo "'$1' is not a valid file"
