@@ -80,6 +80,7 @@ export VISUAL EDITOR
 DEBEMAIL="z0rc3r@gmail.com"
 DEBFULLNAME="Igor Urazov"
 export DEBEMAIL DEBFULLNAME
+export GREP_OPTIONS="--color=auto"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -186,9 +187,6 @@ if [ -x /usr/bin/dircolors ]; then
 	alias dir='dir --color=auto'
 	alias vdir='vdir --color=auto'
 fi
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 # More colors
 if [ -x /usr/bin/grc ]; then
