@@ -176,6 +176,9 @@ man_glob () {
 }
 compctl -K man_glob man
 
+# Make less more friendly for non-text input files
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+
 # Enable color support of ls and grep
 if [ -x /usr/bin/dircolors ]; then
 	eval `dircolors -b`
