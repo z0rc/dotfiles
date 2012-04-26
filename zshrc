@@ -123,6 +123,17 @@ autoload -U dot
 zle -N dot
 bindkey . dot
 
+# Use multithreaded archivers if possible
+if [ -x /usr/bin/pigz ]; then
+	function gzip () { pigz $@ }
+	export -f gzip > /dev/null
+fi
+
+if [ -x /usr/bin/pbzip2 ]; then
+	function bzip2 () { pbzip2 $@ }
+	export -f bzip2 > /dev/null
+fi
+
 # Universal archive unpack
 extract () {
 	if [ -f $1 ] ; then
