@@ -80,7 +80,7 @@ export VISUAL EDITOR
 DEBEMAIL="z0rc3r@gmail.com"
 DEBFULLNAME="Igor Urazov"
 export DEBEMAIL DEBFULLNAME
-export GREP_OPTIONS="--color=auto"
+export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
