@@ -108,7 +108,7 @@ lspath () {
 psg () {
 	FST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
 	RST=`echo $1 | sed -e 's/^.\(.*\)/\1/'`
-	ps aux | grep --colour=auto "[$FST]$RST"
+	ps aux | grep "[$FST]$RST"
 }
 
 # Autoexpand "..." to "../.." and so on
@@ -178,7 +178,10 @@ man_glob () {
 compctl -K man_glob man
 
 # Make less more friendly for non-text input files
-[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+if [ -x /usr/bin/lesspipe ]; then
+	export LESSOPEN="| /usr/bin/lesspipe %s"
+	export LESSCLOSE="/usr/bin/lesspipe %s %s"
+fi
 
 # Enable color support of ls and grep
 if [ -x /usr/bin/dircolors ]; then
@@ -230,9 +233,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[c
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion::complete:*' use-cache true
 
-# Magic for sudo
+# Allow root to use my DISPLAY
 if [ -n "$DISPLAY" ]; then
-	xhost + 2>&1 > /dev/null
+	xhost + 2>&1 1>/dev/null
 fi
 
 # Workaround precmd change by mc (part 3)
