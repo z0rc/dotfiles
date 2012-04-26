@@ -214,9 +214,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 alias df='df -Th'
 alias du='du -hc'
 
-# SSH aliases
-alias aumi='ssh z0rc@aumi.ru -p443'
-
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
