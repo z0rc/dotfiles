@@ -1,6 +1,24 @@
 syntax on
 set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_underline=0
+set t_Co=256
 colorscheme solarized
+
+set filetype=on
+set shiftround
+set shiftwidth=4 ai
+set showmatch
+set softtabstop=4
+set tabstop=4
+set history=150 " keep 150 lines of command line history
+set showcmd " display incomplete commands
+set incsearch " do incremental searching
+set fileencodings=utf-8,cp1251,koi-8r,cp866
+set fileformats=unix,dos
+set nowrap
+set ttyfast
 
 set hlsearch
 
@@ -9,6 +27,7 @@ set list
 
 set number
 set cursorline
+set ruler
 
 set foldenable
 set foldmethod=manual
@@ -16,6 +35,8 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
 set wildmenu
+
+filetype plugin indent on
 
 " Mode Indication -Prominent!
 function! InsertStatuslineColor(mode)
@@ -44,8 +65,10 @@ inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
 hi statusline ctermbg=green ctermfg=black
 set statusline=%t\ %y%m%r[%{&fileencoding}]%<[%{strftime(\"%d.%m.%y\",getftime(expand(\"%:p\")))}]%k%=%-14.(%l,%c%V%)\ %P
 set laststatus=2
+set modeline
 
 set clipboard+=unnamed
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %
+
