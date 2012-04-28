@@ -1,3 +1,4 @@
+clang_close-preview	clang_complete.txt	/*clang_close-preview*
 clang_complete	clang_complete.txt	/*clang_complete*
 clang_complete-author	clang_complete.txt	/*clang_complete-author*
 clang_complete-auto_select	clang_complete.txt	/*clang_complete-auto_select*
@@ -12,6 +13,7 @@ clang_complete-configuration	clang_complete.txt	/*clang_complete-configuration*
 clang_complete-copen	clang_complete.txt	/*clang_complete-copen*
 clang_complete-description	clang_complete.txt	/*clang_complete-description*
 clang_complete-exec	clang_complete.txt	/*clang_complete-exec*
+clang_complete-faq	clang_complete.txt	/*clang_complete-faq*
 clang_complete-hl_errors	clang_complete.txt	/*clang_complete-hl_errors*
 clang_complete-issues	clang_complete.txt	/*clang_complete-issues*
 clang_complete-library_path	clang_complete.txt	/*clang_complete-library_path*
@@ -28,6 +30,7 @@ clang_complete-user_options	clang_complete.txt	/*clang_complete-user_options*
 clang_complete.txt	clang_complete.txt	/*clang_complete.txt*
 g:clang_auto_select	clang_complete.txt	/*g:clang_auto_select*
 g:clang_auto_user_options	clang_complete.txt	/*g:clang_auto_user_options*
+g:clang_close_preview	clang_complete.txt	/*g:clang_close_preview*
 g:clang_complete_auto	clang_complete.txt	/*g:clang_complete_auto*
 g:clang_complete_copen	clang_complete.txt	/*g:clang_complete_copen*
 g:clang_complete_macros	clang_complete.txt	/*g:clang_complete_macros*
