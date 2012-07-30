@@ -85,6 +85,13 @@ export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
+# For some reason my 'linux' TERM doesn't have smkx and rmkx capabilities
+# which used by default by these widgets. So we just disable them.
+if [ "$TERM" = "linux" ]; then
+	zle -D zle-line-init
+	zle -D zle-line-finish
+fi
+
 # List all directories leading up to a filename; this is useful to see
 # if some permissions are blocking access to a file.
 lspath () {
