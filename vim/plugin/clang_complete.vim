@@ -18,6 +18,11 @@ let b:my_changedtick = 0
 let s:plugin_path = escape(expand('<sfile>:p:h'), '\')
 
 function! s:ClangCompleteInit()
+  let l:bufname = bufname("%")
+  if l:bufname == '' || !filereadable(l:bufname)
+    return
+  endif
+  
   if !exists('g:clang_auto_select')
     let g:clang_auto_select = 0
   endif
@@ -58,6 +63,14 @@ function! s:ClangCompleteInit()
     let g:clang_user_options = ''
   endif
 
+  if !exists('g:clang_conceal_snippets')
+    let g:clang_conceal_snippets = has('conceal')
+  endif
+
+  if !exists('g:clang_trailing_placeholder')
+    let g:clang_trailing_placeholder = 0
+  endif
+
   " Only use libclang if the user clearly show intent to do so for now
   if !exists('g:clang_use_library')
     let g:clang_use_library = (has('python') && exists('g:clang_library_path'))
@@ -80,7 +93,7 @@ function! s:ClangCompleteInit()
   endif
 
   if !exists('g:clang_auto_user_options')
-    let g:clang_auto_user_options = 'path, .clang_complete, gcc'
+    let g:clang_auto_user_options = 'path, .clang_complete, clang'
   endif
 
   call LoadUserOptions()
@@ -192,8 +205,7 @@ function! s:parseConfig()
     if matchstr(l:opt, '\C-I\s*/') != ''
       let l:opt = substitute(l:opt, '\C-I\s*\(/\%(\w\|\\\s\)*\)',
             \ '-I' . '\1', 'g')
-    " Check for win32 is enough since it's true on win64
-    elseif has('win32') && matchstr(l:opt, '\C-I\s*[a-zA-Z]:/') != ''
+    elseif s:isWindows() && matchstr(l:opt, '\C-I\s*[a-zA-Z]:/') != ''
       let l:opt = substitute(l:opt, '\C-I\s*\([a-zA-Z:]/\%(\w\|\\\s\)*\)',
             \ '-I' . '\1', 'g')
     else
@@ -272,7 +284,7 @@ function! s:CallClangBinaryForDiagnostics(tempfile)
         \ . ' ' . l:escaped_tempfile
         \ . ' ' . b:clang_parameters . ' ' . b:clang_user_options . ' ' . g:clang_user_options
 
-  let l:clang_output = split(system(l:command), "\n")
+  let l:clang_output = split(system(s:escapeCommand(l:command)), "\n")
   call delete(a:tempfile)
   return l:clang_output
 endfunction
@@ -427,7 +439,8 @@ function! s:ClangCompleteBinary(base)
         \ . ' -code-completion-at=' . l:escaped_tempfile . ':'
         \ . line('.') . ':' . b:col . ' ' . l:escaped_tempfile
         \ . ' ' . b:clang_parameters . ' ' . b:clang_user_options . ' ' . g:clang_user_options
-  let l:clang_output = split(system(l:command), "\n")
+
+  let l:clang_output = split(system(s:escapeCommand(l:command)), "\n")
   call delete(l:tempfile)
 
   call s:ClangQuickFix(l:clang_output, l:tempfile)
@@ -517,6 +530,15 @@ function! s:ClangCompleteBinary(base)
   return l:res
 endfunction
 
+function! s:escapeCommand(command)
+    return s:isWindows() ? a:command : escape(a:command, '()')
+endfunction
+
+function! s:isWindows()
+  " Check for win32 is enough since it's true on win64
+  return has('win32')
+endfunction
+
 function! ClangComplete(findstart, base)
   if a:findstart
     let l:line = getline('.')
@@ -552,7 +574,9 @@ function! ClangComplete(findstart, base)
     endif
 
     if g:clang_use_library == 1
-      python vim.command('let l:res = ' + str(getCurrentCompletions(vim.eval('a:base'))))
+      python completions, timer = getCurrentCompletions(vim.eval('a:base'))
+      python vim.command('let l:res = ' + completions)
+      python timer.registerEvent("Load into vimscript")
     else
       let l:res = s:ClangCompleteBinary(a:base)
     endif
@@ -570,6 +594,11 @@ function! ClangComplete(findstart, base)
       au CursorMovedI <buffer> call <SID>TriggerSnippet()
     augroup end
     let b:snippet_chosen = 0
+
+  if g:clang_use_library == 1
+    python timer.registerEvent("vimscript + snippets")
+    python timer.finish()
+  endif
 
   if g:clang_debug == 1
     echom 'clang_complete: completion time (' . (g:clang_use_library == 1 ? 'library' : 'binary') . ') '. split(reltimestr(reltime(l:time_start)))[0]

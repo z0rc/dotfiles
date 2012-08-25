@@ -4,6 +4,7 @@ clang_complete-author	clang_complete.txt	/*clang_complete-author*
 clang_complete-auto_select	clang_complete.txt	/*clang_complete-auto_select*
 clang_complete-auto_user_options	clang_complete.txt	/*clang_complete-auto_user_options*
 clang_complete-cc_args	clang_complete.txt	/*clang_complete-cc_args*
+clang_complete-clang_trailing_placeholder	clang_complete.txt	/*clang_complete-clang_trailing_placeholder*
 clang_complete-compl_kinds	clang_complete.txt	/*clang_complete-compl_kinds*
 clang_complete-complete_auto	clang_complete.txt	/*clang_complete-complete_auto*
 clang_complete-complete_macros	clang_complete.txt	/*clang_complete-complete_macros*
@@ -43,5 +44,6 @@ g:clang_periodic_quickfix	clang_complete.txt	/*g:clang_periodic_quickfix*
 g:clang_snippets	clang_complete.txt	/*g:clang_snippets*
 g:clang_snippets_engine	clang_complete.txt	/*g:clang_snippets_engine*
 g:clang_sort_algo	clang_complete.txt	/*g:clang_sort_algo*
+g:clang_trailing_placeholder	clang_complete.txt	/*g:clang_trailing_placeholder*
 g:clang_use_library	clang_complete.txt	/*g:clang_use_library*
 g:clang_user_options	clang_complete.txt	/*g:clang_user_options*
