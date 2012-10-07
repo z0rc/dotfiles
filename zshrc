@@ -85,6 +85,9 @@ export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
+# Additional completion rules
+fpath=(~/.dotfiles/zsh-completions/src $fpath)
+
 # List all directories leading up to a filename; this is useful to see
 # if some permissions are blocking access to a file.
 lspath () {
