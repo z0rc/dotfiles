@@ -254,3 +254,6 @@ fi
 
 # Workaround precmd change by mc (part 3)
 alias precmd="noglob fakeprecmd"
+
+# Highlighting plugin
+source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
