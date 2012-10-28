@@ -200,9 +200,9 @@ fi
 # Enable color support of ls and grep
 if [ -x /usr/bin/dircolors ]; then
 	eval `dircolors -b`
-	alias ls='ls --color=auto -F -X'
-	alias dir='dir --color=auto'
-	alias vdir='vdir --color=auto'
+	alias ls="ls --color=auto -F -X"
+	alias dir="dir --color=auto"
+	alias vdir="vdir --color=auto"
 fi
 
 # More colors
@@ -228,8 +228,8 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 # Human file sizes
-alias df='df -Th'
-alias du='du -hc'
+alias df="df -Th"
+alias du="du -hc"
 
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
