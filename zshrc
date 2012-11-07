@@ -211,9 +211,6 @@ if [ -x /usr/bin/grc ]; then
 	alias traceroute="grc --colour=auto traceroute"
 	alias netstat="grc --colour=auto netstat"
 fi
-if [ -x /usr/bin/colortail ]; then
-	alias tail="colortail"
-fi
 if [ -x /usr/bin/colordiff ]; then
 	alias diff="colordiff -Naur"
 fi
