@@ -69,7 +69,7 @@ precmd () {
 }
 
 # Fancy prompts
-PROMPT="%B%1v[%{$fg[yellow]%}%m%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}]%2v%b%# "
+PROMPT="%1v[%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_color%}]%2v%# "
 [ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%?%b] (%B%T - %D%b)"
 
 # Exports
