@@ -73,7 +73,6 @@ PROMPT="%1v[%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_
 [ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%?%b] (%B%T - %D%b)"
 
 # Exports
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/games
 EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
