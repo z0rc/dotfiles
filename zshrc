@@ -142,6 +142,7 @@ extract () {
 		case $1 in
 			*.tar.bz2) tar xjf $1    ;;
 			*.tar.gz)  tar xzf $1    ;;
+			*.tar.xz)  tar xJf $1    ;;
 			*.bz2)     bunzip2 $1    ;;
 			*.rar)     unrar x $1    ;;
 			*.gz)      gunzip $1     ;;
@@ -163,8 +164,9 @@ pack () {
 	if [ $1 ] ; then
 		case $1 in
 			tbz) tar cjvf $2.tar.bz2 $2   ;;
-			tgz) tar czvf $2.tar.gz  $2   ;;
-			tar) tar cpvf $2.tar  $2      ;;
+			tgz) tar czvf $2.tar.gz $2    ;;
+			txz) tar cJvf $2.tar.xz $2    ;;
+			tar) tar cpvf $2.tar $2       ;;
 			bz2) bzip2 $2                 ;;
 			gz)  gzip -c -9 -n $2 > $2.gz ;;
 			zip) zip -r $2.zip $2         ;;
