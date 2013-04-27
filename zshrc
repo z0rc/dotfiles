@@ -320,7 +320,7 @@ zstyle ':completion::complete:*' use-cache true
 
 # Allow root to use my DISPLAY
 if [ -n "$DISPLAY" ]; then
-	xhost + 2>&1 1>/dev/null
+	xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
 # Workaround precmd change by mc (part 3)
