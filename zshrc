@@ -92,7 +92,7 @@ precmd () {
 
 # Fancy prompts
 PROMPT="%1v[%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_color%}]%2v%# "
-[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%?%b] (%B$(unicode_clock) %T - %D%b)"
+[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%?%b] (%B$(unicode_clock) %T - %D{%m.%d.%Y}%b)"
 
 # Exports
 EDITOR=vim
