@@ -225,6 +225,28 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+# Colorize via pygmentize
+colorize() {
+	if [ ! -x $(which pygmentize) ]; then
+		echo package \'pygmentize\' is not installed!
+		exit -1
+	fi
+	
+	if [ $# -eq 0 ]; then
+		pygmentize -g $@
+	fi
+	
+	for FNAME in $@; do
+		filename=$(basename "$FNAME")
+		lexer=`pygmentize -N \"$filename\"`
+		if [ "Z$lexer" != "Ztext" ]; then
+			pygmentize -l $lexer "$FNAME"
+		else
+			pygmentize -g "$FNAME"
+		fi
+	done
+}
+
 # Human file sizes
 alias df="df -Th"
 alias du="du -hc"
