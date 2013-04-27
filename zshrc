@@ -49,6 +49,28 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:*' enable git svn bzr hg cvs
 
+# Fancy unicode clock for prompt
+unicode_clock() {
+	hour=$(date '+%I')
+	minutes=$(date '+%M')
+	case $hour in
+		01) clock="🕐"; [ $minutes -ge 30 ] && clock="🕜" ;;
+		02) clock="🕑"; [ $minutes -ge 30 ] && clock="🕝" ;;
+		03) clock="🕒"; [ $minutes -ge 30 ] && clock="🕞" ;;
+		04) clock="🕓"; [ $minutes -ge 30 ] && clock="🕟" ;;
+		05) clock="🕔"; [ $minutes -ge 30 ] && clock="🕠" ;;
+		06) clock="🕕"; [ $minutes -ge 30 ] && clock="🕡" ;;
+		07) clock="🕖"; [ $minutes -ge 30 ] && clock="🕢" ;;
+		08) clock="🕗"; [ $minutes -ge 30 ] && clock="🕣" ;;
+		09) clock="🕘"; [ $minutes -ge 30 ] && clock="🕤" ;;
+		10) clock="🕙"; [ $minutes -ge 30 ] && clock="🕥" ;;
+		11) clock="🕚"; [ $minutes -ge 30 ] && clock="🕦" ;;
+		12) clock="🕛"; [ $minutes -ge 30 ] && clock="🕧" ;;
+		*) clock="⌛";;
+	esac
+	echo $clock
+}
+
 # Workaround precmd change by mc (part 1)
 fakeprecmd () { }
 
@@ -70,7 +92,7 @@ precmd () {
 
 # Fancy prompts
 PROMPT="%1v[%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_color%}]%2v%# "
-[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%?%b] (%B%T - %D%b)"
+[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%?%b] (%B$(unicode_clock) %T - %D%b)"
 
 # Exports
 EDITOR=vim
