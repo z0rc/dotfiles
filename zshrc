@@ -151,16 +151,12 @@ apt-history () {
 		grep "$3" -B10000000 | \
 		awk '{print $4"="$5}'
 		;;
-	list)
-		zcat $(ls -rt /var/log/dpkg*)
-		;;
 	*)
 		echo "Parameters:"
 		echo " install - Lists all packages that have been installed."
 		echo " upgrade - Lists all packages that have been upgraded."
 		echo " remove - Lists all packages that have been removed."
 		echo " rollback - Lists rollback information."
-		echo " list - Lists all contains of dpkg logs."
 		;;
 	esac
 }
