@@ -76,7 +76,7 @@ PROMPT="%1v[%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_
 EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
-export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
+export GREP_OPTIONS="--color=always --binary-files=without-match --devices=skip"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -214,29 +214,12 @@ man_glob () {
 }
 compctl -K man_glob man
 
-# Make less more friendly for non-text input files
+# Make less more friendly
 if [ -x /usr/bin/lesspipe ]; then
 	export LESSOPEN="| /usr/bin/lesspipe %s"
 	export LESSCLOSE="/usr/bin/lesspipe %s %s"
 fi
-
-# Enable color support of ls and grep
-if [ -x /usr/bin/dircolors ]; then
-	eval `dircolors -b`
-	alias ls="ls --color=auto -F -X"
-	alias dir="dir --color=auto"
-	alias vdir="vdir --color=auto"
-fi
-
-# More colors
-if [ -x /usr/bin/grc ]; then
-	alias ping="grc --colour=auto ping"
-	alias traceroute="grc --colour=auto traceroute"
-	alias netstat="grc --colour=auto netstat"
-fi
-if [ -x /usr/bin/colordiff ]; then
-	alias diff="colordiff -Naur"
-fi
+export LESS="-R"
 
 # Color man
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -246,6 +229,24 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+
+# Enable color support of ls
+if [ -x /usr/bin/dircolors ]; then
+	eval `dircolors -b`
+	alias ls="ls --color=auto -F -X"
+	alias dir="dir --color=auto"
+	alias vdir="vdir --color=auto"
+fi
+
+# More colors
+if [ -x /usr/bin/grc ]; then
+	alias ping="grc --colour=on ping"
+	alias traceroute="grc --colour=on traceroute"
+	alias netstat="grc --colour=on netstat"
+fi
+if [ -x /usr/bin/colordiff ]; then
+	alias diff="colordiff -Naur"
+fi
 
 # Colorize via pygmentize
 colorize() {
