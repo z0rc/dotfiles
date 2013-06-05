@@ -19,3 +19,6 @@
 [submodule "vim/bundle/vim-perl"]
 	path = vim/bundle/vim-perl
 	url = git://github.com/vim-perl/vim-perl.git
+[submodule "vim/bundle/cbackup"]
+	path = vim/bundle/cbackup
+	url = git://github.com/vim-scripts/cbackup.vim.git
