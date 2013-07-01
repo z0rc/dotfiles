@@ -69,7 +69,8 @@ precmd () {
 }
 
 # Fancy prompts
-PROMPT="%1v[%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_color%}]%2v%# "
+[ "$SSH_CLIENT" ] && psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
+PROMPT="%1v$psvar[3][%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_color%}]%2v%# "
 [ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%?%b] (%B%T - %D{%m.%d.%Y}%b)"
 
 # Exports
