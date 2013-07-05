@@ -22,3 +22,6 @@
 [submodule "vim/bundle/cbackup"]
 	path = vim/bundle/cbackup
 	url = git://github.com/vim-scripts/cbackup.vim.git
+[submodule "vim/bundle/floobits"]
+	path = vim/bundle/floobits
+	url = https://github.com/Floobits/floobits-vim
