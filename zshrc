@@ -77,7 +77,7 @@ PROMPT="%1v$psvar[3][%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b
 EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
-export GREP_OPTIONS="--color=always --binary-files=without-match --devices=skip"
+export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
