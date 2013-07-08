@@ -22,6 +22,10 @@ set fileformats=unix,dos
 set nowrap
 set ttyfast
 
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 set hlsearch
 
 set listchars=tab:<-,trail:.
