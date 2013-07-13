@@ -41,6 +41,10 @@ setopt COMPLETE_IN_WORD
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
+# MIME aliases
+autoload -U zsh-mime-setup
+zsh-mime-setup
+
 # Tweaking vcs_info before load
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' stagedstr '§'
@@ -274,6 +278,9 @@ colorize() {
 # Human file sizes
 alias df="df -Th"
 alias du="du -hc"
+
+# Some handy suffix aliases
+alias -s log=less
 
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
