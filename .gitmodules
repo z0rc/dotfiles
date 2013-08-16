@@ -10,9 +10,6 @@
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/clang"]
-	path = vim/bundle/clang
-	url = git://github.com/Rip-Rip/clang_complete.git
 [submodule "vim/bundle/figitive"]
 	path = vim/bundle/figitive
 	url = git://github.com/tpope/vim-fugitive.git
