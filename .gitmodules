@@ -28,3 +28,6 @@
 [submodule "spark"]
 	path = spark
 	url = https://github.com/holman/spark.git
+[submodule "vim/bundle/editorconfig"]
+	path = vim/bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
