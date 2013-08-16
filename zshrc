@@ -279,6 +279,9 @@ colorize() {
 alias df="df -Th"
 alias du="du -hc"
 
+# Make spark availiable withoud adding it to PATH
+alias spark="~/.dotfiles/spark/spark"
+
 # Some handy suffix aliases
 alias -s log=less
 
