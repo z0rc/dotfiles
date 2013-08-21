@@ -309,5 +309,8 @@ fi
 # Workaround precmd change by mc (part 3)
 alias precmd="noglob fakeprecmd"
 
+# Z (jump-list) plugin
+source ~/.dotfiles/z/z.sh
+
 # Highlighting plugin
 source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
