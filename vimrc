@@ -71,7 +71,7 @@ inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
 
 " default the statusline to green when entering
 hi statusline ctermbg=green ctermfg=black
-set statusline=%t\ %y%m%r[%{&fileencoding}]%<[%{strftime(\"%d.%m.%y\",getftime(expand(\"%:p\")))}]%k%=%-14.(%l,%c%V%)\ %P
+set statusline=%t\ %y%m%r[%{&fileencoding}]%<[%{strftime(\"%d.%m.%y\",getftime(expand(\"%:p\")))}]%{fugitive#statusline()}%k%=%-14.(%l,%c%V%)\ %P
 set laststatus=2
 set modeline
 
