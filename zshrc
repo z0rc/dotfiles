@@ -75,7 +75,7 @@ precmd () {
 # Fancy prompts
 [ "$SSH_CLIENT" ] && psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
 PROMPT="%1v$psvar[3][%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_color%}]%2v%# "
-[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%?%b] (%B%T - %D{%m.%d.%Y}%b)"
+[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%(?..%{$fg[red]%})%?%{$reset_color%}%b] (%B%T - %D{%m.%d.%Y}%b)"
 
 # Exports
 EDITOR=vim
