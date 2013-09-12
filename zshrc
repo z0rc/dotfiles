@@ -61,11 +61,11 @@ precmd () {
 # Indicate that shell is running under Midnight Commander
 	[ "$MC_SID" ] && psvar[1]="[mc]" || psvar[1]=""
 # Further vcs_info tweaks and actual loading
-	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+	if [ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]; then
 		zstyle ':vcs_info:*' formats '[%b%c%u]'
-	} else {
+	else
 		zstyle ':vcs_info:*' formats '[%b%c%u¿]'
-	}
+	fi
 	vcs_info
 	psvar[2]="$vcs_info_msg_0_"
 # Workaround precmd change by mc (part 2)
