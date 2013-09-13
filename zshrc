@@ -56,7 +56,6 @@ zstyle ':vcs_info:*' enable git svn bzr hg cvs
 # Workaround precmd change by mc (part 1)
 fakeprecmd () { }
 
-# Prompts
 precmd () {
 # Indicate that shell is running under Midnight Commander
 	[ "$MC_SID" ] && psvar[1]="[mc]" || psvar[1]=""
@@ -68,12 +67,16 @@ precmd () {
 	fi
 	vcs_info
 	psvar[2]="$vcs_info_msg_0_"
+	# Indicate SSH session in prompt and window title
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+		echo -ne "\033]0;`id -un`:`id -gn`@`hostname||uname -n|sed 1q` `who -m|sed -e "s%^.* \(pts/[0-9]*\).*(\(.*\))%[\1] (\2%g"` → `hostname -i`) [`uptime|sed -e "s/.*: \([^,]*\).*/\1/" -e "s/ //g"` / `ps aux|wc -l`]\007"
+		psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
+	fi
 # Workaround precmd change by mc (part 2)
 	fakeprecmd
 }
 
 # Fancy prompts
-[ "$SSH_CLIENT" ] && psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
 PROMPT="%1v$psvar[3][%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_color%}]%2v%# "
 [ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%(?..%{$fg[red]%})%?%{$reset_color%}%b] (%B%T - %D{%m.%d.%Y}%b)"
 
