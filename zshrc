@@ -77,8 +77,8 @@ precmd () {
 }
 
 # Fancy prompts
-PROMPT="%1v$psvar[3][%{$fg[yellow]%}%B%m%b%{$reset_color%}][%{$fg[green]%}%B%~%b%{$reset_color%}]%2v%# "
-[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%B%(?..%{$fg[red]%})%?%{$reset_color%}%b] (%B%T - %D{%m.%d.%Y}%b)"
+PROMPT="%1v$psvar[3][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%2v%# "
+[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%(?..%{$fg_bold[red]%})%?%{$reset_color%}] (%B%T - %D{%m.%d.%Y}%b)"
 
 # Exports
 EDITOR=vim
