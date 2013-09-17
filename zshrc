@@ -305,7 +305,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion::complete:*' use-cache true
 
 # Allow root to use my DISPLAY
-if [[ -n "$DISPLAY" ]]; then
+if [[ -n "$DISPLAY" ]] && which xhost 2>&1 >/dev/null; then
 	xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
