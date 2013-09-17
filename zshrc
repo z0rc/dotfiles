@@ -58,9 +58,9 @@ fakeprecmd () { }
 
 precmd () {
 # Indicate that shell is running under Midnight Commander
-	[ "$MC_SID" ] && psvar[1]="[mc]" || psvar[1]=""
+	[[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=""
 # Further vcs_info tweaks and actual loading
-	if [ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]; then
+	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
 		zstyle ':vcs_info:*' formats '[%b%c%u]'
 	else
 		zstyle ':vcs_info:*' formats '[%b%c%u¿]'
@@ -68,7 +68,7 @@ precmd () {
 	vcs_info
 	psvar[2]="$vcs_info_msg_0_"
 	# Indicate SSH session in prompt and window title
-	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+	if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
 		echo -ne "\033]0;`id -un`:`id -gn`@`hostname||uname -n|sed 1q` `who -m|sed -e "s%^.* \(pts/[0-9]*\).*(\(.*\))%(\2%g"` → `hostname -i`) [`uptime|sed -e "s/.*: \([^,]*\).*/\1/" -e "s/ //g"` / `ps aux|wc -l`]\007"
 		psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
 	fi
@@ -78,7 +78,7 @@ precmd () {
 
 # Fancy prompts
 PROMPT="%1v$psvar[3][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%2v%# "
-[ "$MC_SID" ] && RPROMPT="" || RPROMPT="[%(?..%{$fg_bold[red]%})%?%{$reset_color%}] (%B%T - %D{%m.%d.%Y}%b)"
+[[ -n "$MC_SID" ]] && RPROMPT="" || RPROMPT="[%(?..%{$fg_bold[red]%})%?%{$reset_color%}] (%B%T - %D{%m.%d.%Y}%b)"
 
 # Exports
 EDITOR=vim
@@ -95,7 +95,7 @@ fpath=(~/.dotfiles/zsh-completions/src $fpath)
 # List all directories leading up to a filename; this is useful to see
 # if some permissions are blocking access to a file.
 lspath () {
-	if [ "$1" = "${1##/}" ]; then
+	if [[ "$1" = "${1##/}" ]]; then
 		pathlist=(/ ${(s:/:)PWD} ${(s:/:)1})
 	else
 		pathlist=(/ ${(s:/:)1})
@@ -104,17 +104,17 @@ lspath () {
 	filepath=$pathlist[0]
 	shift pathlist
 	for i in $pathlist[@]; do
-		allpaths=($allpaths[@] $filepath) 
-		filepath="${filepath%/}/$i" 
+		allpaths=($allpaths[@] $filepath)
+		filepath="${filepath%/}/$i"
 	done
-	allpaths=($allpaths[@] $filepath) 
+	allpaths=($allpaths[@] $filepath)
 	ls -ld "$allpaths[@]"
 }
 
 # Grep from ps output
 psg () {
-	FST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
-	RST=`echo $1 | sed -e 's/^.\(.*\)/\1/'`
+	FST=`echo $1 | sed -e "s/^\(.\).*/\1/"`
+	RST=`echo $1 | sed -e "s/^.\(.*\)/\1/"`
 	ps aux | grep "[$FST]$RST"
 }
 
@@ -131,12 +131,12 @@ zle -N dot
 bindkey . dot
 
 # Use multithreaded archivers if possible
-if [ -x /usr/bin/pigz ]; then
+if [[ -x /usr/bin/pigz ]]; then
 	function gzip () { pigz $@ }
 	export -f gzip > /dev/null
 fi
 
-if [ -x /usr/bin/pbzip2 ]; then
+if [[ -x /usr/bin/pbzip2 ]]; then
 	function bzip2 () { pbzip2 $@ }
 	export -f bzip2 > /dev/null
 fi
@@ -168,7 +168,7 @@ apt-history () {
 
 # Universal archive unpack
 extract () {
-	if [ -f $1 ] ; then
+	if [[ -f "$1" ]]; then
 		case $1 in
 			*.tar.bz2) tar xjf $1    ;;
 			*.tar.gz)  tar xzf $1    ;;
@@ -191,7 +191,7 @@ extract () {
 
 # Universal archive pack
 pack () {
-	if [ $1 ] ; then
+	if [[ -n "$1" ]]; then
 		case $1 in
 			tbz) tar cjvf $2.tar.bz2 $2   ;;
 			tgz) tar czvf $2.tar.gz $2    ;;
@@ -223,7 +223,7 @@ man_glob () {
 compctl -K man_glob man
 
 # Make less more friendly
-if [ -x /usr/bin/lesspipe ]; then
+if [[ -x /usr/bin/lesspipe ]]; then
 	export LESSOPEN="| /usr/bin/lesspipe %s"
 	export LESSCLOSE="/usr/bin/lesspipe %s %s"
 fi
@@ -239,7 +239,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 # Enable color support of ls
-if [ -x /usr/bin/dircolors ]; then
+if [[ -x /usr/bin/dircolors ]]; then
 	eval `dircolors -b`
 	alias ls="ls --color=auto -F -X"
 	alias dir="dir --color=auto"
@@ -247,30 +247,30 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # More colors
-if [ -x /usr/bin/grc ]; then
+if [[ -x /usr/bin/grc ]]; then
 	alias ping="grc --colour=on ping"
 	alias traceroute="grc --colour=on traceroute"
 	alias netstat="grc --colour=on netstat"
 fi
-if [ -x /usr/bin/colordiff ]; then
+if [[ -x /usr/bin/colordiff ]]; then
 	alias diff="colordiff -Naur"
 fi
 
 # Colorize via pygmentize
 colorize() {
-	if [ ! -x $(which pygmentize) ]; then
+	if which pygmentize 2>&1 >/dev/null; then
 		echo package \'pygmentize\' is not installed!
 		exit -1
 	fi
 	
-	if [ $# -eq 0 ]; then
+	if [[ $# -eq 0 ]]; then
 		pygmentize -g $@
 	fi
 	
 	for FNAME in $@; do
 		filename=$(basename "$FNAME")
 		lexer=`pygmentize -N \"$filename\"`
-		if [ "Z$lexer" != "Ztext" ]; then
+		if [[ "Z$lexer" != "Ztext" ]]; then
 			pygmentize -l $lexer "$FNAME"
 		else
 			pygmentize -g "$FNAME"
@@ -305,7 +305,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion::complete:*' use-cache true
 
 # Allow root to use my DISPLAY
-if [ -n "$DISPLAY" ]; then
+if [[ -n "$DISPLAY" ]]; then
 	xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
@@ -319,7 +319,7 @@ source ~/.dotfiles/z/z.sh
 source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Attach to a tmux session, if there's any (and only of we are running interactively)
-if which tmux 2>&1 >/dev/null && test $- = "*i*" && test -z "$TMUX" && ps u | grep -q "[t]mux"; then
+if which tmux 2>&1 >/dev/null && [[ $- = "*i*" ]] && [[ -z "$TMUX" ]] && ps u | grep -q "[t]mux"; then
 	tmux attach
 fi
 
