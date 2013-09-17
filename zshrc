@@ -319,7 +319,7 @@ source ~/.dotfiles/z/z.sh
 source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Attach to a tmux session, if there's any (and only of we are running interactively)
-if which tmux 2>&1 >/dev/null && [[ $- = "*i*" ]] && [[ -z "$TMUX" ]] && ps u | grep -q "[t]mux"; then
+if which tmux 2>&1 >/dev/null && [[ $- = *i* ]] && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux; then
 	tmux attach
 fi
 
