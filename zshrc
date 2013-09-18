@@ -67,14 +67,15 @@ precmd () {
 	fi
 	vcs_info
 	psvar[2]="$vcs_info_msg_0_"
-	# Indicate SSH session in prompt and window title
-	if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-		echo -ne "\033]0;`id -un`:`id -gn`@`hostname||uname -n|sed 1q` `who -m|sed -e "s%^.* \(pts/[0-9]*\).*(\(.*\))%(\2%g"` → `hostname -i`) [`uptime|sed -e "s/.*: \([^,]*\).*/\1/" -e "s/ //g"` / `ps aux|wc -l`]\007"
-		psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
-	fi
 # Workaround precmd change by mc (part 2)
 	fakeprecmd
 }
+
+# Indicate SSH session in prompt and window title
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+	echo -ne "\033]0;`id -un`:`id -gn`@`hostname||uname -n|sed 1q` `who -m|sed -e "s%^.* \(pts/[0-9]*\).*(\(.*\))%(\2%g"` → `hostname -i`)\007"
+	psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
+fi
 
 # Fancy prompts
 PROMPT="%1v$psvar[3][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%2v%# "
