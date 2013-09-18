@@ -240,8 +240,8 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 # Enable color support of ls
-if [[ -x /usr/bin/dircolors ]]; then
-	eval `dircolors -b`
+if which dircolors 2>&1 >/dev/null; then
+	eval `dircolors ~/.dotfiles/dircolors-solarized/dircolors.256dark`
 	alias ls="ls --color=auto -F -X"
 	alias dir="dir --color=auto"
 	alias vdir="vdir --color=auto"
