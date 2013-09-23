@@ -86,6 +86,7 @@ EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
 export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
+export MC_SKIN=modarin256root
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
