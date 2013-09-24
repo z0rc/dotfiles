@@ -22,6 +22,8 @@ set fileformats=unix,dos
 set nowrap
 set ttyfast
 
+set mouse=a
+
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
