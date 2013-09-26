@@ -258,28 +258,6 @@ if [[ -x /usr/bin/colordiff ]]; then
 	alias diff="colordiff -Naur"
 fi
 
-# Colorize via pygmentize
-colorize() {
-	if which pygmentize 2>&1 >/dev/null; then
-		echo package \'pygmentize\' is not installed!
-		exit -1
-	fi
-	
-	if [[ $# -eq 0 ]]; then
-		pygmentize -g $@
-	fi
-	
-	for FNAME in $@; do
-		filename=$(basename "$FNAME")
-		lexer=`pygmentize -N \"$filename\"`
-		if [[ "Z$lexer" != "Ztext" ]]; then
-			pygmentize -l $lexer "$FNAME"
-		else
-			pygmentize -g "$FNAME"
-		fi
-	done
-}
-
 # Human file sizes
 alias df="df -Th"
 alias du="du -hc"
