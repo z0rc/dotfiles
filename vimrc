@@ -48,6 +48,8 @@ set wildmenu
 
 filetype plugin indent on
 
+autocmd BufRead,BufNewFile /etc/nginx/*,/etc/nginx/*/* setfiletype nginx
+
 " Mode Indication -Prominent!
 function! InsertStatuslineColor(mode)
 	if a:mode == 'i'
