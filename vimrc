@@ -50,6 +50,9 @@ filetype plugin indent on
 
 autocmd BufRead,BufNewFile /etc/nginx/*,/etc/nginx/*/* setfiletype nginx
 
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 " Mode Indication -Prominent!
 function! InsertStatuslineColor(mode)
 	if a:mode == 'i'
