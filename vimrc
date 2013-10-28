@@ -21,6 +21,7 @@ set fileencodings=utf-8,cp1251,koi-8r,cp866
 set fileformats=unix,dos
 set nowrap
 set ttyfast
+set clipboard=unnamedplus
 
 set mouse=a
 
