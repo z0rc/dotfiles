@@ -53,13 +53,13 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:*' enable git svn bzr hg cvs
 
-# Workaround precmd change by mc (part 1)
-fakeprecmd () { }
-
-precmd () {
 # Indicate that shell is running under Midnight Commander
+_mc_indicate_precmd () {
 	[[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=""
+}
+
 # Further vcs_info tweaks and actual loading
+_vcs_tweak_precmd () {
 	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
 		zstyle ':vcs_info:*' formats '[%b%c%u]'
 	else
@@ -67,9 +67,9 @@ precmd () {
 	fi
 	vcs_info
 	psvar[2]="$vcs_info_msg_0_"
-# Workaround precmd change by mc (part 2)
-	fakeprecmd
 }
+
+precmd_functions+=(_mc_indicate_precmd _vcs_tweak_precmd)
 
 # Indicate SSH session in prompt and window title
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
@@ -288,9 +288,6 @@ zstyle ':completion::complete:*' use-cache true
 if [[ -n "$DISPLAY" ]] && which xhost 2>&1 >/dev/null; then
 	xhost +si:localuser:root 2>&1 1>/dev/null
 fi
-
-# Workaround precmd change by mc (part 3)
-alias precmd="noglob fakeprecmd"
 
 # Z (jump-list) plugin
 source ~/.dotfiles/z/z.sh
