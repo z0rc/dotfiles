@@ -289,9 +289,6 @@ if [[ -n "$DISPLAY" ]] && which xhost 2>&1 >/dev/null; then
 	xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
-# Z (jump-list) plugin
-source ~/.dotfiles/z/z.sh
-
 # Highlighting plugin
 source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
