@@ -45,6 +45,12 @@ zle -N self-insert url-quote-magic
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
+# Rehash on software upgrade
+autoload -U add-zsh-hook
+TRAPUSR1() { rehash };
+precmd_install() { [[ $history[$[ HISTCMD -1 ]] == *(apt-get|aptitude|pip|dpkg|yum|rpm)* ]] && killall -u $USER -USR1 zsh }
+add-zsh-hook precmd precmd_install
+
 # Tweaking vcs_info before load
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' stagedstr '§'
