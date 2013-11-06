@@ -32,9 +32,6 @@
 	path = vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
 	ignore = dirty
-[submodule "z"]
-	path = z
-	url = https://github.com/rupa/z.git
 [submodule "tmux-colors-solarized"]
 	path = tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
