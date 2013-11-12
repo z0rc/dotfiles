@@ -61,26 +61,26 @@ zstyle ':vcs_info:*' enable git svn bzr hg cvs
 
 # Indicate that shell is running under Midnight Commander
 _mc_indicate_precmd () {
-	[[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=""
+    [[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=""
 }
 
 # Further vcs_info tweaks and actual loading
 _vcs_tweak_precmd () {
-	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-		zstyle ':vcs_info:*' formats '[%b%c%u]'
-	else
-		zstyle ':vcs_info:*' formats '[%b%c%u¿]'
-	fi
-	vcs_info
-	psvar[2]="$vcs_info_msg_0_"
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+        zstyle ':vcs_info:*' formats '[%b%c%u]'
+    else
+        zstyle ':vcs_info:*' formats '[%b%c%u¿]'
+    fi
+    vcs_info
+    psvar[2]="$vcs_info_msg_0_"
 }
 
 precmd_functions+=(_mc_indicate_precmd _vcs_tweak_precmd)
 
 # Indicate SSH session in prompt and window title
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-	echo -ne "\033]0;`id -un`:`id -gn`@`hostname||uname -n|sed 1q` `who -m|sed -e "s%^.* \(pts/[0-9]*\).*(\(.*\))%(\2%g"` → `hostname -i`)\007"
-	psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
+    echo -ne "\033]0;`id -un`:`id -gn`@`hostname||uname -n|sed 1q` `who -m|sed -e "s%^.* \(pts/[0-9]*\).*(\(.*\))%(\2%g"` → `hostname -i`)\007"
+    psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
 fi
 
 # Fancy prompts
@@ -103,36 +103,36 @@ fpath=(~/.dotfiles/zsh-completions/src $fpath)
 # List all directories leading up to a filename; this is useful to see
 # if some permissions are blocking access to a file.
 lspath () {
-	if [[ "$1" = "${1##/}" ]]; then
-		pathlist=(/ ${(s:/:)PWD} ${(s:/:)1})
-	else
-		pathlist=(/ ${(s:/:)1})
-	fi
-	allpaths=()
-	filepath=$pathlist[0]
-	shift pathlist
-	for i in $pathlist[@]; do
-		allpaths=($allpaths[@] $filepath)
-		filepath="${filepath%/}/$i"
-	done
-	allpaths=($allpaths[@] $filepath)
-	ls -ld "$allpaths[@]"
+    if [[ "$1" = "${1##/}" ]]; then
+        pathlist=(/ ${(s:/:)PWD} ${(s:/:)1})
+    else
+        pathlist=(/ ${(s:/:)1})
+    fi
+    allpaths=()
+    filepath=$pathlist[0]
+    shift pathlist
+    for i in $pathlist[@]; do
+        allpaths=($allpaths[@] $filepath)
+        filepath="${filepath%/}/$i"
+    done
+    allpaths=($allpaths[@] $filepath)
+    ls -ld "$allpaths[@]"
 }
 
 # Grep from ps output
 psg () {
-	FST=`echo $1 | sed -e "s/^\(.\).*/\1/"`
-	RST=`echo $1 | sed -e "s/^.\(.*\)/\1/"`
-	ps aux | grep "[$FST]$RST"
+    FST=`echo $1 | sed -e "s/^\(.\).*/\1/"`
+    RST=`echo $1 | sed -e "s/^.\(.*\)/\1/"`
+    ps aux | grep "[$FST]$RST"
 }
 
 # Autoexpand "..." to "../.." and so on
 dot () {
-	if [[ $LBUFFER = *.. ]]; then
-		LBUFFER+=/..
-	else
-		LBUFFER+=.
-	fi
+    if [[ $LBUFFER = *.. ]]; then
+        LBUFFER+=/..
+    else
+        LBUFFER+=.
+    fi
 }
 autoload -U dot
 zle -N dot
@@ -140,100 +140,100 @@ bindkey . dot
 
 # Use multithreaded archivers if possible
 if [[ -x /usr/bin/pigz ]]; then
-	function gzip () { pigz $@ }
-	export -f gzip > /dev/null
+    function gzip () { pigz $@ }
+    export -f gzip > /dev/null
 fi
 
 if [[ -x /usr/bin/pbzip2 ]]; then
-	function bzip2 () { pbzip2 $@ }
-	export -f bzip2 > /dev/null
+    function bzip2 () { pbzip2 $@ }
+    export -f bzip2 > /dev/null
 fi
 
 # Print apt history
 apt-history () {
-	case "$1" in
-	install)
-		zgrep --no-filename 'install ' $(ls -rt /var/log/dpkg*)
-		;;
-	upgrade|remove)
-		zgrep --no-filename $1 $(ls -rt /var/log/dpkg*)
-		;;
-	rollback)
-		zgrep --no-filename upgrade $(ls -rt /var/log/dpkg*) | \
-		grep "$2" -A10000000 | \
-		grep "$3" -B10000000 | \
-		awk '{print $4"="$5}'
-		;;
-	*)
-		echo "Parameters:"
-		echo " install - Lists all packages that have been installed."
-		echo " upgrade - Lists all packages that have been upgraded."
-		echo " remove - Lists all packages that have been removed."
-		echo " rollback - Lists rollback information."
-		;;
-	esac
+    case "$1" in
+    install)
+        zgrep --no-filename 'install ' $(ls -rt /var/log/dpkg*)
+        ;;
+    upgrade|remove)
+        zgrep --no-filename $1 $(ls -rt /var/log/dpkg*)
+        ;;
+    rollback)
+        zgrep --no-filename upgrade $(ls -rt /var/log/dpkg*) | \
+        grep "$2" -A10000000 | \
+        grep "$3" -B10000000 | \
+        awk '{print $4"="$5}'
+        ;;
+    *)
+        echo "Parameters:"
+        echo " install - Lists all packages that have been installed."
+        echo " upgrade - Lists all packages that have been upgraded."
+        echo " remove - Lists all packages that have been removed."
+        echo " rollback - Lists rollback information."
+        ;;
+    esac
 }
 
 # Universal archive unpack
 extract () {
-	if [[ -f "$1" ]]; then
-		case $1 in
-			*.tar.bz2) tar xjf $1    ;;
-			*.tar.gz)  tar xzf $1    ;;
-			*.tar.xz)  tar xJf $1    ;;
-			*.bz2)     bunzip2 $1    ;;
-			*.rar)     unrar x $1    ;;
-			*.gz)      gunzip $1     ;;
-			*.tar)     tar xf $1     ;;
-			*.tbz2)    tar xjf $1    ;;
-			*.tgz)     tar xzf $1    ;;
-			*.zip)     unzip $1      ;;
-			*.Z)       uncompress $1 ;;
-			*.7z)      7z x $1       ;;
-			*)         echo "Unknown archive type '$1'" ;;
-		esac
-	else
-		echo "'$1' is not a valid file"
-	fi
+    if [[ -f "$1" ]]; then
+        case $1 in
+            *.tar.bz2) tar xjf $1    ;;
+            *.tar.gz)  tar xzf $1    ;;
+            *.tar.xz)  tar xJf $1    ;;
+            *.bz2)     bunzip2 $1    ;;
+            *.rar)     unrar x $1    ;;
+            *.gz)      gunzip $1     ;;
+            *.tar)     tar xf $1     ;;
+            *.tbz2)    tar xjf $1    ;;
+            *.tgz)     tar xzf $1    ;;
+            *.zip)     unzip $1      ;;
+            *.Z)       uncompress $1 ;;
+            *.7z)      7z x $1       ;;
+            *)         echo "Unknown archive type '$1'" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 # Universal archive pack
 pack () {
-	if [[ -n "$1" ]]; then
-		case $1 in
-			tbz) tar cjvf $2.tar.bz2 $2   ;;
-			tgz) tar czvf $2.tar.gz $2    ;;
-			txz) tar cJvf $2.tar.xz $2    ;;
-			tar) tar cpvf $2.tar $2       ;;
-			bz2) bzip2 $2                 ;;
-			gz)  gzip -c -9 -n $2 > $2.gz ;;
-			zip) zip -r $2.zip $2         ;;
-			7z)  7z a $2.7z $2            ;;
-			*)   echo "'$1' cannot be packed via pack()" ;;
-		esac
-	else
-		echo "'$1' is not a valid file type"
-	fi
+    if [[ -n "$1" ]]; then
+        case $1 in
+            tbz) tar cjvf $2.tar.bz2 $2   ;;
+            tgz) tar czvf $2.tar.gz $2    ;;
+            txz) tar cJvf $2.tar.xz $2    ;;
+            tar) tar cpvf $2.tar $2       ;;
+            bz2) bzip2 $2                 ;;
+            gz)  gzip -c -9 -n $2 > $2.gz ;;
+            zip) zip -r $2.zip $2         ;;
+            7z)  7z a $2.7z $2            ;;
+            *)   echo "'$1' cannot be packed via pack()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file type"
+    fi
 }
 
 # Manual page completion
 man_glob () {
-	local a
-	read -cA a
-	if [[ $a[2] = [0-9]* ]]; then
-		reply=( $^manpath/man$a[2]/$1*$2(N:t:r) )
-	elif [[ $a[2] = -s ]]; then
-		reply=( $^manpath/man$a[3]/$1*$2(N:t:r) )
-	else
-		reply=( $^manpath/man*/$1*$2(N:t:r) )
-	fi
+    local a
+    read -cA a
+    if [[ $a[2] = [0-9]* ]]; then
+        reply=( $^manpath/man$a[2]/$1*$2(N:t:r) )
+    elif [[ $a[2] = -s ]]; then
+        reply=( $^manpath/man$a[3]/$1*$2(N:t:r) )
+    else
+        reply=( $^manpath/man*/$1*$2(N:t:r) )
+    fi
 }
 compctl -K man_glob man
 
 # Make less more friendly
 if [[ -x /usr/bin/lesspipe ]]; then
-	export LESSOPEN="| /usr/bin/lesspipe %s"
-	export LESSCLOSE="/usr/bin/lesspipe %s %s"
+    export LESSOPEN="| /usr/bin/lesspipe %s"
+    export LESSCLOSE="/usr/bin/lesspipe %s %s"
 fi
 export LESS="-R"
 
@@ -248,20 +248,20 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 # Enable color support of ls
 if which dircolors 2>&1 >/dev/null; then
-	eval `dircolors ~/.dotfiles/dircolors-solarized/dircolors.256dark`
-	alias ls="ls --color=auto -F -X"
-	alias dir="dir --color=auto"
-	alias vdir="vdir --color=auto"
+    eval `dircolors ~/.dotfiles/dircolors-solarized/dircolors.256dark`
+    alias ls="ls --color=auto -F -X"
+    alias dir="dir --color=auto"
+    alias vdir="vdir --color=auto"
 fi
 
 # More colors
 if [[ -x /usr/bin/grc ]]; then
-	alias ping="grc --colour=on ping"
-	alias traceroute="grc --colour=on traceroute"
-	alias netstat="grc --colour=on netstat"
+    alias ping="grc --colour=on ping"
+    alias traceroute="grc --colour=on traceroute"
+    alias netstat="grc --colour=on netstat"
 fi
 if [[ -x /usr/bin/colordiff ]]; then
-	alias diff="colordiff -Naur"
+    alias diff="colordiff -Naur"
 fi
 
 # Human file sizes
@@ -292,14 +292,14 @@ zstyle ':completion::complete:*' use-cache true
 
 # Allow root to use my DISPLAY
 if [[ -n "$DISPLAY" ]] && which xhost 2>&1 >/dev/null; then
-	xhost +si:localuser:root 2>&1 1>/dev/null
+    xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
 # Transfer to root user's Xauth cookies
 if [[ `whoami` = root ]] && [[ -n "$SSH_CLIENT" ]] && [[ -n "$SUDO_USER" ]]; then
-	display=`echo $DISPLAY | cut -d':' -f 2 | cut -d'.' -f 1`
-	cred=`su - $SUDO_USER -c "xauth list" | grep $display`
-	echo $cred | xargs -n 3 xauth add
+    display=`echo $DISPLAY | cut -d':' -f 2 | cut -d'.' -f 1`
+    cred=`su - $SUDO_USER -c "xauth list" | grep $display`
+    echo $cred | xargs -n 3 xauth add
 fi
 
 # Highlighting plugin
@@ -307,6 +307,6 @@ source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Attach to a tmux session, if there's any (and only of we are running interactively)
 if which tmux 2>&1 >/dev/null && [[ $- = *i* ]] && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux; then
-	tmux attach
+    tmux attach
 fi
 
