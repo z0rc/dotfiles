@@ -91,6 +91,7 @@ PROMPT="%1v$psvar[3][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}
 EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
+export PAGER=less
 export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
 export MC_SKIN=modarin256root
 
