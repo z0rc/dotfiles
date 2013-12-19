@@ -61,19 +61,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Mode Indication -Prominent!
 function! InsertStatuslineColor(mode)
-	if a:mode == 'i'
-		hi statusline ctermbg=red
-		set cursorcolumn
-	elseif a:mode == 'r'
-		hi statusline ctermbg=blue
-	else
-		hi statusline ctermbg=magenta
-	endif
+    if a:mode == 'i'
+        hi statusline ctermbg=red
+        set cursorcolumn
+    elseif a:mode == 'r'
+        hi statusline ctermbg=blue
+    else
+        hi statusline ctermbg=magenta
+    endif
 endfunction
 
 function! InsertLeaveActions()
-	hi statusline ctermbg=green ctermfg=black
-	set nocursorcolumn
+    hi statusline ctermbg=green ctermfg=black
+    set nocursorcolumn
 endfunction
 
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
