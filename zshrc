@@ -291,16 +291,16 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[c
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion::complete:*' use-cache true
 
-# Allow root to use my DISPLAY
-if [[ -n "$DISPLAY" ]] && which xhost 2>&1 >/dev/null; then
-    xhost +si:localuser:root 2>&1 1>/dev/null
-fi
-
 # Transfer to root user's Xauth cookies
 if [[ `whoami` = root ]] && [[ -n "$SSH_CLIENT" ]] && [[ -n "$SUDO_USER" ]]; then
     display=`echo $DISPLAY | cut -d':' -f 2 | cut -d'.' -f 1`
     cred=`su - $SUDO_USER -c "xauth list" | grep $display`
     echo $cred | xargs -n 3 xauth add
+fi
+
+# Allow root to use my DISPLAY
+if [[ -n "$DISPLAY" ]] && which xhost 2>&1 >/dev/null; then
+    xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
 # Highlighting plugin
