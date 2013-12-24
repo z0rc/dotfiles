@@ -48,8 +48,8 @@ zsh-mime-setup
 # Rehash on software upgrade
 autoload -U add-zsh-hook
 TRAPUSR1() { rehash };
-precmd_install() { [[ $history[$[ HISTCMD -1 ]] == *(apt-get|aptitude|pip|dpkg|yum|rpm)* ]] && killall -u $USER -USR1 zsh }
-add-zsh-hook precmd precmd_install
+_install_rehash_precmd() { [[ $history[$[ HISTCMD -1 ]] == *(apt-get|aptitude|pip|dpkg|yum|rpm)* ]] && killall -u $USER -USR1 zsh }
+add-zsh-hook precmd _install_rehash_precmd
 
 # Tweaking vcs_info before load
 autoload -Uz vcs_info
@@ -60,7 +60,7 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:*' enable git svn bzr hg cvs
 
 # Indicate that shell is running under Midnight Commander
-_mc_indicate_precmd () {
+_indicate_mc_precmd () {
     [[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=""
 }
 
