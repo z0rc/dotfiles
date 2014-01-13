@@ -75,7 +75,7 @@ _vcs_tweak_precmd () {
     psvar[2]="$vcs_info_msg_0_"
 }
 
-precmd_functions+=(_mc_indicate_precmd _vcs_tweak_precmd)
+precmd_functions+=(_indicate_mc_precmd _vcs_tweak_precmd)
 
 # Indicate SSH session in prompt and window title
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
