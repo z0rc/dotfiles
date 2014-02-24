@@ -299,7 +299,7 @@ if [[ `whoami` = root ]] && [[ -n "$SSH_CLIENT" ]] && [[ -n "$SUDO_USER" ]]; the
 fi
 
 # Allow root to use my DISPLAY
-if [[ -n "$DISPLAY" ]] && which xhost 2>&1 >/dev/null; then
+if [[ -n "$DISPLAY" ]] && \which xhost 2>&1 >/dev/null; then
     xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
