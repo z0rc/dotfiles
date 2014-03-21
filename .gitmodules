@@ -1,24 +1,24 @@
 [submodule "zsh-completions"]
 	path = zsh-completions
-	url = git://github.com/zsh-users/zsh-completions.git
+	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
-	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vim-pathogen"]
 	path = vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
+	url = https://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/figitive"]
 	path = vim/bundle/figitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-perl"]
 	path = vim/bundle/vim-perl
-	url = git://github.com/vim-perl/vim-perl.git
+	url = https://github.com/vim-perl/vim-perl.git
 [submodule "vim/bundle/cbackup"]
 	path = vim/bundle/cbackup
-	url = git://github.com/vim-scripts/cbackup.vim.git
+	url = https://github.com/vim-scripts/cbackup.vim.git
 [submodule "vim/bundle/numbers"]
 	path = vim/bundle/numbers
 	url = https://github.com/myusuf3/numbers.vim.git
