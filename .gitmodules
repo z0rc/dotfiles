@@ -37,7 +37,7 @@
 	url = https://github.com/seebi/dircolors-solarized.git
 [submodule "vim/bundle/nginx"]
 	path = vim/bundle/nginx
-	url = https://github.com/vim-scripts/nginx.vim.git
+	url = https://github.com/evanmiller/nginx-vim-syntax.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git

@@ -59,8 +59,6 @@ vnoremap <Space> zf
 
 set wildmenu
 
-autocmd BufRead,BufNewFile /etc/nginx/*,/etc/nginx/*/* setfiletype nginx
-
 filetype plugin indent on
 set ai " auto indent
 set si " smart indent
