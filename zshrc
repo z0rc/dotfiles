@@ -100,16 +100,33 @@ _vcs_tweak_precmd () {
     psvar[2]="$vcs_info_msg_0_"
 }
 
-precmd_functions+=(_indicate_mc_precmd _vcs_tweak_precmd)
+# Indicate python virtualenv
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+_indicate_venv_precmd() {
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        if [[ -f "$VIRTUAL_ENV/__name__" ]]; then
+            local name=$(cat $VIRTUAL_ENV/__name__)
+        elif [[ `basename $VIRTUAL_ENV` = "__" ]]; then
+            local name=$(basename $(dirname $VIRTUAL_ENV))
+        else
+            local name=$(basename $VIRTUAL_ENV)
+        fi
+        psvar[3]="[venv:$name]"
+    else
+        psvar[3]=
+    fi
+}
+
+precmd_functions+=(_indicate_mc_precmd _vcs_tweak_precmd _indicate_venv_precmd)
 
 # Indicate SSH session in prompt and window title
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
     echo -ne "\033]0;`id -un`:`id -gn`@`hostname||uname -n|sed 1q` `who -m|sed -e "s%^.* \(pts/[0-9]*\).*(\(.*\))%(\2%g"` → `hostname -i`)\007"
-    psvar[3]="[%{$fg[red]%}ssh%{$reset_color%}]"
+    psvar[4]="[%{$fg[red]%}ssh%{$reset_color%}]"
 fi
 
 # Fancy prompts
-PROMPT="%1v$psvar[3][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%2v%# "
+PROMPT="%1v%3v$psvar[4][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%2v%# "
 [[ -n "$MC_SID" ]] && RPROMPT="" || RPROMPT="[%(?..%{$fg_bold[red]%})%?%{$reset_color%}] (%B%T - %D{%m.%d.%Y}%b)"
 
 # Exports
