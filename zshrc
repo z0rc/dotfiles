@@ -86,7 +86,19 @@ zstyle ':vcs_info:*' enable git svn bzr hg cvs
 
 # Indicate that shell is running under Midnight Commander
 _indicate_mc_precmd () {
-    [[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=""
+    [[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=
+
+    # Set MC skin whether we're running under root or not
+    # Also set skin depending under which terminal we're running
+    if [[ "$TERM" = "linux" ]]; then
+        export MC_SKIN="nicedark"
+        alias sudo="sudo MC_SKIN=nicedark"
+    elif [[ "$USER" = "root" ]]; then
+        export MC_SKIN=modarin256root-defbg
+    else
+        export MC_SKIN=modarin256-defbg
+        alias sudo="sudo MC_SKIN=modarin256root-defbg"
+    fi
 }
 
 # Further vcs_info tweaks and actual loading
@@ -135,7 +147,6 @@ VISUAL=$EDITOR
 export VISUAL EDITOR
 export PAGER=less
 export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
-export MC_SKIN=modarin256root
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
