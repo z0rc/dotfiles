@@ -126,7 +126,7 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
 fi
 
 # Fancy prompts
-PROMPT="%1v%3v$psvar[4][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%2v%# "
+PROMPT="%1v$psvar[4][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%3v%2v%# "
 [[ -n "$MC_SID" ]] && RPROMPT="" || RPROMPT="[%(?..%{$fg_bold[red]%})%?%{$reset_color%}] (%B%T - %D{%m.%d.%Y}%b)"
 
 # Exports
