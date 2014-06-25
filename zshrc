@@ -305,7 +305,7 @@ Options:
         out=$(curl -s -F 'text=<-' "$uri?$1")
     fi
     echo "$out"
-    if [[ -x "`which xclip 2>/dev/null`" -a "$DISPLAY" ]]; then
+    if [[ -n "$DISPLAY" ]] && \which xclip 2>&1 >/dev/null; then
         echo -n "$out" | xclip -i -selection primary
         echo -n "$out" | xclip -i -selection clipboard
     fi
