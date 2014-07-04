@@ -138,14 +138,16 @@ export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
 
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
-if [[ "$TERM" = "linux" ]]; then
-    export MC_SKIN="gotar"
-    alias sudo="sudo MC_SKIN=nicedark"
-elif [[ "$USER" = "root" ]]; then
-    export MC_SKIN=modarin256root-defbg
-else
+if [[ "$TERM" = "linux" && "$USER" != "root" ]]; then
+    export MC_SKIN=gotar
+    sudo() { if [[ "$1" = "mc" ]]; then command sudo MC_SKIN=nicedark "$@"; else command sudo "$@"; fi; }
+elif [[ "$TERM" = "linux" && "$USER" = "root" ]]; then
+    export MC_SKIN=nicedark
+elif [[ "$TERM" != "linux" && "$USER" != "root" ]]; then
     export MC_SKIN=modarin256-defbg
-    alias sudo="sudo MC_SKIN=modarin256root-defbg"
+    sudo() { if [[ "$1" = "mc" ]]; then command sudo MC_SKIN=modarin256root-defbg "$@"; else command sudo "$@"; fi; }
+elif [[ "$TERM" != "linux" && "$USER" = "root" ]]; then
+    export MC_SKIN=modarin256root-defbg
 fi
 
 # Use emacs keybindings even if our EDITOR is set to vi
@@ -272,7 +274,7 @@ pack () {
 
 # vpaste uploader
 vpaste () {
-    if [[ "$1" = help ]]; then
+    if [[ "$1" = "help" ]]; then
         echo "Usage:
   vpaste file [option=value,..]
   <command> | vpaste [option=value,..]
