@@ -57,7 +57,7 @@ unsetopt BEEP
 autoload -U colors && colors
 
 # Completion basic
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d ~/.cache/zsh/zcompdump
 setopt AUTO_PARAM_SLASH
 setopt LIST_TYPES
 setopt COMPLETE_IN_WORD
