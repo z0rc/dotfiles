@@ -6,6 +6,7 @@ cd ..
 
 mkdir -p .config/git
 mkdir -p .local/share/zsh
+mkdir -p .cache/zsh
 
 ln -s .dotfiles/zshrc .zshrc
 ln -s .dotfiles/vimrc .vimrc
