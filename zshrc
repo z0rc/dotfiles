@@ -1,5 +1,5 @@
 # History configuration
-HISTFILE=~/.zsh_history
+HISTFILE=~/.local/share/zsh/history
 HISTSIZE=2000
 SAVEHIST=2000
 setopt HIST_IGNORE_ALL_DUPS
