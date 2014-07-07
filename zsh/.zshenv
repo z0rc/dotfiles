@@ -1,4 +1,4 @@
-ZDOTDIR="$HOME/.config/zsh"
+ZDOTDIR="$HOME/.dotfiles/zsh"
 
 skip_global_compinit=1
 
@@ -11,5 +11,5 @@ export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
 # Trick to force other applications to use vim with custom .vimrc path
 export PATH=~/.dotfiles/bin:$PATH
 
-source "$ZDOTDIR"/.zshenv
+source "$ZDOTDIR"/.zshenv.local
 

@@ -1,5 +1,5 @@
 # History configuration
-HISTFILE=~/.local/share/zsh/history
+HISTFILE=$ZDOTDIR/history
 HISTSIZE=2000
 SAVEHIST=2000
 setopt HIST_IGNORE_ALL_DUPS
@@ -57,7 +57,7 @@ unsetopt BEEP
 autoload -U colors && colors
 
 # Completion basic
-autoload -Uz compinit && compinit -d ~/.cache/zsh/zcompdump
+autoload -Uz compinit && compinit -d $ZDOTDIR/zcompdump
 setopt AUTO_PARAM_SLASH
 setopt LIST_TYPES
 setopt COMPLETE_IN_WORD
@@ -376,7 +376,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
-zstyle ':completion:*' cache-path ~/.cache/zsh/zcompcache
+zstyle ':completion:*' cache-path $ZDOTDIR/zcompcache
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[cyan]=$color[red]"
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion::complete:*' use-cache true
