@@ -129,13 +129,6 @@ fi
 PROMPT="%1v$psvar[4][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%3v%2v%# "
 [[ -n "$MC_SID" ]] && RPROMPT="" || RPROMPT="[%(?..%{$fg_bold[red]%})%?%{$reset_color%}] (%B%T - %D{%m.%d.%Y}%b)"
 
-# Exports
-EDITOR=vim
-VISUAL=$EDITOR
-export VISUAL EDITOR
-export PAGER=less
-export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
-
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
 if [[ "$TERM" = "linux" && "$USER" != "root" ]]; then

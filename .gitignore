@@ -3,3 +3,5 @@
 vim/spell/*.add*
 vim/.netrwhist*
 vim/autoload/getopts/*.cache
+vim/.viminfo
+
