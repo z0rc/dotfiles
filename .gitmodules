@@ -44,6 +44,9 @@
 [submodule "vim/bundle/indentLine"]
 	path = vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "mongo-hacker"]
+	path = mongo-hacker
+	url = https://github.com/TylerBrock/mongo-hacker.git
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
