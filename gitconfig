@@ -1,2 +1,9 @@
+[user]
+	email = z0rc3r@gmail.com
+	name = Igor Urazov
+[push]
+	default = simple
 [color]
-    ui = true
+	ui = auto
+[credential]
+	helper = cache
