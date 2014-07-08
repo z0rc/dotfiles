@@ -3,7 +3,7 @@
 git submodule update --init --recursive
 
 cd mongo-hacker
-make mongo-hacker.js
+make mongo_hacker.js
 
 cd ~
 
