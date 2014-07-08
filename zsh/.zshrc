@@ -361,6 +361,9 @@ alias du="du -hc"
 # Make spark availiable withoud adding it to PATH
 alias spark="~/.dotfiles/spark/spark"
 
+# Enable mongo-hacker without symlink in home
+alias mongo="mongo --norc --eval ~/.dotfiles/mongo-hacker/mongo-hacker.js"
+
 # Some handy suffix aliases
 alias -s log=less
 
