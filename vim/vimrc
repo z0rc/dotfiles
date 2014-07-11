@@ -11,6 +11,8 @@ call pathogen#infect()
 
 set viminfo='1000,n~/.dotfiles/vim/.viminfo
 
+let g:backup_directory=$HOME . '/.local/share/backups'
+
 syntax on
 set background=dark
 let g:solarized_termtrans=1
