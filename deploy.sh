@@ -2,6 +2,9 @@
 
 git submodule update --init --recursive
 
+cd mongo-hacker
+make mongo_hacker.js
+
 cd ~
 
 mkdir -p ~/.config/git
