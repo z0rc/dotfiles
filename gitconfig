@@ -6,4 +6,4 @@
 [color]
 	ui = auto
 [credential]
-	helper = cache
+	helper = cache --socket ~/.cache/git-credential-cache/socket

@@ -5,6 +5,7 @@ git submodule update --init --recursive
 cd ~
 
 mkdir -p ~/.config/git
+mkdir -p ~/.cache
 mkdir -p ~/.local/share
 
 ln -s .dotfiles/zsh/.zshenv ~/.zshenv
