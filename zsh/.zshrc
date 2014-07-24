@@ -362,7 +362,7 @@ alias du="du -hc"
 alias spark="~/.dotfiles/spark/spark"
 
 # Enable mongo-hacker without symlink in home
-alias mongo="mongo --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacker.js"
+mongo() { command mongo "$@" --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacker.js; }
 
 # Some handy suffix aliases
 alias -s log=less
