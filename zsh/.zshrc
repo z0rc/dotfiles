@@ -265,47 +265,6 @@ pack () {
     fi
 }
 
-# vpaste uploader
-vpaste () {
-    if [[ "$1" = "help" ]]; then
-        echo "Usage:
-  vpaste file [option=value,..]
-  <command> | vpaste [option=value,..]
-
-Options:
-  bg, background={light|dark}
-  Background color to use for the page
-
-  et, expandtab
-  Expand tabs to spaces
-
-  fdm, foldmethod=(syntax|indent)
-  Turn on dynamic code folding
-
-  ft, filetype={filetype}
-  A filetype to use for highlighting, see above menu for supported types
-
-  nu, number
-  Add line numbers
-
-  ts, tabstop=[N]
-  Number of spaces to use for tabs when et is set"
-        return
-    fi
-
-    uri="http://vpaste.net/"
-    if [[ -f "$1" ]]; then
-        out=$(curl -s -F "text=<$1" "$uri?$2")
-    else
-        out=$(curl -s -F 'text=<-' "$uri?$1")
-    fi
-    echo "$out"
-    if [[ -n "$DISPLAY" ]] && \which xclip 2>&1 >/dev/null; then
-        echo -n "$out" | xclip -i -selection primary
-        echo -n "$out" | xclip -i -selection clipboard
-    fi
-}
-
 # Manual page completion
 man_glob () {
     local a
@@ -363,6 +322,9 @@ alias spark="~/.dotfiles/spark/spark"
 
 # Enable mongo-hacker without symlink in home
 mongo() { command mongo "$@" --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacker.js; }
+
+# Privatepaste uploader
+ppaste() { python ~/.dotfiles/privatepaste.py "$@" }
 
 # Some handy suffix aliases
 alias -s log=less
