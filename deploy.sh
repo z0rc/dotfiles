@@ -11,8 +11,8 @@ mkdir -p ~/.config/{git,mc}
 mkdir -p ~/.cache
 mkdir -p ~/.local/share
 
-ln -s .dotfiles/zsh/.zshenv ~/.zshenv
+ln -sf .dotfiles/zsh/.zshenv ~/.zshenv
 touch .dotfiles/zsh/.zshenv.local
-ln -s ../../.dotfiles/gitconfig ~/.config/git/config
-ln -s ../../.dotfiles/mc.ini ~/.config/mc/ini
+ln -sf ../../.dotfiles/gitconfig ~/.config/git/config
+ln -sf ../../.dotfiles/mc.ini ~/.config/mc/ini
 
