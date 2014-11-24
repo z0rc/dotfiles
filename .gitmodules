@@ -50,3 +50,6 @@
 [submodule "mongo-hacker"]
 	path = mongo-hacker
 	url = https://github.com/TylerBrock/mongo-hacker.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
