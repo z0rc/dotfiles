@@ -10,7 +10,7 @@ export VISUAL EDITOR
 export PAGER=less
 export LESSHISTFILE=~/.local/share/lesshst
 export MYSQL_HISTFILE=~/.local/share/mysql_history
-export GREP_OPTIONS="--color=auto --binary-files=without-match --devices=skip"
+alias grep="grep --color=auto --binary-files=without-match --devices=skip"
 
 # Keep SSH_AUTH_SOCK valid across several attachments to the remote tmux session
 if [[ `whoami` != root ]]; then
