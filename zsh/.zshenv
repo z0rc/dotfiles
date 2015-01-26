@@ -22,5 +22,7 @@ fi
 
 alias tmux="tmux -f ~/.dotfiles/tmux.conf"
 
-source "$ZDOTDIR"/.zshenv.local
+if [[ -f "$ZDOTDIR"/.zshenv.local ]]; then
+    source "$ZDOTDIR"/.zshenv.local
+fi
 
