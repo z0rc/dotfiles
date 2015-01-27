@@ -6,6 +6,8 @@ cd $SCRIPT_DIR
 
 git submodule update --init --recursive
 
+ln -s ../../deploy.sh .git/hooks/post-merge
+
 cd mongo-hacker
 make mongo_hacker.js
 
