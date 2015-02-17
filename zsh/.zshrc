@@ -47,6 +47,9 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-finish
 fi
 
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+
 # General configuration
 setopt EXTENDED_GLOB
 setopt CORRECT_ALL
@@ -142,9 +145,6 @@ elif [[ "$TERM" != "linux" && "$USER" != "root" ]]; then
 elif [[ "$TERM" != "linux" && "$USER" = "root" ]]; then
     export MC_SKIN=modarin256root-defbg
 fi
-
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
 
 # Additional completion rules
 fpath=(~/.dotfiles/zsh-completions/src $fpath)
@@ -313,6 +313,9 @@ if [[ -x /usr/bin/colordiff ]]; then
     alias diff="colordiff -Naur"
 fi
 
+# Some handy suffix aliases
+alias -s log=less
+
 # Human file sizes
 alias df="df -Th"
 alias du="du -hc"
@@ -320,14 +323,14 @@ alias du="du -hc"
 # Make spark availiable withoud adding it to PATH
 alias spark="~/.dotfiles/spark/spark"
 
+# Enable mysqltuner without installing it to the PATH
+alias mysqltuner="~/.dotfiles/MySQLTuner-perl/mysqltuner.pl"
+
 # Enable mongo-hacker without symlink in home
 mongo() { command mongo "$@" --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacker.js; }
 
 # Privatepaste uploader
 ppaste() { python ~/.dotfiles/privatepaste.py "$@" }
-
-# Some handy suffix aliases
-alias -s log=less
 
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
