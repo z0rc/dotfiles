@@ -10,7 +10,11 @@ export VISUAL EDITOR
 export PAGER=less
 export LESSHISTFILE=~/.local/share/lesshst
 export MYSQL_HISTFILE=~/.local/share/mysql_history
+
+# Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
+alias quilt="quilt --quiltrc ~/.dotfiles/quiltrc"
+alias tmux="tmux -f ~/.dotfiles/tmux.conf"
 
 # Keep SSH_AUTH_SOCK valid across several attachments to the remote tmux session
 if [[ `whoami` != root ]]; then
@@ -20,8 +24,7 @@ if [[ `whoami` != root ]]; then
     export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 fi
 
-alias tmux="tmux -f ~/.dotfiles/tmux.conf"
-
+# Include local zshenv
 if [[ -f "$ZDOTDIR"/.zshenv.local ]]; then
     source "$ZDOTDIR"/.zshenv.local
 fi
