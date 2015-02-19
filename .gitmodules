@@ -56,3 +56,6 @@
 [submodule "MySQLTuner-perl"]
 	path = MySQLTuner-perl
 	url = https://github.com/major/MySQLTuner-perl.git
+[submodule "zsh-history-substring-search"]
+	path = zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
