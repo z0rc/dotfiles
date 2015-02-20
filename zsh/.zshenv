@@ -8,8 +8,11 @@ EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
 export PAGER=less
-export LESSHISTFILE=~/.local/share/lesshst
-export MYSQL_HISTFILE=~/.local/share/mysql_history
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export LESSHISTFILE=$XDG_DATA_HOME/lesshst
+export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
 
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
