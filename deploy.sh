@@ -5,6 +5,7 @@ SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 cd $SCRIPT_DIR
 
 # Make sure submodules are installed
+git submodule sync
 git submodule update --init --recursive
 
 # Install hook to call deploy script after successful pull
