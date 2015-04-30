@@ -21,7 +21,7 @@ alias tmux="tmux -f ~/.dotfiles/tmux.conf"
 
 # Keep SSH_AUTH_SOCK valid across several attachments to the remote tmux session
 if [[ `whoami` != root ]]; then
-    if [[ -S "$SSH_AUTH_SOCK" ]] && [[ ! -h "$SSH_AUTH_SOCK" ]]; then
+    if [[ -S "$SSH_AUTH_SOCK" ]] && [[ ! -h "$SSH_AUTH_SOCK" ]] && [[ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]]; then
         ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
     fi
     export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
