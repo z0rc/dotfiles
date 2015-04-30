@@ -133,10 +133,10 @@ PROMPT="%1v$psvar[4][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
 if [[ "$TERM" = "linux" && "$USER" != "root" ]]; then
-    export MC_SKIN=gotar
-    sudo() { if [[ "$1" = "mc" ]]; then command sudo MC_SKIN=nicedark "$@"; else command sudo "$@"; fi; }
+    export MC_SKIN=modarcon16-defbg
+    sudo() { if [[ "$1" = "mc" ]]; then command sudo MC_SKIN=modarcon16root-defbg "$@"; else command sudo "$@"; fi; }
 elif [[ "$TERM" = "linux" && "$USER" = "root" ]]; then
-    export MC_SKIN=nicedark
+    export MC_SKIN=modarcon16root-defbg
 elif [[ "$TERM" != "linux" && "$USER" != "root" ]]; then
     export MC_SKIN=modarin256-defbg
     sudo() { if [[ "$1" = "mc" ]]; then command sudo MC_SKIN=modarin256root-defbg "$@"; else command sudo "$@"; fi; }
