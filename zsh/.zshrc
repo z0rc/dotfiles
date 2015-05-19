@@ -2,11 +2,11 @@
 HISTFILE=$ZDOTDIR/history
 HISTSIZE=2000
 SAVEHIST=2000
-setopt HIST_IGNORE_ALL_DUPS
-setopt APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS # remove all earlier duplicate lines
+setopt APPEND_HISTORY # history appends to existing file
 setopt SHARE_HISTORY
-setopt HIST_REDUCE_BLANKS
-setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS # trim multiple insgnificant blanks in history
+setopt HIST_IGNORE_SPACE # don’t store lines starting with space
 
 # Create a zkbd compatible hash
 typeset -A key
@@ -51,17 +51,19 @@ bindkey -e
 # General configuration
 setopt EXTENDED_GLOB
 setopt CORRECT_ALL
+setopt NO_FLOW_CONTROL # disable stupid annoying keys
+setopt MULTIOS # allows multiple input and output redirections
 setopt AUTO_CD
 setopt CLOBBER
 setopt BRACE_CCL
-unsetopt BEEP
-autoload -U colors && colors
+setopt NO_BEEP # do not beep on errors
+autoload -U colors && colors  # initialize colors
 
 # Completion basic
 autoload -Uz compinit && compinit -d $ZDOTDIR/zcompdump
 setopt AUTO_PARAM_SLASH
 setopt LIST_TYPES
-setopt COMPLETE_IN_WORD
+setopt COMPLETE_IN_WORD # allow completion from within a word/phrase
 
 # URL magic
 autoload -U url-quote-magic
