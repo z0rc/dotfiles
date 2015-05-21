@@ -332,6 +332,9 @@ mongo() { command mongo "$@" --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacke
 # Privatepaste uploader
 ppaste() { python ~/.dotfiles/privatepaste.py "$@" }
 
+# Enable "k" plugin
+source ~/.dotfiles/k/k.sh
+
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
