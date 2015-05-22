@@ -18,6 +18,7 @@ export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
 alias quilt="quilt --quiltrc ~/.dotfiles/quiltrc"
 alias tmux="tmux -f ~/.dotfiles/tmux.conf"
+alias stmux="tmux new-session 'sudo -i'"
 
 # Keep SSH_AUTH_SOCK valid across several attachments to the remote tmux session
 if [[ `whoami` != root ]]; then
