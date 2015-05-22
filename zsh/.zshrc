@@ -280,9 +280,9 @@ man_glob () {
 compctl -K man_glob man
 
 # Make less more friendly
-if [[ -x /usr/bin/lesspipe ]]; then
-    export LESSOPEN="| /usr/bin/lesspipe %s"
-    export LESSCLOSE="/usr/bin/lesspipe %s %s"
+if type -f lesspipe &> /dev/null; then
+    export LESSOPEN="| lesspipe %s"
+    export LESSCLOSE="lesspipe %s %s"
 fi
 export LESS="-R"
 
@@ -296,7 +296,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 # Enable color support of ls
-if which dircolors 2>&1 >/dev/null; then
+if type -f dircolors &> /dev/null; then
     eval `dircolors ~/.dotfiles/dircolors-solarized/dircolors.256dark`
     alias ls="ls --color=auto -F -X"
     alias dir="dir --color=auto"
@@ -304,12 +304,12 @@ if which dircolors 2>&1 >/dev/null; then
 fi
 
 # More colors
-if [[ -x /usr/bin/grc ]]; then
+if type -f grc &> /dev/null; then
     alias ping="grc --colour=on ping"
     alias traceroute="grc --colour=on traceroute"
     alias netstat="grc --colour=on netstat"
 fi
-if [[ -x /usr/bin/colordiff ]]; then
+if type -f colordiff &> /dev/null; then
     alias diff="colordiff -Naur"
 fi
 
@@ -360,7 +360,7 @@ if [[ `whoami` = root ]] && [[ -n "$SSH_CLIENT" ]] && [[ -n "$SUDO_USER" ]]; the
 fi
 
 # Allow root to use my DISPLAY
-if [[ -n "$DISPLAY" ]] && \which xhost 2>&1 >/dev/null; then
+if [[ -n "$DISPLAY" ]] && type -f xhost &> /dev/null; then
     xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
@@ -374,7 +374,7 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 [[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}" history-substring-search-down
 
 # Attach to a tmux session, if there's any (and only of we are running interactively)
-if which tmux 2>&1 >/dev/null && [[ $- = *i* ]] && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux; then
+if type -f tmux &> /dev/null && [[ $- = *i* ]] && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux; then
     tmux attach
 fi
 
