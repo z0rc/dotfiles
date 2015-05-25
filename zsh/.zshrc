@@ -367,6 +367,14 @@ fi
 # Highlighting plugin
 source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Autosuggestions plugin
+source ~/.dotfiles/zsh-autosuggestions/autosuggestions.zsh
+AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+
 # History substring search plugin
 source ~/.dotfiles/zsh-history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'

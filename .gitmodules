@@ -62,3 +62,6 @@
 [submodule "k"]
 	path = k
 	url = https://github.com/supercrabtree/k.git
+[submodule "zsh-autosuggestions"]
+	path = zsh-autosuggestions
+	url = https://github.com/tarruda/zsh-autosuggestions.git
