@@ -8,6 +8,9 @@ setopt SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS # trim multiple insgnificant blanks in history
 setopt HIST_IGNORE_SPACE # don’t store lines starting with space
 
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+
 # Create a zkbd compatible hash
 typeset -A key
 
@@ -31,9 +34,6 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
-
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
 
 # General configuration
 setopt EXTENDED_GLOB
