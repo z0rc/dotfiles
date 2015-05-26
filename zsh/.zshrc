@@ -32,19 +32,6 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
 
-# Finally, make sure the terminal is in application mode, when zle is
-# active. Only then are the values from $terminfo valid.
-if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-    function zle-line-init () {
-        printf '%s' "${terminfo[smkx]}"
-    }
-    function zle-line-finish () {
-        printf '%s' "${terminfo[rmkx]}"
-    }
-    zle -N zle-line-init
-    zle -N zle-line-finish
-fi
-
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
@@ -367,19 +354,29 @@ fi
 # Highlighting plugin
 source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Autosuggestions plugin
-source ~/.dotfiles/zsh-autosuggestions/autosuggestions.zsh
-AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
-
 # History substring search plugin
 source ~/.dotfiles/zsh-history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 [[ -n "${key[Up]}"   ]]  && bindkey  "${key[Up]}"   history-substring-search-up
 [[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}" history-substring-search-down
+
+# Autosuggestions plugin
+source ~/.dotfiles/zsh-autosuggestions/autosuggestions.zsh
+AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+
+# Make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid. And also activate autosuggestions.
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    function zle-line-init () {
+        printf '%s' "${terminfo[smkx]}"
+        zle autosuggest-start
+    }
+    function zle-line-finish () {
+        printf '%s' "${terminfo[rmkx]}"
+    }
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
 
 # Attach to a tmux session, if there's any (and only of we are running interactively)
 if type -f tmux &> /dev/null && [[ $- = *i* ]] && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux; then
