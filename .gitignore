@@ -3,7 +3,7 @@
 vim/spell/*.add*
 vim/.netrwhist*
 vim/autoload/getopts/*.cache
-vim/.viminfo
+vim/.viminfo*
 
 zsh/history
 zsh/zcompdump
