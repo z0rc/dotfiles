@@ -73,19 +73,15 @@ zstyle ':vcs_info:*' unstagedstr '±'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:*' enable git svn bzr hg cvs
+zstyle ':vcs_info:*' formats '[%b%c%u]'
 
 # Indicate that shell is running under Midnight Commander
 _indicate_mc_precmd () {
     [[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=
 }
 
-# Further vcs_info tweaks and actual loading
-_vcs_tweak_precmd () {
-    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-        zstyle ':vcs_info:*' formats '[%b%c%u]'
-    else
-        zstyle ':vcs_info:*' formats '[%b%c%u¿]'
-    fi
+# vcs_info invocation
+_indicate_vcs_precmd () {
     vcs_info
     psvar[2]="$vcs_info_msg_0_"
 }
@@ -107,7 +103,7 @@ _indicate_venv_precmd() {
     fi
 }
 
-precmd_functions+=(_indicate_mc_precmd _vcs_tweak_precmd _indicate_venv_precmd)
+precmd_functions+=(_indicate_mc_precmd _indicate_vcs_precmd _indicate_venv_precmd)
 
 # Indicate SSH session in prompt and window title
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
