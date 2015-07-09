@@ -342,8 +342,8 @@ if [[ `whoami` = root ]] && [[ -n "$SSH_CLIENT" ]] && [[ -n "$SUDO_USER" ]] && [
     echo $cred | xargs -n 3 xauth add
 fi
 
-# Allow root to use my DISPLAY
-if [[ -n "$DISPLAY" ]] && type -f xhost &> /dev/null; then
+# Allow root to use my DISPLAY (only on linux for now)
+if [[ -n "$DISPLAY" ]] && [[ `uname -o` != "Darwin" ]] && type -f xhost &> /dev/null; then
     xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
