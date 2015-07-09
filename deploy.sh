@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Get out current path
-SCRIPT_DIR="${0:a:h}"
+SCRIPT_DIR="${0:A:h}"
 cd $SCRIPT_DIR
 
 # Make sure submodules are installed
