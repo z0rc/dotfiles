@@ -1,7 +1,7 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 # Get out current path
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
 cd $SCRIPT_DIR
 
 # Make sure submodules are installed
