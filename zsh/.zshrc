@@ -63,7 +63,7 @@ zsh-mime-setup
 # Rehash on software upgrade
 autoload -U add-zsh-hook
 TRAPUSR1() { rehash };
-_install_rehash_precmd() { [[ $history[$[ HISTCMD -1 ]] == *(apt-get|aptitude|pip|dpkg|yum|rpm)* ]] && killall -u $USER -USR1 zsh }
+_install_rehash_precmd() { [[ $history[$[ HISTCMD -1 ]] == *(apt-get|aptitude|pip|dpkg|yum|rpm|brew)* ]] && killall -u $USER -USR1 zsh }
 add-zsh-hook precmd _install_rehash_precmd
 
 # Tweaking vcs_info before load
