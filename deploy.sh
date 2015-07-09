@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Get out current path
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
+SCRIPT_DIR="${0:a:h}"
 cd $SCRIPT_DIR
 
 # Make sure submodules are installed
