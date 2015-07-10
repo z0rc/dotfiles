@@ -40,6 +40,7 @@ set fileformats=unix,dos
 set nowrap
 set ttyfast
 set clipboard=unnamedplus
+set backspace=indent,eol,start
 
 set mouse=a
 
