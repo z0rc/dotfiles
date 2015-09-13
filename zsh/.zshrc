@@ -172,13 +172,11 @@ bindkey . dot
 
 # Use multithreaded archivers if possible
 if [[ -x /usr/bin/pigz ]]; then
-    function gzip () { pigz $@ }
-    export -f gzip > /dev/null
+    function gzip () { command pigz $@ }
 fi
 
 if [[ -x /usr/bin/pbzip2 ]]; then
-    function bzip2 () { pbzip2 $@ }
-    export -f bzip2 > /dev/null
+    function bzip2 () { command pbzip2 $@ }
 fi
 
 # Print apt history
