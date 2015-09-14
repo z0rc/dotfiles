@@ -171,11 +171,11 @@ zle -N dot
 bindkey . dot
 
 # Use multithreaded archivers if possible
-if [[ -x /usr/bin/pigz ]]; then
+if type -f pigz &> /dev/null; then
     function gzip () { command pigz $@ }
 fi
 
-if [[ -x /usr/bin/pbzip2 ]]; then
+if type -f pbzip2 &> /dev/null; then
     function bzip2 () { command pbzip2 $@ }
 fi
 
