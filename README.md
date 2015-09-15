@@ -1,7 +1,7 @@
 # dotfiles
 There are many like them, but these one are mine.
 
-This repostory holds conguration for most common tools I use in shell. No graphical stuff, usable both on servers and personal workstations. Battle tested on various Linux distributions including Debian, Ubuntu, CentOS and others. Probably will be a bit glitchy on BSD/OSX due to assumption that GNU coreutils are avaliable under regular names. Will try to fix this later.
+This repostory holds conguration for most common tools I use in shell. No graphical stuff, usable both on servers and personal workstations. Battle tested on various Linux distributions including Debian, Ubuntu, CentOS and OSX. But with BSD/OSX it requires to have GNU coreutils to be avaliable under regular names (without `g` prefix).
 
 I'm a big fan of [XDG Base Directory Specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) and organize my dotfiles in a way that they don't clutter the `$HOME`. I was able to reduce files required to be in `$HOME` to single `.zshenv`, everything else is in `.config` or launched via aliases.
 
