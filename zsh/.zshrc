@@ -341,7 +341,7 @@ if [[ `whoami` = root ]] && [[ -n "$SSH_CLIENT" ]] && [[ -n "$SUDO_USER" ]] && [
 fi
 
 # Allow root to use my DISPLAY (only on linux for now)
-if [[ -n "$DISPLAY" ]] && [[ `uname -o` != "Darwin" ]] && type -f xhost &> /dev/null; then
+if [[ -n "$DISPLAY" ]] && [[ `uname -s` != "Darwin" ]] && type -f xhost &> /dev/null; then
     xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
