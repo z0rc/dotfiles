@@ -9,4 +9,5 @@ zsh/history
 zsh/zcompdump
 zsh/zcompcache
 zsh/.zshenv.local
+zsh/.zprofile
 
