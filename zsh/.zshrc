@@ -46,6 +46,9 @@ setopt BRACE_CCL
 setopt NO_BEEP # do not beep on errors
 autoload -U colors && colors  # initialize colors
 
+# Additional completion rules
+fpath=(~/.dotfiles/zsh-completions/src $fpath)
+
 # Completion basic
 autoload -Uz compinit && compinit -d $ZDOTDIR/zcompdump
 setopt AUTO_PARAM_SLASH
@@ -128,9 +131,6 @@ elif [[ "$TERM" != "linux" && "$USER" != "root" ]]; then
 elif [[ "$TERM" != "linux" && "$USER" = "root" ]]; then
     export MC_SKIN=modarin256root-defbg
 fi
-
-# Additional completion rules
-fpath=(~/.dotfiles/zsh-completions/src $fpath)
 
 # List all directories leading up to a filename; this is useful to see
 # if some permissions are blocking access to a file.
