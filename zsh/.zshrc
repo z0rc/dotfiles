@@ -372,8 +372,8 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-finish
 fi
 
-# Attach to a tmux session, if there's any (and only of we are running interactively)
-if type -f tmux &> /dev/null && [[ $- = *i* ]] && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux; then
+# Attach to a tmux session, if there's any. Do this only for remote SSH
+# sessions, don't mess local tmux sessions.
+if type -f tmux &> /dev/null && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux && [[ -n "$SSH_TTY" ]]; then
     tmux attach
 fi
-
