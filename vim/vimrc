@@ -102,12 +102,6 @@ au InsertLeave * call InsertLeaveActions()
 " to handle exiting insert mode via a control-C
 inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
 
-" default the statusline to green when entering
-hi statusline ctermbg=green ctermfg=black
-set statusline=%t\ %y%m%r[%{&fileencoding}]%<[%{strftime(\"%d.%m.%y\",getftime(expand(\"%:p\")))}]%{fugitive#statusline()}%k%=%-14.(%l,%c%V%)\ %P
-set laststatus=2
-set modeline
-
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd vimenter * NERDTree
@@ -122,4 +116,3 @@ cmap w!! %!sudo tee > /dev/null %
 
 " handle crontab files properly
 autocmd filetype crontab setlocal nobackup nowritebackup
-
