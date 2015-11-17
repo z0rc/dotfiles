@@ -108,6 +108,13 @@ set statusline=%t\ %y%m%r[%{&fileencoding}]%<[%{strftime(\"%d.%m.%y\",getftime(e
 set laststatus=2
 set modeline
 
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree
+" Go to previous (last accessed) window.
+autocmd VimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 set clipboard+=unnamed
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
