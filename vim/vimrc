@@ -26,7 +26,6 @@ set shiftround
 set showmatch " show matching brackets when text indicator is over them
 set expandtab " use spaces instead of tabs
 set smarttab " be smart when using tabs
-set shiftwidth=4 " 1 tab == 4 spaces
 set tabstop=4
 set shiftwidth=4 ai
 set history=150 " keep 150 lines of command line history
