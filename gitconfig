@@ -7,3 +7,5 @@
 	ui = auto
 [credential]
 	helper = cache --socket ~/.cache/git-credential-cache/socket
+[init]
+	templatedir = /Users/igor/.config/git/template
