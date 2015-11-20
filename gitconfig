@@ -2,7 +2,7 @@
 	email = z0rc3r@gmail.com
 	name = Igor Urazov
 [push]
-	default = simple
+	default = current
 [color]
 	ui = auto
 [credential]
