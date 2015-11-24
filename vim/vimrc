@@ -104,7 +104,7 @@ inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-autocmd vimenter * NERDTree
+autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 " Go to previous (last accessed) window.
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
