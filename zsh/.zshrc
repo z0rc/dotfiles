@@ -47,7 +47,7 @@ setopt NO_BEEP # do not beep on errors
 autoload -U colors && colors  # initialize colors
 
 # Additional completion rules
-fpath=(~/.dotfiles/zsh-completions/src $fpath)
+fpath=(~/.dotfiles/zsh/completions/src $fpath)
 
 # Completion basic
 autoload -Uz compinit && compinit -d $ZDOTDIR/zcompdump
@@ -346,16 +346,16 @@ if [[ -n "$DISPLAY" ]] && [[ `uname -s` != "Darwin" ]] && type -f xhost &> /dev/
 fi
 
 # Highlighting plugin
-source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.dotfiles/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # History substring search plugin
-source ~/.dotfiles/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.dotfiles/zsh/history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 [[ -n "${key[Up]}"   ]]  && bindkey  "${key[Up]}"   history-substring-search-up
 [[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}" history-substring-search-down
 
 # Autosuggestions plugin
-source ~/.dotfiles/zsh-autosuggestions/autosuggestions.zsh
+source ~/.dotfiles/zsh/autosuggestions/autosuggestions.zsh
 AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
 
 # Make sure the terminal is in application mode, when zle is
