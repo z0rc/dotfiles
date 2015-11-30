@@ -29,8 +29,8 @@
 	path = vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
 	ignore = dirty
-[submodule "tmux-colors-solarized"]
-	path = tmux-colors-solarized
+[submodule "tmux/colors-solarized"]
+	path = tmux/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
@@ -98,3 +98,6 @@
 [submodule "vim/bundle/tmux-focus-events"]
 	path = vim/bundle/tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
+[submodule "tmux/sensible"]
+	path = tmux/sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
