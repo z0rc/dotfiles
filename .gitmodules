@@ -14,7 +14,7 @@
 	path = vim/bundle/figitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-perl"]
-	path = vim/bundle/vim-perl
+	path = vim/bundle/perl
 	url = https://github.com/vim-perl/vim-perl.git
 [submodule "vim/bundle/cbackup"]
 	path = vim/bundle/cbackup
@@ -66,7 +66,7 @@
 	path = zsh-autosuggestions
 	url = https://github.com/tarruda/zsh-autosuggestions.git
 [submodule "vim/bundle/vim-ansible-yaml"]
-	path = vim/bundle/vim-ansible-yaml
+	path = vim/bundle/ansible-yaml
 	url = https://github.com/chase/vim-ansible-yaml.git
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
@@ -81,7 +81,7 @@
 	path = vim/bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
+	path = vim/bundle/airline
 	url = https://github.com/bling/vim-airline
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
