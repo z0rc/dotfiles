@@ -33,7 +33,7 @@ set smartcase " when searching try to be smart about cases
 set si " smart indent
 set nowrap
 set ttyfast
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 set list
 set mouse=a
 set showmode
