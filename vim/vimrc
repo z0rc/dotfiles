@@ -13,7 +13,6 @@ set viminfo='1000,n~/.dotfiles/vim/.viminfo
 
 let g:backup_directory=$HOME . '/.local/share/backups'
 
-syntax on
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
@@ -25,36 +24,26 @@ set filetype=on
 set shiftround
 set showmatch " show matching brackets when text indicator is over them
 set expandtab " use spaces instead of tabs
-set smarttab " be smart when using tabs
 set tabstop=4
-set shiftwidth=4 ai
-set history=150 " keep 150 lines of command line history
-set showcmd " display incomplete commands
+set shiftwidth=4
 set incsearch " do incremental searching
 set hlsearch " highlight search results
 set ignorecase " ignore case when searching
 set smartcase " when searching try to be smart about cases
-set fileencodings=utf-8,cp1251,koi-8r,cp866
-set fileformats=unix,dos
+set si " smart indent
 set nowrap
 set ttyfast
 set clipboard=unnamedplus
-set backspace=indent,eol,start
-
+set list
 set mouse=a
+set showmode
+set number
+set cursorline
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
-set showmode
-
-set listchars=tab:<-,trail:.
-set list
-
-set number
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
-set cursorline
-set ruler " always show current position
 
 " Change cursor shape in different modes
 if exists('$TMUX')
@@ -70,46 +59,14 @@ set foldmethod=manual
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
-set wildmenu
-
-filetype plugin indent on
-set ai " auto indent
-set si " smart indent
-
+" NERDTree tuning
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Mode Indication -Prominent!
-function! InsertStatuslineColor(mode)
-    if a:mode == 'i'
-        hi statusline ctermbg=red
-        set cursorcolumn
-    elseif a:mode == 'r'
-        hi statusline ctermbg=blue
-    else
-        hi statusline ctermbg=magenta
-    endif
-endfunction
-
-function! InsertLeaveActions()
-    hi statusline ctermbg=green ctermfg=black
-    set nocursorcolumn
-endfunction
-
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * call InsertLeaveActions()
-
-" to handle exiting insert mode via a control-C
-inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
-
-" NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 " Go to previous (last accessed) window.
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-set clipboard+=unnamed
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %
