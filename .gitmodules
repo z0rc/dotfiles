@@ -104,3 +104,12 @@
 [submodule "vim/bundle/tmux"]
 	path = vim/bundle/tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
+[submodule "tmux/copycat"]
+	path = tmux/copycat
+	url = https://github.com/tmux-plugins/tmux-copycat.git
+[submodule "tmux/yank"]
+	path = tmux/yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "tmux/pain-control"]
+	path = tmux/pain-control
+	url = https://github.com/tmux-plugins/tmux-pain-control.git
