@@ -4,8 +4,8 @@
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "vim-pathogen"]
-	path = vim-pathogen
+[submodule "vim/pathogen"]
+	path = vim/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
