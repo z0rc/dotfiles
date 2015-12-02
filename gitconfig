@@ -3,6 +3,8 @@
 	name = Igor Urazov
 [push]
 	default = current
+[branch]
+	autosetuprebase = always
 [color]
 	ui = auto
 [credential]
