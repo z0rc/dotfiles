@@ -25,6 +25,7 @@ mkdir -p .local/share
 ln -sf .dotfiles/zsh/.zshenv .zshenv
 touch .dotfiles/zsh/.zshenv.local
 ln -sf ../../.dotfiles/gitconfig .config/git/config
+ln -sf ../../.dotfiles/gitattributes .config/git/attributes
 ln -sf ../../.dotfiles/mc.ini .config/mc/ini
 
 # Install crontab task to pull updates every midnight
