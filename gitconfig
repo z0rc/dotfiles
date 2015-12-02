@@ -7,6 +7,16 @@
 	autosetuprebase = always
 [color]
 	ui = auto
+[alias]
+	bclean = "!f() { git branch --merge ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+	fuck = "!f() { git reset HEAD --hard && git clean -dfx && git up && git bclean; }; f"
+	lg = log --graph --pretty=fuller --decorate --color --show-signature
+	ls = log --oneline --abbrev-commit --color
+	root = rev-parse --show-toplevel
+	up = pull --rebase --prune
+	amend = commit -a --amend
+	undo = reset HEAD~1 --mixed
 [credential]
 	helper = cache --socket ~/.cache/git-credential-cache/socket
 [init]
