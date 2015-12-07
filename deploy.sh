@@ -32,4 +32,3 @@ ln -sf ../../.dotfiles/mc.ini .config/mc/ini
 CRON_TASK="cd $SCRIPT_DIR && git pull >/dev/null 2>&1"
 CRON_SCHEDULE="0 0 * * * $CRON_TASK"
 cat <(fgrep -i -v "$CRON_TASK" <(crontab -l)) <(echo "$CRON_SCHEDULE") | crontab -
-
