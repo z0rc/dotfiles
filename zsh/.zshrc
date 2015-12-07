@@ -260,6 +260,24 @@ man_glob () {
 }
 compctl -K man_glob man
 
+# vpaste uploader
+vpaste () {
+    local uri="http://vpaste.net/"
+    local out
+    if [ -f "$1" ]; then
+        out=`curl -s -F "text=<$1" "$uri?$2"`
+    else
+        out=`curl -s -F 'text=<-' "$uri?$1"`
+    fi
+    echo "$out"
+    if type -f xclip &> /dev/null && [[ ! -z "$DISPLAY" ]]; then
+        echo -n "$out" | xclip -i -selection primary
+        echo -n "$out" | xclip -i -selection clipboard
+    elif type -f pbcopy &> /dev/null; then
+        echo -n "$out" | pbcopy
+    fi
+}
+
 # Make less more friendly
 if type -f lesspipe &> /dev/null; then
     export LESSOPEN="| lesspipe %s"
@@ -309,9 +327,6 @@ alias mysqltuner="~/.dotfiles/MySQLTuner-perl/mysqltuner.pl"
 
 # Enable mongo-hacker without symlink in home
 mongo() { command mongo "$@" --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacker.js; }
-
-# Privatepaste uploader
-ppaste() { python ~/.dotfiles/privatepaste.py "$@" }
 
 # Enable "k" plugin
 source ~/.dotfiles/k/k.sh
