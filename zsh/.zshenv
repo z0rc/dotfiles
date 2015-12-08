@@ -1,5 +1,13 @@
 ZDOTDIR="$HOME/.dotfiles/zsh"
 
+# Force $path to have unique values only
+typeset -Ug path
+
+# Disable global zsh configuration on OSX
+if [[ "$OSTYPE" == darwin* ]]; then
+    unsetopt GLOBAL_RCS
+fi
+
 skip_global_compinit=1
 
 # Exports
@@ -33,4 +41,3 @@ fi
 if [[ -f "$ZDOTDIR"/.zshenv.local ]]; then
     source "$ZDOTDIR"/.zshenv.local
 fi
-
