@@ -116,3 +116,6 @@
 [submodule "vim/bundle/dash"]
 	path = vim/bundle/dash
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
