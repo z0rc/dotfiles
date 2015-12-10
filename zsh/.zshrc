@@ -360,6 +360,11 @@ if [[ -n "$DISPLAY" ]] && [[ `uname -s` != "Darwin" ]] && type -f xhost &> /dev/
     xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
+# Source local zshrc
+if [[ -f "$ZDOTDIR/.zshrc.local" ]]; then
+    source "$ZDOTDIR/.zshrc.local"
+fi
+
 # Highlighting plugin
 source ~/.dotfiles/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 
