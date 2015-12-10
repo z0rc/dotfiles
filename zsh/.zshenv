@@ -38,6 +38,6 @@ if [[ `whoami` != root ]]; then
 fi
 
 # Include local zshenv
-if [[ -f "$ZDOTDIR"/.zshenv.local ]]; then
-    source "$ZDOTDIR"/.zshenv.local
+if [[ -f "$ZDOTDIR/.zshenv.local" ]]; then
+    source "$ZDOTDIR/.zshenv.local"
 fi
