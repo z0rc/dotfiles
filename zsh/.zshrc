@@ -365,6 +365,9 @@ if [[ -f "$ZDOTDIR/.zshrc.local" ]]; then
     source "$ZDOTDIR/.zshrc.local"
 fi
 
+# Force $path to have unique values only
+typeset -U path
+
 # Highlighting plugin
 source ~/.dotfiles/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 
