@@ -34,7 +34,7 @@ set si " smart indent
 set nowrap
 set ttyfast
 set clipboard=unnamed,unnamedplus
-set list
+set list listchars=tab:>-,trail:·,extends:>,precedes:<
 set mouse=a
 set showmode
 set number
