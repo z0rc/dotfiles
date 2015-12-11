@@ -27,7 +27,7 @@ touch .dotfiles/zsh/.zshenv.local
 ln -sf ../../.dotfiles/gitconfig .config/git/config
 ln -sf ../../.dotfiles/gitattributes .config/git/attributes
 ln -sf ../../.dotfiles/mc.ini .config/mc/ini
-ln -sf ../../.dotfiles/htoprc .config/htoprc
+ln -sf ../.dotfiles/htoprc .config/htoprc
 
 # Install crontab task to pull updates every midnight
 CRON_TASK="cd $SCRIPT_DIR && git pull >/dev/null 2>&1"
