@@ -283,7 +283,7 @@ if type -f lesspipe &> /dev/null; then
     export LESSOPEN="| lesspipe %s"
     export LESSCLOSE="lesspipe %s %s"
 fi
-export LESS="-R"
+export LESS="-RiwM"
 
 # Color man
 export LESS_TERMCAP_mb=$'\E[01;31m'
