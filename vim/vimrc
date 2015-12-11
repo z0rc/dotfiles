@@ -59,6 +59,10 @@ set foldmethod=manual
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
+" enable proper space and cr expansion inside brackets
+let delimitMate_expand_cr=1
+let delimitMate_expand_space=1
+
 " NERDTree tuning
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
