@@ -22,7 +22,7 @@ export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
 export WINEPREFIX=$XDG_DATA_HOME/wine
 export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker/machine
 export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
-export HTOPRC=$XDG_CONFIG_HOME/htoprc
+export HTOPRC=$XDG_CONFIG_HOME/htop/htoprc
 
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
