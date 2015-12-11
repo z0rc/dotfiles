@@ -47,7 +47,7 @@ setopt NO_BEEP # do not beep on errors
 autoload -U colors && colors  # initialize colors
 
 # Additional completion rules
-fpath=(~/.dotfiles/zsh/completions/src $fpath)
+fpath=($fpath ~/.dotfiles/zsh/completions/src)
 
 # Completion basic
 autoload -Uz compinit && compinit -d $ZDOTDIR/zcompdump
