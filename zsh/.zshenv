@@ -18,7 +18,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export LESSHISTFILE=$XDG_DATA_HOME/lesshst
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem/specs"
+export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
+export WINEPREFIX=$XDG_DATA_HOME/wine
+export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker/machine
 
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
