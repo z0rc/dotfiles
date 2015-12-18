@@ -23,14 +23,10 @@ colorscheme solarized
 set filetype=on
 set shiftround
 set showmatch " show matching brackets when text indicator is over them
-set expandtab " use spaces instead of tabs
-set tabstop=4
-set shiftwidth=4
 set incsearch " do incremental searching
 set hlsearch " highlight search results
 set ignorecase " ignore case when searching
 set smartcase " when searching try to be smart about cases
-set si " smart indent
 set nowrap
 set ttyfast
 set clipboard=unnamed,unnamedplus
