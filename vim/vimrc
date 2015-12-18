@@ -58,6 +58,9 @@ endif
 let delimitMate_expand_cr=1
 let delimitMate_expand_space=1
 
+" don't conceal quotes in json
+let g:vim_json_syntax_conceal=0
+
 " NERDTree tuning
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
