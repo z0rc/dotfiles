@@ -131,3 +131,6 @@
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = https://github.com/rking/ag.vim.git
+[submodule "vim/bundle/capslock"]
+	path = vim/bundle/capslock
+	url = https://github.com/tpope/vim-capslock.git
