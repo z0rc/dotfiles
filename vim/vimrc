@@ -39,7 +39,8 @@ set cursorline
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F4> :NumbersOnOff<CR>
+nnoremap <F4> :Dash<CR>
+nnoremap <F5> :Ag<CR>
 
 " Change cursor shape in different modes
 if exists('$TMUX')
