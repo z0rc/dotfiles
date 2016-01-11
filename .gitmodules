@@ -134,3 +134,6 @@
 [submodule "vim/bundle/capslock"]
 	path = vim/bundle/capslock
 	url = https://github.com/tpope/vim-capslock.git
+[submodule "vim/bundle/expand-region"]
+	path = vim/bundle/expand-region
+	url = https://github.com/terryma/vim-expand-region.git
