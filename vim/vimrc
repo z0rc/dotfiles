@@ -30,6 +30,7 @@ set ignorecase " ignore case when searching
 set smartcase " when searching try to be smart about cases
 set nowrap
 set ttyfast
+set lazyredraw
 set clipboard=unnamed,unnamedplus
 set list listchars=tab:>-,trail:·,extends:>,precedes:<
 set mouse=a
