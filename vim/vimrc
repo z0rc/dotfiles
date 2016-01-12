@@ -38,11 +38,13 @@ set showmode
 set number
 set cursorline
 
-nnoremap <F2> :set invpaste paste?<CR>
+" hotkeys
 set pastetoggle=<F2>
+nnoremap <F2> :set invpaste paste?<CR>
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :Dash<CR>
 nnoremap <F5> :Ag<CR>
+nnoremap <F6> :NERDTreeToggle<CR>
 
 " Change cursor shape in different modes
 if exists('$TMUX')
@@ -66,7 +68,6 @@ let g:airline#extensions#tabline#enabled=1
 " NERDTree tuning
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-map <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 " Go to previous (last accessed) window.
 autocmd VimEnter * wincmd p
