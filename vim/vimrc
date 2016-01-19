@@ -38,6 +38,11 @@ set showmode
 set number
 set cursorline
 
+" scrolling
+set scrolloff=8 "start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
 " hotkeys
 set pastetoggle=<F2>
 nnoremap <F2> :set invpaste paste?<CR>
