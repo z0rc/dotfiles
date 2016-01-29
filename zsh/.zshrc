@@ -379,19 +379,17 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 
 # Autosuggestions plugin
 source ~/.dotfiles/zsh/autosuggestions/autosuggestions.zsh
-AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
 
 # Make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid. And also activate autosuggestions.
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     function zle-line-init () {
         printf '%s' "${terminfo[smkx]}"
-        zle autosuggest-start
     }
     function zle-line-finish () {
         printf '%s' "${terminfo[rmkx]}"
     }
-    zle -N zle-line-init
+    zle -N zle-line-init autosuggest_start
     zle -N zle-line-finish
 fi
 
