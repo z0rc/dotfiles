@@ -12,8 +12,8 @@ setopt HIST_IGNORE_SPACE # don’t store lines starting with space
 bindkey -e
 
 # Create a zkbd compatible hash
+zmodload zsh/terminfo
 typeset -A key
-
 key[Home]=${terminfo[khome]}
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
@@ -379,19 +379,11 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 
 # Autosuggestions plugin
 source ~/.dotfiles/zsh/autosuggestions/autosuggestions.zsh
-
-# Make sure the terminal is in application mode, when zle is
-# active. Only then are the values from $terminfo valid. And also activate autosuggestions.
-if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-    function zle-line-init () {
-        printf '%s' "${terminfo[smkx]}"
-    }
-    function zle-line-finish () {
-        printf '%s' "${terminfo[rmkx]}"
-    }
-    zle -N zle-line-init autosuggest_start
-    zle -N zle-line-finish
-fi
+# Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
+# Remove *-line-or-history widgets from list of widgets that clear the autosuggestion to avoid conflict with history-substring-search-* widgets
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}")
+autosuggest_start
 
 # Attach to a tmux session, if there's any. Do this only for remote SSH
 # sessions, don't mess local tmux sessions.
