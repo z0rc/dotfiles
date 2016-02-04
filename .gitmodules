@@ -140,3 +140,6 @@
 [submodule "vim/bundle/airline-themes"]
 	path = vim/bundle/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/hashicorp-tools"]
+	path = vim/bundle/hashicorp-tools
+	url = https://github.com/hashivim/vim-hashicorp-tools.git
