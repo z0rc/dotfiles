@@ -47,9 +47,13 @@ set sidescroll=1
 set pastetoggle=<F2>
 nnoremap <F2> :set invpaste paste?<CR>
 nnoremap <F3> :NumbersToggle<CR>
+inoremap <F3> <ESC>:NumbersToggle<CR>
 nnoremap <F4> :Dash<CR>
+inoremap <F4> <ESC>:Dash<CR>
 nnoremap <F5> :Ag<CR>
+inoremap <F5> <ESC>:Ag<CR>
 nnoremap <F6> :NERDTreeToggle<CR>
+inoremap <F6> <ESC>:NERDTreeToggle<CR>
 
 " Change cursor shape in different modes
 if exists('$TMUX')
