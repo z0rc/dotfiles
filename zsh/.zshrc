@@ -377,7 +377,7 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 [[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}" history-substring-search-down
 
 # Autosuggestions plugin
-source ~/.dotfiles/zsh/autosuggestions/autosuggestions.zsh
+source ~/.dotfiles/zsh/autosuggestions/dist/autosuggestions.zsh
 # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 # Remove *-line-or-history widgets from list of widgets that clear the autosuggestion to avoid conflict with history-substring-search-* widgets
