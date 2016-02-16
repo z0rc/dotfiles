@@ -21,3 +21,22 @@
 	helper = cache --socket ~/.cache/git-credential-cache/socket
 [init]
 	templatedir = ~/.config/git/template
+[pager]
+	diff = "~/.dotfiles/diff-so-fancy/diff-so-fancy | less --tabs=1,5 -RFX"
+	show = "~/.dotfiles/diff-so-fancy/diff-so-fancy | less --tabs=1,5 -RFX"
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
