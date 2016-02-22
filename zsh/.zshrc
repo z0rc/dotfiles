@@ -11,8 +11,21 @@ setopt HIST_IGNORE_SPACE # don’t store lines starting with space
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-# Create a zkbd compatible hash
+# Make sure that the terminal is in application mode when zle is active, since
+# only then values from $terminfo are valid
 zmodload zsh/terminfo
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    function zle-line-init() {
+        echoti smkx
+    }
+    function zle-line-finish() {
+        echoti rmkx
+    }
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
+
+# Create a zkbd compatible hash
 typeset -A key
 key[Home]=${terminfo[khome]}
 key[End]=${terminfo[kend]}
@@ -376,10 +389,8 @@ source ~/.dotfiles/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 # History substring search plugin
 source ~/.dotfiles/zsh/history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
-#[[ -n "${key[Up]}"   ]]  && bindkey  "${key[Up]}"   history-substring-search-up
-#[[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}" history-substring-search-down
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey "${key[Up]}"   history-substring-search-up
+bindkey "${key[Down]}" history-substring-search-down
 
 # Autosuggestions plugin
 source ~/.dotfiles/zsh/autosuggestions/zsh-autosuggestions.zsh
