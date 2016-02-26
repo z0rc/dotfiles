@@ -64,7 +64,7 @@
 	url = https://github.com/supercrabtree/k.git
 [submodule "zsh/autosuggestions"]
 	path = zsh/autosuggestions
-	url = https://github.com/tarruda/zsh-autosuggestions.git
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vim/bundle/ansible-yaml"]
 	path = vim/bundle/ansible-yaml
 	url = https://github.com/chase/vim-ansible-yaml.git
