@@ -146,3 +146,9 @@
 [submodule "diff-so-fancy"]
 	path = diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule "zsh/zaw"]
+	path = zsh/zaw
+	url = https://github.com/zsh-users/zaw.git
+[submodule "zsh/cdr"]
+	path = zsh/cdr
+	url = https://github.com/willghatch/zsh-cdr.git

@@ -386,6 +386,13 @@ typeset -U path
 # Highlighting plugin
 source ~/.dotfiles/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# cdr plugin
+source ~/.dotfiles/zsh/cdr/cdr.plugin.zsh
+
+# zaw plugin
+source ~/.dotfiles/zsh/zaw/zaw.zsh
+bindkey '^R' zaw-history
+
 # History substring search plugin
 source ~/.dotfiles/zsh/history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
