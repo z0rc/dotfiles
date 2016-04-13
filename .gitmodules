@@ -136,7 +136,7 @@
 	url = https://github.com/tpope/vim-capslock.git
 [submodule "vim/bundle/expand-region"]
 	path = vim/bundle/expand-region
-	url = https://github.com/terryma/vim-expand-region.git
+	url = https://github.com/landock/vim-expand-region.git
 [submodule "vim/bundle/airline-themes"]
 	path = vim/bundle/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
