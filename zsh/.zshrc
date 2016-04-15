@@ -80,6 +80,10 @@ zle -N self-insert url-quote-magic
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
+# Bracketed paste magic
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+
 # Rehash on software upgrade
 autoload -U add-zsh-hook
 TRAPUSR1() { rehash };
@@ -408,6 +412,8 @@ bindkey "${key[Down]}" history-substring-search-down
 source ~/.dotfiles/zsh/autosuggestions/zsh-autosuggestions.zsh
 # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
+# Compatability with bracketed-paste-magic
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
 # Attach to a tmux session, if there's any. Do this only for remote SSH
 # sessions, don't mess local tmux sessions.
