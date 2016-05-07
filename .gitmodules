@@ -152,3 +152,9 @@
 [submodule "zsh/cdr"]
 	path = zsh/cdr
 	url = https://github.com/willghatch/zsh-cdr.git
+[submodule "pyenv"]
+	path = pyenv
+	url = https://github.com/yyuu/pyenv.git
+[submodule "pyenv-virtualenv"]
+	path = pyenv-virtualenv
+	url = https://github.com/yyuu/pyenv-virtualenv.git

@@ -19,7 +19,7 @@ make mongo_hacker.js
 cd $SCRIPT_DIR/..
 mkdir -p .config/{git,mc,htop}
 mkdir -p .cache
-mkdir -p .local/share
+mkdir -p .local/share/pyenv/plugins
 
 # Link config files
 ln -sf .dotfiles/zsh/.zshenv .zshenv
@@ -28,6 +28,10 @@ ln -sf ../../.dotfiles/gitconfig .config/git/config
 ln -sf ../../.dotfiles/gitattributes .config/git/attributes
 ln -sf ../../.dotfiles/mc.ini .config/mc/ini
 ln -sf ../../.dotfiles/htoprc .config/htop/htoprc
+
+# Link pyenv plugins to $PYENV_ROOT
+ln -sf ../../../../.dotfiles/pyenv/plugins/python-build .local/share/pyenv/plugins/python-build
+ln -sf ../../../../.dotfiles/pyenv-virtualenv .local/share/pyenv/plugins/pyenv-virtualenv
 
 # Install crontab task to pull updates every midnight
 CRON_TASK="cd $SCRIPT_DIR && git pull >/dev/null 2>&1"

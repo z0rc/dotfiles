@@ -24,6 +24,9 @@ export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker/machine
 export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
 export HTOPRC=$XDG_CONFIG_HOME/htop/htoprc
 
+# pyenv environment
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
 alias quilt="quilt --quiltrc ~/.dotfiles/quiltrc"

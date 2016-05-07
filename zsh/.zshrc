@@ -349,6 +349,12 @@ alias mysqltuner="~/.dotfiles/MySQLTuner-perl/mysqltuner.pl"
 # Enable diff-so-fancy
 alias diff-so-fancy="~/.dotfiles/diff-so-fancy/diff-so-fancy"
 
+# Enable pyenv
+PATH="$HOME/.dotfiles/pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+source ~/.dotfiles/pyenv/completions/pyenv.zsh
+
 # Enable mongo-hacker without symlink in home
 mongo() { command mongo "$@" --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacker.js; }
 
