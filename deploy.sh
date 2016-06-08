@@ -31,11 +31,11 @@ ln -sf ../../.dotfiles/mc.ini .config/mc/ini
 ln -sf ../../.dotfiles/htoprc .config/htop/htoprc
 
 # Link pyenv plugins to $PYENV_ROOT
-ln -sf ../../../../.dotfiles/pyenv/plugins/python-build .local/share/pyenv/plugins/python-build
-ln -sf ../../../../.dotfiles/pyenv-virtualenv .local/share/pyenv/plugins/pyenv-virtualenv
+ln -snf ../../../../.dotfiles/pyenv/plugins/python-build .local/share/pyenv/plugins/python-build
+ln -snf ../../../../.dotfiles/pyenv-virtualenv .local/share/pyenv/plugins/pyenv-virtualenv
 
 # Link ruby-build to $RBENV_ROOT
-ln -sf ../../../../.dotfiles/ruby-build .local/share/rbenv/plugins/ruby-build
+ln -snf ../../../../.dotfiles/ruby-build .local/share/rbenv/plugins/ruby-build
 
 # Install crontab task to pull updates every midnight
 CRON_TASK="cd $SCRIPT_DIR && git pull >/dev/null 2>&1"
