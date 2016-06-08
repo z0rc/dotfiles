@@ -9,7 +9,7 @@
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/zoresvit/vim-colors-solarized.git
 [submodule "vim/bundle/figitive"]
 	path = vim/bundle/figitive
 	url = https://github.com/tpope/vim-fugitive.git
