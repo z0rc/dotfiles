@@ -20,6 +20,7 @@ cd $SCRIPT_DIR/..
 mkdir -p .config/{git,mc,htop}
 mkdir -p .cache
 mkdir -p .local/share/pyenv/plugins
+mkdir -p .local/share/rbenv/plugins
 
 # Link config files
 ln -sf .dotfiles/zsh/.zshenv .zshenv
@@ -32,6 +33,9 @@ ln -sf ../../.dotfiles/htoprc .config/htop/htoprc
 # Link pyenv plugins to $PYENV_ROOT
 ln -sf ../../../../.dotfiles/pyenv/plugins/python-build .local/share/pyenv/plugins/python-build
 ln -sf ../../../../.dotfiles/pyenv-virtualenv .local/share/pyenv/plugins/pyenv-virtualenv
+
+# Link ruby-build to $RBENV_ROOT
+ln -sf ../../../../.dotfiles/ruby-build .local/share/rbenv/plugins/ruby-build
 
 # Install crontab task to pull updates every midnight
 CRON_TASK="cd $SCRIPT_DIR && git pull >/dev/null 2>&1"

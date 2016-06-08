@@ -355,6 +355,11 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 source ~/.dotfiles/pyenv/completions/pyenv.zsh
 
+# Enable rbenv
+PATH="$HOME/.dotfiles/rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+source ~/.dotfiles/rbenv/completions/rbenv.zsh
+
 # Enable mongo-hacker without symlink in home
 mongo() { command mongo "$@" --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacker.js; }
 

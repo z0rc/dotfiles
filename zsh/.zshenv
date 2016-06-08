@@ -24,8 +24,9 @@ export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker/machine
 export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
 export HTOPRC=$XDG_CONFIG_HOME/htop/htoprc
 
-# pyenv environment
+# pyenv and rbenv roots
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
 
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
