@@ -170,6 +170,7 @@
 [submodule "vim/bundle/ruby-chef-ft"]
 	path = vim/bundle/ruby-chef-ft
 	url = https://github.com/dougireton/vim-chef.git
+	ignore = dirty
 [submodule "vim/bundle/ruby-chef"]
 	path = vim/bundle/ruby-chef
 	url = https://github.com/vadv/vim-chef.git
