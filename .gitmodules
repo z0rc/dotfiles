@@ -164,3 +164,21 @@
 [submodule "ruby-build"]
 	path = ruby-build
 	url = https://github.com/rbenv/ruby-build.git
+[submodule "vim/bundle/ruby"]
+	path = vim/bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/ruby-chef-ft"]
+	path = vim/bundle/ruby-chef-ft
+	url = https://github.com/dougireton/vim-chef.git
+[submodule "vim/bundle/ruby-chef"]
+	path = vim/bundle/ruby-chef
+	url = https://github.com/vadv/vim-chef.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/mw-utils"]
+	path = vim/bundle/mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/tlib"]
+	path = vim/bundle/tlib
+	url = https://github.com/tomtom/tlib_vim.git
