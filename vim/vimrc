@@ -1,10 +1,10 @@
 set nocompatible
 
-" set default 'runtimepath' (without ~/.vim folders)
+" Set default 'runtimepath' without ~/.vim folders
 let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
-" what is the name of the directory containing this file?
+" What is the name of the directory containing this file?
 let s:portable=expand('<sfile>:p:h')
-" add the directory to 'runtimepath'
+" Add the directory to 'runtimepath'
 let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 
 call pathogen#infect()
@@ -38,12 +38,12 @@ set showmode
 set number
 set cursorline
 
-" scrolling
+" Scrolling
 set scrolloff=8 "start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" hotkeys
+" Fn hotkeys
 set pastetoggle=<F2>
 nnoremap <F2> :set invpaste paste?<CR>
 nnoremap <F3> :NumbersToggle<CR>
@@ -57,8 +57,7 @@ inoremap <F6> <ESC>:NERDTreeTabsToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 inoremap <F7> <ESC>:TagbarToggle<CR>
 
-" I prefer to use arrows
-" Alt left/right to switch buffers. Terminal should be configured to send escape sequences for them.
+" Alt left/right to switch buffers. Terminal should be configured to send porper escape sequences
 nnoremap <ESC>b :bprev<CR>
 inoremap <ESC>b <ESC>:bprev<CR>
 nnoremap <ESC>f :bnext<CR>
@@ -80,21 +79,21 @@ else
     let &t_EI="\<Esc>]50;CursorShape=0\x7"
 endif
 
-" enable proper space and cr expansion inside brackets
+" Enable proper space and cr expansion inside brackets
 let delimitMate_expand_cr=1
 let delimitMate_expand_space=1
 
-" don't conceal quotes in json
+" Don't conceal quotes in JSON
 let g:vim_json_syntax_conceal=0
 
 " Enable airline tabline
 let g:airline#extensions#tabline#enabled=1
 
-" Tags
+" Automatic tags creation tuning
 let g:easytags_async=1
 let g:easytags_file=$XDG_CACHE_HOME . '/vim/tags'
 
-" markdown tunings
+" Markdown tuning
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_json_frontmatter=1
@@ -102,5 +101,5 @@ let g:vim_markdown_json_frontmatter=1
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %
 
-" handle crontab files properly
+" Handle crontab files properly
 autocmd filetype crontab setlocal nobackup nowritebackup
