@@ -74,13 +74,11 @@ let g:vim_json_syntax_conceal=0
 " Enable airline tabline
 let g:airline#extensions#tabline#enabled=1
 
-" NERDTree tuning
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
-" Go to previous (last accessed) window.
-autocmd VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" NERDTree auto start
+autocmd VimEnter * if &filetype !=# 'gitcommit' && &filetype !=# 'crontab' | NERDTree | endif
+" Go to previous (last accessed) window if started with some arguments
+autocmd VimEnter * if argc() | wincmd p | endif
+autocmd BufEnter * if winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree() | q | endif
 
 " markdown tunings
 let g:vim_markdown_folding_disabled = 1
