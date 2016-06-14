@@ -1,11 +1,11 @@
 set nocompatible
 
 " set default 'runtimepath' (without ~/.vim folders)
-let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
 " what is the name of the directory containing this file?
-let s:portable = expand('<sfile>:p:h')
+let s:portable=expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
-let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -64,7 +64,7 @@ inoremap <ESC>b <ESC>:bprev<CR>
 nnoremap <ESC>f :bnext<CR>
 inoremap <ESC>f <ESC>:bnext<CR>
 " Ctrl arrows to switch between splits and tmux panes
-let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_no_mappings=1
 nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-Up> :TmuxNavigateUp<cr>
@@ -73,11 +73,11 @@ nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 
 " Change cursor shape in different modes
 if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    let &t_SI="\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI="\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    let &t_SI="\<Esc>]50;CursorShape=1\x7"
+    let &t_EI="\<Esc>]50;CursorShape=0\x7"
 endif
 
 " enable proper space and cr expansion inside brackets
@@ -95,9 +95,9 @@ let g:easytags_async=1
 let g:easytags_file=$HOME . '/.cache/vim/tags'
 
 " markdown tunings
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_json_frontmatter = 1
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_json_frontmatter=1
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %
