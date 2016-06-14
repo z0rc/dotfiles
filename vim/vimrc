@@ -10,9 +10,9 @@ let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 call pathogen#infect()
 call pathogen#helptags()
 
-set viminfo='1000,n~/.dotfiles/vim/.viminfo
+set viminfo='1000,n$XDG_CACHE_HOME/vim/info
 
-let g:backup_directory=$HOME . '/.local/share/backups'
+let g:backup_directory=$XDG_DATA_HOME . '/.local/share/backups'
 
 set background=dark
 let g:solarized_termtrans=1
@@ -92,7 +92,7 @@ let g:airline#extensions#tabline#enabled=1
 
 " Tags
 let g:easytags_async=1
-let g:easytags_file=$HOME . '/.cache/vim/tags'
+let g:easytags_file=$XDG_CACHE_HOME . '/vim/tags'
 
 " markdown tunings
 let g:vim_markdown_folding_disabled=1
