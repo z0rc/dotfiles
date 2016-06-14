@@ -52,8 +52,8 @@ nnoremap <F4> :Dash<CR>
 inoremap <F4> <ESC>:Dash<CR>
 nnoremap <F5> :Ag<CR>
 inoremap <F5> <ESC>:Ag<CR>
-nnoremap <F6> :NERDTreeToggle<CR>
-inoremap <F6> <ESC>:NERDTreeToggle<CR>
+nnoremap <F6> :NERDTreeTabsToggle<CR>
+inoremap <F6> <ESC>:NERDTreeTabsToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 inoremap <F7> <ESC>:TagbarToggle<CR>
 
@@ -93,12 +93,6 @@ let g:airline#extensions#tabline#enabled=1
 " Tags
 let g:easytags_async=1
 let g:easytags_file=$HOME . '/.cache/vim/tags'
-
-" NERDTree auto start
-autocmd VimEnter * if &filetype !=# 'gitcommit' && &filetype !=# 'crontab' | NERDTree | endif
-" Go to previous (last accessed) window if started with some arguments
-autocmd VimEnter * if argc() | wincmd p | endif
-autocmd BufEnter * if winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree() | q | endif
 
 " markdown tunings
 let g:vim_markdown_folding_disabled = 1
