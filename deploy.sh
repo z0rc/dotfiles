@@ -18,7 +18,7 @@ make mongo_hacker.js
 # Create required directories
 cd $SCRIPT_DIR/..
 mkdir -p .config/{git,mc,htop}
-mkdir -p .cache
+mkdir -p .cache/vim
 mkdir -p .local/share/pyenv/plugins
 mkdir -p .local/share/rbenv/plugins
 
