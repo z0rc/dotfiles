@@ -55,6 +55,20 @@ inoremap <F5> <ESC>:Ag<CR>
 nnoremap <F6> :NERDTreeToggle<CR>
 inoremap <F6> <ESC>:NERDTreeToggle<CR>
 
+" I prefer to use arrows
+" Alt left/right to switch buffers. Terminal should be configured to send escape sequences for them.
+nnoremap <ESC>b :bprev<CR>
+inoremap <ESC>b <ESC>:bprev<CR>
+nnoremap <ESC>f :bnext<CR>
+inoremap <ESC>f <ESC>:bnext<CR>
+" Ctrl arrows to switch between splits and tmux panes
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-Up> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+
 " Change cursor shape in different modes
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
