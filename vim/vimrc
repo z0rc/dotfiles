@@ -43,6 +43,17 @@ set scrolloff=8 "start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
+" Folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+let g:SimpylFold_docstring_preview=1
+
+" Use Space to toggle folding
+nnoremap <Space> za
+vnoremap <Space> zf
+
 " Fn hotkeys
 set pastetoggle=<F2>
 nnoremap <F2> :set invpaste paste?<CR>
@@ -62,6 +73,7 @@ nnoremap <ESC>b :bprev<CR>
 inoremap <ESC>b <ESC>:bprev<CR>
 nnoremap <ESC>f :bnext<CR>
 inoremap <ESC>f <ESC>:bnext<CR>
+
 " Ctrl arrows to switch between splits and tmux panes
 let g:tmux_navigator_no_mappings=1
 nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
@@ -94,7 +106,6 @@ let g:easytags_async=1
 let g:easytags_file=$XDG_CACHE_HOME . '/vim/tags'
 
 " Markdown tuning
-let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_json_frontmatter=1
 

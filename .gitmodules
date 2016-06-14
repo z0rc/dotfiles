@@ -204,3 +204,9 @@
 [submodule "vim/bundle/nerdtree-tabs"]
 	path = vim/bundle/nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "vim/bundle/simplyfold"]
+	path = vim/bundle/simplyfold
+	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "vim/bundle/git"]
+	path = vim/bundle/git
+	url = https://github.com/tpope/vim-git.git
