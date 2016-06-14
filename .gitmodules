@@ -192,3 +192,12 @@
 [submodule "vim/bundle/tmux-navigator"]
 	path = vim/bundle/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "vim/bundle/easytag"]
+	path = vim/bundle/easytag
+	url = https://github.com/xolox/vim-easytags.git
+[submodule "vim/bundle/xolox-misc"]
+	path = vim/bundle/xolox-misc
+	url = https://github.com/xolox/vim-misc.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git

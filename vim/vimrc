@@ -54,6 +54,8 @@ nnoremap <F5> :Ag<CR>
 inoremap <F5> <ESC>:Ag<CR>
 nnoremap <F6> :NERDTreeToggle<CR>
 inoremap <F6> <ESC>:NERDTreeToggle<CR>
+nnoremap <F7> :TagbarToggle<CR>
+inoremap <F7> <ESC>:TagbarToggle<CR>
 
 " I prefer to use arrows
 " Alt left/right to switch buffers. Terminal should be configured to send escape sequences for them.
@@ -87,6 +89,10 @@ let g:vim_json_syntax_conceal=0
 
 " Enable airline tabline
 let g:airline#extensions#tabline#enabled=1
+
+" Tags
+let g:easytags_async=1
+let g:easytags_file=$HOME . '/.cache/vim/tags'
 
 " NERDTree auto start
 autocmd VimEnter * if &filetype !=# 'gitcommit' && &filetype !=# 'crontab' | NERDTree | endif
