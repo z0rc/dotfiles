@@ -213,3 +213,6 @@
 [submodule "vim/bundle/rspec"]
 	path = vim/bundle/rspec
 	url = https://github.com/keith/rspec.vim.git
+[submodule "vim/bundle/python-syntax"]
+	path = vim/bundle/python-syntax
+	url = https://github.com/hdima/python-syntax.git
