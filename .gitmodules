@@ -219,3 +219,6 @@
 [submodule "vim/bundle/ctrlp-cmdpalette"]
 	path = vim/bundle/ctrlp-cmdpalette
 	url = https://github.com/fisadev/vim-ctrlp-cmdpalette.git
+[submodule "vim/bundle/eunuch"]
+	path = vim/bundle/eunuch
+	url = https://github.com/tpope/vim-eunuch.git
