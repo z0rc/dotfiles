@@ -222,3 +222,6 @@
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim/bundle/rooter"]
+	path = vim/bundle/rooter
+	url = https://github.com/airblade/vim-rooter.git
