@@ -225,3 +225,15 @@
 [submodule "vim/bundle/rooter"]
 	path = vim/bundle/rooter
 	url = https://github.com/airblade/vim-rooter.git
+[submodule "rbenv-ctags"]
+	path = rbenv-ctags
+	url = https://github.com/tpope/rbenv-ctags.git
+[submodule "rbenv-default-gems"]
+	path = rbenv-default-gems
+	url = https://github.com/rbenv/rbenv-default-gems.git
+[submodule "vim/bundle/bundler"]
+	path = vim/bundle/bundler
+	url = https://github.com/tpope/vim-bundler.git
+[submodule "vim/bundle/rbenv"]
+	path = vim/bundle/rbenv
+	url = https://github.com/tpope/vim-rbenv.git
