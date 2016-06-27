@@ -237,3 +237,6 @@
 [submodule "vim/bundle/rbenv"]
 	path = vim/bundle/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
+[submodule "vim/bundle/groovy"]
+	path = vim/bundle/groovy
+	url = https://github.com/endSly/groovy.vim.git
