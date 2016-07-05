@@ -38,7 +38,7 @@ ln -snf ../../../../.dotfiles/pyenv-virtualenv .local/share/pyenv/plugins/pyenv-
 ln -snf ../../../../.dotfiles/ruby-build .local/share/rbenv/plugins/ruby-build
 ln -snf ../../../../.dotfiles/rbenv-ctags .local/share/rbenv/plugins/rbenv-ctags
 ln -snf ../../../../.dotfiles/rbenv-default-gems .local/share/rbenv/plugins/rbenv-default-gems
-ln -snf ../../../../.dotfiles/default-gems .local/share/rbenv/default-gems
+ln -snf ../../../.dotfiles/default-gems .local/share/rbenv/default-gems
 
 # Install crontab task to pull updates every midnight
 CRON_TASK="cd $SCRIPT_DIR && git pull >/dev/null 2>&1"
