@@ -12,7 +12,7 @@ call pathogen#helptags()
 
 set viminfo='1000,n$XDG_CACHE_HOME/vim/info
 
-let g:backup_directory=$XDG_DATA_HOME . '/.local/share/backups'
+let g:backup_directory=$XDG_DATA_HOME . '/backups'
 
 set background=dark
 let g:solarized_termtrans=1
