@@ -107,8 +107,7 @@ let g:easytags_file=$XDG_CACHE_HOME . '/vim/tags'
 let g:easytags_suppress_ctags_warning=1
 
 " Markdown tuning
-let g:vim_markdown_frontmatter=1
-let g:vim_markdown_json_frontmatter=1
+let g:markdown_fenced_languages=['html', 'python', 'bash=sh', 'sh']
 let g:vim_markdown_conceal=0
 
 " Disable autorooting, use FindRootDirectory() manually

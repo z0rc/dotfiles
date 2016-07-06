@@ -185,7 +185,7 @@
 	url = https://github.com/godlygeek/tabular.git
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
-	url = https://github.com/plasticboy/vim-markdown.git
+	url = https://github.com/tpope/vim-markdown.git
 [submodule "vim/bundle/tmux-navigator"]
 	path = vim/bundle/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
