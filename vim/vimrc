@@ -72,7 +72,7 @@ inoremap <F6> <ESC>:NERDTreeTabsToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 inoremap <F7> <ESC>:TagbarToggle<CR>
 
-" Alt left/right to switch buffers. Terminal should be configured to send porper escape sequences
+" Alt left/right to switch buffers. Terminal should be configured to send proper escape sequences
 nnoremap <ESC>b :bprev<CR>
 inoremap <ESC>b <ESC>:bprev<CR>
 nnoremap <ESC>f :bnext<CR>
