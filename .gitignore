@@ -5,9 +5,6 @@ vim/.netrwhist*
 vim/autoload/getopts/*.cache
 vim/.viminfo*
 
-zsh/history
-zsh/zcompdump
-zsh/zcompcache
 zsh/.zshenv.local
 zsh/.zshrc.local
 zsh/.zprofile

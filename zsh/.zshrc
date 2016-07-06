@@ -1,5 +1,5 @@
 # History configuration
-HISTFILE=$ZDOTDIR/history
+HISTFILE="$XDG_DATA_HOME/zsh/history"
 HISTSIZE=2000
 SAVEHIST=2000
 setopt HIST_IGNORE_ALL_DUPS # remove all earlier duplicate lines
@@ -66,7 +66,7 @@ autoload -U colors && colors  # initialize colors
 fpath=($fpath ~/.dotfiles/zsh/completions/src)
 
 # Completion basic
-autoload -Uz compinit && compinit -d $ZDOTDIR/zcompdump
+autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zsh/compdump"
 setopt AUTO_PARAM_SLASH
 setopt LIST_TYPES
 setopt HASH_LIST_ALL # whenever a command completion is attempted, make sure the entire command path is hashed first
@@ -381,7 +381,7 @@ zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character t
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
-zstyle ':completion:*' cache-path $ZDOTDIR/zcompcache
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/compcache"
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[cyan]=$color[red]"
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion::complete:*' use-cache true
@@ -411,6 +411,7 @@ source ~/.dotfiles/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # cdr plugin
 source ~/.dotfiles/zsh/cdr/cdr.plugin.zsh
+ZSH_CDR_DIR=$XDG_CACHE_DIR/zsh
 
 # zaw plugin
 source ~/.dotfiles/zsh/zaw/zaw.zsh
