@@ -341,6 +341,11 @@ alias -s log=less
 alias df="df -Th"
 alias du="du -hc"
 
+# iTerm2 integration
+if [[ "$TERM_PROGRAM" = "iTerm.app" ]]; then
+    source ~/.dotfiles/zsh/iterm2_integration.zsh
+fi
+
 # Make spark availiable withoud adding it to PATH
 alias spark="~/.dotfiles/spark/spark"
 
