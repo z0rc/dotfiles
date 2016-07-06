@@ -95,9 +95,6 @@
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/01sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "vim/bundle/tmux-focus-events"]
-	path = vim/bundle/tmux-focus-events
-	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
 [submodule "tmux/sensible"]
 	path = tmux/sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
@@ -240,3 +237,6 @@
 [submodule "vim/bundle/groovy"]
 	path = vim/bundle/groovy
 	url = https://github.com/endSly/groovy.vim.git
+[submodule "vim/bundle/terminus"]
+	path = vim/bundle/terminus
+	url = https://github.com/wincent/terminus.git
