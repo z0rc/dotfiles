@@ -103,12 +103,14 @@ zstyle ':vcs_info:*' formats '[%b%c%u]'
 _indicate_mc_precmd () {
     [[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=
 }
+add-zsh-hook precmd _indicate_mc_precmd
 
 # vcs_info invocation
 _indicate_vcs_precmd () {
     vcs_info
     psvar[2]="$vcs_info_msg_0_"
 }
+add-zsh-hook precmd _indicate_vcs_precmd
 
 # Indicate python virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -126,8 +128,7 @@ _indicate_venv_precmd() {
         psvar[3]=
     fi
 }
-
-precmd_functions+=(_indicate_mc_precmd _indicate_vcs_precmd _indicate_venv_precmd)
+add-zsh-hook precmd _indicate_venv_precmd
 
 # Indicate SSH session in prompt and window title
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
@@ -376,7 +377,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' cache-path $ZDOTDIR/zcompcache
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[cyan]=$color[red]"
