@@ -351,7 +351,7 @@ alias spark="$DOTFILES/spark/spark"
 alias mysqltuner="$DOTFILES/MySQLTuner-perl/mysqltuner.pl"
 
 # Enable diff-so-fancy
-alias diff-so-fancy="$DOTFILES/diff-so-fancy/diff-so-fancy"
+PATH="$DOTFILES/diff-so-fancy:$PATH"
 
 # Enable pyenv
 PATH="$DOTFILES/pyenv/bin:$PATH"

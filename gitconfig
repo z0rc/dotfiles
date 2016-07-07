@@ -22,8 +22,8 @@
 [init]
 	templatedir = ~/.config/git/template
 [pager]
-	diff = "~/.dotfiles/diff-so-fancy/diff-so-fancy | less --tabs=1,5 -RFX"
-	show = "~/.dotfiles/diff-so-fancy/diff-so-fancy | less --tabs=1,5 -RFX"
+	diff = "diff-so-fancy | less --tabs=1,5 -RFX"
+	show = "diff-so-fancy | less --tabs=1,5 -RFX"
 [color "diff"]
 	meta = yellow bold
 	commit = green bold
