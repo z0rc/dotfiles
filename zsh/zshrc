@@ -410,8 +410,8 @@ typeset -U path cdpath fpath manpath
 source $ZSHDIR/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # cdr plugin
-source $ZSHDIR/plugins/cdr/cdr.plugin.zsh
 ZSH_CDR_DIR=$XDG_CACHE_DIR/zsh
+source $ZSHDIR/plugins/cdr/cdr.plugin.zsh
 
 # zaw plugin
 source $ZSHDIR/plugins/zaw/zaw.zsh
