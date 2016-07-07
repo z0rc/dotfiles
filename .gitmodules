@@ -241,3 +241,6 @@
 [submodule "vim/bundle/terminus"]
 	path = vim/bundle/terminus
 	url = https://github.com/wincent/terminus.git
+[submodule "vim/bundle/pyenv"]
+	path = vim/bundle/pyenv
+	url = https://github.com/lambdalisue/vim-pyenv.git
