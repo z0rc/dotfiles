@@ -1,8 +1,8 @@
 [submodule "zsh/completions"]
-	path = zsh/completions
+	path = zsh/plugins/completions
 	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "zsh/syntax-highlighting"]
-	path = zsh/syntax-highlighting
+	path = zsh/plugins/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vim/bundle/pathogen"]
 	path = vim/pathogen
@@ -57,13 +57,13 @@
 	path = MySQLTuner-perl
 	url = https://github.com/major/MySQLTuner-perl.git
 [submodule "zsh/history-substring-search"]
-	path = zsh/history-substring-search
+	path = zsh/plugins/history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
 [submodule "k"]
 	path = k
 	url = https://github.com/supercrabtree/k.git
 [submodule "zsh/autosuggestions"]
-	path = zsh/autosuggestions
+	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vim/bundle/ansible-yaml"]
 	path = vim/bundle/ansible-yaml
@@ -144,10 +144,10 @@
 	path = diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
 [submodule "zsh/zaw"]
-	path = zsh/zaw
+	path = zsh/plugins/zaw
 	url = https://github.com/zsh-users/zaw.git
 [submodule "zsh/cdr"]
-	path = zsh/cdr
+	path = zsh/plugins/cdr
 	url = https://github.com/willghatch/zsh-cdr.git
 [submodule "pyenv"]
 	path = pyenv

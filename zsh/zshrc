@@ -63,7 +63,7 @@ setopt INTERACTIVE_COMMENTS # allow use of comments in interactive code
 autoload -U colors && colors  # initialize colors
 
 # Additional completion rules
-fpath=($fpath $ZSHDIR/completions/src)
+fpath=($fpath $ZSHDIR/plugins/completions/src)
 
 # Completion basic
 autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME/zsh/compdump"
@@ -342,7 +342,7 @@ alias df="df -Th"
 alias du="du -hc"
 
 # iTerm2 integration
-source $ZSHDIR/iterm2_integration.zsh
+source $ZSHDIR/plugins/iterm2_integration.zsh
 
 # Make spark availiable withoud adding it to PATH
 alias spark="$DOTFILES/spark/spark"
@@ -407,24 +407,24 @@ fi
 typeset -U path cdpath fpath manpath
 
 # Highlighting plugin
-source $ZSHDIR/syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSHDIR/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # cdr plugin
-source $ZSHDIR/cdr/cdr.plugin.zsh
+source $ZSHDIR/plugins/cdr/cdr.plugin.zsh
 ZSH_CDR_DIR=$XDG_CACHE_DIR/zsh
 
 # zaw plugin
-source $ZSHDIR/zaw/zaw.zsh
+source $ZSHDIR/plugins/zaw/zaw.zsh
 bindkey '^R' zaw-history
 
 # History substring search plugin
-source $ZSHDIR/history-substring-search/zsh-history-substring-search.zsh
+source $ZSHDIR/plugins/history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white'
 bindkey "${key[Up]}"   history-substring-search-up
 bindkey "${key[Down]}" history-substring-search-down
 
 # Autosuggestions plugin
-source $ZSHDIR/autosuggestions/zsh-autosuggestions.zsh
+source $ZSHDIR/plugins/autosuggestions/zsh-autosuggestions.zsh
 # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 # Compatability with bracketed-paste-magic
