@@ -4,7 +4,7 @@
 [submodule "zsh/syntax-highlighting"]
 	path = zsh/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "vim/pathogen"]
+[submodule "vim/bundle/pathogen"]
 	path = vim/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/solarized"]
@@ -29,7 +29,7 @@
 	path = vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
 	ignore = dirty
-[submodule "tmux/colors-solarized"]
+[submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
 [submodule "dircolors-solarized"]
@@ -95,19 +95,19 @@
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/01sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "tmux/sensible"]
+[submodule "tmux/plugins/sensible"]
 	path = tmux/plugins/sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
 [submodule "vim/bundle/tmux"]
 	path = vim/bundle/tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
-[submodule "tmux/copycat"]
+[submodule "tmux/plugins/copycat"]
 	path = tmux/plugins/copycat
 	url = https://github.com/tmux-plugins/tmux-copycat.git
-[submodule "tmux/yank"]
+[submodule "tmux/plugins/yank"]
 	path = tmux/plugins/yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "tmux/pain-control"]
+[submodule "tmux/plugins/pain-control"]
 	path = tmux/plugins/pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control.git
 [submodule "vim/bundle/dash"]
