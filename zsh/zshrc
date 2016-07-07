@@ -354,15 +354,15 @@ alias mysqltuner="$DOTFILES/MySQLTuner-perl/mysqltuner.pl"
 PATH="$DOTFILES/diff-so-fancy:$PATH"
 
 # Enable pyenv
-PATH="$DOTFILES/pyenv/bin:$PATH"
+PATH="$DOTFILES/pyenv/pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-source $DOTFILES/pyenv/completions/pyenv.zsh
+source $DOTFILES/pyenv/pyenv/completions/pyenv.zsh
 
 # Enable rbenv
-PATH="$DOTFILES/rbenv/bin:$PATH"
+PATH="$DOTFILES/rbenv/rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-source $DOTFILES/rbenv/completions/rbenv.zsh
+source $DOTFILES/rbenv/rbenv/completions/rbenv.zsh
 
 # Enable mongo-hacker without symlink in home
 mongo() { command mongo "$@" --shell --norc $DOTFILES/mongo-hacker/mongo_hacker.js; }

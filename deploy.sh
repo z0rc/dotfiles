@@ -33,14 +33,14 @@ ln -sf "$SCRIPT_DIR/mc.ini" "$XDG_CONFIG_HOME/mc/ini"
 ln -sf "$SCRIPT_DIR/htoprc" "$XDG_CONFIG_HOME/htop/htoprc"
 
 # Link pyenv plugins to $PYENV_ROOT
-ln -snf "$SCRIPT_DIR/pyenv/plugins/python-build" "$XDG_DATA_HOME/pyenv/plugins/python-build"
-ln -snf "$SCRIPT_DIR/pyenv-virtualenv" "$XDG_DATA_HOME/pyenv/plugins/pyenv-virtualenv"
+ln -snf "$SCRIPT_DIR/pyenv/pyenv/plugins/python-build" "$XDG_DATA_HOME/pyenv/plugins/python-build"
+ln -snf "$SCRIPT_DIR/pyenv/pyenv-virtualenv" "$XDG_DATA_HOME/pyenv/plugins/pyenv-virtualenv"
 
 # Link rbenv plugins to $RBENV_ROOT
-ln -snf "$SCRIPT_DIR/ruby-build" "$XDG_DATA_HOME/rbenv/plugins/ruby-build"
-ln -snf "$SCRIPT_DIR/rbenv-ctags" "$XDG_DATA_HOME/rbenv/plugins/rbenv-ctags"
-ln -snf "$SCRIPT_DIR/rbenv-default-gems" "$XDG_DATA_HOME/rbenv/plugins/rbenv-default-gems"
-ln -snf "$SCRIPT_DIR/default-gems" "$XDG_DATA_HOME/rbenv/default-gems"
+ln -snf "$SCRIPT_DIR/rbenv/ruby-build" "$XDG_DATA_HOME/rbenv/plugins/ruby-build"
+ln -snf "$SCRIPT_DIR/rbenv/rbenv-ctags" "$XDG_DATA_HOME/rbenv/plugins/rbenv-ctags"
+ln -snf "$SCRIPT_DIR/rbenv/rbenv-default-gems" "$XDG_DATA_HOME/rbenv/plugins/rbenv-default-gems"
+ln -snf "$SCRIPT_DIR/rbenv/default-gems" "$XDG_DATA_HOME/rbenv/default-gems"
 
 # Install crontab task to pull updates every midnight
 CRON_TASK="cd $SCRIPT_DIR && git pull >/dev/null 2>&1"

@@ -149,17 +149,17 @@
 [submodule "zsh/plugins/cdr"]
 	path = zsh/plugins/cdr
 	url = https://github.com/willghatch/zsh-cdr.git
-[submodule "pyenv"]
-	path = pyenv
+[submodule "pyenv/pyenv"]
+	path = pyenv/pyenv
 	url = https://github.com/yyuu/pyenv.git
-[submodule "pyenv-virtualenv"]
-	path = pyenv-virtualenv
+[submodule "pyenv/pyenv-virtualenv"]
+	path = pyenv/pyenv-virtualenv
 	url = https://github.com/yyuu/pyenv-virtualenv.git
-[submodule "rbenv"]
-	path = rbenv
+[submodule "rbenv/rbenv"]
+	path = rbenv/rbenv
 	url = https://github.com/rbenv/rbenv.git
-[submodule "ruby-build"]
-	path = ruby-build
+[submodule "rbenv/ruby-build"]
+	path = rbenv/ruby-build
 	url = https://github.com/rbenv/ruby-build.git
 [submodule "vim/bundle/ruby"]
 	path = vim/bundle/ruby
@@ -223,11 +223,11 @@
 [submodule "vim/bundle/rooter"]
 	path = vim/bundle/rooter
 	url = https://github.com/airblade/vim-rooter.git
-[submodule "rbenv-ctags"]
-	path = rbenv-ctags
+[submodule "rbenv/rbenv-ctags"]
+	path = rbenv/rbenv-ctags
 	url = https://github.com/tpope/rbenv-ctags.git
-[submodule "rbenv-default-gems"]
-	path = rbenv-default-gems
+[submodule "rbenv/rbenv-default-gems"]
+	path = rbenv/rbenv-default-gems
 	url = https://github.com/rbenv/rbenv-default-gems.git
 [submodule "vim/bundle/bundler"]
 	path = vim/bundle/bundler
