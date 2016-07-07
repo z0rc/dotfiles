@@ -21,12 +21,12 @@ cd mongo-hacker
 make mongo_hacker.js
 
 # Create required directories
-mkdir -p "$XDG_CONFIG_HOME/{git,mc,htop}"
-mkdir -p "$XDG_CACHE_HOME/{vim,zsh}"
-mkdir -p "$XDG_DATA_HOME/{pyenv/plugins,rbenv/plugins,zsh}"
+mkdir -p $XDG_CONFIG_HOME/{git,mc,htop}
+mkdir -p $XDG_CACHE_HOME/{vim,zsh}
+mkdir -p $XDG_DATA_HOME/{pyenv/plugins,rbenv/plugins,zsh}
 
 # Link config files
-ln -sf "$SCRIPT_DIR/zsh/.zshenv" "$HOME/.zshenv"
+ln -sf "$SCRIPT_DIR/zsh/zshenv" "$HOME/.zshenv"
 ln -sf "$SCRIPT_DIR/gitconfig" "$XDG_CONFIG_HOME/git/config"
 ln -sf "$SCRIPT_DIR/gitattributes" "$XDG_CONFIG_HOME/git/attributes"
 ln -sf "$SCRIPT_DIR/mc.ini" "$XDG_CONFIG_HOME/mc/ini"

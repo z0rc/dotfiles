@@ -1,14 +1,23 @@
-ZDOTDIR="$HOME/.dotfiles/zsh"
+# Get absolute path for zdotdir and dotfiles
+SOURCE="${(%):-%N}"
+while [[ -h "$SOURCE" ]]; do
+  DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+ZDOTDIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+DOTFILES="$(cd $ZDOTDIR/.. && pwd)"
 
-# Disable global zsh configuration on OSX
+# Disable global zsh configuration on OSX, path_helper doesn't help with sane path sanitization, have to do this by ourselves
 if [[ "$OSTYPE" == darwin* ]]; then
     unsetopt GLOBAL_RCS
 fi
 
+# We'll do this later in zshrc by ourselves
 skip_global_compinit=1
 
 # Exports
-export VIMINIT='let $MYVIMRC="~/.dotfiles/vim/vimrc" | source $MYVIMRC'
+export VIMINIT='let $MYVIMRC="$DOTFILES/vim/vimrc" | source $MYVIMRC'
 EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
@@ -30,8 +39,8 @@ export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
 
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
-alias quilt="quilt --quiltrc ~/.dotfiles/quiltrc"
-alias tmux="tmux -f ~/.dotfiles/tmux/tmux.conf"
+alias quilt="quilt --quiltrc $DOTFILES/quiltrc"
+alias tmux="tmux -f $DOTFILES/tmux/tmux.conf"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 alias stmux="tmux new-session 'sudo -i'"
 alias ll="ls -laF"
@@ -39,12 +48,15 @@ alias ll="ls -laF"
 # Keep SSH_AUTH_SOCK valid across several attachments to the remote tmux session
 if [[ `whoami` != root ]]; then
     if [[ -S "$SSH_AUTH_SOCK" ]] && [[ ! -h "$SSH_AUTH_SOCK" ]] && [[ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]]; then
-        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+        ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh_auth_sock
     fi
-    export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 fi
 
 # Include local zshenv
-if [[ -f "$ZDOTDIR/.zshenv.local" ]]; then
-    source "$ZDOTDIR/.zshenv.local"
+if [[ -f "$ZDOTDIR/zshenv.local" ]]; then
+    source "$ZDOTDIR/zshenv.local"
 fi
+
+# Include standard zshrc
+source "$ZDOTDIR/zshrc"

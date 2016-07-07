@@ -63,7 +63,7 @@ setopt INTERACTIVE_COMMENTS # allow use of comments in interactive code
 autoload -U colors && colors  # initialize colors
 
 # Additional completion rules
-fpath=($fpath ~/.dotfiles/zsh/completions/src)
+fpath=($fpath $ZDOTDIR/completions/src)
 
 # Completion basic
 autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zsh/compdump"
@@ -318,7 +318,7 @@ export _NROFF_U=1
 
 # Enable color support of ls
 if type -f dircolors &> /dev/null; then
-    eval `dircolors ~/.dotfiles/dircolors-solarized/dircolors.256dark`
+    eval `dircolors $DOTFILES/dircolors-solarized/dircolors.256dark`
     alias ls="ls --color=auto -F -X"
     alias dir="dir --color=auto"
     alias vdir="vdir --color=auto"
@@ -342,33 +342,33 @@ alias df="df -Th"
 alias du="du -hc"
 
 # iTerm2 integration
-source ~/.dotfiles/zsh/iterm2_integration.zsh
+source $ZDOTDIR/iterm2_integration.zsh
 
 # Make spark availiable withoud adding it to PATH
-alias spark="~/.dotfiles/spark/spark"
+alias spark="$DOTFILES/spark/spark"
 
 # Enable mysqltuner without installing it to the PATH
-alias mysqltuner="~/.dotfiles/MySQLTuner-perl/mysqltuner.pl"
+alias mysqltuner="$DOTFILES/MySQLTuner-perl/mysqltuner.pl"
 
 # Enable diff-so-fancy
-alias diff-so-fancy="~/.dotfiles/diff-so-fancy/diff-so-fancy"
+alias diff-so-fancy="$DOTFILES/diff-so-fancy/diff-so-fancy"
 
 # Enable pyenv
-PATH="$HOME/.dotfiles/pyenv/bin:$PATH"
+PATH="$DOTFILES/pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-source ~/.dotfiles/pyenv/completions/pyenv.zsh
+source $DOTFILES/pyenv/completions/pyenv.zsh
 
 # Enable rbenv
-PATH="$HOME/.dotfiles/rbenv/bin:$PATH"
+PATH="$DOTFILES/rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-source ~/.dotfiles/rbenv/completions/rbenv.zsh
+source $DOTFILES/rbenv/completions/rbenv.zsh
 
 # Enable mongo-hacker without symlink in home
-mongo() { command mongo "$@" --shell --norc ~/.dotfiles/mongo-hacker/mongo_hacker.js; }
+mongo() { command mongo "$@" --shell --norc $DOTFILES/mongo-hacker/mongo_hacker.js; }
 
 # Enable "k" plugin
-source ~/.dotfiles/k/k.sh
+source $DOTFILES/k/k.sh
 
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
@@ -399,32 +399,32 @@ if [[ -n "$DISPLAY" ]] && [[ `uname -s` != "Darwin" ]] && type -f xhost &> /dev/
 fi
 
 # Source local zshrc
-if [[ -f "$ZDOTDIR/.zshrc.local" ]]; then
-    source "$ZDOTDIR/.zshrc.local"
+if [[ -f "$ZDOTDIR/zshrc.local" ]]; then
+    source "$ZDOTDIR/zshrc.local"
 fi
 
 # Force path arrays to have unique values only
 typeset -U path cdpath fpath manpath
 
 # Highlighting plugin
-source ~/.dotfiles/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZDOTDIR/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # cdr plugin
-source ~/.dotfiles/zsh/cdr/cdr.plugin.zsh
+source $ZDOTDIR/cdr/cdr.plugin.zsh
 ZSH_CDR_DIR=$XDG_CACHE_DIR/zsh
 
 # zaw plugin
-source ~/.dotfiles/zsh/zaw/zaw.zsh
+source $ZDOTDIR/zaw/zaw.zsh
 bindkey '^R' zaw-history
 
 # History substring search plugin
-source ~/.dotfiles/zsh/history-substring-search/zsh-history-substring-search.zsh
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
+source $ZDOTDIR/history-substring-search/zsh-history-substring-search.zsh
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white'
 bindkey "${key[Up]}"   history-substring-search-up
 bindkey "${key[Down]}" history-substring-search-down
 
 # Autosuggestions plugin
-source ~/.dotfiles/zsh/autosuggestions/zsh-autosuggestions.zsh
+source $ZDOTDIR/autosuggestions/zsh-autosuggestions.zsh
 # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 # Compatability with bracketed-paste-magic

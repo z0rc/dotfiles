@@ -5,6 +5,5 @@ vim/.netrwhist*
 vim/autoload/getopts/*.cache
 vim/.viminfo*
 
-zsh/.zshenv.local
-zsh/.zshrc.local
-zsh/.zprofile
+zsh/zshenv.local
+zsh/zshrc.local
