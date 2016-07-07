@@ -22,8 +22,8 @@
 [submodule "vim/bundle/numbers"]
 	path = vim/bundle/numbers
 	url = https://github.com/myusuf3/numbers.vim.git
-[submodule "spark"]
-	path = spark
+[submodule "tools/spark"]
+	path = tools/spark
 	url = https://github.com/holman/spark.git
 [submodule "vim/bundle/editorconfig"]
 	path = vim/bundle/editorconfig
@@ -47,20 +47,20 @@
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule "mongo-hacker"]
-	path = mongo-hacker
+[submodule "tools/mongo-hacker"]
+	path = tools/mongo-hacker
 	url = https://github.com/TylerBrock/mongo-hacker.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "MySQLTuner-perl"]
-	path = MySQLTuner-perl
+	path = tools/MySQLTuner-perl
 	url = https://github.com/major/MySQLTuner-perl.git
 [submodule "zsh/plugins/history-substring-search"]
 	path = zsh/plugins/history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-[submodule "k"]
-	path = k
+[submodule "tools/k"]
+	path = tools/k
 	url = https://github.com/supercrabtree/k.git
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
@@ -140,8 +140,8 @@
 [submodule "vim/bundle/hashicorp-tools"]
 	path = vim/bundle/hashicorp-tools
 	url = https://github.com/hashivim/vim-hashicorp-tools.git
-[submodule "diff-so-fancy"]
-	path = diff-so-fancy
+[submodule "tools/diff-so-fancy"]
+	path = tools/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
 [submodule "zsh/plugins/zaw"]
 	path = zsh/plugins/zaw

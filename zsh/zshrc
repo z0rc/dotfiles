@@ -345,13 +345,19 @@ alias du="du -hc"
 source $ZSHDIR/plugins/iterm2_integration.zsh
 
 # Make spark availiable withoud adding it to PATH
-alias spark="$DOTFILES/spark/spark"
+alias spark="$DOTFILES/tools/spark/spark"
 
 # Enable mysqltuner without installing it to the PATH
-alias mysqltuner="$DOTFILES/MySQLTuner-perl/mysqltuner.pl"
+alias mysqltuner="$DOTFILES/tools/MySQLTuner-perl/mysqltuner.pl"
 
 # Enable diff-so-fancy
-PATH="$DOTFILES/diff-so-fancy:$PATH"
+PATH="$DOTFILES/tools/diff-so-fancy:$PATH"
+
+# Enable mongo-hacker without symlink in home
+mongo() { command mongo "$@" --shell --norc $DOTFILES/tools/mongo-hacker/mongo_hacker.js; }
+
+# Enable "k" plugin
+source $DOTFILES/tools/k/k.sh
 
 # Enable pyenv
 PATH="$DOTFILES/pyenv/pyenv/bin:$PATH"
@@ -363,12 +369,6 @@ source $DOTFILES/pyenv/pyenv/completions/pyenv.zsh
 PATH="$DOTFILES/rbenv/rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 source $DOTFILES/rbenv/rbenv/completions/rbenv.zsh
-
-# Enable mongo-hacker without symlink in home
-mongo() { command mongo "$@" --shell --norc $DOTFILES/mongo-hacker/mongo_hacker.js; }
-
-# Enable "k" plugin
-source $DOTFILES/k/k.sh
 
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'

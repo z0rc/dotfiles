@@ -17,7 +17,7 @@ git submodule update --init --recursive
 ln -sf ../../deploy.sh .git/hooks/post-merge
 
 # Make mongo-hacker
-cd mongo-hacker
+cd tools/mongo-hacker
 make mongo_hacker.js
 
 # Create required directories
