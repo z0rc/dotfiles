@@ -1,3 +1,7 @@
+# License
+
+[WTFPL](COPYING)
+
 # There are many like it, but this one is mine
 
 This repostory contains tools and configs I use in sheel. No graphical stuff,
@@ -17,7 +21,7 @@ else goes under standard XDG paths or launched via aliases.
   * [autosuggestions plugin](https://github.com/tarruda/zsh-autosuggestions)
   * [history substring search plugin](https://github.com/zsh-users/zsh-history-substring-search)
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
-  * [zaw](https://github.com/zsh-users/zaw) and [cdr](https://github.com/willghatch/zsh-cdr)
+  * [zaw](https://github.com/zsh-users/zaw) and [cdr](https:q://github.com/willghatch/zsh-cdr)
 * Vim [configuration](vim/vimrc) and [plugins](vim/bundle) managed by [pathogen](https://github.com/tpope/vim-pathogen)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
 * Other configs
