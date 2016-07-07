@@ -12,25 +12,24 @@ else goes under standard XDG paths or launched via aliases.
 
 # Features
 
-* Extensive Zsh [configuration](zsh/zshrc)
+* Extensive Zsh [configuration](zsh/zshrc) and [plugins](zsh/plugins):
   * [completions plugin](https://github.com/zsh-users/zsh-completions)
   * [autosuggestions plugin](https://github.com/tarruda/zsh-autosuggestions)
   * [history substring search plugin](https://github.com/zsh-users/zsh-history-substring-search)
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [zaw](https://github.com/zsh-users/zaw) and [cdr](https://github.com/willghatch/zsh-cdr)
 * Vim [configuration](vim/vimrc) and [plugins](vim/bundle) managed by [pathogen](https://github.com/tpope/vim-pathogen)
-* tmux [configuration](tmux.conf) and [plugins](tmux/plugins)
-* Midnight Commander [configuration](mc.ini)
-* quilt [configuration](quiltrc)
-* Git [config](gitconfig)
-* Handy utilities
+* tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
+* Midnight Commander [configuration](configs/mc.ini)
+* quilt [configuration](configs/quiltrc)
+* Git [config](configs/gitconfig)
+* Handy [utilities](tools)
   * [MySQLTuner](https://github.com/major/MySQLTuner-perl)
   * [MongoDB Shell Enhancements](https://github.com/TylerBrock/mongo-hacker)
   * [`k`](https://github.com/rimraf/k), modern `ls` with bells and whistles
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
-  * [pyenv](https://github.com/yyuu/pyenv) and [rbenv](https://github.com/rbenv/rbenv)
-  * vpaste uploader
+* [pyenv](https://github.com/yyuu/pyenv) and [rbenv](https://github.com/rbenv/rbenv)
 
 # Installation
 
