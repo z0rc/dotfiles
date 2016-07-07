@@ -59,4 +59,6 @@ if [[ -f "$ZSHDIR/zshenv.local" ]]; then
 fi
 
 # Include standard zshrc
-source "$ZSHDIR/zshrc"
+if [[ -o interactive ]]; then
+    source "$ZSHDIR/zshrc"
+fi
