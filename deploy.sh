@@ -24,7 +24,6 @@ make mongo_hacker.js
 mkdir -p $XDG_CONFIG_HOME/{git/local,mc,htop}
 mkdir -p $XDG_CACHE_HOME/{nvim,vim,zsh}
 mkdir -p $XDG_DATA_HOME/{pyenv/plugins,rbenv/plugins,zsh}
-ln -sf vim $XDG_CONFIG_HOME/nvim
 
 # Link config files
 ln -sf "$SCRIPT_DIR/zsh/zshenv" "$HOME/.zshenv"
@@ -32,6 +31,7 @@ ln -sf "$SCRIPT_DIR/configs/gitconfig" "$XDG_CONFIG_HOME/git/config"
 ln -sf "$SCRIPT_DIR/configs/gitattributes" "$XDG_CONFIG_HOME/git/attributes"
 ln -sf "$SCRIPT_DIR/configs/mc.ini" "$XDG_CONFIG_HOME/mc/ini"
 ln -sf "$SCRIPT_DIR/configs/htoprc" "$XDG_CONFIG_HOME/htop/htoprc"
+ln -snf "$SCRIPT_DIR/vim" "$XDG_CONFIG_HOME/nvim"
 
 # Link pyenv plugins to $PYENV_ROOT
 ln -snf "$SCRIPT_DIR/pyenv/pyenv/plugins/python-build" "$XDG_DATA_HOME/pyenv/plugins/python-build"
