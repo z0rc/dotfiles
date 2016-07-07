@@ -51,6 +51,7 @@ cd $HOME/.local
 git clone https://github.com/z0rc/dotfiles.git
 cd dotfiles
 ./deploy.sh
+chsh -s /bin/zsh
 ```
 
 [Simple deployment script](deploy.sh) helps to set up all required symlinks
