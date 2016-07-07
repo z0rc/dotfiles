@@ -13,7 +13,11 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " use sensible XDG paths
-set viminfo='1000,n$XDG_CACHE_HOME/vim/info
+if has('nvim')
+    set viminfo='1000,n$XDG_CACHE_HOME/nvim/info
+else
+    set viminfo='1000,n$XDG_CACHE_HOME/vim/info
+endif
 let g:backup_directory=$XDG_DATA_HOME . '/backups'
 
 set background=dark
@@ -105,7 +109,11 @@ let g:airline#extensions#tabline#enabled=1
 
 " Automatic tags creation tuning
 let g:easytags_async=1
-let g:easytags_file=$XDG_CACHE_HOME . '/vim/tags'
+if has('nvim')
+    let g:easytags_file=$XDG_CACHE_HOME . '/nvim/tags'
+else
+    let g:easytags_file=$XDG_CACHE_HOME . '/vim/tags'
+endif
 let g:easytags_suppress_ctags_warning=1
 
 " Markdown tuning
