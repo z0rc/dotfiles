@@ -318,7 +318,7 @@ export _NROFF_U=1
 
 # Enable color support of ls
 if type -f dircolors &> /dev/null; then
-    eval `dircolors $DOTFILES/dircolors-solarized/dircolors.256dark`
+    eval `dircolors $ZSHDIR/plugins/dircolors-solarized/dircolors.256dark`
     alias ls="ls --color=auto -F -X"
     alias dir="dir --color=auto"
     alias vdir="vdir --color=auto"
