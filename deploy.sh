@@ -21,7 +21,7 @@ cd tools/mongo-hacker
 make mongo_hacker.js
 
 # Create required directories
-mkdir -p $XDG_CONFIG_HOME/{git,mc,htop}
+mkdir -p $XDG_CONFIG_HOME/{git/local,mc,htop}
 mkdir -p $XDG_CACHE_HOME/{vim,zsh}
 mkdir -p $XDG_DATA_HOME/{pyenv/plugins,rbenv/plugins,zsh}
 

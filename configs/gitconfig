@@ -1,6 +1,5 @@
-[user]
-	email = z0rc3r@gmail.com
-	name = Igor Urazov
+[include]
+	path = ~/.config/git/local
 [push]
 	default = current
 [branch]
@@ -19,8 +18,6 @@
 	undo = reset HEAD~1 --mixed
 [credential]
 	helper = cache --socket ~/.cache/git-credential-cache/socket
-[init]
-	templatedir = ~/.config/git/template
 [pager]
 	diff = "diff-so-fancy | less --tabs=1,5 -RFX"
 	show = "diff-so-fancy | less --tabs=1,5 -RFX"
