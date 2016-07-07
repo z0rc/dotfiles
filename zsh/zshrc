@@ -66,7 +66,7 @@ autoload -U colors && colors  # initialize colors
 fpath=($fpath $ZSHDIR/completions/src)
 
 # Completion basic
-autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zsh/compdump"
+autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME/zsh/compdump"
 setopt AUTO_PARAM_SLASH
 setopt LIST_TYPES
 setopt HASH_LIST_ALL # whenever a command completion is attempted, make sure the entire command path is hashed first
