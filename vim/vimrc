@@ -1,11 +1,13 @@
 set nocompatible
 
-" Set default 'runtimepath' without ~/.vim folders
-let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
-" What is the name of the directory containing this file?
-let s:portable=expand('<sfile>:p:h')
-" Add the directory to 'runtimepath'
-let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+if !has('nvim')
+    " Set default 'runtimepath' without ~/.vim folders
+    let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+    " What is the name of the directory containing this file?
+    let s:portable=expand('<sfile>:p:h')
+    " Add the directory to 'runtimepath'
+    let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+endif
 
 " enable pathogen and plugins
 runtime bundle/pathogen/autoload/pathogen.vim
