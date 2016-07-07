@@ -28,7 +28,7 @@
 [submodule "vim/bundle/editorconfig"]
 	path = vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
-	ignore = dirty
+	ignore = untracked
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
@@ -186,7 +186,7 @@
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
-	ignore = dirty
+	ignore = untracked
 [submodule "vim/bundle/tmux-navigator"]
 	path = vim/bundle/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
@@ -244,3 +244,4 @@
 [submodule "vim/bundle/pyenv"]
 	path = vim/bundle/pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
+	ignore = untracked
