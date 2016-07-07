@@ -30,7 +30,7 @@
 	url = https://github.com/editorconfig/editorconfig-vim.git
 	ignore = dirty
 [submodule "tmux/colors-solarized"]
-	path = tmux/colors-solarized
+	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
@@ -96,19 +96,19 @@
 	path = vim/bundle/01sensible
 	url = https://github.com/tpope/vim-sensible.git
 [submodule "tmux/sensible"]
-	path = tmux/sensible
+	path = tmux/plugins/sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
 [submodule "vim/bundle/tmux"]
 	path = vim/bundle/tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
 [submodule "tmux/copycat"]
-	path = tmux/copycat
+	path = tmux/plugins/copycat
 	url = https://github.com/tmux-plugins/tmux-copycat.git
 [submodule "tmux/yank"]
-	path = tmux/yank
+	path = tmux/plugins/yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
 [submodule "tmux/pain-control"]
-	path = tmux/pain-control
+	path = tmux/plugins/pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control.git
 [submodule "vim/bundle/dash"]
 	path = vim/bundle/dash
