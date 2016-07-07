@@ -7,11 +7,13 @@ let s:portable=expand('<sfile>:p:h')
 " Add the directory to 'runtimepath'
 let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 
+" enable pathogen and plugins
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
+" use sensible XDG paths
 set viminfo='1000,n$XDG_CACHE_HOME/vim/info
-
 let g:backup_directory=$XDG_DATA_HOME . '/backups'
 
 set background=dark
