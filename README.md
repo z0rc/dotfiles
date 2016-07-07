@@ -24,12 +24,12 @@ else goes under standard XDG paths or launched via aliases.
   * [zaw](https://github.com/zsh-users/zaw) and [cdr](https:q://github.com/willghatch/zsh-cdr)
 * Vim [configuration](vim/vimrc) and [plugins](vim/bundle) managed by [pathogen](https://github.com/tpope/vim-pathogen)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
-* Other configs
+* Other configs:
   * [Midnight Commander](configs/mc.ini)
   * [quilt](configs/quiltrc)
   * [Git](configs/gitconfig)
   * [htop](configs/htoprc)
-* Handy [utilities](tools)
+* Handy [utilities](tools):
   * [MySQLTuner](https://github.com/major/MySQLTuner-perl)
   * [MongoDB Shell Enhancements](https://github.com/TylerBrock/mongo-hacker)
   * [`k`](https://github.com/rimraf/k), modern `ls` with bells and whistles
@@ -57,3 +57,13 @@ cd dotfiles
 after the initial clone. Also it adds cron job to pull updates every midnight
 and serves as a post-merge git hook, so you don't have to care about updating
 submodules after successful pull.
+
+# Configuration
+
+After installation is done you can update `~/.config/git/local/user` with your
+email and name. Something like this:
+```ini
+[user]
+    email = jdoe@example.com
+    name = John Doe
+```
