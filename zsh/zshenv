@@ -1,12 +1,12 @@
 # Get absolute path for zdotdir and dotfiles
 SOURCE="${(%):-%N}"
 while [[ -h "$SOURCE" ]]; do
-  DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
-  SOURCE="$(readlink "$SOURCE")"
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+    DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
 done
-ZDOTDIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
-DOTFILES="$(cd $ZDOTDIR/.. && pwd)"
+export ZSHDIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+export DOTFILES="$(cd $ZSHDIR/.. && pwd)"
 
 # Disable global zsh configuration on OSX, path_helper doesn't help with sane path sanitization, have to do this by ourselves
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -54,9 +54,9 @@ if [[ `whoami` != root ]]; then
 fi
 
 # Include local zshenv
-if [[ -f "$ZDOTDIR/zshenv.local" ]]; then
-    source "$ZDOTDIR/zshenv.local"
+if [[ -f "$ZSHDIR/zshenv.local" ]]; then
+    source "$ZSHDIR/zshenv.local"
 fi
 
 # Include standard zshrc
-source "$ZDOTDIR/zshrc"
+source "$ZSHDIR/zshrc"
