@@ -45,6 +45,6 @@ ln -snf "$SCRIPT_DIR/rbenv/rbenv-default-gems" "$XDG_DATA_HOME/rbenv/plugins/rbe
 ln -snf "$SCRIPT_DIR/rbenv/default-gems" "$XDG_DATA_HOME/rbenv/default-gems"
 
 # Install crontab task to pull updates every midnight
-CRON_TASK="cd $SCRIPT_DIR && git pull >/dev/null 2>&1"
+CRON_TASK="cd $SCRIPT_DIR && git stash >/dev/null 2>&1 && git pull >/dev/null 2>&1 && git stash pop >/dev/null 2>&1"
 CRON_SCHEDULE="0 0 * * * $CRON_TASK"
 cat <(fgrep -i -v "$CRON_TASK" <(crontab -l)) <(echo "$CRON_SCHEDULE") | crontab -
