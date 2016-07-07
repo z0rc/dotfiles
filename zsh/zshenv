@@ -39,7 +39,7 @@ export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
 
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
-alias quilt="quilt --quiltrc $DOTFILES/quiltrc"
+alias quilt="quilt --quiltrc $DOTFILES/configs/quiltrc"
 alias tmux="tmux -f $DOTFILES/tmux/tmux.conf"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 alias stmux="tmux new-session 'sudo -i'"
