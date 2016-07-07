@@ -1,8 +1,8 @@
 # There are many like it, but this one is mine
 
-This repostory holds conguration for most common tools I use in shell. No
-graphical stuff, usable both on server and personal workstation. Battle
-tested on OSX and various Linux distributions including Debian, Ubuntu, CentOS.
+This repostory contains tools and configs I use in sheel. No graphical stuff,
+usable both on server and personal workstation. Battle tested on OS X and
+various Linux distributions including Debian, Ubuntu, CentOS.
 
 I'm a big fan of [XDG Base Directory
 Specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html)
@@ -19,10 +19,12 @@ else goes under standard XDG paths or launched via aliases.
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [zaw](https://github.com/zsh-users/zaw) and [cdr](https://github.com/willghatch/zsh-cdr)
 * Vim [configuration](vim/vimrc) and [plugins](vim/bundle) managed by [pathogen](https://github.com/tpope/vim-pathogen)
-* tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
-* Midnight Commander [configuration](configs/mc.ini)
-* quilt [configuration](configs/quiltrc)
-* Git [config](configs/gitconfig)
+* Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
+* Other configs
+  * [Midnight Commander](configs/mc.ini)
+  * [quilt](configs/quiltrc)
+  * [Git](configs/gitconfig)
+  * [htop](configs/htoprc)
 * Handy [utilities](tools)
   * [MySQLTuner](https://github.com/major/MySQLTuner-perl)
   * [MongoDB Shell Enhancements](https://github.com/TylerBrock/mongo-hacker)
