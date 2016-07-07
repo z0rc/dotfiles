@@ -1,5 +1,6 @@
 [include]
-	path = ~/.config/git/local
+	path = local/user
+	path = local/stuff
 [push]
 	default = current
 [branch]
