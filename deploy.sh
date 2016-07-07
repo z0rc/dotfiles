@@ -14,6 +14,7 @@ git submodule sync
 git submodule update --init --recursive
 
 # Install hook to call deploy script after successful pull
+mkdir .git/hooks
 ln -sf ../../deploy.sh .git/hooks/post-merge
 
 # Make mongo-hacker
