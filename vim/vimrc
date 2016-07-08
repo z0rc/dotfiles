@@ -99,6 +99,9 @@ inoremap <silent> <C-Right> <ESC>:TmuxNavigateRight<CR>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<CR>
 inoremap <silent> <C-\> <ESC>:TmuxNavigatePrevious<CR>
 
+" supertab completion from top to bottom
+let g:SuperTabDefaultCompletionType="<c-n>"
+
 " Enable proper space and cr expansion inside brackets
 let delimitMate_expand_cr=1
 let delimitMate_expand_space=1
@@ -130,3 +133,6 @@ cmap w!! %!sudo tee > /dev/null %
 
 " Handle crontab files properly
 autocmd filetype crontab setlocal nobackup nowritebackup
+
+" don't popup docstring preview for jedi/python
+autocmd FileType python setlocal completeopt-=preview
