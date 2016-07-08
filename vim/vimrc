@@ -145,3 +145,6 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 
 " Don't popup docstring preview for jedi/python
 autocmd FileType python setlocal completeopt-=preview
+
+" source local configuration
+runtime vimrc.local

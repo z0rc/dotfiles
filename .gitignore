@@ -4,6 +4,7 @@ vim/spell/*.add*
 vim/.netrwhist*
 vim/autoload/getopts/*.cache
 vim/.viminfo*
+vim/vimrc.local
 
 zsh/zshenv.local
 zsh/zshrc.local
