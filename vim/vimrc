@@ -9,12 +9,12 @@ if !has('nvim')
     let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 endif
 
-" enable pathogen and plugins
+" Enable pathogen and plugins
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-" use sensible XDG paths
+" Use sensible XDG paths
 if has('nvim')
     set viminfo='1000,n$XDG_CACHE_HOME/nvim/info
 else
@@ -22,12 +22,20 @@ else
 endif
 let g:backup_directory=$XDG_DATA_HOME . '/backups'
 
+" Enable modern colors if supported
 set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_underline=0
-set t_Co=256
-colorscheme solarized
+if has('termguicolors') && $TERM_PROGRAM != "Apple_Terminal"
+    set termguicolors
+    colorscheme solarized8_dark_flat
+else
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
+    let g:solarized_underline=0
+    set t_Co=256
+    colorscheme solarized
+endif
+
+" Enable cursor shape change on insert in neovim
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 set filetype=on
@@ -100,7 +108,7 @@ inoremap <silent> <C-Right> <ESC>:TmuxNavigateRight<CR>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<CR>
 inoremap <silent> <C-\> <ESC>:TmuxNavigatePrevious<CR>
 
-" supertab completion from top to bottom
+" SuperTab completion from top to bottom
 let g:SuperTabDefaultCompletionType="<c-n>"
 
 " Enable proper space and cr expansion inside brackets
@@ -135,5 +143,5 @@ cmap w!! %!sudo tee > /dev/null %
 " Handle crontab files properly
 autocmd filetype crontab setlocal nobackup nowritebackup
 
-" don't popup docstring preview for jedi/python
+" Don't popup docstring preview for jedi/python
 autocmd FileType python setlocal completeopt-=preview

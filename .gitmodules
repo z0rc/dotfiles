@@ -245,3 +245,6 @@
 	path = vim/bundle/pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
 	ignore = untracked
+[submodule "vim/bundle/solarized8"]
+	path = vim/bundle/solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
