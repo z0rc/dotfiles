@@ -28,6 +28,7 @@ let g:solarized_termcolors=256
 let g:solarized_underline=0
 set t_Co=256
 colorscheme solarized
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 set filetype=on
 set shiftround
