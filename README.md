@@ -4,7 +4,7 @@
 
 # There are many like it, but this one is mine
 
-This repostory contains tools and configs I use in sheel. No graphical stuff,
+This repostory contains tools and configs I use in shell. No graphical stuff,
 usable both on server and personal workstation. Battle tested on OS X and
 various Linux distributions including Debian, Ubuntu, CentOS.
 
