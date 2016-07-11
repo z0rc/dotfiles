@@ -1,4 +1,4 @@
-# Get absolute path for zdotdir and dotfiles
+# Get absolute path for zshdir and dotfiles
 SOURCE="${(%):-%N}"
 while [[ -h "$SOURCE" ]]; do
     DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
