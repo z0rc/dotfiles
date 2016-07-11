@@ -137,7 +137,7 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
 fi
 
 # Fancy prompt
-PROMPT="%1v$psvar[4][%{$fg_bold[yellow]%}%m%{$reset_color%}][%{$fg_bold[green]%}%~%{$reset_color%}]%3v%2v%# "
+PROMPT="%1v$psvar[4][%{$fg[yellow]%}%m%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}]%3v%2v%# "
 
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
