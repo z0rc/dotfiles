@@ -61,10 +61,21 @@ submodules after successful pull.
 
 # Configuration
 
-After installation is done you can update `~/.config/git/local/user` with your
-email and name. Something like this:
+## Git
+Update `~/.config/git/local/user` with your email and name. Something like
+this:
 ```ini
 [user]
     email = jdoe@example.com
     name = John Doe
 ```
+
+Also you can put additional configuration in `~/.config/git/local/stuff`.
+
+## Zsh
+You can add your configuration to `$ZSHDIR/zshenv.local` and
+`$ZSHDIR/zshrc.local`. The difference is that `zshenv.local` is sourced always
+while `zshrc.local` is sourced in interactive session only.
+
+## Vim/Neovim
+Add your local configuration to `$DOTFILES/vim/vimrc.local`.
