@@ -248,3 +248,6 @@
 [submodule "vim/bundle/solarized8"]
 	path = vim/bundle/solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git
+[submodule "vim/bundle/cursorline-current-window"]
+	path = vim/bundle/cursorline-current-window
+	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
