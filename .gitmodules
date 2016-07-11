@@ -251,6 +251,7 @@
 [submodule "vim/bundle/cursorline-current-window"]
 	path = vim/bundle/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
+	ignore = untracked
 [submodule "vim/bundle/incsearch"]
 	path = vim/bundle/incsearch
 	url = https://github.com/haya14busa/incsearch.vim.git
