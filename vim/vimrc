@@ -53,6 +53,7 @@ set list listchars=tab:>-,trail:·,extends:>,precedes:<
 set showmode
 set number
 set cursorline
+set showcmd " show <leader> in bottom left corner
 
 " Scrolling
 set scrolloff=8 "start scrolling when we're 8 lines away from margins
@@ -108,7 +109,7 @@ inoremap <silent> <C-Right> <ESC>:TmuxNavigateRight<CR>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<CR>
 inoremap <silent> <C-\> <ESC>:TmuxNavigatePrevious<CR>
 
-" incsearch mappings and configuration
+" Mappings and configuration for incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -120,6 +121,14 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)<Paste>
 let g:incsearch#emacs_like_keymap=1
+
+" Mappings and configuration for test.vim
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+let test#strategy="dispatch"
 
 " SuperTab completion from top to bottom
 let g:SuperTabDefaultCompletionType="<c-n>"
