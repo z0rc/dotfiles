@@ -135,6 +135,9 @@
 [submodule "vim/bundle/json"]
 	path = vim/bundle/json
 	url = https://github.com/elzr/vim-json.git
+[submodule "vim/bundle/logstash"]
+	path = vim/bundle/logstash
+	url = https://github.com/robbles/logstash.vim.git
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
