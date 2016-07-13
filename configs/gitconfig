@@ -19,9 +19,6 @@
 	undo = reset HEAD~1 --mixed
 [credential]
 	helper = cache --socket ~/.cache/git-credential-cache/socket
-[pager]
-	diff = "diff-so-fancy | less --tabs=1,5 -RFX"
-	show = "diff-so-fancy | less --tabs=1,5 -RFX"
 [color "diff"]
 	meta = yellow bold
 	commit = green bold
@@ -41,3 +38,7 @@
 [diff]
 	compactionHeuristic = true
 	algorithm = histogram
+[core]
+	autocrlf = input
+	whitespace = cr-at-eol
+	pager = diff-so-fancy | less --tabs=4 -RFX
