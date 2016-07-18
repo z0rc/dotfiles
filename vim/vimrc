@@ -24,7 +24,7 @@ let g:backup_directory=$XDG_DATA_HOME . '/backups'
 
 " Enable modern colors if supported
 set background=dark
-if has('termguicolors') && $TERM_PROGRAM != "Apple_Terminal"
+if has('termguicolors') && $TERM_PROGRAM != "Apple_Terminal" && empty($TMUX)
     set termguicolors
     colorscheme solarized8_dark_flat
 else
