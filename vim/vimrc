@@ -91,10 +91,10 @@ nnoremap <F7> :TagbarToggle<CR>
 inoremap <F7> <ESC>:TagbarToggle<CR>
 
 " Alt left/right to switch buffers. Terminal should be configured to send proper escape sequences
-nnoremap <ESC>b :bprev<CR>
-inoremap <ESC>b <ESC>:bprev<CR>
-nnoremap <ESC>f :bnext<CR>
-inoremap <ESC>f <ESC>:bnext<CR>
+nnoremap <ESC>b :bprev!<CR>
+inoremap <ESC>b <ESC>:bprev!<CR>
+nnoremap <ESC>f :bnext!<CR>
+inoremap <ESC>f <ESC>:bnext!<CR>
 
 " Ctrl arrows to switch between splits and tmux panes
 let g:tmux_navigator_no_mappings=1
