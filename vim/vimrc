@@ -153,8 +153,9 @@ let g:easytags_suppress_ctags_warning=1
 let g:markdown_fenced_languages=['html', 'python', 'bash=sh', 'sh']
 let g:vim_markdown_conceal=0
 
-" Don't echo root dir
+" Don't echo root dir, don't change root automatically
 let g:rooter_silent_chdir=1
+let g:rooter_manual_only=1
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %
