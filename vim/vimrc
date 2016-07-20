@@ -41,7 +41,6 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set filetype=on
 set shiftround
 set showmatch " show matching brackets when text indicator is over them
-set incsearch " do incremental searching
 set hlsearch " highlight search results
 set ignorecase " ignore case when searching
 set smartcase " when searching try to be smart about cases
@@ -53,7 +52,7 @@ set list listchars=tab:>-,trail:·,extends:>,precedes:<
 set showmode
 set number
 set cursorline
-set showcmd " show <leader> in bottom left corner
+set showcmd " show partial commands in bottom left corner
 
 " Scrolling
 set scrolloff=8 "start scrolling when we're 8 lines away from margins
