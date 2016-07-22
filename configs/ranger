@@ -1,0 +1,14 @@
+set draw_borders true
+set dirname_in_tabs true
+set preview_images true
+set preview_images_method iterm2
+set scroll_offset 5
+set show_hidden true
+set sort oe
+set sort_unicode true
+set tilde_in_titlebar true
+set unicode_ellipsis true
+set update_title true
+set update_tmux_title true
+set vcs_aware true
+set xterm_alt_key true

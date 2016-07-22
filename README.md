@@ -26,6 +26,7 @@ else goes under standard XDG paths or launched via aliases.
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
 * Other configs:
   * [Midnight Commander](configs/mc.ini)
+  * [ranger](configs/ranger)
   * [quilt](configs/quiltrc)
   * [Git](configs/gitconfig)
   * [htop](configs/htoprc)
