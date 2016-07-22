@@ -326,9 +326,15 @@ fi
 
 # More colors
 if type -f grc &> /dev/null; then
-    alias ping="grc --colour=on ping"
-    alias traceroute="grc --colour=on traceroute"
-    alias netstat="grc --colour=on netstat"
+    alias colorify="grc -es --colour=auto"
+    for command in df dig gcc ifconfig mount mtr netstat ping ps thraceroute; do
+        if [[ -f "/usr/local/share/grc/conf.$command" ]] || [[ -f "/usr/share/grc/conf.$command" ]]; then
+            alias $command="colorify $command"
+        fi
+    done
+    for command in head tail make ld; do
+        alias $command="colorify $command"
+    done
 fi
 if type -f colordiff &> /dev/null; then
     alias diff="colordiff -Naur"
