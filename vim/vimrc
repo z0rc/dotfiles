@@ -71,7 +71,6 @@ nnoremap <Space> za
 vnoremap <Space> zf
 
 " CtrlP mappings
-let g:ctrlp_cmd='CtrlPMixed'
 nnoremap <C-o> :CtrlPCmdPalette<CR>
 inoremap <C-o> <ESC>:CtrlPCmdPalette<CR>
 
