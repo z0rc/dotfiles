@@ -136,6 +136,9 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 let test#strategy="dispatch"
 
+" Mappings for listtoggle
+let g:lt_location_list_toggle_map='<leader>f'
+
 " SuperTab completion from top to bottom
 let g:SuperTabDefaultCompletionType="<c-n>"
 let g:SuperTabCrMapping=1
