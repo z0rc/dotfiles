@@ -85,4 +85,4 @@ Add your local configuration to `$DOTFILES/vim/vimrc.local`.
 
 ## Local paths
 Local binaries can be put into `$HOME/.local/bin`, it's added to `$PATH` by
-default. Also man pages can be put_ into `$XDG__DATA_HOME/man`.
+default. Also man pages can be put into `$XDG_DATA_HOME/man`.
