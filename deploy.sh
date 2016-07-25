@@ -33,6 +33,10 @@ pushd tools/git-extras
 PREFIX=$HOME/.local make install
 popd
 
+# Install diff-so-fancy
+ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/diff-so-fancy" "$HOME/.local/bin/diff-so-fancy"
+ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/third_party/diff-highlight/diff-highlight" "$HOME/.local/bin/diff-highlight"
+
 # Link config files
 ln -sf "$SCRIPT_DIR/zsh/zshenv" "$HOME/.zshenv"
 ln -sf "$SCRIPT_DIR/configs/gitconfig" "$XDG_CONFIG_HOME/git/config"

@@ -359,9 +359,6 @@ alias spark="$DOTFILES/tools/spark/spark"
 # Enable mysqltuner without installing it to the PATH
 alias mysqltuner="$DOTFILES/tools/MySQLTuner-perl/mysqltuner.pl"
 
-# Enable diff-so-fancy
-PATH="$DOTFILES/tools/diff-so-fancy:$PATH"
-
 # Enable mongo-hacker without symlink in home
 mongo() { command mongo "$@" --shell --norc $DOTFILES/tools/mongo-hacker/mongo_hacker.js; }
 
