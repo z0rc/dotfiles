@@ -63,7 +63,7 @@ setopt INTERACTIVE_COMMENTS # allow use of comments in interactive code
 autoload -U colors && colors  # initialize colors
 
 # Additional completion rules
-fpath=("$fpath" "$ZSHDIR/plugins/completions/src")
+fpath=($fpath "$ZSHDIR/plugins/completions/src")
 
 # Enable git-extras completions
 source "$DOTFILES/tools/git-extras/etc/git-extras-completion.zsh"
