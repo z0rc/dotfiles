@@ -22,18 +22,18 @@ EDITOR=vim
 VISUAL=$EDITOR
 export VISUAL EDITOR
 export PAGER=less
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export LESSHISTFILE=$XDG_DATA_HOME/lesshst
-export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
-export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
-export WINEPREFIX=$XDG_DATA_HOME/wine
-export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker/machine
-export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
-export HTOPRC=$XDG_CONFIG_HOME/htop/htoprc
-export PACKER_CONFIG=$XDG_CONFIG_HOME/packer
-export PACKER_CACHE_DIR=$XDG_CACHE_HOME/packer
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME"=$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
+export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem/specs"
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker/machine"
+export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
+export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
+export PACKER_CONFIG="$XDG_CONFIG_HOME/packer"
+export PACKER_CACHE_DIR="$XDG_CACHE_HOME/packer"
 
 # Enable local binaries and man pages
 export PATH="$HOME/.local/bin:$PATH"
@@ -54,9 +54,9 @@ alias ll="ls -laF"
 # Keep SSH_AUTH_SOCK valid across several attachments to the remote tmux session
 if [[ `whoami` != root ]]; then
     if [[ -S "$SSH_AUTH_SOCK" ]] && [[ ! -h "$SSH_AUTH_SOCK" ]] && [[ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]]; then
-        ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh_auth_sock
+        ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
     fi
-    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
+    export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
 fi
 
 # Include local zshenv

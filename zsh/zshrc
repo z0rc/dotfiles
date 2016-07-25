@@ -63,7 +63,7 @@ setopt INTERACTIVE_COMMENTS # allow use of comments in interactive code
 autoload -U colors && colors  # initialize colors
 
 # Additional completion rules
-fpath=($fpath $ZSHDIR/plugins/completions/src)
+fpath=("$fpath" "$ZSHDIR/plugins/completions/src")
 
 # Enable git-extras completions
 source "$DOTFILES/tools/git-extras/etc/git-extras-completion.zsh"
@@ -321,7 +321,7 @@ export _NROFF_U=1
 
 # Enable color support of ls
 if type -f dircolors &> /dev/null; then
-    eval `dircolors $ZSHDIR/plugins/dircolors-solarized/dircolors.256dark`
+    eval `dircolors "$ZSHDIR/plugins/dircolors-solarized/dircolors.256dark"`
     alias ls="ls --color=auto -F -X"
     alias dir="dir --color=auto"
     alias vdir="vdir --color=auto"
@@ -351,7 +351,7 @@ alias df="df -Th"
 alias du="du -hc"
 
 # iTerm2 integration
-source $ZSHDIR/plugins/iterm2_integration.zsh
+source "$ZSHDIR/plugins/iterm2_integration.zsh"
 
 # Make spark availiable withoud adding it to PATH
 alias spark="$DOTFILES/tools/spark/spark"
@@ -360,21 +360,21 @@ alias spark="$DOTFILES/tools/spark/spark"
 alias mysqltuner="$DOTFILES/tools/MySQLTuner-perl/mysqltuner.pl"
 
 # Enable mongo-hacker without symlink in home
-mongo() { command mongo "$@" --shell --norc $DOTFILES/tools/mongo-hacker/mongo_hacker.js; }
+mongo() { command mongo "$@" --shell --norc "$DOTFILES/tools/mongo-hacker/mongo_hacker.js"; }
 
 # Enable "k" plugin
-source $DOTFILES/tools/k/k.sh
+source "$DOTFILES/tools/k/k.sh"
 
 # Enable pyenv
 PATH="$DOTFILES/pyenv/pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-source $DOTFILES/pyenv/pyenv/completions/pyenv.zsh
+source "$DOTFILES/pyenv/pyenv/completions/pyenv.zsh"
 
 # Enable rbenv
 PATH="$DOTFILES/rbenv/rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-source $DOTFILES/rbenv/rbenv/completions/rbenv.zsh
+source "$DOTFILES/rbenv/rbenv/completions/rbenv.zsh"
 
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
@@ -413,24 +413,24 @@ fi
 typeset -U path cdpath fpath manpath
 
 # Highlighting plugin
-source $ZSHDIR/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$ZSHDIR/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # cdr plugin
-ZSH_CDR_DIR=$XDG_CACHE_HOME/zsh
-source $ZSHDIR/plugins/cdr/cdr.plugin.zsh
+ZSH_CDR_DIR="$XDG_CACHE_HOME/zsh"
+source "$ZSHDIR/plugins/cdr/cdr.plugin.zsh"
 
 # zaw plugin
-source $ZSHDIR/plugins/zaw/zaw.zsh
+source "$ZSHDIR/plugins/zaw/zaw.zsh"
 bindkey '^R' zaw-history
 
 # History substring search plugin
-source $ZSHDIR/plugins/history-substring-search/zsh-history-substring-search.zsh
+source "$ZSHDIR/plugins/history-substring-search/zsh-history-substring-search.zsh"
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white'
 bindkey "${key[Up]}"   history-substring-search-up
 bindkey "${key[Down]}" history-substring-search-down
 
 # Autosuggestions plugin
-source $ZSHDIR/plugins/autosuggestions/zsh-autosuggestions.zsh
+source "$ZSHDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
 # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 # Compatability with bracketed-paste-magic
