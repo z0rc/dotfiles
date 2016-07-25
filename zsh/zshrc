@@ -65,6 +65,9 @@ autoload -U colors && colors  # initialize colors
 # Additional completion rules
 fpath=($fpath $ZSHDIR/plugins/completions/src)
 
+# Enable git-extras completions
+source "$DOTFILES/tools/git-extras/etc/git-extras-completion.zsh"
+
 # Completion basic
 autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME/zsh/compdump"
 setopt AUTO_PARAM_SLASH

@@ -36,13 +36,14 @@ else goes under standard XDG paths or launched via aliases.
   * [`k`](https://github.com/rimraf/k), modern `ls` with bells and whistles
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
+  * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
 * [pyenv](https://github.com/yyuu/pyenv) and [rbenv](https://github.com/rbenv/rbenv)
 
 # Installation
 
 Requirements:
 * `zsh` (for obvious reasons)
-* `make` (mongo-hacker uses it for [js concatenation](https://github.com/TylerBrock/mongo-hacker/blob/master/Makefile#L9-L10))
+* `make` (required to build mongo-hacker and install git-extras)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
@@ -80,3 +81,7 @@ while `zshrc.local` is sourced in interactive session only.
 
 ## Vim/Neovim
 Add your local configuration to `$DOTFILES/vim/vimrc.local`.
+
+## Local paths
+Local binaries can be put into `$HOME/.local/bin`, it's added to `$PATH` by
+default. Also man pages can be put_ into `$XDG__DATA_HOME/man`.

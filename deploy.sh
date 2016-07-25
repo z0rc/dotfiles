@@ -18,13 +18,20 @@ mkdir -p .git/hooks
 ln -sf ../../deploy.sh .git/hooks/post-merge
 
 # Make mongo-hacker
-cd tools/mongo-hacker
+pushd tools/mongo-hacker
 make mongo_hacker.js
+popd
 
 # Create required directories
 mkdir -p $XDG_CONFIG_HOME/{git/local,mc,htop,ranger}
 mkdir -p $XDG_CACHE_HOME/{nvim,vim,zsh}
-mkdir -p $XDG_DATA_HOME/{pyenv/plugins,rbenv/plugins,zsh}
+mkdir -p $XDG_DATA_HOME/{pyenv/plugins,rbenv/plugins,zsh,man}
+mkdir -p $HOME/.local/{bin,etc}
+
+# Make install git-extras
+pushd tools/git-extras
+PREFIX=$HOME/.local make install
+popd
 
 # Link config files
 ln -sf "$SCRIPT_DIR/zsh/zshenv" "$HOME/.zshenv"

@@ -35,8 +35,9 @@ export HTOPRC=$XDG_CONFIG_HOME/htop/htoprc
 export PACKER_CONFIG=$XDG_CONFIG_HOME/packer
 export PACKER_CACHE_DIR=$XDG_CACHE_HOME/packer
 
-# Add local binaries to PATH
+# Enable local binaries and man pages
 export PATH="$HOME/.local/bin:$PATH"
+export MANPATH="$XDG_DATA_HOME/man:$MANPATH"
 
 # pyenv and rbenv roots
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"

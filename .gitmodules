@@ -40,6 +40,9 @@
 [submodule "tools/diff-so-fancy"]
 	path = tools/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule "tools/git-extras"]
+	path = tools/git-extras
+	url = https://github.com/tj/git-extras.git
 [submodule "tools/k"]
 	path = tools/k
 	url = https://github.com/supercrabtree/k.git
