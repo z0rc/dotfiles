@@ -44,6 +44,7 @@ else goes under standard XDG paths or launched via aliases.
 Requirements:
 * `zsh` (for obvious reasons)
 * `make` (required to build mongo-hacker and install git-extras)
+* `perl` (not entirely required, but used by diff-so-fancy and MySQLTuner)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
