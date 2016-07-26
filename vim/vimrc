@@ -147,10 +147,12 @@ let g:SuperTabLongestHighlight=1
 " Don't conceal quotes in JSON
 let g:vim_json_syntax_conceal=0
 
-" Enable airline tabline
+" Tuning of airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline_left_alt_sep=''
+let g:airline_right_alt_sep=''
 
 " Automatic tags creation tuning
 let g:easytags_async=1
