@@ -213,9 +213,9 @@
 [submodule "vim/bundle/sleuth"]
 	path = vim/bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/snippets"]
+	path = vim/bundle/snippets
+	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = https://github.com/zoresvit/vim-colors-solarized.git
@@ -250,6 +250,9 @@
 [submodule "vim/bundle/tmux-navigator"]
 	path = vim/bundle/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
 [submodule "vim/bundle/virtualenv"]
 	path = vim/bundle/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git

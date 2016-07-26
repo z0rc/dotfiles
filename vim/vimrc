@@ -141,6 +141,8 @@ let g:lt_location_list_toggle_map='<leader>f'
 " SuperTab completion from top to bottom
 let g:SuperTabDefaultCompletionType="<c-n>"
 let g:SuperTabCrMapping=1
+let g:SuperTabLongestEnhanced=1
+let g:SuperTabLongestHighlight=1
 
 " Don't conceal quotes in JSON
 let g:vim_json_syntax_conceal=0
