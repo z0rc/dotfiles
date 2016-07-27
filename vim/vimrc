@@ -141,7 +141,6 @@ let g:lt_location_list_toggle_map='<leader>f'
 
 " SuperTab completion from top to bottom
 let g:SuperTabDefaultCompletionType='context'
-let g:SuperTabContextDefaultCompletionType='<c-n>'
 let g:SuperTabCrMapping=1
 let g:SuperTabLongestEnhanced=1
 let g:SuperTabLongestHighlight=1
