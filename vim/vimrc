@@ -53,6 +53,7 @@ set showmode
 set number
 set cursorline
 set showcmd " show partial commands in bottom left corner
+set completeopt-=preview " don't show preview window on competion
 
 " Scrolling
 set scrolloff=8 "start scrolling when we're 8 lines away from margins
@@ -139,7 +140,8 @@ let test#strategy="dispatch"
 let g:lt_location_list_toggle_map='<leader>f'
 
 " SuperTab completion from top to bottom
-let g:SuperTabDefaultCompletionType="<c-n>"
+let g:SuperTabDefaultCompletionType='context'
+let g:SuperTabContextDefaultCompletionType='<c-n>'
 let g:SuperTabCrMapping=1
 let g:SuperTabLongestEnhanced=1
 let g:SuperTabLongestHighlight=1
@@ -178,7 +180,7 @@ cmap w!! %!sudo tee > /dev/null %
 autocmd filetype crontab setlocal nobackup nowritebackup
 
 " Indicated border column (PEP8)
-autocmd FileType python setlocal completeopt-=preview colorcolumn=80
+autocmd FileType python setlocal colorcolumn=80
 
 " source local configuration
 runtime vimrc.local
