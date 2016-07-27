@@ -222,6 +222,9 @@
 [submodule "vim/bundle/solarized8"]
 	path = vim/bundle/solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git
+[submodule "vim/bundle/startify"]
+	path = vim/bundle/startify
+	url = https://github.com/mhinz/vim-startify.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
