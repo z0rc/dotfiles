@@ -43,6 +43,7 @@ else goes under standard XDG paths or launched via aliases.
 
 Requirements:
 * `zsh` (for obvious reasons)
+* `git` (all extrenal componets are added as git submodules)
 * `make` (required to build mongo-hacker and install git-extras)
 * `perl` (not entirely required, but used by diff-so-fancy and MySQLTuner)
 * `python` (used by several vim plugins, but they won't be activated, if python is missing)
