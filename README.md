@@ -37,7 +37,7 @@ else goes under standard XDG paths or launched via aliases.
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
-* [pyenv](https://github.com/yyuu/pyenv) and [rbenv](https://github.com/rbenv/rbenv)
+* [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv) and [perlbrew](https://github.com/gugod/App-perlbrew)
 
 # Installation
 
@@ -47,12 +47,13 @@ Requirements:
 * `make` (required to build mongo-hacker and install git-extras)
 * `perl` (not entirely required, but used by diff-so-fancy and MySQLTuner)
 * `python` (used by several vim plugins, but they won't be activated, if python is missing)
+* `ruby` (same case as with python)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
 ```sh
-mkdir $HOME/.local
-cd $HOME/.local
+mkdir "$HOME/.local"
+cd "$HOME/.local"
 git clone https://github.com/z0rc/dotfiles.git
 cd dotfiles
 ./deploy.sh
@@ -63,6 +64,34 @@ chsh -s /bin/zsh
 after the initial clone. Also it adds cron job to pull updates every midnight
 and serves as a post-merge git hook, so you don't have to care about updating
 submodules after successful pull.
+
+In case of missing perl, python or ruby, they can be installed via perlbrew,
+pyenv or rbenv after the deployment.
+
+## Vim
+
+In order you use all bundled vim plugins, please install vim (or neovim) with
+python, ruby and perl support built-in.
+
+Debian/Ubuntu:
+```
+apt-get install vim-nox
+```
+
+CentOS/RHEL/Fedora:
+```
+yum install vim-enhanced
+```
+or
+```
+dnf install vim-enhanced
+```
+
+OS X:
+```
+brew install vim --with-python3
+```
+
 
 # Configuration
 

@@ -39,9 +39,11 @@ export PACKER_CACHE_DIR="$XDG_CACHE_HOME/packer"
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$XDG_DATA_HOME/man:$MANPATH"
 
-# pyenv and rbenv roots
+# pyenv, rbenv and perlbrew roots
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
+export PERLBREW_ROOT="$XDG_DATA_HOME/perlbrew"
+export PERLBREW_HOME="$XDG_CONFIG_HOME/perlbrew"
 
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
