@@ -37,8 +37,8 @@ popd
 export PERLBREW_ROOT="$XDG_DATA_HOME/perlbrew"
 export PERLBREW_HOME="$XDG_CONFIG_HOME/perlbrew"
 ./perlbrew/perlbrew self-install
-./perlbrew/perlbrew install-patchperl
-./perlbrew/perlbrew install-cpanm
+yes | ./perlbrew/perlbrew install-patchperl
+yes | ./perlbrew/perlbrew install-cpanm
 
 # Install diff-so-fancy
 ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/diff-so-fancy" "$HOME/.local/bin/diff-so-fancy"
