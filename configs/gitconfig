@@ -37,6 +37,7 @@
 	compactionHeuristic = true
 	algorithm = histogram
 [core]
+	excludesfiles = ~/.config/git/ignore
 	autocrlf = input
 	whitespace = cr-at-eol
 	pager = diff-so-fancy | less --tabs=4 -RFX

@@ -265,6 +265,9 @@
 [submodule "vim/bundle/xolox-misc"]
 	path = vim/bundle/xolox-misc
 	url = https://github.com/xolox/vim-misc.git
+[submodule "zsh/plugins/autoenv"]
+	path = zsh/plugins/autoenv
+	url = https://github.com/Tarrasch/zsh-autoenv.git
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git

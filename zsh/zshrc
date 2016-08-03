@@ -371,7 +371,6 @@ source "$DOTFILES/tools/k/k.sh"
 # Enable pyenv
 PATH="$DOTFILES/pyenv/pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 source "$DOTFILES/pyenv/pyenv/completions/pyenv.zsh"
 
 # Enable rbenv
@@ -418,6 +417,9 @@ fi
 
 # Force path arrays to have unique values only
 typeset -U path cdpath fpath manpath
+
+# Enable autoenv plugin
+source "$ZSHDIR/plugins/autoenv/autoenv.zsh"
 
 # Highlighting plugin
 source "$ZSHDIR/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh"

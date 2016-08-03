@@ -48,6 +48,7 @@ ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/third_party/diff-highlight/diff-highligh
 ln -sf "$SCRIPT_DIR/zsh/zshenv" "$HOME/.zshenv"
 ln -sf "$SCRIPT_DIR/configs/gitconfig" "$XDG_CONFIG_HOME/git/config"
 ln -sf "$SCRIPT_DIR/configs/gitattributes" "$XDG_CONFIG_HOME/git/attributes"
+ln -sf "$SCRIPT_DIR/configs/gitignore" "$XDG_CONFIG_HOME/git/ignore"
 ln -sf "$SCRIPT_DIR/configs/mc.ini" "$XDG_CONFIG_HOME/mc/ini"
 ln -sf "$SCRIPT_DIR/configs/htoprc" "$XDG_CONFIG_HOME/htop/htoprc"
 ln -sf "$SCRIPT_DIR/configs/ranger" "$XDG_CONFIG_HOME/ranger/rc.conf"
