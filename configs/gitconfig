@@ -14,7 +14,7 @@
 	lg = log --graph --pretty=fuller --decorate --color --show-signature
 	ls = log --oneline --abbrev-commit --color
 	up = pull --rebase --prune
-	amend = commit -a --amend
+	amend = commit --amend
 [credential]
 	helper = cache --socket ~/.cache/git-credential-cache/socket
 [color "diff"]
