@@ -179,7 +179,7 @@ cmap w!! %!sudo tee > /dev/null %
 autocmd filetype crontab setlocal nobackup nowritebackup
 
 " Indicated border column (PEP8)
-autocmd FileType python setlocal colorcolumn=80
+autocmd filetype python setlocal colorcolumn=80
 
 " source local configuration
 runtime vimrc.local
