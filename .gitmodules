@@ -191,6 +191,10 @@
 [submodule "vim/bundle/python-syntax"]
 	path = vim/bundle/python-syntax
 	url = https://github.com/hdima/python-syntax.git
+[submodule "vim/bundle/qf"]
+	path = vim/bundle/qf
+	url = https://github.com/romainl/vim-qf.git
+	ignore = untracked
 [submodule "vim/bundle/rbenv"]
 	path = vim/bundle/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
