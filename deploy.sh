@@ -61,7 +61,8 @@ ln -snf "$SCRIPT_DIR/pyenv/pyenv-default-packages" "$XDG_DATA_HOME/pyenv/plugins
 ln -snf "$SCRIPT_DIR/pyenv/default-packages" "$XDG_DATA_HOME/pyenv/default-packages"
 
 # Link rbenv plugins to $RBENV_ROOT
-local rbenv_plugins=("ruby-build" "rbenv-binstubs" "rbenv-chefdk" "rbenv-ctags" "rbenv-default-gems" "rbenv-env" "rbenv-man" "default-gems")
+local -a rbenv_plugins
+rbenv_plugins=("ruby-build" "rbenv-binstubs" "rbenv-chefdk" "rbenv-ctags" "rbenv-default-gems" "rbenv-env" "rbenv-man" "default-gems")
 for plugin in "${rbenv_plugins[@]}"; do
     ln -snf "$SCRIPT_DIR/rbenv/$plugin" "$XDG_DATA_HOME/rbenv/plugins/$plugin"
 done
