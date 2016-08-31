@@ -62,6 +62,7 @@ ln -snf "$SCRIPT_DIR/pyenv/default-packages" "$XDG_DATA_HOME/pyenv/default-packa
 
 # Link rbenv plugins to $RBENV_ROOT
 ln -snf "$SCRIPT_DIR/rbenv/ruby-build" "$XDG_DATA_HOME/rbenv/plugins/ruby-build"
+ln -snf "$SCRIPT_DIR/rbenv/rbenv-binstubs" "$XDG_DATA_HOME/rbenv/plugins/rbenv-binstubs"
 ln -snf "$SCRIPT_DIR/rbenv/rbenv-ctags" "$XDG_DATA_HOME/rbenv/plugins/rbenv-ctags"
 ln -snf "$SCRIPT_DIR/rbenv/rbenv-default-gems" "$XDG_DATA_HOME/rbenv/plugins/rbenv-default-gems"
 ln -snf "$SCRIPT_DIR/rbenv/default-gems" "$XDG_DATA_HOME/rbenv/default-gems"

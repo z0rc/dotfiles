@@ -13,6 +13,9 @@
 [submodule "rbenv/rbenv"]
 	path = rbenv/rbenv
 	url = https://github.com/rbenv/rbenv.git
+[submodule "rbenv/rbenv-binstubs"]
+	path = rbenv/rbenv-binstubs
+	url = https://github.com/ianheggie/rbenv-binstubs.git
 [submodule "rbenv/rbenv-ctags"]
 	path = rbenv/rbenv-ctags
 	url = https://github.com/tpope/rbenv-ctags.git
