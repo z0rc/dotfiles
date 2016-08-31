@@ -61,14 +61,10 @@ ln -snf "$SCRIPT_DIR/pyenv/pyenv-default-packages" "$XDG_DATA_HOME/pyenv/plugins
 ln -snf "$SCRIPT_DIR/pyenv/default-packages" "$XDG_DATA_HOME/pyenv/default-packages"
 
 # Link rbenv plugins to $RBENV_ROOT
-ln -snf "$SCRIPT_DIR/rbenv/ruby-build" "$XDG_DATA_HOME/rbenv/plugins/ruby-build"
-ln -snf "$SCRIPT_DIR/rbenv/rbenv-binstubs" "$XDG_DATA_HOME/rbenv/plugins/rbenv-binstubs"
-ln -snf "$SCRIPT_DIR/rbenv/rbenv-chefdk" "$XDG_DATA_HOME/rbenv/plugins/rbenv-chefdk"
-ln -snf "$SCRIPT_DIR/rbenv/rbenv-ctags" "$XDG_DATA_HOME/rbenv/plugins/rbenv-ctags"
-ln -snf "$SCRIPT_DIR/rbenv/rbenv-default-gems" "$XDG_DATA_HOME/rbenv/plugins/rbenv-default-gems"
-ln -snf "$SCRIPT_DIR/rbenv/rbenv-env" "$XDG_DATA_HOME/rbenv/plugins/rbenv-env"
-ln -snf "$SCRIPT_DIR/rbenv/rbenv-man" "$XDG_DATA_HOME/rbenv/plugins/rbenv-man"
-ln -snf "$SCRIPT_DIR/rbenv/default-gems" "$XDG_DATA_HOME/rbenv/default-gems"
+local rbenv_plugins=("ruby-build" "rbenv-binstubs" "rbenv-chefdk" "rbenv-ctags" "rbenv-default-gems" "rbenv-env" "rbenv-man" "default-gems")
+for plugin in "${rbenv_plugins[@]}"; do
+    ln -snf "$SCRIPT_DIR/rbenv/$plugin" "$XDG_DATA_HOME/rbenv/plugins/$plugin"
+done
 
 # Install crontab task to pull updates every midnight
 CRON_TASK="cd $SCRIPT_DIR && git stash >/dev/null 2>&1 && git pull >/dev/null 2>&1 && git stash pop >/dev/null 2>&1"
