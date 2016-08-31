@@ -66,6 +66,7 @@ ln -snf "$SCRIPT_DIR/rbenv/rbenv-binstubs" "$XDG_DATA_HOME/rbenv/plugins/rbenv-b
 ln -snf "$SCRIPT_DIR/rbenv/rbenv-chefdk" "$XDG_DATA_HOME/rbenv/plugins/rbenv-chefdk"
 ln -snf "$SCRIPT_DIR/rbenv/rbenv-ctags" "$XDG_DATA_HOME/rbenv/plugins/rbenv-ctags"
 ln -snf "$SCRIPT_DIR/rbenv/rbenv-default-gems" "$XDG_DATA_HOME/rbenv/plugins/rbenv-default-gems"
+ln -snf "$SCRIPT_DIR/rbenv/rbenv-env" "$XDG_DATA_HOME/rbenv/plugins/rbenv-env"
 ln -snf "$SCRIPT_DIR/rbenv/rbenv-man" "$XDG_DATA_HOME/rbenv/plugins/rbenv-man"
 ln -snf "$SCRIPT_DIR/rbenv/default-gems" "$XDG_DATA_HOME/rbenv/default-gems"
 

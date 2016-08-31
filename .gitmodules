@@ -25,6 +25,9 @@
 [submodule "rbenv/rbenv-default-gems"]
 	path = rbenv/rbenv-default-gems
 	url = https://github.com/rbenv/rbenv-default-gems.git
+[submodule "rbenv/rbenv-env"]
+	path = rbenv/rbenv-env
+	url = https://github.com/ianheggie/rbenv-env.git
 [submodule "rbenv/rbenv-man"]
 	path = rbenv/rbenv-man
 	url = https://github.com/mlafeldt/rbenv-man.git
