@@ -79,9 +79,9 @@
 [submodule "vim/bundle/airline-themes"]
 	path = vim/bundle/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/bundle/ansible-yaml"]
-	path = vim/bundle/ansible-yaml
-	url = https://github.com/chase/vim-ansible-yaml.git
+[submodule "vim/bundle/ansible"]
+	path = vim/bundle/ansible
+	url = https://github.com/pearofducks/ansible-vim.git
 [submodule "vim/bundle/auto-pairs"]
 	path = vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
