@@ -34,6 +34,8 @@ export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
 export PACKER_CONFIG="$XDG_CONFIG_HOME/packer"
 export PACKER_CACHE_DIR="$XDG_CACHE_HOME/packer"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 
 # Enable local binaries and man pages
 export PATH="$HOME/.local/bin:$PATH"
