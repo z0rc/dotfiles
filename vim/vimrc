@@ -96,10 +96,10 @@ if has('nvim')
     nnoremap <A-f> :bnext!<CR>
     inoremap <A-f> <ESC>:bnext!<CR>
 else
-    nnoremap <ESC>b :bprev<CR>
-    inoremap <ESC>b <ESC>:bprev<CR>
-    nnoremap <ESC>f :bnext<CR>
-    inoremap <ESC>f <ESC>:bnext<CR>
+    nnoremap <ESC>b :bprev!<CR>
+    inoremap <ESC>b <ESC>:bprev!<CR>
+    nnoremap <ESC>f :bnext!<CR>
+    inoremap <ESC>f <ESC>:bnext!<CR>
 endif
 
 " Ctrl arrows to switch between splits and tmux panes
