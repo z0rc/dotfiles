@@ -49,7 +49,7 @@ brew 'tmux'
 brew 'tree'
 brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
 brew 'unrar'
-brew 'vim', args: ['with-lua', 'with-override-system-vi']
+brew 'vim', args: ['with-lua', 'with-python3', 'with-override-system-vi']
 brew 'watch'
 brew 'wget'
 brew 'zsh'
