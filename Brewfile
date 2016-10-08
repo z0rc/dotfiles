@@ -86,3 +86,6 @@ cask 'virtualbox-extension-pack'
 mas 'Tweetbot' 557168941
 mas 'The Unarchiver' 425424353
 mas 'Reeder' 880001334
+mas 'Numbers' 409203825
+mas 'Pages' 409201541
+mas 'Keynote' 409183694
