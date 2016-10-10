@@ -25,7 +25,7 @@ popd
 # Create required directories
 mkdir -p "$XDG_CONFIG_HOME"/{git/local,mc,htop,ranger}
 mkdir -p "$XDG_CACHE_HOME"/{nvim,vim,zsh}
-mkdir -p "$XDG_DATA_HOME"/{pyenv/plugins,rbenv/plugins,zsh,man}
+mkdir -p "$XDG_DATA_HOME"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,zsh,man}
 mkdir -p "$HOME"/.local/{bin,etc}
 
 # Make install git-extras
@@ -66,6 +66,11 @@ rbenv_plugins=("ruby-build" "rbenv-binstubs" "rbenv-chefdk" "rbenv-ctags" "rbenv
 for plugin in "${rbenv_plugins[@]}"; do
     ln -snf "$SCRIPT_DIR/rbenv/$plugin" "$XDG_DATA_HOME/rbenv/plugins/$plugin"
 done
+
+# Link nodenv plugins
+ln -snf "$SCRIPT_DIR/nodenv/node-build" "$XDG_DATA_HOME/nodenv/plugins/node-build"
+ln -snf "$SCRIPT_DIR/nodenv/nodenv-aliases" "$XDG_DATA_HOME/nodenv/plugins/nodenv-aliases"
+ln -snf "$SCRIPT_DIR/nodenv/nodenv-package-rehash" "$XDG_DATA_HOME/nodenv/plugins/nodenv-package-rehash"
 
 # Install crontab task to pull updates every midnight
 CRON_TASK="cd $SCRIPT_DIR && git stash >/dev/null 2>&1 && git pull >/dev/null 2>&1 && git stash pop >/dev/null 2>&1"

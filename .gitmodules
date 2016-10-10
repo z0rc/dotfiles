@@ -1,3 +1,15 @@
+[submodule "nodenv/node-build"]
+	path = nodenv/node-build
+	url = https://github.com/nodenv/node-build.git
+[submodule "nodenv/nodenv"]
+	path = nodenv/nodenv
+	url = https://github.com/nodenv/nodenv.git
+[submodule "nodenv/nodenv-aliases"]
+	path = nodenv/nodenv-aliases
+	url = https://github.com/nodenv/nodenv-aliases.git
+[submodule "nodenv/nodenv-package-rehash"]
+	path = nodenv/nodenv-package-rehash
+	url = https://github.com/nodenv/nodenv-package-rehash.git
 [submodule "perlbrew"]
 	path = perlbrew
 	url = https://github.com/gugod/App-perlbrew.git

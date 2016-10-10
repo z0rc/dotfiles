@@ -37,7 +37,7 @@ else goes under standard XDG paths or launched via aliases.
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
-* [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv) and [perlbrew](https://github.com/gugod/App-perlbrew)
+* [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv), [nodenv](https://github.com/nodenv/nodenv) and [perlbrew](https://github.com/gugod/App-perlbrew)
 
 # Installation
 

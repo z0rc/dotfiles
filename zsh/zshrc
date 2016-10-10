@@ -376,6 +376,10 @@ eval "$(pyenv init -)"
 PATH="$DOTFILES/rbenv/rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Enable nodenv
+PATH="$DOTFILES/nodenv/nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
 # Enable perlbrew
 source "$PERLBREW_ROOT/etc/bashrc"
 source "$PERLBREW_ROOT/etc/perlbrew-completion.bash"
