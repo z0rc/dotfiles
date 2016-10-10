@@ -104,8 +104,8 @@ print "done"
 print -n "Installing cron job for periodic updates... "
 CRON_TASK="cd $SCRIPT_DIR && git stash >/dev/null 2>&1 && git pull >/dev/null 2>&1 && git stash pop >/dev/null 2>&1"
 CRON_SCHEDULE="0 0 * * * $CRON_TASK"
-if cat <(fgrep -i -v "$CRON_TASK" <(crontab -l)) <(echo "$CRON_SCHEDULE") | crontab - &> /dev/null; then
+if cat <(fgrep -i -v "$CRON_TASK" <(crontab -l)) <(echo "$CRON_SCHEDULE") | crontab -; then
     print "done"
 else
-    print "failed\nPlease add \`cd $SCRIPT_DIR && git pull\` to your crontab or just ignore this, you can always update dotfiles manually"
+    print "Please add \`cd $SCRIPT_DIR && git pull\` to your crontab or just ignore this, you can always update dotfiles manually"
 fi
