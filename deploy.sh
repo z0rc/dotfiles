@@ -18,9 +18,11 @@ mkdir -p .git/hooks
 ln -sf ../../deploy.sh .git/hooks/post-merge
 
 # Make mongo-hacker
-pushd tools/mongo-hacker
-make mongo_hacker.js
-popd
+if type -f make &> /dev/null; then
+    pushd tools/mongo-hacker
+    make mongo_hacker.js > /dev/null
+    popd
+fi
 
 # Create required directories
 mkdir -p "$XDG_CONFIG_HOME"/{git/local,mc,htop,ranger}
@@ -29,9 +31,11 @@ mkdir -p "$XDG_DATA_HOME"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,zsh,man}
 mkdir -p "$HOME"/.local/{bin,etc}
 
 # Make install git-extras
-pushd tools/git-extras
-PREFIX="$HOME"/.local make install
-popd
+if type -f tmux &> /dev/null; then
+    pushd tools/git-extras
+    PREFIX="$HOME"/.local make install > /dev/null
+    popd
+fi
 
 # Install perlbrew and friends
 export PERLBREW_ROOT="$XDG_DATA_HOME/perlbrew"

@@ -363,7 +363,9 @@ alias spark="$DOTFILES/tools/spark/spark"
 alias mysqltuner="$DOTFILES/tools/MySQLTuner-perl/mysqltuner.pl"
 
 # Enable mongo-hacker without symlink in home
-mongo() { command mongo "$@" --shell --norc "$DOTFILES/tools/mongo-hacker/mongo_hacker.js"; }
+if [[ -f "$DOTFILES/tools/mongo-hacker/mongo_hacker.js" ]]; then
+    mongo() { command mongo "$@" --shell --norc "$DOTFILES/tools/mongo-hacker/mongo_hacker.js"; }
+fi
 
 # Enable "k" plugin
 source "$DOTFILES/tools/k/k.sh"
