@@ -371,12 +371,10 @@ source "$DOTFILES/tools/k/k.sh"
 # Enable pyenv
 PATH="$DOTFILES/pyenv/pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-source "$DOTFILES/pyenv/pyenv/completions/pyenv.zsh"
 
 # Enable rbenv
 PATH="$DOTFILES/rbenv/rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-source "$DOTFILES/rbenv/rbenv/completions/rbenv.zsh"
 
 # Enable perlbrew
 source "$PERLBREW_ROOT/etc/bashrc"
