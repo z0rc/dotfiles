@@ -92,7 +92,6 @@ OS X:
 brew install vim --with-python3
 ```
 
-
 # Configuration
 
 ## Git
