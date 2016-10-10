@@ -40,4 +40,4 @@
 	excludesfiles = ~/.config/git/ignore
 	autocrlf = input
 	whitespace = cr-at-eol
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = type -f diff-so-fancy &> /dev/null && diff-so-fancy | less --tabs=4 -RFX || less -RFX

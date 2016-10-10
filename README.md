@@ -45,9 +45,9 @@ Requirements:
 * `zsh` (for obvious reasons)
 * `git` (all extrenal componets are added as git submodules)
 * `make` (optional: required to build mongo-hacker and install git-extras)
-* `perl` (not entirely required, but used by diff-so-fancy and MySQLTuner)
-* `python` (used by several vim plugins, but they won't be activated, if python is missing)
-* `ruby` (same case as with python)
+* `perl` (optional: used by diff-so-fancy and MySQLTuner)
+* `python` (optional: used by several vim plugins, but they won't be activated, if python is missing)
+* `ruby` (optional: same case as with python)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:

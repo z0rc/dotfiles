@@ -360,7 +360,9 @@ source "$ZSHDIR/plugins/iterm2_integration.zsh"
 alias spark="$DOTFILES/tools/spark/spark"
 
 # Enable mysqltuner without installing it to the PATH
-alias mysqltuner="$DOTFILES/tools/MySQLTuner-perl/mysqltuner.pl"
+if type -f perl &> /dev/null; then
+    alias mysqltuner="$DOTFILES/tools/MySQLTuner-perl/mysqltuner.pl"
+fi
 
 # Enable mongo-hacker without symlink in home
 if [[ -f "$DOTFILES/tools/mongo-hacker/mongo_hacker.js" ]]; then

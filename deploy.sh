@@ -37,16 +37,18 @@ if type -f tmux &> /dev/null; then
     popd
 fi
 
-# Install perlbrew and friends
-export PERLBREW_ROOT="$XDG_DATA_HOME/perlbrew"
-export PERLBREW_HOME="$XDG_CONFIG_HOME/perlbrew"
-./perlbrew/perlbrew self-install
-yes | ./perlbrew/perlbrew install-patchperl
-yes | ./perlbrew/perlbrew install-cpanm
+if type -f perl &> /dev/null; then
+    # Install perlbrew and friends
+    export PERLBREW_ROOT="$XDG_DATA_HOME/perlbrew"
+    export PERLBREW_HOME="$XDG_CONFIG_HOME/perlbrew"
+    ./perlbrew/perlbrew self-install
+    yes | ./perlbrew/perlbrew install-patchperl
+    yes | ./perlbrew/perlbrew install-cpanm
 
-# Install diff-so-fancy
-ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/diff-so-fancy" "$HOME/.local/bin/diff-so-fancy"
-ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/third_party/diff-highlight/diff-highlight" "$HOME/.local/bin/diff-highlight"
+    # Install diff-so-fancy
+    ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/diff-so-fancy" "$HOME/.local/bin/diff-so-fancy"
+    ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/third_party/diff-highlight/diff-highlight" "$HOME/.local/bin/diff-highlight"
+fi
 
 # Link config files
 ln -sf "$SCRIPT_DIR/zsh/zshenv" "$HOME/.zshenv"
