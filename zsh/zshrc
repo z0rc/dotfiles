@@ -306,10 +306,12 @@ vpaste () {
 }
 
 # Make less more friendly
-if type -f lesspipe &> /dev/null; then
-    export LESSOPEN="| lesspipe %s"
-    export LESSCLOSE="lesspipe %s %s"
-fi
+for lpipe in lesspipe lesspipe.sh; do
+    if type -f $lpipe &> /dev/null; then
+        export LESSOPEN="| $lpipe %s"
+        export LESSCLOSE="$lpipe %s %s"
+    fi
+done
 export LESS="-RiwM"
 
 # Color man
