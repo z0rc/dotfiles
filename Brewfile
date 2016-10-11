@@ -23,7 +23,7 @@ brew 'homebrew/fuse/sshfs'
 brew 'htop'
 brew 'jmeter'
 brew 'jq'
-brew 'lesspipe'
+brew 'lesspipe', args: ['with-syntax-highlighting']
 brew 'mas'
 brew 'media-info'
 brew 'midnight-commander'
