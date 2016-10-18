@@ -268,6 +268,9 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/systemd-syntax"]
+	path = vim/bundle/systemd-syntax
+	url = https://github.com/nfnty/vim-systemd-syntax.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
