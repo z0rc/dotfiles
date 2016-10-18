@@ -106,8 +106,13 @@ zstyle ':vcs_info:*' enable git svn bzr hg cvs
 zstyle ':vcs_info:*' formats '[%b%c%u]'
 
 # Indicate that shell is running under Midnight Commander or ranger
-[[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=
-[[ -n "$RANGER_LEVEL" ]] && psvar[1]="[ranger]" || psvar[1]=
+if [[ -n "$MC_SID" ]]; then
+    psvar[1]="[mc]"
+elif [[ -n "$RANGER_LEVEL" ]]; then
+    psvar[1]="[ranger]"
+else
+    psvar[1]=
+fi
 
 # vcs_info invocation
 _indicate_vcs_precmd () {
