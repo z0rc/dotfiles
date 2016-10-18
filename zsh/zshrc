@@ -453,6 +453,13 @@ bindkey "${key[Down]}" history-substring-search-down
 source "$ZSHDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
 # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
+# Hack to init zsh-asug only once
+# https://github.com/zsh-users/zsh-autosuggestions/issues/136#issuecomment-196640897
+_zsh_autosuggest_start () {
+    add-zsh-hook -d precmd _zsh_autosuggest_start
+    _zsh_autosuggest_check_deprecated_config
+    _zsh_autosuggest_bind_widgets
+}
 
 # Attach to a tmux session, if there's any. Do this only for remote SSH
 # sessions, don't mess local tmux sessions.
