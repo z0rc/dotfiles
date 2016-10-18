@@ -109,11 +109,9 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:*' enable git svn bzr hg cvs
 zstyle ':vcs_info:*' formats '[%b%c%u]'
 
-# Indicate that shell is running under Midnight Commander
-_indicate_mc_precmd () {
-    [[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=
-}
-add-zsh-hook precmd _indicate_mc_precmd
+# Indicate that shell is running under Midnight Commander or ranger
+[[ -n "$MC_SID" ]] && psvar[1]="[mc]" || psvar[1]=
+[[ -n "$RANGER_LEVEL" ]] && psvar[1]="[ranger]" || psvar[1]=
 
 # vcs_info invocation
 _indicate_vcs_precmd () {
@@ -147,7 +145,7 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
 fi
 
 # Fancy prompt
-PROMPT="%1v$psvar[4][%{$fg[yellow]%}%m%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}]%3v%2v%# "
+PROMPT="$psvar[4]%1v[%{$fg[yellow]%}%m%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}]%3v%2v%# "
 
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
