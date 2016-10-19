@@ -320,6 +320,9 @@
 [submodule "zsh/plugins/history-substring-search"]
 	path = zsh/plugins/history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "zsh/plugins/liquidprompt"]
+	path = zsh/plugins/liquidprompt
+	url = https://github.com/nojhan/liquidprompt.git
 [submodule "zsh/plugins/syntax-highlighting"]
 	path = zsh/plugins/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
