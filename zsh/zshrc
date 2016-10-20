@@ -346,7 +346,7 @@ source "$DOTFILES/tools/k/k.sh"
 # Enable pyenv
 PATH="$DOTFILES/pyenv/pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # Enable rbenv
 PATH="$DOTFILES/rbenv/rbenv/bin:$PATH"
