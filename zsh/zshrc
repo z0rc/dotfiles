@@ -353,10 +353,6 @@ eval "$(rbenv init -)"
 PATH="$DOTFILES/nodenv/nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
-# Enable perlbrew
-source "$PERLBREW_ROOT/etc/bashrc"
-source "$PERLBREW_ROOT/etc/perlbrew-completion.bash"
-
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate

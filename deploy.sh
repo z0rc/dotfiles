@@ -65,15 +65,6 @@ if type -f perl &> /dev/null; then
     ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/diff-so-fancy" "$HOME/.local/bin/diff-so-fancy"
     ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/third_party/diff-highlight/diff-highlight" "$HOME/.local/bin/diff-highlight"
     print "  ...done"
-
-    # Install perlbrew and friends
-    print "Installing perlbrew..."
-    export PERLBREW_ROOT="$XDG_DATA_HOME/perlbrew"
-    export PERLBREW_HOME="$XDG_CONFIG_HOME/perlbrew"
-    ./perlbrew/perlbrew self-install > /dev/null
-    yes | ./perlbrew/perlbrew install-patchperl > /dev/null
-    yes | ./perlbrew/perlbrew install-cpanm > /dev/null
-    print "  ...done"
 fi
 
 # Link pyenv plugins to $PYENV_ROOT

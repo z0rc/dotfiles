@@ -41,12 +41,10 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$XDG_DATA_HOME/man:$MANPATH"
 
-# pyenv, rbenv, nodenv and perlbrew roots
+# pyenv, rbenv and nodenv roots
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
 export NODENV_ROOT="$XDG_DATA_HOME/nodenv"
-export PERLBREW_ROOT="$XDG_DATA_HOME/perlbrew"
-export PERLBREW_HOME="$XDG_CONFIG_HOME/perlbrew"
 
 # Aliases
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"

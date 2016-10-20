@@ -10,9 +10,6 @@
 [submodule "nodenv/nodenv-package-rehash"]
 	path = nodenv/nodenv-package-rehash
 	url = https://github.com/nodenv/nodenv-package-rehash.git
-[submodule "perlbrew"]
-	path = perlbrew
-	url = https://github.com/gugod/App-perlbrew.git
 [submodule "pyenv/pyenv"]
 	path = pyenv/pyenv
 	url = https://github.com/yyuu/pyenv.git
