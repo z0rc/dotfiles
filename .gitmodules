@@ -302,6 +302,9 @@
 [submodule "zsh/plugins/autoenv"]
 	path = zsh/plugins/autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv.git
+[submodule "zsh/plugins/autopair"]
+	path = zsh/plugins/autopair
+	url = https://github.com/hlissner/zsh-autopair.git
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git

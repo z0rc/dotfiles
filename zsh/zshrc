@@ -401,8 +401,12 @@ typeset -U path cdpath fpath manpath
 # Enable autoenv plugin
 source "$ZSHDIR/plugins/autoenv/autoenv.zsh"
 
+# Autoparis plugin
+source "$ZSHDIR/plugins/autopair/autopair.zsh"
+
 # Highlighting plugin
 source "$ZSHDIR/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh"
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # cdr plugin
 ZSH_CDR_DIR="$XDG_CACHE_HOME/zsh"
