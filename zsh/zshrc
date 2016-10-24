@@ -111,8 +111,14 @@ elif [[ -n "$RANGER_LEVEL" ]]; then
     LP_PS1_PREFIX="[ranger]"
 fi
 
-# Disable liquidprompt runtime indicator
+# Disable some liquidprompt features
 LP_ENABLE_RUNTIME=0
+LP_ENABLE_PERM=0
+LP_ENABLE_PROXY=0
+LP_ENABLE_JOBS=0
+LP_ENABLE_LOAD=0
+LP_ENABLE_BATT=0
+LP_ENABLE_SUDO=0
 
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
