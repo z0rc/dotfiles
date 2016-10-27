@@ -135,9 +135,6 @@
 [submodule "vim/bundle/expand-region"]
 	path = vim/bundle/expand-region
 	url = https://github.com/landock/vim-expand-region.git
-[submodule "vim/bundle/fat-finger"]
-	path = vim/bundle/fat-finger
-	url = https://github.com/chip/vim-fat-finger.git
 [submodule "vim/bundle/figitive"]
 	path = vim/bundle/figitive
 	url = https://github.com/tpope/vim-fugitive.git
