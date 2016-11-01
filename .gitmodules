@@ -213,6 +213,9 @@
 	path = vim/bundle/qf
 	url = https://github.com/romainl/vim-qf.git
 	ignore = untracked
+[submodule "vim/bundle/rainbow"]
+	path = vim/bundle/rainbow
+	url = https://github.com/luochen1990/rainbow.git
 [submodule "vim/bundle/rbenv"]
 	path = vim/bundle/rbenv
 	url = https://github.com/tpope/vim-rbenv.git

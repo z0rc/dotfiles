@@ -148,6 +148,9 @@ let g:SuperTabLongestHighlight=1
 " Don't conceal quotes in JSON
 let g:vim_json_syntax_conceal=0
 
+" Enable color coded parentheses
+let g:rainbow_active=1
+
 " Tuning of airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_left_sep=''
