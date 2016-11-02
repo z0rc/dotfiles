@@ -88,6 +88,9 @@
 [submodule "vim/bundle/airline-themes"]
 	path = vim/bundle/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
+	url = https://github.com/w0rp/ale.git
 [submodule "vim/bundle/ansible"]
 	path = vim/bundle/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
@@ -262,9 +265,6 @@
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/systemd-syntax"]
 	path = vim/bundle/systemd-syntax
 	url = https://github.com/nfnty/vim-systemd-syntax.git
