@@ -199,6 +199,9 @@
 [submodule "vim/bundle/perl"]
 	path = vim/bundle/perl
 	url = https://github.com/vim-perl/vim-perl.git
+[submodule "vim/bundle/php"]
+	path = vim/bundle/php
+	url = https://github.com/StanAngeloff/php.vim.git
 [submodule "vim/bundle/pyenv"]
 	path = vim/bundle/pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
