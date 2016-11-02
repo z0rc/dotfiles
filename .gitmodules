@@ -203,12 +203,9 @@
 	path = vim/bundle/pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
 	ignore = untracked
-[submodule "vim/bundle/python-pep8-indent"]
-	path = vim/bundle/python-pep8-indent
-	url = https://github.com/hynek/vim-python-pep8-indent.git
-[submodule "vim/bundle/python-syntax"]
-	path = vim/bundle/python-syntax
-	url = https://github.com/hdima/python-syntax.git
+[submodule "vim/bundle/python-combined"]
+	path = vim/bundle/python-combined
+	url = https://github.com/mitsuhiko/vim-python-combined.git
 [submodule "vim/bundle/qf"]
 	path = vim/bundle/qf
 	url = https://github.com/romainl/vim-qf.git
