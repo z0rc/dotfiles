@@ -281,9 +281,10 @@ vpaste () {
 
 # Make less more friendly
 for lpipe in lesspipe lesspipe.sh; do
-    if type -f $lpipe &> /dev/null; then
+    if command $lpipe &> /dev/null; then
         export LESSOPEN="| $lpipe %s"
         export LESSCLOSE="$lpipe %s %s"
+        export LESS_ADVANCED_PREPROCESSOR=1
     fi
 done
 export LESS="-RiwM"
