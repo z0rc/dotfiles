@@ -147,6 +147,9 @@
 [submodule "vim/bundle/gitgutter"]
 	path = vim/bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/go"]
+	path = vim/bundle/go
+	url = https://github.com/fatih/vim-go.git
 [submodule "vim/bundle/groovy"]
 	path = vim/bundle/groovy
 	url = https://github.com/endSly/groovy.vim.git
