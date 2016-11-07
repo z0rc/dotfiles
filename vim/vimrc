@@ -139,12 +139,6 @@ let test#strategy="dispatch"
 " Mappings for listtoggle
 let g:lt_location_list_toggle_map='<leader>f'
 
-" SuperTab completion from top to bottom
-let g:SuperTabDefaultCompletionType='context'
-let g:SuperTabCrMapping=1
-let g:SuperTabLongestEnhanced=1
-let g:SuperTabLongestHighlight=1
-
 " Don't conceal quotes in JSON
 let g:vim_json_syntax_conceal=0
 
@@ -176,6 +170,12 @@ let g:vim_markdown_conceal=0
 " Don't echo root dir, don't change root automatically
 let g:rooter_silent_chdir=1
 let g:rooter_manual_only=1
+
+" completion tuning
+let g:jedi#smart_auto_mappings=0
+let g:neocomplete#enable_at_startup=1
+let g:neocomplete#enable_smart_case=1
+call CleverTab#NeoCompleteFirst()
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %

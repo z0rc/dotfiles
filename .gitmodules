@@ -106,6 +106,9 @@
 [submodule "vim/bundle/cbackup"]
 	path = vim/bundle/cbackup
 	url = https://github.com/vim-scripts/cbackup.vim.git
+[submodule "vim/bundle/clevertab"]
+	path = vim/bundle/clevertab
+	url = https://github.com/neitanod/vim-clevertab.git
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -181,6 +184,9 @@
 [submodule "vim/bundle/mw-utils"]
 	path = vim/bundle/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/neocomplete"]
+	path = vim/bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -262,9 +268,6 @@
 [submodule "vim/bundle/startify"]
 	path = vim/bundle/startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
