@@ -172,11 +172,11 @@ zle -N dot
 bindkey . dot
 
 # Use multithreaded archivers if possible
-if type -f pigz &> /dev/null; then
+if (( $+commands[pigz] )); then
     function gzip () { command pigz $@ }
 fi
 
-if type -f pbzip2 &> /dev/null; then
+if (( $+commands[pbzip2] )); then
     function bzip2 () { command pbzip2 $@ }
 fi
 
@@ -271,17 +271,17 @@ vpaste () {
         out=`curl -s -F 'text=<-' "$uri?$1"`
     fi
     echo "$out"
-    if type -f xclip &> /dev/null && [[ ! -z "$DISPLAY" ]]; then
+    if (( $+commands[xclip] )) && [[ ! -z "$DISPLAY" ]]; then
         echo -n "$out" | xclip -i -selection primary
         echo -n "$out" | xclip -i -selection clipboard
-    elif type -f pbcopy &> /dev/null; then
+    elif (( $+commands[pbcopy] )); then
         echo -n "$out" | pbcopy
     fi
 }
 
 # Make less more friendly
 for lpipe in lesspipe lesspipe.sh; do
-    if command $lpipe &> /dev/null; then
+    if (( $+commands[$lpipe] )); then
         export LESSOPEN="| $lpipe %s"
         export LESSCLOSE="$lpipe %s %s"
         export LESS_ADVANCED_PREPROCESSOR=1
@@ -300,7 +300,7 @@ export LESS_TERMCAP_us=$(printf "\e[4;32m")
 export _NROFF_U=1
 
 # Enable color support of ls
-if type -f dircolors &> /dev/null; then
+if (( $+commands[dircolors] )); then
     eval `dircolors "$ZSHDIR/plugins/dircolors-solarized/dircolors.256dark"`
     alias ls="ls --color=auto -F -X"
     alias dir="dir --color=auto"
@@ -308,7 +308,7 @@ if type -f dircolors &> /dev/null; then
 fi
 
 # More colors
-if type -f grc &> /dev/null; then
+if (( $+commands[grc] )); then
     alias colorify="grc -es --colour=auto"
     for command in df dig gcc ifconfig mount mtr netstat ping ps thraceroute; do
         if [[ -f "/usr/local/share/grc/conf.$command" ]] || [[ -f "/usr/share/grc/conf.$command" ]]; then
@@ -319,7 +319,7 @@ if type -f grc &> /dev/null; then
         alias $command="colorify $command"
     done
 fi
-if type -f colordiff &> /dev/null; then
+if (( $+commands[colordiff] )); then
     alias diff="colordiff -Naur"
 fi
 
@@ -337,7 +337,7 @@ source "$ZSHDIR/plugins/iterm2_integration.zsh"
 alias spark="$DOTFILES/tools/spark/spark"
 
 # Enable mysqltuner without installing it to the PATH
-if type -f perl &> /dev/null; then
+if (( $+commands[perl] )); then
     alias mysqltuner="$DOTFILES/tools/MySQLTuner-perl/mysqltuner.pl"
 fi
 
@@ -386,7 +386,7 @@ if [[ `whoami` = root ]] && [[ -n "$SSH_CLIENT" ]] && [[ -n "$SUDO_USER" ]] && [
 fi
 
 # Allow root to use my DISPLAY (only on linux for now)
-if [[ -n "$DISPLAY" ]] && [[ `uname -s` != "Darwin" ]] && type -f xhost &> /dev/null; then
+if [[ -n "$DISPLAY" ]] && [[ `uname -s` != "Darwin" ]] && (( $+commands[xhost] )); then
     xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
@@ -441,6 +441,6 @@ _zsh_autosuggest_start () {
 
 # Attach to a tmux session, if there's any. Do this only for remote SSH
 # sessions, don't mess local tmux sessions.
-if type -f tmux &> /dev/null && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux && [[ -n "$SSH_TTY" ]] && [[ -z "$MC_SID" ]]; then
+if (( $+commands[tmux] )) && [[ -z "$TMUX" ]] && pgrep -U `whoami` tmux && [[ -n "$SSH_TTY" ]] && [[ -z "$MC_SID" ]]; then
     tmux attach
 fi
