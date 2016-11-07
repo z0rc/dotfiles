@@ -18,6 +18,7 @@ brew 'curl', args: ['with-c-ares', 'with-gssapi', 'with-libidn', 'with-nghttp2']
 brew 'git'
 brew 'gnu-sed'
 brew 'gnu-tar'
+brew 'go'
 brew 'grc'
 brew 'homebrew/fuse/sshfs'
 brew 'htop'
