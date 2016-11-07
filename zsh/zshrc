@@ -428,6 +428,9 @@ source "$ZSHDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 # Don't start autosuggestions on large input buffer
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+# Workaround until it's fixed in zsh-autosuggest:
+# https://github.com/zsh-users/zsh-autosuggestions/pull/206
+typeset -ar ZSH_AUTOSUGGEST_IGNORE_WIDGETS=( "${ZSH_AUTOSUGGEST_IGNORE_WIDGETS[@]}" zle-isearch-update )
 # Hack to init zsh-asug only once
 # https://github.com/zsh-users/zsh-autosuggestions/issues/136#issuecomment-196640897
 _zsh_autosuggest_start () {
