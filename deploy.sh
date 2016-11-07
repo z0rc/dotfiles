@@ -43,7 +43,7 @@ mkdir -p .git/hooks
 ln -sf ../../deploy.sh .git/hooks/post-merge
 print "  ...done"
 
-if type -f make &> /dev/null; then
+if (( $+commands[make] )); then
     # Make mongo-hacker
     print "Making mongo-hacker config..."
     pushd tools/mongo-hacker
@@ -59,7 +59,7 @@ if type -f make &> /dev/null; then
     print "  ...done"
 fi
 
-if type -f perl &> /dev/null; then
+if (( $+commands[perl] )); then
     # Install diff-so-fancy
     print "Installing diff-so-fancy..."
     ln -sf "$SCRIPT_DIR/tools/diff-so-fancy/diff-so-fancy" "$HOME/.local/bin/diff-so-fancy"
