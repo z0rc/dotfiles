@@ -36,9 +36,10 @@ export PACKER_CONFIG="$XDG_CONFIG_HOME/packer"
 export PACKER_CACHE_DIR="$XDG_CACHE_HOME/packer"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export GOPATH="$HOME/.local/go"
 
 # Enable local binaries and man pages
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 export MANPATH="$XDG_DATA_HOME/man:$MANPATH"
 
 # pyenv, rbenv and nodenv roots
