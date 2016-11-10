@@ -41,3 +41,5 @@
 	autocrlf = input
 	whitespace = cr-at-eol
 	pager = type -f diff-so-fancy > /dev/null 2>&1 && diff-so-fancy | less --tabs=4 -RFX || less -RFX
+[submodule]
+	fetchJobs = 5
