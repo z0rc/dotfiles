@@ -102,22 +102,30 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
 fi
 
 # Indicate that shell is running under Midnight Commander or ranger
+# Also use default zsh prompt symbol
 if [[ -n "$MC_SID" ]]; then
-    LP_PS1_PREFIX="[mc]"
+    PURE_PROMPT_SYMBOL="[mc] %#"
 elif [[ -n "$RANGER_LEVEL" ]]; then
-    LP_PS1_PREFIX="[ranger]"
+    PURE_PROMPT_SYMBOL="[ranger] %#"
+else
+    PURE_PROMPT_SYMBOL="%#"
 fi
 
-# Disable some liquidprompt features
-LP_ENABLE_RUNTIME=0
-LP_ENABLE_PROXY=0
-LP_ENABLE_JOBS=0
-LP_ENABLE_LOAD=0
-LP_ENABLE_BATT=0
-LP_USER_ALWAYS=0
+# Enable pure prompt
+source "$ZSHDIR/plugins/async/async.zsh"
+source "$ZSHDIR/plugins/pure/pure.zsh"
 
-# Enable liquid prompt
-source "$ZSHDIR/plugins/liquidprompt/liquidprompt"
+# Indicate virtualenv environment
+_pure_indicate_virtualenv() {
+    if [[ -n "$VIRTUAL_ENV" ]] && [[ -z "$_old_prompt" ]]; then
+        _old_prompt="$PROMPT"
+        PROMPT="[${VIRTUAL_ENV:t}] $_old_prompt"
+    elif [[ -z "$VIRTUAL_ENV" ]] && [[ -n "$_old_prompt" ]]; then
+        PROMPT=$_old_prompt
+        unset _old_prompt
+    fi
+}
+add-zsh-hook precmd _pure_indicate_virtualenv
 
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
