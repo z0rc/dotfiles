@@ -86,6 +86,10 @@ zle -N self-insert url-quote-magic
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
+# Support of bracketed paste
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+
 # Rehash on software upgrade
 autoload -U add-zsh-hook
 TRAPUSR1() { rehash };
@@ -432,6 +436,9 @@ bindkey "${key[Down]}" history-substring-search-down
 
 # Autosuggestions plugin
 source "$ZSHDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
+# Compatability with bracked-paste-magic
+# https://github.com/zsh-users/zsh-autosuggestions/issues/102#issuecomment-183770990
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 # Don't start autosuggestions on large input buffer
