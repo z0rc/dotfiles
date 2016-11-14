@@ -29,6 +29,7 @@ brew 'mas'
 brew 'media-info'
 brew 'midnight-commander'
 brew 'mitmproxy'
+brew 'moreutils'
 brew 'mpv'
 brew 'mtr'
 brew 'neovim/neovim/neovim', args: ['HEAD', 'with-release']
