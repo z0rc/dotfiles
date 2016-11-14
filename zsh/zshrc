@@ -442,7 +442,7 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
 # Don't start autosuggestions on large input buffer
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=5
 # Workaround until it's fixed in zsh-autosuggest:
 # https://github.com/zsh-users/zsh-autosuggestions/pull/206
 typeset -ar ZSH_AUTOSUGGEST_IGNORE_WIDGETS=( "${ZSH_AUTOSUGGEST_IGNORE_WIDGETS[@]}" zle-isearch-update )
