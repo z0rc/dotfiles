@@ -65,7 +65,6 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
-let g:SimpylFold_docstring_preview=1
 
 " Use Space to toggle folding
 nnoremap <Space> za
@@ -175,7 +174,20 @@ let g:rooter_manual_only=1
 let g:jedi#smart_auto_mappings=0
 let g:neocomplete#enable_at_startup=1
 let g:neocomplete#enable_smart_case=1
-call CleverTab#NeoCompleteFirst()
+" recommended key-mappings for completion
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: supertab like neosnippet expand
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-n>" : "\<TAB>")
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : ""
+smap <expr><S-TAB> pumvisible() ? "\<C-p>" : ""
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %

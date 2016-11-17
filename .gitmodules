@@ -106,9 +106,6 @@
 [submodule "vim/bundle/cbackup"]
 	path = vim/bundle/cbackup
 	url = https://github.com/vim-scripts/cbackup.vim.git
-[submodule "vim/bundle/clevertab"]
-	path = vim/bundle/clevertab
-	url = https://github.com/neitanod/vim-clevertab.git
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -141,6 +138,9 @@
 [submodule "vim/bundle/expand-region"]
 	path = vim/bundle/expand-region
 	url = https://github.com/landock/vim-expand-region.git
+[submodule "vim/bundle/fastfold"]
+	path = vim/bundle/fastfold
+	url = https://github.com/Konfekt/FastFold.git
 [submodule "vim/bundle/figitive"]
 	path = vim/bundle/figitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -184,9 +184,18 @@
 [submodule "vim/bundle/mw-utils"]
 	path = vim/bundle/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/neco-syntax"]
+	path = vim/bundle/neco-syntax
+	url = https://github.com/Shougo/neco-syntax.git
 [submodule "vim/bundle/neocomplete"]
 	path = vim/bundle/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "vim/bundle/neosnippet"]
+	path = vim/bundle/neosnippet
+	url = https://github.com/Shougo/neosnippet.vim.git
+[submodule "vim/bundle/neosnippet-snippets"]
+	path = vim/bundle/neosnippet-snippets
+	url = https://github.com/Shougo/neosnippet-snippets.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -250,15 +259,9 @@
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/01sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "vim/bundle/simplyfold"]
-	path = vim/bundle/simplyfold
-	url = https://github.com/tmhedberg/SimpylFold.git
 [submodule "vim/bundle/sleuth"]
 	path = vim/bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
-[submodule "vim/bundle/snippets"]
-	path = vim/bundle/snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = https://github.com/blueyed/vim-colors-solarized.git
@@ -296,9 +299,6 @@
 [submodule "vim/bundle/tmux-navigator"]
 	path = vim/bundle/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "vim/bundle/virtualenv"]
 	path = vim/bundle/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
