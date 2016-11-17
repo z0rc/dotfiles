@@ -187,6 +187,9 @@
 [submodule "vim/bundle/neco-syntax"]
 	path = vim/bundle/neco-syntax
 	url = https://github.com/Shougo/neco-syntax.git
+[submodule "vim/bundle/neco-vim"]
+	path = vim/bundle/neco-vim
+	url = https://github.com/Shougo/neco-vim.git
 [submodule "vim/bundle/neocomplete"]
 	path = vim/bundle/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim.git
