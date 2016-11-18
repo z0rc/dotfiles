@@ -171,6 +171,15 @@ let g:rooter_silent_chdir=1
 let g:rooter_manual_only=1
 
 " completion tuning
+let g:jedi#completions_enabled=0
+let g:jedi#auto_vim_configuration=0
+let g:rubycomplete_buffer_loading=1
+let g:rubycomplete_classes_in_global=1
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#enable_at_startup=1
 let g:neocomplete#enable_smart_case=1
 " recommended key-mappings for completion
@@ -193,18 +202,6 @@ cmap w!! %!sudo tee > /dev/null %
 
 " Handle crontab files properly
 autocmd filetype crontab setlocal nobackup nowritebackup
-
-" Python tuning
-augroup python_autocmds
-  autocmd!
-  autocmd filetype python setlocal omnifunc=jedi#completions colorcolumn=80
-  let g:jedi#completions_enabled=0
-  let g:jedi#auto_vim_configuration=0
-  if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-  endif
-  let g:neocomplete#force_omni_input_patterns.python = '%([^. \t].|^\s_@|^\s_from\s.+import |^\s_from |^\s_import )\w_'
-augroup END
 
 " source local configuration
 runtime vimrc.local
