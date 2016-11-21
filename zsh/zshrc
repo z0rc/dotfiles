@@ -105,31 +105,35 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
     echo -ne "\033]0;`id -un`:`id -gn`@`hostname||uname -n|sed 1q` `who -m|sed -e "s%^.* \(pts/[0-9]*\).*(\(.*\))%(\2%g"` → `hostname -i`)\007"
 fi
 
+# Use default zsh prompt symbol
+PURE_PROMPT_SYMBOL="%#"
+
 # Indicate that shell is running under Midnight Commander or ranger
-# Also use default zsh prompt symbol
-if [[ -n "$MC_SID" ]]; then
-    PURE_PROMPT_SYMBOL="[mc] %#"
-elif [[ -n "$RANGER_LEVEL" ]]; then
-    PURE_PROMPT_SYMBOL="[ranger] %#"
-else
-    PURE_PROMPT_SYMBOL="%#"
-fi
+_pure_indicate_filemanager(){
+    if [[ -n "$MC_SID" ]]; then
+        preprompt+=("[mc]")
+    elif [[ -n "$RANGER_LEVEL" ]]; then
+        preprompt+=("[ranger]")
+    fi
+}
+
+# Indicate virtualenv environment
+_pure_indicate_virtualenv() {
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        preprompt+=("%F{green}venv:${VIRTUAL_ENV:t}%f")
+    fi
+}
 
 # Enable pure prompt
 source "$ZSHDIR/plugins/async/async.zsh"
 source "$ZSHDIR/plugins/pure/pure.zsh"
 
-# Indicate virtualenv environment
-_pure_indicate_virtualenv() {
-    if [[ -n "$VIRTUAL_ENV" ]] && [[ -z "$_old_prompt" ]]; then
-        _old_prompt="$PROMPT"
-        PROMPT="[${VIRTUAL_ENV:t}] $_old_prompt"
-    elif [[ -z "$VIRTUAL_ENV" ]] && [[ -n "$_old_prompt" ]]; then
-        PROMPT=$_old_prompt
-        unset _old_prompt
-    fi
-}
-add-zsh-hook precmd _pure_indicate_virtualenv
+prompt_pure_pieces=(
+    _pure_indicate_filemanager
+    ${prompt_pure_pieces:0:1}
+    _pure_indicate_virtualenv
+    ${prompt_pure_pieces:1}
+)
 
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
