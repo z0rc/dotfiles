@@ -13,11 +13,11 @@ let g:lmap.g={
 
 " gitgutter hunks menu
 let g:lmap.g.h={
-              \'name' : 'Hunks',
-              \'p' : ['call feedkeys("\<Plug>GitGutterPreviewHunk")', 'Preview'],
-              \'u' : ['call feedkeys("\<Plug>GitGutterUndoHunk")', 'Undo'],
-              \'s' : ['call feedkeys("\<Plug>GitGutterStageHunk")', 'Stage']
-              \}
+                \'name' : 'Hunks',
+                \'p' : ['call feedkeys("\<Plug>GitGutterPreviewHunk")', 'Preview'],
+                \'u' : ['call feedkeys("\<Plug>GitGutterUndoHunk")', 'Undo'],
+                \'s' : ['call feedkeys("\<Plug>GitGutterStageHunk")', 'Stage']
+                \}
 
 " nerdcommenter menu
 let g:lmap.c={
