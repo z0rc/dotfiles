@@ -1,35 +1,33 @@
+" for realsies!
 set nocompatible
 
-  " Set default 'runtimepath' without ~/.vim folders
-  let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
-  " What is the name of the directory containing this file?
-  let s:portable=expand('<sfile>:p:h')
-  " Add the directory to 'runtimepath'
-  let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+" Set default 'runtimepath' without ~/.vim folders
+let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+" What is the name of the directory containing this file?
+let s:portable=expand('<sfile>:p:h')
+" Add the directory to 'runtimepath'
+let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 
 " Enable pathogen and plugins
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-" Use sensible XDG paths
+" Use sensible XDG path
 set viminfo='1000,n$XDG_CACHE_HOME/vim/info
 
 " Enable modern colors if supported
 set background=dark
 if has('termguicolors') && $TERM_PROGRAM != "Apple_Terminal" && empty($TMUX)
-    set termguicolors
-    colorscheme solarized8_dark_flat
+  set termguicolors
+  colorscheme solarized8_dark_flat
 else
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=256
-    let g:solarized_underline=0
-    set t_Co=256
-    colorscheme solarized
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
+  let g:solarized_underline=0
+  set t_Co=256
+  colorscheme solarized
 endif
-
-" Enable cursor shape change on insert in neovim
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 set shiftround " round indent to multiple shiftwidth
 set showmatch " show matching brackets when text indicator is over them
