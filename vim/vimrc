@@ -37,23 +37,21 @@ endif
 " Enable cursor shape change on insert in neovim
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-set filetype=on
-set shiftround
+set shiftround " round indent to multiple shiftwidth
 set showmatch " show matching brackets when text indicator is over them
 set hlsearch " highlight search results
 set ignorecase " ignore case when searching
 set smartcase " when searching try to be smart about cases
-set nowrap
-set ttyfast
-set lazyredraw
-set clipboard=unnamed,unnamedplus
-set list listchars=tab:>-,trail:·,extends:>,precedes:<
-set showmode
-set number
-set cursorline
+set nowrap " don't wrap lines
+set ttyfast " indicate fast tty connetion
+set lazyredraw " helps dealing with flickering
+set clipboard=unnamed,unnamedplus " merge clipboard with x11 and mac
+set list listchars=tab:>-,trail:·,extends:>,precedes:< " indicate various special chars
+set number " show line numbers
+set cursorline " highlight line with cursor
 set showcmd " show partial commands in bottom left corner
 set completeopt-=preview " don't show preview window on competion
-set timeoutlen=100
+set timeoutlen=100 " helps to show leader-guide earlier
 
 " Scrolling
 set scrolloff=8 "start scrolling when we're 8 lines away from margins
