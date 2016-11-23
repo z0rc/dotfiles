@@ -56,38 +56,6 @@ set sidescroll=1
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
-set foldlevel=2
-
-" Use Space to toggle folding
-nnoremap <Space> za
-vnoremap <Space> zf
-
-" CtrlP mappings
-nnoremap <C-o> :CtrlPCmdPalette<CR>
-inoremap <C-o> <ESC>:CtrlPCmdPalette<CR>
-
-" Fn hotkeys
-set pastetoggle=<F2>
-nnoremap <F2> :set invpaste paste?<CR>
-nnoremap <F3> :NumbersToggle<CR>
-inoremap <F3> <ESC>:NumbersToggle<CR>
-nnoremap <F4> :Dash<CR>
-inoremap <F4> <ESC>:Dash<CR>
-nnoremap <F5> :Ag<CR>
-inoremap <F5> <ESC>:Ag<CR>
-nnoremap <F6> :NERDTreeTabsToggle<CR>
-inoremap <F6> <ESC>:NERDTreeTabsToggle<CR>
-nnoremap <F7> :TagbarToggle<CR>
-inoremap <F7> <ESC>:TagbarToggle<CR>
-
-" Alt left/right to switch buffers. Terminal should be configured to send proper escape sequences
-nnoremap <ESC>b :bprev!<CR>
-inoremap <ESC>b <ESC>:bprev!<CR>
-nnoremap <ESC>f :bnext!<CR>
-inoremap <ESC>f <ESC>:bnext!<CR>
-
-" Allow saving of files as sudo when I forgot to start vim using sudo
-cmap w!! %!sudo tee > /dev/null %
 
 " Load plugins configurations
 for f in split(glob($DOTFILES . '/vim/bundle.rc.d/*.vim'), '\n')

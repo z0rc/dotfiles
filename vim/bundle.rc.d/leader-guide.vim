@@ -23,16 +23,16 @@ let g:lmap.g.h={
 let g:lmap.c={
               \'name' : 'Comments',
               \' ' : ['call feedkeys("\<Plug>NERDCommenterToggle")', 'Toggle'],
-              \'$' : ['call feedkeys("\<Plug>NERDCommenterToEOL")', 'From cusor to EOL'],
+              \'$' : ['call feedkeys("\<Plug>NERDCommenterToEOL")', 'From cursor to EOL'],
               \'a' : ['call feedkeys("\<Plug>NERDCommenterAltDelims")', 'Switch to alternate delimiters'],
               \'A' : ['call feedkeys("\<Plug>NERDCommenterAppend")', 'Add comment at EOL'],
-              \'b' : ['call feedkeys("\<Plug>NERDCommenterAlignBoth")', 'Comment aligned both sides'],
+              \'b' : ['call feedkeys("\<Plug>NERDCommenterAlignBoth")', 'Aligned both sides'],
               \'c' : ['call feedkeys("\<Plug>NERDCommenterComment")', 'Comment'],
               \'i' : ['call feedkeys("\<Plug>NERDCommenterInvert")', 'Toggle selected line(s)'],
-              \'l' : ['call feedkeys("\<Plug>NERDCommenterAlignLeft")', 'Comment aligned left side'],
+              \'l' : ['call feedkeys("\<Plug>NERDCommenterAlignLeft")', 'Aligned left side'],
               \'m' : ['call feedkeys("\<Plug>NERDCommenterMinimal")', 'Minimal'],
               \'n' : ['call feedkeys("\<Plug>NERDCommenterNested")', 'Nested'],
-              \'s' : ['call feedkeys("\<Plug>NERDCommenterSexy")', 'Comment pretty'],
+              \'s' : ['call feedkeys("\<Plug>NERDCommenterSexy")', 'Sexy'],
               \'u' : ['call feedkeys("\<Plug>NERDCommenterUncomment")', 'Uncomment'],
               \'y' : ['call feedkeys("\<Plug>NERDCommenterYank")', 'Yank & comment']
               \}
@@ -47,9 +47,16 @@ let g:lmap.t={
               \'g' : ['TestVisit', 'Open test file']
               \}
 
-" list toggles
+" toggles
 let g:lmap.l=['LToggle', 'Location list toggle']
 let g:lmap.q=['QToggle', 'Quickfix toggle']
+let g:lmap.n=['NERDTreeToggle', 'NERDTree toggle']
+let g:lmap.b=['TagbarToggle', 'Tagbar toggle']
+let g:lmap.n=['Numbers``Toggle', 'Numbers toggle']
+
+" searches
+let g:lmap.a=['Ag', 'ag search']
+let g:lmap.d=['Dash', 'Dash search']
 
 call leaderGuide#register_prefix_descriptions("\\", "g:lmap")
 nnoremap <silent> <leader> :<c-u>LeaderGuide '<leader>'<CR>
