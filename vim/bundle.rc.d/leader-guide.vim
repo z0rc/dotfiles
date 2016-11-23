@@ -48,15 +48,20 @@ let g:lmap.t={
               \}
 
 " toggles
-let g:lmap.l=['LToggle', 'Location list toggle']
-let g:lmap.q=['QToggle', 'Quickfix toggle']
-let g:lmap.n=['NERDTreeToggle', 'NERDTree toggle']
-let g:lmap.b=['TagbarToggle', 'Tagbar toggle']
-let g:lmap.n=['Numbers``Toggle', 'Numbers toggle']
+let g:lmap.T={
+              \'name' : 'Toggles',
+              \'l' : ['LToggle', 'Location list'],
+              \'q' : ['QToggle', 'Quickfix window'],
+              \'N' : ['NERDTreeToggle', 'NERDTree'],
+              \'t' : ['TagbarToggle', 'Tagbar'],
+              \'n' : ['NumbersToggle', 'Numbers'],
+              \}
 
 " searches
 let g:lmap.a=['Ag', 'ag search']
-let g:lmap.d=['Dash', 'Dash search']
+if has('mac')
+    let g:lmap.d=['Dash', 'Dash search']
+endif
 
 call leaderGuide#register_prefix_descriptions("\\", "g:lmap")
 nnoremap <silent> <leader> :<c-u>LeaderGuide '<leader>'<CR>
