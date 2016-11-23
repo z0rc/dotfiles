@@ -20,7 +20,6 @@ if has('nvim')
 else
     set viminfo='1000,n$XDG_CACHE_HOME/vim/info
 endif
-let g:backup_directory=$XDG_DATA_HOME . '/backups'
 
 " Enable modern colors if supported
 set background=dark
@@ -101,109 +100,20 @@ else
     inoremap <ESC>f <ESC>:bnext!<CR>
 endif
 
-" Ctrl arrows to switch between splits and tmux panes
-let g:tmux_navigator_no_mappings=1
-nnoremap <silent> <C-Left> :TmuxNavigateLeft<CR>
-inoremap <silent> <C-Left> <ESC>:TmuxNavigateLeft<CR>
-nnoremap <silent> <C-Down> :TmuxNavigateDown<CR>
-inoremap <silent> <C-Down> <ESC>:TmuxNavigateDown<CR>
-nnoremap <silent> <C-Up> :TmuxNavigateUp<CR>
-inoremap <silent> <C-Up> <ESC>:TmuxNavigateUp<CR>
-nnoremap <silent> <C-Right> :TmuxNavigateRight<CR>
-inoremap <silent> <C-Right> <ESC>:TmuxNavigateRight<CR>
-nnoremap <silent> <C-\> :TmuxNavigatePrevious<CR>
-inoremap <silent> <C-\> <ESC>:TmuxNavigatePrevious<CR>
-
-" Mappings and configuration for incsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-let g:incsearch#auto_nohlsearch=1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)<Paste>
-let g:incsearch#emacs_like_keymap=1
-
 " Mappings and configuration for test.vim
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
+"nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-let test#strategy="dispatch"
-
-" Mappings for listtoggle
-let g:lt_location_list_toggle_map='<leader>f'
-
-" Don't conceal quotes in JSON
-let g:vim_json_syntax_conceal=0
-
-" Enable color coded parentheses
-let g:rainbow_active=1
-
-" Tuning of airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_left_alt_sep=''
-let g:airline_right_alt_sep=''
-
-" Automatic tags creation tuning
-let g:easytags_async=1
-if has('nvim')
-    let g:easytags_file=$XDG_CACHE_HOME . '/nvim/tags'
-else
-    let g:easytags_file=$XDG_CACHE_HOME . '/vim/tags'
-endif
-let g:easytags_suppress_ctags_warning=1
-let b:easytags_auto_highlight=0
-let g:easytags_python_enabled=1
-
-" Markdown tuning
-let g:markdown_fenced_languages=['html', 'python', 'bash=sh', 'sh']
-let g:vim_markdown_conceal=0
-
-" Don't echo root dir, don't change root automatically
-let g:rooter_silent_chdir=1
-let g:rooter_manual_only=1
-
-" completion tuning
-let g:jedi#completions_enabled=0
-let g:jedi#auto_vim_configuration=0
-let g:rubycomplete_buffer_loading=1
-let g:rubycomplete_classes_in_global=1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns={}
-endif
-let g:neocomplete#force_omni_input_patterns.python='\h\w*\|[^. \t]\.\w*'
-let g:neocomplete#force_omni_input_patterns.ruby='[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplete#enable_at_startup=1
-let g:neocomplete#enable_smart_case=1
-let g:neocomplete#min_keyword_length=3
-let g:necosyntax#min_keyword_length=3
-" recommended key-mappings for completion
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: supertab like neosnippet expand
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-n>" : "\<TAB>")
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-imap <expr><S-TAB> pumvisible() ? "\<C-p>" : ""
-smap <expr><S-TAB> pumvisible() ? "\<C-p>" : ""
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %
 
-" Handle crontab files properly
-autocmd filetype crontab setlocal nobackup nowritebackup
+" Load plugins configurations
+for f in split(glob($DOTFILES . '/vim/bundle.rc.d/*.vim'), '\n')
+  execute 'source' f
+endfor
 
 " source local configuration
 runtime vimrc.local
