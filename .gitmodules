@@ -171,6 +171,10 @@
 [submodule "vim/bundle/json"]
 	path = vim/bundle/json
 	url = https://github.com/elzr/vim-json.git
+[submodule "vim/bundle/leader-guide"]
+	path = vim/bundle/leader-guide
+	url = https://github.com/hecal3/vim-leader-guide.git
+	ignore = untracked
 [submodule "vim/bundle/listtoggle"]
 	path = vim/bundle/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
