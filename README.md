@@ -17,10 +17,13 @@ else goes under standard XDG paths or launched via aliases.
 # Features
 
 * Extensive Zsh [configuration](zsh/zshrc) and [plugins](zsh/plugins):
+  * [pure prompt with async vcs info](https://github.com/intelfx/pure)
   * [completions plugin](https://github.com/zsh-users/zsh-completions)
   * [autosuggestions plugin](https://github.com/tarruda/zsh-autosuggestions)
   * [history substring search plugin](https://github.com/zsh-users/zsh-history-substring-search)
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
+  * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
+  * [autopair plugin](https://github.com/hlissner/zsh-autopair)
   * [zaw](https://github.com/zsh-users/zaw) and [cdr](https://github.com/willghatch/zsh-cdr)
 * Vim [configuration](vim/vimrc) and [plugins](vim/bundle) managed by [pathogen](https://github.com/tpope/vim-pathogen)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
@@ -42,7 +45,7 @@ else goes under standard XDG paths or launched via aliases.
 # Installation
 
 Requirements:
-* `zsh` (for obvious reasons)
+* `zsh` 5.1 or newer (async plugin requires recent enough verion of zsh)
 * `git` (all extrenal componets are added as git submodules)
 * `make` (optional: required to build mongo-hacker and install git-extras)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
@@ -70,8 +73,9 @@ after the deployment.
 
 ## Vim
 
-In order you use all bundled vim plugins, please install vim (or neovim) with
-python, ruby and perl support built-in.
+In order you use all bundled vim plugins, please install vim with python, ruby,
+perl and lua support built-in. Also it's strongly recommended to use Vim 8.0 or
+newer, as it provides async features required by some plugins.
 
 Debian/Ubuntu:
 ```
@@ -89,7 +93,7 @@ dnf install vim-enhanced
 
 OS X:
 ```
-brew install vim --with-python3
+brew install vim --with-python3 --with-luajit
 ```
 
 # Configuration
@@ -110,7 +114,7 @@ You can add your configuration to `$ZSHDIR/zshenv.local` and
 `$ZSHDIR/zshrc.local`. The difference is that `zshenv.local` is sourced always
 while `zshrc.local` is sourced in interactive session only.
 
-## Vim/Neovim
+## Vim
 Add your local configuration to `$DOTFILES/vim/vimrc.local`.
 
 ## Local paths
