@@ -14,7 +14,7 @@ cd "$SCRIPT_DIR"
 # Create required directories
 print "Creating required directory tree..."
 mkdir -p "$XDG_CONFIG_HOME"/{git/local,mc,htop,ranger}
-mkdir -p "$XDG_CACHE_HOME"/{nvim,vim,zsh}
+mkdir -p "$XDG_CACHE_HOME"/{vim,zsh}
 mkdir -p "$XDG_DATA_HOME"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,zsh,man}
 mkdir -p "$HOME"/.local/{bin,etc}
 print "  ...done"
@@ -28,7 +28,6 @@ ln -sf "$SCRIPT_DIR/configs/gitignore" "$XDG_CONFIG_HOME/git/ignore"
 ln -sf "$SCRIPT_DIR/configs/mc.ini" "$XDG_CONFIG_HOME/mc/ini"
 ln -sf "$SCRIPT_DIR/configs/htoprc" "$XDG_CONFIG_HOME/htop/htoprc"
 ln -sf "$SCRIPT_DIR/configs/ranger" "$XDG_CONFIG_HOME/ranger/rc.conf"
-ln -snf "$SCRIPT_DIR/vim" "$XDG_CONFIG_HOME/nvim"
 print "  ...done"
 
 # Make sure submodules are installed

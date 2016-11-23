@@ -122,9 +122,6 @@
 [submodule "vim/bundle/dispatch"]
 	path = vim/bundle/dispatch
 	url = https://github.com/tpope/vim-dispatch.git
-[submodule "vim/bundle/dispatch-neovim"]
-	path = vim/bundle/dispatch-neovim
-	url = https://github.com/radenling/vim-dispatch-neovim.git
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
 	url = https://github.com/xolox/vim-easytags.git

@@ -1,13 +1,11 @@
 set nocompatible
 
-if !has('nvim')
-    " Set default 'runtimepath' without ~/.vim folders
-    let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
-    " What is the name of the directory containing this file?
-    let s:portable=expand('<sfile>:p:h')
-    " Add the directory to 'runtimepath'
-    let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-endif
+  " Set default 'runtimepath' without ~/.vim folders
+  let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+  " What is the name of the directory containing this file?
+  let s:portable=expand('<sfile>:p:h')
+  " Add the directory to 'runtimepath'
+  let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 
 " Enable pathogen and plugins
 runtime bundle/pathogen/autoload/pathogen.vim
@@ -15,11 +13,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " Use sensible XDG paths
-if has('nvim')
-    set viminfo='1000,n$XDG_CACHE_HOME/nvim/info
-else
-    set viminfo='1000,n$XDG_CACHE_HOME/vim/info
-endif
+set viminfo='1000,n$XDG_CACHE_HOME/vim/info
 
 " Enable modern colors if supported
 set background=dark
@@ -87,17 +81,10 @@ nnoremap <F7> :TagbarToggle<CR>
 inoremap <F7> <ESC>:TagbarToggle<CR>
 
 " Alt left/right to switch buffers. Terminal should be configured to send proper escape sequences
-if has('nvim')
-    nnoremap <A-b> :bprev!<CR>
-    inoremap <A-b> <ESC>:bprev!<CR>
-    nnoremap <A-f> :bnext!<CR>
-    inoremap <A-f> <ESC>:bnext!<CR>
-else
-    nnoremap <ESC>b :bprev!<CR>
-    inoremap <ESC>b <ESC>:bprev!<CR>
-    nnoremap <ESC>f :bnext!<CR>
-    inoremap <ESC>f <ESC>:bnext!<CR>
-endif
+nnoremap <ESC>b :bprev!<CR>
+inoremap <ESC>b <ESC>:bprev!<CR>
+nnoremap <ESC>f :bnext!<CR>
+inoremap <ESC>f <ESC>:bnext!<CR>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! %!sudo tee > /dev/null %
