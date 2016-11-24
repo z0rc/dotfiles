@@ -217,7 +217,7 @@
 	url = https://github.com/othree/nginx-contrib-vim.git
 [submodule "vim/bundle/numbers"]
 	path = vim/bundle/numbers
-	url = https://github.com/myusuf3/numbers.vim.git
+	url = https://github.com/b3niup/numbers.vim.git
 [submodule "vim/bundle/pathogen"]
 	path = vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
