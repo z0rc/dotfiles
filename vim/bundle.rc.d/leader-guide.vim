@@ -5,10 +5,14 @@ let g:lmap={}
 let g:lmap.g={
               \'name' : 'Git',
               \'s' : ['Gstatus', 'Status'],
-              \'p' : ['Gpull',   'Pull'],
-              \'u' : ['Gpush',   'Push'],
+              \'p' : ['Gpull', 'Pull'],
+              \'u' : ['Gpush', 'Push'],
               \'c' : ['Gcommit', 'Commit'],
-              \'w' : ['Gwrite',  'Write']
+              \'w' : ['Gwrite', 'Write'],
+              \'d' : ['Gdiff', 'Diff'],
+              \'l' : ['Glog', 'Log'],
+              \'f' : ['Gfetch', 'Fetch'],
+              \'b' : ['Gblame', 'Blame']
               \}
 
 " gitgutter hunks menu
