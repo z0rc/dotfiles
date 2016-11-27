@@ -42,7 +42,7 @@ let g:lmap.c={
               \}
 
 " test menu
-let g:lmap.t={
+let g:lmap.e={
               \'name' : 'Test',
               \'t' : ['TestNearest', 'Nearest'],
               \'T' : ['TestFile', 'This file'],
@@ -52,13 +52,14 @@ let g:lmap.t={
               \}
 
 " toggles
-let g:lmap.T={
+let g:lmap.t={
               \'name' : 'Toggles',
               \'l' : ['LToggle', 'Location list'],
               \'q' : ['QToggle', 'Quickfix window'],
               \'N' : ['NERDTreeToggle', 'NERDTree'],
               \'t' : ['TagbarToggle', 'Tagbar'],
               \'n' : ['NumbersToggle', 'Numbers'],
+              \'u' : ['UndotreeToggle', 'Undotree']
               \}
 
 " searches
