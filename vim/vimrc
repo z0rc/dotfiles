@@ -15,6 +15,13 @@ call pathogen#helptags()
 
 " Use sensible XDG path
 set viminfo='1000,n$XDG_CACHE_HOME/vim/info
+set directory=$XDG_CACHE_HOME/vim/swap//
+set undodir=$XDG_CACHE_HOME/vim/undo//
+set backupdir=$XDG_CACHE_HOME/vim/backup//
+
+" Enable backups and undo
+set backup
+set undofile
 
 " Enable modern colors if supported
 set background=dark
