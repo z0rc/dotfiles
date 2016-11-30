@@ -97,6 +97,10 @@
 [submodule "vim/bundle/auto-pairs"]
 	path = vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "vim/bundle/aws"]
+	path = vim/bundle/aws
+	url = https://github.com/andrewstuart/aws-vim.git
+	ignore = untracked
 [submodule "vim/bundle/bundler"]
 	path = vim/bundle/bundler
 	url = https://github.com/tpope/vim-bundler.git
