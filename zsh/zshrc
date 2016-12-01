@@ -357,9 +357,6 @@ if [[ -f "$DOTFILES/tools/mongo-hacker/mongo_hacker.js" ]]; then
     mongo() { command mongo "$@" --shell --norc "$DOTFILES/tools/mongo-hacker/mongo_hacker.js"; }
 fi
 
-# Enable "k" plugin
-source "$DOTFILES/tools/k/k.sh"
-
 # Enable pyenv
 PATH="$DOTFILES/pyenv/pyenv/bin:$PATH"
 eval "$(pyenv init -)"

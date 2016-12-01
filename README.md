@@ -36,7 +36,6 @@ else goes under standard XDG paths or launched via aliases.
 * Handy [utilities](tools):
   * [MySQLTuner](https://github.com/major/MySQLTuner-perl)
   * [MongoDB Shell Enhancements](https://github.com/TylerBrock/mongo-hacker)
-  * [`k`](https://github.com/rimraf/k), modern `ls` with bells and whistles
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
