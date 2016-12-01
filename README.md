@@ -4,7 +4,7 @@
 
 # There are many like it, but this one is mine
 
-This repostory contains tools and configs I use in shell. No graphical stuff,
+This repository contains tools and configs I use in shell. No graphical stuff,
 usable both on server and personal workstation. Battle tested on OS X and
 various Linux distributions including Debian, Ubuntu, CentOS.
 
@@ -46,7 +46,7 @@ else goes under standard XDG paths or launched via aliases.
 
 Requirements:
 * `zsh` 5.1 or newer (async plugin requires recent enough verion of zsh)
-* `git` (all extrenal componets are added as git submodules)
+* `git` (all external components are added as git submodules)
 * `make` (optional: required to build mongo-hacker and install git-extras)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
 * `python` (optional: used by several vim plugins, but they won't be activated, if python is missing)
