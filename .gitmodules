@@ -94,6 +94,10 @@
 [submodule "vim/bundle/ansible"]
 	path = vim/bundle/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
+[submodule "vim/bundle/anyfold"]
+	path = vim/bundle/anyfold
+	url = https://github.com/pseewald/vim-anyfold.git
+	ignore = untracked
 [submodule "vim/bundle/auto-pairs"]
 	path = vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
@@ -136,12 +140,13 @@
 [submodule "vim/bundle/expand-region"]
 	path = vim/bundle/expand-region
 	url = https://github.com/landock/vim-expand-region.git
-[submodule "vim/bundle/fastfold"]
-	path = vim/bundle/fastfold
-	url = https://github.com/Konfekt/FastFold.git
 [submodule "vim/bundle/figitive"]
 	path = vim/bundle/figitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/fold-cycle"]
+	path = vim/bundle/fold-cycle
+	url = https://github.com/arecarn/vim-fold-cycle.git
+	ignore = untracked
 [submodule "vim/bundle/git"]
 	path = vim/bundle/git
 	url = https://github.com/tpope/vim-git.git

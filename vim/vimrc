@@ -51,16 +51,12 @@ set cursorline " highlight line with cursor
 set showcmd " show partial commands in bottom left corner
 set completeopt-=preview " don't show preview window on competion
 set timeoutlen=100 " helps to show leader-guide earlier
+set foldlevelstart=99 " enables fold but keeps them expanded by default
 
 " Scrolling
 set scrolloff=8 "start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-
-" Folding
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
 
 " Load plugins configurations
 for f in split(glob($DOTFILES . '/vim/bundle.rc.d/*.vim'), '\n')

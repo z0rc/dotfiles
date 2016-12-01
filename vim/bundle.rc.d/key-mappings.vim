@@ -46,10 +46,6 @@ inoremap <A-left> <ESC>:bprev!<CR>
 nnoremap <A-right> :bnext!<CR>
 inoremap <A-right> <ESC>:bnext!<CR>
 
-" use space to toggle folding
-nnoremap <Space> za
-vnoremap <Space> zf
-
 " ctrl+o to search through command palette
 nnoremap <C-o> :CtrlPCmdPalette<CR>
 inoremap <C-o> <ESC>:CtrlPCmdPalette<CR>
