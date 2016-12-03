@@ -104,13 +104,17 @@ add-zsh-hook precmd _install_rehash_precmd
 PURE_PROMPT_SYMBOL="%#"
 
 # Indicate that shell is running under Midnight Commander or ranger
-_pure_indicate_filemanager(){
-    if [[ -n "$MC_SID" ]]; then
+if [[ -n "$MC_SID" ]]; then
+    _pure_indicate_filemanager() {
         preprompt+=("[mc]")
-    elif [[ -n "$RANGER_LEVEL" ]]; then
+    }
+elif [[ -n "$RANGER_LEVEL" ]]; then
+    _pure_indicate_filemanager() {
         preprompt+=("[ranger]")
-    fi
-}
+    }
+else
+    _pure_indicate_filemanager() {}
+fi
 
 # Indicate virtualenv environment
 _pure_indicate_virtualenv() {
