@@ -361,18 +361,17 @@ if [[ -f "$DOTFILES/tools/mongo-hacker/mongo_hacker.js" ]]; then
     mongo() { command mongo "$@" --shell --norc "$DOTFILES/tools/mongo-hacker/mongo_hacker.js"; }
 fi
 
-# Enable pyenv
-PATH="$DOTFILES/pyenv/pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-# Enable rbenv
-PATH="$DOTFILES/rbenv/rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# Enable nodenv
-PATH="$DOTFILES/nodenv/nodenv/bin:$PATH"
-eval "$(nodenv init -)"
+# Enable pyenv, rbenv and nodeenv asynchronously
+PATH="$DOTFILES/pyenv/pyenv/bin:$DOTFILES/rbenv/rbenv/bin:$DOTFILES/nodenv/nodenv/bin:$PATH"
+env_init_callback() {
+    eval "$3" # $3 is stdout
+}
+async_init
+async_start_worker env_init_worker -n
+async_register_callback env_init_worker env_init_callback
+async_job env_init_worker pyenv init -
+async_job env_init_worker rbenv init -
+async_job env_init_worker nodenv init -
 
 # Completion tweaks
 zstyle ':completion:*' auto-description 'specify: %d'
