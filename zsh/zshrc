@@ -86,10 +86,6 @@ zle -N self-insert url-quote-magic
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
-# Support of bracketed paste
-autoload -Uz bracketed-paste-magic
-zle -N bracketed-paste bracketed-paste-magic
-
 # Rehash on software upgrade
 autoload -U add-zsh-hook
 TRAPUSR1() { rehash };
