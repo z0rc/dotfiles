@@ -186,9 +186,14 @@ bindkey . dot
 if (( $+commands[pigz] )); then
     function gzip () { command pigz $@ }
 fi
-
+if (( $+commands[unpigz] )); then
+    function gunzip () { command unpigz $@ }
+fi
 if (( $+commands[pbzip2] )); then
     function bzip2 () { command pbzip2 $@ }
+fi
+if (( $+commands[pbunzip2] )); then
+    function bunzip2 () { command pbunzip2 $@ }
 fi
 
 # Print apt history
@@ -216,8 +221,8 @@ apt-history () {
     esac
 }
 
-# Universal archive unpack
-extract () {
+# Universal unarchive function
+unarchive () {
     if [[ -f "$1" ]]; then
         case $1 in
             *.tar.bz2) tar xjf $1    ;;
@@ -239,8 +244,8 @@ extract () {
     fi
 }
 
-# Universal archive pack
-pack () {
+# Universal archive function
+archive () {
     if [[ -n "$1" ]]; then
         case $1 in
             tbz) tar cjvf $2.tar.bz2 $2   ;;
