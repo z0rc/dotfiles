@@ -44,7 +44,7 @@ else goes under standard XDG paths or launched via aliases.
 # Installation
 
 Requirements:
-* `zsh` 5.1 or newer (async plugin requires recent enough verion of zsh)
+* `zsh` 5.1 or newer (async plugin requires recent enough version of zsh)
 * `git` (all external components are added as git submodules)
 * `make` (optional: required to build mongo-hacker and install git-extras)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
