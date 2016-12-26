@@ -41,10 +41,10 @@ nmap [c <Plug>GitGutterPrevHunk
 nmap ]c <Plug>GitGutterNextHunk
 
 " alt+left/right to switch buffers
-nnoremap <A-left> :bprev!<CR>
-inoremap <A-left> <ESC>:bprev!<CR>
-nnoremap <A-right> :bnext!<CR>
-inoremap <A-right> <ESC>:bnext!<CR>
+map <A-left> :bprev!<CR>
+map <A-right> :bnext!<CR>
+map [1;9C :bnext!<CR>
+map [1;9D :bprev!<CR>
 
 " ctrl+o to search through command palette
 nnoremap <C-o> :CtrlPCmdPalette<CR>
