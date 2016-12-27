@@ -6,40 +6,6 @@ for conffile in "$ZSHDIR"/rc.d/*; do
     source $conffile
 done
 
-# Use default zsh prompt symbol
-PURE_PROMPT_SYMBOL="%#"
-
-# Indicate that shell is running under Midnight Commander or ranger
-if [[ -n "$MC_SID" ]]; then
-    _pure_indicate_filemanager() {
-        preprompt+=("[mc]")
-    }
-elif [[ -n "$RANGER_LEVEL" ]]; then
-    _pure_indicate_filemanager() {
-        preprompt+=("[ranger]")
-    }
-else
-    _pure_indicate_filemanager() {}
-fi
-
-# Indicate virtualenv environment
-_pure_indicate_virtualenv() {
-    if [[ -n "$VIRTUAL_ENV" ]]; then
-        preprompt+=("%F{green}venv:${VIRTUAL_ENV:t}%f")
-    fi
-}
-
-# Enable pure prompt
-source "$ZSHDIR/plugins/async/async.zsh"
-source "$ZSHDIR/plugins/pure/pure.zsh"
-
-prompt_pure_pieces=(
-    _pure_indicate_filemanager
-    ${prompt_pure_pieces:0:1}
-    _pure_indicate_virtualenv
-    ${prompt_pure_pieces:1}
-)
-
 # Set MC skin whether we're running under root or not
 # Also set skin depending under which terminal we're running
 if [[ "$TERM" = "linux" && "$USER" != "root" ]]; then
@@ -54,44 +20,6 @@ elif [[ "$TERM" != "linux" && "$USER" = "root" ]]; then
     export MC_SKIN=modarin256root-defbg
 fi
 
-# List all directories leading up to a filename; this is useful to see
-# if some permissions are blocking access to a file.
-lspath () {
-    if [[ "$1" = "${1##/}" ]]; then
-        pathlist=(/ ${(s:/:)PWD} ${(s:/:)1})
-    else
-        pathlist=(/ ${(s:/:)1})
-    fi
-    allpaths=()
-    filepath=$pathlist[0]
-    shift pathlist
-    for i in $pathlist[@]; do
-        allpaths=($allpaths[@] $filepath)
-        filepath="${filepath%/}/$i"
-    done
-    allpaths=($allpaths[@] $filepath)
-    ls -ld "$allpaths[@]"
-}
-
-# Grep from ps output
-psg () {
-    FST=`echo $1 | sed -e "s/^\(.\).*/\1/"`
-    RST=`echo $1 | sed -e "s/^.\(.*\)/\1/"`
-    ps aux | grep "[$FST]$RST"
-}
-
-# Autoexpand "..." to "../.." and so on
-dot () {
-    if [[ $LBUFFER = *.. ]]; then
-        LBUFFER+=/..
-    else
-        LBUFFER+=.
-    fi
-}
-autoload -U dot
-zle -N dot
-bindkey . dot
-
 # Use multithreaded archivers if possible
 if (( $+commands[pigz] )); then
     function gzip () { command pigz $@ }
@@ -105,31 +33,6 @@ fi
 if (( $+commands[pbunzip2] )); then
     function bunzip2 () { command pbunzip2 $@ }
 fi
-
-# Print apt history
-apt-history () {
-    case "$1" in
-    install)
-        zgrep --no-filename 'install ' $(ls -rt /var/log/dpkg*)
-        ;;
-    upgrade|remove)
-        zgrep --no-filename $1 $(ls -rt /var/log/dpkg*)
-        ;;
-    rollback)
-        zgrep --no-filename upgrade $(ls -rt /var/log/dpkg*) | \
-        grep "$2" -A10000000 | \
-        grep "$3" -B10000000 | \
-        awk '{print $4"="$5}'
-        ;;
-    *)
-        echo "Parameters:"
-        echo " install - Lists all packages that have been installed."
-        echo " upgrade - Lists all packages that have been upgraded."
-        echo " remove - Lists all packages that have been removed."
-        echo " rollback - Lists rollback information."
-        ;;
-    esac
-}
 
 # Universal unarchive function
 unarchive () {
@@ -173,38 +76,6 @@ archive () {
     fi
 }
 
-# Manual page completion
-man_glob () {
-    local a
-    read -cA a
-    if [[ $a[2] = [0-9]* ]]; then
-        reply=( $^manpath/man$a[2]/$1*$2(N:t:r) )
-    elif [[ $a[2] = -s ]]; then
-        reply=( $^manpath/man$a[3]/$1*$2(N:t:r) )
-    else
-        reply=( $^manpath/man*/$1*$2(N:t:r) )
-    fi
-}
-compctl -K man_glob man
-
-# vpaste uploader
-vpaste () {
-    local uri="http://vpaste.net/"
-    local out
-    if [ -f "$1" ]; then
-        out=`curl -s -F "text=<$1" "$uri?$2"`
-    else
-        out=`curl -s -F 'text=<-' "$uri?$1"`
-    fi
-    echo "$out"
-    if (( $+commands[xclip] )) && [[ ! -z "$DISPLAY" ]]; then
-        echo -n "$out" | xclip -i -selection primary
-        echo -n "$out" | xclip -i -selection clipboard
-    elif (( $+commands[pbcopy] )); then
-        echo -n "$out" | pbcopy
-    fi
-}
-
 # Make less more friendly
 for lpipe in lesspipe lesspipe.sh; do
     if (( $+commands[$lpipe] )); then
@@ -214,47 +85,6 @@ for lpipe in lesspipe lesspipe.sh; do
     fi
 done
 export LESS="-RiwM"
-
-# Color man
-export LESS_TERMCAP_mb=$(printf "\e[1;31m")
-export LESS_TERMCAP_md=$(printf "\e[1;31m")
-export LESS_TERMCAP_me=$(printf "\e[0m")
-export LESS_TERMCAP_se=$(printf "\e[0m")
-export LESS_TERMCAP_so=$(printf "\e[0;37;102m")
-export LESS_TERMCAP_ue=$(printf "\e[0m")
-export LESS_TERMCAP_us=$(printf "\e[4;32m")
-export _NROFF_U=1
-
-# Enable color support of ls
-if (( $+commands[dircolors] )); then
-    eval `dircolors "$ZSHDIR/plugins/dircolors-solarized/dircolors.256dark"`
-    alias ls="ls --color=auto -F -X"
-    alias dir="dir --color=auto"
-    alias vdir="vdir --color=auto"
-fi
-
-# More colors
-if (( $+commands[grc] )); then
-    alias colorify="grc -es --colour=auto"
-    for command in df dig gcc ifconfig mount mtr netstat ping ps thraceroute; do
-        if [[ -f "/usr/local/share/grc/conf.$command" ]] || [[ -f "/usr/share/grc/conf.$command" ]]; then
-            alias $command="colorify $command"
-        fi
-    done
-    for command in head tail make ld; do
-        alias $command="colorify $command"
-    done
-fi
-if (( $+commands[colordiff] )); then
-    alias diff="colordiff -Naur"
-fi
-
-# Some handy suffix aliases
-alias -s log=less
-
-# Human file sizes
-alias df="df -Th"
-alias du="du -hc"
 
 # iTerm2 integration
 source "$ZSHDIR/plugins/iterm2_integration.zsh"

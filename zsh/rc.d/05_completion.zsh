@@ -14,6 +14,20 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[c
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion::complete:*' use-cache true
 
+# Manual page completion
+man_glob () {
+    local a
+    read -cA a
+    if [[ $a[2] = [0-9]* ]]; then
+        reply=( $^manpath/man$a[2]/$1*$2(N:t:r) )
+    elif [[ $a[2] = -s ]]; then
+        reply=( $^manpath/man$a[3]/$1*$2(N:t:r) )
+    else
+        reply=( $^manpath/man*/$1*$2(N:t:r) )
+    fi
+}
+compctl -K man_glob man
+
 # Additional completion rules
 fpath=($fpath "$ZSHDIR/plugins/completions/src")
 
