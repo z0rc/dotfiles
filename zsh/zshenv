@@ -8,19 +8,14 @@ done
 export ZSHDIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
 export DOTFILES="$(cd $ZSHDIR/.. && pwd)"
 
-# Disable global zsh configuration on OSX, path_helper doesn't help with sane path sanitization, have to do this by ourselves
-if [[ "$OSTYPE" == darwin* ]]; then
-    unsetopt GLOBAL_RCS
-fi
-
-# We'll do this later in zshrc by ourselves
-skip_global_compinit=1
-
+# Source local env files
 for envfile in "$ZSHDIR"/env.d/*; do
     source $envfile
 done
 
-# Include standard zshrc
+# Include interactive rc files
 if [[ -o interactive ]]; then
-    source "$ZSHDIR/zshrc"
+    for conffile in "$ZSHDIR"/rc.d/*; do
+        source $conffile
+    done
 fi
