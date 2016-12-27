@@ -6,86 +6,6 @@ for conffile in "$ZSHDIR"/rc.d/*; do
     source $conffile
 done
 
-# Set MC skin whether we're running under root or not
-# Also set skin depending under which terminal we're running
-if [[ "$TERM" = "linux" && "$USER" != "root" ]]; then
-    export MC_SKIN=modarcon16-defbg
-    sudo() { if [[ "$1" = "mc" ]]; then command sudo MC_SKIN=modarcon16root-defbg "$@"; else command sudo "$@"; fi; }
-elif [[ "$TERM" = "linux" && "$USER" = "root" ]]; then
-    export MC_SKIN=modarcon16root-defbg
-elif [[ "$TERM" != "linux" && "$USER" != "root" ]]; then
-    export MC_SKIN=modarin256-defbg
-    sudo() { if [[ "$1" = "mc" ]]; then command sudo MC_SKIN=modarin256root-defbg "$@"; else command sudo "$@"; fi; }
-elif [[ "$TERM" != "linux" && "$USER" = "root" ]]; then
-    export MC_SKIN=modarin256root-defbg
-fi
-
-# Use multithreaded archivers if possible
-if (( $+commands[pigz] )); then
-    function gzip () { command pigz $@ }
-fi
-if (( $+commands[unpigz] )); then
-    function gunzip () { command unpigz $@ }
-fi
-if (( $+commands[pbzip2] )); then
-    function bzip2 () { command pbzip2 $@ }
-fi
-if (( $+commands[pbunzip2] )); then
-    function bunzip2 () { command pbunzip2 $@ }
-fi
-
-# Universal unarchive function
-unarchive () {
-    if [[ -f "$1" ]]; then
-        case $1 in
-            *.tar.bz2) tar xjf $1    ;;
-            *.tar.gz)  tar xzf $1    ;;
-            *.tar.xz)  tar xJf $1    ;;
-            *.bz2)     bunzip2 $1    ;;
-            *.rar)     unrar x $1    ;;
-            *.gz)      gunzip $1     ;;
-            *.tar)     tar xf $1     ;;
-            *.tbz2)    tar xjf $1    ;;
-            *.tgz)     tar xzf $1    ;;
-            *.zip)     unzip $1      ;;
-            *.Z)       uncompress $1 ;;
-            *.7z)      7z x $1       ;;
-            *)         echo "Unknown archive type '$1'" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
-}
-
-# Universal archive function
-archive () {
-    if [[ -n "$1" ]]; then
-        case $1 in
-            tbz) tar cjvf $2.tar.bz2 $2   ;;
-            tgz) tar czvf $2.tar.gz $2    ;;
-            txz) tar cJvf $2.tar.xz $2    ;;
-            tar) tar cpvf $2.tar $2       ;;
-            bz2) bzip2 $2                 ;;
-            gz)  gzip -c -9 -n $2 > $2.gz ;;
-            zip) zip -r $2.zip $2         ;;
-            7z)  7z a $2.7z $2            ;;
-            *)   echo "'$1' cannot be packed via pack()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file type"
-    fi
-}
-
-# Make less more friendly
-for lpipe in lesspipe lesspipe.sh; do
-    if (( $+commands[$lpipe] )); then
-        export LESSOPEN="| $lpipe %s"
-        export LESSCLOSE="$lpipe %s %s"
-        export LESS_ADVANCED_PREPROCESSOR=1
-    fi
-done
-export LESS="-RiwM"
-
 # iTerm2 integration
 source "$ZSHDIR/plugins/iterm2_integration.zsh"
 
@@ -101,18 +21,6 @@ fi
 if [[ -f "$DOTFILES/tools/mongo-hacker/mongo_hacker.js" ]]; then
     mongo() { command mongo "$@" --shell --norc "$DOTFILES/tools/mongo-hacker/mongo_hacker.js"; }
 fi
-
-# Enable pyenv, rbenv and nodeenv asynchronously
-PATH="$DOTFILES/pyenv/pyenv/bin:$DOTFILES/rbenv/rbenv/bin:$DOTFILES/nodenv/nodenv/bin:$PATH"
-env_init_callback() {
-    eval "$3" # $3 is stdout
-}
-async_init
-async_start_worker env_init_worker -n
-async_register_callback env_init_worker env_init_callback
-async_job env_init_worker pyenv init -
-async_job env_init_worker rbenv init -
-async_job env_init_worker nodenv init -
 
 # Transfer to root user's Xauth cookies
 if [[ `whoami` = root ]] && [[ -n "$SSH_CLIENT" ]] && [[ -n "$SUDO_USER" ]] && [[ -n "$DISPLAY" ]]; then

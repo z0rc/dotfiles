@@ -16,52 +16,9 @@ fi
 # We'll do this later in zshrc by ourselves
 skip_global_compinit=1
 
-# Exports
-export VIMINIT='let $MYVIMRC="$DOTFILES/vim/vimrc" | source $MYVIMRC'
-EDITOR=vim
-VISUAL=$EDITOR
-export VISUAL EDITOR
-export PAGER=less
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME"=$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
-export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
-if [[ "$EUID" -ne 0 ]]; then
-    # Update gem home only for non-root user
-    export GEM_HOME="$XDG_DATA_HOME/gem"
-    export PATH="$GEM_HOME/bin:$PATH"
-fi
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem/specs"
-export WINEPREFIX="$XDG_DATA_HOME/wine"
-export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker/machine"
-export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
-export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
-export PACKER_CONFIG="$XDG_CONFIG_HOME/packer"
-export PACKER_CACHE_DIR="$XDG_CACHE_HOME/packer"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export GOPATH="$HOME/.local/go"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-# Enable local binaries and man pages
-export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
-export MANPATH="$XDG_DATA_HOME/man:$MANPATH"
-
-# pyenv, rbenv and nodenv roots
-export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
-export NODENV_ROOT="$XDG_DATA_HOME/nodenv"
-
-# Keep SSH_AUTH_SOCK valid across several attachments to the remote tmux session
-if [[ `whoami` != root ]]; then
-    if [[ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ]]; then
-        ln -sf "$XDG_RUNTIME_DIR/ssh-agent.socket" "$HOME/.ssh/ssh_auth_sock"
-    elif [[ -S "$SSH_AUTH_SOCK" ]] && [[ ! -h "$SSH_AUTH_SOCK" ]] && [[ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]]; then
-        ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
-    fi
-    export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
-fi
+for envfile in "$ZSHDIR"/env.d/*; do
+    source $envfile
+done
 
 # Include local zshenv
 if [[ -f "$ZSHDIR/zshenv.local" ]]; then
