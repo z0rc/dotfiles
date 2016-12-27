@@ -6,5 +6,5 @@ vim/autoload/getopts/*.cache
 vim/.viminfo*
 vim/vimrc.local
 
-zsh/zshenv.local
-zsh/zshrc.local
+zsh/rc.d/9[0-9]_*
+zsh/env.d/9[0-9]_*

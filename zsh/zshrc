@@ -34,11 +34,6 @@ if [[ -n "$DISPLAY" ]] && [[ `uname -s` != "Darwin" ]] && (( $+commands[xhost] )
     xhost +si:localuser:root 2>&1 1>/dev/null
 fi
 
-# Source local zshrc
-if [[ -f "$ZSHDIR/zshrc.local" ]]; then
-    source "$ZSHDIR/zshrc.local"
-fi
-
 # Force path arrays to have unique values only
 typeset -U path cdpath fpath manpath
 

@@ -20,11 +20,6 @@ for envfile in "$ZSHDIR"/env.d/*; do
     source $envfile
 done
 
-# Include local zshenv
-if [[ -f "$ZSHDIR/zshenv.local" ]]; then
-    source "$ZSHDIR/zshenv.local"
-fi
-
 # Include standard zshrc
 if [[ -o interactive ]]; then
     source "$ZSHDIR/zshrc"

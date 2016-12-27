@@ -45,7 +45,7 @@ else goes under standard XDG paths or launched via aliases.
 
 Requirements:
 * `zsh` 5.1 or newer (async plugin requires recent enough version of zsh)
-* `git` (all external components are added as git submodules)
+* `git` (all external components are added as git submodules
 * `make` (optional: required to build mongo-hacker and install git-extras)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
 * `python` (optional: used by several vim plugins, but they won't be activated, if python is missing)
@@ -109,9 +109,9 @@ this:
 Also you can put additional configuration in `~/.config/git/local/stuff`.
 
 ## Zsh
-You can add your configuration to `$ZSHDIR/zshenv.local` and
-`$ZSHDIR/zshrc.local`. The difference is that `zshenv.local` is sourced always
-while `zshrc.local` is sourced in interactive session only.
+You can add your local configuration into `$ZSHDIR/env.d/9[0-9]_*` and
+`$ZSHDIR/rc.d/9[0-9]_*`. The difference is that `env.d` is sourced always while
+`rc.d` is sourced in interactive session only.
 
 ## Vim
 Add your local configuration to `$DOTFILES/vim/vimrc.local`.
