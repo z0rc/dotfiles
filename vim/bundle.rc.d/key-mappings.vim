@@ -45,6 +45,8 @@ map <A-left> :bprev!<CR>
 map <A-right> :bnext!<CR>
 map [1;9C :bnext!<CR>
 map [1;9D :bprev!<CR>
+map <ESC>b :bprev!<CR>
+map <ESC>f :bnext!<CR>
 
 " ctrl+o to search through command palette
 nnoremap <C-o> :CtrlPCmdPalette<CR>
