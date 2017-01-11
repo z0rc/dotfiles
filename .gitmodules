@@ -212,6 +212,9 @@
 [submodule "vim/bundle/nerdtree-git-plugin"]
 	path = vim/bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "vim/bundle/nerdtree-syntax-highlight"]
+	path = vim/bundle/nerdtree-syntax-highlight
+	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
 [submodule "vim/bundle/nerdtree-tabs"]
 	path = vim/bundle/nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
