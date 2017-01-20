@@ -1,3 +1,3 @@
-" remove defailt listtoggle mappings
+" remove default listtoggle mappings
 unmap <leader>l
 unmap <leader>q
