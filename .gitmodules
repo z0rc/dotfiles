@@ -187,6 +187,9 @@
 [submodule "vim/bundle/logstash"]
 	path = vim/bundle/logstash
 	url = https://github.com/robbles/logstash.vim.git
+[submodule "vim/bundle/lua"]
+	path = vim/bundle/lua
+	url = https://github.com/tbastos/vim-lua.git
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
 	url = https://github.com/rhysd/vim-gfm-syntax.git
