@@ -1,9 +1,6 @@
 " recommended key-mappings for completion
-" <CR>: close popup and save indent
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
+" <CR>: close popup and save indent or call auto-pairs magic
+imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>\<Plug>AutoPairsReturn"
 " <TAB>: supertab like neosnippet expand
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-n>" : "\<TAB>")
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
