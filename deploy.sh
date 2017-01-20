@@ -15,7 +15,7 @@ cd "$SCRIPT_DIR"
 print "Creating required directory tree..."
 mkdir -p "$XDG_CONFIG_HOME"/{git/local,mc,htop,ranger}
 mkdir -p "$XDG_CACHE_HOME"/{vim/{backup,swap,undo},zsh}
-mkdir -p "$XDG_DATA_HOME"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,zsh,man}
+mkdir -p "$XDG_DATA_HOME"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,luaenv/plugins,zsh,man}
 mkdir -p "$HOME"/.local/{bin,etc}
 print "  ...done"
 
@@ -83,11 +83,16 @@ for plugin in "${rbenv_plugins[@]}"; do
 done
 print "  ...done"
 
-# Link nodenv plugins
+# Link nodenv plugins to $NODENV_ROOT
 print "Linking nodenv plugins..."
 ln -snf "$SCRIPT_DIR/nodenv/node-build" "$XDG_DATA_HOME/nodenv/plugins/node-build"
 ln -snf "$SCRIPT_DIR/nodenv/nodenv-aliases" "$XDG_DATA_HOME/nodenv/plugins/nodenv-aliases"
 ln -snf "$SCRIPT_DIR/nodenv/nodenv-package-rehash" "$XDG_DATA_HOME/nodenv/plugins/nodenv-package-rehash"
+print "  ...done"
+
+# Link luaenv plugins to $LUAENV_ROOT
+print "Linking luaenv plugins..."
+ln -snf "$SCRIPT_DIR/luaenv/lua-build" "$XDG_DATA_HOME/luaenv/plugins/lua-build"
 print "  ...done"
 
 # Install crontab task to pull updates every midnight

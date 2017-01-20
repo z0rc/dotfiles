@@ -1,3 +1,9 @@
+[submodule "luaenv/luaenv"]
+	path = luaenv/luaenv
+	url = https://github.com/cehoffman/luaenv.git
+[submodule "luaenv/lua-build"]
+	path = luaenv/lua-build
+	url = https://github.com/cehoffman/lua-build.git
 [submodule "nodenv/node-build"]
 	path = nodenv/node-build
 	url = https://github.com/nodenv/node-build.git
