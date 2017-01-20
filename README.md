@@ -39,7 +39,7 @@ else goes under standard XDG paths or launched via aliases.
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
-* [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv) and [nodenv](https://github.com/nodenv/nodenv)
+* [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv), [nodenv](https://github.com/nodenv/nodenv) and [luaenv](https://github.com/cehoffman/luaenv)
 
 # Installation
 
@@ -50,6 +50,7 @@ Requirements:
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
 * `python` (optional: used by several vim plugins, but they won't be activated, if python is missing)
 * `ruby` (optional: same case as with python)
+* `lua` or `luajit` (optional: same case as with python)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
@@ -119,3 +120,8 @@ Add your local configuration to `$DOTFILES/vim/vimrc.local`.
 ## Local paths
 Local binaries can be put into `$HOME/.local/bin`, it's added to `$PATH` by
 default. Also man pages can be put into `$XDG_DATA_HOME/man`.
+
+## *env
+Pyenv and similar extensions are lazy-loaded, it meant that they won't be
+initialized on shell init. Activation is done on the first execution. Check out
+output of `type -f pyenv` in shell and [`zsh/rc.d/14_rbpynodlua_env.zsh`].
