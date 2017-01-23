@@ -12,7 +12,8 @@ let g:lmap.g={
               \'d' : ['Gdiff', 'Diff'],
               \'l' : ['Glog', 'Log'],
               \'f' : ['Gfetch', 'Fetch'],
-              \'b' : ['Gblame', 'Blame']
+              \'b' : ['Gblame', 'Blame'],
+              \'k' : ['Gitv', 'Gitk']
               \}
 
 " gitgutter hunks menu

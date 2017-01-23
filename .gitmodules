@@ -160,6 +160,9 @@
 [submodule "vim/bundle/gitgutter"]
 	path = vim/bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/gitv"]
+	path = vim/bundle/gitv
+	url = https://github.com/gregsexton/gitv.git
 [submodule "vim/bundle/go"]
 	path = vim/bundle/go
 	url = https://github.com/fatih/vim-go.git
