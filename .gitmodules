@@ -120,6 +120,10 @@
 [submodule "vim/bundle/ctrlp-cmdpalette"]
 	path = vim/bundle/ctrlp-cmdpalette
 	url = https://github.com/fisadev/vim-ctrlp-cmdpalette.git
+[submodule "vim/bundle/ctrlp-py-matcher"]
+	path = vim/bundle/ctrlp-py-matcher
+	url = https://github.com/FelikZ/ctrlp-py-matcher.git
+	ignore = untracked
 [submodule "vim/bundle/cursorline-current-window"]
 	path = vim/bundle/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
