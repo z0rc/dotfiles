@@ -1,5 +1,5 @@
 " enable ctrlp py matcher if python is present
-if has('python')
+if has('python') || has('python3')
   let g:ctrlp_match_func={ 'match': 'pymatcher#PyMatch' }
 endif
 
