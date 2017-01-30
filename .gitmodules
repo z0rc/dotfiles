@@ -342,7 +342,7 @@
 	url = https://github.com/hlissner/zsh-autopair.git
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+	url = https://github.com/PythonNut/zsh-autosuggestions.git
 [submodule "zsh/plugins/async"]
 	path = zsh/plugins/async
 	url = https://github.com/mafredri/zsh-async.git
