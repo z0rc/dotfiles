@@ -122,7 +122,7 @@ Local binaries can be put into `$HOME/.local/bin`, it's added to `$PATH` by
 default. Also man pages can be put into `$XDG_DATA_HOME/man`.
 
 ## *env
-Pyenv and similar extensions are lazy-loaded, it meant that they won't be
+Pyenv and similar extensions are lazy-loaded, it means that they won't be
 initialized on shell init. Activation is done on the first execution. Check out
 output of `type -f pyenv` in shell and
-(implementation)[zsh/rc.d/14_rbpynodlua_env.zsh].
+[implementation](zsh/rc.d/14_rbpynodlua_env.zsh).
