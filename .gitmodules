@@ -101,6 +101,10 @@
 	path = vim/bundle/anyfold
 	url = https://github.com/pseewald/vim-anyfold.git
 	ignore = untracked
+[submodule "vim/bundle/asyncrun"]
+	path = vim/bundle/asyncrun
+	url = https://github.com/skywind3000/asyncrun.vim.git
+	ignore = untracked
 [submodule "vim/bundle/auto-pairs"]
 	path = vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
@@ -131,9 +135,6 @@
 [submodule "vim/bundle/dash"]
 	path = vim/bundle/dash
 	url = https://github.com/rizzatti/dash.vim.git
-[submodule "vim/bundle/dispatch"]
-	path = vim/bundle/dispatch
-	url = https://github.com/tpope/vim-dispatch.git
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
 	url = https://github.com/xolox/vim-easytags.git

@@ -1,1 +1,1 @@
-let test#strategy="dispatch"
+let test#strategy='asyncrun'

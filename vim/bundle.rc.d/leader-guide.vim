@@ -56,7 +56,7 @@ let g:lmap.e={
 let g:lmap.t={
               \'name' : 'Toggles',
               \'l' : ['LToggle', 'Location list'],
-              \'q' : ['QToggle', 'Quickfix window'],
+              \'q' : ['call asyncrun#quickfix_toggle(8)', 'Quickfix window'],
               \'N' : ['NERDTreeToggle', 'NERDTree'],
               \'t' : ['TagbarToggle', 'Tagbar'],
               \'n' : ['NumbersToggle', 'Numbers'],
