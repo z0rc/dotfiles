@@ -93,6 +93,7 @@ print "  ...done"
 # Link luaenv plugins to $LUAENV_ROOT
 print "Linking luaenv plugins..."
 ln -snf "$SCRIPT_DIR/luaenv/lua-build" "$XDG_DATA_HOME/luaenv/plugins/lua-build"
+ln -snf "$SCRIPT_DIR/luaenv/luaenv-luarocks" "$XDG_DATA_HOME/luaenv/plugins/luaenv-luarocks"
 print "  ...done"
 
 # Install crontab task to pull updates every midnight
