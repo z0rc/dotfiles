@@ -5,7 +5,7 @@
 # There are many like it, but this one is mine
 
 This repository contains tools and configs I use in shell. No graphical stuff,
-usable both on server and personal workstation. Battle tested on OS X and
+usable both on server and personal workstation. Battle tested on macOS and
 various Linux distributions including Debian, Ubuntu, CentOS.
 
 I'm a big fan of [XDG Base Directory
@@ -16,10 +16,10 @@ else goes under standard XDG paths or launched via aliases.
 
 # Features
 
-* Extensive Zsh [configuration](zsh/zshrc) and [plugins](zsh/plugins):
+* Extensive Zsh [configuration](zsh/rc.d) and [plugins](zsh/plugins):
   * [pure prompt with async vcs info](https://github.com/intelfx/pure)
   * [completions plugin](https://github.com/zsh-users/zsh-completions)
-  * [autosuggestions plugin](https://github.com/tarruda/zsh-autosuggestions)
+  * [async autosuggestions plugin](https://github.com/PythonNut/zsh-autosuggestions)
   * [history substring search plugin](https://github.com/zsh-users/zsh-history-substring-search)
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
