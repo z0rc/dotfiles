@@ -139,7 +139,7 @@
 	path = vim/bundle/dash
 	url = https://github.com/rizzatti/dash.vim.git
 [submodule "vim/bundle/dockerfile"]
-	path = vim/bundle/Dockerfile
+	path = vim/bundle/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
