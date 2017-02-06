@@ -82,9 +82,6 @@
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git
-[submodule "vim/bundle/Dockerfile"]
-	path = vim/bundle/Dockerfile
-	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = https://github.com/rking/ag.vim.git
@@ -138,6 +135,9 @@
 [submodule "vim/bundle/dash"]
 	path = vim/bundle/dash
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim/bundle/dockerfile"]
+	path = vim/bundle/Dockerfile
+	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
 	url = https://github.com/xolox/vim-easytags.git
