@@ -82,6 +82,9 @@
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git
+[submodule "vim/bundle/01_sensible"]
+	path = vim/bundle/01_sensible
+	url = https://github.com/tpope/vim-sensible.git
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = https://github.com/rking/ag.vim.git
@@ -286,9 +289,6 @@
 	path = vim/bundle/ruby-chef-ft
 	url = https://github.com/dougireton/vim-chef.git
 	ignore = untracked
-[submodule "vim/bundle/sensible"]
-	path = vim/bundle/01sensible
-	url = https://github.com/tpope/vim-sensible.git
 [submodule "vim/bundle/sleuth"]
 	path = vim/bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
