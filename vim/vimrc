@@ -59,7 +59,7 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Load plugins configurations
-for f in split(glob($DOTFILES . '/vim/bundle.rc.d/*.vim'), '\n')
+for f in split(glob($DOTFILES . '/vim/rc.d/*.vim'), '\n')
   execute 'source' f
 endfor
 
