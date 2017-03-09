@@ -6,10 +6,6 @@ endif
 " set delay to prevent extra search
 let g:ctrlp_lazy_update=350
 
-" do not clear filenames cache, to improve CtrlP startup
-" manualy clear it by <F5>
-let g:ctrlp_clear_cache_on_exit=0
-
 " set no file limit, we are building a big project
 let g:ctrlp_max_files=0
 
