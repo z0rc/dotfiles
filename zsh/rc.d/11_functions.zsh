@@ -32,7 +32,6 @@ dot () {
         LBUFFER+=.
     fi
 }
-autoload -U dot
 zle -N dot
 bindkey . dot
 
