@@ -209,6 +209,9 @@
 	path = vim/bundle/markdown
 	url = https://github.com/rhysd/vim-gfm-syntax.git
 	ignore = untracked
+[submodule "vim/bundle/monit"]
+	path = vim/bundle/monit
+	url = https://github.com/tmatilai/vim-monit.git
 [submodule "vim/bundle/mw-utils"]
 	path = vim/bundle/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
