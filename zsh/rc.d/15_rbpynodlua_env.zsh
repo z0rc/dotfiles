@@ -1,5 +1,6 @@
 # Don't indicate virtualenv in pyenv, indication is done in pure
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Lazy init wrapper on first call
 wrappers=(pyenv rbenv nodenv luaenv)
