@@ -1,13 +1,14 @@
 # List all directories leading up to a filename; this is useful to see
 # if some permissions are blocking access to a file.
 lspath () {
+    local pathlist
     if [[ "$1" = "${1##/}" ]]; then
         pathlist=(/ ${(s:/:)PWD} ${(s:/:)1})
     else
         pathlist=(/ ${(s:/:)1})
     fi
-    allpaths=()
-    filepath=$pathlist[0]
+    local allpaths=()
+    local filepath=$pathlist[0]
     shift pathlist
     for i in $pathlist[@]; do
         allpaths=($allpaths[@] $filepath)
