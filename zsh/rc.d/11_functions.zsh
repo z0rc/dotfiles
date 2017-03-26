@@ -19,10 +19,11 @@ lspath () {
 
 # Grep from ps output
 psg () {
-    ps aux | head -n1
-    FST=`echo $1 | sed -e "s/^\(.\).*/\1/"`
-    RST=`echo $1 | sed -e "s/^.\(.*\)/\1/"`
-    ps aux | grep "[$FST]$RST"
+    local psaux=$(ps aux)
+    if local result=$(echo $psaux | grep --color=always -i "[${1[1]}]${1#?}"); then
+        echo $psaux | head -n1
+        echo $result
+    fi
 }
 
 # Autoexpand "..." to "../.." and so on
