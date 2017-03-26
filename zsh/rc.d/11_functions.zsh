@@ -19,6 +19,7 @@ lspath () {
 
 # Grep from ps output
 psg () {
+    ps aux | head -n1
     FST=`echo $1 | sed -e "s/^\(.\).*/\1/"`
     RST=`echo $1 | sed -e "s/^.\(.*\)/\1/"`
     ps aux | grep "[$FST]$RST"
