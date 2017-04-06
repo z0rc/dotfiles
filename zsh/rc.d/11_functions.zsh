@@ -21,9 +21,13 @@ lspath () {
 # Grep from ps output
 psg () {
     local psaux=$(ps aux)
-    if local result=$(echo $psaux | grep --color=always -i "[${1[1]}]${1#?}"); then
-        echo $psaux | head -n1
+    local result
+    if result=$(echo $psaux | grep --color=always -i "[${1[1]}]${1#?}"); then
+        echo $psaux | command head -n1
         echo $result
+    else
+        echo "Haven't found process matching pattern '$1'"
+        return 1
     fi
 }
 
