@@ -3,8 +3,12 @@
 	path = local/stuff
 [push]
 	default = current
+	followTags = true
 [branch]
 	autosetuprebase = always
+[merge]
+	ff = only
+	conflictstyle = diff3
 [color]
 	ui = auto
 [alias]
