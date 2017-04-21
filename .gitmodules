@@ -58,6 +58,9 @@
 [submodule "tmux/plugins/copycat"]
 	path = tmux/plugins/copycat
 	url = https://github.com/tmux-plugins/tmux-copycat.git
+[submodule "tmux/plugins/open"]
+	path = tmux/plugins/open
+	url = https://github.com/tmux-plugins/tmux-open.git
 [submodule "tmux/plugins/pain-control"]
 	path = tmux/plugins/pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control.git
