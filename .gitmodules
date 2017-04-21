@@ -64,6 +64,9 @@
 [submodule "tmux/plugins/pain-control"]
 	path = tmux/plugins/pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control.git
+[submodule "tmux/plugins/prefix-highlight"]
+	path = tmux/plugins/prefix-highlight
+	url = https://github.com/tmux-plugins/tmux-prefix-highlight.git
 [submodule "tmux/plugins/sensible"]
 	path = tmux/plugins/sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
