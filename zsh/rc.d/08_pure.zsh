@@ -21,20 +21,21 @@ fi
 _pure_indicate_env() {
     if [[ -n "${VIRTUAL_ENV}" ]]; then
         preprompt+=("%F{green}venv:${VIRTUAL_ENV:t}%f")
-    elif [[ -n "${PYENV_VERSION}" ]]; then
-        preprompt+=("%F{green}pyenv-shell:${PYENV_VERSION}%f")
-    elif [[ -n "$RBENV_VERSION" ]]; then
-        preprompt+=("%F{green}rbenv-shell:${RBENV_VERSION}%f")
-    elif [[ -n "${PYENV_ROOT}" ]]; then
-        local pyenv_version_name=$(pyenv version-name)
-        if [[ "${pyenv_version_name}" != "system" ]]; then
-            preprompt+=("%F{green}pyenv-local:${pyenv_version_name}%f")
-        fi
-    elif [[ -n "${RBENV_ROOT}" ]]; then
-        local rbenv_version_name=$(rbenv version-name)
-        if [[ "${rbenv_version_name}" != "system" ]]; then
-            preprompt+=("%F{green}rbenv-local:${rbenv_version_name}%f")
-        fi
+    else
+        local wrapper
+        local wrappers=(pyenv rbenv nodenv luaenv)
+        for wrapper in "${wrappers[@]}"; do
+            local wrapper_version="${wrapper:u}_VERSION"
+            local wrapper_root="${wrapper:u}_ROOT"
+            if [[ -n "${(P)wrapper_version}" ]]; then
+                preprompt+=("%F{green}${wrapper}-shell:${(P)wrapper_version}%f")
+            elif [[ -n "${(P)wrapper_root}" ]]; then
+                local wrapper_version_name=$(${wrapper} version-name)
+                if [[ "${wrapper_version_name}" != "system" ]]; then
+                    preprompt+=("%F{green}${wrapper}-local:${wrapper_version_name}%f")
+                fi
+            fi
+        done
     fi
 }
 
