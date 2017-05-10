@@ -6,12 +6,10 @@ bindkey -e
 zmodload zsh/terminfo
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     function zle-line-init() {
-        emulate -L zsh
-        printf '%s' ${terminfo[smkx]}
+        echoti smkx
     }
     function zle-line-finish() {
-        emulate -L zsh
-        printf '%s' ${terminfo[rmkx]}
+        echoti rmkx
     }
     zle -N zle-line-init
     zle -N zle-line-finish
@@ -41,3 +39,5 @@ key[BackSpace]=${terminfo[kbs]}
 [[ -n "${key[PageUp]}" ]] && bindkey "${key[PageUp]}" beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]] && bindkey "${key[PageDown]}" end-of-buffer-or-history
 [[ -n "${key[BackSpace]}" ]] && bindkey "${key[BackSpace]}" backward-delete-char
+[[ -n "${key[Right]}" ]] && bindkey "\e[1;3${key[Right]:(-1)}" forward-word
+[[ -n "${key[Left]}" ]] && bindkey "\e[1;3${key[Left]:(-1)}" backward-word
