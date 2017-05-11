@@ -17,15 +17,14 @@ else goes under standard XDG paths or launched via aliases.
 # Features
 
 * Extensive Zsh [configuration](zsh/rc.d) and [plugins](zsh/plugins):
-  * [pure prompt with async vcs info](https://github.com/intelfx/pure)
+  * [pure prompt with async vcs info](https://github.com/intelfx/pure) with couple of additional indicators
   * [completions plugin](https://github.com/zsh-users/zsh-completions)
-  * [async autosuggestions plugin](https://github.com/PythonNut/zsh-autosuggestions)
+  * [async autosuggestions plugin](https://github.com/zsh-users/zsh-autosuggestions)
   * [history substring search plugin](https://github.com/zsh-users/zsh-history-substring-search)
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
   * [autopair plugin](https://github.com/hlissner/zsh-autopair)
-  * [zaw](https://github.com/zsh-users/zaw) and [cdr](https://github.com/willghatch/zsh-cdr)
-* Vim [configuration](vim/vimrc) and [plugins](vim/bundle) managed by [pathogen](https://github.com/tpope/vim-pathogen)
+* Vim [configuration](vim/rc.d) and [plugins](vim/bundle) managed by [pathogen](https://github.com/tpope/vim-pathogen)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
 * Other configs:
   * [Midnight Commander](configs/mc.ini)
@@ -44,7 +43,7 @@ else goes under standard XDG paths or launched via aliases.
 # Installation
 
 Requirements:
-* `zsh` 5.1 or newer (async plugin requires recent enough version of zsh)
+* `zsh` 5.1 or newer (async stuff requires recent enough version of zsh)
 * `git` (all external components are added as git submodules
 * `make` (optional: required to build mongo-hacker and install git-extras)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
@@ -122,7 +121,7 @@ Local binaries can be put into `$HOME/.local/bin`, it's added to `$PATH` by
 default. Also man pages can be put into `$XDG_DATA_HOME/man`.
 
 ## *env
-Pyenv and similar extensions are lazy-loaded, it means that they won't be
-initialized on shell init. Activation is done on the first execution. Check out
-output of `type -f pyenv` in shell and
+Pyenv and similar wrappers are lazy-loaded, it means that they won't be
+initialized on shell start. Activation is done on the first execution. Check
+out output of `type -f pyenv` in shell and
 [implementation](zsh/rc.d/14_rbpynodlua_env.zsh).

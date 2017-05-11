@@ -360,9 +360,6 @@
 [submodule "zsh/plugins/async"]
 	path = zsh/plugins/async
 	url = https://github.com/mafredri/zsh-async.git
-[submodule "zsh/plugins/cdr"]
-	path = zsh/plugins/cdr
-	url = https://github.com/willghatch/zsh-cdr.git
 [submodule "zsh/plugins/completions"]
 	path = zsh/plugins/completions
 	url = https://github.com/zsh-users/zsh-completions.git
@@ -378,6 +375,3 @@
 [submodule "zsh/plugins/syntax-highlighting"]
 	path = zsh/plugins/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/plugins/zaw"]
-	path = zsh/plugins/zaw
-	url = https://github.com/zsh-users/zaw.git
