@@ -32,6 +32,8 @@ Session.vim
 # temporary
 .netrwhist
 *~
+# plugin doc tags
+/doc/tags
 
 ### Zsh ###
 # autoenv

@@ -109,19 +109,15 @@
 [submodule "vim/bundle/anyfold"]
 	path = vim/bundle/anyfold
 	url = https://github.com/pseewald/vim-anyfold.git
-	ignore = untracked
 [submodule "vim/bundle/asyncrun"]
 	path = vim/bundle/asyncrun
 	url = https://github.com/skywind3000/asyncrun.vim.git
-	ignore = untracked
 [submodule "vim/bundle/auto-pairs"]
 	path = vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-	ignore = untracked
 [submodule "vim/bundle/aws"]
 	path = vim/bundle/aws
 	url = https://github.com/andrewstuart/aws-vim.git
-	ignore = untracked
 [submodule "vim/bundle/bundler"]
 	path = vim/bundle/bundler
 	url = https://github.com/tpope/vim-bundler.git
@@ -137,11 +133,9 @@
 [submodule "vim/bundle/ctrlp-py-matcher"]
 	path = vim/bundle/ctrlp-py-matcher
 	url = https://github.com/FelikZ/ctrlp-py-matcher.git
-	ignore = untracked
 [submodule "vim/bundle/cursorline-current-window"]
 	path = vim/bundle/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
-	ignore = untracked
 [submodule "vim/bundle/dash"]
 	path = vim/bundle/dash
 	url = https://github.com/rizzatti/dash.vim.git
@@ -154,7 +148,6 @@
 [submodule "vim/bundle/editorconfig"]
 	path = vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
-	ignore = untracked
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
@@ -164,7 +157,6 @@
 [submodule "vim/bundle/fold-cycle"]
 	path = vim/bundle/fold-cycle
 	url = https://github.com/arecarn/vim-fold-cycle.git
-	ignore = untracked
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -201,7 +193,6 @@
 [submodule "vim/bundle/leader-guide"]
 	path = vim/bundle/leader-guide
 	url = https://github.com/hecal3/vim-leader-guide.git
-	ignore = untracked
 [submodule "vim/bundle/listtoggle"]
 	path = vim/bundle/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
@@ -214,7 +205,6 @@
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
 	url = https://github.com/rhysd/vim-gfm-syntax.git
-	ignore = untracked
 [submodule "vim/bundle/monit"]
 	path = vim/bundle/monit
 	url = https://github.com/tmatilai/vim-monit.git
@@ -269,14 +259,12 @@
 [submodule "vim/bundle/pyenv"]
 	path = vim/bundle/pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
-	ignore = untracked
 [submodule "vim/bundle/python-combined"]
 	path = vim/bundle/python-combined
 	url = https://github.com/mitsuhiko/vim-python-combined.git
 [submodule "vim/bundle/qf"]
 	path = vim/bundle/qf
 	url = https://github.com/romainl/vim-qf.git
-	ignore = untracked
 [submodule "vim/bundle/rainbow"]
 	path = vim/bundle/rainbow
 	url = https://github.com/luochen1990/rainbow.git
@@ -298,7 +286,6 @@
 [submodule "vim/bundle/ruby-chef-ft"]
 	path = vim/bundle/ruby-chef-ft
 	url = https://github.com/dougireton/vim-chef.git
-	ignore = untracked
 [submodule "vim/bundle/sleuth"]
 	path = vim/bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
@@ -326,7 +313,6 @@
 [submodule "vim/bundle/test"]
 	path = vim/bundle/test
 	url = https://github.com/janko-m/vim-test.git
-	ignore = untracked
 [submodule "vim/bundle/terminus"]
 	path = vim/bundle/terminus
 	url = https://github.com/wincent/terminus.git
