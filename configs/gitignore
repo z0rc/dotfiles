@@ -2,10 +2,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
 # Installer logs
 pip-log.txt
-
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -16,12 +14,18 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
-
-# pyenv
-.python-version
-
 # virtualenv
 venv/
+
+### *env ###
+# pyenv
+.python-version
+# rbenv
+.ruby-version
+# nodenv
+.node-version
+# luaenv
+.lua-version
 
 ### Vim ###
 # swap
