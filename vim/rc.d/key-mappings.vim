@@ -1,14 +1,14 @@
-" recommended key-mappings for completion
-" <CR>: close popup and save indent or call auto-pairs magic
-imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>\<Plug>AutoPairsReturn"
+" enable AutoPairs mapping of <Enter>
+imap <expr> <CR> "\<CR>\<Plug>AutoPairsReturn"
+
 " <TAB>: supertab like neosnippet expand
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-n>" : "\<TAB>")
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-imap <expr><S-TAB> pumvisible() ? "\<C-p>" : ""
-smap <expr><S-TAB> pumvisible() ? "\<C-p>" : ""
+imap <expr> <TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-n>" : "\<TAB>")
+smap <expr> <TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr> <S-TAB> pumvisible() ? "\<C-p>" : ""
+smap <expr> <S-TAB> pumvisible() ? "\<C-p>" : ""
 " <C-h>, <BS>: close popup and delete backword char
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr> <C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr> <BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " replace default search with incsearch
 map /  <Plug>(incsearch-forward)
