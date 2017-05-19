@@ -13,7 +13,9 @@ if (( ${+commands[grc]} )); then
     done
 
     for grc_command in make w who; do
-        alias ${grc_command}="grc --color=auto ${grc_command}"
+        if (( ${+commands[$grc_command]} )); then
+            alias ${grc_command}="grc --color=auto ${grc_command}"
+        fi
     done
 
     unset grc_commands grc_command
