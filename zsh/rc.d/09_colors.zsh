@@ -15,18 +15,7 @@ if (( $+commands[dircolors] )); then
     alias vdir="vdir --color=auto"
 fi
 
-# More colors
-if (( $+commands[grc] )); then
-    alias colorify="grc -es --colour=auto"
-    for command in blkid df dig dnf du env free gcc getfacl getsebool fconfig ip iptables last lsattr lsblk lsmod lspci mount mtr netstat nmap ping ps pv semanage ss stat sysctl systemctl tcpdump traceroute tune2fs ulimit uptime vmstat wdiff; do
-        if [[ -f "/usr/local/share/grc/conf.$command" ]] || [[ -f "/usr/share/grc/conf.$command" ]]; then
-            alias $command="colorify $command"
-        fi
-    done
-    for command in head tail make ld; do
-        alias $command="colorify $command"
-    done
-fi
+# Enable diff with colors
 if (( $+commands[colordiff] )); then
     alias diff="colordiff -Naur"
 fi
