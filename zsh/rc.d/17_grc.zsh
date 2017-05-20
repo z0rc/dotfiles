@@ -8,13 +8,13 @@ if (( ${+commands[grc]} )); then
 
     for grc_command in ${grc_commands[@]}; do
         if (( ${+commands[$grc_command]} )) && [[ -f "/usr/local/share/grc/conf.${grc_command}" ]] || [[ -f "/usr/share/grc/conf.${grc_command}" ]]; then
-            alias ${grc_command}="grc --color=auto ${grc_command}"
+            alias ${grc_command}="grc --colour=auto ${grc_command}"
         fi
     done
 
     for grc_command in make w who; do
         if (( ${+commands[$grc_command]} )); then
-            alias ${grc_command}="grc --color=auto ${grc_command}"
+            alias ${grc_command}="grc --colour=auto ${grc_command}"
         fi
     done
 
