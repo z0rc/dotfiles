@@ -268,6 +268,9 @@
 [submodule "vim/bundle/rainbow"]
 	path = vim/bundle/rainbow
 	url = https://github.com/luochen1990/rainbow.git
+[submodule "vim/bundle/rhubarb"]
+	path = vim/bundle/rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
 [submodule "vim/bundle/rbenv"]
 	path = vim/bundle/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
