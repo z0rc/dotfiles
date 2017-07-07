@@ -20,6 +20,7 @@ export PACKER_CONFIG="$XDG_CONFIG_HOME/packer"
 export PACKER_CACHE_DIR="$XDG_CACHE_HOME/packer"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
 export GOPATH="$HOME/.local/go"
 
 # Enable local binaries and man pages
