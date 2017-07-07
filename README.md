@@ -54,11 +54,8 @@ Requirements:
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
 ```sh
-mkdir "$HOME/.local"
-cd "$HOME/.local"
-git clone https://github.com/z0rc/dotfiles.git
-cd dotfiles
-./deploy.sh
+git clone https://github.com/z0rc/dotfiles.git "$HOME/.local/dotfiles"
+$HOME/.local/dotfiles/deploy.sh
 chsh -s /bin/zsh
 ```
 
@@ -90,7 +87,7 @@ or
 dnf install vim-enhanced
 ```
 
-OS X:
+MacOS:
 ```
 brew install vim --with-python3 --with-luajit
 ```
@@ -124,4 +121,4 @@ default. Also man pages can be put into `$XDG_DATA_HOME/man`.
 Pyenv and similar wrappers are lazy-loaded, it means that they won't be
 initialized on shell start. Activation is done on the first execution. Check
 out output of `type -f pyenv` in shell and
-[implementation](zsh/rc.d/14_rbpynodlua_env.zsh).
+[implementation](zsh/rc.d/15_rbpynodlua_env.zsh).
