@@ -20,6 +20,10 @@ lspath () {
 
 # Grep from ps output
 psg () {
+    if [[ -z "${1}" ]]; then
+        echo "Please specify process search pattern"
+        return 2
+    fi
     local psaux=$(ps aux)
     local result
     if result=$(grep --color=always -i "[${1[1]}]${1#?}" <<< ${psaux}); then
