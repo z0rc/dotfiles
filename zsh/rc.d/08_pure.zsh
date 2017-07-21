@@ -2,14 +2,14 @@
 PURE_PROMPT_SYMBOL="%#"
 
 # Enable pure prompt
-source "$ZSHDIR/plugins/pure/pure.zsh"
+source "${ZSHDIR}/plugins/pure/pure.zsh"
 
 # Indicate that shell is running under Midnight Commander or ranger
-if [[ -n "$MC_SID" ]]; then
+if [[ -n "${MC_SID}" ]]; then
     _pure_indicate_filemanager() {
         preprompt+=("%F{white}[mc]%f")
     }
-elif [[ -n "$RANGER_LEVEL" ]]; then
+elif [[ -n "${RANGER_LEVEL}" ]]; then
     _pure_indicate_filemanager() {
         preprompt+=("%F{white}[ranger]%f")
     }

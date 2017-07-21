@@ -1,2 +1,2 @@
 # Autoparis plugin
-source "$ZSHDIR/plugins/autopair/autopair.zsh"
+source "${ZSHDIR}/plugins/autopair/autopair.zsh"

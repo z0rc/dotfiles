@@ -7,7 +7,7 @@ if (( ${+commands[grc]} )); then
                   uptime vmstat wdiff)
 
     for grc_command in ${grc_commands[@]}; do
-        if (( ${+commands[$grc_command]} )) && [[ -f "/usr/local/share/grc/conf.${grc_command}" ]] || [[ -f "/usr/share/grc/conf.${grc_command}" ]]; then
+        if (( ${+commands[$grc_command]} )) && [[ -f "/usr/local/share/grc/conf.${grc_command}" || -f "/usr/share/grc/conf.${grc_command}" ]]; then
             alias ${grc_command}="grc --colour=auto ${grc_command}"
         fi
     done
