@@ -75,7 +75,10 @@ It's possible to install dotfiles without creating `~/.zshenv` symlink. In
 order to do so, there should be an environment variable `ZDOTDIR` set to
 `<installation dir>/zsh`, e.g. `$HOME/.local/dotfiles/zsh`. This variable
 should be set super early in login process, before zsh starts sourcing user's
-`.zshenv`. Possible option is to add `export ZDOTDIR=$HOME/.local/dotfiles/zsh`
+`.zshenv`. Possible option is to add
+```sh
+export ZDOTDIR=$HOME/.local/dotfiles/zsh
+```
 into `/etc/zsh/zshenv`. Or you can do it with PAM env module.
 
 ## Vim
