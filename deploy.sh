@@ -19,9 +19,17 @@ mkdir -p "$XDG_DATA_HOME"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,luaenv/plu
 mkdir -p "$HOME"/.local/{bin,etc}
 print "  ...done"
 
+# Link zshenv if needed
+print "Checking for custom ZDOTDIR env variable..."
+if [[ "${ZDOTDIR}" = "${SCRIPT_DIR}/zsh" ]]; then
+    print "  ...present and valid, skipping .zshenv symlink"
+else
+    ln -sf "$SCRIPT_DIR/zsh/.zshenv" "${ZDOTDIR:-$HOME}/.zshenv"
+    print "  ...failed to match this script dir, symlinking .zshenv"
+fi
+
 # Link config files
 print "Linking config files..."
-ln -sf "$SCRIPT_DIR/zsh/zshenv" "$HOME/.zshenv"
 ln -sf "$SCRIPT_DIR/configs/gitconfig" "$XDG_CONFIG_HOME/git/config"
 ln -sf "$SCRIPT_DIR/configs/gitattributes" "$XDG_CONFIG_HOME/git/attributes"
 ln -sf "$SCRIPT_DIR/configs/gitignore" "$XDG_CONFIG_HOME/git/ignore"

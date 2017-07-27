@@ -12,7 +12,9 @@ I'm a big fan of [XDG Base Directory
 Specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html)
 and organize my dotfiles in a way that they don't clutter the `$HOME`. I was
 able to reduce files required to be in `$HOME` to single `.zshenv`, everything
-else goes under standard XDG paths or launched via aliases.
+else goes under standard XDG paths or launched via aliases. Additionally if you
+have root permissions, you can install dotfiles with [zero home
+presence](#zero-home-presence).
 
 # Features
 
@@ -66,6 +68,15 @@ submodules after successful pull.
 
 In case of missing python or ruby, they can be installed via pyenv and rbenv
 after the deployment.
+
+## Zero home presence
+
+It's possible to install dotfiles without creating `~/.zshenv` symlink. In
+order to do so, there should be an environment variable `ZDOTDIR` set to
+`<installation dir>/zsh`, e.g. `$HOME/.local/dotfiles/zsh`. This variable
+should be set super early in login process, before zsh starts sourcing user's
+`.zshenv`. Possible option is to add `export ZDOTDIR=$HOME/.local/dotfiles/zsh`
+into `/etc/zsh/zshenv`. Or you can do it with PAM env module.
 
 ## Vim
 
