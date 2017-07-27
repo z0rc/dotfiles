@@ -1,21 +1,17 @@
-# Get absolute path for zshdir and dotfiles
-SOURCE="${(%):-%N}"
-while [[ -h "$SOURCE" ]]; do
-    DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
-    SOURCE="$(readlink "$SOURCE")"
-    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-done
-export ZSHDIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
-export DOTFILES="$(cd $ZSHDIR/.. && pwd)"
+# Determine own path if ZDOTDIR isn't set
+if [[ -z "ZDOTDIR" ]]; then
+    local source="${(%):-%N}"
+    local dir
+    while [[ -h "${source}" ]]; do
+        dir="$(cd -P "$(dirname "${source}")" && pwd)"
+        source="$(readlink "${source}")"
+        [[ ${source} != /* ]] && source="${dir}/${source}"
+    done
+    export ZDOTDIR="$(cd -P "$(dirname "${source}")" && pwd)"
+fi
+export DOTFILES="$(cd "${ZDOTDIR}/.." && pwd)"
 
 # Source local env files
-for envfile in "$ZSHDIR"/env.d/*; do
-    source $envfile
+for envfile in "${ZDOTDIR}"/env.d/*; do
+    source "${envfile}"
 done
-
-# Include interactive rc files
-if [[ -o interactive ]]; then
-    for conffile in "$ZSHDIR"/rc.d/*; do
-        source $conffile
-    done
-fi

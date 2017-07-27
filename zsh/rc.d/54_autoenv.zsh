@@ -1,2 +1,2 @@
 # Enable autoenv plugin
-source "${ZSHDIR}/plugins/autoenv/autoenv.zsh"
+source "${ZDOTDIR}/plugins/autoenv/autoenv.zsh"

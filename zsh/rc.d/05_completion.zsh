@@ -29,7 +29,7 @@ man_glob () {
 compctl -K man_glob man
 
 # Additional completion rules
-fpath+="${ZSHDIR}/plugins/completions/src"
+fpath+="${ZDOTDIR}/plugins/completions/src"
 
 # Enable git-extras completions
 source "${DOTFILES}/tools/git-extras/etc/git-extras-completion.zsh"

@@ -120,9 +120,12 @@ this:
 Also you can put additional configuration in `~/.config/git/local/stuff`.
 
 ## Zsh
-You can add your local configuration into `$ZSHDIR/env.d/9[0-9]_*` and
-`$ZSHDIR/rc.d/9[0-9]_*`. The difference is that `env.d` is sourced always while
+You can add your local configuration into `$ZDOTDIR/env.d/9[0-9]_*` and
+`$ZDOTDIR/rc.d/9[0-9]_*`. The difference is that `env.d` is sourced always while
 `rc.d` is sourced in interactive session only.
+
+Also `$ZDOTDIR/.zprofile`, `$ZDOTDIR/.zlogin` and `$ZDOTDIR/.zlogout` are
+available for modifications, albeit missing by default.
 
 ## Vim
 Add your local configuration to `$DOTFILES/vim/vimrc.local`.

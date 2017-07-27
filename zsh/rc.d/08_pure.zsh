@@ -2,7 +2,7 @@
 PURE_PROMPT_SYMBOL="%#"
 
 # Enable pure prompt
-source "${ZSHDIR}/plugins/pure/pure.zsh"
+source "${ZDOTDIR}/plugins/pure/pure.zsh"
 
 # Indicate that shell is running under Midnight Commander or ranger
 if [[ -n "${MC_SID}" ]]; then
