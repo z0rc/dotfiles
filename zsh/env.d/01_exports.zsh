@@ -4,6 +4,7 @@ export EDITOR=vim
 export VIMINIT='let $MYVIMRC="$DOTFILES/vim/vimrc" | source $MYVIMRC'
 export PAGER=less
 export LESS="-RiwM"
+export READNULLCMD=${PAGER}
 
 # XDG basedir spec compliance
 export XDG_CACHE_HOME="${HOME}/.cache"
