@@ -1,5 +1,5 @@
 # Determine own path if ZDOTDIR isn't set
-if [[ -z "ZDOTDIR" ]]; then
+if [[ -z "${ZDOTDIR}" ]]; then
     local source="${(%):-%N}"
     local dir
     while [[ -h "${source}" ]]; do
