@@ -9,4 +9,4 @@ vim/vimrc.local
 zsh/rc.d/9[0-9]_*
 zsh/env.d/9[0-9]_*
 zsh/.zlogin
-zsh/.logout
+zsh/.zlogout
