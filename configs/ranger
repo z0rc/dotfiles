@@ -5,7 +5,7 @@ set preview_images_method iterm2
 set scroll_offset 5
 set show_hidden true
 set show_hidden_bookmarks true
-set sort oe
+set sort ob
 set sort_directories_first true
 set sort_case_insensitive true
 set sort_unicode true
