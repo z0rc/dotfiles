@@ -8,6 +8,7 @@ if [[ -z "${ZDOTDIR}" ]]; then
         [[ ${source} != /* ]] && source="${dir}/${source}"
     done
     export ZDOTDIR="$(cd -P "$(dirname "${source}")" && pwd)"
+    unset source dir
 fi
 export DOTFILES="$(cd "${ZDOTDIR}/.." && pwd)"
 
