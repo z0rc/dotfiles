@@ -1,3 +1,4 @@
+# Taken from prezto, thanks for this
 {
     # Compile the completion dump to increase startup speed
     zcompdump="${XDG_CACHE_HOME}/zsh/compdump"

@@ -10,7 +10,7 @@ setopt NO_FLOW_CONTROL # disable stupid annoying keys
 setopt MULTIOS # allows multiple input and output redirections
 setopt AUTO_CD # if the command is directory and cannot be executed, perfort cd to this directory
 setopt CLOBBER
-setopt BRACE_CCL
+setopt BRACE_CCL # allow brace character class list expansion
 setopt NO_BEEP # do not beep on errors
 setopt NO_NOMATCH # try to avoid the 'zsh: no matches found...'
 setopt INTERACTIVE_COMMENTS # allow use of comments in interactive code
@@ -19,3 +19,7 @@ setopt LIST_TYPES
 setopt HASH_LIST_ALL # whenever a command completion is attempted, make sure the entire command path is hashed first
 setopt COMPLETE_IN_WORD # allow completion from within a word/phrase
 setopt COMPLETE_ALIASES # keep completion for aliased commands
+setopt ALWAYS_TO_END # move cursor to the end of a completed word
+setopt LONG_LIST_JOBS # list jobs in the long format by default
+setopt AUTO_RESUME # attempt to resume existing job before creating a new process
+setopt NOTIFY # report status of background jobs immediately
