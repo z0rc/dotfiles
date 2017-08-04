@@ -6,12 +6,6 @@ _compile_compdump () {
     fi
 }
 
-_finish_compiler () {
-    async_stop_worker compiler
-    unfunction _finish_compiler _compile_compdump
-}
-
-async_init
 async_start_worker compiler -u -n
-async_register_callback compiler _finish_compiler
 async_job compiler _compile_compdump
+unfunction _compile_compdump
