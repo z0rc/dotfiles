@@ -13,3 +13,18 @@ alias wget="wget --hsts-file=${XDG_CACHE_HOME}/wget-hsts"
 alias stmux="tmux new-session 'sudo -i'"
 alias ls="ls --group-directories-first --color"
 alias ll="LC_COLLATE=C ls -l --almost-all --file-type --human-readable"
+
+# History suppression
+alias clear=" clear"
+alias pwd=" pwd"
+alias exit=" exit"
+
+# Safety
+alias rm="rm -i"
+
+# Suppress suggestions
+alias man="nocorrect noglob man"
+alias find="noglob find"
+alias touch="nocorrect touch"
+alias mkdir="nocorrect mkdir"
+alias cp="nocorrect cp"
