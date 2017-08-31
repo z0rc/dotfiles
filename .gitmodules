@@ -88,257 +88,254 @@
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git
-[submodule "vim/bundle/01_sensible"]
-	path = vim/bundle/01_sensible
+[submodule "vim/pack/01_sensible/start/sensible"]
+	path = vim/pack/01_sensible/start/sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "vim/bundle/ag"]
-	path = vim/bundle/ag
+[submodule "vim/pack/03_plugins/start/ag"]
+	path = vim/pack/03_plugins/start/ag
 	url = https://github.com/rking/ag.vim.git
-[submodule "vim/bundle/airline"]
-	path = vim/bundle/airline
+[submodule "vim/pack/03_plugins/start/airline"]
+	path = vim/pack/03_plugins/start/airline
 	url = https://github.com/bling/vim-airline
-[submodule "vim/bundle/airline-themes"]
-	path = vim/bundle/airline-themes
+[submodule "vim/pack/03_plugins/start/airline-themes"]
+	path = vim/pack/03_plugins/start/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
+[submodule "vim/pack/03_plugins/start/ale"]
+	path = vim/pack/03_plugins/start/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/bundle/ansible"]
-	path = vim/bundle/ansible
+[submodule "vim/pack/03_plugins/start/ansible"]
+	path = vim/pack/03_plugins/start/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
-[submodule "vim/bundle/anyfold"]
-	path = vim/bundle/anyfold
+[submodule "vim/pack/03_plugins/start/anyfold"]
+	path = vim/pack/03_plugins/start/anyfold
 	url = https://github.com/pseewald/vim-anyfold.git
-[submodule "vim/bundle/asyncrun"]
-	path = vim/bundle/asyncrun
+[submodule "vim/pack/03_plugins/start/asyncrun"]
+	path = vim/pack/03_plugins/start/asyncrun
 	url = https://github.com/skywind3000/asyncrun.vim.git
-[submodule "vim/bundle/auto-pairs"]
-	path = vim/bundle/auto-pairs
+[submodule "vim/pack/03_plugins/start/auto-pairs"]
+	path = vim/pack/03_plugins/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule "vim/bundle/aws"]
-	path = vim/bundle/aws
+[submodule "vim/pack/03_plugins/start/aws"]
+	path = vim/pack/03_plugins/start/aws
 	url = https://github.com/andrewstuart/aws-vim.git
-[submodule "vim/bundle/bundler"]
-	path = vim/bundle/bundler
+[submodule "vim/pack/03_plugins/start/bundler"]
+	path = vim/pack/03_plugins/start/bundler
 	url = https://github.com/tpope/vim-bundler.git
-[submodule "vim/bundle/capslock"]
-	path = vim/bundle/capslock
+[submodule "vim/pack/03_plugins/start/capslock"]
+	path = vim/pack/03_plugins/start/capslock
 	url = https://github.com/tpope/vim-capslock.git
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
+[submodule "vim/pack/03_plugins/start/ctrlp"]
+	path = vim/pack/03_plugins/start/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "vim/bundle/ctrlp-cmdpalette"]
-	path = vim/bundle/ctrlp-cmdpalette
+[submodule "vim/pack/03_plugins/start/ctrlp-cmdpalette"]
+	path = vim/pack/03_plugins/start/ctrlp-cmdpalette
 	url = https://github.com/fisadev/vim-ctrlp-cmdpalette.git
-[submodule "vim/bundle/ctrlp-py-matcher"]
-	path = vim/bundle/ctrlp-py-matcher
+[submodule "vim/pack/03_plugins/start/ctrlp-py-matcher"]
+	path = vim/pack/03_plugins/start/ctrlp-py-matcher
 	url = https://github.com/FelikZ/ctrlp-py-matcher.git
-[submodule "vim/bundle/cursorline-current-window"]
-	path = vim/bundle/cursorline-current-window
+[submodule "vim/pack/03_plugins/start/cursorline-current-window"]
+	path = vim/pack/03_plugins/start/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
-[submodule "vim/bundle/dash"]
-	path = vim/bundle/dash
+[submodule "vim/pack/03_plugins/start/dash"]
+	path = vim/pack/03_plugins/start/dash
 	url = https://github.com/rizzatti/dash.vim.git
-[submodule "vim/bundle/dockerfile"]
-	path = vim/bundle/dockerfile
+[submodule "vim/pack/03_plugins/start/dockerfile"]
+	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
-[submodule "vim/bundle/easytags"]
-	path = vim/bundle/easytags
+[submodule "vim/pack/03_plugins/start/easytags"]
+	path = vim/pack/03_plugins/start/easytags
 	url = https://github.com/xolox/vim-easytags.git
-[submodule "vim/bundle/editorconfig"]
-	path = vim/bundle/editorconfig
+[submodule "vim/pack/03_plugins/start/editorconfig"]
+	path = vim/pack/03_plugins/start/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/bundle/eunuch"]
-	path = vim/bundle/eunuch
+[submodule "vim/pack/03_plugins/start/eunuch"]
+	path = vim/pack/03_plugins/start/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
-[submodule "vim/bundle/expand-region"]
-	path = vim/bundle/expand-region
+[submodule "vim/pack/03_plugins/start/expand-region"]
+	path = vim/pack/03_plugins/start/expand-region
 	url = https://github.com/landock/vim-expand-region.git
-[submodule "vim/bundle/fold-cycle"]
-	path = vim/bundle/fold-cycle
+[submodule "vim/pack/03_plugins/start/fold-cycle"]
+	path = vim/pack/03_plugins/start/fold-cycle
 	url = https://github.com/arecarn/vim-fold-cycle.git
-[submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
+[submodule "vim/pack/03_plugins/start/fugitive"]
+	path = vim/pack/03_plugins/start/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/git"]
-	path = vim/bundle/git
+[submodule "vim/pack/03_plugins/start/git"]
+	path = vim/pack/03_plugins/start/git
 	url = https://github.com/tpope/vim-git.git
-[submodule "vim/bundle/gitgutter"]
-	path = vim/bundle/gitgutter
+[submodule "vim/pack/03_plugins/start/gitgutter"]
+	path = vim/pack/03_plugins/start/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/gitv"]
-	path = vim/bundle/gitv
+[submodule "vim/pack/03_plugins/start/gitv"]
+	path = vim/pack/03_plugins/start/gitv
 	url = https://github.com/gregsexton/gitv.git
-[submodule "vim/bundle/go"]
-	path = vim/bundle/go
+[submodule "vim/pack/03_plugins/start/go"]
+	path = vim/pack/03_plugins/start/go
 	url = https://github.com/fatih/vim-go.git
-[submodule "vim/bundle/groovy"]
-	path = vim/bundle/groovy
+[submodule "vim/pack/03_plugins/start/groovy"]
+	path = vim/pack/03_plugins/start/groovy
 	url = https://github.com/endSly/groovy.vim.git
-[submodule "vim/bundle/hashicorp-tools"]
-	path = vim/bundle/hashicorp-tools
+[submodule "vim/pack/03_plugins/start/hashicorp-tools"]
+	path = vim/pack/03_plugins/start/hashicorp-tools
 	url = https://github.com/hashivim/vim-hashicorp-tools.git
-[submodule "vim/bundle/incsearch"]
-	path = vim/bundle/incsearch
+[submodule "vim/pack/03_plugins/start/incsearch"]
+	path = vim/pack/03_plugins/start/incsearch
 	url = https://github.com/haya14busa/incsearch.vim.git
-[submodule "vim/bundle/indentLine"]
-	path = vim/bundle/indentLine
+[submodule "vim/pack/03_plugins/start/indentLine"]
+	path = vim/pack/03_plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "vim/bundle/javascript"]
-	path = vim/bundle/javascript
+[submodule "vim/pack/03_plugins/start/javascript"]
+	path = vim/pack/03_plugins/start/javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "vim/bundle/jedi"]
-	path = vim/bundle/jedi
+[submodule "vim/pack/03_plugins/start/jedi"]
+	path = vim/pack/03_plugins/start/jedi
 	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "vim/bundle/json"]
-	path = vim/bundle/json
+[submodule "vim/pack/03_plugins/start/json"]
+	path = vim/pack/03_plugins/start/json
 	url = https://github.com/elzr/vim-json.git
-[submodule "vim/bundle/leader-guide"]
-	path = vim/bundle/leader-guide
+[submodule "vim/pack/03_plugins/start/leader-guide"]
+	path = vim/pack/03_plugins/start/leader-guide
 	url = https://github.com/hecal3/vim-leader-guide.git
-[submodule "vim/bundle/listtoggle"]
-	path = vim/bundle/listtoggle
+[submodule "vim/pack/03_plugins/start/listtoggle"]
+	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
-[submodule "vim/bundle/logstash"]
-	path = vim/bundle/logstash
+[submodule "vim/pack/03_plugins/start/logstash"]
+	path = vim/pack/03_plugins/start/logstash
 	url = https://github.com/robbles/logstash.vim.git
-[submodule "vim/bundle/lua"]
-	path = vim/bundle/lua
+[submodule "vim/pack/03_plugins/start/lua"]
+	path = vim/pack/03_plugins/start/lua
 	url = https://github.com/tbastos/vim-lua.git
-[submodule "vim/bundle/markdown"]
-	path = vim/bundle/markdown
+[submodule "vim/pack/03_plugins/start/markdown"]
+	path = vim/pack/03_plugins/start/markdown
 	url = https://github.com/rhysd/vim-gfm-syntax.git
-[submodule "vim/bundle/monit"]
-	path = vim/bundle/monit
+[submodule "vim/pack/03_plugins/start/monit"]
+	path = vim/pack/03_plugins/start/monit
 	url = https://github.com/tmatilai/vim-monit.git
-[submodule "vim/bundle/mw-utils"]
-	path = vim/bundle/mw-utils
+[submodule "vim/pack/03_plugins/start/mw-utils"]
+	path = vim/pack/03_plugins/start/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/bundle/neco-syntax"]
-	path = vim/bundle/neco-syntax
+[submodule "vim/pack/03_plugins/start/neco-syntax"]
+	path = vim/pack/03_plugins/start/neco-syntax
 	url = https://github.com/Shougo/neco-syntax.git
-[submodule "vim/bundle/neco-vim"]
-	path = vim/bundle/neco-vim
+[submodule "vim/pack/03_plugins/start/neco-vim"]
+	path = vim/pack/03_plugins/start/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
-[submodule "vim/bundle/neocomplete"]
-	path = vim/bundle/neocomplete
+[submodule "vim/pack/03_plugins/start/neocomplete"]
+	path = vim/pack/03_plugins/start/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim.git
-[submodule "vim/bundle/neosnippet"]
-	path = vim/bundle/neosnippet
+[submodule "vim/pack/03_plugins/start/neosnippet"]
+	path = vim/pack/03_plugins/start/neosnippet
 	url = https://github.com/Shougo/neosnippet.vim.git
-[submodule "vim/bundle/neosnippet-snippets"]
-	path = vim/bundle/neosnippet-snippets
+[submodule "vim/pack/03_plugins/start/neosnippet-snippets"]
+	path = vim/pack/03_plugins/start/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
+[submodule "vim/pack/03_plugins/start/nerdcommenter"]
+	path = vim/pack/03_plugins/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+[submodule "vim/pack/03_plugins/start/nerdtree"]
+	path = vim/pack/03_plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/nerdtree-git-plugin"]
-	path = vim/bundle/nerdtree-git-plugin
+[submodule "vim/pack/03_plugins/start/nerdtree-git-plugin"]
+	path = vim/pack/03_plugins/start/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule "vim/bundle/nerdtree-syntax-highlight"]
-	path = vim/bundle/nerdtree-syntax-highlight
+[submodule "vim/pack/03_plugins/start/nerdtree-syntax-highlight"]
+	path = vim/pack/03_plugins/start/nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
-[submodule "vim/bundle/nerdtree-tabs"]
-	path = vim/bundle/nerdtree-tabs
+[submodule "vim/pack/03_plugins/start/nerdtree-tabs"]
+	path = vim/pack/03_plugins/start/nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
-[submodule "vim/bundle/nginx"]
-	path = vim/bundle/nginx
+[submodule "vim/pack/03_plugins/start/nginx"]
+	path = vim/pack/03_plugins/start/nginx
 	url = https://github.com/othree/nginx-contrib-vim.git
-[submodule "vim/bundle/numbers"]
-	path = vim/bundle/numbers
+[submodule "vim/pack/03_plugins/start/numbers"]
+	path = vim/pack/03_plugins/start/numbers
 	url = https://github.com/b3niup/numbers.vim.git
-[submodule "vim/bundle/pathogen"]
-	path = vim/bundle/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/perl"]
-	path = vim/bundle/perl
+[submodule "vim/pack/03_plugins/start/perl"]
+	path = vim/pack/03_plugins/start/perl
 	url = https://github.com/vim-perl/vim-perl.git
-[submodule "vim/bundle/php"]
-	path = vim/bundle/php
+[submodule "vim/pack/03_plugins/start/php"]
+	path = vim/pack/03_plugins/start/php
 	url = https://github.com/StanAngeloff/php.vim.git
-[submodule "vim/bundle/pyenv"]
-	path = vim/bundle/pyenv
+[submodule "vim/pack/03_plugins/start/pyenv"]
+	path = vim/pack/03_plugins/start/pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
-[submodule "vim/bundle/python-combined"]
-	path = vim/bundle/python-combined
+[submodule "vim/pack/03_plugins/start/python-combined"]
+	path = vim/pack/03_plugins/start/python-combined
 	url = https://github.com/mitsuhiko/vim-python-combined.git
-[submodule "vim/bundle/qf"]
-	path = vim/bundle/qf
+[submodule "vim/pack/03_plugins/start/qf"]
+	path = vim/pack/03_plugins/start/qf
 	url = https://github.com/romainl/vim-qf.git
-[submodule "vim/bundle/rainbow"]
-	path = vim/bundle/rainbow
+[submodule "vim/pack/03_plugins/start/rainbow"]
+	path = vim/pack/03_plugins/start/rainbow
 	url = https://github.com/luochen1990/rainbow.git
-[submodule "vim/bundle/rhubarb"]
-	path = vim/bundle/rhubarb
+[submodule "vim/pack/03_plugins/start/rhubarb"]
+	path = vim/pack/03_plugins/start/rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
-[submodule "vim/bundle/rbenv"]
-	path = vim/bundle/rbenv
+[submodule "vim/pack/03_plugins/start/rbenv"]
+	path = vim/pack/03_plugins/start/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
-[submodule "vim/bundle/rooter"]
-	path = vim/bundle/rooter
+[submodule "vim/pack/03_plugins/start/rooter"]
+	path = vim/pack/03_plugins/start/rooter
 	url = https://github.com/airblade/vim-rooter.git
-[submodule "vim/bundle/rspec"]
-	path = vim/bundle/rspec
+[submodule "vim/pack/03_plugins/start/rspec"]
+	path = vim/pack/03_plugins/start/rspec
 	url = https://github.com/keith/rspec.vim.git
-[submodule "vim/bundle/ruby"]
-	path = vim/bundle/ruby
+[submodule "vim/pack/03_plugins/start/ruby"]
+	path = vim/pack/03_plugins/start/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/bundle/ruby-chef"]
-	path = vim/bundle/ruby-chef
+[submodule "vim/pack/03_plugins/start/ruby-chef"]
+	path = vim/pack/03_plugins/start/ruby-chef
 	url = https://github.com/vadv/vim-chef.git
-[submodule "vim/bundle/ruby-chef-ft"]
-	path = vim/bundle/ruby-chef-ft
+[submodule "vim/pack/03_plugins/start/ruby-chef-ft"]
+	path = vim/pack/03_plugins/start/ruby-chef-ft
 	url = https://github.com/dougireton/vim-chef.git
-[submodule "vim/bundle/sleuth"]
-	path = vim/bundle/sleuth
+[submodule "vim/pack/03_plugins/start/sleuth"]
+	path = vim/pack/03_plugins/start/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
-[submodule "vim/bundle/solarized"]
-	path = vim/bundle/solarized
+[submodule "vim/pack/03_plugins/start/solarized"]
+	path = vim/pack/03_plugins/start/solarized
 	url = https://github.com/blueyed/vim-colors-solarized.git
-[submodule "vim/bundle/solarized8"]
-	path = vim/bundle/solarized8
+[submodule "vim/pack/03_plugins/start/solarized8"]
+	path = vim/pack/03_plugins/start/solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git
-[submodule "vim/bundle/startify"]
-	path = vim/bundle/startify
+[submodule "vim/pack/03_plugins/start/startify"]
+	path = vim/pack/03_plugins/start/startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "vim/bundle/surround"]
-	path = vim/bundle/surround
+[submodule "vim/pack/03_plugins/start/surround"]
+	path = vim/pack/03_plugins/start/surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/systemd-syntax"]
-	path = vim/bundle/systemd-syntax
+[submodule "vim/pack/03_plugins/start/systemd-syntax"]
+	path = vim/pack/03_plugins/start/systemd-syntax
 	url = https://github.com/Matt-Deacalion/vim-systemd-syntax.git
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
+[submodule "vim/pack/03_plugins/start/tabular"]
+	path = vim/pack/03_plugins/start/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
+[submodule "vim/pack/03_plugins/start/tagbar"]
+	path = vim/pack/03_plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/test"]
-	path = vim/bundle/test
+[submodule "vim/pack/03_plugins/start/test"]
+	path = vim/pack/03_plugins/start/test
 	url = https://github.com/janko-m/vim-test.git
-[submodule "vim/bundle/terminus"]
-	path = vim/bundle/terminus
+[submodule "vim/pack/03_plugins/start/terminus"]
+	path = vim/pack/03_plugins/start/terminus
 	url = https://github.com/wincent/terminus.git
-[submodule "vim/bundle/tlib"]
-	path = vim/bundle/tlib
+[submodule "vim/pack/03_plugins/start/tlib"]
+	path = vim/pack/03_plugins/start/tlib
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule "vim/bundle/tmux"]
-	path = vim/bundle/tmux
+[submodule "vim/pack/03_plugins/start/tmux"]
+	path = vim/pack/03_plugins/start/tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
-[submodule "vim/bundle/tmux-navigator"]
-	path = vim/bundle/tmux-navigator
+[submodule "vim/pack/03_plugins/start/tmux-navigator"]
+	path = vim/pack/03_plugins/start/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule "vim/bundle/undotree"]
-	path = vim/bundle/undotree
+[submodule "vim/pack/03_plugins/start/undotree"]
+	path = vim/pack/03_plugins/start/undotree
 	url = https://github.com/mbbill/undotree.git
-[submodule "vim/bundle/virtualenv"]
-	path = vim/bundle/virtualenv
+[submodule "vim/pack/03_plugins/start/virtualenv"]
+	path = vim/pack/03_plugins/start/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
-[submodule "vim/bundle/xolox-misc"]
-	path = vim/bundle/xolox-misc
+[submodule "vim/pack/03_plugins/start/xolox-misc"]
+	path = vim/pack/03_plugins/start/xolox-misc
 	url = https://github.com/xolox/vim-misc.git
 [submodule "zsh/plugins/autoenv"]
 	path = zsh/plugins/autoenv

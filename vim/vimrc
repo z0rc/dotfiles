@@ -7,11 +7,7 @@ let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $
 let s:portable=expand('<sfile>:p:h')
 " Add the directory to 'runtimepath'
 let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-
-" Enable pathogen and plugins
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+let &packpath=&runtimepath
 
 " Use sensible XDG path
 set viminfo='1000,n$XDG_CACHE_HOME/vim/info
@@ -22,19 +18,6 @@ set backupdir=$XDG_CACHE_HOME/vim/backup//
 " Enable backups and undo
 set backup
 set undofile
-
-" Enable modern colors if supported
-set background=dark
-if has('termguicolors') && $TERM_PROGRAM !=# 'Apple_Terminal' && empty($TMUX)
-  set termguicolors
-  colorscheme solarized8_dark_flat
-else
-  let g:solarized_termtrans=1
-  let g:solarized_termcolors=256
-  let g:solarized_underline=0
-  set t_Co=256
-  colorscheme solarized
-endif
 
 set shiftround " round indent to multiple shiftwidth
 set showmatch " show matching brackets when text indicator is over them
@@ -56,11 +39,6 @@ set foldlevelstart=99 " enables fold but keeps them expanded by default
 set scrolloff=8 "start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-
-" Load plugins configurations
-for g:f in split(glob($DOTFILES . '/vim/rc.d/*.vim'), '\n')
-  execute 'source' g:f
-endfor
 
 " Source local configuration
 runtime vimrc.local

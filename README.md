@@ -23,7 +23,7 @@ presence](#zero-home-presence).
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
   * [autopair plugin](https://github.com/hlissner/zsh-autopair)
-* Vim [configuration](vim/rc.d) and [plugins](vim/bundle) managed by [pathogen](https://github.com/tpope/vim-pathogen)
+* Vim configuration(vim/vimrc) and [plugins](vim/pack)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
 * Other configs:
   * [Midnight Commander](configs/mc.ini)
@@ -77,9 +77,9 @@ export ZDOTDIR="$HOME/.local/dotfiles/zsh"
 into `/etc/zsh/zshenv`. Or you can do it with PAM env module.
 
 ## Vim
-In order you use all bundled vim plugins, please install vim with python, ruby,
-perl and lua support built-in. Also it's strongly recommended to use Vim 8.0 or
-newer, as it provides async features required by some plugins.
+Vim 8.0 or higher is required as plugins are configured via native package
+interface available in mentioned version. In order you use all bundled vim
+plugins, please install vim with python, ruby, perl and lua support built-in.
 
 Debian/Ubuntu:
 ```
