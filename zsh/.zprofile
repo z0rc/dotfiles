@@ -1,2 +1,4 @@
 # Taken from Arch, most of default zsh configurations don't do this
-emulate sh -c 'source /etc/profile'
+if [[ -r /etc/profile ]]; then
+    emulate sh -c 'source /etc/profile'
+fi
