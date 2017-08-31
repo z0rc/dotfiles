@@ -69,6 +69,6 @@ if has('mac')
     let g:lmap.d=['Dash', 'Dash search']
 endif
 
-call leaderGuide#register_prefix_descriptions("\\", "g:lmap")
+call leaderGuide#register_prefix_descriptions("\\", 'g:lmap')
 nnoremap <silent> <leader> :<c-u>LeaderGuide '<leader>'<CR>
 vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<leader>'<CR>

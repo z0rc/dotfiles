@@ -1,5 +1,5 @@
-" for realsies!
-set nocompatible
+set encoding=utf-8
+scriptencoding utf-8
 
 " Set default 'runtimepath' without ~/.vim folders
 let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
@@ -25,7 +25,7 @@ set undofile
 
 " Enable modern colors if supported
 set background=dark
-if has('termguicolors') && $TERM_PROGRAM != "Apple_Terminal" && empty($TMUX)
+if has('termguicolors') && $TERM_PROGRAM !=# 'Apple_Terminal' && empty($TMUX)
   set termguicolors
   colorscheme solarized8_dark_flat
 else
@@ -59,8 +59,8 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Load plugins configurations
-for f in split(glob($DOTFILES . '/vim/rc.d/*.vim'), '\n')
-  execute 'source' f
+for g:f in split(glob($DOTFILES . '/vim/rc.d/*.vim'), '\n')
+  execute 'source' g:f
 endfor
 
 " Source local configuration
