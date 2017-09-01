@@ -7,6 +7,5 @@ else
   let g:solarized_termtrans=1
   let g:solarized_termcolors=256
   let g:solarized_underline=0
-  set t_Co=256
   colorscheme solarized
 endif
