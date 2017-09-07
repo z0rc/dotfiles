@@ -47,7 +47,7 @@ archive () {
             gz)  gzip -c -9 -n ${2} > ${2}.gz ;;
             zip) zip -r ${2}.zip ${2}         ;;
             7z)  7z a ${2}.7z ${2}            ;;
-            *)   echo "'${1}' cannot be archived via pack()" ;;
+            *)   echo "'${1}' cannot be archived via archive()" ;;
         esac
     else
         echo "'${1}' is not a valid file type"
