@@ -47,4 +47,4 @@ nnoremap <C-o> :CtrlPCmdPalette<CR>
 inoremap <C-o> <ESC>:CtrlPCmdPalette<CR>
 
 " allow saving of files as sudo when I forgot to start vim using sudo
-cmap w!! %!sudo tee > /dev/null %
+cmap w!! !sudo tee % > /dev/null
