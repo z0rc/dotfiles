@@ -46,5 +46,23 @@ map <ESC>f :bnext!<CR>
 nnoremap <C-o> :CtrlPCmdPalette<CR>
 inoremap <C-o> <ESC>:CtrlPCmdPalette<CR>
 
+" visual shifting (does not exit visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
+" accept commands with accidential shift key pressed
+command! -bang -nargs=* -complete=file E e<bang> <args>
+command! -bang -nargs=* -complete=file W w<bang> <args>
+command! -bang -nargs=* -complete=file Wq wq<bang> <args>
+command! -bang -nargs=* -complete=file WQ wq<bang> <args>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Q q<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
+
 " allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! !sudo tee % > /dev/null
