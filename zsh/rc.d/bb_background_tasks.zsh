@@ -9,6 +9,6 @@
 # Generate vim tags
 {
     if (( ${+commands[vim]} )); then
-        vim -c 'silent! helptags ALL | q'
+        nohup vim -c 'silent! helptags ALL | q' &> /dev/null
     fi
 } &!
