@@ -1,5 +1,6 @@
-" enable AutoPairs mapping of <Enter>
-imap <expr> <CR> "\<CR>\<Plug>AutoPairsReturn"
+" if suggestions windows present, then <Enter> accepts selection
+" else use AutoPairs mapping
+imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>\<Plug>AutoPairsReturn"
 
 " <TAB>: expand neosnippets
 imap <expr> <TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
