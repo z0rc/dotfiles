@@ -15,7 +15,7 @@ cd "${SCRIPT_DIR}"
 print "Creating required directory tree..."
 mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger}
 mkdir -p "${XDG_CACHE_HOME}"/{vim/{backup,swap,undo},zsh}
-mkdir -p "${XDG_DATA_HOME}"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,luaenv/plugins,zsh,man}
+mkdir -p "${XDG_DATA_HOME}"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,luaenv/plugins,goenv/plugins,zsh,man}
 mkdir -p "${HOME}"/.local/{bin,etc}
 print "  ...done"
 
@@ -104,6 +104,11 @@ print "  ...done"
 print "Linking luaenv plugins..."
 ln -snf "${SCRIPT_DIR}/luaenv/lua-build" "${XDG_DATA_HOME}/luaenv/plugins/lua-build"
 ln -snf "${SCRIPT_DIR}/luaenv/luaenv-luarocks" "${XDG_DATA_HOME}/luaenv/plugins/luaenv-luarocks"
+print "  ...done"
+
+# Link goenv plugins to $GOENV_ROOT
+print "Linking pyenv plugins..."
+ln -snf "${SCRIPT_DIR}/goenv/goenv/plugins/go-build" "${XDG_DATA_HOME}/goenv/plugins/go-build"
 print "  ...done"
 
 # Install crontab task to pull updates every midnight

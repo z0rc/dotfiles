@@ -37,7 +37,7 @@ presence](#zero-home-presence).
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
-* [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv), [nodenv](https://github.com/nodenv/nodenv) and [luaenv](https://github.com/cehoffman/luaenv)
+* [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv), [nodenv](https://github.com/nodenv/nodenv), [luaenv](https://github.com/cehoffman/luaenv) and [goenv](https://github.com/syndbg/goenv)
 
 # Installation
 Requirements:
@@ -134,4 +134,4 @@ default. Also man pages can be put into `$XDG_DATA_HOME/man`.
 Pyenv and similar wrappers are lazy-loaded, it means that they won't be
 initialized on shell start. Activation is done on the first execution. Check
 out output of `type -f pyenv` in shell and
-[implementation](zsh/rc.d/15_rbpynodlua_env.zsh).
+[implementation](zsh/rc.d/15_many_env.zsh).

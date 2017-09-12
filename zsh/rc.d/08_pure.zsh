@@ -23,7 +23,7 @@ _pure_indicate_env() {
         preprompt+=("%F{green}venv:${VIRTUAL_ENV:t}%f")
     else
         local wrapper
-        local wrappers=(pyenv rbenv nodenv luaenv)
+        local wrappers=(pyenv rbenv nodenv luaenv goenv)
         for wrapper in "${wrappers[@]}"; do
             local wrapper_version="${wrapper:u}_VERSION"
             local wrapper_root="${wrapper:u}_ROOT"

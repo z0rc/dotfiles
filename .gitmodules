@@ -1,3 +1,6 @@
+[submodule "goenv/goenv"]
+	path = goenv/goenv
+	url = https://github.com/syndbg/goenv.git
 [submodule "luaenv/lua-build"]
 	path = luaenv/lua-build
 	url = https://github.com/cehoffman/lua-build.git
