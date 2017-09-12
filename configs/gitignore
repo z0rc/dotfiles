@@ -39,6 +39,7 @@ Session.vim
 *~
 # plugin doc tags
 /doc/tags
+/doc/tags-*
 
 ### Zsh ###
 # autoenv
