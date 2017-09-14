@@ -70,7 +70,6 @@ if (( ${+commands[perl]} )); then
     # Install diff-so-fancy
     print "Installing diff-so-fancy..."
     ln -sf "${SCRIPT_DIR}/tools/diff-so-fancy/diff-so-fancy" "${HOME}/.local/bin/diff-so-fancy"
-    ln -sf "${SCRIPT_DIR}/tools/diff-so-fancy/third_party/diff-highlight/diff-highlight" "${HOME}/.local/bin/diff-highlight"
     print "  ...done"
 fi
 
