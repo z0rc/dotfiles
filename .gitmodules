@@ -148,6 +148,9 @@
 [submodule "vim/pack/03_plugins/start/dockerfile"]
 	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "vim/pack/03_plugins/start/easymotion"]
+	path = vim/pack/03_plugins/start/easymotion
+	url = https://github.com/easymotion/vim-easymotion.git
 [submodule "vim/pack/03_plugins/start/easytags"]
 	path = vim/pack/03_plugins/start/easytags
 	url = https://github.com/xolox/vim-easytags.git
@@ -187,6 +190,9 @@
 [submodule "vim/pack/03_plugins/start/incsearch"]
 	path = vim/pack/03_plugins/start/incsearch
 	url = https://github.com/haya14busa/incsearch.vim.git
+[submodule "vim/pack/03_plugins/start/incsearch-easymotion"]
+	path = vim/pack/03_plugins/start/incsearch-easymotion
+	url = https://github.com/haya14busa/incsearch-easymotion.vim.git
 [submodule "vim/pack/03_plugins/start/indentLine"]
 	path = vim/pack/03_plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git

@@ -18,6 +18,10 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)<Paste>
+" incsearch with easymotion across results
+map z/ <Plug>(incsearch-easymotion-/)
+map z? <Plug>(incsearch-easymotion-?)
+map zg/ <Plug>(incsearch-easymotion-stay)
 
 " use ctrl+arrows to switch between splits and tmux panes
 nnoremap <silent> <C-Left> :TmuxNavigateLeft<CR>
