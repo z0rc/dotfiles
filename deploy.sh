@@ -61,7 +61,14 @@ if (( ${+commands[make]} )); then
     # Make install git-extras
     print "Installing git-extras..."
     pushd tools/git-extras
-    PREFIX="${HOME}"/.local make install > /dev/null
+    PREFIX="${HOME}/.local" make install > /dev/null
+    popd
+    print "  ...done"
+
+    # Make install git-standup
+    print "Installing git-standup..."
+    pushd tools/git-standup
+    install -m 755 git-standup "${HOME}/.local/bin" > /dev/null
     popd
     print "  ...done"
 fi

@@ -36,14 +36,14 @@ presence](#zero-home-presence).
   * [MongoDB Shell Enhancements](https://github.com/TylerBrock/mongo-hacker)
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
-  * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
+  * [git-extras](https://github.com/tj/git-extras) and [git-standup](https://github.com/kamranahmedse/git-standup), additional helpers for Git
 * [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv), [nodenv](https://github.com/nodenv/nodenv), [luaenv](https://github.com/cehoffman/luaenv) and [goenv](https://github.com/syndbg/goenv)
 
 # Installation
 Requirements:
 * `zsh` 5.1 or newer (async stuff requires recent enough version of zsh)
 * `git` (all external components are added as git submodules
-* `make` (optional: required to build mongo-hacker and install git-extras)
+* `make` (optional: required to build mongo-hacker and install git helpers)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
 * `python` (optional: used by several vim plugins, but they won't be activated, if python is missing)
 * `ruby` (optional: same case as with python)
