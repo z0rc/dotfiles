@@ -47,3 +47,5 @@
 	pager = which diff-so-fancy >/dev/null 2>&1 && diff-so-fancy | less --tabs=4 -RFX || less -RFX
 [submodule]
 	fetchJobs = 5
+[help]
+	autocorrect = 5
