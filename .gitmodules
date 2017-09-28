@@ -87,7 +87,7 @@
 	url = https://github.com/tj/git-extras.git
 [submodule "tools/git-standup"]
 	path = tools/git-standup
-	url = https://github.com/kamranahmedse/git-standup.git
+	url = https://github.com/z0rc/git-standup.git
 [submodule "tools/mongo-hacker"]
 	path = tools/mongo-hacker
 	url = https://github.com/TylerBrock/mongo-hacker.git

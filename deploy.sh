@@ -68,7 +68,7 @@ if (( ${+commands[make]} )); then
     # Make install git-standup
     print "Installing git-standup..."
     pushd tools/git-standup
-    install -m 755 git-standup "${HOME}/.local/bin" > /dev/null
+    PREFIX="${HOME}.local" make install > /dev/null
     popd
     print "  ...done"
 fi
