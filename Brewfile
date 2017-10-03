@@ -47,6 +47,7 @@ brew 'ssh-copy-id'
 brew 'sshfs'
 brew 'terraform'
 brew 'the_silver_searcher'
+brew 'tig'
 brew 'tmux'
 brew 'tree'
 brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
