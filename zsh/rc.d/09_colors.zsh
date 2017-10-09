@@ -10,9 +10,6 @@ export LESS_TERMCAP_us=$(printf "\e[4;32m")
 # Enable color support of ls
 if (( ${+commands[dircolors]} )); then
     eval $(dircolors "${ZDOTDIR}/plugins/dircolors-solarized/dircolors.256dark")
-    alias ls="ls --color=auto -F -X"
-    alias dir="dir --color=auto"
-    alias vdir="vdir --color=auto"
 fi
 
 # Enable diff with colors

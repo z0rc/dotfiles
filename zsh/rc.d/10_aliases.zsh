@@ -11,7 +11,7 @@ alias grep="grep --color=auto --binary-files=without-match --devices=skip"
 (( ${+commands[tmux]} )) && alias tmux="tmux -f ${DOTFILES}/tmux/tmux.conf"
 (( ${+commands[tmux]} )) && alias stmux="tmux new-session 'sudo -i'"
 (( ${+commands[wget]} )) && alias wget="wget --hsts-file=${XDG_CACHE_HOME}/wget-hsts"
-alias ls="ls --group-directories-first --color"
+alias ls="ls --group-directories-first --color=auto --classify"
 alias ll="LC_COLLATE=C ls -l --almost-all --file-type --human-readable"
 
 # History suppression
