@@ -340,6 +340,9 @@
 [submodule "vim/pack/03_plugins/start/tmux"]
 	path = vim/pack/03_plugins/start/tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
+[submodule "vim/pack/03_plugins/start/tmux-focus-events"]
+	path = vim/pack/03_plugins/start/tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
 [submodule "vim/pack/03_plugins/start/tmux-navigator"]
 	path = vim/pack/03_plugins/start/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
