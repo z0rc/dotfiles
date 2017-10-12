@@ -69,6 +69,17 @@ if has('mac')
     let g:lmap.d=['Dash', 'Dash search']
 endif
 
+" format easymotion description
+let s:value_lookup={
+                    \'<Plug>(easymotion-prefix)': 'Easymotion prefix'
+                    \}
+function! s:my_displayfunc()
+    let g:leaderGuide#displayname=
+            \get(s:value_lookup, g:leaderGuide#displayname,
+            \g:leaderGuide#displayname)
+endfunction
+let g:leaderGuide_displayfunc=[function('s:my_displayfunc')]
+
 call leaderGuide#register_prefix_descriptions("\\", 'g:lmap')
 nnoremap <silent> <leader> :<c-u>LeaderGuide '<leader>'<CR>
 vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<leader>'<CR>
