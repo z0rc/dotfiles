@@ -82,6 +82,9 @@
 [submodule "tools/diff-so-fancy"]
 	path = tools/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule "tools/fzf"]
+	path = tools/fzf
+	url = https://github.com/junegunn/fzf.git
 [submodule "tools/git-extras"]
 	path = tools/git-extras
 	url = https://github.com/tj/git-extras.git
