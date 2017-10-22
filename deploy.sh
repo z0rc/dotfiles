@@ -73,6 +73,12 @@ if (( ${+commands[make]} )); then
     print "  ...done"
 fi
 
+print "Installing fzf..."
+pushd tools/fzf
+./install --bin &> /dev/null
+popd
+print "  ...done"
+
 if (( ${+commands[perl]} )); then
     # Install diff-so-fancy
     print "Installing diff-so-fancy..."
