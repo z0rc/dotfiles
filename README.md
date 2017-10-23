@@ -32,6 +32,7 @@ presence](#zero-home-presence).
   * [Git](configs/gitconfig)
   * [htop](configs/htoprc)
 * Handy [utilities](tools):
+  * [fzf](https://github.com/junegunn/fzf)
   * [MySQLTuner](https://github.com/major/MySQLTuner-perl)
   * [MongoDB Shell Enhancements](https://github.com/TylerBrock/mongo-hacker)
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
