@@ -175,6 +175,9 @@
 [submodule "vim/pack/03_plugins/start/fugitive"]
 	path = vim/pack/03_plugins/start/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/pack/03_plugins/start/fzf-vim"]
+	path = vim/pack/03_plugins/start/fzf-vim
+	url = https://github.com/junegunn/fzf.vim.git
 [submodule "vim/pack/03_plugins/start/git"]
 	path = vim/pack/03_plugins/start/git
 	url = https://github.com/tpope/vim-git.git

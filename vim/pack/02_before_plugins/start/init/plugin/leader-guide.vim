@@ -69,6 +69,22 @@ if has('mac')
     let g:lmap.d=['Dash', 'Dash search']
 endif
 
+" fzf
+let g:lmap.f={
+              \'name' : 'Fuzzy search',
+              \'f' : ['Files', 'Files'],
+              \'g' : ['GFiles', 'Git files'],
+              \'b' : ['Buffers', 'Open buffers'],
+              \'l' : ['Lines', 'Lines in loaded buffers'],
+              \'c' : ['Commits', 'Git commits'],
+              \'t' : ['Tags', 'Tags in project'],
+              \'h' : ['History', 'History'],
+              \'o' : ['Commands', 'Commands'],
+              \'m' : ['Maps', 'Normal mode mappings'],
+              \'e' : ['Helptags', 'Help tags'],
+              \'y' : ['Filetypes', 'File types']
+              \}
+
 " format easymotion description
 let s:value_lookup={
                     \'<Plug>(easymotion-prefix)': 'Easymotion prefix'
