@@ -100,9 +100,6 @@
 [submodule "vim/pack/01_sensible/start/sensible"]
 	path = vim/pack/01_sensible/start/sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "vim/pack/03_plugins/start/ag"]
-	path = vim/pack/03_plugins/start/ag
-	url = https://github.com/rking/ag.vim.git
 [submodule "vim/pack/03_plugins/start/airline"]
 	path = vim/pack/03_plugins/start/airline
 	url = https://github.com/bling/vim-airline
@@ -136,15 +133,6 @@
 [submodule "vim/pack/03_plugins/start/context_filetype"]
 	path = vim/pack/03_plugins/start/context_filetype
 	url = https://github.com/Shougo/context_filetype.vim.git
-[submodule "vim/pack/03_plugins/start/ctrlp"]
-	path = vim/pack/03_plugins/start/ctrlp
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "vim/pack/03_plugins/start/ctrlp-cmdpalette"]
-	path = vim/pack/03_plugins/start/ctrlp-cmdpalette
-	url = https://github.com/fisadev/vim-ctrlp-cmdpalette.git
-[submodule "vim/pack/03_plugins/start/ctrlp-py-matcher"]
-	path = vim/pack/03_plugins/start/ctrlp-py-matcher
-	url = https://github.com/FelikZ/ctrlp-py-matcher.git
 [submodule "vim/pack/03_plugins/start/cursorline-current-window"]
 	path = vim/pack/03_plugins/start/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
