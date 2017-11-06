@@ -5,8 +5,8 @@ imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>\<Plug>AutoPairsReturn"
 " <TAB>: expand neosnippets
 imap <expr> <TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char
-imap <expr> <C-h> neocomplete#smart_close_popup()."\<C-h>"
-imap <expr> <BS> neocomplete#smart_close_popup()."\<C-h>"
+imap <expr> <C-h> deoplete#smart_close_popup()."\<C-h>"
+imap <expr> <BS> deoplete#smart_close_popup()."\<C-h>"
 
 " replace default search with incsearch
 map /  <Plug>(incsearch-forward)
@@ -46,10 +46,6 @@ map [1;9C :bnext!<CR>
 map [1;9D :bprev!<CR>
 map <ESC>b :bprev!<CR>
 map <ESC>f :bnext!<CR>
-
-" ctrl+o to search through command palette
-nnoremap <C-o> :CtrlPCmdPalette<CR>
-inoremap <C-o> <ESC>:CtrlPCmdPalette<CR>
 
 " visual shifting (does not exit visual mode)
 vnoremap < <gv

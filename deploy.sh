@@ -91,6 +91,13 @@ if (( ${+commands[perl]} )); then
     print "  ...done"
 fi
 
+if (( ${+commands[pip3]} )); then
+    # Install neovim python plugin
+    print "Installing neovim-python..."
+    pip3 install --user --upgrade neovim-python > /dev/null
+    print "  ...done"
+fi
+
 # Link pyenv plugins to $PYENV_ROOT
 print "Linking pyenv plugins..."
 ln -snf "${SCRIPT_DIR}/pyenv/pyenv/plugins/python-build" "${XDG_DATA_HOME}/pyenv/plugins/python-build"

@@ -139,6 +139,18 @@
 [submodule "vim/pack/03_plugins/start/dash"]
 	path = vim/pack/03_plugins/start/dash
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim/pack/03_plugins/start/deoplete"]
+	path = vim/pack/03_plugins/start/deoplete
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "vim/pack/03_plugins/start/deoplete-jedi"]
+	path = vim/pack/03_plugins/start/deoplete-jedi
+	url = https://github.com/zchee/deoplete-jedi.git
+[submodule "vim/pack/03_plugins/start/deoplete-ruby"]
+	path = vim/pack/03_plugins/start/deoplete-ruby
+	url = https://github.com/fishbullet/deoplete-ruby.git
+[submodule "vim/pack/03_plugins/start/deoplete-zsh"]
+	path = vim/pack/03_plugins/start/deoplete-zsh
+	url = https://github.com/zchee/deoplete-zsh.git
 [submodule "vim/pack/03_plugins/start/dockerfile"]
 	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
@@ -196,9 +208,6 @@
 [submodule "vim/pack/03_plugins/start/javascript"]
 	path = vim/pack/03_plugins/start/javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "vim/pack/03_plugins/start/jedi"]
-	path = vim/pack/03_plugins/start/jedi
-	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "vim/pack/03_plugins/start/json"]
 	path = vim/pack/03_plugins/start/json
 	url = https://github.com/elzr/vim-json.git
@@ -229,9 +238,9 @@
 [submodule "vim/pack/03_plugins/start/neco-vim"]
 	path = vim/pack/03_plugins/start/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
-[submodule "vim/pack/03_plugins/start/neocomplete"]
-	path = vim/pack/03_plugins/start/neocomplete
-	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "vim/pack/03_plugins/start/neoinclude"]
+	path = vim/pack/03_plugins/start/neoinclude
+	url = https://github.com/Shougo/neoinclude.vim.git
 [submodule "vim/pack/03_plugins/start/neosnippet"]
 	path = vim/pack/03_plugins/start/neosnippet
 	url = https://github.com/Shougo/neosnippet.vim.git
@@ -259,6 +268,9 @@
 [submodule "vim/pack/03_plugins/start/numbers"]
 	path = vim/pack/03_plugins/start/numbers
 	url = https://github.com/b3niup/numbers.vim.git
+[submodule "vim/pack/03_plugins/start/nvim-yarp"]
+	path = vim/pack/03_plugins/start/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp.git
 [submodule "vim/pack/03_plugins/start/perl"]
 	path = vim/pack/03_plugins/start/perl
 	url = https://github.com/vim-perl/vim-perl.git
@@ -343,6 +355,9 @@
 [submodule "vim/pack/03_plugins/start/undotree"]
 	path = vim/pack/03_plugins/start/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "vim/pack/03_plugins/start/vim-hug-neovim-rpc"]
+	path = vim/pack/03_plugins/start/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc.git
 [submodule "vim/pack/03_plugins/start/virtualenv"]
 	path = vim/pack/03_plugins/start/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
