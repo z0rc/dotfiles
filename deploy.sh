@@ -93,8 +93,8 @@ fi
 
 if (( ${+commands[pip3]} )); then
     # Install neovim python plugin
-    print "Installing neovim-python..."
-    pip3 install --user --upgrade neovim-python > /dev/null
+    print "Installing neovim python client..."
+    pip3 install --user --upgrade neovim > /dev/null
     print "  ...done"
 fi
 
