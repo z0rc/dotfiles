@@ -46,9 +46,8 @@ Requirements:
 * `git` (all external components are added as git submodules
 * `make` (optional: required to build mongo-hacker and install git helpers)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
-* `python` (optional: used by several vim plugins, but they won't be activated, if python is missing)
+* `python3` (optional: used by several vim plugins, but they won't be activated, if python is missing)
 * `ruby` (optional: same case as with python)
-* `lua` or `luajit` (optional: same case as with python)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
@@ -63,8 +62,8 @@ initial clone. Also it adds cron job to pull updates every midnight and serves
 as a post-merge git hook, so you don't have to care about updating submodules
 after successful pull.
 
-In case of missing python, ruby or lua, they can be installed via pyenv, rbenv
-or luaenv after the deployment.
+In case of missing python or ruby, they can be installed via pyenv and rbenv
+after the deployment.
 
 ## Zero home presence
 It's possible to install dotfiles without creating `~/.zshenv` symlink. In
@@ -80,7 +79,7 @@ into `/etc/zsh/zshenv`. Or you can do it with PAM env module.
 ## Vim
 Vim 8.0 or higher is required as plugins are configured via native package
 interface available in mentioned version. In order you use all bundled vim
-plugins, please install vim with python, ruby, perl and lua support built-in.
+plugins, please install vim with python3 and ruby support built-in.
 
 Debian/Ubuntu:
 ```
@@ -98,7 +97,7 @@ dnf install vim-enhanced
 
 MacOS:
 ```
-brew install vim --with-python3 --with-luajit
+brew install vim --with-python3
 ```
 
 # Configuration
