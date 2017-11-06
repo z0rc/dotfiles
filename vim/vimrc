@@ -34,6 +34,7 @@ set cursorline " highlight line with cursor
 set showcmd " show partial commands in bottom left corner
 set completeopt-=preview " don't show preview window on competion
 set foldlevelstart=99 " enables fold but keeps them expanded by default
+set whichwrap+=<,>,h,l,[,] " autowrap to next linux for cursor movements
 
 " Scrolling
 set scrolloff=8 "start scrolling when we're 8 lines away from margins
