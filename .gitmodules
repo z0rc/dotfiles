@@ -232,6 +232,9 @@
 [submodule "vim/pack/03_plugins/start/monit"]
 	path = vim/pack/03_plugins/start/monit
 	url = https://github.com/tmatilai/vim-monit.git
+[submodule "vim/pack/03_plugins/start/multiple-cursors"]
+	path = vim/pack/03_plugins/start/multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "vim/pack/03_plugins/start/mw-utils"]
 	path = vim/pack/03_plugins/start/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
