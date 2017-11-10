@@ -1,2 +1,4 @@
 # iTerm2 integration
-source "${ZDOTDIR}/plugins/iterm2_integration.zsh"
+if [[ -n "${ITERM_PROFILE}" ]] || [[ -n "${ITERM_SESSION}" ]]; then
+    source "${ZDOTDIR}/plugins/iterm2_integration.zsh"
+fi
