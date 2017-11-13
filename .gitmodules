@@ -220,6 +220,9 @@
 [submodule "vim/pack/03_plugins/start/listtoggle"]
 	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
+[submodule "vim/pack/03_plugins/start/logrotate"]
+	path = vim/pack/03_plugins/start/logrotate
+	url = https://github.com/moon-musick/vim-logrotate.git
 [submodule "vim/pack/03_plugins/start/logstash"]
 	path = vim/pack/03_plugins/start/logstash
 	url = https://github.com/robbles/logstash.vim.git
