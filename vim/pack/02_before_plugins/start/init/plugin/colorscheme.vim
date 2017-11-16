@@ -1,6 +1,11 @@
 " Enable modern colors if supported
 set background=dark
-if has('termguicolors') && $TERM_PROGRAM !=# 'Apple_Terminal' && empty($TMUX)
+if has('termguicolors') && $TERM_PROGRAM !=# 'Apple_Terminal'
+  " hack to make tmux work with termguicolors
+  if ! empty($TMUX)
+    set t_8f=[38;2;%lu;%lu;%lum
+    set t_8b=[48;2;%lu;%lu;%lum
+  endif
   set termguicolors
   colorscheme solarized8_dark_flat
 else
