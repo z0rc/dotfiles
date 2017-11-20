@@ -373,6 +373,9 @@
 [submodule "vim/pack/03_plugins/start/xolox-misc"]
 	path = vim/pack/03_plugins/start/xolox-misc
 	url = https://github.com/xolox/vim-misc.git
+[submodule "zsh/plugins/async"]
+	path = zsh/plugins/async
+	url = https://github.com/mafredri/zsh-async.git
 [submodule "zsh/plugins/autoenv"]
 	path = zsh/plugins/autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv.git
@@ -382,9 +385,9 @@
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "zsh/plugins/async"]
-	path = zsh/plugins/async
-	url = https://github.com/mafredri/zsh-async.git
+[submodule "zsh/plugins/cdr"]
+	path = zsh/plugins/cdr
+	url = https://github.com/willghatch/zsh-cdr.git
 [submodule "zsh/plugins/completions"]
 	path = zsh/plugins/completions
 	url = https://github.com/zsh-users/zsh-completions.git
