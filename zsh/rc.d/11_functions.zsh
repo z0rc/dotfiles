@@ -50,23 +50,24 @@ bindkey . dot
 apt-history () {
     case "${1}" in
     install)
-        zgrep --no-filename 'install ' $(ls -rt /var/log/dpkg*)
+        if [[ -e /var/log/dpkg.log ]]; then
+            zgrep --no-filename ' installed' "$(ls -rt /var/log/dpkg*)"
+        else
+            journalctl -t dpkg | grep ' installed'
+        fi
         ;;
     upgrade|remove)
-        zgrep --no-filename ${1} $(ls -rt /var/log/dpkg*)
-        ;;
-    rollback)
-        zgrep --no-filename upgrade $(ls -rt /var/log/dpkg*) | \
-        grep "${2}" -A10000000 | \
-        grep "${3}" -B10000000 | \
-        awk '{print $4"="$5}'
+        if [[ -e /var/log/dpkg.log ]]; then
+            zgrep --no-filename "${1}" "$(ls -rt /var/log/dpkg*)"
+        else
+            journalctl -t dpkg | grep "${1}"
+        fi
         ;;
     *)
         echo "Parameters:"
         echo " install - Lists all packages that have been installed."
         echo " upgrade - Lists all packages that have been upgraded."
         echo " remove - Lists all packages that have been removed."
-        echo " rollback - Lists rollback information."
         ;;
     esac
 }
@@ -75,7 +76,7 @@ apt-history () {
 vpaste () {
     local uri="http://vpaste.net/"
     local out
-    if [ -f "${1}" ]; then
+    if [[ -f "${1}" ]]; then
         out=$(curl -s -F "text=<${1}" "${uri}?${2}")
     else
         out=$(curl -s -F 'text=<-' "${uri}?${1}")
