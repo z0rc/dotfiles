@@ -92,5 +92,16 @@ vpaste () {
 
 # fzf selector for cdr
 fcdr () {
-    cd ${$(cdr -l | fzf --no-multi --no-sort --tac --with-nth=2 --height 40% --preview "zsh -c 'ls -AFh --group-directories-first --color=always {2}'" --query="${1}" --select-1 )[2]/#\~/$HOME}
+    cd ${$(cdr -l | fzf --no-multi --no-sort --tac --with-nth=2 --height 40% --preview "zsh -c 'ls -AFh --group-directories-first --color {2}'" --query="${1}" --select-1 )[2]/#\~/$HOME}
+}
+
+# simple find shortener
+fd () {
+    if [[ ARGC -eq 1 ]]; then
+        find . -iname "*${1}*"
+    elif [[ ARGC -ge 2 ]]; then
+        find . -iname "*${1}*" ${@[2,-1]}
+    else
+        find .
+    fi
 }
