@@ -1,11 +1,14 @@
 # Some handy suffix aliases
 alias -s log=less
 
+# global aliases
+alias -g F="| fzf"
+
 # Human file sizes
 alias df="df -Th"
 alias du="du -hc"
 
-# Handy stuff
+# Handy stuff and a bit of XDG compliance
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
 (( ${+commands[quilt]} )) && alias quilt="quilt --quiltrc ${DOTFILES}/configs/quiltrc"
 (( ${+commands[tmux]} )) && alias tmux="tmux -f ${DOTFILES}/tmux/tmux.conf"
