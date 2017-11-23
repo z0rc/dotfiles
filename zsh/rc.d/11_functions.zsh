@@ -91,7 +91,7 @@ vpaste () {
 }
 
 # fzf selector for cdr
-fcdr () {
+fcd () {
     cd ${$(cdr -l | fzf --no-multi --no-sort --tac --with-nth=2 --height 40% --preview "zsh -c 'ls -AFh --group-directories-first --color {2}'" --query="${1}" --select-1 )[2]/#\~/$HOME}
 }
 
