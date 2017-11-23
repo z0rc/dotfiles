@@ -27,8 +27,7 @@ psg () {
     local psaux=$(ps aux)
     local result
     if result=$(grep --color=always -i "[${1[1]}]${1#?}" <<< ${psaux}); then
-        echo ${${(f)psaux}[1]}
-        echo ${result}
+        { echo ${${(f)psaux}[1]}; echo ${result}; } | less -FRX
     else
         echo "No process found matching pattern '${1}'"
         return 1
