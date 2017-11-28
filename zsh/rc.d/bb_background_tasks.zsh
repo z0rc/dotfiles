@@ -12,3 +12,10 @@
         nohup vim -c 'silent! helptags ALL | q' &> /dev/null
     fi
 } &!
+
+# Update tldr pages once a day (see completion config for explanation)
+{
+    if [[ -z "${XDG_DATA_HOME}/tldr"(#qNFmh-24) ]]; then
+        tldr -u
+    fi
+} &!

@@ -97,6 +97,9 @@
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git
+[submodule "tools/tldr-bash-client"]
+	path = tools/tldr-bash-client
+	url = https://github.com/pepa65/tldr-bash-client.git
 [submodule "vim/pack/01_sensible/start/sensible"]
 	path = vim/pack/01_sensible/start/sensible
 	url = https://github.com/tpope/vim-sensible.git
