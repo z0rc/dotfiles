@@ -23,7 +23,7 @@ alias pwd=" pwd"
 alias exit=" exit"
 
 # Safety
-alias rm="rm -i"
+alias rm="rm -I"
 
 # Suppress suggestions and globbing
 alias man="nocorrect noglob man"
