@@ -4,7 +4,7 @@
 # There are many like it, but this one is mine
 This repository contains tools and configs I use in shell. No graphical stuff,
 usable both on server and personal workstation. Battle tested on macOS and
-various Linux distributions including Debian, Ubuntu, CentOS.
+various Linux distributions including Debian, Ubuntu, CentOS and even WSL.
 
 I'm a big fan of [XDG Base Directory
 Specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html)
