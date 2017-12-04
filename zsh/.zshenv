@@ -1,5 +1,6 @@
-# Determine own path if ZDOTDIR isn't set
-if [[ -z "${ZDOTDIR}" ]]; then
+# Determine own path if ZDOTDIR isn't set or doesn't match current dir
+if [[ -z "${ZDOTDIR}" || "${ZDOTDIR}" != "${(%):-%d}" ]]; then
+    # magic to resolve symlinks into real path
     local source="${(%):-%N}"
     local dir
     while [[ -h "${source}" ]]; do
