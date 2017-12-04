@@ -92,7 +92,7 @@ vpaste () {
 # fzf selector for cdr
 fcd () {
     local selection
-    selection=${$(cdr -l | tee | fzf --no-multi --no-sort --tac --with-nth=2..-1 --height 40% --preview "zsh -c 'pd=\"{2..-1}\"; ls -AFh --group-directories-first --color \${pd/#\~/$HOME}'" --query="${1}" --select-1)[2,-1]/#\~/$HOME}
+    selection=${$(cdr -l | tee | fzf --no-multi --no-sort --with-nth=2..-1 --height 40% --preview "zsh -c 'pd=\"{2..-1}\"; ls -AFh --group-directories-first --color \${pd/#\~/$HOME}'" --query="${1}" --select-1)[2,-1]/#\~/$HOME}
     cd "${selection//\\ / }"
 }
 
