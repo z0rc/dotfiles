@@ -1,15 +1,7 @@
-# Determine own path if ZDOTDIR isn't set or doesn't match current dir
-if [[ -z "${ZDOTDIR}" || "${ZDOTDIR}" != "${(%):-%d}" ]]; then
-    # magic to resolve symlinks into real path
-    local source="${(%):-%N}"
-    local dir
-    while [[ -h "${source}" ]]; do
-        dir="$(cd -P "$(dirname "${source}")" && pwd)"
-        source="$(readlink "${source}")"
-        [[ ${source} != /* ]] && source="${dir}/${source}"
-    done
-    export ZDOTDIR="$(cd -P "$(dirname "${source}")" && pwd)"
-    unset source dir
+# Determine own path if ZDOTDIR isn't set or home symlink exists
+if [[ -z "$ZDOTDIR" || -L "${HOME}/.zshenv" ]]; then
+    local homezshenv="${HOME}/.zshenv"
+    export ZDOTDIR="${homezshenv:A:h}"
 fi
 export DOTFILES="$(cd "${ZDOTDIR}/.." && pwd)"
 
