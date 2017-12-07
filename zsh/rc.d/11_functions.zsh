@@ -92,8 +92,10 @@ vpaste () {
 # fzf selector for cdr
 fcd () {
     local selection
+    # tr filters out slashes used for escaping spaces (and maybe something else?)
+    # also we have to explicitly expand ~ into $HOME, as tilde works only in interactive mode
     selection=$(cdr -l | tr -d '\\' | fzf --no-multi --no-sort --with-nth=2..-1 --reverse --height 40% --preview 'pd={+2..-1}; ls -AFh --group-directories-first --color ${pd/#\~/$HOME}' --query="${1}" --select-1)
-    # clean up beginning of selection and expand ~ to proper home location
+    # clean up beginning of selection and expand tilde
     cd "${selection/#[[:digit:]]##[[:blank:]]##~/$HOME}"
 }
 
