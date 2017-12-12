@@ -103,7 +103,7 @@ fcd () {
 fgl () {
     git rev-parse --is-inside-work-tree &> /dev/null || return
     git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
-    fzf --ansi --height 50% --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' --query "${@}"\
+    fzf --ansi --height 50% --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' --query "${@}" \
         --header 'Press CTRL-S to toggle sort' \
         --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -200' |
     grep -o "[a-f0-9]\{7,\}"
@@ -112,10 +112,10 @@ fgl () {
 # git branch selector with fzf
 fgb () {
     git rev-parse --is-inside-work-tree &> /dev/null || return
-    git branch --color=always | grep -v '/HEAD\s' | sort |
-    fzf --ansi --height 50% --tac --preview-window right:70% --query "${@}"\
-        --preview 'git log --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -200' |
-    sed 's/^..//' | cut -d' ' -f1 | sed 's#^remotes/##'
+    git checkout $(git branch --color=always | grep -v '/HEAD\s' | sort |
+                   fzf --ansi --height 50% --tac --preview-window right:70% --query "${@}" \
+                       --preview 'git log --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -200' |
+                   sed 's/^..//' | cut -d' ' -f1 | sed 's#^remotes/##')
 }
 
 # simple find shortener
