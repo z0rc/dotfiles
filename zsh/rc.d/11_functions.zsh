@@ -94,10 +94,9 @@ fcd () {
     local selection
     # cdr outputs in format '<number> <folder>', where number used for sorting by recent access, so search goes through second column
     # tr removes slashes used for escaping spaces (and maybe something else?)
-    # also we have to explicitly expand ~ into $HOME in preview, as tilde works only in interactive mode
-    selection=${$(cdr -l | tr -d '\\' | fzf --no-multi --no-sort --with-nth=2..-1 --reverse --height=40% --preview='pd={+2..-1}; ls -AFh --group-directories-first --color ${pd/#\~/$HOME}' --query="${@}" --select-1)[2,-1]}
-    # expand tilde, but in selection this time
-    cd "${selection/#\~/$HOME}"
+    # also we have to explicitly enable filename expansion in zsh via ${~a}
+    selection=${~$(cdr -l | tr -d '\\' | fzf --no-multi --no-sort --with-nth=2..-1 --reverse --height=40% --preview='pd={2..-1}; ls -AFh --group-directories-first --color ${~pd}' --query="${@}" --select-1)[2,-1]}
+    cd ${selection}
 }
 
 # git log browser with fzf
