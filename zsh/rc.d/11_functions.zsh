@@ -92,11 +92,12 @@ vpaste () {
 # fzf selector for cdr
 fcd () {
     local selection
-    # tr filters out slashes used for escaping spaces (and maybe something else?)
-    # also we have to explicitly expand ~ into $HOME, as tilde works only in interactive mode
-    selection=$(cdr -l | tr -d '\\' | fzf --no-multi --no-sort --with-nth=2..-1 --reverse --height=40% --preview='pd={+2..-1}; ls -AFh --group-directories-first --color ${pd/#\~/$HOME}' --query="${1}" --select-1)
-    # clean up beginning of selection and expand tilde
-    cd "${selection/#[[:digit:]]##[[:blank:]]##~/$HOME}"
+    # cdr outputs in format '<number> <folder>', where number used for sorting by recent access, so search goes through second column
+    # tr removes slashes used for escaping spaces (and maybe something else?)
+    # also we have to explicitly expand ~ into $HOME in preview, as tilde works only in interactive mode
+    selection=${$(cdr -l | tr -d '\\' | fzf --no-multi --no-sort --with-nth=2..-1 --reverse --height=40% --preview='pd={+2..-1}; ls -AFh --group-directories-first --color ${pd/#\~/$HOME}' --query="${@}" --select-1)[2,-1]}
+    # expand tilde, but in selection this time
+    cd "${selection/#\~/$HOME}"
 }
 
 # git log browser with fzf
