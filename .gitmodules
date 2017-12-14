@@ -121,6 +121,9 @@
 [submodule "vim/pack/03_plugins/start/asyncrun"]
 	path = vim/pack/03_plugins/start/asyncrun
 	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "vim/pack/03_plugins/start/auto-git-diff"]
+	path = vim/pack/03_plugins/start/auto-git-diff
+	url = https://github.com/hotwatermorning/auto-git-diff.git
 [submodule "vim/pack/03_plugins/start/auto-pairs"]
 	path = vim/pack/03_plugins/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
