@@ -3,6 +3,7 @@ alias -s log=less
 
 # global aliases
 alias -g F="| fzf"
+alias -g L="| less"
 
 # Human file sizes
 alias df="df -Th"
