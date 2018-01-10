@@ -1,3 +1,5 @@
+" force solarized theme
+let g:airline_theme='solarized'
 " enable tagline
 let g:airline#extensions#tabline#enabled=1
 " remove separator symbols
