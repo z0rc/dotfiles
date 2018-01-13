@@ -65,13 +65,6 @@ if (( ${+commands[make]} )); then
     PREFIX="${HOME}/.local" make install > /dev/null
     popd
     print "  ...done"
-
-    # Make install git-standup
-    print "Installing git-standup..."
-    pushd tools/git-standup
-    PREFIX="${HOME}/.local" make install > /dev/null
-    popd
-    print "  ...done"
 fi
 
 print "Installing fzf..."
