@@ -27,6 +27,8 @@ venv/
 .node-version
 # luaenv
 .lua-version
+# goenv
+.go-version
 
 ### Vim ###
 # swap
