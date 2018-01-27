@@ -34,12 +34,12 @@ set cursorline " highlight line with cursor
 set showcmd " show partial commands in bottom left corner
 set completeopt-=preview " don't show preview window on competion
 set foldlevelstart=99 " enables fold but keeps them expanded by default
-set whichwrap+=<,>,h,l,[,] " autowrap to next linux for cursor movements
+set whichwrap+=<,>,h,l,[,] " autowrap to next line for cursor movements
 
 " Scrolling
-set scrolloff=8 "start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
+set scrolloff=8 " start scrolling when we're 8 lines away from margins
+set sidescroll=1 " enable sidescrolling too
+set sidescrolloff=8 " start sidescrolling 8 chars away from margins
 
 " Source local configuration
 runtime vimrc.local
