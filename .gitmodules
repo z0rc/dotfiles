@@ -325,6 +325,9 @@
 [submodule "vim/pack/03_plugins/start/sleuth"]
 	path = vim/pack/03_plugins/start/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+[submodule "vim/pack/03_plugins/start/snippets"]
+	path = vim/pack/03_plugins/start/snippets
+	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/pack/03_plugins/start/solarized"]
 	path = vim/pack/03_plugins/start/solarized
 	url = https://github.com/blueyed/vim-colors-solarized.git
