@@ -94,6 +94,9 @@
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git
+[submodule "tools/spectre-meltdown-checker"]
+	path = tools/spectre-meltdown-checker
+	url = https://github.com/speed47/spectre-meltdown-checker
 [submodule "tools/tldr-bash-client"]
 	path = tools/tldr-bash-client
 	url = https://github.com/pepa65/tldr-bash-client.git
