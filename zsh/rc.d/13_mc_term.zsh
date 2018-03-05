@@ -1,4 +1,4 @@
-# Wrapper to set skip depending on terminal and effective permissions
+# Wrapper to set skin depending on terminal and effective permissions
 mc () {
     if [[ "${TERM}" = "linux" && "${EUID}" -ne 0 ]]; then
         export MC_SKIN=modarcon16-defbg
