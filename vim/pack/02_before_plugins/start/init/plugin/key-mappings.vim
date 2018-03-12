@@ -65,5 +65,9 @@ command! -bang Qa qa<bang>
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
 
+" I fat finger this too often. Command history window, you won't be missed
+" Ctrl+f in command line in case you really need it
+nnoremap q: :q
+
 " allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! !sudo tee % > /dev/null
