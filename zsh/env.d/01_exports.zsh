@@ -10,6 +10,7 @@ export READNULLCMD=${PAGER}
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_CONFIG_HOME"=${HOME}/.config"
 export XDG_DATA_HOME="${HOME}/.local/share"
+export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
 export LESSHISTFILE="${XDG_DATA_HOME}/lesshst"
 export MYSQL_HISTFILE="${XDG_DATA_HOME}/mysql_history"
 export GEM_SPEC_CACHE="${XDG_CACHE_HOME}/gem/specs"
