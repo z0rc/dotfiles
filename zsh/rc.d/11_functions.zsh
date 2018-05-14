@@ -128,3 +128,28 @@ fd () {
         find .
     fi
 }
+
+# sudo wrapper to handle noglob and nocorrect aliases
+function do_sudo
+{
+    integer glob=1
+    local -a run
+    run=(command sudo)
+    if [[ ${#} -gt 1 && ${1} = -u ]]; then
+        run+=(${1} ${2})
+        shift; shift
+    fi
+    while (( ${#} )); do
+        case "${1}" in
+            command|exec|-) shift; break ;;
+            nocorrect) shift ;;
+            noglob) glob=0; shift ;;
+            *) break ;;
+        esac
+    done
+    if (( glob )); then
+        ${run} $~==*
+    else
+        ${run} $==*
+    fi
+}

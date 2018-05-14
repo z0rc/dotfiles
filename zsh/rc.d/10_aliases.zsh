@@ -1,10 +1,8 @@
 # Some handy suffix aliases
 alias -s log=less
 
-# Enable alias expansion for sudo by adding space
-# If the last character of the alias value is a space or tab character,
-# then the next command word following the alias is also checked for alias expansion.
-alias sudo="sudo "
+# sudo wrapper which is able to expand aliases and handle noglob/nocorrect builtins
+alias sudo="noglob do_sudo "
 
 # global aliases
 alias -g F="| fzf"
