@@ -20,7 +20,7 @@ lspath () {
 
 # Grep from ps output
 psg () {
-    if [[ -z "${1}" ]]; then
+    if [[ ${#} -eq 0 ]]; then
         echo "Please specify process search pattern"
         return 2
     fi
