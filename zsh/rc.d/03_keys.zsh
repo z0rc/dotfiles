@@ -28,6 +28,9 @@ key[Right]=${terminfo[kcuf1]}
 key[PageUp]=${terminfo[kpp]}
 key[PageDown]=${terminfo[knp]}
 key[BackSpace]=${terminfo[kbs]}
+# TODO find better way to detect this
+key[Alt]='\e[1;3'
+key[Ctrl]='\e[1;5'
 
 # Setup keys accordingly
 [[ -n "${key[Home]}" ]] && bindkey "${key[Home]}" beginning-of-line
@@ -39,5 +42,5 @@ key[BackSpace]=${terminfo[kbs]}
 [[ -n "${key[PageUp]}" ]] && bindkey "${key[PageUp]}" beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]] && bindkey "${key[PageDown]}" end-of-buffer-or-history
 [[ -n "${key[BackSpace]}" ]] && bindkey "${key[BackSpace]}" backward-delete-char
-[[ -n "${key[Right]}" ]] && bindkey "\e[1;3${key[Right]:(-1)}" forward-word
-[[ -n "${key[Left]}" ]] && bindkey "\e[1;3${key[Left]:(-1)}" backward-word
+[[ -n "${key[Right]}" ]] && bindkey "${key[Ctrl]}${key[Right]:(-1)}" forward-word
+[[ -n "${key[Left]}" ]] && bindkey "${key[Ctrl]}${key[Left]:(-1)}" backward-word

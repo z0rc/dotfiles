@@ -23,29 +23,20 @@ map z/ <Plug>(incsearch-easymotion-/)
 map z? <Plug>(incsearch-easymotion-?)
 map zg/ <Plug>(incsearch-easymotion-stay)
 
-" use ctrl+arrows to switch between splits and tmux panes
-nnoremap <silent> <C-Left> :TmuxNavigateLeft<CR>
-inoremap <silent> <C-Left> <ESC>:TmuxNavigateLeft<CR>
-nnoremap <silent> <C-Down> :TmuxNavigateDown<CR>
-inoremap <silent> <C-Down> <ESC>:TmuxNavigateDown<CR>
-nnoremap <silent> <C-Up> :TmuxNavigateUp<CR>
-inoremap <silent> <C-Up> <ESC>:TmuxNavigateUp<CR>
-nnoremap <silent> <C-Right> :TmuxNavigateRight<CR>
-inoremap <silent> <C-Right> <ESC>:TmuxNavigateRight<CR>
-nnoremap <silent> <C-\> :TmuxNavigatePrevious<CR>
-inoremap <silent> <C-\> <ESC>:TmuxNavigatePrevious<CR>
-
 " git hunks navigation
 nmap [c <Plug>GitGutterPrevHunk
 nmap ]c <Plug>GitGutterNextHunk
 
-" alt+left/right to switch buffers
-map <A-left> :bprev!<CR>
-map <A-right> :bnext!<CR>
-map [1;9C :bnext!<CR>
-map [1;9D :bprev!<CR>
-map <ESC>b :bprev!<CR>
-map <ESC>f :bnext!<CR>
+" use alt+arrows to switch between splits and tmux panes
+nnoremap <silent> <A-Left> :TmuxNavigateLeft<CR>
+nnoremap <silent> <A-Down> :TmuxNavigateDown<CR>
+nnoremap <silent> <A-Up> :TmuxNavigateUp<CR>
+nnoremap <silent> <A-Right> :TmuxNavigateRight<CR>
+nnoremap <silent> <A-\> :TmuxNavigatePrevious<CR>
+
+" crtl+left/right to switch buffers in normal mode
+nmap <C-Left> <Plug>AirlineSelectPrevTab
+nmap <C-Right> <Plug>AirlineSelectNextTab
 
 " visual shifting (does not exit visual mode)
 vnoremap < <gv
