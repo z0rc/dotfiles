@@ -28,7 +28,7 @@ set nowrap " don't wrap lines
 set ttyfast " indicate fast tty connetion
 set lazyredraw " helps dealing with flickering
 set clipboard=unnamed,unnamedplus " merge clipboard with x11 and mac
-set list listchars=tab:>-,trail:·,extends:>,precedes:< " indicate various special chars
+set list listchars=tab:>-,trail:·,extends:►,precedes:◄ " indicate various special chars
 set number " show line numbers
 set cursorline " highlight line with cursor
 set showcmd " show partial commands in bottom left corner
