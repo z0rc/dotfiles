@@ -34,6 +34,26 @@ psg () {
     fi
 }
 
+# Do something for each directory, handle Ctrl+C interrupts
+ineachdir () {
+    local cwd d
+    cwd=$PWD
+
+    TRAPINT () {
+        echo "Caught SIGINT, aborting."
+        unfunction TRAPINT
+        cd "${cwd}"
+        return $(( 128 + $1 ))
+    }
+
+    for d in */; do
+        echo "Processing ${cwd}/${d} ..."
+        cd "${cwd}/${d}"
+        $@
+        echo
+    done
+}
+
 # Autoexpand "..." to "../.." and so on
 dot () {
     if [[ ${LBUFFER} = *.. ]]; then
