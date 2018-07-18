@@ -37,7 +37,7 @@ presence](#zero-home-presence).
   * [MongoDB Shell Enhancements](https://github.com/TylerBrock/mongo-hacker)
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
-  * [git-extras](https://github.com/tj/git-extras) and [git-standup](https://github.com/kamranahmedse/git-standup), additional helpers for Git
+  * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
 * [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv), [nodenv](https://github.com/nodenv/nodenv), [luaenv](https://github.com/cehoffman/luaenv) and [goenv](https://github.com/syndbg/goenv)
 
 # Installation
