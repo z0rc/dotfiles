@@ -23,7 +23,7 @@ presence](#zero-home-presence).
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
   * [autopair plugin](https://github.com/hlissner/zsh-autopair)
-* Vim configuration(vim/vimrc) and [plugins](vim/pack)
+* Vim [configuration](vim/vimrc) and [plugins](vim/pack)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
 * Other configs:
   * [Midnight Commander](configs/mc.ini)
