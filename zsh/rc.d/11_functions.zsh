@@ -60,6 +60,7 @@ ineachdir () {
         echo
     done
 
+    cd "${cwd}"
     unfunction TRAPINT
 }
 
