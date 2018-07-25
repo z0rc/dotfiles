@@ -36,32 +36,32 @@ psg () {
 
 # Do something for each directory, handle Ctrl+C interrupts
 ineachdir () {
-    local cwd dir exitcode
-    cwd=${PWD}
+    {
+        setopt localoptions localtraps
 
-    TRAPINT () {
-        echo "Caught SIGINT, aborting."
-        unfunction TRAPINT
+        TRAPINT () {
+            echo "Caught SIGINT, aborting."
+            return $(( 128 + $1 ))
+        }
+
+        local cwd dir exitcode
+        cwd=${PWD}
+
+        for dir in */; do
+            echo "Executing '$@' in '${cwd}/${dir}'..."
+            cd "${cwd}/${dir}"
+            $@
+            exitcode=$?
+            if [[ ${exitcode} -ne 0 ]]; then
+                echo "'$@' returned ${exitcode}, aborting."
+                return $(( 128 + ${exitcode} ))
+            fi
+            echo
+        done
+    } always {
         cd "${cwd}"
-        return $(( 128 + $1 ))
+        unfunction TRAPINT
     }
-
-    for dir in */; do
-        echo "Executing '$@' in '${cwd}/${dir}'..."
-        cd "${cwd}/${dir}"
-        $@
-        exitcode=$?
-        if [[ ${exitcode} -ne 0 ]]; then
-            echo "'$@' returned ${exitcode}, aborting."
-            unfunction TRAPINT
-            cd "${cwd}"
-            return $(( 128 + ${exitcode} ))
-        fi
-        echo
-    done
-
-    cd "${cwd}"
-    unfunction TRAPINT
 }
 
 # Autoexpand "..." to "../.." and so on
