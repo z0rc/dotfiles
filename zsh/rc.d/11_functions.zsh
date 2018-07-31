@@ -104,14 +104,14 @@ apt-history () {
         if [[ -e /var/log/dpkg.log ]]; then
             zgrep --no-filename ' installed' "$(ls -rt /var/log/dpkg*)"
         else
-            journalctl -t dpkg | grep ' installed'
+            journalctl -n1000 -t dpkg | grep ' installed'
         fi
         ;;
     upgrade|remove)
         if [[ -e /var/log/dpkg.log ]]; then
             zgrep --no-filename "${1}" "$(ls -rt /var/log/dpkg*)"
         else
-            journalctl -t dpkg | grep "${1}"
+            journalctl -n1000 -t dpkg | grep "${1}"
         fi
         ;;
     *)
