@@ -40,7 +40,7 @@ ineachdir () {
         setopt localoptions localtraps
 
         TRAPINT () {
-            echo "--- IED: Caught SIGINT, aborting."
+            echo ${fg[white]}"--- IED: Caught SIGINT, aborting."${fg[default]}
             return $(( 128 + $1 ))
         }
 
@@ -49,7 +49,7 @@ ineachdir () {
 
         zparseopts -E -D -M -A ied_opts -- -ignore-errors i=-ignore-errors
 
-        if [[ -z "$*" ]]; then
+        if [[ ${#} -eq 0 ]]; then
             cat << EOH
 Usage: ineachdir [-i | --ignore-errors] <command>
 
@@ -58,20 +58,23 @@ Perform specified <command> in each directory.
 Arguments:
     -i, --ignore-errors    Ignore <command> execution error,
                            continue to next dir
+
+Example:
+    ineachdir git pull --prune
 EOH
             return 0
         fi
 
         for dir in */; do
-            echo $fg[white] "--- IED: Executing '$@' in '${cwd}/${dir}'..." $fg[default]
+            echo ${fg[white]}"--- IED: Executing '$@' in '${cwd}/${dir}'..."${fg[default]}
             cd "${cwd}/${dir}"
             $@
             exitcode=$?
             if [[ ${exitcode} -ne 0 ]]; then
                 if (( ${+ied_opts[--ignore-errors]} )); then
-                    echo $fg[yellow] "--- IED: '$@' returned ${exitcode}, ignoring." $fg[default]
+                    echo ${fg[yellow]}"--- IED: '$@' returned ${exitcode}, ignoring."${fg[default]}
                 else
-                    echo $fg[red] "--- IED: '$@' returned ${exitcode}, aborting." $fg[default]
+                    echo ${fg[red]}"--- IED: '$@' returned ${exitcode}, aborting."${fg[default]}
                     return $(( 128 + ${exitcode} ))
                 fi
             fi
