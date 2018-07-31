@@ -40,7 +40,7 @@ ineachdir () {
         setopt localoptions localtraps
 
         TRAPINT () {
-            echo "Caught SIGINT, aborting."
+            echo "--- IED: Caught SIGINT, aborting."
             return $(( 128 + $1 ))
         }
 
@@ -48,12 +48,12 @@ ineachdir () {
         cwd=${PWD}
 
         for dir in */; do
-            echo "Executing '$@' in '${cwd}/${dir}'..."
+            echo "--- IED: Executing '$@' in '${cwd}/${dir}'..."
             cd "${cwd}/${dir}"
             $@
             exitcode=$?
             if [[ ${exitcode} -ne 0 ]]; then
-                echo "'$@' returned ${exitcode}, aborting."
+                echo "--- IED: '$@' returned ${exitcode}, aborting."
                 return $(( 128 + ${exitcode} ))
             fi
             echo
