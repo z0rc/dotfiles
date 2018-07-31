@@ -44,17 +44,36 @@ ineachdir () {
             return $(( 128 + $1 ))
         }
 
-        local cwd dir exitcode
+        local cwd dir exitcode ied_opts
         cwd=${PWD}
 
+        zparseopts -E -D -M -A ied_opts -- -ignore-errors i=-ignore-errors
+
+        if [[ -z "$*" ]]; then
+            cat << EOH
+Usage: ineachdir [-i | --ignore-errors] <command>
+
+Perform specified <command> in each directory.
+
+Arguments:
+    -i, --ignore-errors    Ignore <command> execution error,
+                           continue to next dir
+EOH
+            return 0
+        fi
+
         for dir in */; do
-            echo "--- IED: Executing '$@' in '${cwd}/${dir}'..."
+            echo $fg[white] "--- IED: Executing '$@' in '${cwd}/${dir}'..." $fg[default]
             cd "${cwd}/${dir}"
             $@
             exitcode=$?
             if [[ ${exitcode} -ne 0 ]]; then
-                echo "--- IED: '$@' returned ${exitcode}, aborting."
-                return $(( 128 + ${exitcode} ))
+                if (( ${+ied_opts[--ignore-errors]} )); then
+                    echo $fg[yellow] "--- IED: '$@' returned ${exitcode}, ignoring." $fg[default]
+                else
+                    echo $fg[red] "--- IED: '$@' returned ${exitcode}, aborting." $fg[default]
+                    return $(( 128 + ${exitcode} ))
+                fi
             fi
             echo
         done
