@@ -1,4 +1,6 @@
 # License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fz0rc%2Fdotfiles.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fz0rc%2Fdotfiles?ref=badge_shield)
+
 [WTFPL](COPYING)
 
 # There are many like it, but this one is mine
@@ -134,3 +136,7 @@ Pyenv and similar wrappers are lazy-loaded, it means that they won't be
 initialized on shell start. Activation is done on the first execution. Check
 out output of `type -f pyenv` in shell and
 [implementation](zsh/rc.d/15_many_env.zsh).
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fz0rc%2Fdotfiles.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fz0rc%2Fdotfiles?ref=badge_large)
