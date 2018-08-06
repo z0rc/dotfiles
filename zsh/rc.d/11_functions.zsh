@@ -45,13 +45,14 @@ ineachdir () {
         }
 
         local cwd dir exitcode ied_opts
+        local -A results
         cwd=${PWD}
 
-        zparseopts -E -D -M -A ied_opts -- -ignore-errors i=-ignore-errors
+        zparseopts -E -D -M -A ied_opts -- -ignore-errors -results-table i=-ignore-errors r=-results-table
 
         if [[ ${#} -eq 0 ]]; then
             cat << EOH
-Usage: ineachdir [-i | --ignore-errors] <command>
+Usage: ineachdir [-i | --ignore-errors] [-r | --results-table] <command>
 
 Perform specified <command> in each directory.
 
@@ -59,8 +60,10 @@ Arguments:
     -i, --ignore-errors    Ignore <command> execution error,
                            continue to next dir
 
+    -r, --results-table    Show table with results at the end
+
 Example:
-    ineachdir git pull --prune
+    ineachdir -r git pull --prune
 EOH
             return 0
         fi
@@ -70,6 +73,9 @@ EOH
             cd "${cwd}/${dir}"
             $@
             exitcode=$?
+            if (( ${+ied_opts[--results-table]} )); then
+                results[${dir}]=${exitcode}
+            fi
             if [[ ${exitcode} -ne 0 ]]; then
                 if (( ${+ied_opts[--ignore-errors]} )); then
                     echo ${fg[yellow]}"--- IED: '$@' returned ${exitcode}, ignoring."${fg[default]}
@@ -80,6 +86,16 @@ EOH
             fi
             echo
         done
+
+        if (( ${+ied_opts[--results-table]} )); then
+            echo ${fg[white]}"--- IED: Execution results"${fg[default]}
+            for dir exitcode in ${(kv)results}; do
+                if [[ ${exitcode} -ne 0 ]]; then
+                    exitcode="${fg[yellow]}${exitcode}${fg[default]}"
+                fi
+                printf '%s\n' "${(r:35:)dir}: ${(%)exitcode}"
+            done
+        fi
     } always {
         cd "${cwd}"
         unfunction TRAPINT
