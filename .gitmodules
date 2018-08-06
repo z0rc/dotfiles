@@ -415,3 +415,6 @@
 [submodule "zsh/plugins/tmux-zsh-vim-titles"]
 	path = zsh/plugins/tmux-zsh-vim-titles
 	url = https://github.com/MikeDacre/tmux-zsh-vim-titles.git
+[submodule "zsh/plugins/tmuxrepl"]
+	path = zsh/plugins/tmuxrepl
+	url = https://github.com/csurfer/tmuxrepl.git
