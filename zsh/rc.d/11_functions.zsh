@@ -45,14 +45,14 @@ ineachdir () {
         }
 
         local cwd dir exitcode ied_opts
-        local -A results
+        local -A ied_status
         cwd=${PWD}
 
-        zparseopts -E -D -M -A ied_opts -- -ignore-errors -results-table i=-ignore-errors r=-results-table
+        zparseopts -E -D -M -A ied_opts -- -ignore-errors -status-table i=-ignore-errors s=-status-table
 
         if [[ ${#} -eq 0 ]]; then
             cat << EOH
-Usage: ineachdir [-i | --ignore-errors] [-r | --results-table] <command>
+Usage: ineachdir [-i | --ignore-errors] [-s | --status-table] <command>
 
 Perform specified <command> in each directory.
 
@@ -60,7 +60,7 @@ Arguments:
     -i, --ignore-errors    Ignore <command> execution error,
                            continue to next dir
 
-    -r, --results-table    Show table with results at the end
+    -s, --status-table     Show status table at the end
 
 Example:
     ineachdir -r git pull --prune
@@ -73,8 +73,8 @@ EOH
             cd "${cwd}/${dir}"
             $@
             exitcode=$?
-            if (( ${+ied_opts[--results-table]} )); then
-                results[${dir}]=${exitcode}
+            if (( ${+ied_opts[--status-table]} )); then
+                ied_status[${dir}]=${exitcode}
             fi
             if [[ ${exitcode} -ne 0 ]]; then
                 if (( ${+ied_opts[--ignore-errors]} )); then
@@ -87,9 +87,9 @@ EOH
             echo
         done
 
-        if (( ${+ied_opts[--results-table]} )); then
+        if (( ${+ied_opts[--status-table]} )); then
             echo ${fg[white]}"--- IED: Execution results"${fg[default]}
-            for dir exitcode in ${(kv)results}; do
+            for dir exitcode in ${(kv)ied_status}; do
                 if [[ ${exitcode} -ne 0 ]]; then
                     exitcode="${fg[yellow]}${exitcode}${fg[default]}"
                 fi
