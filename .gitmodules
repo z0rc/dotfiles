@@ -352,12 +352,15 @@
 [submodule "vim/pack/03_plugins/start/tagbar"]
 	path = vim/pack/03_plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/pack/03_plugins/start/test"]
-	path = vim/pack/03_plugins/start/test
-	url = https://github.com/janko-m/vim-test.git
+[submodule "vim/pack/03_plugins/start/terraform-completion"]
+	path = vim/pack/03_plugins/start/terraform-completion
+	url = https://github.com/juliosueiras/vim-terraform-completion.git
 [submodule "vim/pack/03_plugins/start/terminus"]
 	path = vim/pack/03_plugins/start/terminus
 	url = https://github.com/wincent/terminus.git
+[submodule "vim/pack/03_plugins/start/test"]
+	path = vim/pack/03_plugins/start/test
+	url = https://github.com/janko-m/vim-test.git
 [submodule "vim/pack/03_plugins/start/tlib"]
 	path = vim/pack/03_plugins/start/tlib
 	url = https://github.com/tomtom/tlib_vim.git
