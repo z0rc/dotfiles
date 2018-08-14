@@ -15,7 +15,7 @@ cd "${SCRIPT_DIR}"
 print "Creating required directory tree..."
 mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger}
 mkdir -p "${XDG_CACHE_HOME}"/{vim/{backup,swap,undo},zsh}
-mkdir -p "${XDG_DATA_HOME}"/{pyenv/plugins,rbenv/plugins,nodenv/plugins,luaenv/plugins,goenv/plugins,zsh,man/man1}
+mkdir -p "${XDG_DATA_HOME}"/{{pyenv,rbenv,nodenv,luaenv,goenv}/plugins,zsh,man/man1}
 mkdir -p "${HOME}"/.local/{bin,etc}
 print "  ...done"
 
