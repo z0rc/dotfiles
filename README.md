@@ -38,6 +38,7 @@ presence](#zero-home-presence).
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
+  * [slack-cli](https://github.com/rockymadden/slack-cli) for sending messages to slack from shell
 * [pyenv](https://github.com/yyuu/pyenv), [rbenv](https://github.com/rbenv/rbenv), [nodenv](https://github.com/nodenv/nodenv), [luaenv](https://github.com/cehoffman/luaenv) and [goenv](https://github.com/syndbg/goenv)
 
 # Installation

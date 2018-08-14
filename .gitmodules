@@ -91,6 +91,9 @@
 [submodule "tools/mongo-hacker"]
 	path = tools/mongo-hacker
 	url = https://github.com/TylerBrock/mongo-hacker.git
+[submodule "tools/slack-cli"]
+	path = tools/slack-cli
+	url = https://github.com/rockymadden/slack-cli.git
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git
