@@ -154,6 +154,9 @@
 [submodule "vim/pack/03_plugins/start/deoplete"]
 	path = vim/pack/03_plugins/start/deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "vim/pack/03_plugins/start/deoplete-go"]
+	path = vim/pack/03_plugins/start/deoplete-go
+	url = https://github.com/zchee/deoplete-go.git
 [submodule "vim/pack/03_plugins/start/deoplete-jedi"]
 	path = vim/pack/03_plugins/start/deoplete-jedi
 	url = https://github.com/zchee/deoplete-jedi.git
