@@ -99,7 +99,7 @@ if (( ${+commands[vim]} )); then
     print "  ...done"
 fi
 
-if (( ${+commands[make]} )) && (( ${+commands[vim]} )); then
+if (( ${+commands[make]} )) && (( ${+commands[vim]} )) && (( ${+commands[go]} )); then
     # Making deoplete-go dependencies
     print "Installing deoplete-go dependencies..."
     pushd vim/pack/03_plugins/start/deoplete-go
