@@ -3,7 +3,8 @@ if [[ -z "$ZDOTDIR" || -L "${HOME}/.zshenv" ]]; then
     local homezshenv="${HOME}/.zshenv"
     export ZDOTDIR="${homezshenv:A:h}"
 fi
-export DOTFILES="$(cd "${ZDOTDIR}/.." && pwd)"
+# DOTFILES dir is parent to ZDOTDIR
+export DOTFILES="${ZDOTDIR%/*}"
 
 # Source local env files
 for envfile in "${ZDOTDIR}"/env.d/*; do
