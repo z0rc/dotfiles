@@ -6,6 +6,7 @@ set -e
 XDG_CACHE_HOME="${HOME}/.cache"
 XDG_CONFIG_HOME="${HOME}/.config"
 XDG_DATA_HOME="${HOME}/.local/share"
+VIMINIT='let $MYVIMRC="$DOTFILES/vim/vimrc" | source $MYVIMRC'
 
 # Get the current path
 SCRIPT_DIR="${0:A:h}"
@@ -89,6 +90,25 @@ if (( ${+commands[pip3]} )); then
     print "Installing neovim python client..."
     pip3 install --user --upgrade neovim > /dev/null
     print "  ...done"
+fi
+
+if (( ${+commands[vim]} )); then
+    # Generating vim help tags
+    print "Generating vim helptags..."
+    nohup vim -c 'silent! helptags ALL | q' &> /dev/null
+    print "  ...done"
+fi
+
+if (( ${+commands[make]} )) && (( ${+commands[vim]} )); then
+    # Making deoplete-go dependencies
+    print "Installing deoplete-go dependencies..."
+    pushd vim/pack/03_plugins/start/deoplete-go
+    if make > /dev/null; then
+        print "  ...done"
+    else
+        print "  Please check intallation instructions at vim/pack/03_plugins/start/deoplete-go/README.md or just ignore this"
+    fi
+    popd
 fi
 
 # Link pyenv plugins to $PYENV_ROOT
