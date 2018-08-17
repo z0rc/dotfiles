@@ -2,15 +2,15 @@
 
 set -e
 
+# Get the current path
+SCRIPT_DIR="${0:A:h}"
+cd "${SCRIPT_DIR}"
+
 # Default XDG paths
 XDG_CACHE_HOME="${HOME}/.cache"
 XDG_CONFIG_HOME="${HOME}/.config"
 XDG_DATA_HOME="${HOME}/.local/share"
-VIMINIT='let $MYVIMRC="$DOTFILES/vim/vimrc" | source $MYVIMRC'
-
-# Get the current path
-SCRIPT_DIR="${0:A:h}"
-cd "${SCRIPT_DIR}"
+VIMINIT='let $MYVIMRC="$SCRIPT_DIR/vim/vimrc" | source $MYVIMRC'
 
 # Create required directories
 print "Creating required directory tree..."
