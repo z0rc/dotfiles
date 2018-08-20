@@ -10,7 +10,7 @@ cd "${SCRIPT_DIR}"
 XDG_CACHE_HOME="${HOME}/.cache"
 XDG_CONFIG_HOME="${HOME}/.config"
 XDG_DATA_HOME="${HOME}/.local/share"
-VIMINIT='let $MYVIMRC="$SCRIPT_DIR/vim/vimrc" | source $MYVIMRC'
+VIMINIT='let $MYVIMRC="'$SCRIPT_DIR'/vim/vimrc" | source $MYVIMRC'
 
 # Create required directories
 print "Creating required directory tree..."
