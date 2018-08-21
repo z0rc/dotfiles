@@ -33,6 +33,8 @@ set number " show line numbers
 set cursorline " highlight line with cursor
 set showcmd " show partial commands in bottom left corner
 set completeopt-=preview " don't show preview window on competion
+set completeopt+=noinsert " don't automatically insert, but select first entry
+set completeopt+=menuone " show completion menu even when there is single entry
 set foldlevelstart=99 " enables fold but keeps them expanded by default
 set whichwrap+=<,>,h,l,[,] " autowrap to next line for cursor movements
 set splitbelow " when splitting windows put new ones below ...
