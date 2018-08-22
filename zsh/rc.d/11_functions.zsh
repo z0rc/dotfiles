@@ -103,15 +103,15 @@ EOH
 }
 
 # Autoexpand "..." to "../.." and so on
-dot () {
+_zsh-dot () {
     if [[ ${LBUFFER} = *.. ]]; then
         LBUFFER+=/..
     else
         LBUFFER+=.
     fi
 }
-zle -N dot
-bindkey . dot
+zle -N _zsh-dot
+bindkey . _zsh-dot
 
 # Print apt history
 apt-history () {
