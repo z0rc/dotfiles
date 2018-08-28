@@ -118,6 +118,10 @@
 	path = tools/git-extras
 	url = https://github.com/tj/git-extras.git
 	shallow = true
+[submodule "tools/httpstat"]
+	path = tools/httpstat
+	url = https://github.com/b4b4r07/httpstat.git
+	shallow = true
 [submodule "tools/mongo-hacker"]
 	path = tools/mongo-hacker
 	url = https://github.com/TylerBrock/mongo-hacker.git
