@@ -150,7 +150,7 @@ print "  ...done"
 
 # Install crontab task to pull updates every midnight
 print "Installing cron job for periodic updates..."
-local cron_task="cd ${SCRIPT_DIR} && git stash >/dev/null 2>&1 && git pull >/dev/null 2>&1 && git stash pop >/dev/null 2>&1"
+local cron_task="cd ${SCRIPT_DIR} && git stash && git pull && git stash pop"
 local cron_schedule="0 0 * * * ${cron_task}"
 if cat <(fgrep -i -v "${cron_task}" <(crontab -l)) <(echo "${cron_schedule}") | crontab -; then
     print "  ...done"
