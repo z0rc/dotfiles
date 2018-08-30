@@ -10,3 +10,5 @@ export DOTFILES="${ZDOTDIR%/*}"
 for envfile in "${ZDOTDIR}"/env.d/*; do
     source "${envfile}"
 done
+
+unset envfile
