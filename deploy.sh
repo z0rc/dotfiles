@@ -95,7 +95,7 @@ fi
 if (( ${+commands[vim]} )); then
     # Generating vim help tags
     print "Generating vim helptags..."
-    nohup vim -c 'silent! helptags ALL | q' &> /dev/null
+    nohup vim -c 'silent! helptags ALL | q' </dev/null &>/dev/null
     print "  ...done"
 fi
 
