@@ -29,6 +29,7 @@ export PACKER_CACHE_DIR="${XDG_CACHE_HOME}/packer"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/config"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
 export HTTPIE_CONFIG_DIR="${XDG_CONFIG_HOME}/httpie"
+export ANSIBLE_LOCAL_TEMP="${XDG_RUNTIME_DIR}/ansible/tmp"
 export GOPATH="${HOME}/.local/go"
 
 # Enable local binaries and man pages
