@@ -310,10 +310,6 @@
 	path = vim/pack/03_plugins/start/json
 	url = https://github.com/elzr/vim-json.git
 	shallow = true
-[submodule "vim/pack/03_plugins/start/leader-guide"]
-	path = vim/pack/03_plugins/start/leader-guide
-	url = https://github.com/hecal3/vim-leader-guide.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/listtoggle"]
 	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
@@ -521,6 +517,10 @@
 [submodule "vim/pack/03_plugins/start/virtualenv"]
 	path = vim/pack/03_plugins/start/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
+	shallow = true
+[submodule "vim/pack/03_plugins/start/which-key"]
+	path = vim/pack/03_plugins/start/which-key
+	url = https://github.com/liuchengxu/vim-which-key.git
 	shallow = true
 [submodule "vim/pack/03_plugins/start/xolox-misc"]
 	path = vim/pack/03_plugins/start/xolox-misc
