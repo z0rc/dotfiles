@@ -61,4 +61,4 @@ vnoremap . :normal .<CR>
 nnoremap q: :q
 
 " allow saving of files as sudo when I forgot to start vim using sudo
-cmap w!! !sudo tee % > /dev/null
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
