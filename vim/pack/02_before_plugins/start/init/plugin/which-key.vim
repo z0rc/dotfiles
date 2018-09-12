@@ -56,7 +56,7 @@ let g:which_key_map.e={
 let g:which_key_map.t={
     \'name' : 'Toggles',
     \'l' : ['LToggle', 'Location list'],
-    \'q' : ['asyncrun#quickfix_toggle(8)', 'Quickfix window'],
+    \'q' : ['QToggle', 'Quickfix window'],
     \'N' : ['ToggleNERDTreeTabsFind()', 'NERDTree'],
     \'t' : ['TagbarToggle', 'Tagbar'],
     \'n' : ['NumbersToggle', 'Numbers'],
