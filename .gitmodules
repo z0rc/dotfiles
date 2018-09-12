@@ -166,6 +166,10 @@
 	path = vim/pack/03_plugins/start/anyfold
 	url = https://github.com/pseewald/vim-anyfold.git
 	shallow = true
+[submodule "vim/pack/03_plugins/start/anzu"]
+	path = vim/pack/03_plugins/start/anzu
+	url = https://github.com/osyo-manga/vim-anzu.git
+	shallow = true
 [submodule "vim/pack/03_plugins/start/asyncrun"]
 	path = vim/pack/03_plugins/start/asyncrun
 	url = https://github.com/skywind3000/asyncrun.vim.git
@@ -290,17 +294,13 @@
 	path = vim/pack/03_plugins/start/hashicorp-tools
 	url = https://github.com/hashivim/vim-hashicorp-tools.git
 	shallow = true
-[submodule "vim/pack/03_plugins/start/incsearch"]
-	path = vim/pack/03_plugins/start/incsearch
-	url = https://github.com/haya14busa/incsearch.vim.git
-	shallow = true
-[submodule "vim/pack/03_plugins/start/incsearch-easymotion"]
-	path = vim/pack/03_plugins/start/incsearch-easymotion
-	url = https://github.com/haya14busa/incsearch-easymotion.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/indentLine"]
 	path = vim/pack/03_plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+	shallow = true
+[submodule "vim/pack/03_plugins/start/is"]
+	path = vim/pack/03_plugins/start/is
+	url = https://github.com/haya14busa/is.vim.git
 	shallow = true
 [submodule "vim/pack/03_plugins/start/javascript"]
 	path = vim/pack/03_plugins/start/javascript

@@ -8,20 +8,9 @@ imap <expr> <TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TA
 imap <expr> <C-h> deoplete#smart_close_popup()."\<C-h>"
 imap <expr> <BS> deoplete#smart_close_popup()."\<C-h>"
 
-" replace default search with incsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)<Paste>
-" incsearch with easymotion across results
-map z/ <Plug>(incsearch-easymotion-/)
-map z? <Plug>(incsearch-easymotion-?)
-map zg/ <Plug>(incsearch-easymotion-stay)
+" display search position like (2/10) for n/N commands
+map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
+map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
 
 " git hunks navigation
 nmap [c <Plug>GitGutterPrevHunk
