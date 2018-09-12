@@ -410,10 +410,6 @@
 	path = vim/pack/03_plugins/start/python-combined
 	url = https://github.com/mitsuhiko/vim-python-combined.git
 	shallow = true
-[submodule "vim/pack/03_plugins/start/qf"]
-	path = vim/pack/03_plugins/start/qf
-	url = https://github.com/romainl/vim-qf.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/rainbow"]
 	path = vim/pack/03_plugins/start/rainbow
 	url = https://github.com/luochen1990/rainbow.git
