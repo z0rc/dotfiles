@@ -65,9 +65,7 @@ let g:which_key_map.t={
 
 " searches
 let g:which_key_map.a=['Ag', 'ag search']
-if has('mac')
-    let g:which_key_map.d=['Dash', 'Dash search']
-endif
+let g:which_key_map.z=['Zeavim', 'Zeal search']
 
 " fzf
 let g:which_key_map.f={

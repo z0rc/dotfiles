@@ -206,10 +206,6 @@
 	path = vim/pack/03_plugins/start/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
 	shallow = true
-[submodule "vim/pack/03_plugins/start/dash"]
-	path = vim/pack/03_plugins/start/dash
-	url = https://github.com/rizzatti/dash.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/deoplete"]
 	path = vim/pack/03_plugins/start/deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
@@ -521,6 +517,10 @@
 [submodule "vim/pack/03_plugins/start/xolox-misc"]
 	path = vim/pack/03_plugins/start/xolox-misc
 	url = https://github.com/xolox/vim-misc.git
+	shallow = true
+[submodule "vim/pack/03_plugins/start/zealvim"]
+	path = vim/pack/03_plugins/start/zealvim
+	url = https://github.com/KabbAmine/zeavim.vim.git
 	shallow = true
 [submodule "zsh/plugins/async"]
 	path = zsh/plugins/async
