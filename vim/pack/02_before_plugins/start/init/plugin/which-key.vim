@@ -63,9 +63,13 @@ let g:which_key_map.t={
     \'u' : ['UndotreeToggle', 'Undotree']
     \}
 
-" searches
+" ag
 let g:which_key_map.a=['Ag', 'ag search']
-let g:which_key_map.z=['Zeavim', 'Zeal search']
+
+" zeal
+nmap <leader>z <Plug>Zeavim
+vmap <leader>z <Plug>ZVVisSelection
+let g:which_key_map.z='Zeal search'
 
 " fzf
 let g:which_key_map.f={
