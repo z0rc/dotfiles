@@ -1,573 +1,429 @@
 [submodule "goenv/goenv"]
 	path = goenv/goenv
 	url = https://github.com/syndbg/goenv.git
-	shallow = true
 [submodule "luaenv/lua-build"]
 	path = luaenv/lua-build
 	url = https://github.com/cehoffman/lua-build.git
-	shallow = true
 [submodule "luaenv/luaenv"]
 	path = luaenv/luaenv
 	url = https://github.com/cehoffman/luaenv.git
-	shallow = true
 [submodule "luaenv/luaenv-luarocks"]
 	path = luaenv/luaenv-luarocks
 	url = https://github.com/xpol/luaenv-luarocks.git
-	shallow = true
 [submodule "nodenv/node-build"]
 	path = nodenv/node-build
 	url = https://github.com/nodenv/node-build.git
-	shallow = true
 [submodule "nodenv/nodenv"]
 	path = nodenv/nodenv
 	url = https://github.com/nodenv/nodenv.git
-	shallow = true
 [submodule "nodenv/nodenv-aliases"]
 	path = nodenv/nodenv-aliases
 	url = https://github.com/nodenv/nodenv-aliases.git
-	shallow = true
 [submodule "nodenv/nodenv-package-rehash"]
 	path = nodenv/nodenv-package-rehash
 	url = https://github.com/nodenv/nodenv-package-rehash.git
-	shallow = true
 [submodule "pyenv/pyenv"]
 	path = pyenv/pyenv
 	url = https://github.com/yyuu/pyenv.git
-	shallow = true
 [submodule "pyenv/pyenv-default-packages"]
 	path = pyenv/pyenv-default-packages
 	url = https://github.com/jawshooah/pyenv-default-packages.git
-	shallow = true
 [submodule "pyenv/pyenv-virtualenv"]
 	path = pyenv/pyenv-virtualenv
 	url = https://github.com/yyuu/pyenv-virtualenv.git
-	shallow = true
 [submodule "rbenv/rbenv"]
 	path = rbenv/rbenv
 	url = https://github.com/rbenv/rbenv.git
-	shallow = true
 [submodule "rbenv/rbenv-binstubs"]
 	path = rbenv/rbenv-binstubs
 	url = https://github.com/ianheggie/rbenv-binstubs.git
-	shallow = true
 [submodule "rbenv/rbenv-chefdk"]
 	path = rbenv/rbenv-chefdk
 	url = https://github.com/docwhat/rbenv-chefdk.git
-	shallow = true
 [submodule "rbenv/rbenv-ctags"]
 	path = rbenv/rbenv-ctags
 	url = https://github.com/tpope/rbenv-ctags.git
-	shallow = true
 [submodule "rbenv/rbenv-default-gems"]
 	path = rbenv/rbenv-default-gems
 	url = https://github.com/rbenv/rbenv-default-gems.git
-	shallow = true
 [submodule "rbenv/rbenv-env"]
 	path = rbenv/rbenv-env
 	url = https://github.com/ianheggie/rbenv-env.git
-	shallow = true
 [submodule "rbenv/rbenv-man"]
 	path = rbenv/rbenv-man
 	url = https://github.com/mlafeldt/rbenv-man.git
-	shallow = true
 [submodule "rbenv/ruby-build"]
 	path = rbenv/ruby-build
 	url = https://github.com/rbenv/ruby-build.git
-	shallow = true
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
-	shallow = true
 [submodule "tmux/plugins/copycat"]
 	path = tmux/plugins/copycat
 	url = https://github.com/tmux-plugins/tmux-copycat.git
-	shallow = true
 [submodule "tmux/plugins/open"]
 	path = tmux/plugins/open
 	url = https://github.com/tmux-plugins/tmux-open.git
-	shallow = true
 [submodule "tmux/plugins/pain-control"]
 	path = tmux/plugins/pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control.git
-	shallow = true
 [submodule "tmux/plugins/prefix-highlight"]
 	path = tmux/plugins/prefix-highlight
 	url = https://github.com/tmux-plugins/tmux-prefix-highlight.git
-	shallow = true
 [submodule "tmux/plugins/sensible"]
 	path = tmux/plugins/sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
-	shallow = true
 [submodule "tmux/plugins/yank"]
 	path = tmux/plugins/yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
-	shallow = true
 [submodule "tools/MySQLTuner-perl"]
 	path = tools/MySQLTuner-perl
 	url = https://github.com/major/MySQLTuner-perl.git
-	shallow = true
 [submodule "tools/diff-so-fancy"]
 	path = tools/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
-	shallow = true
 [submodule "tools/fzf"]
 	path = tools/fzf
 	url = https://github.com/junegunn/fzf.git
-	shallow = true
 [submodule "tools/git-extras"]
 	path = tools/git-extras
 	url = https://github.com/tj/git-extras.git
-	shallow = true
 [submodule "tools/httpstat"]
 	path = tools/httpstat
 	url = https://github.com/b4b4r07/httpstat.git
-	shallow = true
 [submodule "tools/mongo-hacker"]
 	path = tools/mongo-hacker
 	url = https://github.com/TylerBrock/mongo-hacker.git
-	shallow = true
 [submodule "tools/slack-cli"]
 	path = tools/slack-cli
 	url = https://github.com/rockymadden/slack-cli.git
-	shallow = true
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git
-	shallow = true
 [submodule "tools/spectre-meltdown-checker"]
 	path = tools/spectre-meltdown-checker
 	url = https://github.com/speed47/spectre-meltdown-checker
-	shallow = true
 [submodule "tools/tldr-bash-client"]
 	path = tools/tldr-bash-client
 	url = https://github.com/pepa65/tldr-bash-client.git
-	shallow = true
 [submodule "vim/pack/01_sensible/start/sensible"]
 	path = vim/pack/01_sensible/start/sensible
 	url = https://github.com/tpope/vim-sensible.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/airline"]
 	path = vim/pack/03_plugins/start/airline
 	url = https://github.com/bling/vim-airline
-	shallow = true
 [submodule "vim/pack/03_plugins/start/airline-themes"]
 	path = vim/pack/03_plugins/start/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/ale"]
 	path = vim/pack/03_plugins/start/ale
 	url = https://github.com/w0rp/ale.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/ansible"]
 	path = vim/pack/03_plugins/start/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/anyfold"]
 	path = vim/pack/03_plugins/start/anyfold
 	url = https://github.com/pseewald/vim-anyfold.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/anzu"]
 	path = vim/pack/03_plugins/start/anzu
 	url = https://github.com/osyo-manga/vim-anzu.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/asyncrun"]
 	path = vim/pack/03_plugins/start/asyncrun
 	url = https://github.com/skywind3000/asyncrun.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/auto-git-diff"]
 	path = vim/pack/03_plugins/start/auto-git-diff
 	url = https://github.com/hotwatermorning/auto-git-diff.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/auto-pairs"]
 	path = vim/pack/03_plugins/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/aws"]
 	path = vim/pack/03_plugins/start/aws
 	url = https://github.com/andrewstuart/aws-vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/bundler"]
 	path = vim/pack/03_plugins/start/bundler
 	url = https://github.com/tpope/vim-bundler.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/capslock"]
 	path = vim/pack/03_plugins/start/capslock
 	url = https://github.com/tpope/vim-capslock.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/committia"]
 	path = vim/pack/03_plugins/start/committia
 	url = https://github.com/rhysd/committia.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/context_filetype"]
 	path = vim/pack/03_plugins/start/context_filetype
 	url = https://github.com/Shougo/context_filetype.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/cursorline-current-window"]
 	path = vim/pack/03_plugins/start/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/deoplete"]
 	path = vim/pack/03_plugins/start/deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/deoplete-go"]
 	path = vim/pack/03_plugins/start/deoplete-go
 	url = https://github.com/zchee/deoplete-go.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/deoplete-jedi"]
 	path = vim/pack/03_plugins/start/deoplete-jedi
 	url = https://github.com/zchee/deoplete-jedi.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/deoplete-ruby"]
 	path = vim/pack/03_plugins/start/deoplete-ruby
 	url = https://github.com/fishbullet/deoplete-ruby.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/deoplete-zsh"]
 	path = vim/pack/03_plugins/start/deoplete-zsh
 	url = https://github.com/zchee/deoplete-zsh.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/dockerfile"]
 	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/easymotion"]
 	path = vim/pack/03_plugins/start/easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/easytags"]
 	path = vim/pack/03_plugins/start/easytags
 	url = https://github.com/xolox/vim-easytags.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/editorconfig"]
 	path = vim/pack/03_plugins/start/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/eunuch"]
 	path = vim/pack/03_plugins/start/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/expand-region"]
 	path = vim/pack/03_plugins/start/expand-region
 	url = https://github.com/landock/vim-expand-region.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/fixkey"]
 	path = vim/pack/03_plugins/start/fixkey
 	url = https://github.com/kenwon/vim-fixkey.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/fold-cycle"]
 	path = vim/pack/03_plugins/start/fold-cycle
 	url = https://github.com/arecarn/vim-fold-cycle.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/fugitive"]
 	path = vim/pack/03_plugins/start/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/fzf-vim"]
 	path = vim/pack/03_plugins/start/fzf-vim
 	url = https://github.com/junegunn/fzf.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/git"]
 	path = vim/pack/03_plugins/start/git
 	url = https://github.com/tpope/vim-git.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/gitgutter"]
 	path = vim/pack/03_plugins/start/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/gitv"]
 	path = vim/pack/03_plugins/start/gitv
 	url = https://github.com/gregsexton/gitv.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/go"]
 	path = vim/pack/03_plugins/start/go
 	url = https://github.com/fatih/vim-go.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/groovy"]
 	path = vim/pack/03_plugins/start/groovy
 	url = https://github.com/endSly/groovy.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/hashicorp-tools"]
 	path = vim/pack/03_plugins/start/hashicorp-tools
 	url = https://github.com/hashivim/vim-hashicorp-tools.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/indentLine"]
 	path = vim/pack/03_plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/is"]
 	path = vim/pack/03_plugins/start/is
 	url = https://github.com/haya14busa/is.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/javascript"]
 	path = vim/pack/03_plugins/start/javascript
 	url = https://github.com/pangloss/vim-javascript.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/json"]
 	path = vim/pack/03_plugins/start/json
 	url = https://github.com/elzr/vim-json.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/listtoggle"]
 	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/logrotate"]
 	path = vim/pack/03_plugins/start/logrotate
 	url = https://github.com/moon-musick/vim-logrotate.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/logstash"]
 	path = vim/pack/03_plugins/start/logstash
 	url = https://github.com/robbles/logstash.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/lua"]
 	path = vim/pack/03_plugins/start/lua
 	url = https://github.com/tbastos/vim-lua.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/markdown"]
 	path = vim/pack/03_plugins/start/markdown
 	url = https://github.com/rhysd/vim-gfm-syntax.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/monit"]
 	path = vim/pack/03_plugins/start/monit
 	url = https://github.com/tmatilai/vim-monit.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/multiple-cursors"]
 	path = vim/pack/03_plugins/start/multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/mw-utils"]
 	path = vim/pack/03_plugins/start/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/neco-syntax"]
 	path = vim/pack/03_plugins/start/neco-syntax
 	url = https://github.com/Shougo/neco-syntax.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/neco-vim"]
 	path = vim/pack/03_plugins/start/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/neoinclude"]
 	path = vim/pack/03_plugins/start/neoinclude
 	url = https://github.com/Shougo/neoinclude.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/neosnippet"]
 	path = vim/pack/03_plugins/start/neosnippet
 	url = https://github.com/Shougo/neosnippet.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/neosnippet-snippets"]
 	path = vim/pack/03_plugins/start/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/nerdcommenter"]
 	path = vim/pack/03_plugins/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/nerdtree"]
 	path = vim/pack/03_plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/nerdtree-git-plugin"]
 	path = vim/pack/03_plugins/start/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/nerdtree-syntax-highlight"]
 	path = vim/pack/03_plugins/start/nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/nerdtree-tabs"]
 	path = vim/pack/03_plugins/start/nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/nginx"]
 	path = vim/pack/03_plugins/start/nginx
 	url = https://github.com/othree/nginx-contrib-vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/numbers"]
 	path = vim/pack/03_plugins/start/numbers
 	url = https://github.com/b3niup/numbers.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/nvim-yarp"]
 	path = vim/pack/03_plugins/start/nvim-yarp
 	url = https://github.com/roxma/nvim-yarp.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/perl"]
 	path = vim/pack/03_plugins/start/perl
 	url = https://github.com/vim-perl/vim-perl.git
-	branch = dev
-	shallow = true
 [submodule "vim/pack/03_plugins/start/php"]
 	path = vim/pack/03_plugins/start/php
 	url = https://github.com/StanAngeloff/php.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/pyenv"]
 	path = vim/pack/03_plugins/start/pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/python-combined"]
 	path = vim/pack/03_plugins/start/python-combined
 	url = https://github.com/mitsuhiko/vim-python-combined.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/rainbow"]
 	path = vim/pack/03_plugins/start/rainbow
 	url = https://github.com/luochen1990/rainbow.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/rhubarb"]
 	path = vim/pack/03_plugins/start/rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/rbenv"]
 	path = vim/pack/03_plugins/start/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/rooter"]
 	path = vim/pack/03_plugins/start/rooter
 	url = https://github.com/airblade/vim-rooter.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/rspec"]
 	path = vim/pack/03_plugins/start/rspec
 	url = https://github.com/keith/rspec.vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/ruby"]
 	path = vim/pack/03_plugins/start/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/ruby-chef"]
 	path = vim/pack/03_plugins/start/ruby-chef
 	url = https://github.com/vadv/vim-chef.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/ruby-chef-ft"]
 	path = vim/pack/03_plugins/start/ruby-chef-ft
 	url = https://github.com/dougireton/vim-chef.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/sleuth"]
 	path = vim/pack/03_plugins/start/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/snippets"]
 	path = vim/pack/03_plugins/start/snippets
 	url = https://github.com/honza/vim-snippets.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/solarized8"]
 	path = vim/pack/03_plugins/start/solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/startify"]
 	path = vim/pack/03_plugins/start/startify
 	url = https://github.com/mhinz/vim-startify.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/surround"]
 	path = vim/pack/03_plugins/start/surround
 	url = https://github.com/tpope/vim-surround.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/systemd-syntax"]
 	path = vim/pack/03_plugins/start/systemd-syntax
 	url = https://github.com/Matt-Deacalion/vim-systemd-syntax.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/tabular"]
 	path = vim/pack/03_plugins/start/tabular
 	url = https://github.com/godlygeek/tabular.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/tagbar"]
 	path = vim/pack/03_plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/terraform-completion"]
 	path = vim/pack/03_plugins/start/terraform-completion
 	url = https://github.com/juliosueiras/vim-terraform-completion.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/terminus"]
 	path = vim/pack/03_plugins/start/terminus
 	url = https://github.com/wincent/terminus.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/test"]
 	path = vim/pack/03_plugins/start/test
 	url = https://github.com/janko-m/vim-test.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/tlib"]
 	path = vim/pack/03_plugins/start/tlib
 	url = https://github.com/tomtom/tlib_vim.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/tmux"]
 	path = vim/pack/03_plugins/start/tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/tmux-focus-events"]
 	path = vim/pack/03_plugins/start/tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/tmux-navigator"]
 	path = vim/pack/03_plugins/start/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/undotree"]
 	path = vim/pack/03_plugins/start/undotree
 	url = https://github.com/mbbill/undotree.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/vim-hug-neovim-rpc"]
 	path = vim/pack/03_plugins/start/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/virtualenv"]
 	path = vim/pack/03_plugins/start/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/which-key"]
 	path = vim/pack/03_plugins/start/which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/xolox-misc"]
 	path = vim/pack/03_plugins/start/xolox-misc
 	url = https://github.com/xolox/vim-misc.git
-	shallow = true
 [submodule "vim/pack/03_plugins/start/zeavim"]
 	path = vim/pack/03_plugins/start/zeavim
 	url = https://github.com/KabbAmine/zeavim.vim.git
-	shallow = true
 [submodule "zsh/plugins/async"]
 	path = zsh/plugins/async
 	url = https://github.com/mafredri/zsh-async.git
-	shallow = true
 [submodule "zsh/plugins/autoenv"]
 	path = zsh/plugins/autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv.git
-	shallow = true
 [submodule "zsh/plugins/autopair"]
 	path = zsh/plugins/autopair
 	url = https://github.com/hlissner/zsh-autopair.git
-	shallow = true
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-	shallow = true
 [submodule "zsh/plugins/cdr"]
 	path = zsh/plugins/cdr
 	url = https://github.com/willghatch/zsh-cdr.git
-	shallow = true
 [submodule "zsh/plugins/completions"]
 	path = zsh/plugins/completions
 	url = https://github.com/zsh-users/zsh-completions.git
-	shallow = true
 [submodule "zsh/plugins/dircolors-solarized"]
 	path = zsh/plugins/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
-	shallow = true
 [submodule "zsh/plugins/history-substring-search"]
 	path = zsh/plugins/history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-	shallow = true
 [submodule "zsh/plugins/pure"]
 	path = zsh/plugins/pure
 	url = https://github.com/intelfx/pure.git
-	shallow = true
 [submodule "zsh/plugins/syntax-highlighting"]
 	path = zsh/plugins/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-	shallow = true
 [submodule "zsh/plugins/tmux-zsh-vim-titles"]
 	path = zsh/plugins/tmux-zsh-vim-titles
 	url = https://github.com/MikeDacre/tmux-zsh-vim-titles.git
-	shallow = true
 [submodule "zsh/plugins/tmuxrepl"]
 	path = zsh/plugins/tmuxrepl
 	url = https://github.com/csurfer/tmuxrepl.git
-	shallow = true
