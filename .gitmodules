@@ -393,6 +393,7 @@
 [submodule "vim/pack/03_plugins/start/perl"]
 	path = vim/pack/03_plugins/start/perl
 	url = https://github.com/vim-perl/vim-perl.git
+	branch = dev
 	shallow = true
 [submodule "vim/pack/03_plugins/start/php"]
 	path = vim/pack/03_plugins/start/php
