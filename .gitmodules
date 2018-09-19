@@ -519,8 +519,8 @@
 	path = vim/pack/03_plugins/start/xolox-misc
 	url = https://github.com/xolox/vim-misc.git
 	shallow = true
-[submodule "vim/pack/03_plugins/start/zealvim"]
-	path = vim/pack/03_plugins/start/zealvim
+[submodule "vim/pack/03_plugins/start/zeavim"]
+	path = vim/pack/03_plugins/start/zeavim
 	url = https://github.com/KabbAmine/zeavim.vim.git
 	shallow = true
 [submodule "zsh/plugins/async"]
