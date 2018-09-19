@@ -42,7 +42,7 @@ print "  ...done"
 # Make sure submodules are installed
 print "Syncing submodules..."
 git submodule sync > /dev/null
-git submodule update --init --recursive --depth 1 > /dev/null
+git submodule update --init --recursive --remote --no-fetch --depth 1 > /dev/null
 git clean -ffd
 print "  ...done"
 
