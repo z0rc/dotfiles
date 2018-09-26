@@ -163,9 +163,6 @@
 [submodule "vim/pack/03_plugins/start/deoplete-jedi"]
 	path = vim/pack/03_plugins/start/deoplete-jedi
 	url = https://github.com/zchee/deoplete-jedi.git
-[submodule "vim/pack/03_plugins/start/deoplete-ruby"]
-	path = vim/pack/03_plugins/start/deoplete-ruby
-	url = https://github.com/fishbullet/deoplete-ruby.git
 [submodule "vim/pack/03_plugins/start/deoplete-zsh"]
 	path = vim/pack/03_plugins/start/deoplete-zsh
 	url = https://github.com/zchee/deoplete-zsh.git
