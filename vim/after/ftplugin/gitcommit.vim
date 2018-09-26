@@ -1,2 +1,1 @@
-set nobackup nowritebackup
-set noundofile
+setlocal nobackup nowritebackup noundofile
