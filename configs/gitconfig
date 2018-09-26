@@ -44,7 +44,7 @@
 	excludesfiles = ~/.config/git/ignore
 	autocrlf = input
 	whitespace = cr-at-eol
-	pager = which diff-so-fancy >/dev/null 2>&1 && diff-so-fancy | less --tabs=4 -RFX || less -RFX
+	pager = which diff-so-fancy >/dev/null 2>&1 && diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): ' || less -RFX
 [submodule]
 	fetchJobs = 5
 	recurse = true
