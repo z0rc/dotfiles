@@ -53,11 +53,11 @@ Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
 ```sh
 git clone https://github.com/z0rc/dotfiles.git "$HOME/.local/dotfiles"
-$HOME/.local/dotfiles/deploy.sh
+$HOME/.local/dotfiles/deploy.zsh
 chsh -s /bin/zsh
 ```
 
-[Deployment script](deploy.sh) helps to set up all required symlinks after the
+[Deployment script](deploy.zsh) helps to set up all required symlinks after the
 initial clone. Also it adds cron job to pull updates every midnight and serves
 as a post-merge git hook, so you don't have to care about updating submodules
 after successful pull.

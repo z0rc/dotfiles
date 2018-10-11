@@ -49,7 +49,7 @@ print "  ...done"
 # Install hook to call deploy script after successful pull
 print "Installing git hook..."
 mkdir -p .git/hooks
-ln -sf ../../deploy.sh .git/hooks/post-merge
+ln -sf ../../deploy.zsh .git/hooks/post-merge
 print "  ...done"
 
 if (( ${+commands[make]} )); then
