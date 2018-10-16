@@ -40,6 +40,7 @@
 [diff]
 	compactionHeuristic = true
 	algorithm = histogram
+	submodule = log
 [core]
 	excludesfiles = ~/.config/git/ignore
 	autocrlf = input
@@ -52,3 +53,5 @@
 	recurse = true
 [help]
 	autocorrect = 5
+[status]
+	submoduleSummary = true
