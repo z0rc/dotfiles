@@ -44,7 +44,7 @@ presence](#zero-home-presence).
 # Installation
 Requirements:
 * `zsh` 5.1 or newer (async stuff requires recent enough version of zsh)
-* `git` (all external components are added as git submodules
+* `git` (all external components are added as git submodules)
 * `make` (optional: required to build mongo-hacker and install git helpers)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
 * `python3` and `pip3` (optional: used by several vim plugins, but they won't be activated, if python3 is missing)
