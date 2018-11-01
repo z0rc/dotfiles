@@ -17,7 +17,7 @@ brew 'gnu-tar'
 brew 'gnupg'
 brew 'go'
 brew 'grc'
-brew 'grep' args: ['with-default-names']
+brew 'grep', args: ['with-default-names']
 brew 'htop'
 brew 'jmeter'
 brew 'jq'
