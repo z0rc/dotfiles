@@ -33,21 +33,21 @@ export ANSIBLE_LOCAL_TEMP="${XDG_RUNTIME_DIR}/ansible/tmp"
 export GOPATH="${HOME}/.local/go"
 
 # Ensure we have local paths enabled
-path=(/usr/local/bin /usr/local/sbin $path)
+PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 
 # Enable brew's coreutils on macOS, if installed
 if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]]; then
-    path=(/usr/local/opt/coreutils/libexec/gnubin $path)
+    PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 fi
 if [[ -d /usr/local/opt/coreutils/libexec/gnuman ]]; then
-    manpath=(/usr/local/opt/coreutils/libexec/gnuman $manpath)
+    MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
 fi
 
 # Enable local binaries and man pages
-path=("${HOME}/.local/bin" $path)
-manpath=("${XDG_DATA_HOME}/man" $manpath)
+PATH="${HOME}/.local/bin":${PATH}
+MANPATH="${XDG_DATA_HOME}/man":${MANPATH}
 
 # Add go binaries to paths
-path=("$GOPATH/bin" $path)
+PATH="${GOPATH}/bin":${PATH}
 
 export PATH MANPATH
