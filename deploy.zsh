@@ -144,7 +144,7 @@ ln -snf "${SCRIPT_DIR}/luaenv/luaenv-luarocks" "${XDG_DATA_HOME}/luaenv/plugins/
 print "  ...done"
 
 # Link goenv plugins to $GOENV_ROOT
-print "Linking pyenv plugins..."
+print "Linking goenv plugins..."
 ln -snf "${SCRIPT_DIR}/goenv/goenv/plugins/go-build" "${XDG_DATA_HOME}/goenv/plugins/go-build"
 print "  ...done"
 
