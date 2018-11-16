@@ -42,10 +42,10 @@ source "${DOTFILES}/tools/fzf/shell/completion.zsh"
 # - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
 # - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
 # - '.' matches "regular files"
-# - 'mh+24' matches files (or directories or whatever) that are older than 24 hours.
+# - 'm-20' matches files (or directories or whatever) that are older than 20 hours.
 autoload -Uz compinit
-if [[ -n "${XDG_CACHE_HOME}/zsh/compdump"(#qN.mh+24) ]]; then
-    compinit -d "${XDG_CACHE_HOME}/zsh/compdump"
+if [[ -n "${XDG_CACHE_HOME}/zsh/compdump"(#qN.m-20) ]]; then
+    compinit -i -d "${XDG_CACHE_HOME}/zsh/compdump"
 else
-    compinit -C -d "${XDG_CACHE_HOME}/zsh/compdump"
+    compinit -i -C -d "${XDG_CACHE_HOME}/zsh/compdump"
 fi
