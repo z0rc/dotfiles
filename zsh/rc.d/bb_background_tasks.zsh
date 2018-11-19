@@ -8,7 +8,7 @@
 
 # Update tldr pages once a day (see completion config for explanation)
 {
-    if [[ -z "${XDG_DATA_HOME}/tldr"(#qNFm-20) ]]; then
+    if [[ -z "${XDG_DATA_HOME}/tldr"(#qNFmh+20) ]]; then
         tldr -u < /dev/null &> /dev/null
     fi
 } &!
