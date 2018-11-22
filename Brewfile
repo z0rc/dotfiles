@@ -62,7 +62,7 @@ brew 'tmux'
 brew 'tree'
 brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
 brew 'unrar'
-brew 'vim', args: ['with-luajit', 'with-python3', 'with-override-system-vi']
+brew 'vim', args: ['with-luajit', 'with-override-system-vi', 'with-gettext']
 brew 'watch'
 brew 'wget'
 brew 'yamllint'
@@ -94,6 +94,7 @@ cask 'telegram-desktop'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
-mas 'Tweetbot', id: 557168941
+mas 'Microsoft Remote Desktop', id: 1295203466
+mas 'Tweetbot', id: 1384080005
 mas 'The Unarchiver', id: 425424353
 mas 'Reeder', id: 880001334
