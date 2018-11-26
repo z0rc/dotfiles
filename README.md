@@ -83,21 +83,17 @@ plugins, please install vim with python3 and ruby support built-in.
 
 Debian/Ubuntu:
 ```
-apt-get install vim-nox
+apt install vim-nox
 ```
 
 CentOS/RHEL/Fedora:
-```
-yum install vim-enhanced
-```
-or
 ```
 dnf install vim-enhanced
 ```
 
 MacOS:
 ```
-brew install vim --with-python3
+brew install vim
 ```
 
 # Configuration
