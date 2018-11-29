@@ -13,7 +13,7 @@ brew 'black'
 brew 'brew-gem'
 brew 'colordiff'
 brew 'coreutils'
-brew 'curl', args: ['with-c-ares', 'with-gssapi', 'with-libidn', 'with-nghttp2']
+brew 'curl', args: ['with-c-ares', 'with-gssapi', 'with-nghttp2']
 brew 'flake8'
 brew 'git'
 brew 'gnu-sed'
@@ -60,9 +60,9 @@ brew 'the_silver_searcher'
 brew 'tig'
 brew 'tmux'
 brew 'tree'
-brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
+brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD', 'with-libyaml', 'with-jansson']
 brew 'unrar'
-brew 'vim', args: ['with-luajit', 'with-override-system-vi', 'with-gettext']
+brew 'vim'
 brew 'watch'
 brew 'wget'
 brew 'yamllint'
