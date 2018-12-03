@@ -68,6 +68,10 @@ if (( ${+commands[make]} )); then
     print "  ...done"
 fi
 
+print "Installing git-quick-stats..."
+ln -snf "${SCRIPT_DIR}/tools/git-quick-stats/git-quick-stats" "${HOME}/.local/bin/git-quick-stats"
+print "  ...done"
+
 print "Installing fzf..."
 pushd tools/fzf
 ./install --bin &> /dev/null
