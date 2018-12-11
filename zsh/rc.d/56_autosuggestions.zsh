@@ -9,4 +9,4 @@ zstyle :bracketed-paste-magic paste-finish z-asug-e
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 # Temporary fix for missing directory suggestions
 # https://github.com/zsh-users/zsh-autosuggestions/issues/379
-ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(expand-or-complete)
+#ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(expand-or-complete fzf-\*)
