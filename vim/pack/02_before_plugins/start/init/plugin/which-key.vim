@@ -57,7 +57,7 @@ let g:which_key_map.t={
     \'name' : 'Toggles',
     \'l' : ['LToggle', 'Location list'],
     \'q' : ['QToggle', 'Quickfix window'],
-    \'n' : ['ToggleNERDTreeTabsFind()', 'NERDTree'],
+    \'n' : ['NERDTreeTabsToggle', 'NERDTree'],
     \'t' : ['TagbarToggle', 'Tagbar'],
     \'N' : ['NumbersToggle', 'Numbers'],
     \'u' : ['UndotreeToggle', 'Undotree']
