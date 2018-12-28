@@ -180,10 +180,11 @@ fgl () {
 # git branch selector with fzf
 fgb () {
     git rev-parse --is-inside-work-tree &> /dev/null || return
-    git checkout $(git branch --color=always | grep -v '/HEAD\s' | sort --ignore-case |
-                   fzf --ansi --height=50% --tac --preview-window=right:70% --query="${@}" \
+    git checkout $(git branch --color=always -a | grep -v 'HEAD' | sort --ignore-case |
+                   fzf --ansi --height=50% --no-sort --reverse --tac --preview-window=right:70% --query="${@}" \
+                       --header='Red are remote, white are local, green is current' \
                        --preview='git log --color=always --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -200' |
-                   sed 's/^..//' | cut -d' ' -f1 | sed 's#^remotes/##')
+                   sed 's/^..//' | sed 's#^remotes/origin/##')
 }
 
 # simple find shortener
