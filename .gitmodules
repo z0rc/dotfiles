@@ -403,15 +403,15 @@
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "zsh/plugins/cdr"]
-	path = zsh/plugins/cdr
-	url = https://github.com/willghatch/zsh-cdr.git
 [submodule "zsh/plugins/completions"]
 	path = zsh/plugins/completions
 	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "zsh/plugins/dircolors-solarized"]
 	path = zsh/plugins/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "zsh/plugins/fzf-z"]
+	path = zsh/plugins/fzf-z
+	url = https://github.com/andrewferrier/fzf-z.git
 [submodule "zsh/plugins/history-substring-search"]
 	path = zsh/plugins/history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
@@ -427,3 +427,6 @@
 [submodule "zsh/plugins/tmuxrepl"]
 	path = zsh/plugins/tmuxrepl
 	url = https://github.com/csurfer/tmuxrepl.git
+[submodule "zsh/plugins/z"]
+	path = zsh/plugins/z
+	url = https://github.com/agkozak/zsh-z.git

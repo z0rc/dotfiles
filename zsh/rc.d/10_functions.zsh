@@ -157,16 +157,6 @@ vpaste () {
     fi
 }
 
-# fzf selector for cdr
-fcd () {
-    local selection
-    # cdr outputs in format '<number> <folder>', where number used for sorting by recent access, so search goes through second column
-    # tr removes slashes used for escaping spaces (and maybe something else?)
-    # also we have to explicitly enable filename expansion in zsh via ${~a}
-    selection=${~$(cdr -l | tr -d '\\' | fzf --no-multi --no-sort --with-nth=2..-1 --reverse --height=40% --preview='pd={2..-1}; ls -AFh --group-directories-first --color ${~pd}' --query="${@}" --select-1)[2,-1]}
-    cd ${selection}
-}
-
 # git log browser with fzf
 fgl () {
     git rev-parse --is-inside-work-tree &> /dev/null || return
@@ -185,17 +175,6 @@ fgb () {
                        --header='Red are remote, white are local, green is current' \
                        --preview='git log --color=always --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -200' |
                    sed 's/^..//' | sed 's#^remotes/origin/##')
-}
-
-# simple find shortener
-fd () {
-    if [[ ARGC -eq 1 ]]; then
-        find . -iname "*${1}*"
-    elif [[ ARGC -ge 2 ]]; then
-        find . -iname "*${1}*" ${@[2,-1]}
-    else
-        find .
-    fi
 }
 
 # sudo wrapper to handle noglob and nocorrect aliases
