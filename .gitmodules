@@ -403,6 +403,7 @@
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+	branch = develop
 [submodule "zsh/plugins/completions"]
 	path = zsh/plugins/completions
 	url = https://github.com/zsh-users/zsh-completions.git
