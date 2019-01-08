@@ -17,12 +17,13 @@ presence](#zero-home-presence).
 # Features
 * Extensive Zsh [configuration](zsh/rc.d) and [plugins](zsh/plugins):
   * [pure prompt with async vcs info](https://github.com/intelfx/pure) with couple of additional indicators
-  * [completions plugin](https://github.com/zsh-users/zsh-completions)
+  * [additional completions](https://github.com/zsh-users/zsh-completions)
   * [async autosuggestions plugin](https://github.com/zsh-users/zsh-autosuggestions)
   * [history substring search plugin](https://github.com/zsh-users/zsh-history-substring-search)
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
   * [autopair plugin](https://github.com/hlissner/zsh-autopair)
+  * [clean zsh implementation of `z`](https://github.com/agkozak/zsh-z) with [fzf-z](https://github.com/andrewferrier/fzf-z) on top
 * Vim [configuration](vim/vimrc) and [plugins](vim/pack)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
 * Other configs:
@@ -45,9 +46,13 @@ presence](#zero-home-presence).
 Requirements:
 * `zsh` 5.1 or newer (async stuff requires recent enough version of zsh)
 * `git` (all external components are added as git submodules)
+
+Recommended:
 * `make` (optional: required to build mongo-hacker and install git helpers)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
 * `python3` and `pip3` (optional: used by several vim plugins, but they won't be activated, if python3 is missing)
+* `ag` (optional: will be used by vim and fzf, if present)
+* `fd` (optional: will be used by fzf and z, if present)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
