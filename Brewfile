@@ -14,6 +14,7 @@ brew 'brew-gem'
 brew 'colordiff'
 brew 'coreutils'
 brew 'curl', args: ['with-c-ares', 'with-gssapi', 'with-nghttp2']
+brew 'fd'
 brew 'flake8'
 brew 'git'
 brew 'gnu-sed'
