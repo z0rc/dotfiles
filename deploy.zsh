@@ -70,6 +70,7 @@ fi
 
 print "Installing git-quick-stats..."
 ln -snf "${SCRIPT_DIR}/tools/git-quick-stats/git-quick-stats" "${HOME}/.local/bin/git-quick-stats"
+ln -snf "${SCRIPT_DIR}/tools/git-quick-stats/git-quick-stats.1" "${XDG_DATA_HOME}/man/man1/git-quick-stats.1"
 print "  ...done"
 
 print "Installing fzf..."
