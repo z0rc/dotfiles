@@ -55,6 +55,7 @@ let g:which_key_map.e={
 " toggles
 let g:which_key_map.t={
     \'name' : 'Toggles',
+    \'C' : ['<Plug>CapsLockToggle', 'Caps lock'],
     \'l' : ['LToggle', 'Location list'],
     \'q' : ['QToggle', 'Quickfix window'],
     \'n' : ['NERDTreeTabsToggle', 'NERDTree'],
