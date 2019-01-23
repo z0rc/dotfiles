@@ -9,5 +9,3 @@ elif (( ${+commands[ag]} )); then
 fi
 
 source "${DOTFILES}/tools/fzf/shell/key-bindings.zsh"
-
-source "${ZDOTDIR}/plugins/fzf-z/fzf-z.plugin.zsh"
