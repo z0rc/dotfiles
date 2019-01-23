@@ -23,7 +23,7 @@ presence](#zero-home-presence).
   * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
   * [autopair plugin](https://github.com/hlissner/zsh-autopair)
-  * [clean zsh implementation of `z`](https://github.com/agkozak/zsh-z) with [fzf-z](https://github.com/andrewferrier/fzf-z) on top
+  * [clean zsh implementation of `z`](https://github.com/agkozak/zsh-z)
 * Vim [configuration](vim/vimrc) and [plugins](vim/pack)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
 * Other configs:
@@ -50,9 +50,8 @@ Requirements:
 Recommended:
 * `make` (optional: required to build mongo-hacker and install git helpers)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
-* `python3` and `pip3` (optional: used by several vim plugins, but they won't be activated, if python3 is missing)
-* `ag` (optional: will be used by vim and fzf, if present)
-* `fd` (optional: will be used by fzf and z, if present)
+* `python3` and `pip3` (optional: used by several vim plugins, but they won't be activated, if vim built without python3 support)
+* [`fd`](https://github.com/sharkdp/fd) or [`ag`](https://github.com/ggreer/the_silver_searcher) (optional: will be used in fzf by default, if present)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
 Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
@@ -135,6 +134,6 @@ default. Also man pages can be put into `$XDG_DATA_HOME/man`.
 Pyenv and similar wrappers are lazy-loaded, it means that they won't be
 initialized on shell start. Activation is done on the first execution. Check
 out output of `type -f pyenv` in shell and
-[implementation](zsh/rc.d/15_many_env.zsh). Also this means, that files like
+[implementation](zsh/rc.d/14_many_env.zsh). Also this means, that files like
 `.python-version` won't work as expected, it's recommended to use autoenv.zsh
 to explicitly activate needed environment.
