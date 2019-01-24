@@ -157,6 +157,13 @@ vpaste () {
     fi
 }
 
+# z via fzf selector
+fz () {
+    cd "$(z -l | sed 's/^[0-9. ]*//' | \
+          fzf --height=50% --tac --no-sort --reverse --filepath-word --query="$*" \
+              --preview='LC_COLLATE=C ls -l -v --almost-all --group-directories-first --classify --color=always --human-readable {}' )"
+}
+
 # git log browser with fzf
 fgl () {
     git rev-parse --is-inside-work-tree &> /dev/null || return
