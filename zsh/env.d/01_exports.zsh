@@ -30,7 +30,9 @@ export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/config"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
 export HTTPIE_CONFIG_DIR="${XDG_CONFIG_HOME}/httpie"
 export ANSIBLE_LOCAL_TEMP="${XDG_RUNTIME_DIR}/ansible/tmp"
-export GOPATH="${HOME}/.local/go"
+export GOPATH="${XDG_DATA_HOME}/go"
+export GEM_HOME="${XDG_DATA_HOME}/gem"
+export GEM_SPEC_CACHE="${XDG_CACHE_HOME}/gem"
 
 # Ensure we have local paths enabled
 PATH=/usr/local/bin:/usr/local/sbin:${PATH}
@@ -47,7 +49,7 @@ fi
 PATH="${HOME}/.local/bin":${PATH}
 MANPATH="${XDG_DATA_HOME}/man":${MANPATH}
 
-# Add go binaries to paths
-PATH="${GOPATH}/bin":${PATH}
+# Add go and ruby binaries to paths
+PATH="${GOPATH}/bin":"${GEM_HOME}/bin":${PATH}
 
 export PATH MANPATH
