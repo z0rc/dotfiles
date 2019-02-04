@@ -66,12 +66,13 @@ if (( ${+commands[make]} )); then
     PREFIX="${HOME}/.local" make install > /dev/null
     popd
     print "  ...done"
-fi
 
-print "Installing git-quick-stats..."
-ln -snf "${SCRIPT_DIR}/tools/git-quick-stats/git-quick-stats" "${HOME}/.local/bin/git-quick-stats"
-ln -snf "${SCRIPT_DIR}/tools/git-quick-stats/git-quick-stats.1" "${XDG_DATA_HOME}/man/man1/git-quick-stats.1"
-print "  ...done"
+    print "Installing git-quick-stats..."
+    pushd tools/git-quick-stats
+    PREFIX="${HOME}/.local" make install > /dev/null
+    popd
+    print "  ...done"
+fi
 
 print "Installing fzf..."
 pushd tools/fzf
