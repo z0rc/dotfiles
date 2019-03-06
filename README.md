@@ -106,7 +106,7 @@ export ZDOTDIR="$HOME/.local/dotfiles/zsh"
 
 into `/etc/zsh/zshenv`. Or you can do it with PAM env module.
 
-## Vim
+## Vim version
 
 Vim 8.0 or higher is required as plugins are configured via native package
 interface available in mentioned version. In order you use all bundled vim
@@ -132,7 +132,7 @@ brew install vim
 
 ## Configuration
 
-### Git
+### Git configuration
 
 Update `~/.config/git/local/user` with your email and name. Something like
 this:
@@ -145,7 +145,7 @@ this:
 
 Also you can put additional configuration in `~/.config/git/local/stuff`.
 
-### Zsh
+### Zsh configuration
 
 Keep in mind that Zsh configuration skips every global configuration file
 except `/etc/zsh/zshenv`.
@@ -157,7 +157,7 @@ You can add your local configuration into `$ZDOTDIR/env.d/9[0-9]_*` and
 Also `$ZDOTDIR/.zlogin` and `$ZDOTDIR/.zlogout` are available for
 modifications, albeit missing by default.
 
-### Vim
+### Vim configuration
 
 Add your local configuration to `$DOTFILES/vim/vimrc.local`.
 
