@@ -1,1 +1,1 @@
-let test#strategy='asyncrun'
+let g:test#strategy='asyncrun'
