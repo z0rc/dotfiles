@@ -32,6 +32,7 @@ export ANSIBLE_LOCAL_TEMP="${XDG_RUNTIME_DIR}/ansible/tmp"
 export GOPATH="${XDG_DATA_HOME}/go"
 export GEM_HOME="${XDG_DATA_HOME}/gem"
 export GEM_SPEC_CACHE="${XDG_CACHE_HOME}/gem"
+export GEMRC="${XDG_CONFIG_HOME}/gem/gemrc"
 
 # Ensure we have local paths enabled
 PATH=/usr/local/bin:/usr/local/sbin:${PATH}
