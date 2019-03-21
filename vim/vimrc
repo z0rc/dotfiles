@@ -35,7 +35,7 @@ set showcmd " show partial commands in bottom left corner
 set completeopt-=preview " don't show preview window on competion
 set completeopt+=noinsert " don't automatically insert, but select first entry
 set completeopt+=menuone " show completion menu even when there is single entry
-set pumheight=5 " limit completion popup window to 5 lines
+set shortmess+=c " shut off completion messages
 set foldlevelstart=99 " enables fold but keeps them expanded by default
 set whichwrap+=<,>,h,l,[,] " autowrap to next line for cursor movements
 set splitbelow " when splitting windows put new ones below ...
