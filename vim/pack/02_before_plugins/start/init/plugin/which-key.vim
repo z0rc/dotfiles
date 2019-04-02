@@ -55,17 +55,19 @@ let g:which_key_map.e={
 " toggles
 let g:which_key_map.t={
     \'name' : 'Toggles',
-    \'C' : ['<Plug>CapsLockToggle', 'Caps lock'],
+    \'c' : ['<Plug>CapsLockToggle', 'Caps lock'],
     \'l' : ['LToggle', 'Location list'],
     \'q' : ['QToggle', 'Quickfix window'],
-    \'n' : ['NERDTreeTabsToggle', 'NERDTree'],
     \'t' : ['TagbarToggle', 'Tagbar'],
-    \'N' : ['NumbersToggle', 'Numbers'],
+    \'n' : ['NumbersToggle', 'Numbers'],
     \'u' : ['UndotreeToggle', 'Undotree']
     \}
 
 " ag
 let g:which_key_map.a=['Ag', 'ag search']
+
+" dirvish
+let g:which_key_map.d=['<Plug>(dirvish_up)', 'Dirvish']
 
 " zeal
 nmap <leader>z <Plug>Zeavim

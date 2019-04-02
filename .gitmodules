@@ -124,9 +124,6 @@
 [submodule "vim/pack/03_plugins/start/ansible"]
 	path = vim/pack/03_plugins/start/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
-[submodule "vim/pack/03_plugins/start/anyfold"]
-	path = vim/pack/03_plugins/start/anyfold
-	url = https://github.com/pseewald/vim-anyfold.git
 [submodule "vim/pack/03_plugins/start/anzu"]
 	path = vim/pack/03_plugins/start/anzu
 	url = https://github.com/osyo-manga/vim-anzu.git
@@ -169,6 +166,12 @@
 [submodule "vim/pack/03_plugins/start/deoplete-zsh"]
 	path = vim/pack/03_plugins/start/deoplete-zsh
 	url = https://github.com/zchee/deoplete-zsh.git
+[submodule "vim/pack/03_plugins/start/dirvish"]
+	path = vim/pack/03_plugins/start/dirvish
+	url = https://github.com/justinmk/vim-dirvish.git
+[submodule "vim/pack/03_plugins/start/dirvish-git"]
+	path = vim/pack/03_plugins/start/dirvish-git
+	url = https://github.com/kristijanhusak/vim-dirvish-git.git
 [submodule "vim/pack/03_plugins/start/dockerfile"]
 	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
@@ -262,27 +265,12 @@
 [submodule "vim/pack/03_plugins/start/neoinclude"]
 	path = vim/pack/03_plugins/start/neoinclude
 	url = https://github.com/Shougo/neoinclude.vim.git
-[submodule "vim/pack/03_plugins/start/neosnippet"]
-	path = vim/pack/03_plugins/start/neosnippet
-	url = https://github.com/Shougo/neosnippet.vim.git
 [submodule "vim/pack/03_plugins/start/neosnippet-snippets"]
 	path = vim/pack/03_plugins/start/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
 [submodule "vim/pack/03_plugins/start/nerdcommenter"]
 	path = vim/pack/03_plugins/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/pack/03_plugins/start/nerdtree"]
-	path = vim/pack/03_plugins/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/pack/03_plugins/start/nerdtree-git-plugin"]
-	path = vim/pack/03_plugins/start/nerdtree-git-plugin
-	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule "vim/pack/03_plugins/start/nerdtree-syntax-highlight"]
-	path = vim/pack/03_plugins/start/nerdtree-syntax-highlight
-	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
-[submodule "vim/pack/03_plugins/start/nerdtree-tabs"]
-	path = vim/pack/03_plugins/start/nerdtree-tabs
-	url = https://github.com/jistr/vim-nerdtree-tabs.git
 [submodule "vim/pack/03_plugins/start/nginx"]
 	path = vim/pack/03_plugins/start/nginx
 	url = https://github.com/othree/nginx-contrib-vim.git
@@ -331,9 +319,6 @@
 [submodule "vim/pack/03_plugins/start/sleuth"]
 	path = vim/pack/03_plugins/start/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
-[submodule "vim/pack/03_plugins/start/snippets"]
-	path = vim/pack/03_plugins/start/snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/pack/03_plugins/start/solarized8"]
 	path = vim/pack/03_plugins/start/solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git

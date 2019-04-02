@@ -2,8 +2,6 @@
 " else use AutoPairs mapping
 imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>\<Plug>AutoPairsReturn"
 
-" <TAB>: expand neosnippets
-imap <expr> <TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char
 imap <expr> <C-h> deoplete#smart_close_popup()."\<C-h>"
 imap <expr> <BS> deoplete#smart_close_popup()."\<C-h>"
