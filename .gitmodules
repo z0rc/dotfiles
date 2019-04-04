@@ -265,9 +265,6 @@
 [submodule "vim/pack/03_plugins/start/neoinclude"]
 	path = vim/pack/03_plugins/start/neoinclude
 	url = https://github.com/Shougo/neoinclude.vim.git
-[submodule "vim/pack/03_plugins/start/neosnippet-snippets"]
-	path = vim/pack/03_plugins/start/neosnippet-snippets
-	url = https://github.com/Shougo/neosnippet-snippets.git
 [submodule "vim/pack/03_plugins/start/nerdcommenter"]
 	path = vim/pack/03_plugins/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
