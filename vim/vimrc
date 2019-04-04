@@ -39,6 +39,7 @@ set shortmess+=c " shut off completion messages
 set whichwrap+=<,>,h,l,[,] " autowrap to next line for cursor movements
 set splitbelow " when splitting windows put new ones below ...
 set splitright " ...and to the right
+set path+=** " search subfolders recursively
 
 " Scrolling
 set scrolloff=8 " start scrolling when we're 8 lines away from margins
