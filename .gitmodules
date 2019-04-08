@@ -145,6 +145,9 @@
 [submodule "vim/pack/03_plugins/start/capslock"]
 	path = vim/pack/03_plugins/start/capslock
 	url = https://github.com/tpope/vim-capslock.git
+[submodule "vim/pack/03_plugins/start/colorizer"]
+	path = vim/pack/03_plugins/start/colorizer
+	url = https://github.com/chrisbra/Colorizer
 [submodule "vim/pack/03_plugins/start/committia"]
 	path = vim/pack/03_plugins/start/committia
 	url = https://github.com/rhysd/committia.vim.git
@@ -250,6 +253,9 @@
 [submodule "vim/pack/03_plugins/start/monit"]
 	path = vim/pack/03_plugins/start/monit
 	url = https://github.com/tmatilai/vim-monit.git
+[submodule "vim/pack/03_plugins/start/move"]
+	path = vim/pack/03_plugins/start/move
+	url = https://github.com/matze/vim-move.git
 [submodule "vim/pack/03_plugins/start/multiple-cursors"]
 	path = vim/pack/03_plugins/start/multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
