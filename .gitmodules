@@ -178,9 +178,6 @@
 [submodule "vim/pack/03_plugins/start/easymotion"]
 	path = vim/pack/03_plugins/start/easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
-[submodule "vim/pack/03_plugins/start/easytags"]
-	path = vim/pack/03_plugins/start/easytags
-	url = https://github.com/xolox/vim-easytags.git
 [submodule "vim/pack/03_plugins/start/editorconfig"]
 	path = vim/pack/03_plugins/start/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
@@ -217,6 +214,9 @@
 [submodule "vim/pack/03_plugins/start/groovy"]
 	path = vim/pack/03_plugins/start/groovy
 	url = https://github.com/endSly/groovy.vim.git
+[submodule "vim/pack/03_plugins/start/gutentags"]
+	path = vim/pack/03_plugins/start/gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
 [submodule "vim/pack/03_plugins/start/hashicorp-tools"]
 	path = vim/pack/03_plugins/start/hashicorp-tools
 	url = https://github.com/hashivim/vim-hashicorp-tools.git
