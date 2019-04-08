@@ -401,9 +401,6 @@
 [submodule "zsh/plugins/syntax-highlighting"]
 	path = zsh/plugins/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/plugins/tmux-zsh-vim-titles"]
-	path = zsh/plugins/tmux-zsh-vim-titles
-	url = https://github.com/MikeDacre/tmux-zsh-vim-titles.git
 [submodule "zsh/plugins/tmuxrepl"]
 	path = zsh/plugins/tmuxrepl
 	url = https://github.com/csurfer/tmuxrepl.git
