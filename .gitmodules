@@ -249,7 +249,7 @@
 	url = https://github.com/tbastos/vim-lua.git
 [submodule "vim/pack/03_plugins/start/markdown"]
 	path = vim/pack/03_plugins/start/markdown
-	url = https://github.com/plasticboy/vim-markdown.git
+	url = https://github.com/gabrielelana/vim-markdown.git
 [submodule "vim/pack/03_plugins/start/monit"]
 	path = vim/pack/03_plugins/start/monit
 	url = https://github.com/tmatilai/vim-monit.git
