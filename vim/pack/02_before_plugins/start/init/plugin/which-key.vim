@@ -13,15 +13,13 @@ let g:which_key_map.g={
     \'l' : ['Glog', 'Log'],
     \'f' : ['Gfetch', 'Fetch'],
     \'b' : ['Gblame', 'Blame'],
-    \'k' : ['Gitv', 'Gitk']
-    \}
-
-" gitgutter hunks menu
-let g:which_key_map.g.h={
-    \'name' : 'Hunks',
-    \'p' : ['<Plug>GitGutterPreviewHunk', 'Preview'],
-    \'u' : ['<Plug>GitGutterUndoHunk', 'Undo'],
-    \'s' : ['<Plug>GitGutterStageHunk', 'Stage']
+    \'k' : ['Gitv', 'Gitk'],
+    \'h' : {
+        \'name' : 'Hunks',
+        \'p' : ['<Plug>GitGutterPreviewHunk', 'Preview'],
+        \'u' : ['<Plug>GitGutterUndoHunk', 'Undo'],
+        \'s' : ['<Plug>GitGutterStageHunk', 'Stage']
+        \}
     \}
 
 " nerdcommenter menu
@@ -56,6 +54,9 @@ let g:which_key_map.e={
 let g:which_key_map.t={
     \'name' : 'Toggles',
     \'c' : ['<Plug>CapsLockToggle', 'Caps lock'],
+    \'d' : ['<Plug>(dirvish_up)', 'Dirvish'],
+    \'s' : ['<Plug>(dirvish_split_up)', 'Dirvish split'],
+    \'v' : ['<Plug>(dirvish_vsplit_up)', 'Dirvish vsplit'],
     \'l' : ['LToggle', 'Location list'],
     \'q' : ['QToggle', 'Quickfix window'],
     \'t' : ['TagbarToggle', 'Tagbar'],
@@ -65,9 +66,6 @@ let g:which_key_map.t={
 
 " ag
 let g:which_key_map.a=['Ag', 'ag search']
-
-" dirvish
-let g:which_key_map.d=['<Plug>(dirvish_up)', 'Dirvish']
 
 " zeal
 nmap <leader>z <Plug>Zeavim
@@ -113,6 +111,25 @@ let g:which_key_map['\']={
     \'n'  : ['<Plug>(easymotion-n)', 'Jump to latest "/" or "?" forward'],
     \'N'  : ['<Plug>(easymotion-N)', 'Jump to latest "/" or "?" backward'],
     \'s'  : ['<Plug>(easymotion-s)', 'Find char forward and backward'],
+    \}
+
+" delete to back hole register
+" paste and keep it available for further paste
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+let g:which_key_map.d=['"_d', 'Delete']
+let g:which_key_map.p=['"_dP"', 'Paste']
+
+" buffer navigation
+let g:which_key_map.b = {
+    \'name' : 'Buffer',
+    \'d' : ['bdelete', 'Delete buffer'],
+    \'f' : ['bfirst', 'First buffer'],
+    \'l' : ['blast', 'Last buffer'],
+    \'n' : ['bnext', 'Next buffer'],
+    \'p' : ['bprevious', 'Previous buffer'],
+    \'s' : ['Startify', 'Start buffer']
     \}
 
 call which_key#register('\', 'g:which_key_map')
