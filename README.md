@@ -154,6 +154,9 @@ You can add your local configuration into `$ZDOTDIR/env.d/9[0-9]_*` and
 `$ZDOTDIR/rc.d/9[0-9]_*`. The difference is that `env.d` is sourced always while
 `rc.d` is sourced in interactive session only.
 
+Also `$ZDOTDIR/.zlogin` and `$ZDOTDIR/.zlogout` are available for
+modifications, albeit missing by default.
+
 ### Vim configuration
 
 Add your local configuration to `$DOTFILES/vim/vimrc.local`.
