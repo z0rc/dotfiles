@@ -21,8 +21,8 @@ presence](#zero-home-presence).
 ## Features
 
 * Extensive Zsh [configuration](zsh/rc.d) and [plugins](zsh/plugins):
-  * [pure prompt with async vcs info](https://github.com/intelfx/pure) with
-    couple of additional indicators
+  * [powerline10k](https://github.com/romkatv/powerlevel10k) prompt stylized
+    like [pure](https://github.com/sindresorhus/pure)
   * [additional completions](https://github.com/zsh-users/zsh-completions)
   * [async autosuggestions
     plugin](https://github.com/zsh-users/zsh-autosuggestions)
