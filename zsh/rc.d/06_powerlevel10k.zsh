@@ -42,14 +42,13 @@ typeset -g POWERLEVEL9K_CUSTOM_MANY_ENV_BACKGROUND=none
 typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     context custom_fm dir_writable dir vcs custom_many_env aws status command_execution_time background_jobs)
 
-typeset -ga POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+typeset -g POWERLEVEL9K_DISABLE_RPROMPT=true
 
 local p='%#'
 local ok="%F{white}${p}%f"
 local err="%F{red}${p}%f"
 
 typeset -g POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-typeset -g POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=
 typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%(?.${ok}.${err}) "
