@@ -9,3 +9,6 @@ bindkey "^X^E" edit-command-line
 # Ctrl+W stops on path delimiters
 autoload -U select-word-style
 select-word-style bash
+
+# zrecompile to compile some plugins
+autoload -U zrecompile

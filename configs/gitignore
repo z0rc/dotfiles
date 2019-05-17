@@ -47,3 +47,5 @@ Session.vim
 # autoenv
 .autoenv.zsh
 .autoenv_leave.zsh
+# compiled zsh script
+*.zwc
