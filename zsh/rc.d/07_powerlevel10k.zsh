@@ -45,8 +45,8 @@ typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 typeset -ga POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
 local p='%#'
-local ok="%F{076}${p}%f"
-local err="%F{196}${p}%f"
+local ok="%F{white}${p}%f"
+local err="%F{red}${p}%f"
 
 typeset -g POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 typeset -g POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
