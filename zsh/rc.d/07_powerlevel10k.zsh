@@ -29,7 +29,7 @@ _p10k_indicate_env() {
             elif [[ -n "${(P)wrapper_root}" ]]; then
                 local wrapper_version_name=$(${wrapper} version-name)
                 if [[ "${wrapper_version_name}" != "system" ]]; then
-                    echo -n "${wrapper}-local:${wrapper_version_name}"
+                    echo -n "${wrapper}:${wrapper_version_name}"
                 fi
             fi
         done
@@ -40,7 +40,7 @@ typeset -g POWERLEVEL9K_CUSTOM_MANY_ENV_FOREGROUND="green"
 typeset -g POWERLEVEL9K_CUSTOM_MANY_ENV_BACKGROUND=none
 
 typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    ssh custom_fm dir_writable dir vcs custom_many_env status command_execution_time background_jobs)
+    context custom_fm dir_writable dir vcs custom_many_env aws status command_execution_time background_jobs)
 
 typeset -ga POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
@@ -49,7 +49,7 @@ local ok="%F{076}${p}%f"
 local err="%F{196}${p}%f"
 
 typeset -g POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-typeset -g POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
+typeset -g POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=
 typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%(?.${ok}.${err}) "
@@ -96,7 +96,6 @@ typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=none
 typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=009
 typeset -g POWERLEVEL9K_CARRIAGE_RETURN_ICON=
 
-typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
 typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=none
 typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=101
 typeset -g POWERLEVEL9K_EXECUTION_TIME_ICON=
@@ -105,6 +104,13 @@ typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
 typeset -g POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=none
 typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_COLOR=002
 typeset -g POWERLEVEL9K_BACKGROUND_JOBS_ICON='☰'
+
+typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,ROOT,REMOTE_SUDO,REMOTE,SUDO}_BACKGROUND=none
+typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,REMOTE_SUDO,REMOTE,SUDO}_FOREGROUND=244
+typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=011
+
+typeset -g POWERLEVEL9K_AWS_BACKGROUND=none
+typeset -g POWERLEVEL9K_AWS_FOREGROUND=208
 
 # Enable pure prompt
 source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
