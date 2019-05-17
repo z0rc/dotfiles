@@ -40,7 +40,7 @@ typeset -g POWERLEVEL9K_CUSTOM_MANY_ENV_FOREGROUND="green"
 typeset -g POWERLEVEL9K_CUSTOM_MANY_ENV_BACKGROUND=none
 
 typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    ssh context custom_fm dir_writable dir vcs custom_many_env status command_execution_time background_jobs)
+    ssh custom_fm dir_writable dir vcs custom_many_env status command_execution_time background_jobs)
 
 typeset -ga POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
@@ -105,10 +105,6 @@ typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
 typeset -g POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=none
 typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_COLOR=002
 typeset -g POWERLEVEL9K_BACKGROUND_JOBS_ICON='☰'
-
-typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,ROOT,REMOTE_SUDO,REMOTE,SUDO}_BACKGROUND=none
-typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,REMOTE_SUDO,REMOTE,SUDO}_FOREGROUND=244
-typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=011
 
 # Enable pure prompt
 source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
