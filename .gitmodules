@@ -379,9 +379,6 @@
 [submodule "vim/pack/03_plugins/start/zeavim"]
 	path = vim/pack/03_plugins/start/zeavim
 	url = https://github.com/KabbAmine/zeavim.vim.git
-[submodule "zsh/plugins/async"]
-	path = zsh/plugins/async
-	url = https://github.com/mafredri/zsh-async.git
 [submodule "zsh/plugins/autoenv"]
 	path = zsh/plugins/autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv.git
