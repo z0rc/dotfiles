@@ -40,7 +40,7 @@ typeset -g POWERLEVEL9K_CUSTOM_MANY_ENV_FOREGROUND="green"
 typeset -g POWERLEVEL9K_CUSTOM_MANY_ENV_BACKGROUND=none
 
 typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    context custom_fm dir_writable dir vcs custom_many_env aws status command_execution_time background_jobs)
+    custom_fm context dir_writable dir vcs custom_many_env aws status command_execution_time background_jobs)
 
 typeset -g POWERLEVEL9K_DISABLE_RPROMPT=true
 
