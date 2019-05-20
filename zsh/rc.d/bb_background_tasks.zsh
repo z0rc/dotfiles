@@ -1,12 +1,11 @@
 # Compile heavy scripts to increase startup speed
 {
-    setopt LOCAL_OPTIONS EXTENDED_GLOB
-    local plugin_file
-
     # completion cache
     zrecompile -pq "${XDG_CACHE_HOME}/zsh/compdump"
 
-    for plugin_file in ${ZDOTDIR}/plugins/*/*.zsh; do
+    # plugins and themes, only regular files (skip symlinks)
+    local plugin_file
+    for plugin_file in ${ZDOTDIR}/plugins/*/*.zsh{-theme,}(#q.); do
         zrecompile -pq "${plugin_file}"
     done
 } &!
