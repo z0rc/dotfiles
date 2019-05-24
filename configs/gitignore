@@ -49,3 +49,4 @@ Session.vim
 .autoenv_leave.zsh
 # compiled zsh script
 *.zwc
+*.zwc.old
