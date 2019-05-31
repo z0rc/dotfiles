@@ -133,9 +133,6 @@
 [submodule "vim/pack/03_plugins/start/auto-git-diff"]
 	path = vim/pack/03_plugins/start/auto-git-diff
 	url = https://github.com/hotwatermorning/auto-git-diff.git
-[submodule "vim/pack/03_plugins/start/auto-pairs"]
-	path = vim/pack/03_plugins/start/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule "vim/pack/03_plugins/start/aws"]
 	path = vim/pack/03_plugins/start/aws
 	url = https://github.com/andrewstuart/aws-vim.git
@@ -283,6 +280,9 @@
 [submodule "vim/pack/03_plugins/start/nvim-yarp"]
 	path = vim/pack/03_plugins/start/nvim-yarp
 	url = https://github.com/roxma/nvim-yarp.git
+[submodule "vim/pack/03_plugins/start/pear-tree"]
+	path = vim/pack/03_plugins/start/pear-tree
+	url = https://github.com/tmsvg/pear-tree.git
 [submodule "vim/pack/03_plugins/start/perl"]
 	path = vim/pack/03_plugins/start/perl
 	url = https://github.com/vim-perl/vim-perl.git

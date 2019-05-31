@@ -1,6 +1,6 @@
 " if suggestions windows present, then <Enter> accepts selection
-" else use AutoPairs mapping
-imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>\<Plug>AutoPairsReturn"
+" else use pear-tree mapping
+imap <expr> <CR> !pumvisible() ? "\<Plug>(PearTreeExpand)" : "\<CR>"
 
 " <C-h>, <BS>: close popup and delete backword char
 imap <expr> <C-h> deoplete#smart_close_popup()."\<C-h>"
