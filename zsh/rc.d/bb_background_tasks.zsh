@@ -5,7 +5,7 @@
 
     # plugins and themes, only regular files (skip symlinks)
     local plugin_file
-    for plugin_file in ${ZDOTDIR}/plugins/*/*.zsh{-theme,}(#q.); do
+    for plugin_file in ${ZDOTDIR}/plugins/**/*.zsh{-theme,}(#q.); do
         zrecompile -pq "${plugin_file}"
     done
 } &!
