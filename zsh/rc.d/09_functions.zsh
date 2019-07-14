@@ -160,7 +160,7 @@ vpaste () {
 # z via fzf selector
 fz () {
     cd "$(z -l | sed 's/^[0-9. ]*//' | \
-          fzf --height=50% --tac --no-sort --reverse --filepath-word --query="$*" \
+          fzf --height=50% --no-sort --tac --layout=reverse-list --filepath-word --query="$*" \
               --preview='LC_COLLATE=C ls -l -v --almost-all --group-directories-first --classify --color=always --human-readable {}' )"
 }
 
@@ -168,7 +168,7 @@ fz () {
 fgl () {
     git rev-parse --is-inside-work-tree &> /dev/null || return
     git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
-    fzf --ansi --height=50% --no-sort --reverse --multi --bind='ctrl-s:toggle-sort' \
+    fzf --ansi --height=50% --no-sort --layout=reverse-list --multi --bind='ctrl-s:toggle-sort' \
         --header='Press CTRL-S to toggle sort' \
         --preview='grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -200' |
     grep -o "[a-f0-9]\{7,\}"
@@ -178,7 +178,7 @@ fgl () {
 fgb () {
     git rev-parse --is-inside-work-tree &> /dev/null || return
     git checkout $(git branch --color=always -a | grep -v 'HEAD' | sort --ignore-case |
-                   fzf --ansi --height=50% --no-sort --reverse --tac --preview-window=right:70% --query="${@}" \
+                   fzf --ansi --height=50% --no-sort --tac --layout=reverse-list --preview-window=right:70% --query="${@}" \
                        --header='Red are remote, white are local, green is current' \
                        --preview='git log --color=always --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -200' |
                    sed 's/^..//' | sed 's#^remotes/origin/##')
