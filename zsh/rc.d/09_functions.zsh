@@ -184,6 +184,40 @@ fgb () {
                    sed 's/^..//' | sed 's#^remotes/origin/##')
 }
 
+# recursively search for string, feed matches to fzf with preview, launch vim with selected match
+bag () {
+    # prefer ag to grep
+    if (( ${+commands[ag]} )); then
+        search_cmd () { ag --nogroup --color "$*" }
+    else
+        search_cmd () { grep --line-number --recursive --ignore-case --color=always "$*" }
+    fi
+
+    # use bat with syntax highlight support, if it's avaialble
+    local preview_cmd
+    if (( ${+commands[bat]} )); then
+        preview_cmd='bat --paging=never --terminal-width=${FZF_PREVIEW_COLUMNS} --color=always --style=plain,numbers,changes \
+                         --line-range=${from}:${till} --highlight-line=${line} ${filename}'
+    else
+        # replace here used to highligh line with match
+        preview_cmd='sed -n -E "s/(.*'$*'.*)/'$bg[grey]'\1'$reset_color'/gI;${from},${till}p" < ${filename}'
+    fi
+
+    local result=$(search_cmd "$*" |
+        fzf --exit-0 --ansi --layout=reverse-list --no-sort --height=50% --preview-window=right:50% \
+            --preview='match={};
+                       filename=${${(s.:.)match}[1]};
+                       line=${${(s.:.)match}[2]};
+                       from=$((line-10 > 1 ? line-10 : 1));
+                       till=$((line+10));'${preview_cmd}
+    )
+    if [[ -n "${result}" ]]; then
+        vi "${${(s.:.)result}[1]}" +"${${(s.:.)result}[2]}"
+    else
+        return 1
+    fi
+}
+
 # sudo wrapper to handle noglob and nocorrect aliases
 function do_sudo
 {
