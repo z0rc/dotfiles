@@ -187,6 +187,9 @@
 [submodule "vim/pack/03_plugins/start/expand-region"]
 	path = vim/pack/03_plugins/start/expand-region
 	url = https://github.com/landock/vim-expand-region.git
+[submodule "vim/pack/03_plugins/start/file-line"]
+	path = vim/pack/03_plugins/start/file-line
+	url = https://github.com/lervag/file-line.git
 [submodule "vim/pack/03_plugins/start/fixkey"]
 	path = vim/pack/03_plugins/start/fixkey
 	url = https://github.com/kenwon/vim-fixkey.git
