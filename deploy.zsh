@@ -143,6 +143,8 @@ print "  ...done"
 print "Linking nodenv plugins..."
 ln -snf "${SCRIPT_DIR}/nodenv/node-build" "${XDG_DATA_HOME}/nodenv/plugins/node-build"
 ln -snf "${SCRIPT_DIR}/nodenv/nodenv-aliases" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-aliases"
+ln -snf "${SCRIPT_DIR}/nodenv/nodenv-env" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-env"
+ln -snf "${SCRIPT_DIR}/nodenv/nodenv-man" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-man"
 ln -snf "${SCRIPT_DIR}/nodenv/nodenv-package-rehash" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-package-rehash"
 print "  ...done"
 
