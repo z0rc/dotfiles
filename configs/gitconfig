@@ -9,6 +9,8 @@
 [merge]
 	ff = only
 	conflictstyle = diff3
+[rebase]
+	autoStash = true
 [color]
 	ui = auto
 [alias]
