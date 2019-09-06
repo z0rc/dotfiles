@@ -142,6 +142,9 @@
 [submodule "vim/pack/03_plugins/start/aws"]
 	path = vim/pack/03_plugins/start/aws
 	url = https://github.com/andrewstuart/aws-vim.git
+[submodule "vim/pack/03_plugins/start/brewfile"]
+	path = vim/pack/03_plugins/start/brewfile
+	url = https://github.com/bfontaine/Brewfile.vim.git
 [submodule "vim/pack/03_plugins/start/bundler"]
 	path = vim/pack/03_plugins/start/bundler
 	url = https://github.com/tpope/vim-bundler.git
