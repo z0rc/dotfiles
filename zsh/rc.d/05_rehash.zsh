@@ -2,7 +2,7 @@
 autoload -U add-zsh-hook
 TRAPUSR1() { rehash };
 _install_rehash_precmd() {
-    if [[ $history[$[HISTCMD-1]] == *(apt-get|aptitude|pip|dpkg|yum|rpm|brew|npm|gem|dnf)* ]]; then
+    if [[ $history[$[HISTCMD-1]] == *(apt|pip|dpkg|yum|rpm|brew|npm|gem|dnf)* ]]; then
         command ps ux | grep "[z]sh" | awk '{print $2}' | xargs kill -USR1
     fi
 }
