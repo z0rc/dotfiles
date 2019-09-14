@@ -1,1 +1,1 @@
-let g:test#strategy='asyncrun'
+let g:test#strategy='vimterminal'
