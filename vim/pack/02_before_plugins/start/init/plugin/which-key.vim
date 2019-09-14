@@ -92,7 +92,7 @@ let g:which_key_map.f={
     \}
 
 " easymotions
-let g:which_key_map['\']={
+let g:which_key_map["\<Space>"]={
     \'name' : 'Easymotion',
     \'f'  : ['<Plug>(easymotion-f)', 'Find char to the right'],
     \'F'  : ['<Plug>(easymotion-F)', 'Find char to the left'],
@@ -135,6 +135,6 @@ let g:which_key_map.b = {
     \'s' : ['Startify', 'Start buffer']
     \}
 
-call which_key#register('\', 'g:which_key_map')
-nnoremap <silent> <leader> :<c-u>WhichKey '\'<CR>
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual '\'<CR>
+call which_key#register('<Space>', 'g:which_key_map')
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>

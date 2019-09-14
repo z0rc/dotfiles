@@ -1,3 +1,6 @@
+" map spacebar as leader key
+map <Space> <leader>
+
 " if suggestions windows present, then <Enter> accepts selection
 " else use pear-tree mapping
 imap <expr> <CR> !pumvisible() ? "\<Plug>(PearTreeExpand)" : "\<CR>"
