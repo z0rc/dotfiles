@@ -32,7 +32,7 @@ set list listchars=tab:>-,trail:·,extends:►,precedes:◄ " indicate various s
 set number " show line numbers
 set cursorline " highlight line with cursor
 set showcmd " show partial commands in bottom left corner
-set completeopt-=preview " don't show preview window on competion
+set completeopt+=popup " show additional into in popup window on competion
 set completeopt+=noinsert " don't automatically insert, but select first entry
 set completeopt+=menuone " show completion menu even when there is single entry
 set shortmess+=c " shut off completion messages
