@@ -57,9 +57,9 @@ let g:which_key_map.e={
 let g:which_key_map.t={
     \'name' : 'Toggles',
     \'c' : ['<Plug>CapsLockToggle', 'Caps lock'],
-    \'d' : ['<Plug>(dirvish_up)', 'Dirvish'],
-    \'s' : ['<Plug>(dirvish_split_up)', 'Dirvish split'],
-    \'v' : ['<Plug>(dirvish_vsplit_up)', 'Dirvish vsplit'],
+    \'d' : ['Explore', 'Netrw'],
+    \'s' : ['Sexplore', 'Netrw split'],
+    \'v' : ['Vexplore', 'Netrw vsplit'],
     \'l' : ['LToggle', 'Location list'],
     \'q' : ['QToggle', 'Quickfix window'],
     \'t' : ['TagbarToggle', 'Tagbar'],

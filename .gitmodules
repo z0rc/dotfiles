@@ -172,12 +172,6 @@
 [submodule "vim/pack/03_plugins/start/deoplete-zsh"]
 	path = vim/pack/03_plugins/start/deoplete-zsh
 	url = https://github.com/zchee/deoplete-zsh.git
-[submodule "vim/pack/03_plugins/start/dirvish"]
-	path = vim/pack/03_plugins/start/dirvish
-	url = https://github.com/justinmk/vim-dirvish.git
-[submodule "vim/pack/03_plugins/start/dirvish-git"]
-	path = vim/pack/03_plugins/start/dirvish-git
-	url = https://github.com/kristijanhusak/vim-dirvish-git.git
 [submodule "vim/pack/03_plugins/start/dockerfile"]
 	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
@@ -373,6 +367,9 @@
 [submodule "vim/pack/03_plugins/start/vim-hug-neovim-rpc"]
 	path = vim/pack/03_plugins/start/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc.git
+[submodule "vim/pack/03_plugins/start/vinegar"]
+	path = vim/pack/03_plugins/start/vinegar
+	url = https://github.com/tpope/vim-vinegar.git
 [submodule "vim/pack/03_plugins/start/virtualenv"]
 	path = vim/pack/03_plugins/start/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
