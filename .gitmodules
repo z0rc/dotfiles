@@ -298,9 +298,6 @@
 [submodule "vim/pack/03_plugins/start/php"]
 	path = vim/pack/03_plugins/start/php
 	url = https://github.com/StanAngeloff/php.vim.git
-[submodule "vim/pack/03_plugins/start/pyenv"]
-	path = vim/pack/03_plugins/start/pyenv
-	url = https://github.com/lambdalisue/vim-pyenv.git
 [submodule "vim/pack/03_plugins/start/python-combined"]
 	path = vim/pack/03_plugins/start/python-combined
 	url = https://github.com/mitsuhiko/vim-python-combined.git
