@@ -44,7 +44,7 @@ let g:which_key_map.c={
     \}
 
 " test menu
-let g:which_key_map.e={
+let g:which_key_map.s={
     \'name' : 'Test',
     \'t' : ['TestNearest', 'Nearest'],
     \'T' : ['TestFile', 'This file'],
@@ -53,13 +53,21 @@ let g:which_key_map.e={
     \'g' : ['TestVisit', 'Open test file']
     \}
 
+" netrw openers
+let g:which_key_map.e={
+    \'name' : 'Explore',
+    \'e' : ['Explore', 'in current window'],
+    \'s' : ['Sexplore', 'in horizontal split'],
+    \'v' : [':Vexplore!', 'in vertical split'],
+    \'t' : ['Texplore', 'in new tab'],
+    \'l' : [':20Lexplore', 'in left sidebar'],
+    \'r' : ['Rexplore', 'return']
+    \}
+
 " toggles
 let g:which_key_map.t={
     \'name' : 'Toggles',
     \'c' : ['<Plug>CapsLockToggle', 'Caps lock'],
-    \'d' : ['Explore', 'Netrw'],
-    \'s' : ['Sexplore', 'Netrw split'],
-    \'v' : ['Vexplore', 'Netrw vsplit'],
     \'l' : ['LToggle', 'Location list'],
     \'q' : ['QToggle', 'Quickfix window'],
     \'t' : ['TagbarToggle', 'Tagbar'],
