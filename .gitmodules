@@ -52,6 +52,9 @@
 [submodule "rbenv/rbenv"]
 	path = rbenv/rbenv
 	url = https://github.com/rbenv/rbenv.git
+[submodule "rbenv/rbenv-aliases"]
+	path = rbenv/rbenv-aliases
+	url = https://github.com/tpope/rbenv-aliases.git
 [submodule "rbenv/rbenv-binstubs"]
 	path = rbenv/rbenv-binstubs
 	url = https://github.com/ianheggie/rbenv-binstubs.git

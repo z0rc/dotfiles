@@ -132,7 +132,7 @@ print "  ...done"
 # Link rbenv plugins to $RBENV_ROOT
 print "Linking rbenv plugins..."
 local -a rbenv_plugins
-rbenv_plugins=("ruby-build" "rbenv-binstubs" "rbenv-chefdk" "rbenv-ctags" "rbenv-default-gems" "rbenv-env" "rbenv-man")
+rbenv_plugins=("ruby-build" "rbenv-aliases" "rbenv-binstubs" "rbenv-chefdk" "rbenv-ctags" "rbenv-default-gems" "rbenv-env" "rbenv-man")
 local plugin
 for plugin in "${rbenv_plugins[@]}"; do
     ln -snf "${SCRIPT_DIR}/rbenv/${plugin}" "${XDG_DATA_HOME}/rbenv/plugins/${plugin}"
