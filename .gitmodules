@@ -28,6 +28,18 @@
 [submodule "nodenv/nodenv-package-rehash"]
 	path = nodenv/nodenv-package-rehash
 	url = https://github.com/nodenv/nodenv-package-rehash.git
+[submodule "phpenv/php-build"]
+	path = phpenv/php-build
+	url = https://github.com/php-build/php-build.git
+[submodule "phpenv/phpenv"]
+	path = phpenv/phpenv
+	url = https://github.com/phpenv/phpenv.git
+[submodule "phpenv/phpenv-aliases"]
+	path = phpenv/phpenv-aliases
+	url = https://github.com/madumlao/phpenv-aliases.git
+[submodule "phpenv/phpenv-composer"]
+	path = phpenv/phpenv-composer
+	url = https://github.com/ngyuki/phpenv-composer.git
 [submodule "plenv/perl-build"]
 	path = plenv/perl-build
 	url = https://github.com/tokuhirom/Perl-Build.git
@@ -428,3 +440,4 @@
 [submodule "zsh/plugins/z"]
 	path = zsh/plugins/z
 	url = https://github.com/agkozak/zsh-z.git
+

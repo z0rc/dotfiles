@@ -56,8 +56,9 @@ presence](#zero-home-presence).
   [rbenv](https://github.com/rbenv/rbenv),
   [nodenv](https://github.com/nodenv/nodenv),
   [luaenv](https://github.com/cehoffman/luaenv),
-  [goenv](https://github.com/syndbg/goenv) and
-  [plenv](https://github.com/tokuhirom/plenv)
+  [goenv](https://github.com/syndbg/goenv),
+  [plenv](https://github.com/tokuhirom/plenv) and
+  [phpenv](https://github.com/phpenv/phpenv)
 
 ## Installation
 
