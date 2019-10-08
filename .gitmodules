@@ -1,92 +1,92 @@
 [submodule "goenv/goenv"]
-	path = goenv/goenv
+	path = env-wrappers/goenv/goenv
 	url = https://github.com/syndbg/goenv.git
 [submodule "luaenv/lua-build"]
-	path = luaenv/lua-build
+	path = env-wrappers/luaenv/lua-build
 	url = https://github.com/cehoffman/lua-build.git
 [submodule "luaenv/luaenv"]
-	path = luaenv/luaenv
+	path = env-wrappers/luaenv/luaenv
 	url = https://github.com/cehoffman/luaenv.git
 [submodule "luaenv/luaenv-luarocks"]
-	path = luaenv/luaenv-luarocks
+	path = env-wrappers/luaenv/luaenv-luarocks
 	url = https://github.com/xpol/luaenv-luarocks.git
 [submodule "nodenv/node-build"]
-	path = nodenv/node-build
+	path = env-wrappers/nodenv/node-build
 	url = https://github.com/nodenv/node-build.git
 [submodule "nodenv/nodenv"]
-	path = nodenv/nodenv
+	path = env-wrappers/nodenv/nodenv
 	url = https://github.com/nodenv/nodenv.git
 [submodule "nodenv/nodenv-aliases"]
-	path = nodenv/nodenv-aliases
+	path = env-wrappers/nodenv/nodenv-aliases
 	url = https://github.com/nodenv/nodenv-aliases.git
 [submodule "nodenv/nodenv-env"]
-	path = nodenv/nodenv-env
+	path = env-wrappers/nodenv/nodenv-env
 	url = https://github.com/nodenv/nodenv-env.git
 [submodule "nodenv/nodenv-man"]
-	path = nodenv/nodenv-man
+	path = env-wrappers/nodenv/nodenv-man
 	url = https://github.com/nodenv/nodenv-man.git
 [submodule "nodenv/nodenv-package-rehash"]
-	path = nodenv/nodenv-package-rehash
+	path = env-wrappers/nodenv/nodenv-package-rehash
 	url = https://github.com/nodenv/nodenv-package-rehash.git
 [submodule "phpenv/php-build"]
-	path = phpenv/php-build
+	path = env-wrappers/phpenv/php-build
 	url = https://github.com/php-build/php-build.git
 [submodule "phpenv/phpenv"]
-	path = phpenv/phpenv
+	path = env-wrappers/phpenv/phpenv
 	url = https://github.com/phpenv/phpenv.git
 [submodule "phpenv/phpenv-aliases"]
-	path = phpenv/phpenv-aliases
+	path = env-wrappers/phpenv/phpenv-aliases
 	url = https://github.com/madumlao/phpenv-aliases.git
 [submodule "phpenv/phpenv-composer"]
-	path = phpenv/phpenv-composer
+	path = env-wrappers/phpenv/phpenv-composer
 	url = https://github.com/ngyuki/phpenv-composer.git
 [submodule "plenv/perl-build"]
-	path = plenv/perl-build
+	path = env-wrappers/plenv/perl-build
 	url = https://github.com/tokuhirom/Perl-Build.git
 [submodule "plenv/plenv"]
-	path = plenv/plenv
+	path = env-wrappers/plenv/plenv
 	url = https://github.com/tokuhirom/plenv.git
 [submodule "plenv/plenv-contrib"]
-	path = plenv/plenv-contrib
+	path = env-wrappers/plenv/plenv-contrib
 	url = https://github.com/miyagawa/plenv-contrib.git
 [submodule "plenv/plenv-download"]
-	path = plenv/plenv-download
+	path = env-wrappers/plenv/plenv-download
 	url = https://github.com/skaji/plenv-download.git
 [submodule "pyenv/pyenv"]
-	path = pyenv/pyenv
+	path = env-wrappers/pyenv/pyenv
 	url = https://github.com/yyuu/pyenv.git
 [submodule "pyenv/pyenv-default-packages"]
-	path = pyenv/pyenv-default-packages
+	path = env-wrappers/pyenv/pyenv-default-packages
 	url = https://github.com/jawshooah/pyenv-default-packages.git
 [submodule "pyenv/pyenv-virtualenv"]
-	path = pyenv/pyenv-virtualenv
+	path = env-wrappers/pyenv/pyenv-virtualenv
 	url = https://github.com/yyuu/pyenv-virtualenv.git
 [submodule "rbenv/rbenv"]
-	path = rbenv/rbenv
+	path = env-wrappers/rbenv/rbenv
 	url = https://github.com/rbenv/rbenv.git
 [submodule "rbenv/rbenv-aliases"]
-	path = rbenv/rbenv-aliases
+	path = env-wrappers/rbenv/rbenv-aliases
 	url = https://github.com/tpope/rbenv-aliases.git
 [submodule "rbenv/rbenv-binstubs"]
-	path = rbenv/rbenv-binstubs
+	path = env-wrappers/rbenv/rbenv-binstubs
 	url = https://github.com/ianheggie/rbenv-binstubs.git
 [submodule "rbenv/rbenv-chefdk"]
-	path = rbenv/rbenv-chefdk
+	path = env-wrappers/rbenv/rbenv-chefdk
 	url = https://github.com/docwhat/rbenv-chefdk.git
 [submodule "rbenv/rbenv-ctags"]
-	path = rbenv/rbenv-ctags
+	path = env-wrappers/rbenv/rbenv-ctags
 	url = https://github.com/tpope/rbenv-ctags.git
 [submodule "rbenv/rbenv-default-gems"]
-	path = rbenv/rbenv-default-gems
+	path = env-wrappers/rbenv/rbenv-default-gems
 	url = https://github.com/rbenv/rbenv-default-gems.git
 [submodule "rbenv/rbenv-env"]
-	path = rbenv/rbenv-env
+	path = env-wrappers/rbenv/rbenv-env
 	url = https://github.com/ianheggie/rbenv-env.git
 [submodule "rbenv/rbenv-man"]
-	path = rbenv/rbenv-man
+	path = env-wrappers/rbenv/rbenv-man
 	url = https://github.com/mlafeldt/rbenv-man.git
 [submodule "rbenv/ruby-build"]
-	path = rbenv/ruby-build
+	path = env-wrappers/rbenv/ruby-build
 	url = https://github.com/rbenv/ruby-build.git
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
