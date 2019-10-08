@@ -1,6 +1,9 @@
 [submodule "goenv/goenv"]
 	path = env-wrappers/goenv/goenv
 	url = https://github.com/syndbg/goenv.git
+[submodule "env-wrappers/jenv/jenv"]
+	path = env-wrappers/jenv/jenv
+	url = https://github.com/jenv/jenv.git
 [submodule "luaenv/lua-build"]
 	path = env-wrappers/luaenv/lua-build
 	url = https://github.com/cehoffman/lua-build.git
@@ -440,4 +443,3 @@
 [submodule "zsh/plugins/z"]
 	path = zsh/plugins/z
 	url = https://github.com/agkozak/zsh-z.git
-

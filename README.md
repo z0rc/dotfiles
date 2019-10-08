@@ -52,13 +52,14 @@ presence](#zero-home-presence).
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
   * [slack-cli](https://github.com/rockymadden/slack-cli) for sending messages
     to slack from shell
-* [pyenv](https://github.com/yyuu/pyenv),
-  [rbenv](https://github.com/rbenv/rbenv),
-  [nodenv](https://github.com/nodenv/nodenv),
+* [goenv](https://github.com/syndbg/goenv),
+  [jenv](https://github.com/jenv/jenv),
   [luaenv](https://github.com/cehoffman/luaenv),
-  [goenv](https://github.com/syndbg/goenv),
-  [plenv](https://github.com/tokuhirom/plenv) and
-  [phpenv](https://github.com/phpenv/phpenv)
+  [nodenv](https://github.com/nodenv/nodenv),
+  [phpenv](https://github.com/phpenv/phpenv),
+  [plenv](https://github.com/tokuhirom/plenv),
+  [pyenv](https://github.com/yyuu/pyenv) and
+  [rbenv](https://github.com/rbenv/rbenv)
 
 ## Installation
 

@@ -16,7 +16,7 @@ VIMINIT='let $MYVIMRC="'${SCRIPT_DIR}'/vim/vimrc" | source $MYVIMRC'
 print "Creating required directory tree..."
 mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger}
 mkdir -p "${XDG_CACHE_HOME}"/{vim/{backup,swap,undo},zsh}
-mkdir -p "${XDG_DATA_HOME}"/{{pyenv,rbenv,nodenv,luaenv,goenv,plenv,phpenv}/plugins,zsh,man/man1}
+mkdir -p "${XDG_DATA_HOME}"/{{goenv,jenv,luaenv,nodenv,phpenv,plenv,pyenv,rbenv}/plugins,zsh,man/man1}
 mkdir -p "${HOME}"/.local/{bin,etc}
 print "  ...done"
 
@@ -121,6 +121,45 @@ if (( ${+commands[make]} )) && (( ${+commands[vim]} )) && (( ${+commands[go]} ))
     popd
 fi
 
+# Link goenv plugins to $GOENV_ROOT
+print "Linking goenv plugins..."
+ln -snf "${SCRIPT_DIR}/env-wrappers/goenv/goenv/plugins/go-build" "${XDG_DATA_HOME}/goenv/plugins/go-build"
+print "  ...done"
+
+# Link jenv plugins to $JENV_ROOT
+print "Linking jenv plugins..."
+ln -snf "${SCRIPT_DIR}/env-wrappers/jenv/jenv/available-plugins/export" "${XDG_DATA_HOME}/jenv/plugins/export"
+print "  ...done"
+
+# Link luaenv plugins to $LUAENV_ROOT
+print "Linking luaenv plugins..."
+ln -snf "${SCRIPT_DIR}/env-wrappers/luaenv/lua-build" "${XDG_DATA_HOME}/luaenv/plugins/lua-build"
+ln -snf "${SCRIPT_DIR}/env-wrappers/luaenv/luaenv-luarocks" "${XDG_DATA_HOME}/luaenv/plugins/luaenv-luarocks"
+print "  ...done"
+
+# Link nodenv plugins to $NODENV_ROOT
+print "Linking nodenv plugins..."
+ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/node-build" "${XDG_DATA_HOME}/nodenv/plugins/node-build"
+ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/nodenv-aliases" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-aliases"
+ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/nodenv-env" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-env"
+ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/nodenv-man" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-man"
+ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/nodenv-package-rehash" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-package-rehash"
+print "  ...done"
+
+# Link phpenv plugins to $PHPENV_ROOT
+print "Linking phpenv plugins..."
+ln -snf "${SCRIPT_DIR}/env-wrappers/phpenv/php-build" "${XDG_DATA_HOME}/phpenv/plugins/php-build"
+ln -snf "${SCRIPT_DIR}/env-wrappers/phpenv/phpenv-aliases" "${XDG_DATA_HOME}/phpenv/plugins/phpenv-aliases"
+ln -snf "${SCRIPT_DIR}/env-wrappers/phpenv/phpenv-composer" "${XDG_DATA_HOME}/phpenv/plugins/phpenv-composer"
+print "  ...done"
+
+# Link plenv plugins to $PLENV_ROOT
+print "Linking plenv plugins..."
+ln -snf "${SCRIPT_DIR}/env-wrappers/plenv/perl-build" "${XDG_DATA_HOME}/plenv/plugins/perl-build"
+ln -snf "${SCRIPT_DIR}/env-wrappers/plenv/plenv-contrib" "${XDG_DATA_HOME}/plenv/plugins/plenv-contrib"
+ln -snf "${SCRIPT_DIR}/env-wrappers/plenv/plenv-download" "${XDG_DATA_HOME}/plenv/plugins/plenv-download"
+print "  ...done"
+
 # Link pyenv plugins to $PYENV_ROOT
 print "Linking pyenv plugins..."
 ln -snf "${SCRIPT_DIR}/env-wrappers/pyenv/pyenv/plugins/python-build" "${XDG_DATA_HOME}/pyenv/plugins/python-build"
@@ -138,40 +177,6 @@ for plugin in "${rbenv_plugins[@]}"; do
     ln -snf "${SCRIPT_DIR}/env-wrappers/rbenv/${plugin}" "${XDG_DATA_HOME}/rbenv/plugins/${plugin}"
 done
 ln -sf "${SCRIPT_DIR}/env-wrappers/rbenv/default-gems" "${XDG_DATA_HOME}/rbenv/default-gems"
-print "  ...done"
-
-# Link nodenv plugins to $NODENV_ROOT
-print "Linking nodenv plugins..."
-ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/node-build" "${XDG_DATA_HOME}/nodenv/plugins/node-build"
-ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/nodenv-aliases" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-aliases"
-ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/nodenv-env" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-env"
-ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/nodenv-man" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-man"
-ln -snf "${SCRIPT_DIR}/env-wrappers/nodenv/nodenv-package-rehash" "${XDG_DATA_HOME}/nodenv/plugins/nodenv-package-rehash"
-print "  ...done"
-
-# Link luaenv plugins to $LUAENV_ROOT
-print "Linking luaenv plugins..."
-ln -snf "${SCRIPT_DIR}/env-wrappers/luaenv/lua-build" "${XDG_DATA_HOME}/luaenv/plugins/lua-build"
-ln -snf "${SCRIPT_DIR}/env-wrappers/luaenv/luaenv-luarocks" "${XDG_DATA_HOME}/luaenv/plugins/luaenv-luarocks"
-print "  ...done"
-
-# Link goenv plugins to $GOENV_ROOT
-print "Linking goenv plugins..."
-ln -snf "${SCRIPT_DIR}/env-wrappers/goenv/goenv/plugins/go-build" "${XDG_DATA_HOME}/goenv/plugins/go-build"
-print "  ...done"
-
-# Link plenv plugins to $PLENV_ROOT
-print "Linking plenv plugins..."
-ln -snf "${SCRIPT_DIR}/env-wrappers/plenv/perl-build" "${XDG_DATA_HOME}/plenv/plugins/perl-build"
-ln -snf "${SCRIPT_DIR}/env-wrappers/plenv/plenv-contrib" "${XDG_DATA_HOME}/plenv/plugins/plenv-contrib"
-ln -snf "${SCRIPT_DIR}/env-wrappers/plenv/plenv-download" "${XDG_DATA_HOME}/plenv/plugins/plenv-download"
-print "  ...done"
-
-# Link phpenv plugins to $PHPENV_ROOT
-print "Linking phpenv plugins..."
-ln -snf "${SCRIPT_DIR}/env-wrappers/phpenv/php-build" "${XDG_DATA_HOME}/phpenv/plugins/php-build"
-ln -snf "${SCRIPT_DIR}/env-wrappers/phpenv/phpenv-aliases" "${XDG_DATA_HOME}/phpenv/plugins/phpenv-aliases"
-ln -snf "${SCRIPT_DIR}/env-wrappers/phpenv/phpenv-composer" "${XDG_DATA_HOME}/phpenv/plugins/phpenv-composer"
 print "  ...done"
 
 # Install crontab task to pull updates every midnight
