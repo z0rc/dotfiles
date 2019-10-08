@@ -55,8 +55,9 @@ presence](#zero-home-presence).
 * [pyenv](https://github.com/yyuu/pyenv),
   [rbenv](https://github.com/rbenv/rbenv),
   [nodenv](https://github.com/nodenv/nodenv),
-  [luaenv](https://github.com/cehoffman/luaenv) and
-  [goenv](https://github.com/syndbg/goenv)
+  [luaenv](https://github.com/cehoffman/luaenv),
+  [goenv](https://github.com/syndbg/goenv) and
+  [plenv](https://github.com/tokuhirom/plenv)
 
 ## Installation
 
@@ -166,7 +167,7 @@ Add your local configuration to `$DOTFILES/vim/vimrc.local`.
 Local binaries can be put into `$HOME/.local/bin`, it's added to `PATH` by
 default. Also man pages can be put into `$XDG_DATA_HOME/man`.
 
-### *env
+### Lazy *env
 
 Pyenv and similar wrappers are lazy-loaded, it means that they won't be
 initialized on shell start. Activation is done on the first execution. Check

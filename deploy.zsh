@@ -16,7 +16,7 @@ VIMINIT='let $MYVIMRC="'${SCRIPT_DIR}'/vim/vimrc" | source $MYVIMRC'
 print "Creating required directory tree..."
 mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger}
 mkdir -p "${XDG_CACHE_HOME}"/{vim/{backup,swap,undo},zsh}
-mkdir -p "${XDG_DATA_HOME}"/{{pyenv,rbenv,nodenv,luaenv,goenv}/plugins,zsh,man/man1}
+mkdir -p "${XDG_DATA_HOME}"/{{pyenv,rbenv,nodenv,luaenv,goenv,plenv}/plugins,zsh,man/man1}
 mkdir -p "${HOME}"/.local/{bin,etc}
 print "  ...done"
 
@@ -158,6 +158,13 @@ print "  ...done"
 # Link goenv plugins to $GOENV_ROOT
 print "Linking goenv plugins..."
 ln -snf "${SCRIPT_DIR}/goenv/goenv/plugins/go-build" "${XDG_DATA_HOME}/goenv/plugins/go-build"
+print "  ...done"
+
+# Link plenv plugins to $PLENV_ROOT
+print "Linking plenv plugins..."
+ln -snf "${SCRIPT_DIR}/plenv/perl-build" "${XDG_DATA_HOME}/plenv/plugins/perl-build"
+ln -snf "${SCRIPT_DIR}/plenv/plenv-contrib" "${XDG_DATA_HOME}/plenv/plugins/plenv-contrib"
+ln -snf "${SCRIPT_DIR}/plenv/plenv-download" "${XDG_DATA_HOME}/plenv/plugins/plenv-download"
 print "  ...done"
 
 # Install crontab task to pull updates every midnight

@@ -20,7 +20,7 @@ _p10k_indicate_env() {
         echo -n "venv:${VIRTUAL_ENV:t}"
     else
         local wrapper
-        local wrappers=(pyenv rbenv nodenv luaenv goenv)
+        local wrappers=(pyenv rbenv nodenv luaenv goenv plenv)
         for wrapper in "${wrappers[@]}"; do
             local wrapper_version="${wrapper:u}_VERSION"
             local wrapper_root="${wrapper:u}_ROOT"

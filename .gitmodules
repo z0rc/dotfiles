@@ -28,6 +28,18 @@
 [submodule "nodenv/nodenv-package-rehash"]
 	path = nodenv/nodenv-package-rehash
 	url = https://github.com/nodenv/nodenv-package-rehash.git
+[submodule "plenv/perl-build"]
+	path = plenv/perl-build
+	url = https://github.com/tokuhirom/Perl-Build.git
+[submodule "plenv/plenv"]
+	path = plenv/plenv
+	url = https://github.com/tokuhirom/plenv.git
+[submodule "plenv/plenv-contrib"]
+	path = plenv/plenv-contrib
+	url = https://github.com/miyagawa/plenv-contrib.git
+[submodule "plenv/plenv-download"]
+	path = plenv/plenv-download
+	url = https://github.com/skaji/plenv-download.git
 [submodule "pyenv/pyenv"]
 	path = pyenv/pyenv
 	url = https://github.com/yyuu/pyenv.git
