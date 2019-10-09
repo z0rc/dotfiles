@@ -219,8 +219,7 @@ bag () {
 }
 
 # sudo wrapper to handle noglob and nocorrect aliases
-function do_sudo
-{
+function do_sudo () {
     integer glob=1
     local -a run
     run=(command sudo)
@@ -240,5 +239,25 @@ function do_sudo
         ${run} $~==*
     else
         ${run} $==*
+    fi
+}
+
+function evalcache () {
+    local eval_cache_dir="${XDG_CACHE_HOME}/zsh/eval"
+    local cache_file="${eval_cache_dir}/${1##*/}.zsh"
+
+    # revalidate cache every 20 hours
+    if [[ ! -e "${cache_file}" || -n "${cache_file}"(#qN.mh+20) ]]; then
+        # cache miss
+        if (( ${+commands[${1}]} )); then
+            mkdir -p "${eval_cache_dir}"
+            command "$@" > "${cache_file}"
+            source "${cache_file}"
+        else
+            echo "evalcache ERROR: $1 is not available in PATH" >&2
+        fi
+    else
+        # cache hit
+        source "${cache_file}"
     fi
 }

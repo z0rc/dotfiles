@@ -8,6 +8,12 @@
     for plugin_file in ${ZDOTDIR}/plugins/**/*.zsh{-theme,}(#q.); do
         zrecompile -pq "${plugin_file}"
     done
+
+    # evalcache
+    local cache_file
+    for cache_file in ${XDG_CACHE_HOME}/zsh/eval/*.zsh; do
+        zrecompile -pq "${cache_file}"
+    done
 } &!
 
 # Update tldr pages

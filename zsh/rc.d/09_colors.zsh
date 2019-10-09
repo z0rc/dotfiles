@@ -9,7 +9,7 @@ export LESS_TERMCAP_us=$(printf "\e[4;32m")
 
 # Enable color support of ls
 if (( ${+commands[dircolors]} )); then
-    eval $(dircolors "${ZDOTDIR}/plugins/dircolors-solarized/dircolors.256dark")
+    evalcache dircolors "${ZDOTDIR}/plugins/dircolors-solarized/dircolors.256dark"
 fi
 
 # Enable diff with colors

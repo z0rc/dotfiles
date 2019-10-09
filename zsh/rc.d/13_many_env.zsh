@@ -9,7 +9,7 @@ for wrapper in "${wrappers[@]}"; do
         unset -f ${wrapper}
         export ${wrapper:u}_ROOT=\"\${XDG_DATA_HOME}/${wrapper}\"
         PATH=\"\${DOTFILES}/env-wrappers/${wrapper}/${wrapper}/bin:\${PATH}\"
-        eval \"\$(command ${wrapper} init -)\"
+        evalcache ${wrapper} init -
         ${wrapper} \${@}
     }"
 done
