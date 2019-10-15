@@ -35,6 +35,7 @@ export GEM_SPEC_CACHE="${XDG_CACHE_HOME}/gem"
 export GEMRC="${XDG_CONFIG_HOME}/gem/gemrc"
 export TASKDATA="${XDG_DATA_HOME}/task"
 export TASKRC="${XDG_CONFIG_HOME}/task/taskrc"
+export PERL_CPANM_HOME="${XDG_CACHE_HOME}/cpanm"
 
 # Ensure we have local paths enabled
 PATH=/usr/local/bin:/usr/local/sbin:${PATH}
