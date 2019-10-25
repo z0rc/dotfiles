@@ -1,5 +1,6 @@
 " use popup window
 let g:which_key_use_floating_win=1
+let g:which_key_fallback_to_native_key=1
 
 " define prefix dictionary
 let g:which_key_map={}
