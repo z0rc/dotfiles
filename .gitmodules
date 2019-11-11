@@ -202,6 +202,9 @@
 [submodule "vim/pack/03_plugins/start/deoplete-jedi"]
 	path = vim/pack/03_plugins/start/deoplete-jedi
 	url = https://github.com/zchee/deoplete-jedi.git
+[submodule "vim/pack/03_plugins/start/deoplete-solargraph"]
+	path = vim/pack/03_plugins/start/deoplete-solargraph
+	url = https://github.com/uplus/deoplete-solargraph.git
 [submodule "vim/pack/03_plugins/start/deoplete-zsh"]
 	path = vim/pack/03_plugins/start/deoplete-zsh
 	url = https://github.com/zchee/deoplete-zsh.git
