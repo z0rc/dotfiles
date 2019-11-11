@@ -53,7 +53,7 @@ fi
 PATH="${HOME}/.local/bin":${PATH}
 MANPATH="${XDG_DATA_HOME}/man":${MANPATH}
 
-# Add go and ruby binaries to paths
-PATH="${GOPATH}/bin":"${GEM_HOME}/bin":${PATH}
+# Add go binaries to paths
+PATH="${GOPATH}/bin":${PATH}
 
 export PATH MANPATH
