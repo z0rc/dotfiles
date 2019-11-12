@@ -10,6 +10,16 @@ if (( ${+commands[mc]} )); then
         elif [[ "${TERM}" != "linux" && "${EUID}" -eq 0 ]]; then
             export MC_SKIN=modarin256root-defbg
         fi
-        command mc "${@}"
+
+        local mc_pwd_file="${TMPDIR:-/tmp}/mc-${USER}/mc.pwd.$$"
+        command mc -P "${mc_pwd_file}" "${@}"
+
+        if [[ -r ${mc_pwd_file} ]]; then
+            local mc_last_pwd=$(<"${mc_pwd_file}")
+            if [[ -d ${mc_last_pwd} ]]; then
+                cd "${mc_last_pwd}"
+            fi
+            rm -f "${mc_pwd_file}"
+        fi
     }
 fi
