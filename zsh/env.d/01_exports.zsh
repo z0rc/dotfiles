@@ -48,21 +48,25 @@ export PERL_CPANM_HOME="${XDG_CACHE_HOME}/cpanm"
 export SOLARGRAPH_CACHE="${XDG_CACHE_HOME}/solargraph"
 
 # Ensure we have local paths enabled
-PATH=/usr/local/bin:/usr/local/sbin:${PATH}
+path=(/usr/local/bin /usr/local/sbin ${path})
 
-# Enable brew's coreutils on macOS, if installed
-if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]]; then
-    PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
-fi
-if [[ -d /usr/local/opt/coreutils/libexec/gnuman ]]; then
-    MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
+# Enable gnu version of utilities on macOS, if installed
+if [[ "${OSTYPE}" = darwin* ]]; then
+    for gnuutil in coreutils gnu-sed gnu-tar grep; do
+        if [[ -d /usr/local/opt/${gnuutil}/libexec/gnubin ]]; then
+            path=(/usr/local/opt/${gnuutil}/libexec/gnubin ${path})
+        fi
+        if [[ -d /usr/local/opt/${gnuutil}/libexec/gnuman ]]; then
+            manpath=(/usr/local/opt/${gnuutil}/libexec/gnuman ${manpath})
+        fi
+    done
 fi
 
 # Enable local binaries and man pages
-PATH="${HOME}/.local/bin":${PATH}
-MANPATH="${XDG_DATA_HOME}/man":${MANPATH}
+path=(${HOME}/.local/bin ${path})
+manpath=(${XDG_DATA_HOME}/man ${manpath})
 
 # Add go binaries to paths
-PATH="${GOPATH}/bin":${PATH}
+path=(${GOPATH}/bin ${path})
 
 export PATH MANPATH
