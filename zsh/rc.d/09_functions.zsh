@@ -63,7 +63,7 @@ Arguments:
     -s, --status-table     Show status table at the end
 
 Example:
-    ineachdir -r git pull --prune
+    ineachdir -s git pull --prune
 EOH
             return 0
         fi
@@ -219,7 +219,7 @@ bag () {
 }
 
 # sudo wrapper to handle noglob and nocorrect aliases
-function do_sudo () {
+do_sudo () {
     integer glob=1
     local -a run
     run=(command sudo)
@@ -242,7 +242,7 @@ function do_sudo () {
     fi
 }
 
-function evalcache () {
+evalcache () {
     local eval_cache_dir="${XDG_CACHE_HOME}/zsh/eval"
     local cache_file="${eval_cache_dir}/${1##*/}.zsh"
 
