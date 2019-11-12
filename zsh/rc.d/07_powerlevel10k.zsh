@@ -1,11 +1,23 @@
 # Indicate that shell is running under Midnight Commander or ranger
-if [[ -n "${MC_SID}" ]]; then
+if [[ -v MC_SID ]]; then
     _p10k_indicate_filemanager() {
         echo -n "[mc]"
     }
-elif [[ -n "${RANGER_LEVEL}" ]]; then
+elif [[ -v RANGER_LEVEL ]]; then
     _p10k_indicate_filemanager() {
-        echo -n "[ranger]"
+        if [[ ${RANGER_LEVEL} -eq 1 ]]; then
+            echo -n "[ranger]"
+        else
+            echo -n "[ranger ${RANGER_LEVEL}]"
+        fi
+    }
+elif [[ -v NNNLVL ]]; then
+    _p10k_indicate_filemanager() {
+        if [[ ${NNNLVL} -eq 1 ]]; then
+            echo -n "[nnn]"
+        else
+            echo -n "[nnn ${NNNLVL}]"
+        fi
     }
 else
     _p10k_indicate_filemanager() { true; }
