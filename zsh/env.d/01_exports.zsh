@@ -57,16 +57,14 @@ if [[ "${OSTYPE}" = darwin* ]]; then
             path=(/usr/local/opt/${gnuutil}/libexec/gnubin ${path})
         fi
         if [[ -d /usr/local/opt/${gnuutil}/libexec/gnuman ]]; then
-            manpath=(/usr/local/opt/${gnuutil}/libexec/gnuman ${manpath})
+            MANPATH="/usr/local/opt/${gnuutil}/libexec/gnuman:${MANPATH}"
         fi
     done
 fi
 
 # Enable local binaries and man pages
 path=(${HOME}/.local/bin ${path})
-manpath=(${XDG_DATA_HOME}/man ${manpath})
+MANPATH="${XDG_DATA_HOME}/man:${MANPATH}"
 
 # Add go binaries to paths
 path=(${GOPATH}/bin ${path})
-
-export PATH MANPATH
