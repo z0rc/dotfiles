@@ -190,6 +190,9 @@
 [submodule "vim/pack/03_plugins/start/context_filetype"]
 	path = vim/pack/03_plugins/start/context_filetype
 	url = https://github.com/Shougo/context_filetype.vim.git
+[submodule "vim/pack/03_plugins/start/csv"]
+	path = vim/pack/03_plugins/start/csv
+	url = https://github.com/chrisbra/csv.vim.git
 [submodule "vim/pack/03_plugins/start/cursorline-current-window"]
 	path = vim/pack/03_plugins/start/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
@@ -271,6 +274,9 @@
 [submodule "vim/pack/03_plugins/start/listtoggle"]
 	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
+[submodule "vim/pack/03_plugins/start/log-highlighting"]
+	path = vim/pack/03_plugins/start/log-highlighting
+	url = https://github.com/MTDL9/vim-log-highlighting.git
 [submodule "vim/pack/03_plugins/start/logrotate"]
 	path = vim/pack/03_plugins/start/logrotate
 	url = https://github.com/moon-musick/vim-logrotate.git
@@ -309,7 +315,7 @@
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/pack/03_plugins/start/nginx"]
 	path = vim/pack/03_plugins/start/nginx
-	url = https://github.com/othree/nginx-contrib-vim.git
+	url = https://github.com/chr4/nginx.vim.git
 [submodule "vim/pack/03_plugins/start/numbers"]
 	path = vim/pack/03_plugins/start/numbers
 	url = https://github.com/b3niup/numbers.vim.git
@@ -325,9 +331,12 @@
 [submodule "vim/pack/03_plugins/start/php"]
 	path = vim/pack/03_plugins/start/php
 	url = https://github.com/StanAngeloff/php.vim.git
-[submodule "vim/pack/03_plugins/start/python-combined"]
-	path = vim/pack/03_plugins/start/python-combined
-	url = https://github.com/mitsuhiko/vim-python-combined.git
+[submodule "vim/pack/03_plugins/start/python-pep8-indent"]
+	path = vim/pack/03_plugins/start/python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent.git
+[submodule "vim/pack/03_plugins/start/python-syntax"]
+	path = vim/pack/03_plugins/start/python-syntax
+	url = https://github.com/vim-python/python-syntax.git
 [submodule "vim/pack/03_plugins/start/rainbow"]
 	path = vim/pack/03_plugins/start/rainbow
 	url = https://github.com/luochen1990/rainbow.git
@@ -387,7 +396,7 @@
 	url = https://github.com/tomtom/tlib_vim.git
 [submodule "vim/pack/03_plugins/start/tmux"]
 	path = vim/pack/03_plugins/start/tmux
-	url = https://github.com/tmux-plugins/vim-tmux.git
+	url = https://github.com/ericpruitt/tmux.vim.git
 [submodule "vim/pack/03_plugins/start/tmux-focus-events"]
 	path = vim/pack/03_plugins/start/tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
