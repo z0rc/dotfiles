@@ -101,11 +101,6 @@ if (( ${+commands[pip3]} )); then
     print "Installing neovim python client..."
     pip3 install --user --upgrade pynvim > /dev/null
     print "  ...done"
-
-    # Install solargraph helper utils
-    print "Installing solargraph-utils..."
-    pip3 install --user --upgrade solargraph-utils.py > /dev/null
-    print "  ...done"
 fi
 
 if (( ${+commands[vim]} )); then
