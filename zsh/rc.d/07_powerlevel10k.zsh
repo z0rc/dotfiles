@@ -150,7 +150,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_AWS_FOREGROUND=208
 
     typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
-    typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
+    typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
     typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 }
 
