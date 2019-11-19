@@ -364,6 +364,9 @@
 [submodule "vim/pack/03_plugins/start/sleuth"]
 	path = vim/pack/03_plugins/start/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+[submodule "vim/pack/03_plugins/start/smoothie"]
+	path = vim/pack/03_plugins/start/smoothie
+	url = https://github.com/psliwka/vim-smoothie.git
 [submodule "vim/pack/03_plugins/start/solarized8"]
 	path = vim/pack/03_plugins/start/solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git
