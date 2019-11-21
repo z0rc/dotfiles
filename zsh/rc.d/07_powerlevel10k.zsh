@@ -73,19 +73,17 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
 
     # Configure left prompt
     typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-        custom_fm context dir_writable dir vcs custom_many_env aws status command_execution_time background_jobs)
+        custom_fm context dir_writable dir vcs custom_many_env aws status command_execution_time background_jobs newline prompt_char)
 
     # Disable right prompt
     typeset -g POWERLEVEL9K_DISABLE_RPROMPT=true
 
-    local p='%#'
-    local ok="%F{white}${p}%f"
-    local err="%F{red}${p}%f"
-
-    typeset -g POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-    typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-    typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=
-    typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%(?.${ok}.${err}) "
+    typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_{VIINS,VICMD,VIVIS,VIOWR}_BACKGROUND=none
+    typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=76
+    typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=196
+    typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_{VIINS,VICMD,VIVIS,VIOWR}_CONTENT_EXPANSION='%#'
+    typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=true
+    typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
 
     typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SEGMENT_SEPARATOR=
     typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SUBSEGMENT_SEPARATOR=' '
@@ -149,7 +147,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_AWS_BACKGROUND=none
     typeset -g POWERLEVEL9K_AWS_FOREGROUND=208
 
-    typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
+    typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
     typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
     typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 }
