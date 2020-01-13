@@ -415,9 +415,6 @@
 [submodule "vim/pack/03_plugins/start/vinegar"]
 	path = vim/pack/03_plugins/start/vinegar
 	url = https://github.com/tpope/vim-vinegar.git
-[submodule "vim/pack/03_plugins/start/virtualenv"]
-	path = vim/pack/03_plugins/start/virtualenv
-	url = https://github.com/jmcantrell/vim-virtualenv.git
 [submodule "vim/pack/03_plugins/start/which-key"]
 	path = vim/pack/03_plugins/start/which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
