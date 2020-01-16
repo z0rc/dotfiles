@@ -24,6 +24,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     # Configure left prompt
     typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
         midnight_commander
+        nnn
         ranger
         vim_shell
         context
@@ -35,6 +36,9 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
         goenv
         nodenv
         rbenv
+        plenv
+        luenv
+        jenv
         terraform
         kubecontext
         aws
@@ -212,8 +216,8 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_{VIRTUALENV,ANACONDA}_SHOW_PYTHON_VERSION=false
     typeset -g POWERLEVEL9K_{VIRTUALENV,ANACONDA}_{LEFT,RIGHT}_DELIMITER=
 
-    typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV}_FOREGROUND=37
-    typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV}_PROMPT_ALWAYS_SHOW=false
+    typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_FOREGROUND=37
+    typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_PROMPT_ALWAYS_SHOW=false
 
     typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,REMOTE_SUDO,REMOTE,SUDO}_FOREGROUND=244
     typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=011
@@ -223,6 +227,9 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=true
 
     typeset -g POWERLEVEL9K_AWS_FOREGROUND=208
+    typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws|awless|terraform|pulumi'
+
+    typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|hemlfile|kubens|kubectx'
 
     typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
     typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
