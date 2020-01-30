@@ -43,6 +43,7 @@ brew 'pbzip2'
 brew 'perl'
 brew 'pigz'
 brew 'pinentry-mac'
+brew 'pipx'
 brew 'pre-commit'
 brew 'proselint'
 brew 'pv'
@@ -97,6 +98,6 @@ cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 mas 'AdGuard for Safari', id: 1440147259
 mas 'Microsoft Remote Desktop', id: 1295203466
-mas 'Tweetbot', id: 1384080005
-mas 'The Unarchiver', id: 425424353
 mas 'Reeder', id: 1449412482
+mas 'Tweeter', id: 1482454543
+mas 'The Unarchiver', id: 425424353
