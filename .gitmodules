@@ -1,94 +1,94 @@
-[submodule "goenv/goenv"]
+[submodule "env-wrappers/goenv/goenv"]
 	path = env-wrappers/goenv/goenv
 	url = https://github.com/syndbg/goenv.git
 [submodule "env-wrappers/jenv/jenv"]
 	path = env-wrappers/jenv/jenv
 	url = https://github.com/jenv/jenv.git
-[submodule "luaenv/lua-build"]
+[submodule "env-wrappers/luaenv/lua-build"]
 	path = env-wrappers/luaenv/lua-build
 	url = https://github.com/cehoffman/lua-build.git
-[submodule "luaenv/luaenv"]
+[submodule "env-wrappers/luaenv/luaenv"]
 	path = env-wrappers/luaenv/luaenv
 	url = https://github.com/cehoffman/luaenv.git
-[submodule "luaenv/luaenv-luarocks"]
+[submodule "env-wrappers/luaenv/luaenv-luarocks"]
 	path = env-wrappers/luaenv/luaenv-luarocks
 	url = https://github.com/xpol/luaenv-luarocks.git
-[submodule "nodenv/node-build"]
+[submodule "env-wrappers/nodenv/node-build"]
 	path = env-wrappers/nodenv/node-build
 	url = https://github.com/nodenv/node-build.git
-[submodule "nodenv/nodenv"]
+[submodule "env-wrappers/nodenv/nodenv"]
 	path = env-wrappers/nodenv/nodenv
 	url = https://github.com/nodenv/nodenv.git
-[submodule "nodenv/nodenv-aliases"]
+[submodule "env-wrappers/nodenv/nodenv-aliases"]
 	path = env-wrappers/nodenv/nodenv-aliases
 	url = https://github.com/nodenv/nodenv-aliases.git
-[submodule "nodenv/nodenv-env"]
+[submodule "env-wrappers/nodenv/nodenv-env"]
 	path = env-wrappers/nodenv/nodenv-env
 	url = https://github.com/nodenv/nodenv-env.git
-[submodule "nodenv/nodenv-man"]
+[submodule "env-wrappers/nodenv/nodenv-man"]
 	path = env-wrappers/nodenv/nodenv-man
 	url = https://github.com/nodenv/nodenv-man.git
-[submodule "nodenv/nodenv-package-rehash"]
+[submodule "env-wrappers/nodenv/nodenv-package-rehash"]
 	path = env-wrappers/nodenv/nodenv-package-rehash
 	url = https://github.com/nodenv/nodenv-package-rehash.git
-[submodule "phpenv/php-build"]
+[submodule "env-wrappers/phpenv/php-build"]
 	path = env-wrappers/phpenv/php-build
 	url = https://github.com/php-build/php-build.git
-[submodule "phpenv/phpenv"]
+[submodule "env-wrappers/phpenv/phpenv"]
 	path = env-wrappers/phpenv/phpenv
 	url = https://github.com/phpenv/phpenv.git
-[submodule "phpenv/phpenv-aliases"]
+[submodule "env-wrappers/phpenv/phpenv-aliases"]
 	path = env-wrappers/phpenv/phpenv-aliases
 	url = https://github.com/madumlao/phpenv-aliases.git
-[submodule "phpenv/phpenv-composer"]
+[submodule "env-wrappers/phpenv/phpenv-composer"]
 	path = env-wrappers/phpenv/phpenv-composer
 	url = https://github.com/ngyuki/phpenv-composer.git
-[submodule "plenv/perl-build"]
+[submodule "env-wrappers/plenv/perl-build"]
 	path = env-wrappers/plenv/perl-build
 	url = https://github.com/tokuhirom/Perl-Build.git
-[submodule "plenv/plenv"]
+[submodule "env-wrappers/plenv/plenv"]
 	path = env-wrappers/plenv/plenv
 	url = https://github.com/tokuhirom/plenv.git
-[submodule "plenv/plenv-contrib"]
+[submodule "env-wrappers/plenv/plenv-contrib"]
 	path = env-wrappers/plenv/plenv-contrib
 	url = https://github.com/miyagawa/plenv-contrib.git
-[submodule "plenv/plenv-download"]
+[submodule "env-wrappers/plenv/plenv-download"]
 	path = env-wrappers/plenv/plenv-download
 	url = https://github.com/skaji/plenv-download.git
-[submodule "pyenv/pyenv"]
+[submodule "env-wrappers/pyenv/pyenv"]
 	path = env-wrappers/pyenv/pyenv
 	url = https://github.com/yyuu/pyenv.git
-[submodule "pyenv/pyenv-default-packages"]
+[submodule "env-wrappers/pyenv/pyenv-default-packages"]
 	path = env-wrappers/pyenv/pyenv-default-packages
 	url = https://github.com/jawshooah/pyenv-default-packages.git
-[submodule "pyenv/pyenv-virtualenv"]
+[submodule "env-wrappers/pyenv/pyenv-virtualenv"]
 	path = env-wrappers/pyenv/pyenv-virtualenv
 	url = https://github.com/yyuu/pyenv-virtualenv.git
-[submodule "rbenv/rbenv"]
+[submodule "env-wrappers/rbenv/rbenv"]
 	path = env-wrappers/rbenv/rbenv
 	url = https://github.com/rbenv/rbenv.git
-[submodule "rbenv/rbenv-aliases"]
+[submodule "env-wrappers/rbenv/rbenv-aliases"]
 	path = env-wrappers/rbenv/rbenv-aliases
 	url = https://github.com/tpope/rbenv-aliases.git
-[submodule "rbenv/rbenv-binstubs"]
+[submodule "env-wrappers/rbenv/rbenv-binstubs"]
 	path = env-wrappers/rbenv/rbenv-binstubs
 	url = https://github.com/ianheggie/rbenv-binstubs.git
-[submodule "rbenv/rbenv-chefdk"]
+[submodule "env-wrappers/rbenv/rbenv-chefdk"]
 	path = env-wrappers/rbenv/rbenv-chefdk
 	url = https://github.com/docwhat/rbenv-chefdk.git
-[submodule "rbenv/rbenv-ctags"]
+[submodule "env-wrappers/rbenv/rbenv-ctags"]
 	path = env-wrappers/rbenv/rbenv-ctags
 	url = https://github.com/tpope/rbenv-ctags.git
-[submodule "rbenv/rbenv-default-gems"]
+[submodule "env-wrappers/rbenv/rbenv-default-gems"]
 	path = env-wrappers/rbenv/rbenv-default-gems
 	url = https://github.com/rbenv/rbenv-default-gems.git
-[submodule "rbenv/rbenv-env"]
+[submodule "env-wrappers/rbenv/rbenv-env"]
 	path = env-wrappers/rbenv/rbenv-env
 	url = https://github.com/ianheggie/rbenv-env.git
-[submodule "rbenv/rbenv-man"]
+[submodule "env-wrappers/rbenv/rbenv-man"]
 	path = env-wrappers/rbenv/rbenv-man
 	url = https://github.com/mlafeldt/rbenv-man.git
-[submodule "rbenv/ruby-build"]
+[submodule "env-wrappers/rbenv/ruby-build"]
 	path = env-wrappers/rbenv/ruby-build
 	url = https://github.com/rbenv/ruby-build.git
 [submodule "tmux/plugins/colors-solarized"]
@@ -166,6 +166,24 @@
 [submodule "vim/pack/03_plugins/start/anzu"]
 	path = vim/pack/03_plugins/start/anzu
 	url = https://github.com/osyo-manga/vim-anzu.git
+[submodule "vim/pack/03_plugins/start/async"]
+	path = vim/pack/03_plugins/start/async
+	url = https://github.com/prabirshrestha/async.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete"]
+	path = vim/pack/03_plugins/start/asyncomplete
+	url = https://github.com/prabirshrestha/asyncomplete.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete-lsp"]
+	path = vim/pack/03_plugins/start/asyncomplete-lsp
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete-necosyntax"]
+	path = vim/pack/03_plugins/start/asyncomplete-necosyntax
+	url = https://github.com/prabirshrestha/asyncomplete-necosyntax.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete-necovim"]
+	path = vim/pack/03_plugins/start/asyncomplete-necovim
+	url = https://github.com/prabirshrestha/asyncomplete-necovim.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete-neoinclude"]
+	path = vim/pack/03_plugins/start/asyncomplete-neoinclude
+	url = https://github.com/kyouryuukunn/asyncomplete-neoinclude.vim.git
 [submodule "vim/pack/03_plugins/start/auto-git-diff"]
 	path = vim/pack/03_plugins/start/auto-git-diff
 	url = https://github.com/hotwatermorning/auto-git-diff.git
@@ -196,18 +214,6 @@
 [submodule "vim/pack/03_plugins/start/cursorline-current-window"]
 	path = vim/pack/03_plugins/start/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
-[submodule "vim/pack/03_plugins/start/deoplete"]
-	path = vim/pack/03_plugins/start/deoplete
-	url = https://github.com/Shougo/deoplete.nvim.git
-[submodule "vim/pack/03_plugins/start/deoplete-go"]
-	path = vim/pack/03_plugins/start/deoplete-go
-	url = https://github.com/zchee/deoplete-go.git
-[submodule "vim/pack/03_plugins/start/deoplete-jedi"]
-	path = vim/pack/03_plugins/start/deoplete-jedi
-	url = https://github.com/zchee/deoplete-jedi.git
-[submodule "vim/pack/03_plugins/start/deoplete-zsh"]
-	path = vim/pack/03_plugins/start/deoplete-zsh
-	url = https://github.com/zchee/deoplete-zsh.git
 [submodule "vim/pack/03_plugins/start/dockerfile"]
 	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
@@ -319,9 +325,6 @@
 [submodule "vim/pack/03_plugins/start/numbers"]
 	path = vim/pack/03_plugins/start/numbers
 	url = https://github.com/b3niup/numbers.vim.git
-[submodule "vim/pack/03_plugins/start/nvim-yarp"]
-	path = vim/pack/03_plugins/start/nvim-yarp
-	url = https://github.com/roxma/nvim-yarp.git
 [submodule "vim/pack/03_plugins/start/pear-tree"]
 	path = vim/pack/03_plugins/start/pear-tree
 	url = https://github.com/tmsvg/pear-tree.git
@@ -340,12 +343,12 @@
 [submodule "vim/pack/03_plugins/start/rainbow"]
 	path = vim/pack/03_plugins/start/rainbow
 	url = https://github.com/luochen1990/rainbow.git
-[submodule "vim/pack/03_plugins/start/rhubarb"]
-	path = vim/pack/03_plugins/start/rhubarb
-	url = https://github.com/tpope/vim-rhubarb.git
 [submodule "vim/pack/03_plugins/start/rbenv"]
 	path = vim/pack/03_plugins/start/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
+[submodule "vim/pack/03_plugins/start/rhubarb"]
+	path = vim/pack/03_plugins/start/rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
 [submodule "vim/pack/03_plugins/start/rooter"]
 	path = vim/pack/03_plugins/start/rooter
 	url = https://github.com/airblade/vim-rooter.git
@@ -385,12 +388,12 @@
 [submodule "vim/pack/03_plugins/start/tagbar"]
 	path = vim/pack/03_plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/pack/03_plugins/start/terraform-completion"]
-	path = vim/pack/03_plugins/start/terraform-completion
-	url = https://github.com/juliosueiras/vim-terraform-completion.git
 [submodule "vim/pack/03_plugins/start/terminus"]
 	path = vim/pack/03_plugins/start/terminus
 	url = https://github.com/wincent/terminus.git
+[submodule "vim/pack/03_plugins/start/terraform-completion"]
+	path = vim/pack/03_plugins/start/terraform-completion
+	url = https://github.com/juliosueiras/vim-terraform-completion.git
 [submodule "vim/pack/03_plugins/start/test"]
 	path = vim/pack/03_plugins/start/test
 	url = https://github.com/janko-m/vim-test.git
@@ -409,9 +412,12 @@
 [submodule "vim/pack/03_plugins/start/undotree"]
 	path = vim/pack/03_plugins/start/undotree
 	url = https://github.com/mbbill/undotree.git
-[submodule "vim/pack/03_plugins/start/vim-hug-neovim-rpc"]
-	path = vim/pack/03_plugins/start/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc.git
+[submodule "vim/pack/03_plugins/start/vim-lsp"]
+	path = vim/pack/03_plugins/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp.git
+[submodule "vim/pack/03_plugins/start/vim-lsp-settings"]
+	path = vim/pack/03_plugins/start/vim-lsp-settings
+	url = https://github.com/mattn/vim-lsp-settings.git
 [submodule "vim/pack/03_plugins/start/vinegar"]
 	path = vim/pack/03_plugins/start/vinegar
 	url = https://github.com/tpope/vim-vinegar.git

@@ -96,30 +96,11 @@ if (( ${+commands[perl]} )); then
     print "  ...done"
 fi
 
-if (( ${+commands[pip3]} )); then
-    # Install neovim python plugin
-    print "Installing neovim python client..."
-    pip3 install --user --upgrade pynvim > /dev/null
-    print "  ...done"
-fi
-
 if (( ${+commands[vim]} )); then
     # Generating vim help tags
     print "Generating vim helptags..."
     nohup vim -c 'silent! helptags ALL | q' </dev/null &>/dev/null
     print "  ...done"
-fi
-
-if (( ${+commands[make]} )) && (( ${+commands[vim]} )) && (( ${+commands[go]} )); then
-    # Making deoplete-go dependencies
-    print "Installing deoplete-go dependencies..."
-    pushd vim/pack/03_plugins/start/deoplete-go
-    if make > /dev/null; then
-        print "  ...done"
-    else
-        print "  Please check intallation instructions at vim/pack/03_plugins/start/deoplete-go/README.md or just ignore this"
-    fi
-    popd
 fi
 
 # Link goenv plugins to $GOENV_ROOT

@@ -5,10 +5,6 @@ map <Space> <leader>
 " else use pear-tree mapping
 imap <expr> <CR> !pumvisible() ? "\<Plug>(PearTreeExpand)" : "\<CR>"
 
-" <C-h>, <BS>: close popup and delete backword char
-imap <expr> <C-h> deoplete#smart_close_popup()."\<C-h>"
-imap <expr> <BS> deoplete#smart_close_popup()."\<C-h>"
-
 " display search position like (2/10) for n/N commands
 map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
 map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
