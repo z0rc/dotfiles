@@ -9,7 +9,7 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
 " register necosyntax
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necosyntax#get_source_options({
     \ 'name': 'necosyntax',
-    \ 'whitelist': ['*'],
+    \ 'blacklist': ['text'],
     \ 'completor': function('asyncomplete#sources#necosyntax#completor'),
     \ }))
 
