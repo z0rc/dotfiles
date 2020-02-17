@@ -157,9 +157,6 @@
 [submodule "vim/pack/03_plugins/start/airline-themes"]
 	path = vim/pack/03_plugins/start/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/pack/03_plugins/start/ale"]
-	path = vim/pack/03_plugins/start/ale
-	url = https://github.com/w0rp/ale.git
 [submodule "vim/pack/03_plugins/start/ansible"]
 	path = vim/pack/03_plugins/start/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
