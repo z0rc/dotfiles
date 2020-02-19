@@ -22,3 +22,6 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
 
 " close complete popup when completion is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" show errors and warnings from lsp in statusline
+let g:lsp_diagnostics_echo_cursor = 1
