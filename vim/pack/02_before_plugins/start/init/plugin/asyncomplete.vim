@@ -23,7 +23,7 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
 " filter out from completion syntax definitions added by rainbow plugin (colored parentheses)
 let g:asyncomplete_preprocessor = [function('asyncomplete#preprocessor#ezfilter#filter')]
 let g:asyncomplete#preprocessor#ezfilter#config = {}
-let g:asyncomplete#preprocessor#ezfilter#config.necosyntax = {ctx, items -> filter(items, 'v:key !~ "Rainbow"')}
+let g:asyncomplete#preprocessor#ezfilter#config.necosyntax = {ctx, items -> filter(items, 'v:val.word !~ "Rainbow"')}
 
 " close complete popup when completion is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
