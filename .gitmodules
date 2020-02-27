@@ -157,6 +157,9 @@
 [submodule "vim/pack/03_plugins/start/airline-themes"]
 	path = vim/pack/03_plugins/start/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/pack/03_plugins/start/animate"]
+	path = vim/pack/03_plugins/start/animate
+	url = https://github.com/camspiers/animate.vim.git
 [submodule "vim/pack/03_plugins/start/ansible"]
 	path = vim/pack/03_plugins/start/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
@@ -271,6 +274,9 @@
 [submodule "vim/pack/03_plugins/start/json"]
 	path = vim/pack/03_plugins/start/json
 	url = https://github.com/elzr/vim-json.git
+[submodule "vim/pack/03_plugins/start/lens"]
+	path = vim/pack/03_plugins/start/lens
+	url = https://github.com/camspiers/lens.vim.git
 [submodule "vim/pack/03_plugins/start/listtoggle"]
 	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
