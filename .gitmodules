@@ -202,9 +202,6 @@
 [submodule "vim/pack/03_plugins/start/committia"]
 	path = vim/pack/03_plugins/start/committia
 	url = https://github.com/rhysd/committia.vim.git
-[submodule "vim/pack/03_plugins/start/context_filetype"]
-	path = vim/pack/03_plugins/start/context_filetype
-	url = https://github.com/Shougo/context_filetype.vim.git
 [submodule "vim/pack/03_plugins/start/csv"]
 	path = vim/pack/03_plugins/start/csv
 	url = https://github.com/chrisbra/csv.vim.git
