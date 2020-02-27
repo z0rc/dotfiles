@@ -313,9 +313,6 @@
 [submodule "vim/pack/03_plugins/start/nginx"]
 	path = vim/pack/03_plugins/start/nginx
 	url = https://github.com/chr4/nginx.vim.git
-[submodule "vim/pack/03_plugins/start/numbers"]
-	path = vim/pack/03_plugins/start/numbers
-	url = https://github.com/b3niup/numbers.vim.git
 [submodule "vim/pack/03_plugins/start/pear-tree"]
 	path = vim/pack/03_plugins/start/pear-tree
 	url = https://github.com/tmsvg/pear-tree.git
