@@ -169,15 +169,9 @@
 [submodule "vim/pack/03_plugins/start/asyncomplete"]
 	path = vim/pack/03_plugins/start/asyncomplete
 	url = https://github.com/prabirshrestha/asyncomplete.vim.git
-[submodule "vim/pack/03_plugins/start/asyncomplete-ezfilter"]
-	path = vim/pack/03_plugins/start/asyncomplete-ezfilter
-	url = https://github.com/machakann/asyncomplete-ezfilter.vim.git
 [submodule "vim/pack/03_plugins/start/asyncomplete-lsp"]
 	path = vim/pack/03_plugins/start/asyncomplete-lsp
 	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
-[submodule "vim/pack/03_plugins/start/asyncomplete-necosyntax"]
-	path = vim/pack/03_plugins/start/asyncomplete-necosyntax
-	url = https://github.com/prabirshrestha/asyncomplete-necosyntax.vim.git
 [submodule "vim/pack/03_plugins/start/asyncomplete-necovim"]
 	path = vim/pack/03_plugins/start/asyncomplete-necovim
 	url = https://github.com/prabirshrestha/asyncomplete-necovim.vim.git
@@ -307,9 +301,6 @@
 [submodule "vim/pack/03_plugins/start/mw-utils"]
 	path = vim/pack/03_plugins/start/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/pack/03_plugins/start/neco-syntax"]
-	path = vim/pack/03_plugins/start/neco-syntax
-	url = https://github.com/Shougo/neco-syntax.git
 [submodule "vim/pack/03_plugins/start/neco-vim"]
 	path = vim/pack/03_plugins/start/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
