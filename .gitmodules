@@ -169,6 +169,9 @@
 [submodule "vim/pack/03_plugins/start/asyncomplete"]
 	path = vim/pack/03_plugins/start/asyncomplete
 	url = https://github.com/prabirshrestha/asyncomplete.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete-ezfilter"]
+	path = vim/pack/03_plugins/start/asyncomplete-ezfilter
+	url = https://github.com/machakann/asyncomplete-ezfilter.vim.git
 [submodule "vim/pack/03_plugins/start/asyncomplete-lsp"]
 	path = vim/pack/03_plugins/start/asyncomplete-lsp
 	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
