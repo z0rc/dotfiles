@@ -34,8 +34,8 @@ fpath+="${ZDOTDIR}/plugins/completions/src"
 # Enable git-extras completions
 source "${DOTFILES}/tools/git-extras/etc/git-extras-completion.zsh"
 
-# Enable fzf completions
-source "${DOTFILES}/tools/fzf/shell/completion.zsh"
+# Use fzf for tab complations
+source "${ZDOTDIR}/plugins/fzf-tab/fzf-tab.zsh"
 
 # Init completions, but regenerate compdump only once a day.
 # The globbing is a little complicated here:
