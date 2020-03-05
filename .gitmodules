@@ -331,9 +331,6 @@
 [submodule "vim/pack/03_plugins/start/python-syntax"]
 	path = vim/pack/03_plugins/start/python-syntax
 	url = https://github.com/vim-python/python-syntax.git
-[submodule "vim/pack/03_plugins/start/rainbow"]
-	path = vim/pack/03_plugins/start/rainbow
-	url = https://github.com/luochen1990/rainbow.git
 [submodule "vim/pack/03_plugins/start/rbenv"]
 	path = vim/pack/03_plugins/start/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
