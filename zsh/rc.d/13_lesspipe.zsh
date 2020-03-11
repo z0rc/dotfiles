@@ -1,10 +1,5 @@
 # Make less more friendly
-for lpipe in lesspipe lesspipe.sh; do
-    if (( ${+commands[$lpipe]} )); then
-        export LESSOPEN="| ${lpipe} %s"
-        export LESSCLOSE="${lpipe} %s %s"
-        export LESS_ADVANCED_PREPROCESSOR=1
-    fi
-done
-
-unset lpipe
+if (( $#commands[(i)lesspipe(|.sh)] )); then
+    export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+    export LESS_ADVANCED_PREPROCESSOR=1
+fi

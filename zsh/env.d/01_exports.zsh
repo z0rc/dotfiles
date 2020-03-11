@@ -3,7 +3,7 @@ export VISUAL=vim
 export EDITOR=vim
 export VIMINIT='let $MYVIMRC="$DOTFILES/vim/vimrc" | source $MYVIMRC'
 export PAGER=less
-export LESS="--RAW-CONTROL-CHARS --ignore-case --hilite-unread --LONG-PROMPT --window=-4"
+export LESS="--RAW-CONTROL-CHARS --ignore-case --hilite-unread --LONG-PROMPT --window=-4 --tabs=4"
 export READNULLCMD=${PAGER}
 
 # XDG basedir spec compliance
