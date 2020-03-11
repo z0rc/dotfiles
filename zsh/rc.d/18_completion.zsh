@@ -1,18 +1,14 @@
 # Completion tweaks
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' verbose true
-zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/compcache"
-zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[cyan]=$color[red]"
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-zstyle ':completion::complete:*' use-cache true
+zstyle ':completion:*'                  matcher-list    'm:{a-zA-Z}={A-Za-z}' 'l:|=* r:|=*'
+zstyle ':completion:*:descriptions'     format          '[%d]'
+zstyle ':completion:*:*:-subscript-:*'  tag-order       indexes parameters
+zstyle ':completion:*'                  squeeze-slashes true
+zstyle ':completion:*'                  single-ignored  show
+zstyle ':completion:*:(rm|kill|diff):*' ignore-line     other
+zstyle ':completion:*:rm:*'             file-patterns   '*:all-files'
+zstyle ':completion:*'                  list-colors     ${(s.:.)LS_COLORS}
+zstyle ':completion::complete:*'        use-cache       true
+zstyle ':completion::complete:*'        cache-path      "${XDG_CACHE_HOME}/zsh/compcache"
 
 # Manual page completion
 man_glob () {
