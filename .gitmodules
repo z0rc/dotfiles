@@ -352,9 +352,6 @@
 [submodule "vim/pack/03_plugins/start/ruby-chef-ft"]
 	path = vim/pack/03_plugins/start/ruby-chef-ft
 	url = https://github.com/dougireton/vim-chef.git
-[submodule "vim/pack/03_plugins/start/sleuth"]
-	path = vim/pack/03_plugins/start/sleuth
-	url = https://github.com/tpope/vim-sleuth.git
 [submodule "vim/pack/03_plugins/start/smoothie"]
 	path = vim/pack/03_plugins/start/smoothie
 	url = https://github.com/psliwka/vim-smoothie.git
