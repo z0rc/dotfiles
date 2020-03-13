@@ -256,9 +256,6 @@
 [submodule "vim/pack/03_plugins/start/gutentags"]
 	path = vim/pack/03_plugins/start/gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
-[submodule "vim/pack/03_plugins/start/hashicorp-tools"]
-	path = vim/pack/03_plugins/start/hashicorp-tools
-	url = https://github.com/hashivim/vim-hashicorp-tools.git
 [submodule "vim/pack/03_plugins/start/indentLine"]
 	path = vim/pack/03_plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
@@ -376,9 +373,9 @@
 [submodule "vim/pack/03_plugins/start/terminus"]
 	path = vim/pack/03_plugins/start/terminus
 	url = https://github.com/wincent/terminus.git
-[submodule "vim/pack/03_plugins/start/terraform-completion"]
-	path = vim/pack/03_plugins/start/terraform-completion
-	url = https://github.com/juliosueiras/vim-terraform-completion.git
+[submodule "vim/pack/03_plugins/start/terraform"]
+	path = vim/pack/03_plugins/start/terraform
+	url = https://github.com/hashivim/vim-terraform.git
 [submodule "vim/pack/03_plugins/start/test"]
 	path = vim/pack/03_plugins/start/test
 	url = https://github.com/janko-m/vim-test.git

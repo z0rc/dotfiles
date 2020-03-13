@@ -1,2 +1,2 @@
-" disable completion of modules for registry
-let g:terraform_registry_module_completion = 0
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
