@@ -3,7 +3,7 @@ map <Space> <leader>
 
 " if suggestions windows present, then <Enter> accepts selection
 " else use pear-tree mapping
-imap <expr> <CR> !pumvisible() ? "\<Plug>(PearTreeExpand)" : "\<CR>"
+imap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : '<Plug>(PearTreeExpand)'
 
 " display search position like (2/10) for n/N commands
 map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
