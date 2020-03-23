@@ -265,6 +265,9 @@
 [submodule "vim/pack/03_plugins/start/javascript"]
 	path = vim/pack/03_plugins/start/javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/pack/03_plugins/start/jenkinsfile"]
+	path = vim/pack/03_plugins/start/jenkinsfile
+	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
 [submodule "vim/pack/03_plugins/start/json"]
 	path = vim/pack/03_plugins/start/json
 	url = https://github.com/elzr/vim-json.git
