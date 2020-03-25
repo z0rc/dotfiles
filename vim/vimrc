@@ -49,5 +49,11 @@ set scrolloff=8 " start scrolling when we're 8 lines away from margins
 set sidescroll=1 " enable sidescrolling too
 set sidescrolloff=8 " start sidescrolling 8 chars away from margins
 
+" Tabs
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
 " Source local configuration
 runtime vimrc.local
