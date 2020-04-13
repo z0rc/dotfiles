@@ -44,12 +44,16 @@ set splitbelow " when splitting windows put new ones below ...
 set splitright " ...and to the right
 set path+=** " search subfolders recursively
 
+" command line completion
+set wildmenu
+set wildmode=longest:full,full
+
 " Scrolling
 set scrolloff=8 " start scrolling when we're 8 lines away from margins
 set sidescroll=1 " enable sidescrolling too
 set sidescrolloff=8 " start sidescrolling 8 chars away from margins
 
-" Tabs
+" Tabs, make them 4 spaces by default
 set expandtab
 set tabstop=4
 set softtabstop=4
