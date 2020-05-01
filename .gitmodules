@@ -412,9 +412,6 @@
 [submodule "vim/pack/03_plugins/start/xolox-misc"]
 	path = vim/pack/03_plugins/start/xolox-misc
 	url = https://github.com/xolox/vim-misc.git
-[submodule "vim/pack/03_plugins/start/zeavim"]
-	path = vim/pack/03_plugins/start/zeavim
-	url = https://github.com/KabbAmine/zeavim.vim.git
 [submodule "zsh/plugins/autoenv"]
 	path = zsh/plugins/autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv.git

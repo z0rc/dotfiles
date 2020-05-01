@@ -79,11 +79,6 @@ let g:which_key_map.t={
 " ag
 let g:which_key_map.a=['Ag', 'ag search']
 
-" zeal
-nmap <leader>z <Plug>Zeavim
-vmap <leader>z <Plug>ZVVisSelection
-let g:which_key_map.z='Zeal search'
-
 " fzf
 let g:which_key_map.f={
     \'name' : 'Fuzzy search',
