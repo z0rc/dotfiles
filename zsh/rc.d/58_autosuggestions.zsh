@@ -7,3 +7,5 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Autosuggestions plugin
 source "${ZDOTDIR}/plugins/autosuggestions/zsh-autosuggestions.zsh"
+
+ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(fzf-tab-complete)

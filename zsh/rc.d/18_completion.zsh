@@ -1,6 +1,6 @@
 # Completion tweaks
 zstyle ':completion:*'                  matcher-list    'm:{a-zA-Z}={A-Za-z}' 'l:|=* r:|=*'
-zstyle ':completion:*:descriptions'     format          '[%d]'
+zstyle ':completion:*'                  completer       _complete
 zstyle ':completion:*:*:-subscript-:*'  tag-order       indexes parameters
 zstyle ':completion:*'                  squeeze-slashes true
 zstyle ':completion:*'                  single-ignored  show
