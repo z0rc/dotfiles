@@ -30,6 +30,9 @@ fpath+="${ZDOTDIR}/plugins/completions/src"
 # Enable git-extras completions
 source "${DOTFILES}/tools/git-extras/etc/git-extras-completion.zsh"
 
+# Make sure complist is loaded
+zmodload zsh/complist
+
 # Init completions, but regenerate compdump only once a day.
 # The globbing is a little complicated here:
 # - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
