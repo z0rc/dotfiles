@@ -9,4 +9,4 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source "${ZDOTDIR}/plugins/autosuggestions/zsh-autosuggestions.zsh"
 
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(fzf-tab-complete)
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(z4h-fzf-history)
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(fzf-history-widget)
