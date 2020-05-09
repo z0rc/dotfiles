@@ -409,9 +409,6 @@
 [submodule "vim/pack/03_plugins/start/which-key"]
 	path = vim/pack/03_plugins/start/which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
-[submodule "vim/pack/03_plugins/start/xolox-misc"]
-	path = vim/pack/03_plugins/start/xolox-misc
-	url = https://github.com/xolox/vim-misc.git
 [submodule "zsh/plugins/autoenv"]
 	path = zsh/plugins/autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv.git
