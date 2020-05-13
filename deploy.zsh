@@ -161,6 +161,11 @@ done
 ln -sf "${SCRIPT_DIR}/env-wrappers/rbenv/default-gems" "${XDG_DATA_HOME}/rbenv/default-gems"
 print "  ...done"
 
+# Trigger zsh run with powerlevel10k prompt to download gitstatusd
+print "Downloading gitstatusd for powerlevel10k..."
+$SHELL -is <<<exit &>/dev/null
+print "  ...done"
+
 # Install crontab task to pull updates every midnight
 print "Installing cron job for periodic updates..."
 local cron_task="cd ${SCRIPT_DIR} && git -c user.name=cron.update -c user.email=cron@localhost stash && git pull && git stash pop"
