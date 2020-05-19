@@ -252,10 +252,22 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=37
     typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
     typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
+    typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
 
     ######################[ pyenv, rbenv, goenv, nodenv,plenv,luaenv,jenv ]#######################
     typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_FOREGROUND=37
     typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_PROMPT_ALWAYS_SHOW=false
+    # Pyenv segment format. The following parameters are available within the expansion.
+    #
+    # - P9K_CONTENT                Current pyenv environment (pyenv version-name).
+    # - P9K_PYENV_PYTHON_VERSION   Current python version (python --version).
+    #
+    # The default format has the following logic:
+    #
+    # 1. Display "$P9K_CONTENT $P9K_PYENV_PYTHON_VERSION" if $P9K_PYENV_PYTHON_VERSION is not
+    #   empty and unequal to $P9K_CONTENT.
+    # 2. Otherwise display just "$P9K_CONTENT".
+    typeset -g POWERLEVEL9K_PYENV_CONTENT_EXPANSION='${P9K_CONTENT}${${P9K_PYENV_PYTHON_VERSION:#$P9K_CONTENT}:+ $P9K_PYENV_PYTHON_VERSION}'
 
     ##################################[ context: user@hostname ]##################################
     # Context color when running with privileges.
