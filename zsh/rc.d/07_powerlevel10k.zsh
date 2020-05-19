@@ -27,6 +27,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
         dir_writable
         dir
         vcs
+        virtualenv
         pyenv
         goenv
         nodenv
@@ -246,6 +247,11 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     #################[ ranger: ranger shell (https://github.com/ranger/ranger) ]##################
     typeset -g POWERLEVEL9K_RANGER_FOREGROUND=081
     typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION='rngr'
+
+    ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
+    typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=37
+    typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
+    typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
     ######################[ pyenv, rbenv, goenv, nodenv,plenv,luaenv,jenv ]#######################
     typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_FOREGROUND=37
