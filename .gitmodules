@@ -277,6 +277,9 @@
 [submodule "vim/pack/03_plugins/start/listtoggle"]
 	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
+[submodule "vim/pack/03_plugins/start/localvimrc"]
+	path = vim/pack/03_plugins/start/localvimrc
+	url = https://github.com/embear/vim-localvimrc
 [submodule "vim/pack/03_plugins/start/log-highlighting"]
 	path = vim/pack/03_plugins/start/log-highlighting
 	url = https://github.com/MTDL9/vim-log-highlighting.git

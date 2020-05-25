@@ -42,6 +42,8 @@ Session.vim
 # plugin doc tags
 /doc/tags
 /doc/tags-*
+# local vimrc (per folder configuration)
+.lvimrc
 
 ### Zsh ###
 # autoenv
