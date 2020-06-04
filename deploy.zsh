@@ -76,6 +76,10 @@ if (( ${+commands[make]} )); then
     print "  ...done"
 fi
 
+print "Installing git-fuzzy..."
+ln -sf "${SCRIPT_DIR}/tools/git-fuzzy/bin/git-fuzzy" "${HOME}/.local/bin/git-fuzzy"
+print "  ...done"
+
 print "Installing fzf..."
 pushd tools/fzf
 if ./install --bin &> /dev/null; then

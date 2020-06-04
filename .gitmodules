@@ -124,6 +124,9 @@
 [submodule "tools/git-extras"]
 	path = tools/git-extras
 	url = https://github.com/tj/git-extras.git
+[submodule "tools/git-fuzzy"]
+	path = tools/git-fuzzy
+	url = https://github.com/bigH/git-fuzzy.git
 [submodule "tools/git-quick-stats"]
 	path = tools/git-quick-stats
 	url = https://github.com/arzzen/git-quick-stats.git
