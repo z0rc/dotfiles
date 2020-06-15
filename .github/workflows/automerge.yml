@@ -5,22 +5,16 @@ on:
     types:
       - completed
   pull_request:
-    types:
-      - edited
-      - labeled
-      - opened
-      - ready_for_review
-      - reopened
-      - synchronize
-      - unlabeled
-      - unlocked
+    branches:
+      - master
 
 jobs:
   merge-me:
-    name: Merge me!
+    name: Merge dependabot updates
     runs-on: ubuntu-latest
     steps:
-      - name: Merge me!
+      - name: Merge dependabot updates
         uses: ridedott/merge-me-action@master
         with:
+          GITHUB_LOGIN: 'dependabot[bot]'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
