@@ -50,8 +50,6 @@ presence](#zero-home-presence).
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better
     git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
-  * [slack-cli](https://github.com/rockymadden/slack-cli) for sending messages
-    to slack from shell
 * [goenv](https://github.com/syndbg/goenv),
   [jenv](https://github.com/jenv/jenv),
   [luaenv](https://github.com/cehoffman/luaenv),
