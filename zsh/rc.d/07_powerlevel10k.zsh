@@ -296,7 +296,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     # Show kubecontext only when the the command you are typing invokes one of these tools.
     typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm||helmfile|kubens|kubectx|oc|istioctl|kogito'
 
-    typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
+    typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=same-dir
     typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
     typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 }
