@@ -1,0 +1,3 @@
+abbr -g F="| fzf"
+abbr -g L="| less"
+abbr gpp="git pull --prune"

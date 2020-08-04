@@ -4,10 +4,6 @@ alias -s log=less
 # sudo wrapper which is able to expand aliases and handle noglob/nocorrect builtins
 alias sudo="noglob do_sudo "
 
-# global aliases
-alias -g F="| fzf"
-alias -g L="| less"
-
 # Human file sizes
 alias df="df -Th"
 alias du="du -hc"
