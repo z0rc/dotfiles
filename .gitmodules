@@ -415,6 +415,9 @@
 [submodule "vim/pack/03_plugins/start/which-key"]
 	path = vim/pack/03_plugins/start/which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
+[submodule "zsh/plugins/abbr"]
+	path = zsh/plugins/abbr
+	url = https://github.com/olets/zsh-abbr.git
 [submodule "zsh/plugins/autoenv"]
 	path = zsh/plugins/autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv.git
