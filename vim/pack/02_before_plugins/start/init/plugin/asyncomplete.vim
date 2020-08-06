@@ -4,22 +4,22 @@ augroup asyncomple_vimrc
     " register necovim source
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necovim#get_source_options({
         \ 'name': 'necovim',
-        \ 'whitelist': ['vim'],
+        \ 'allowlist': ['vim'],
         \ 'completor': function('asyncomplete#sources#necovim#completor'),
         \ }))
 
     " register omni source
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
         \ 'name': 'omni',
-        \ 'whitelist': ['zsh'],
+        \ 'allowlist': ['zsh'],
         \ 'completor': function('asyncomplete#sources#omni#completor'),
         \ }))
 
     " register tags source
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
         \ 'name': 'tags',
-        \ 'whitelist': ['*'],
-        \ 'blacklist': ['terraform', 'python'],
+        \ 'allowlist': ['*'],
+        \ 'blocklist': ['terraform', 'python'],
         \ 'completor': function('asyncomplete#sources#tags#completor'),
         \ }))
 
