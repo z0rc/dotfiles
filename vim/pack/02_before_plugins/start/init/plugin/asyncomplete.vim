@@ -25,3 +25,6 @@ let g:lsp_diagnostics_echo_cursor = 1
 
 " enable references highlight
 let g:lsp_highlight_references_enabled = 1
+
+" allow modifying the completeopt variable, or it will be overridden all the time
+let g:asyncomplete_auto_completeopt = 0
