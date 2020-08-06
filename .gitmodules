@@ -184,6 +184,9 @@
 [submodule "vim/pack/03_plugins/start/asyncomplete-neoinclude"]
 	path = vim/pack/03_plugins/start/asyncomplete-neoinclude
 	url = https://github.com/kyouryuukunn/asyncomplete-neoinclude.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete-omni"]
+	path = vim/pack/03_plugins/start/asyncomplete-omni
+	url = https://github.com/yami-beta/asyncomplete-omni.vim.git
 [submodule "vim/pack/03_plugins/start/auto-git-diff"]
 	path = vim/pack/03_plugins/start/auto-git-diff
 	url = https://github.com/hotwatermorning/auto-git-diff.git
@@ -415,6 +418,9 @@
 [submodule "vim/pack/03_plugins/start/which-key"]
 	path = vim/pack/03_plugins/start/which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
+[submodule "vim/pack/03_plugins/start/zsh-omni-completion"]
+	path = vim/pack/03_plugins/start/zsh-omni-completion
+	url = https://github.com/zphere-zsh/zsh-omni-completion.git
 [submodule "zsh/plugins/abbr"]
 	path = zsh/plugins/abbr
 	url = https://github.com/olets/zsh-abbr.git

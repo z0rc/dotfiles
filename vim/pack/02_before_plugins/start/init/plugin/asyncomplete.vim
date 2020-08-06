@@ -16,6 +16,16 @@ augroup asyncomple_vimrc
         \ 'completor': function('asyncomplete#sources#necovim#completor'),
         \ }))
 
+    " register zsh-omni
+    autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
+        \ 'name': 'omni',
+        \ 'whitelist': ['zsh'],
+        \ 'completor': function('asyncomplete#sources#omni#completor'),
+        \ 'config': {
+        \   'show_source_kind': 1
+        \ }
+        \ }))
+
     " close complete popup when completion is done
     autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
 augroup END
