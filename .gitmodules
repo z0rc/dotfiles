@@ -169,9 +169,6 @@
 [submodule "vim/pack/03_plugins/start/anzu"]
 	path = vim/pack/03_plugins/start/anzu
 	url = https://github.com/osyo-manga/vim-anzu.git
-[submodule "vim/pack/03_plugins/start/async"]
-	path = vim/pack/03_plugins/start/async
-	url = https://github.com/prabirshrestha/async.vim.git
 [submodule "vim/pack/03_plugins/start/asyncomplete"]
 	path = vim/pack/03_plugins/start/asyncomplete
 	url = https://github.com/prabirshrestha/asyncomplete.vim.git
