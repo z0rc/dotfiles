@@ -1,29 +1,26 @@
 augroup asyncomple_vimrc
     autocmd!
 
-    " register neoinclude
-    autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neoinclude#get_source_options({
-        \ 'name': 'neoinclude',
-        \ 'whitelist': ['cpp'],
-        \ 'refresh_pattern': '\(<\|"\|/\)$',
-        \ 'completor': function('asyncomplete#sources#neoinclude#completor'),
-        \ }))
-
-    " register necovim
+    " register necovim source
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necovim#get_source_options({
         \ 'name': 'necovim',
         \ 'whitelist': ['vim'],
         \ 'completor': function('asyncomplete#sources#necovim#completor'),
         \ }))
 
-    " register zsh-omni
+    " register omni source
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
         \ 'name': 'omni',
         \ 'whitelist': ['zsh'],
         \ 'completor': function('asyncomplete#sources#omni#completor'),
-        \ 'config': {
-        \   'show_source_kind': 1
-        \ }
+        \ }))
+
+    " register tags source
+    autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
+        \ 'name': 'tags',
+        \ 'whitelist': ['*'],
+        \ 'blacklist': ['terraform', 'python'],
+        \ 'completor': function('asyncomplete#sources#tags#completor'),
         \ }))
 
     " close complete popup when completion is done
@@ -35,6 +32,3 @@ let g:lsp_diagnostics_echo_cursor = 1
 
 " enable references highlight
 let g:lsp_highlight_references_enabled = 1
-
-" allow modifying the completeopt variable, or it will be overridden all the time
-let g:asyncomplete_auto_completeopt = 0

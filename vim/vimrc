@@ -33,13 +33,6 @@ set number " show line numbers ...
 set relativenumber " and use relative style numbers
 set cursorline " highlight line with cursor
 set showcmd " show partial commands in bottom left corner
-set completeopt-=preview " don't show additional info in split
-if has("popupwin")
-  set completeopt+=popup " ...but show additional info in popup (if available) on competion
-endif
-set completeopt+=noinsert " don't automatically insert, wait for user input
-set completeopt+=noselect " don't automatically select first entry
-set completeopt+=menu " show completion menu
 set shortmess+=c " shut off completion messages
 set whichwrap+=<,>,h,l,[,] " autowrap to next line for cursor movements
 set splitbelow " when splitting windows put new ones below ...

@@ -181,12 +181,12 @@
 [submodule "vim/pack/03_plugins/start/asyncomplete-necovim"]
 	path = vim/pack/03_plugins/start/asyncomplete-necovim
 	url = https://github.com/prabirshrestha/asyncomplete-necovim.vim.git
-[submodule "vim/pack/03_plugins/start/asyncomplete-neoinclude"]
-	path = vim/pack/03_plugins/start/asyncomplete-neoinclude
-	url = https://github.com/kyouryuukunn/asyncomplete-neoinclude.vim.git
 [submodule "vim/pack/03_plugins/start/asyncomplete-omni"]
 	path = vim/pack/03_plugins/start/asyncomplete-omni
 	url = https://github.com/yami-beta/asyncomplete-omni.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete-tags"]
+	path = vim/pack/03_plugins/start/asyncomplete-tags
+	url = https://github.com/prabirshrestha/asyncomplete-tags.vim.git
 [submodule "vim/pack/03_plugins/start/auto-git-diff"]
 	path = vim/pack/03_plugins/start/auto-git-diff
 	url = https://github.com/hotwatermorning/auto-git-diff.git
@@ -313,9 +313,6 @@
 [submodule "vim/pack/03_plugins/start/neco-vim"]
 	path = vim/pack/03_plugins/start/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
-[submodule "vim/pack/03_plugins/start/neoinclude"]
-	path = vim/pack/03_plugins/start/neoinclude
-	url = https://github.com/Shougo/neoinclude.vim.git
 [submodule "vim/pack/03_plugins/start/nerdcommenter"]
 	path = vim/pack/03_plugins/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
