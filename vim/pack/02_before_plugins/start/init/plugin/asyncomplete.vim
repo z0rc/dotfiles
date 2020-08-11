@@ -19,7 +19,7 @@ augroup asyncomple_vimrc
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
         \ 'name': 'tags',
         \ 'allowlist': ['*'],
-        \ 'blocklist': ['terraform', 'python'],
+        \ 'blocklist': ['terraform', 'python', 'gitcommit'],
         \ 'completor': function('asyncomplete#sources#tags#completor'),
         \ }))
 
