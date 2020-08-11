@@ -1,3 +1,5 @@
-abbr -g F="| fzf"
-abbr -g L="| less"
+abbr ga="git add ."
+abbr gaa="git add --all"
+abbr gco="git commit"
 abbr gpp="git pull --prune"
+abbr gu="git push"
