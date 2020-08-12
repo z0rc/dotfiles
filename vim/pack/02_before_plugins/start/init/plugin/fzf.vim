@@ -21,3 +21,5 @@ let g:fzf_colors =
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 let g:fzf_files_options = '--preview="head -'.&lines.' {}"'
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
