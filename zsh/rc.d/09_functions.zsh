@@ -261,8 +261,3 @@ evalcache () {
         source "${cache_file}"
     fi
 }
-
-# Expand alises on Ctrl+Space
-function z4h-expand() { zle _expand_alias || zle .expand-word || true }
-zle -N z4h-expand
-bindkey '^ '      z4h-expand
