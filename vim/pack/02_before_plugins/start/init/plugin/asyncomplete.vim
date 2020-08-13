@@ -11,7 +11,7 @@ augroup asyncomple_vimrc
     " register omni source
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
         \ 'name': 'omni',
-        \ 'allowlist': ['zsh'],
+        \ 'allowlist': ['zsh', 'bash', 'sh'],
         \ 'completor': function('asyncomplete#sources#omni#completor'),
         \ }))
 
@@ -19,7 +19,7 @@ augroup asyncomple_vimrc
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
         \ 'name': 'tags',
         \ 'allowlist': ['*'],
-        \ 'blocklist': ['terraform', 'python', 'gitcommit'],
+        \ 'blocklist': ['terraform', 'python', 'gitcommit', 'zsh', 'bash', 'sh', 'vim'],
         \ 'completor': function('asyncomplete#sources#tags#completor'),
         \ }))
 
