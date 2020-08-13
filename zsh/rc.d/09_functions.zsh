@@ -188,9 +188,9 @@ fgb () {
 bag () {
     # prefer ag to grep
     if (( ${+commands[ag]} )); then
-        search_cmd () { ag --nogroup --color "$*" }
+        search_cmd () { ag --nogroup --color --silent "$*" }
     else
-        search_cmd () { grep --line-number --recursive --ignore-case --color=always "$*" }
+        search_cmd () { grep --line-number --recursive --ignore-case --color=always --no-messages "$*" }
     fi
 
     # use bat with syntax highlight support, if it's avaialble
@@ -199,7 +199,7 @@ bag () {
         preview_cmd='bat --paging=never --terminal-width=${FZF_PREVIEW_COLUMNS} --color=always --style=plain,numbers,changes \
                          --line-range=${from}:${till} --highlight-line=${line} ${filename}'
     else
-        # replace here used to highligh line with match
+        # replace here used to highlight line with match
         preview_cmd='sed -n -E "s/(.*'$*'.*)/'$bg[grey]'\1'$reset_color'/gI;${from},${till}p" < ${filename}'
     fi
 
