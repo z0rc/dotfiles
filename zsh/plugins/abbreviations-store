@@ -1,5 +1,8 @@
 abbr ga="git add ."
 abbr gaa="git add --all"
 abbr gco="git commit"
+abbr gd="git diff"
 abbr gpp="git pull --prune"
 abbr gu="git push"
+abbr guf="git push --force"
+abbr guu="git push --set-upstream"
