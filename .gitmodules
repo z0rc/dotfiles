@@ -199,6 +199,9 @@
 [submodule "vim/pack/03_plugins/start/capslock"]
 	path = vim/pack/03_plugins/start/capslock
 	url = https://github.com/tpope/vim-capslock.git
+[submodule "vim/pack/03_plugins/start/cheat40"]
+	path = vim/pack/03_plugins/start/cheat40
+	url = https://github.com/lifepillar/vim-cheat40.git
 [submodule "vim/pack/03_plugins/start/colorizer"]
 	path = vim/pack/03_plugins/start/colorizer
 	url = https://github.com/chrisbra/Colorizer

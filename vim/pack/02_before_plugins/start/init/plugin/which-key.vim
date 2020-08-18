@@ -129,7 +129,7 @@ let g:which_key_map.d=['"_d', 'Delete']
 let g:which_key_map.p=['"_dP"', 'Paste']
 
 " buffer navigation
-let g:which_key_map.b = {
+let g:which_key_map.b={
     \'name' : 'Buffer',
     \'d' : ['bdelete', 'Delete buffer'],
     \'f' : ['bfirst', 'First buffer'],
@@ -138,6 +138,9 @@ let g:which_key_map.b = {
     \'p' : ['bprevious', 'Previous buffer'],
     \'s' : ['Startify', 'Start buffer']
     \}
+
+" cheat sheet
+let g:which_key_map["\?"]=['Cheat40', 'Cheat sheet']
 
 call which_key#register('<Space>', 'g:which_key_map')
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
