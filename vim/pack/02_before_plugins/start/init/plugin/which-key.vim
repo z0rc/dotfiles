@@ -56,13 +56,12 @@ let g:which_key_map.s={
 
 " netrw openers
 let g:which_key_map.e={
-    \'name' : 'Explore',
-    \'e' : ['Explore', 'in current window'],
-    \'s' : ['Sexplore', 'in horizontal split'],
-    \'v' : [':Vexplore!', 'in vertical split'],
-    \'t' : ['Texplore', 'in new tab'],
-    \'l' : [':20Lexplore', 'in left sidebar'],
-    \'r' : ['Rexplore', 'return']
+    \'name' : 'Fern (explore)',
+    \'e' : [':Fern . -reveal=%', 'in current window'],
+    \'s' : [':Fern . -opener=split -reveal=%', 'in horizontal split'],
+    \'v' : [':Fern . -opener=vsplit -reveal=%', 'in vertical split'],
+    \'t' : [':Fern . -opener=tabedit -reveal=%', 'in new tab'],
+    \'d' : [':Fern . -drawer -toggle -reveal=%', 'drawer toggle']
     \}
 
 " toggles

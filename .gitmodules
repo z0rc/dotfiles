@@ -160,9 +160,6 @@
 [submodule "vim/pack/03_plugins/start/airline-themes"]
 	path = vim/pack/03_plugins/start/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/pack/03_plugins/start/animate"]
-	path = vim/pack/03_plugins/start/animate
-	url = https://github.com/camspiers/animate.vim.git
 [submodule "vim/pack/03_plugins/start/ansible"]
 	path = vim/pack/03_plugins/start/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
@@ -229,6 +226,12 @@
 [submodule "vim/pack/03_plugins/start/expand-region"]
 	path = vim/pack/03_plugins/start/expand-region
 	url = https://github.com/landock/vim-expand-region.git
+[submodule "vim/pack/03_plugins/start/fern"]
+	path = vim/pack/03_plugins/start/fern
+	url = https://github.com/lambdalisue/fern.vim.git
+[submodule "vim/pack/03_plugins/start/fern-git-status"]
+	path = vim/pack/03_plugins/start/fern-git-status
+	url = https://github.com/lambdalisue/fern-git-status.vim.git
 [submodule "vim/pack/03_plugins/start/file-line"]
 	path = vim/pack/03_plugins/start/file-line
 	url = https://github.com/lervag/file-line.git
