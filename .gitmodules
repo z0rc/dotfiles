@@ -352,6 +352,12 @@
 [submodule "vim/pack/03_plugins/start/ruby-chef-ft"]
 	path = vim/pack/03_plugins/start/ruby-chef-ft
 	url = https://github.com/dougireton/vim-chef.git
+[submodule "vim/pack/03_plugins/start/sh"]
+	path = vim/pack/03_plugins/start/sh
+	url = https://github.com/arzg/vim-sh.git
+[submodule "vim/pack/03_plugins/start/sh-indent"]
+	path = vim/pack/03_plugins/start/sh-indent
+	url = https://github.com/chrisbra/vim-sh-indent.git
 [submodule "vim/pack/03_plugins/start/smoothie"]
 	path = vim/pack/03_plugins/start/smoothie
 	url = https://github.com/psliwka/vim-smoothie.git
