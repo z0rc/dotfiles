@@ -167,7 +167,7 @@ print "  ...done"
 
 # Trigger zsh run with powerlevel10k prompt to download gitstatusd
 print "Downloading gitstatusd for powerlevel10k..."
-$SHELL -is <<<exit &>/dev/null
+$SHELL -is <<<'' &>/dev/null
 print "  ...done"
 
 # Install crontab task to pull updates every midnight
