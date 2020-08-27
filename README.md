@@ -167,7 +167,7 @@ Add your local configuration to `$DOTFILES/vim/vimrc.local`.
 Local binaries can be put into `$HOME/.local/bin`, it's added to `PATH` by
 default. Also man pages can be put into `$XDG_DATA_HOME/man`.
 
-### Lazy *env
+### Lazy \*env
 
 Pyenv and similar wrappers are lazy-loaded, it means that they won't be
 initialized on shell start. Activation is done on the first execution. Check
@@ -175,3 +175,20 @@ out output of `type -f pyenv` in shell and
 [implementation](zsh/rc.d/14_many_env.zsh). Also this means, that files like
 `.python-version` won't work as expected, it's recommended to use autoenv.zsh
 to explicitly activate needed environment.
+
+### Ignore config files changes locally
+
+Midnight Commander is quite volatile in terms of writing to its configuration
+file. Running `mc` using different screen size results in updating panel size
+value in `mc.ini`. Same goes with `htop`. In order to ignore local changes to
+configuration files you can do:
+
+```sh
+git update-index --assume-unchanged configs/mc.ini
+```
+
+To restore git tracking of those files use:
+
+```
+git update-index --no-assume-unchanged configs/mc.ini
+```
