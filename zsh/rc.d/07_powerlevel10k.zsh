@@ -252,7 +252,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=37
     typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
     typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
-    typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
+    typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=if-different
 
     ######################[ pyenv, rbenv, goenv, nodenv,plenv,luaenv,jenv ]#######################
     typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_FOREGROUND=37
