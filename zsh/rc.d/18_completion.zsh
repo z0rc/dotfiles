@@ -40,5 +40,9 @@ else
     compinit -i -u -C -d "${XDG_CACHE_HOME}/zsh/compdump"
 fi
 
+# Enable bash completions too
+autoload -Uz bashcompinit
+bashcompinit
+
 # Properly enable z completion
 compdef _zshz z=zshz
