@@ -1,11 +1,5 @@
 # Completion tweaks
-zstyle ':completion:*'                  matcher-list    'm:{a-zA-Z}={A-Za-z}' 'l:|=* r:|=*'
-zstyle ':completion:*'                  completer       _complete
-zstyle ':completion:*:*:-subscript-:*'  tag-order       indexes parameters
-zstyle ':completion:*'                  squeeze-slashes true
-zstyle ':completion:*'                  single-ignored  show
-zstyle ':completion:*:(rm|kill|diff):*' ignore-line     other
-zstyle ':completion:*:rm:*'             file-patterns   '*:all-files'
+zstyle ':completion:*:descriptions'     format          '[%d]'
 zstyle ':completion:*'                  list-colors     ${(s.:.)LS_COLORS}
 zstyle ':completion::complete:*'        use-cache       true
 zstyle ':completion::complete:*'        cache-path      "${XDG_CACHE_HOME}/zsh/compcache"
