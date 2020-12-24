@@ -184,6 +184,28 @@ fgb () {
                    sed 's/^..//' | sed 's#^remotes/origin/##')
 }
 
+# git diff show by files with fzf
+fgd() {
+    git rev-parse --is-inside-work-tree &> /dev/null || return
+    local cmd files commit repo highlighter
+    [[ $# -ne 0 ]] && {
+        if git rev-parse "$1" -- &>/dev/null ; then
+            commit="$1" && files=("${@:2}")
+        else
+            files=("$@")
+        fi
+    }
+    if (( ${+commands[diff-so-fancy]} )); then
+        highlighter='| diff-so-fancy'
+    else
+        highlighter=''
+    fi
+    repo="$(git rev-parse --show-toplevel)"
+    cmd="sed 's/.*]  //' <<< {} | xargs -I% git -p diff --color=always $commit -- '$repo/%' $highlighter"
+    git --no-pager diff --name-status $commit -- ${files[*]} | sed -E 's/^(.)[[:space:]]+(.*)$/[\1]  \2/' |
+        fzf --exit-0 --ansi --height=50% --preview-window=right:50% --no-sort --tac --layout=reverse-list --preview="$cmd"
+}
+
 # recursively search for string, feed matches to fzf with preview, launch vim with selected match
 bag () {
     # prefer ag to grep
