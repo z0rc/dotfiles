@@ -24,7 +24,6 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
         ranger
         vim_shell
         context
-        dir_writable
         dir
         vcs
         virtualenv
