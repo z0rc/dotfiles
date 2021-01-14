@@ -18,8 +18,13 @@ man_glob () {
 }
 compctl -K man_glob man
 
+# Enable cached completions if present
+if [[ -d "${XDG_CACHE_HOME}/zsh/fpath" ]]; then
+    fpath+=("${XDG_CACHE_HOME}/zsh/fpath")
+fi
+
 # Additional completion rules
-fpath+="${ZDOTDIR}/plugins/completions/src"
+fpath+=("${ZDOTDIR}/plugins/completions/src")
 
 # Enable git-extras completions
 source "${DOTFILES}/tools/git-extras/etc/git-extras-completion.zsh"
