@@ -43,7 +43,6 @@ presence](#zero-home-presence).
   * [htop](configs/htoprc)
 * Handy [utilities](tools):
   * [fzf](https://github.com/junegunn/fzf)
-  * [MySQLTuner](https://github.com/major/MySQLTuner-perl)
   * [spark](https://github.com/holman/spark) to draw bar charts right in the
     console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better
@@ -68,7 +67,7 @@ Requirements:
 Recommended:
 
 * `make` (optional: required to install git helpers)
-* `perl` (optional: used by diff-so-fancy and MySQLTuner)
+* `perl` (optional: used by diff-so-fancy)
 * `python3` and `pip3` (optional: used by several vim plugins, but they won't
   be activated, if vim built without python3 support)
 * [`fd`](https://github.com/sharkdp/fd) or

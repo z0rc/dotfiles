@@ -112,9 +112,6 @@
 [submodule "tmux/plugins/yank"]
 	path = tmux/plugins/yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "tools/MySQLTuner-perl"]
-	path = tools/MySQLTuner-perl
-	url = https://github.com/major/MySQLTuner-perl.git
 [submodule "tools/diff-so-fancy"]
 	path = tools/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
