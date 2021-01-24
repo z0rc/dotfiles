@@ -44,7 +44,6 @@ presence](#zero-home-presence).
 * Handy [utilities](tools):
   * [fzf](https://github.com/junegunn/fzf)
   * [MySQLTuner](https://github.com/major/MySQLTuner-perl)
-  * [MongoDB Shell Enhancements](https://github.com/TylerBrock/mongo-hacker)
   * [spark](https://github.com/holman/spark) to draw bar charts right in the
     console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better
@@ -68,7 +67,7 @@ Requirements:
 
 Recommended:
 
-* `make` (optional: required to build mongo-hacker and install git helpers)
+* `make` (optional: required to install git helpers)
 * `perl` (optional: used by diff-so-fancy and MySQLTuner)
 * `python3` and `pip3` (optional: used by several vim plugins, but they won't
   be activated, if vim built without python3 support)

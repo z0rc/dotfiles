@@ -55,13 +55,6 @@ ln -sf ../../deploy.zsh .git/hooks/post-checkout
 print "  ...done"
 
 if (( ${+commands[make]} )); then
-    # Make mongo-hacker
-    print "Making mongo-hacker config..."
-    pushd tools/mongo-hacker
-    make mongo_hacker.js > /dev/null
-    popd
-    print "  ...done"
-
     # Make install git-extras
     print "Installing git-extras..."
     pushd tools/git-extras
