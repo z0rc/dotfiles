@@ -50,8 +50,8 @@ export SOLARGRAPH_CACHE="${XDG_CACHE_HOME}/solargraph"
 # Ensure we have local paths enabled
 path=(/usr/local/bin /usr/local/sbin ${path})
 
-# Enable gnu version of utilities on macOS, if installed
 if [[ "${OSTYPE}" = darwin* ]]; then
+    # Enable gnu version of utilities on macOS, if installed
     for gnuutil in coreutils gnu-sed gnu-tar grep; do
         if [[ -d /usr/local/opt/${gnuutil}/libexec/gnubin ]]; then
             path=(/usr/local/opt/${gnuutil}/libexec/gnubin ${path})
@@ -60,6 +60,10 @@ if [[ "${OSTYPE}" = darwin* ]]; then
             MANPATH="/usr/local/opt/${gnuutil}/libexec/gnuman:${MANPATH}"
         fi
     done
+    # Prefer curl installed via brew
+    if [[ -d /usr/local/opt/curl/bin ]]; then
+        path=(/usr/local/opt/curl/bin ${path})
+    fi
 fi
 
 # Enable local binaries and man pages
