@@ -52,3 +52,7 @@ Session.vim
 # compiled zsh script
 *.zwc
 *.zwc.old
+
+### Kubernetes ###
+# local kubeconfig
+.kubeconfig
