@@ -36,7 +36,9 @@ if (( ${+commands[nnn]} )); then
         fi
 
         export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-        export NNN_OPTS="adeHoUx"
+        export NNN_OPTS="adeHox"
+        export NNN_PLUG="z:z"
+
         command nnn "${@}"
 
         if [[ -r ${NNN_TMPFILE} ]]; then

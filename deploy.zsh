@@ -40,6 +40,13 @@ ln -sf "${SCRIPT_DIR}/configs/ranger" "${XDG_CONFIG_HOME}/ranger/rc.conf"
 ln -sf "${SCRIPT_DIR}/configs/gemrc" "${XDG_CONFIG_HOME}/gem/gemrc"
 print "  ...done"
 
+if (( ${+commands[nnn]} )); then
+    # Install nnn plugins
+    print "Linking nnn plugins..."
+    ln -snf "${SCRIPT_DIR}/configs/nnn-plugins" "${XDG_CONFIG_HOME}/nnn/plugins"
+    print "  ...done"
+fi
+
 # Make sure submodules are installed
 print "Syncing submodules..."
 git submodule sync > /dev/null

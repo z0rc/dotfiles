@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+source "${ZDOTDIR}/rc.d/15_z.zsh"
+vared -p "z to: " -c qdir
+odir=$(z -e "${qdir}")
+printf "%s" "0c${odir}" > ${NNN_PIPE}
