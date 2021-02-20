@@ -16,7 +16,7 @@ if (( ${+commands[mc]} )); then
             export MC_SKIN=modarin256root-defbg
         fi
 
-        local mc_pwd_file="${TMPDIR:-/tmp}/mc-${USER}/mc.pwd.$$"
+        local mc_pwd_file="${XDG_RUNTIME_DIR}/mc.pwd.$$"
         command mc -P "${mc_pwd_file}" "${@}"
 
         if [[ -r ${mc_pwd_file} ]]; then
@@ -54,14 +54,24 @@ if (( ${+commands[ranger]} )); then
             exit
         fi
 
-        local ranger_pwd_file="$(mktemp -t "ranger_pwd.XXXXXXXXXX")"
-        command ranger --choosedir="${ranger_pwd_file}" -- "${@:-$PWD}"
+        local ranger_pwd_file="$(mktemp -t ranger_pwd.XXXXXXXXXX)"
+
+        command ranger --choosedir="${ranger_pwd_file}" "${@}"
+
         if [[ -r ${ranger_pwd_file} ]]; then
             local ranger_last_pwd=$(<"${ranger_pwd_file}")
             if [[ -d ${ranger_last_pwd} ]] && [[ ${ranger_last_pwd} != ${PWD} ]]; then
                 cd "${ranger_last_pwd}"
             fi
+            rm -f "${ranger_pwd_file}"
         fi
-        rm -f "${ranger_pwd_file}"
     }
+
+    # Change ranger CWD to PWD on subshell exit
+    if [[ -v RANGER_LEVEL ]]; then
+        _ranger_cd () {
+            print "cd ${PWD}" > "${XDG_RUNTIME_DIR}/ranger-ipc.${PPID}"
+        }
+        add-zsh-hook zshexit _ranger_cd
+    fi
 fi
