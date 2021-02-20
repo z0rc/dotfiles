@@ -1,16 +1,10 @@
-set draw_borders true
+set draw_borders both
 set dirname_in_tabs true
-set scroll_offset 5
 set show_hidden true
-set show_hidden_bookmarks true
-set sort ob
-set sort_directories_first true
-set sort_case_insensitive true
 set sort_unicode true
 set tilde_in_titlebar true
 set unicode_ellipsis true
 set update_title true
-set update_tmux_title true
 set vcs_aware true
 set xterm_alt_key true
 set colorscheme solarized
