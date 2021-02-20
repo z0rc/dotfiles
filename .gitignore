@@ -8,3 +8,6 @@ zsh/rc.d/9[0-9]_*
 zsh/env.d/9[0-9]_*
 zsh/.zlogin
 zsh/.zlogout
+
+configs/ranger-plugins/__init__.py
+configs/ranger-plugins/__pycache__

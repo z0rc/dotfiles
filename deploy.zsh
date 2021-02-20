@@ -47,6 +47,13 @@ if (( ${+commands[nnn]} )); then
     print "  ...done"
 fi
 
+if (( ${+commands[ranger]} )); then
+    # Install ranger plugins
+    print "Linking ranger plugins..."
+    ln -snf "${SCRIPT_DIR}/configs/ranger-plugins" "${XDG_CONFIG_HOME}/ranger/plugins"
+    print "  ...done"
+fi
+
 # Make sure submodules are installed
 print "Syncing submodules..."
 git submodule sync > /dev/null
