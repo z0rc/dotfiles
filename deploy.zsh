@@ -14,7 +14,7 @@ VIMINIT='let $MYVIMRC="'${SCRIPT_DIR}'/vim/vimrc" | source $MYVIMRC'
 
 # Create required directories
 print "Creating required directory tree..."
-mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger,gem}
+mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger,gem,nnn}
 mkdir -p "${XDG_CACHE_HOME}"/{vim/{backup,swap,undo},zsh}
 mkdir -p "${XDG_DATA_HOME}"/{{goenv,jenv,luaenv,nodenv,phpenv,plenv,pyenv,rbenv}/plugins,zsh,man/man1}
 mkdir -p "${HOME}"/.local/{bin,etc}
@@ -38,21 +38,9 @@ ln -sf "${SCRIPT_DIR}/configs/mc.ini" "${XDG_CONFIG_HOME}/mc/ini"
 ln -sf "${SCRIPT_DIR}/configs/htoprc" "${XDG_CONFIG_HOME}/htop/htoprc"
 ln -sf "${SCRIPT_DIR}/configs/ranger" "${XDG_CONFIG_HOME}/ranger/rc.conf"
 ln -sf "${SCRIPT_DIR}/configs/gemrc" "${XDG_CONFIG_HOME}/gem/gemrc"
+ln -snf "${SCRIPT_DIR}/configs/nnn-plugins" "${XDG_CONFIG_HOME}/nnn/plugins"
+ln -snf "${SCRIPT_DIR}/configs/ranger-plugins" "${XDG_CONFIG_HOME}/ranger/plugins"
 print "  ...done"
-
-if (( ${+commands[nnn]} )); then
-    # Install nnn plugins
-    print "Linking nnn plugins..."
-    ln -snf "${SCRIPT_DIR}/configs/nnn-plugins" "${XDG_CONFIG_HOME}/nnn/plugins"
-    print "  ...done"
-fi
-
-if (( ${+commands[ranger]} )); then
-    # Install ranger plugins
-    print "Linking ranger plugins..."
-    ln -snf "${SCRIPT_DIR}/configs/ranger-plugins" "${XDG_CONFIG_HOME}/ranger/plugins"
-    print "  ...done"
-fi
 
 # Make sure submodules are installed
 print "Syncing submodules..."
