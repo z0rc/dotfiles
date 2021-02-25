@@ -54,24 +54,23 @@ let g:which_key_map.s={
     \'g' : ['TestVisit', 'Open test file']
     \}
 
-" netrw openers
+" fern openers
 let g:which_key_map.e={
     \'name' : 'Fern (explore)',
     \'e' : [':Fern . -reveal=%', 'in current window'],
     \'s' : [':Fern . -opener=split -reveal=%', 'in horizontal split'],
     \'v' : [':Fern . -opener=vsplit -reveal=%', 'in vertical split'],
-    \'t' : [':Fern . -opener=tabedit -reveal=%', 'in new tab'],
-    \'d' : [':Fern . -drawer -toggle -reveal=%', 'drawer toggle']
+    \'t' : [':Fern . -opener=tabedit -reveal=%', 'in new tab']
     \}
 
 " toggles
 let g:which_key_map.t={
     \'name' : 'Toggles',
     \'c' : ['<Plug>CapsLockToggle', 'Caps lock'],
+    \'d' : [':Fern . -drawer -toggle -reveal=%', 'File drawer'],
     \'l' : ['LToggle', 'Location list'],
     \'q' : ['QToggle', 'Quickfix window'],
     \'t' : ['TagbarToggle', 'Tagbar'],
-    \'n' : ['NumbersToggle', 'Numbers'],
     \'u' : ['UndotreeToggle', 'Undotree']
     \}
 
