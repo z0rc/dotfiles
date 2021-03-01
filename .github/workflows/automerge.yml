@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Merge dependabot updates
-        uses: ridedott/merge-me-action@v2.2.4
+        uses: ridedott/merge-me-action@v2.2.8
         with:
           MERGE_METHOD: REBASE
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
