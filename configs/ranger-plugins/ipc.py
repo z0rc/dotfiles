@@ -7,6 +7,8 @@ HOOK_INIT_OLD = ranger.api.hook_init
 
 def hook_init(fm):
     try:
+        if not os.path.isdir(os.getenv("XDG_RUNTIME_DIR")):
+            os.makedirs(os.getenv("XDG_RUNTIME_DIR"))
         ipc_fifo = os.path.join(os.getenv("XDG_RUNTIME_DIR"),
                                 "ranger-ipc." + str(os.getpid()))
         os.mkfifo(ipc_fifo)
