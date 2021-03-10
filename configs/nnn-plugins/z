@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-
-vared -p "z to: " -c qdir
-odir=$(z -e "${qdir}")
-print "0c${odir}" > ${NNN_PIPE}

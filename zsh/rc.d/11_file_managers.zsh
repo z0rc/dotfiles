@@ -29,25 +29,6 @@ if (( ${+commands[mc]} )); then
     }
 fi
 
-if (( ${+commands[nnn]} )); then
-    nnn () {
-        if [[ -v NNNLVL ]]; then
-            exit
-        fi
-
-        export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-        export NNN_OPTS="adeHox"
-        export NNN_PLUG="z:z"
-
-        command nnn "${@}"
-
-        if [[ -r ${NNN_TMPFILE} ]]; then
-            source "${NNN_TMPFILE}"
-            rm -f "${NNN_TMPFILE}" > /dev/null
-        fi
-    }
-fi
-
 if (( ${+commands[ranger]} )); then
     ranger () {
         if [[ -v RANGER_LEVEL ]]; then
