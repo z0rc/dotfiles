@@ -5,10 +5,12 @@ on: pull_request
 jobs:
   dependabot-merge:
     name: Merge dependabot updates
+    if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Merge dependabot updates
-        uses: ridedott/merge-me-action@v2.2.21
+      - name: Merge PR
+        uses: desbo/merge-pr-action@v0.2.0
         with:
-          MERGE_METHOD: REBASE
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ALLOWED_UPDATE: major
+          MERGE_METHOD: rebase
