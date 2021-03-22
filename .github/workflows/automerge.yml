@@ -1,6 +1,6 @@
 name: Automerge dependabot updates
 
-on: pull_request
+on: pull_request_target
 
 jobs:
   dependabot-merge:
@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Merge PR
-        uses: desbo/merge-pr-action@v0.2.0
+        uses: desbo/merge-pr-action@v0.3.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ALLOWED_UPDATE: major
+          ALLOWED_UPDATE: any
           MERGE_METHOD: rebase
