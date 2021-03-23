@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Merge PR
-        uses: desbo/merge-pr-action@v0.3.0
+        uses: z0rc/merge-pr-action@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ALLOWED_UPDATE: any
