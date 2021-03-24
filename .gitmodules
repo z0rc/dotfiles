@@ -406,9 +406,6 @@
 [submodule "vim/pack/03_plugins/start/vim-lsp-settings"]
 	path = vim/pack/03_plugins/start/vim-lsp-settings
 	url = https://github.com/mattn/vim-lsp-settings.git
-[submodule "vim/pack/03_plugins/start/vinegar"]
-	path = vim/pack/03_plugins/start/vinegar
-	url = https://github.com/tpope/vim-vinegar.git
 [submodule "vim/pack/03_plugins/start/visual-multi"]
 	path = vim/pack/03_plugins/start/visual-multi
 	url = https://github.com/mg979/vim-visual-multi.git
