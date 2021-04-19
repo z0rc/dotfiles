@@ -233,6 +233,7 @@ bag () {
                        from=$((line-10 > 1 ? line-10 : 1));
                        till=$((line+10));'${preview_cmd}
     )
+    unfunction search_cmd
     if [[ -n "${result}" ]]; then
         vi "${${(s.:.)result}[1]}" +"${${(s.:.)result}[2]}"
     else
