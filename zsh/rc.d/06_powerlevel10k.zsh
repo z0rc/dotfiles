@@ -88,6 +88,8 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=true
     # No line terminator if prompt_char is the last segment.
     typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
+    # No line introducer if prompt_char is the first segment.
+    typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=
 
     ##################################[ dir: current directory ]##################################
     # Default current directory color.
@@ -226,10 +228,10 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
         fi
 
         if [[ -n $VCS_STATUS_TAG
-                # Show tag only if not on a branch.
-                # Tip: To always show tag, delete the next line.
-                && -z $VCS_STATUS_LOCAL_BRANCH  # <-- this line
-                ]]; then
+              # Show tag only if not on a branch.
+              # Tip: To always show tag, delete the next line.
+              && -z $VCS_STATUS_LOCAL_BRANCH  # <-- this line
+        ]]; then
             local tag=${(V)VCS_STATUS_TAG}
             # If tag name is at most 32 characters long, show it in full.
             # Otherwise show the first 12 … the last 12.
@@ -240,8 +242,8 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
 
         # Display the current Git commit if there is no branch and no tag.
         # Tip: To always display the current Git commit, delete the next line.
-        [[ -z $VCS_STATUS_LOCAL_BRANCH && -z $VCS_STATUS_LOCAL_BRANCH ]] &&  # <-- this line
-            res+="${meta}@${clean}${VCS_STATUS_COMMIT[1,8]}"
+        [[ -z $VCS_STATUS_LOCAL_BRANCH && -z $VCS_STATUS_TAG ]] &&  # <-- this line
+        res+="${meta}@${clean}${VCS_STATUS_COMMIT[1,8]}"
 
         # Show tracking branch name if it differs from local branch.
         if [[ -n ${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH} ]]; then
@@ -333,16 +335,19 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     # it will signify success by turning green.
     typeset -g POWERLEVEL9K_STATUS_OK=false
     typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=70
+    typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='√'
 
     # Status when some part of a pipe command fails but the overall exit status is zero. It may look
     # like this: 1|0.
     typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
     typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=70
+    typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION='√'
 
     # Status when it's just an error code (e.g., '1'). No need to show it if prompt_char is enabled as
     # it will signify error by turning red.
     typeset -g POWERLEVEL9K_STATUS_ERROR=false
     typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=160
+    typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='x'
 
     # Status when the last command was terminated by a signal.
     typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL=true
@@ -354,6 +359,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     # It may look like this: 1|0.
     typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE=true
     typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=160
+    typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION='х'
 
     ###################[ command_execution_time: duration of the last command ]###################
     # Show duration of the last command if takes at least this many seconds.
@@ -456,7 +462,8 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
 
     #############[ kubecontext: current kubernetes context (https://kubernetes.io/) ]#############
     # Show kubecontext only when the the command you are typing invokes one of these tools.
-    typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile'
+    # Tip: Remove the next line to always show kubecontext.
+    typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|fluxctl|stern'
 
     ################[ terraform: terraform workspace (https://www.terraform.io) ]#################
     # Don't show terraform workspace if it's literally "default".
