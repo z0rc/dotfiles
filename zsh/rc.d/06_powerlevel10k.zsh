@@ -169,6 +169,9 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     # POWERLEVEL9K_DIR_SHOW_WRITABLE is set to v3.
     typeset -g POWERLEVEL9K_LOCK_ICON='#'
 
+    # Override default ETC_ICON as unicode cog symbol doesn't render properly with current font.
+    typeset -g POWERLEVEL9K_ETC_ICON=
+
     #####################################[ vcs: git status ]######################################
     # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
     typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
