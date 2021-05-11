@@ -13,6 +13,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
             PATH=\"\${DOTFILES}/env-wrappers/${wrapper}/${wrapper}/bin:\${PATH}\"
             evalcache ${wrapper} init -
             ${wrapper} \${@}
+            if [[ $wrapper == \"pyenv\" ]]; then
+                evalcache ${wrapper} init --path
+            fi
         }"
     done
 }
