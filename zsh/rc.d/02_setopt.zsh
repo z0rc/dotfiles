@@ -24,3 +24,6 @@ setopt AUTO_RESUME # attempt to resume existing job before creating a new proces
 setopt NOTIFY # report status of background jobs immediately
 unsetopt RM_STAR_SILENT # notify when rm is running with *
 setopt RM_STAR_WAIT # wait for 10 seconds confirmation when running rm with *
+
+# a bit fancy than default
+PROMPT_EOL_MARK='%K{red} %k'
