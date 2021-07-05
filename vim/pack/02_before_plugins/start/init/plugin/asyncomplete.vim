@@ -15,14 +15,6 @@ augroup asyncomple_vimrc
         \ 'completor': function('asyncomplete#sources#omni#completor'),
         \ }))
 
-    " register tags source
-    autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
-        \ 'name': 'tags',
-        \ 'allowlist': ['*'],
-        \ 'blocklist': ['terraform', 'python', 'gitcommit', 'zsh', 'bash', 'sh', 'vim'],
-        \ 'completor': function('asyncomplete#sources#tags#completor'),
-        \ }))
-
     " close complete popup when completion is done
     autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
 augroup END

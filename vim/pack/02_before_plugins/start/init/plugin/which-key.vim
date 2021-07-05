@@ -70,7 +70,6 @@ let g:which_key_map.t={
     \'d' : [':Fern . -drawer -toggle -reveal=%', 'File drawer'],
     \'l' : ['LToggle', 'Location list'],
     \'q' : ['QToggle', 'Quickfix window'],
-    \'t' : ['TagbarToggle', 'Tagbar'],
     \'u' : ['UndotreeToggle', 'Undotree']
     \}
 
@@ -85,7 +84,6 @@ let g:which_key_map.f={
     \'b' : ['Buffers', 'Open buffers'],
     \'l' : ['Lines', 'Lines in loaded buffers'],
     \'c' : ['Commits', 'Git commits'],
-    \'t' : ['Tags', 'Tags in project'],
     \'h' : ['History', 'History'],
     \'o' : ['Commands', 'Commands'],
     \'m' : ['Maps', 'Normal mode mappings'],

@@ -169,9 +169,6 @@
 [submodule "vim/pack/03_plugins/start/asyncomplete-omni"]
 	path = vim/pack/03_plugins/start/asyncomplete-omni
 	url = https://github.com/yami-beta/asyncomplete-omni.vim.git
-[submodule "vim/pack/03_plugins/start/asyncomplete-tags"]
-	path = vim/pack/03_plugins/start/asyncomplete-tags
-	url = https://github.com/prabirshrestha/asyncomplete-tags.vim.git
 [submodule "vim/pack/03_plugins/start/auto-git-diff"]
 	path = vim/pack/03_plugins/start/auto-git-diff
 	url = https://github.com/hotwatermorning/auto-git-diff.git
@@ -253,9 +250,6 @@
 [submodule "vim/pack/03_plugins/start/groovy"]
 	path = vim/pack/03_plugins/start/groovy
 	url = https://github.com/endSly/groovy.vim.git
-[submodule "vim/pack/03_plugins/start/gutentags"]
-	path = vim/pack/03_plugins/start/gutentags
-	url = https://github.com/ludovicchabant/vim-gutentags.git
 [submodule "vim/pack/03_plugins/start/indentLine"]
 	path = vim/pack/03_plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
@@ -373,9 +367,6 @@
 [submodule "vim/pack/03_plugins/start/tabular"]
 	path = vim/pack/03_plugins/start/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "vim/pack/03_plugins/start/tagbar"]
-	path = vim/pack/03_plugins/start/tagbar
-	url = https://github.com/majutsushi/tagbar.git
 [submodule "vim/pack/03_plugins/start/terminus"]
 	path = vim/pack/03_plugins/start/terminus
 	url = https://github.com/wincent/terminus.git
