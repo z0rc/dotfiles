@@ -403,9 +403,6 @@
 [submodule "vim/pack/03_plugins/start/which-key"]
 	path = vim/pack/03_plugins/start/which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
-[submodule "vim/pack/03_plugins/start/zsh-omni-completion"]
-	path = vim/pack/03_plugins/start/zsh-omni-completion
-	url = https://github.com/zphere-zsh/zsh-omni-completion.git
 [submodule "zsh/plugins/abbr"]
 	path = zsh/plugins/abbr
 	url = https://github.com/olets/zsh-abbr.git

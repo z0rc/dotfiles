@@ -8,13 +8,6 @@ augroup asyncomple_vimrc
         \ 'completor': function('asyncomplete#sources#necovim#completor'),
         \ }))
 
-    " register omni source
-    autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
-        \ 'name': 'omni',
-        \ 'allowlist': ['zsh', 'bash', 'sh'],
-        \ 'completor': function('asyncomplete#sources#omni#completor'),
-        \ }))
-
     " close complete popup when completion is done
     autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
 augroup END
