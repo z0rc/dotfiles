@@ -295,9 +295,6 @@
 [submodule "vim/pack/03_plugins/start/move"]
 	path = vim/pack/03_plugins/start/move
 	url = https://github.com/matze/vim-move.git
-[submodule "vim/pack/03_plugins/start/mw-utils"]
-	path = vim/pack/03_plugins/start/mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "vim/pack/03_plugins/start/neco-vim"]
 	path = vim/pack/03_plugins/start/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
@@ -337,12 +334,6 @@
 [submodule "vim/pack/03_plugins/start/ruby"]
 	path = vim/pack/03_plugins/start/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/pack/03_plugins/start/ruby-chef"]
-	path = vim/pack/03_plugins/start/ruby-chef
-	url = https://github.com/vadv/vim-chef.git
-[submodule "vim/pack/03_plugins/start/ruby-chef-ft"]
-	path = vim/pack/03_plugins/start/ruby-chef-ft
-	url = https://github.com/dougireton/vim-chef.git
 [submodule "vim/pack/03_plugins/start/sh"]
 	path = vim/pack/03_plugins/start/sh
 	url = https://github.com/arzg/vim-sh.git
@@ -376,9 +367,6 @@
 [submodule "vim/pack/03_plugins/start/test"]
 	path = vim/pack/03_plugins/start/test
 	url = https://github.com/janko-m/vim-test.git
-[submodule "vim/pack/03_plugins/start/tlib"]
-	path = vim/pack/03_plugins/start/tlib
-	url = https://github.com/tomtom/tlib_vim.git
 [submodule "vim/pack/03_plugins/start/tmux"]
 	path = vim/pack/03_plugins/start/tmux
 	url = https://github.com/ericpruitt/tmux.vim.git
