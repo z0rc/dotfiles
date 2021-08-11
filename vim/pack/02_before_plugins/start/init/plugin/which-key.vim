@@ -17,7 +17,7 @@ let g:which_key_map.g={
     \'l' : ['Glog', 'Log'],
     \'f' : ['Gfetch', 'Fetch'],
     \'b' : ['Gblame', 'Blame'],
-    \'k' : ['Gitv', 'Gitk'],
+    \'v' : ['GV', 'GV (history browser)'],
     \'h' : {
         \'name' : 'Hunks',
         \'p' : ['<Plug>GitGutterPreviewHunk', 'Preview'],
