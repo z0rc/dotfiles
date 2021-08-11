@@ -265,9 +265,6 @@
 [submodule "vim/pack/03_plugins/start/json"]
 	path = vim/pack/03_plugins/start/json
 	url = https://github.com/elzr/vim-json.git
-[submodule "vim/pack/03_plugins/start/lens"]
-	path = vim/pack/03_plugins/start/lens
-	url = https://github.com/camspiers/lens.vim.git
 [submodule "vim/pack/03_plugins/start/listtoggle"]
 	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
