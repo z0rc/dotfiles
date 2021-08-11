@@ -391,6 +391,9 @@
 [submodule "vim/pack/03_plugins/start/which-key"]
 	path = vim/pack/03_plugins/start/which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
+[submodule "vim/pack/03_plugins/start/wilder"]
+	path = vim/pack/03_plugins/start/wilder
+	url = https://github.com/gelguy/wilder.nvim.git
 [submodule "zsh/plugins/abbr"]
 	path = zsh/plugins/abbr
 	url = https://github.com/olets/zsh-abbr.git
