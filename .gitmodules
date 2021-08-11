@@ -154,9 +154,6 @@
 [submodule "vim/pack/03_plugins/start/ansible"]
 	path = vim/pack/03_plugins/start/ansible
 	url = https://github.com/pearofducks/ansible-vim.git
-[submodule "vim/pack/03_plugins/start/anzu"]
-	path = vim/pack/03_plugins/start/anzu
-	url = https://github.com/osyo-manga/vim-anzu.git
 [submodule "vim/pack/03_plugins/start/asyncomplete"]
 	path = vim/pack/03_plugins/start/asyncomplete
 	url = https://github.com/prabirshrestha/asyncomplete.vim.git
