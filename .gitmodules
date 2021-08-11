@@ -157,6 +157,9 @@
 [submodule "vim/pack/03_plugins/start/asyncomplete"]
 	path = vim/pack/03_plugins/start/asyncomplete
 	url = https://github.com/prabirshrestha/asyncomplete.vim.git
+[submodule "vim/pack/03_plugins/start/asyncomplete-buffer"]
+	path = vim/pack/03_plugins/start/asyncomplete-buffer
+	url = https://github.com/omgitsmoe/asyncomplete-buffer.vim.git
 [submodule "vim/pack/03_plugins/start/asyncomplete-lsp"]
 	path = vim/pack/03_plugins/start/asyncomplete-lsp
 	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
