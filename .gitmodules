@@ -163,9 +163,6 @@
 [submodule "vim/pack/03_plugins/start/asyncomplete-necovim"]
 	path = vim/pack/03_plugins/start/asyncomplete-necovim
 	url = https://github.com/prabirshrestha/asyncomplete-necovim.vim.git
-[submodule "vim/pack/03_plugins/start/asyncomplete-omni"]
-	path = vim/pack/03_plugins/start/asyncomplete-omni
-	url = https://github.com/yami-beta/asyncomplete-omni.vim.git
 [submodule "vim/pack/03_plugins/start/auto-git-diff"]
 	path = vim/pack/03_plugins/start/auto-git-diff
 	url = https://github.com/hotwatermorning/auto-git-diff.git
