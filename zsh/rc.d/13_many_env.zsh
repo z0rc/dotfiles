@@ -1,4 +1,4 @@
-# Don't indicate virtualenv in pyenv, indication is done in pure
+# Don't indicate virtualenv in pyenv, indication is done in p10k
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
