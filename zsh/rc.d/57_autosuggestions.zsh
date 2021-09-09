@@ -10,3 +10,8 @@ ZSH_AUTOSUGGEST_COMPLETION_IGNORE=${ZSH_AUTOSUGGEST_HISTORY_IGNORE}
 
 # Autosuggestions plugin
 source "${ZDOTDIR}/plugins/autosuggestions/zsh-autosuggestions.zsh"
+
+# Clear suggestions after paste
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(
+    bracketed-paste
+)
