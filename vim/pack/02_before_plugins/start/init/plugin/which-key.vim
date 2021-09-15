@@ -116,14 +116,6 @@ let g:which_key_map["\<Space>"]={
     \'s'  : ['<Plug>(easymotion-s)', 'Find char forward and backward'],
     \}
 
-" delete to back hole register
-" paste and keep it available for further paste
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
-let g:which_key_map.d=['"_d', 'Delete']
-let g:which_key_map.p=['"_dP"', 'Paste']
-
 " buffer navigation
 let g:which_key_map.b={
     \'name' : 'Buffer',
