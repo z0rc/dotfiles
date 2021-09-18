@@ -26,7 +26,6 @@ alias exit=" exit"
 alias rm="rm -I"
 
 # Suppress suggestions and globbing
-alias man="nocorrect noglob man"
 alias find="noglob find"
 alias touch="nocorrect touch"
 alias mkdir="nocorrect mkdir"
