@@ -16,6 +16,9 @@ fi
 if [[ ! -v XDG_DATA_HOME ]]; then
     export XDG_DATA_HOME="${HOME}/.local/share"
 fi
+if [[ ! -v XDG_STATE_HOME ]]; then
+    export XDG_STATE_HOME="${HOME}/.local/state"
+fi
 if [[ ! -v XDG_RUNTIME_DIR ]]; then
     export XDG_RUNTIME_DIR="${TMPDIR:-/tmp}/runtime-${USER}"
 fi
