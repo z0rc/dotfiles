@@ -28,9 +28,9 @@ key[Right]=${terminfo[kcuf1]}
 key[PageUp]=${terminfo[kpp]}
 key[PageDown]=${terminfo[knp]}
 key[BackSpace]=${terminfo[kbs]}
-# TODO find better way to detect this
-key[Alt]='\e[1;3'
-key[Ctrl]='\e[1;5'
+# https://invisible-island.net/ncurses/terminfo.src.html#tic-xterm_pcfkeys
+key[CtrlLeft]=${terminfo[kLFT5]}
+key[CtrlRight]=${terminfo[kRIT5]}
 
 # Setup keys accordingly
 [[ -n "${key[Home]}" ]] && bindkey "${key[Home]}" beginning-of-line
@@ -42,5 +42,5 @@ key[Ctrl]='\e[1;5'
 [[ -n "${key[PageUp]}" ]] && bindkey "${key[PageUp]}" beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]] && bindkey "${key[PageDown]}" end-of-buffer-or-history
 [[ -n "${key[BackSpace]}" ]] && bindkey "${key[BackSpace]}" backward-delete-char
-[[ -n "${key[Right]}" ]] && bindkey "${key[Ctrl]}${key[Right]:(-1)}" forward-word
-[[ -n "${key[Left]}" ]] && bindkey "${key[Ctrl]}${key[Left]:(-1)}" backward-word
+[[ -n "${key[CtrlLeft]}" ]] && bindkey "${key[CtrlLeft]}" backward-word
+[[ -n "${key[CtrlRight]}" ]] && bindkey "${key[CtrlRight]}" forward-word
