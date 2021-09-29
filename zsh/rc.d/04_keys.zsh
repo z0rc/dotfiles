@@ -31,7 +31,7 @@ key[CtrlRight]=${terminfo[kRIT5]}
 [[ -n "${key[PageUp]}"    ]] && bindkey "${key[PageUp]}"     beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}"  ]] && bindkey "${key[PageDown]}"   end-of-buffer-or-history
 [[ -n "${key[Backspace]}" ]] && bindkey "${key[Backspace]}"  backward-delete-char
-[[ -n "${key[Shift-Tab]}" ]] && bindkey "${key[Shift-Tab]}"  reverse-menu-complete
+[[ -n "${key[ShiftTab]}"  ]] && bindkey "${key[ShiftTab]}"   reverse-menu-complete
 [[ -n "${key[CtrlLeft]}"  ]] && bindkey "${key[CtrlLeft]}"   backward-word
 [[ -n "${key[CtrlRight]}" ]] && bindkey "${key[CtrlRight]}"  forward-word
 
