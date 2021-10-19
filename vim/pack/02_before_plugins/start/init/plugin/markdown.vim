@@ -1,6 +1,6 @@
-" enable inline highlight of inner code blocks
-let g:markdown_fenced_languages=['html', 'json', 'python', 'bash=sh', 'sh']
-
-let g:markdown_enable_folding=0
-let g:markdown_enable_mappings=0
-let g:markdown_enable_input_abbreviations=0
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_no_default_key_mappings=1
+let g:vim_markdown_toc_autofit=1
+let g:vim_markdown_conceal=0
+let g:vim_markdown_conceal_code_blocks=0
+let g:vim_markdown_fenced_languages=['bash=sh', 'ini=dosini', 'viml=vim']
