@@ -39,3 +39,9 @@ pastefinish() {
 
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+# use default provided history search widgets
+autoload -Uz up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N down-line-or-beginning-search

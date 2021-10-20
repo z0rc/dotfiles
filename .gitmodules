@@ -425,9 +425,6 @@
 [submodule "zsh/plugins/git-completion"]
 	path = zsh/plugins/git-completion
 	url = https://github.com/felipec/git-completion.git
-[submodule "zsh/plugins/history-substring-search"]
-	path = zsh/plugins/history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search.git
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git

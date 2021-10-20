@@ -26,8 +26,6 @@ presence](#zero-home-presence).
   * [additional completions](https://github.com/zsh-users/zsh-completions)
   * [async autosuggestions
     plugin](https://github.com/zsh-users/zsh-autosuggestions)
-  * [history substring search
-    plugin](https://github.com/zsh-users/zsh-history-substring-search)
   * [syntax highlighting
     plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
