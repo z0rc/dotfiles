@@ -5,7 +5,7 @@ zstyle ':completion::complete:*'        use-cache       true
 zstyle ':completion::complete:*'        cache-path      "${XDG_CACHE_HOME}/zsh/compcache"
 
 # Manual page completion
-man_glob () {
+_man_glob () {
     local a
     read -cA a
     if [[ $a[2] = [0-9]* ]]; then
@@ -16,15 +16,15 @@ man_glob () {
         reply=( $^manpath/man*/$1*$2(N:t:r) )
     fi
 }
-compctl -K man_glob man
+compctl -K _man_glob man
 
-# Enable cached completions if present
+# Enable cached completions, if present
 if [[ -d "${XDG_CACHE_HOME}/zsh/fpath" ]]; then
-    fpath+=("${XDG_CACHE_HOME}/zsh/fpath")
+    fpath+="${XDG_CACHE_HOME}/zsh/fpath"
 fi
 
-# Additional completion rules
-fpath+=("${ZDOTDIR}/plugins/completions/src" "${ZDOTDIR}/fpath")
+# Additional completions
+fpath+="${ZDOTDIR}/plugins/completions/src"
 
 # Enable git-extras completions
 source "${DOTFILES}/tools/git-extras/etc/git-extras-completion.zsh"

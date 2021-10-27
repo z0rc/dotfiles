@@ -1,0 +1,18 @@
+# Grep from ps output
+
+emulate -L zsh
+
+if [[ ${#} -eq 0 ]]; then
+    echo "Please specify process search pattern"
+    return 2
+fi
+
+local psaux=$(ps aux)
+local result
+
+if result=$(grep --color=always -i "[${1[1]}]${1#?}" <<< ${psaux}); then
+    { echo ${${(f)psaux}[1]}; echo ${result}; } | less -FRX
+else
+    echo "No process found matching pattern '${1}'"
+    return 1
+fi

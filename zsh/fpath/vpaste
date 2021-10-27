@@ -1,0 +1,20 @@
+# vpaste uploader
+
+emulate -L zsh
+
+local uri="http://vpaste.net/"
+local out
+
+if [[ -f "${1}" ]]; then
+    out=$(curl -s -F "text=<${1}" "${uri}?${2}")
+else
+    out=$(curl -s -F 'text=<-' "${uri}?${1}")
+fi
+echo "${out}"
+
+if (( ${+commands[xclip]} )) && [[ ! -z "${DISPLAY}" ]]; then
+    echo -n "${out}" | xclip -i -selection primary
+    echo -n "${out}" | xclip -i -selection clipboard
+elif (( ${+commands[pbcopy]} )); then
+    echo -n "${out}" | pbcopy
+fi

@@ -1,0 +1,7 @@
+# z via fzf selector
+
+emulate -L zsh
+
+cd "$(z -l | sed 's/^[0-9. ]*//' | \
+      fzf --height=50% --no-sort --tac --layout=reverse-list --filepath-word --query="$*" \
+          --preview='LC_COLLATE=C ls -l -v --almost-all --group-directories-first --classify --color=always --human-readable {}' )"

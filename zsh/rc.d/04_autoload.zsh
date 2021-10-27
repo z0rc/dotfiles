@@ -46,6 +46,10 @@ zle -N up-line-or-beginning-search
 autoload -Uz down-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# Enable archive functions
+# Enable functions from archive plugin
 fpath+="${ZDOTDIR}/plugins/archive"
 autoload -Uz archive lsarchive unarchive
+
+# Custom personal functions
+# Don't use -U as we need aliases here
+autoload -z lspath bag fgb fgd fgl fz ineachdir psg vpaste

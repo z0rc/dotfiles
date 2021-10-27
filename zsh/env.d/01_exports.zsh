@@ -77,3 +77,6 @@ MANPATH="${XDG_DATA_HOME}/man:${MANPATH}"
 
 # Add go binaries to paths
 path=(${GOPATH}/bin ${path})
+
+# Add custom functions and completions
+fpath=(${ZDOTDIR}/fpath ${fpath})
