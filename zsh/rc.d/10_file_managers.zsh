@@ -24,7 +24,7 @@ if (( ${+commands[mc]} )); then
             if [[ -d ${mc_last_pwd} ]] && [[ ${mc_last_file} != ${PWD} ]]; then
                 cd "${mc_last_pwd}"
             fi
-            rm -f "${mc_pwd_file}"
+            zf_rm -f "${mc_pwd_file}"
         fi
     }
 fi
@@ -44,7 +44,7 @@ if (( ${+commands[ranger]} )); then
             if [[ -d ${ranger_last_pwd} ]] && [[ ${ranger_last_pwd} != ${PWD} ]]; then
                 cd "${ranger_last_pwd}"
             fi
-            rm -f "${ranger_pwd_file}"
+            zf_rm -f "${ranger_pwd_file}"
         fi
     }
 
