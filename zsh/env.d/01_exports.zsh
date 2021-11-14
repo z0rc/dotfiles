@@ -23,7 +23,7 @@ if [[ ! -v XDG_RUNTIME_DIR ]]; then
     export XDG_RUNTIME_DIR="${TMPDIR:-/tmp}/runtime-${USER}"
 fi
 
-export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
+export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 export LESSHISTFILE="${XDG_DATA_HOME}/lesshst"
 export MYSQL_HISTFILE="${XDG_DATA_HOME}/mysql_history"
 export REDISCLI_HISTFILE="${XDG_DATA_HOME}/rediscli_history"
