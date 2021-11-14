@@ -75,8 +75,8 @@ fi
 
 # Link gpg configs to $GNUPGHOME
 print "Linking gnupg configs..."
-zf_ln -sf "${SCRIPT_DIR}/gpg/gpg.conf" "${XDG_DATA_HOME}/gnupg/gpg.conf"
-zf_ln -sf "${SCRIPT_DIR}/gpg/gpg-agent.conf" "${XDG_DATA_HOME}/gnupg/gpg-agent.conf"
+zf_ln -sf "${SCRIPT_DIR}/gpg/gpg.conf" "${XDG_CONFIG_HOME}/gnupg/gpg.conf"
+zf_ln -sf "${SCRIPT_DIR}/gpg/gpg-agent.conf" "${XDG_CONFIG_HOME}/gnupg/gpg-agent.conf"
 print "  ...done"
 
 print "Installing fzf..."
