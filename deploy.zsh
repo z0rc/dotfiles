@@ -53,6 +53,7 @@ print "  ...done"
 
 print "Compiling zsh plugins..."
 {
+    emulate -LR zsh
     setopt local_options extended_glob
     autoload -Uz zrecompile
     for plugin_file in ${SCRIPT_DIR}/zsh/plugins/**/*.zsh{-theme,}(#q.); do
@@ -177,6 +178,11 @@ print "  ...done"
 # Trigger zsh run with powerlevel10k prompt to download gitstatusd
 print "Downloading gitstatusd for powerlevel10k..."
 $SHELL -is <<<'' &>/dev/null
+print "  ...done"
+
+# Download/refresh TLDR pages
+print "Downloading TLDR pages..."
+tldr -u < /dev/null &> /dev/null
 print "  ...done"
 
 # Install crontab task to pull updates every midnight
