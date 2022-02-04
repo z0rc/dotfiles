@@ -13,6 +13,11 @@ evalcache () {
             zf_mkdir -p "${cache_dir}"
             command "$@" > "${cache_file}"
             source "${cache_file}"
+            # zrecompile cache file in background
+            {
+                autoload -Uz zrecompile
+                zrecompile -pq "${cache_file}"
+            } &!
         else
             echo "evalcache ERROR: $1 is not available in PATH" >&2
         fi

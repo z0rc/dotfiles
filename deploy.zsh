@@ -51,6 +51,16 @@ git submodule update --init --recursive > /dev/null
 git clean -ffd
 print "  ...done"
 
+print "Compiling zsh plugins..."
+{
+    setopt local_options extended_glob
+    autoload -Uz zrecompile
+    for plugin_file in ${SCRIPT_DIR}/zsh/plugins/**/*.zsh{-theme,}(#q.); do
+        zrecompile -pq "${plugin_file}"
+    done
+}
+print "  ...done"
+
 # Install hook to call deploy script after successful pull
 print "Installing git hooks..."
 zf_mkdir -p .git/hooks

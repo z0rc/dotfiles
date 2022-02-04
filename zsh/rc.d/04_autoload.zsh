@@ -11,9 +11,6 @@ bindkey "^X^E" edit-command-line
 autoload -Uz select-word-style
 select-word-style bash
 
-# zrecompile to compile some plugins
-autoload -Uz zrecompile
-
 # Enable run-help module
 (( $+aliases[run-help] )) && unalias run-help
 autoload -Uz run-help

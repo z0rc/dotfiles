@@ -41,6 +41,11 @@ zmodload zsh/complist
 autoload -Uz compinit
 if [[ -n "${XDG_CACHE_HOME}/zsh/compdump"(#qN.mh+20) ]]; then
     compinit -i -u -d "${XDG_CACHE_HOME}/zsh/compdump"
+    # zrecompile fresh compdump in background
+    {
+        autoload -Uz zrecompile
+        zrecompile -pq "${XDG_CACHE_HOME}/zsh/compdump"
+    } &!
 else
     compinit -i -u -C -d "${XDG_CACHE_HOME}/zsh/compdump"
 fi
