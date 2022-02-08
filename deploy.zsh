@@ -182,7 +182,7 @@ print "  ...done"
 
 # Download/refresh TLDR pages
 print "Downloading TLDR pages..."
-tldr -u < /dev/null &> /dev/null
+tldr -u &> /dev/null
 print "  ...done"
 
 # Install crontab task to pull updates every midnight
