@@ -169,9 +169,6 @@
 [submodule "vim/pack/03_plugins/start/auto-git-diff"]
 	path = vim/pack/03_plugins/start/auto-git-diff
 	url = https://github.com/hotwatermorning/auto-git-diff.git
-[submodule "vim/pack/03_plugins/start/aws"]
-	path = vim/pack/03_plugins/start/aws
-	url = https://github.com/m-kat/aws-vim.git
 [submodule "vim/pack/03_plugins/start/brewfile"]
 	path = vim/pack/03_plugins/start/brewfile
 	url = https://github.com/bfontaine/Brewfile.vim.git
