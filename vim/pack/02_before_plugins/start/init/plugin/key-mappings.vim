@@ -10,13 +10,6 @@ imap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : '<Plug>delimitMateC
 nmap [c <Plug>GitGutterPrevHunk
 nmap ]c <Plug>GitGutterNextHunk
 
-" use alt+arrows to switch between splits and tmux panes
-nnoremap <silent> <A-Left> :TmuxNavigateLeft<CR>
-nnoremap <silent> <A-Down> :TmuxNavigateDown<CR>
-nnoremap <silent> <A-Up> :TmuxNavigateUp<CR>
-nnoremap <silent> <A-Right> :TmuxNavigateRight<CR>
-nnoremap <silent> <A-\> :TmuxNavigatePrevious<CR>
-
 " crtl+left/right to switch buffers in normal mode
 nmap <C-Left> <Plug>AirlineSelectPrevTab
 nmap <C-Right> <Plug>AirlineSelectNextTab
