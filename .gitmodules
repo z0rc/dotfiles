@@ -295,9 +295,6 @@
 [submodule "vim/pack/03_plugins/start/nginx"]
 	path = vim/pack/03_plugins/start/nginx
 	url = https://github.com/chr4/nginx.vim.git
-[submodule "vim/pack/03_plugins/start/pear-tree"]
-	path = vim/pack/03_plugins/start/pear-tree
-	url = https://github.com/tmsvg/pear-tree.git
 [submodule "vim/pack/03_plugins/start/perl"]
 	path = vim/pack/03_plugins/start/perl
 	url = https://github.com/vim-perl/vim-perl.git
@@ -431,3 +428,6 @@
 [submodule "zsh/plugins/z"]
 	path = zsh/plugins/z
 	url = https://github.com/agkozak/zsh-z.git
+[submodule "vim/pack/03_plugins/start/delimitMate"]
+	path = vim/pack/03_plugins/start/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git

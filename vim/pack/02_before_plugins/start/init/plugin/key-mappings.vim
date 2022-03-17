@@ -1,9 +1,10 @@
 " map spacebar as leader key
+
 map <Space> <leader>
 
 " if suggestions windows present, then <Enter> accepts selection
-" else use pear-tree mapping
-imap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : '<Plug>(PearTreeExpand)'
+" else use delimitMateCR mapping
+imap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : '<Plug>delimitMateCR'
 
 " git hunks navigation
 nmap [c <Plug>GitGutterPrevHunk
@@ -64,3 +65,5 @@ nnoremap q: :q
 
 " allow saving of files as sudo when I forgot to start vim using sudo
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+
