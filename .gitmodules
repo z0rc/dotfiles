@@ -220,9 +220,6 @@
 [submodule "vim/pack/03_plugins/start/file-line"]
 	path = vim/pack/03_plugins/start/file-line
 	url = https://github.com/lervag/file-line.git
-[submodule "vim/pack/03_plugins/start/fixkey"]
-	path = vim/pack/03_plugins/start/fixkey
-	url = https://github.com/kenwon/vim-fixkey.git
 [submodule "vim/pack/03_plugins/start/fold-cycle"]
 	path = vim/pack/03_plugins/start/fold-cycle
 	url = https://github.com/arecarn/vim-fold-cycle.git
