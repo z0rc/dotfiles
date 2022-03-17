@@ -18,26 +18,6 @@ nmap <C-Right> <Plug>AirlineSelectNextTab
 vnoremap < <gv
 vnoremap > >gv
 
-" use 'm' for 'move' in cutlass
-nnoremap m d
-xnoremap m d
-nnoremap mm dd
-nnoremap M D
-
-" use 's' for substitute in subsersive
-nmap s <plug>(SubversiveSubstitute)
-nmap ss <plug>(SubversiveSubstituteLine)
-nmap S <plug>(SubversiveSubstituteToEndOfLine)
-
-" yoink mappings
-nmap <c-y> <plug>(YoinkPostPasteSwapBack)
-nmap p <plug>(YoinkPaste_p)
-nmap P <plug>(YoinkPaste_P)
-nmap gp <plug>(YoinkPaste_gp)
-nmap gP <plug>(YoinkPaste_gP)
-nmap y <plug>(YoinkYankPreserveCursorPosition)
-xmap y <plug>(YoinkYankPreserveCursorPosition)
-
 " accept commands with accidential shift key pressed
 command! -bang -nargs=* -complete=file E e<bang> <args>
 command! -bang -nargs=* -complete=file W w<bang> <args>
@@ -58,5 +38,3 @@ nnoremap q: :q
 
 " allow saving of files as sudo when I forgot to start vim using sudo
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-
-

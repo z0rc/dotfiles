@@ -175,9 +175,6 @@
 [submodule "vim/pack/03_plugins/start/bundler"]
 	path = vim/pack/03_plugins/start/bundler
 	url = https://github.com/tpope/vim-bundler.git
-[submodule "vim/pack/03_plugins/start/capslock"]
-	path = vim/pack/03_plugins/start/capslock
-	url = https://github.com/tpope/vim-capslock.git
 [submodule "vim/pack/03_plugins/start/cheat40"]
 	path = vim/pack/03_plugins/start/cheat40
 	url = https://github.com/lifepillar/vim-cheat40.git
@@ -193,9 +190,6 @@
 [submodule "vim/pack/03_plugins/start/cursorline-current-window"]
 	path = vim/pack/03_plugins/start/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
-[submodule "vim/pack/03_plugins/start/cutlass"]
-	path = vim/pack/03_plugins/start/cutlass
-	url = https://github.com/svermeulen/vim-cutlass.git
 [submodule "vim/pack/03_plugins/start/dockerfile"]
 	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
@@ -208,9 +202,6 @@
 [submodule "vim/pack/03_plugins/start/eunuch"]
 	path = vim/pack/03_plugins/start/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
-[submodule "vim/pack/03_plugins/start/expand-region"]
-	path = vim/pack/03_plugins/start/expand-region
-	url = https://github.com/landock/vim-expand-region.git
 [submodule "vim/pack/03_plugins/start/fern"]
 	path = vim/pack/03_plugins/start/fern
 	url = https://github.com/lambdalisue/fern.vim.git
@@ -337,9 +328,6 @@
 [submodule "vim/pack/03_plugins/start/startify"]
 	path = vim/pack/03_plugins/start/startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "vim/pack/03_plugins/start/subversive"]
-	path = vim/pack/03_plugins/start/subversive
-	url = https://github.com/svermeulen/vim-subversive.git
 [submodule "vim/pack/03_plugins/start/surround"]
 	path = vim/pack/03_plugins/start/surround
 	url = https://github.com/tpope/vim-surround.git
@@ -379,9 +367,6 @@
 [submodule "vim/pack/03_plugins/start/wilder"]
 	path = vim/pack/03_plugins/start/wilder
 	url = https://github.com/gelguy/wilder.nvim.git
-[submodule "vim/pack/03_plugins/start/yoink"]
-	path = vim/pack/03_plugins/start/yoink
-	url = https://github.com/svermeulen/vim-yoink.git
 [submodule "zsh/plugins/abbr"]
 	path = zsh/plugins/abbr
 	url = https://github.com/olets/zsh-abbr.git
