@@ -1,5 +1,4 @@
 " map spacebar as leader key
-
 map <Space> <leader>
 
 " if suggestions windows present, then <Enter> accepts selection
@@ -10,9 +9,11 @@ imap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : '<Plug>delimitMateC
 nmap [c <Plug>GitGutterPrevHunk
 nmap ]c <Plug>GitGutterNextHunk
 
-" crtl+left/right to switch buffers in normal mode
-nmap <C-Left> <Plug>AirlineSelectPrevTab
-nmap <C-Right> <Plug>AirlineSelectNextTab
+" split navigation
+nnoremap <silent> <C-Up> :wincmd k<CR>
+nnoremap <silent> <C-Down> :wincmd j<CR>
+nnoremap <silent> <C-Left> :wincmd h<CR>
+nnoremap <silent> <C-Right> :wincmd l<CR>
 
 " visual shifting (does not exit visual mode)
 vnoremap < <gv
