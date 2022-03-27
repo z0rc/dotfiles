@@ -14,6 +14,10 @@ nnoremap <silent> <C-Up> :wincmd k<CR>
 nnoremap <silent> <C-Down> :wincmd j<CR>
 nnoremap <silent> <C-Left> :wincmd h<CR>
 nnoremap <silent> <C-Right> :wincmd l<CR>
+inoremap <silent> <C-Up> <Esc>:wincmd k<CR>
+inoremap <silent> <C-Down> <Esc>:wincmd j<CR>
+inoremap <silent> <C-Left> <Esc>:wincmd h<CR>
+inoremap <silent> <C-Right> <Esc>:wincmd l<CR>
 
 " visual shifting (does not exit visual mode)
 vnoremap < <gv
