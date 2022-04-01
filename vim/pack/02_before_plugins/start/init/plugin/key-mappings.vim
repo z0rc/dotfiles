@@ -3,7 +3,7 @@ map <Space> <leader>
 
 " if suggestions windows present, then <Enter> accepts selection
 " else use delimitMateCR mapping
-imap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : '<Plug>delimitMateCR'
+inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : '<Plug>delimitMateCR'
 
 " git hunks navigation
 nmap [c <Plug>GitGutterPrevHunk

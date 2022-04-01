@@ -199,9 +199,6 @@
 [submodule "vim/pack/03_plugins/start/editorconfig"]
 	path = vim/pack/03_plugins/start/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/pack/03_plugins/start/eunuch"]
-	path = vim/pack/03_plugins/start/eunuch
-	url = https://github.com/tpope/vim-eunuch.git
 [submodule "vim/pack/03_plugins/start/fern"]
 	path = vim/pack/03_plugins/start/fern
 	url = https://github.com/lambdalisue/fern.vim.git
