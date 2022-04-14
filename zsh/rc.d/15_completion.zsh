@@ -1,22 +1,11 @@
 # Completion tweaks
-zstyle ':completion:*:descriptions'     format          '[%d]'
-zstyle ':completion:*'                  list-colors     ${(s.:.)LS_COLORS}
-zstyle ':completion::complete:*'        use-cache       true
-zstyle ':completion::complete:*'        cache-path      "${XDG_CACHE_HOME}/zsh/compcache"
-
-# Manual page completion
-_man_glob () {
-    local a
-    read -cA a
-    if [[ $a[2] = [0-9]* ]]; then
-        reply=( $^manpath/man$a[2]/$1*$2(N:t:r) )
-    elif [[ $a[2] = -s ]]; then
-        reply=( $^manpath/man$a[3]/$1*$2(N:t:r) )
-    else
-        reply=( $^manpath/man*/$1*$2(N:t:r) )
-    fi
-}
-compctl -K _man_glob man
+zstyle ':completion:*'              list-colors         "${(s.:.)LS_COLORS}"
+zstyle ':completion:*'              list-dirs-first     true
+zstyle ':completion:*'              verbose             true
+zstyle ':completion::complete:*'    use-cache           true
+zstyle ':completion::complete:*'    cache-path          "${XDG_CACHE_HOME}/zsh/compcache"
+zstyle ':completion:*:descriptions' format              [%d]
+zstyle ':completion:*:manuals'      separate-sections   true
 
 # Enable cached completions, if present
 if [[ -d "${XDG_CACHE_HOME}/zsh/fpath" ]]; then
