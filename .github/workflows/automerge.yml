@@ -1,6 +1,7 @@
-name: Automerge dependabot updates
-
-on: pull_request_target
+on:
+  pull_request_target:
+    branches:
+      - main
 
 permissions:
   pull-requests: write
@@ -8,17 +9,10 @@ permissions:
 
 jobs:
   dependabot-merge:
-    name: Merge dependabot updates
     if: ${{ github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v1.3.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Merge Dependabot PR
-        run: gh pr merge --rebase "$PR_URL"
+      - run: gh pr merge --rebase "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
