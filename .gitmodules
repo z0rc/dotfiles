@@ -190,6 +190,9 @@
 [submodule "vim/pack/03_plugins/start/cursorline-current-window"]
 	path = vim/pack/03_plugins/start/cursorline-current-window
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
+[submodule "vim/pack/03_plugins/start/delimitMate"]
+	path = vim/pack/03_plugins/start/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
 [submodule "vim/pack/03_plugins/start/dockerfile"]
 	path = vim/pack/03_plugins/start/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
@@ -247,6 +250,9 @@
 [submodule "vim/pack/03_plugins/start/json"]
 	path = vim/pack/03_plugins/start/json
 	url = https://github.com/elzr/vim-json.git
+[submodule "vim/pack/03_plugins/start/jsonnet"]
+	path = vim/pack/03_plugins/start/jsonnet
+	url = https://github.com/partcyborg/vim-jsonnet.git
 [submodule "vim/pack/03_plugins/start/listtoggle"]
 	path = vim/pack/03_plugins/start/listtoggle
 	url = https://github.com/Valloric/ListToggle.git
@@ -404,6 +410,3 @@
 [submodule "zsh/plugins/z"]
 	path = zsh/plugins/z
 	url = https://github.com/agkozak/zsh-z.git
-[submodule "vim/pack/03_plugins/start/delimitMate"]
-	path = vim/pack/03_plugins/start/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
