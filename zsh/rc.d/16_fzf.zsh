@@ -8,5 +8,4 @@ elif (( ${+commands[ag]} )); then
     export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 fi
 
-source "${DOTFILES}/tools/fzf/shell/completion.zsh"
 source "${DOTFILES}/tools/fzf/shell/key-bindings.zsh"
