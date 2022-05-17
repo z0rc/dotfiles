@@ -1,5 +1,5 @@
 # Completion tweaks
-zstyle ':completion:*'              list-colors         "${(s.:.)LS_COLORS}"
+zstyle ':completion:*:default'      list-colors         "${(s.:.)LS_COLORS}"
 zstyle ':completion:*'              list-dirs-first     true
 zstyle ':completion:*'              verbose             true
 zstyle ':completion::complete:*'    use-cache           true
