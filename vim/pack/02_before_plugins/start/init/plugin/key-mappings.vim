@@ -23,6 +23,9 @@ inoremap <silent> <C-Right> <Esc>:wincmd l<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" visual paste without yanking
+vnoremap p "_c<C-r><C-o>+<Esc>
+
 " accept commands with accidential shift key pressed
 command! -bang -nargs=* -complete=file E e<bang> <args>
 command! -bang -nargs=* -complete=file W w<bang> <args>
