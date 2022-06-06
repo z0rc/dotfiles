@@ -9,11 +9,12 @@ let s:portable=expand('<sfile>:p:h')
 let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 let &packpath=&runtimepath
 
-" Use sensible XDG path
+" Use sensible XDG paths
 set viminfo='1000,n$XDG_CACHE_HOME/vim/info
 set directory=$XDG_CACHE_HOME/vim/swap//
 set undodir=$XDG_CACHE_HOME/vim/undo//
 set backupdir=$XDG_CACHE_HOME/vim/backup//
+set spellfile=$XDG_DATA_HOME/vim/spell/en.utf-8.add
 
 " Enable backups and undo
 set backup

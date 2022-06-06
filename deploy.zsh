@@ -18,7 +18,7 @@ VIMINIT='let $MYVIMRC="'${SCRIPT_DIR}'/vim/vimrc" | source $MYVIMRC'
 print "Creating required directory tree..."
 zf_mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger,gem,tig,gnupg}
 zf_mkdir -p "${XDG_CACHE_HOME}"/{vim/{backup,swap,undo},zsh,tig}
-zf_mkdir -p "${XDG_DATA_HOME}"/{{goenv,jenv,luaenv,nodenv,phpenv,plenv,pyenv,rbenv}/plugins,zsh,man/man1}
+zf_mkdir -p "${XDG_DATA_HOME}"/{{goenv,jenv,luaenv,nodenv,phpenv,plenv,pyenv,rbenv}/plugins,zsh,man/man1,vim/spell}
 zf_mkdir -p "${HOME}"/.local/{bin,etc}
 zf_chmod 700 "${XDG_CONFIG_HOME}/gnupg"
 print "  ...done"
