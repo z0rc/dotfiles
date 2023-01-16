@@ -16,26 +16,13 @@ select-word-style bash
 autoload -Uz run-help
 alias help=run-help
 
+# enable bracketed paste
+autoload -Uz bracketed-paste-url-magic
+zle -N bracketed-paste bracketed-paste-url-magic
+
 # enable url-quote-magic
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
-
-# enable bracketed paste
-autoload -Uz bracketed-paste-magic
-zle -N bracketed-paste bracketed-paste-magic
-
-# compatability with zsh-asug
-pasteinit() {
-    OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-    zle -N self-insert url-quote-magic
-}
-
-pastefinish() {
-    zle -N self-insert $OLD_SELF_INSERT
-}
-
-zstyle :bracketed-paste-magic paste-init pasteinit
-zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Use default provided history search widgets
 autoload -Uz up-line-or-beginning-search
