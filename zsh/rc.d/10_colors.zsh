@@ -27,5 +27,5 @@ fi
 
 # Enable diff with colors
 if (( ${+commands[colordiff]} )); then
-    alias diff="colordiff -Naur"
+    alias diff="colordiff --new-file --text --recursive -u --algorithm patience"
 fi
