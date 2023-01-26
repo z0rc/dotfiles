@@ -6,6 +6,9 @@ export PAGER=less
 export LESS="--RAW-CONTROL-CHARS --ignore-case --hilite-unread --LONG-PROMPT --window=-4 --tabs=4"
 export READNULLCMD=${PAGER}
 
+# make sure gpg knows about current TTY
+export GPG_TTY=${TTY}
+
 # XDG basedir spec compliance
 if [[ ! -v XDG_CONFIG_HOME ]]; then
     export XDG_CONFIG_HOME"=${HOME}/.config"
@@ -23,6 +26,7 @@ if [[ ! -v XDG_RUNTIME_DIR ]]; then
     export XDG_RUNTIME_DIR="${TMPDIR:-/tmp}/runtime-${USER}"
 fi
 
+# best effort to make tools compliant to XDG basedir spec
 export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 export LESSHISTFILE="${XDG_DATA_HOME}/lesshst"
 export MYSQL_HISTFILE="${XDG_DATA_HOME}/mysql_history"
