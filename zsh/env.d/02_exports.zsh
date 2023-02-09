@@ -55,32 +55,3 @@ export TASKRC="${XDG_CONFIG_HOME}/task/taskrc"
 export PERL_CPANM_HOME="${XDG_CACHE_HOME}/cpanm"
 export SOLARGRAPH_CACHE="${XDG_CACHE_HOME}/solargraph"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
-
-# Ensure we have local paths enabled
-path=(/usr/local/bin /usr/local/sbin ${path})
-
-if [[ "${OSTYPE}" = darwin* ]]; then
-    # Enable gnu version of utilities on macOS, if installed
-    for gnuutil in coreutils gnu-sed gnu-tar grep; do
-        if [[ -d /usr/local/opt/${gnuutil}/libexec/gnubin ]]; then
-            path=(/usr/local/opt/${gnuutil}/libexec/gnubin ${path})
-        fi
-        if [[ -d /usr/local/opt/${gnuutil}/libexec/gnuman ]]; then
-            MANPATH="/usr/local/opt/${gnuutil}/libexec/gnuman:${MANPATH}"
-        fi
-    done
-    # Prefer curl installed via brew
-    if [[ -d /usr/local/opt/curl/bin ]]; then
-        path=(/usr/local/opt/curl/bin ${path})
-    fi
-fi
-
-# Enable local binaries and man pages
-path=(${HOME}/.local/bin ${path})
-MANPATH="${XDG_DATA_HOME}/man:${MANPATH}"
-
-# Add go binaries to paths
-path=(${GOPATH}/bin ${path})
-
-# Add custom functions and completions
-fpath=(${ZDOTDIR}/fpath ${fpath})

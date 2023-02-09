@@ -36,4 +36,4 @@ autoload -Uz archive lsarchive unarchive
 
 # Custom personal functions
 # Don't use -U as we need aliases here
-autoload -z lspath bag fgb fgd fgl fz ineachdir psg vpaste
+autoload -z lspath bag fgb fgd fgl fz ineachdir psg vpaste evalcache compdefcache
