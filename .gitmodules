@@ -1,3 +1,6 @@
+[submodule "configs/ranger-plugins/archives"]
+	path = configs/ranger-plugins/archives
+	url = https://github.com/maximtrp/ranger-archives.git
 [submodule "env-wrappers/goenv/goenv"]
 	path = env-wrappers/goenv/goenv
 	url = https://github.com/syndbg/goenv.git
