@@ -1,4 +1,11 @@
-# remind gpg-agent to update current tty for new shell session
+# remind gpg-agent to update current tty before running git
 if (( ${+commands[gpg-connect-agent]} )) && pgrep -u "${EUID}" gpg-agent &>/dev/null; then
-    gpg-connect-agent --quiet --no-history updatestartuptty /bye >/dev/null
+    function _preexec_gpg-agent-update-tty {
+        if [[ ${1} == git* ]]; then
+            gpg-connect-agent --quiet --no-autostart --no-history updatestartuptty /bye >/dev/null &!
+        fi
+    }
+
+    autoload -U add-zsh-hook
+    add-zsh-hook preexec _preexec_gpg-agent-update-tty
 fi
