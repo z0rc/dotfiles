@@ -7,3 +7,6 @@ endif
 
 set background=dark
 colorscheme solarized8_flat
+
+" override Error highlight group to be less standoff-ish
+highlight Error cterm=underline term=underline guibg=NONE
