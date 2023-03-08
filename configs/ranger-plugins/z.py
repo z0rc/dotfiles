@@ -9,7 +9,7 @@ class z(Command):
 
     def execute(self):
         directory_with_ansi = subprocess.run(
-            ['zsh', '-ic', 'z -e ' + self.arg(1)],
+            ['zsh', '-ic', f'z -e {self.arg(1)}'],
             capture_output=True,
             text=True
         ).stdout
@@ -21,7 +21,7 @@ class z(Command):
 
     def tab(self, tabnum):
         directories_with_ansi = subprocess.run(
-            ['zsh', '-ic', 'z --complete ' + self.arg(1)],
+            ['zsh', '-ic', f'z --complete {self.arg(1)}'],
             capture_output=True,
             text=True
         ).stdout
