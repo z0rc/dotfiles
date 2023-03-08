@@ -4,6 +4,9 @@ from ranger.api.commands import Command
 
 
 class z(Command):
+    # cleanup ansi codes returned by iterm's shell integration
+    clean_iterm_ansi = re.compile(r'\x1b.*\x07')
+
     def execute(self):
         directory_with_ansi = subprocess.run(
             ['zsh', '-ic', 'z -e ' + self.arg(1)],
@@ -11,8 +14,19 @@ class z(Command):
             text=True
         ).stdout
 
-        # cleanup:
-        # - ansi codes used by iterm's shell integration
-        # - newlines
-        directory = re.sub(r'(\x1b.*\x07|\n)', '', directory_with_ansi)
+        directory = self.clean_iterm_ansi.sub(
+            '', directory_with_ansi
+        ).rstrip('\n')
         self.fm.cd(directory)
+
+    def tab(self, tabnum):
+        directories_with_ansi = subprocess.run(
+            ['zsh', '-ic', 'z --complete ' + self.arg(1)],
+            capture_output=True,
+            text=True
+        ).stdout
+
+        directories = self.clean_iterm_ansi.sub(
+            '', directories_with_ansi
+        ).splitlines()
+        return [f'z {directory}' for directory in directories]
