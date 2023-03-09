@@ -1,6 +1,6 @@
-import subprocess
 import re
 from ranger.api.commands import Command
+from ranger.ext.spawn import check_output
 
 
 class z(Command):
@@ -8,11 +8,9 @@ class z(Command):
     clean_iterm_ansi = re.compile(r'\x1b.*\x07')
 
     def execute(self):
-        directory_with_ansi = subprocess.run(
+        directory_with_ansi = check_output(
             ['zsh', '-ic', f'z -e {self.arg(1)}'],
-            capture_output=True,
-            text=True
-        ).stdout
+        )
 
         directory = self.clean_iterm_ansi.sub(
             '', directory_with_ansi
@@ -20,11 +18,9 @@ class z(Command):
         self.fm.cd(directory)
 
     def tab(self, tabnum):
-        directories_with_ansi = subprocess.run(
+        directories_with_ansi = check_output(
             ['zsh', '-ic', f'z --complete {self.arg(1)}'],
-            capture_output=True,
-            text=True
-        ).stdout
+        )
 
         directories = self.clean_iterm_ansi.sub(
             '', directories_with_ansi
