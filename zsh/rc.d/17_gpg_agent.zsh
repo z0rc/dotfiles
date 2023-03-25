@@ -2,7 +2,7 @@
 if (( ${+commands[gpg-connect-agent]} )) && pgrep -u "${EUID}" gpg-agent &>/dev/null; then
     function _preexec_gpg-agent-update-tty {
         if [[ ${1} == git* ]]; then
-            gpg-connect-agent --quiet --no-autostart --no-history updatestartuptty /bye >/dev/null &!
+            gpg-connect-agent --quiet --no-autostart updatestartuptty /bye >/dev/null &!
         fi
     }
 
