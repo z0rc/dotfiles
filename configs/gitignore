@@ -56,3 +56,7 @@ Session.vim
 ### Kubernetes ###
 # local kubeconfig
 .kubeconfig
+
+### OS ###
+# MacOS
+.DS_Store
