@@ -2,7 +2,7 @@
 zstyle ':completion:*:default'      list-colors         "${(s.:.)LS_COLORS}"
 zstyle ':completion:*'              list-dirs-first     true
 zstyle ':completion:*'              verbose             true
-zstyle ':completion:*'              matcher-list        'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*'              matcher-list        'm:{[:lower:]}={[:upper:]}'
 zstyle ':completion::complete:*'    use-cache           true
 zstyle ':completion::complete:*'    cache-path          "${XDG_CACHE_HOME}/zsh/compcache"
 zstyle ':completion:*:descriptions' format              [%d]
