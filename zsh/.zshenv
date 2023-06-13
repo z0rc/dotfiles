@@ -4,7 +4,7 @@ if [[ -z "${ZDOTDIR}" || -L "${HOME}/.zshenv" ]]; then
     ZDOTDIR="${homezshenv:A:h}"
 fi
 # DOTFILES dir is parent to ZDOTDIR
-export DOTFILES="${ZDOTDIR%/*}"
+export DOTFILES="${ZDOTDIR:h}"
 
 # Disable global zsh configuration
 # We're doing all configuration ourselves
