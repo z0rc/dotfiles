@@ -2,34 +2,21 @@
 
 emulate -L zsh
 
-# prefer ag to grep
-if (( ${+commands[ag]} )); then
-    search_cmd () { ag --nogroup --color --silent "$*" }
-else
-    search_cmd () { grep --line-number --recursive --ignore-case --color=always --no-messages "$*" }
-fi
-
 # use bat with syntax highlight support, if it's avaialble
 local preview_cmd
 if (( ${+commands[bat]} )); then
-    preview_cmd='bat --paging=never --terminal-width=${FZF_PREVIEW_COLUMNS} --color=always --style=plain,numbers,changes \
-                     --line-range=${from}:${till} --highlight-line=${line} ${filename}'
+    preview_cmd='bat --style=numbers --color=always --highlight-line=${2} ${1}'
 else
     # replace here used to highlight line with match
-    preview_cmd='sed -n -E "s/(.*'$*'.*)/'$bg[grey]'\1'$reset_color'/gI;${from},${till}p" < ${filename}'
+    preview_cmd='sed -E "s/(.*'$*'.*)/'$bg[grey]'\1'$reset_color'/gI;" < ${1}'
 fi
 
-local result=$(search_cmd "$*" |
-    fzf --exit-0 --ansi --layout=reverse-list --no-sort --height=50% --preview-window=right:50% \
-        --preview='match={};
-                    filename=${${(s.:.)match}[1]};
-                    line=${${(s.:.)match}[2]};
-                    from=$((line-10 > 1 ? line-10 : 1));
-                    till=$((line+10));'${preview_cmd}
-)
-unfunction search_cmd
-if [[ -n "${result}" ]]; then
-    vi "${${(s.:.)result}[1]}" +"${${(s.:.)result}[2]}"
+# prefer ag to grep
+if (( ${+commands[ag]} )); then
+    ag --nogroup --color --silent "$*"
 else
-    return 1
-fi
+    grep --line-number --recursive --ignore-case --color=always --no-messages "$*"
+fi | fzf --ansi --layout=reverse-list --no-sort --height=50% --delimiter=: \
+         --preview=${preview_cmd} \
+         --preview-window='right,50%,+{2}/2' \
+         --bind='enter:become(vi {1} +{2})'
