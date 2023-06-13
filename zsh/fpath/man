@@ -1,0 +1,24 @@
+# Color man without correction suggestions
+
+emulate -L zsh
+
+# set originally "bold" as "bold and red"
+# set originally "underline" as "underline and green"
+
+# termcap codes
+# md    start bold
+# mb    start blink
+# me    turn off bold, blink and underline
+# so    start standout (reverse video)
+# se    stop standout
+# us    start underline
+# ue    stop underline
+local -x LESS_TERMCAP_md=$(echoti bold; echoti setaf 1)
+local -x LESS_TERMCAP_mb=$(echoti blink)
+local -x LESS_TERMCAP_me=$(echoti sgr0)
+local -x LESS_TERMCAP_so=$(echoti smso)
+local -x LESS_TERMCAP_se=$(echoti rmso)
+local -x LESS_TERMCAP_us=$(echoti smul; echoti setaf 2)
+local -x LESS_TERMCAP_ue=$(echoti sgr0)
+
+nocorrect command man ${@}
