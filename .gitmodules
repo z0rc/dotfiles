@@ -322,6 +322,9 @@
 [submodule "vim/pack/03_plugins/start/ruby"]
 	path = vim/pack/03_plugins/start/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/pack/03_plugins/start/search-complete"]
+	path = vim/pack/03_plugins/start/search-complete
+	url = https://github.com/girishji/search-complete.vim.git
 [submodule "vim/pack/03_plugins/start/sh"]
 	path = vim/pack/03_plugins/start/sh
 	url = https://github.com/arzg/vim-sh.git
