@@ -241,6 +241,9 @@
 [submodule "vim/pack/03_plugins/start/gv"]
 	path = vim/pack/03_plugins/start/gv
 	url = https://github.com/junegunn/gv.vim.git
+[submodule "vim/pack/03_plugins/start/helm"]
+	path = vim/pack/03_plugins/start/helm
+	url = https://github.com/towolf/vim-helm.git
 [submodule "vim/pack/03_plugins/start/indentLine"]
 	path = vim/pack/03_plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
