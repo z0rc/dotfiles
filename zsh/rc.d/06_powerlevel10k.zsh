@@ -14,7 +14,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     emulate -L zsh -o extended_glob
 
     # Unset all configuration options. This allows you to apply configuration changes without
-    # restarting zsh. Edit ~/.p10k.zsh and type `source ~/.p10k.zsh`.
+    # restarting zsh. Edit this file and source it.
     unset -m '(POWERLEVEL9K_*|DEFAULT_USER)~POWERLEVEL9K_GITSTATUS_DIR'
 
     # Configure left prompt
@@ -47,7 +47,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     # Disable right prompt
     typeset -g POWERLEVEL9K_DISABLE_RPROMPT=true
 
-    # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
+    # Defines character set used by powerlevel10k.
     typeset -g POWERLEVEL9K_MODE=compatible
     # When set to `moderate`, some icons will have an extra space after them. This is meant to avoid
     # icon overlap when using non-monospace fonts. When set to `none`, spaces are not added.
@@ -175,7 +175,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_ETC_ICON=
 
     #####################################[ vcs: git status ]######################################
-    # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
+    # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
     typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
 
     # Untracked files icon. It's really a question mark, your font isn't broken.
@@ -250,11 +250,17 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
             res+="${meta}:${clean}${(V)VCS_STATUS_REMOTE_BRANCH//\%/%%}"
         fi
 
-        # ⇣42 if behind the remote.
-        (( VCS_STATUS_COMMITS_BEHIND )) && res+=" ${clean}⇣${VCS_STATUS_COMMITS_BEHIND}"
-        # ⇡42 if ahead of the remote; no leading space if also behind the remote: ⇣42⇡42.
-        (( VCS_STATUS_COMMITS_AHEAD && !VCS_STATUS_COMMITS_BEHIND )) && res+=" "
-        (( VCS_STATUS_COMMITS_AHEAD  )) && res+="${clean}⇡${VCS_STATUS_COMMITS_AHEAD}"
+        if (( VCS_STATUS_COMMITS_AHEAD || VCS_STATUS_COMMITS_BEHIND )); then
+            # ⇣42 if behind the remote.
+            (( VCS_STATUS_COMMITS_BEHIND )) && res+=" ${clean}⇣${VCS_STATUS_COMMITS_BEHIND}"
+            # ⇡42 if ahead of the remote; no leading space if also behind the remote: ⇣42⇡42.
+            (( VCS_STATUS_COMMITS_AHEAD && !VCS_STATUS_COMMITS_BEHIND )) && res+=" "
+            (( VCS_STATUS_COMMITS_AHEAD  )) && res+="${clean}⇡${VCS_STATUS_COMMITS_AHEAD}"
+        elif [[ -n $VCS_STATUS_REMOTE_BRANCH ]]; then
+            # = if up to date with the remote.
+            res+=" ${clean}="
+        fi
+
         # ⇠42 if behind the push remote.
         (( VCS_STATUS_PUSH_COMMITS_BEHIND )) && res+=" ${clean}⇠${VCS_STATUS_PUSH_COMMITS_BEHIND}"
         (( VCS_STATUS_PUSH_COMMITS_AHEAD && !VCS_STATUS_PUSH_COMMITS_BEHIND )) && res+=" "
@@ -317,7 +323,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
 
     # Show status of repositories of these types. You can add svn and/or hg if you are
     # using them. If you do, your prompt may become slow even when your current directory
-    # isn't in an svn or hg reposotiry.
+    # isn't in an svn or hg repository.
     typeset -g POWERLEVEL9K_VCS_BACKENDS=(git)
 
     # These settings are used for repositories other than Git or when gitstatusd fails and
@@ -438,15 +444,20 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
     # If set to "false", won't show virtualenv if pyenv is already shown.
     # If set to "if-different", won't show virtualenv if it's the same as pyenv.
-    typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV='if-different'
+    typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=if-different
     # Separate environment name from Python version only with a space.
     typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
     # Custom icon.
     # typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
     ######################[ pyenv, rbenv, goenv, nodenv,plenv,luaenv,jenv ]#######################
+    # toolenv color.
     typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_FOREGROUND=37
+    # If set to false, hide interpreter version if it's the same as global:
+    # $(toolenv version-name) == $(toolenv global).
     typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_PROMPT_ALWAYS_SHOW=false
+    # If set to false, hide interpreter version if it's equal to "system".
+    typeset -g POWERLEVEL9K_{PYENV,RBENV,GOENV,NODENV,PLENV,LUAENV,JENV}_SHOW_SYSTEM=false
 
     # Pyenv segment format. The following parameters are available within the expansion.
     #
@@ -455,15 +466,15 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     #
     # The default format has the following logic:
     #
-    # 1. Display "$P9K_CONTENT $P9K_PYENV_PYTHON_VERSION" if $P9K_PYENV_PYTHON_VERSION is not
-    #   empty and unequal to $P9K_CONTENT.
-    # 2. Otherwise display just "$P9K_CONTENT".
-    typeset -g POWERLEVEL9K_PYENV_CONTENT_EXPANSION='${P9K_CONTENT}${${P9K_PYENV_PYTHON_VERSION:#$P9K_CONTENT}:+ $P9K_PYENV_PYTHON_VERSION}'
+    # 1. Display just "$P9K_CONTENT" if it's equal to "$P9K_PYENV_PYTHON_VERSION" or
+    #    starts with "$P9K_PYENV_PYTHON_VERSION/".
+    # 2. Otherwise display "$P9K_CONTENT $P9K_PYENV_PYTHON_VERSION".
+    typeset -g POWERLEVEL9K_PYENV_CONTENT_EXPANSION='${P9K_CONTENT}${${P9K_CONTENT:#$P9K_PYENV_PYTHON_VERSION(|/*)}:+ $P9K_PYENV_PYTHON_VERSION}'
 
     #############[ kubecontext: current kubernetes context (https://kubernetes.io/) ]#############
     # Show kubecontext only when the the command you are typing invokes one of these tools.
     # Tip: Remove the next line to always show kubecontext.
-    typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|fluxctl|stern'
+    typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|flux|fluxctl|stern|kubeseal|skaffold|kubent|kubecolor|cmctl|sparkctl'
 
     ################[ terraform: terraform workspace (https://www.terraform.io) ]#################
     # Don't show terraform workspace if it's literally "default".
@@ -474,6 +485,12 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     # Show aws only when the the command you are typing invokes one of these tools.
     typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws|awless|terraform|pulumi|terragrunt|make'
     typeset -g POWERLEVEL9K_AWS_FOREGROUND=208
+
+    # AWS segment format. The following parameters are available within the expansion.
+    #
+    # - P9K_AWS_PROFILE  The name of the current AWS profile.
+    # - P9K_AWS_REGION   The region associated with the current AWS profile.
+    typeset -g POWERLEVEL9K_AWS_CONTENT_EXPANSION='${P9K_AWS_PROFILE//\%/%%}${P9K_AWS_REGION:+ ${P9K_AWS_REGION//\%/%%}}'
 
     # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
     # when accepting a command line. Supported values:
