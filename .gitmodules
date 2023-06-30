@@ -181,9 +181,6 @@
 [submodule "vim/pack/03_plugins/start/cheat40"]
 	path = vim/pack/03_plugins/start/cheat40
 	url = https://github.com/lifepillar/vim-cheat40.git
-[submodule "vim/pack/03_plugins/start/colorizer"]
-	path = vim/pack/03_plugins/start/colorizer
-	url = https://github.com/chrisbra/Colorizer
 [submodule "vim/pack/03_plugins/start/committia"]
 	path = vim/pack/03_plugins/start/committia
 	url = https://github.com/rhysd/committia.vim.git
@@ -217,9 +214,6 @@
 [submodule "vim/pack/03_plugins/start/file-line"]
 	path = vim/pack/03_plugins/start/file-line
 	url = https://github.com/lervag/file-line.git
-[submodule "vim/pack/03_plugins/start/fold-cycle"]
-	path = vim/pack/03_plugins/start/fold-cycle
-	url = https://github.com/arecarn/vim-fold-cycle.git
 [submodule "vim/pack/03_plugins/start/fugitive"]
 	path = vim/pack/03_plugins/start/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -286,9 +280,6 @@
 [submodule "vim/pack/03_plugins/start/monit"]
 	path = vim/pack/03_plugins/start/monit
 	url = https://github.com/tmatilai/vim-monit.git
-[submodule "vim/pack/03_plugins/start/move"]
-	path = vim/pack/03_plugins/start/move
-	url = https://github.com/matze/vim-move.git
 [submodule "vim/pack/03_plugins/start/neco-vim"]
 	path = vim/pack/03_plugins/start/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
