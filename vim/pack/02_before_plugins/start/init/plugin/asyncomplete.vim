@@ -3,21 +3,21 @@ augroup asyncomple_vimrc
 
     " register necovim source
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necovim#get_source_options({
-        \ 'name': 'necovim',
-        \ 'allowlist': ['vim'],
-        \ 'completor': function('asyncomplete#sources#necovim#completor'),
-        \ }))
+    \   'name': 'necovim',
+    \   'allowlist': ['vim'],
+    \   'completor': function('asyncomplete#sources#necovim#completor'),
+    \ }))
 
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-        \ 'name': 'buffer',
-        \ 'allowlist': ['*'],
-        \ 'completor': function('asyncomplete#sources#buffer#completor'),
-        \ 'config': {
-        \    'max_buffer_size': 5000000,
-        \    'clear_cache': 1,
-        \    'min_word_len': 3,
-        \  },
-        \ }))
+    \   'name': 'buffer',
+    \   'allowlist': ['*'],
+    \   'completor': function('asyncomplete#sources#buffer#completor'),
+    \   'config': {
+    \       'max_buffer_size': 5000000,
+    \       'clear_cache': 1,
+    \       'min_word_len': 3,
+    \   },
+    \ }))
 
     " close complete popup when completion is done
     autocmd CompleteDone * if pumvisible() == 0 | pclose | endif

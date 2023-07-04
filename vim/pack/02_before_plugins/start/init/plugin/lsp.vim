@@ -1,1 +1,1 @@
-let g:lsp_diagnostics_virtual_text_align="right"
+let g:lsp_diagnostics_virtual_text_align='right'
