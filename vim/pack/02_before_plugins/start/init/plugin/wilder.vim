@@ -6,10 +6,7 @@ function! s:wilder_init() abort
     \   wilder#branch(
     \       wilder#cmdline_pipeline({
     \           'hide_in_substitute': 1,
-    \           'debounce': 100,
-    \       }),
-    \   ),
-    \ ])
+    \ }))])
     call wilder#set_option('renderer', wilder#wildmenu_renderer(
     \   wilder#wildmenu_airline_theme({
     \       'highlights': {},
