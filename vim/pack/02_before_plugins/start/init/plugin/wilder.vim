@@ -10,7 +10,10 @@ function! s:wilder_init() abort
     \       }),
     \   ),
     \ ])
-    call wilder#set_option('renderer', wilder#popupmenu_renderer({
-    \   'highlighter': wilder#basic_highlighter(),
-    \ }))
+    call wilder#set_option('renderer', wilder#wildmenu_renderer(
+    \   wilder#wildmenu_airline_theme({
+    \       'highlights': {},
+    \       'highlighter': wilder#basic_highlighter(),
+    \       'separator': ' · ',
+    \ })))
 endfunction
