@@ -21,29 +21,21 @@ set backup
 set undofile
 
 set shiftround " round indent to multiple shiftwidth
-set showmatch " show matching brackets when text indicator is over them
 set hlsearch " highlight search results
 set ignorecase " ignore case when searching
 set smartcase " when searching try to be smart about cases
 set nowrap " don't wrap lines
-set ttyfast " indicate fast tty connetion
-set lazyredraw " helps dealing with flickering
 set clipboard=unnamed,unnamedplus " merge clipboard with x11 and mac
 set list listchars=tab:>-,trail:·,extends:►,precedes:◄ " indicate various special chars
 set number " show line numbers ...
-set relativenumber " and use relative style numbers
+set relativenumber " ...and use relative style numbers
 set cursorline " highlight line with cursor
-set showcmd " show partial commands in bottom left corner
 set shortmess+=c " shut off completion messages
 set whichwrap+=<,>,h,l,[,] " autowrap to next line for cursor movements
 set splitbelow " when splitting windows put new ones below ...
 set splitright " ...and to the right
 set path+=** " search subfolders recursively
 set fillchars=diff:\ , " set <space> as fill character for diffs on string removal (default is <minus> char)
-
-" command line completion
-set wildmenu
-set wildmode=longest:full,full
 
 " Scrolling
 set scrolloff=8 " start scrolling when we're 8 lines away from margins
