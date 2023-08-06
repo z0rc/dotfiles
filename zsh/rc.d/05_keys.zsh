@@ -3,7 +3,6 @@ bindkey -e
 
 zmodload zsh/terminfo
 
-# Create a zkbd compatible hash
 typeset -A key
 key[Home]=${terminfo[khome]}
 key[End]=${terminfo[kend]}
@@ -36,6 +35,7 @@ key[CtrlRight]=${terminfo[kRIT5]}
 [[ -n ${key[ShiftTab]}  ]] && bindkey ${key[ShiftTab]}  reverse-menu-complete
 [[ -n ${key[CtrlLeft]}  ]] && bindkey ${key[CtrlLeft]}  backward-word
 [[ -n ${key[CtrlRight]} ]] && bindkey ${key[CtrlRight]} forward-word
+unset key
 
 # Make dot key autoexpand "..." to "../.." and so on
 _zsh-dot () {
