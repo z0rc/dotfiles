@@ -16,26 +16,26 @@ key[Right]=${terminfo[kcuf1]}
 key[PageUp]=${terminfo[kpp]}
 key[PageDown]=${terminfo[knp]}
 key[Backspace]=${terminfo[kbs]}
-key[ShiftTab]="${terminfo[kcbt]}"
+key[ShiftTab]=${terminfo[kcbt]}
 # man 5 user_caps
 key[CtrlLeft]=${terminfo[kLFT5]}
 key[CtrlRight]=${terminfo[kRIT5]}
 
 # Setup keys accordingly
-[[ -n "${key[Home]}"      ]] && bindkey "${key[Home]}"       beginning-of-line
-[[ -n "${key[End]}"       ]] && bindkey "${key[End]}"        end-of-line
-[[ -n "${key[Insert]}"    ]] && bindkey "${key[Insert]}"     overwrite-mode
-[[ -n "${key[Delete]}"    ]] && bindkey "${key[Delete]}"     delete-char
-[[ -n "${key[Left]}"      ]] && bindkey "${key[Left]}"       backward-char
-[[ -n "${key[Right]}"     ]] && bindkey "${key[Right]}"      forward-char
-[[ -n "${key[Up]}"        ]] && bindkey "${key[Up]}"         up-line-or-beginning-search
-[[ -n "${key[Down]}"      ]] && bindkey "${key[Down]}"       down-line-or-beginning-search
-[[ -n "${key[PageUp]}"    ]] && bindkey "${key[PageUp]}"     beginning-of-buffer-or-history
-[[ -n "${key[PageDown]}"  ]] && bindkey "${key[PageDown]}"   end-of-buffer-or-history
-[[ -n "${key[Backspace]}" ]] && bindkey "${key[Backspace]}"  backward-delete-char
-[[ -n "${key[ShiftTab]}"  ]] && bindkey "${key[ShiftTab]}"   reverse-menu-complete
-[[ -n "${key[CtrlLeft]}"  ]] && bindkey "${key[CtrlLeft]}"   backward-word
-[[ -n "${key[CtrlRight]}" ]] && bindkey "${key[CtrlRight]}"  forward-word
+[[ -n ${key[Home]}      ]] && bindkey ${key[Home]}      beginning-of-line
+[[ -n ${key[End]}       ]] && bindkey ${key[End]}       end-of-line
+[[ -n ${key[Insert]}    ]] && bindkey ${key[Insert]}    overwrite-mode
+[[ -n ${key[Delete]}    ]] && bindkey ${key[Delete]}    delete-char
+[[ -n ${key[Left]}      ]] && bindkey ${key[Left]}      backward-char
+[[ -n ${key[Right]}     ]] && bindkey ${key[Right]}     forward-char
+[[ -n ${key[Up]}        ]] && bindkey ${key[Up]}        up-line-or-beginning-search
+[[ -n ${key[Down]}      ]] && bindkey ${key[Down]}      down-line-or-beginning-search
+[[ -n ${key[PageUp]}    ]] && bindkey ${key[PageUp]}    beginning-of-buffer-or-history
+[[ -n ${key[PageDown]}  ]] && bindkey ${key[PageDown]}  end-of-buffer-or-history
+[[ -n ${key[Backspace]} ]] && bindkey ${key[Backspace]} backward-delete-char
+[[ -n ${key[ShiftTab]}  ]] && bindkey ${key[ShiftTab]}  reverse-menu-complete
+[[ -n ${key[CtrlLeft]}  ]] && bindkey ${key[CtrlLeft]}  backward-word
+[[ -n ${key[CtrlRight]} ]] && bindkey ${key[CtrlRight]} forward-word
 
 # Make dot key autoexpand "..." to "../.." and so on
 _zsh-dot () {
