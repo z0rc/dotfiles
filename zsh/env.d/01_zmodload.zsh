@@ -5,4 +5,4 @@ if [[ -v ZSH_ZPROF_ENABLE ]]; then
 fi
 
 # Load zsh/files module to provide some builtins for file modifications
-zmodload -F -m zsh/files b:zf_\*
+zmodload -F zsh/files b:zf_ln b:zf_mkdir b:zf_rm
