@@ -6,6 +6,5 @@ if (( ${+commands[gpg-connect-agent]} )) && pgrep -u "${EUID}" gpg-agent &>/dev/
         fi
     }
 
-    autoload -U add-zsh-hook
     add-zsh-hook preexec _preexec_gpg-agent-update-tty
 fi
