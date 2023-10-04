@@ -1,0 +1,13 @@
+# Put the cursor at the bottom of the terminal
+# https://github.com/romkatv/powerlevel10k/issues/2442
+# https://github.com/romkatv/powerlevel10k/issues/1699
+
+emulate -L zsh
+
+[[ -t 1 ]] || return
+zmodload zsh/terminfo
+echoti civis
+print -rn -- "${(pl:$((2 * LINES - 1))::\n:)}"
+zle -I
+zle -R
+print -rn -- ${${terminfo[cnorm]-}:/*$'\e[?25h'(|'\e'*)/$'\e[?25h'}

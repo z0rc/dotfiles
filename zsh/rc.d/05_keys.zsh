@@ -48,6 +48,10 @@ _zsh-dot () {
 zle -N _zsh-dot
 bindkey . _zsh-dot
 
+# Make previously autoloaded function as widget and bind it to Ctrl+L
+zle -N clear-screen-soft-bottom
+bindkey '^L' clear-screen-soft-bottom
+
 # Make sure that the terminal is in application mode when zle is active, since
 # only then values from $terminfo are valid
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then

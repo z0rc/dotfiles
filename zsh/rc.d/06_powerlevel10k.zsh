@@ -518,6 +518,9 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     # can slow down prompt by 1-2 milliseconds, so it's better to keep it turned off unless you
     # really need it.
     typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
+
+    # Don't reserve lines at bottom of prompt for command lines
+    typeset -g POWERLEVEL9K_INSTANT_PROMPT_COMMAND_LINES=0
 }
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
