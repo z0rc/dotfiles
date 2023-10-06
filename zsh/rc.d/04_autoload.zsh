@@ -42,5 +42,5 @@ autoload -Uz add-zsh-hook
 autoload -z lspath bag fgb fgd fgl fz ineachdir psg vpaste evalcache compdefcache
 
 # Enable wrapper, if original command is available
-(( ${+commands[man]} )) && autoload -z wrap_man
-(( ${+commands[sudo]} )) && autoload -z wrap_sudo
+(( ${+commands[man]} )) && autoload -z wrap-man
+(( ${+commands[sudo]} )) && autoload -z wrap-sudo
