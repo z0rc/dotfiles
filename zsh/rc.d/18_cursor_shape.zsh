@@ -3,7 +3,7 @@
 # Ss - set cursor shape, usually 6 as argument means I-beam
 # Se - reset cursor shape, which is usually block
 if (( ${+terminfo[Ss]} && ${+terminfo[Se]} )); then
-    _zsh_cursor_shape_block() {
+    _zsh_cursor_shape_reset() {
         echoti Se
     }
 
@@ -11,6 +11,6 @@ if (( ${+terminfo[Ss]} && ${+terminfo[Se]} )); then
         echoti Ss 6
     }
 
-    add-zsh-hook preexec _zsh_cursor_shape_block
+    add-zsh-hook preexec _zsh_cursor_shape_reset
     add-zsh-hook precmd _zsh_cursor_shape_ibeam
 fi
