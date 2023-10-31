@@ -2,6 +2,8 @@
 
 emulate -L zsh
 
+setopt local_options extended_glob
+
 local cache_dir="${XDG_CACHE_HOME}/zsh/fpath"
 local cache_file="${cache_dir}/_${1##/*}"
 

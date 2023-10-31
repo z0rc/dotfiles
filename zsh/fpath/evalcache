@@ -2,6 +2,8 @@
 
 emulate -L zsh
 
+setopt local_options extended_glob
+
 local cache_dir="${XDG_CACHE_HOME}/zsh/eval"
 local cache_file="${cache_dir}/${(j:_:)@:gs/\//_}.zsh"
 
