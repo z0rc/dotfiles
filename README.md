@@ -7,7 +7,7 @@
 ## There are many like it, but this one is mine
 
 This repository contains tools and configs I use in shell. No graphical stuff,
-usable both on server and personal workstation. Battle tested on macOS and
+usable on servers and personal workstations. Battle tested on macOS and
 various Linux distributions including Debian, Ubuntu, CentOS and even WSL.
 
 I'm a big fan of [XDG Base Directory
@@ -20,9 +20,8 @@ presence](#zero-home-presence).
 
 ## Features
 
-* Extensive Zsh [configuration](zsh/rc.d) and [plugins](zsh/plugins):
-  * [powerline10k](https://github.com/romkatv/powerlevel10k) prompt stylized
-    like [pure](https://github.com/sindresorhus/pure)
+* Extensive Zsh [configuration](zsh/rc.d) and [plugins](zsh/plugins), including:
+  * [powerline10k](https://github.com/romkatv/powerlevel10k) prompt
   * [additional completions](https://github.com/zsh-users/zsh-completions)
   * [async autosuggestions
     plugin](https://github.com/zsh-users/zsh-autosuggestions)
@@ -39,37 +38,37 @@ presence](#zero-home-presence).
   * [quilt](configs/quiltrc)
   * [Git](configs/gitconfig)
   * [htop](configs/htoprc)
-* Handy [utilities](tools):
+* Handy [utilities](tools), including:
   * [fzf](https://github.com/junegunn/fzf)
   * [spark](https://github.com/holman/spark) to draw bar charts right in the
     console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better
     git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
-* [goenv](https://github.com/syndbg/goenv),
-  [jenv](https://github.com/jenv/jenv),
-  [luaenv](https://github.com/cehoffman/luaenv),
-  [nodenv](https://github.com/nodenv/nodenv),
-  [phpenv](https://github.com/phpenv/phpenv),
-  [plenv](https://github.com/tokuhirom/plenv),
-  [pyenv](https://github.com/yyuu/pyenv) and
-  [rbenv](https://github.com/rbenv/rbenv)
+* env wrappers for multiple programming languages:
+  * [goenv](https://github.com/syndbg/goenv)
+  * [jenv](https://github.com/jenv/jenv)
+  * [luaenv](https://github.com/cehoffman/luaenv)
+  * [nodenv](https://github.com/nodenv/nodenv)
+  * [phpenv](https://github.com/phpenv/phpenv)
+  * [plenv](https://github.com/tokuhirom/plenv)
+  * [pyenv](https://github.com/yyuu/pyenv)
+  * [rbenv](https://github.com/rbenv/rbenv)
 
 ## Installation
 
 Requirements:
 
-* `zsh` 5.1 or newer (async stuff requires recent enough version of zsh)
-* `git` (all external components are added as git submodules)
+* `zsh` version 5.9 or newer is strongly recommended
+* `git` all external components are added as git submodules
 
 Recommended:
 
 * `make` (optional: required to install git helpers)
 * `perl` (optional: used by diff-so-fancy)
-* `python3` and `pip3` (optional: used by several vim plugins, but they won't
-  be activated, if vim built without python3 support)
-* [`fd`](https://github.com/sharkdp/fd) or
-  [`ag`](https://github.com/ggreer/the_silver_searcher) (optional: will be used
+* [`fd`](https://github.com/sharkdp/fd),
+  [`ag`](https://github.com/ggreer/the_silver_searcher) and
+  [`bat`](https://github.com/sharkdp/bat) (optional: will be used
   in fzf by default, if present)
 
 Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
@@ -85,9 +84,6 @@ chsh -s /bin/zsh
 initial clone. Also it adds cron job to pull updates every midnight and serves
 as a post-merge git hook, so you don't have to care about updating submodules
 after successful pull.
-
-In case of missing python or ruby, they can be installed via pyenv and rbenv
-after the deployment.
 
 ## Zero home presence
 
@@ -105,27 +101,9 @@ into `/etc/zsh/zshenv`. Or you can do it with PAM env module.
 
 ## Vim version
 
-Vim 8.0 or higher is required as plugins are configured via native package
-interface available in mentioned version. In order you use all bundled vim
-plugins, please install vim with python3 and ruby support built-in.
-
-Debian/Ubuntu:
-
-```
-apt install vim-nox
-```
-
-CentOS/RHEL/Fedora:
-
-```
-dnf install vim-enhanced
-```
-
-MacOS:
-
-```
-brew install vim
-```
+Vim 9.1 or higher is required to support XDG Base Dir Spec. In order you use
+all bundled vim plugins, please install vim with python3 and ruby support
+built-in.
 
 ## Configuration
 
@@ -169,15 +147,16 @@ Pyenv and similar wrappers are lazy-loaded, it means that they won't be
 initialized on shell start. Activation is done on the first execution. Check
 out output of `type -f pyenv` in shell and
 [implementation](zsh/rc.d/11_many_env.zsh). Also this means, that files like
-`.python-version` won't work as expected, it's recommended to use autoenv.zsh
+`.python-version` won't work as expected, it's recommended to use `autoenv.zsh`
 to explicitly activate needed environment.
 
 ### Ignore config files changes locally
 
 Midnight Commander is quite volatile in terms of writing to its configuration
 file. Running `mc` using different screen size results in updating panel size
-value in `mc.ini`. Same goes with `htop`. In order to ignore local changes to
-configuration files you can do:
+value in `mc.ini`. Same goes with `htop`.
+
+In order to ignore local changes to configuration files you can do:
 
 ```sh
 git update-index --assume-unchanged configs/mc.ini
