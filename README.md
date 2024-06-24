@@ -1,4 +1,4 @@
-# Zero home presence dotfiles
+# Zero Home Presence Dotfiles
 
 ## License
 
@@ -6,33 +6,32 @@
 
 ## There are many like it, but this one is mine
 
-This repository contains tools and configs I use in shell. No graphical stuff,
-usable on servers and personal workstations. Battle tested on macOS and
-various Linux distributions including Debian, Ubuntu, CentOS and even WSL.
+This repository contains tools and configurations I use in the shell. It
+includes no graphical configurations, making it usable on servers and personal
+workstations. It has been battle-tested on macOS and various Linux
+distributions, including Debian, Ubuntu, CentOS, and even WSL.
 
-I'm a big fan of [XDG Base Directory
+I'm a big fan of the [XDG Base Directory
 Specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html)
-and organize my dotfiles in a way that they don't clutter the `$HOME`. I was
-able to reduce files required to be in `$HOME` to single `.zshenv`, everything
-else goes under standard XDG paths or launched via aliases. Additionally if you
-have root permissions, you can install dotfiles with [zero home
-presence](#zero-home-presence).
+and organize my dotfiles in a way that they don't clutter the `$HOME`
+directory. I have reduced the files required in `$HOME` to a single `.zshenv`;
+everything else goes under standard XDG paths or is launched via aliases.
+Additionally, if you have root permissions, you can install dotfiles with [zero
+home presence](#zero-home-presence).
 
 ## Features
 
 * Extensive Zsh [configuration](zsh/rc.d) and [plugins](zsh/plugins), including:
-  * [powerline10k](https://github.com/romkatv/powerlevel10k) prompt
+  * [powerlevel10k](https://github.com/romkatv/powerlevel10k) prompt
   * [additional completions](https://github.com/zsh-users/zsh-completions)
-  * [async autosuggestions
-    plugin](https://github.com/zsh-users/zsh-autosuggestions)
-  * [syntax highlighting
-    plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
+  * [async autosuggestions plugin](https://github.com/zsh-users/zsh-autosuggestions)
+  * [syntax highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
   * [autoenv plugin](https://github.com/Tarrasch/zsh-autoenv)
   * [autopair plugin](https://github.com/hlissner/zsh-autopair)
-  * [clean zsh implementation of `z`](https://github.com/agkozak/zsh-z)
+  * [clean Zsh implementation of `z`](https://github.com/agkozak/zsh-z)
 * Vim [configuration](vim/vimrc) and [plugins](vim/pack)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
-* Other configs:
+* Other configurations:
   * [Midnight Commander](configs/mc.ini)
   * [ranger](configs/ranger)
   * [quilt](configs/quiltrc)
@@ -40,12 +39,10 @@ presence](#zero-home-presence).
   * [htop](configs/htoprc)
 * Handy [utilities](tools), including:
   * [fzf](https://github.com/junegunn/fzf)
-  * [spark](https://github.com/holman/spark) to draw bar charts right in the
-    console
-  * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for much better
-    git diff layout
+  * [spark](https://github.com/holman/spark) to draw bar charts right in the console
+  * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for a much better git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
-* env wrappers for multiple programming languages:
+* [Environment wrappers](env-wrappers) for multiple programming languages:
   * [goenv](https://github.com/syndbg/goenv)
   * [jenv](https://github.com/jenv/jenv)
   * [luaenv](https://github.com/cehoffman/luaenv)
@@ -57,22 +54,22 @@ presence](#zero-home-presence).
 
 ## Installation
 
-Requirements:
+### Requirements
 
 * `zsh` version 5.9 or newer is strongly recommended
 * `git` all external components are added as git submodules
 
-Recommended:
+### Recommended
 
 * `make` (optional: required to install git helpers)
 * `perl` (optional: used by diff-so-fancy)
 * [`fd`](https://github.com/sharkdp/fd),
-  [`ag`](https://github.com/ggreer/the_silver_searcher) and
-  [`bat`](https://github.com/sharkdp/bat) (optional: will be used
-  in fzf by default, if present)
+  [`ag`](https://github.com/ggreer/the_silver_searcher), and
+  [`bat`](https://github.com/sharkdp/bat) (optional: will be used in fzf by
+  default, if present)
 
-Dotfiles can be installed in any dir, but probably somewhere under `$HOME`.
-Personally I use `$HOME/.local/dotfiles`. The installation is pretty simple:
+Dotfiles can be installed in any directory, but probably somewhere under
+`$HOME`. Personally, I use `$HOME/.local/dotfiles`. The installation is simple:
 
 ```shell
 git clone https://github.com/z0rc/dotfiles.git "$HOME/.local/dotfiles"
@@ -80,36 +77,36 @@ $HOME/.local/dotfiles/deploy.zsh
 chsh -s /bin/zsh
 ```
 
-[Deployment script](deploy.zsh) helps to set up all required symlinks after the
-initial clone. Also it adds cron job to pull updates every midnight and serves
-as a post-merge git hook, so you don't have to care about updating submodules
-after successful pull.
+The [deployment script](deploy.zsh) helps set up all required symlinks after
+the initial clone. It also adds a cron job to pull updates every midnight and
+serves as a post-merge git hook, so you don't have to worry about updating
+submodules after a successful pull.
 
-## Zero home presence
+## Zero Home Presence
 
-It's possible to install dotfiles without creating `~/.zshenv` symlink. In
-order to do so, there should be an environment variable `ZDOTDIR` set to
-`<installation dir>/zsh`, e.g. `$HOME/.local/dotfiles/zsh`. This variable
-should be set super early in login process, before zsh starts sourcing user's
-`.zshenv`. One possible option is to add
+It's possible to install dotfiles without creating a `~/.zshenv` symlink. To do
+so, set the environment variable ZDOTDIR to `<installation dir>/zsh`, e.g.,
+`$HOME/.local/dotfiles/zsh`. This variable should be set very early in the login
+process, before zsh starts sourcing the user's `.zshenv`. One possible option is
+to add:
 
 ```sh
 export ZDOTDIR="$HOME/.local/dotfiles/zsh"
 ```
 
-into `/etc/zsh/zshenv`. Or you can do it with PAM env module.
+into `/etc/zsh/zshenv`. Alternatively, you can set it with a PAM environment module.
 
-## Vim version
+## Vim Version
 
-Vim 9.1 or higher is required to support XDG Base Dir Spec. In order you use
-all bundled vim plugins, please install vim with python3 and ruby support
+Vim 9.1 or higher is required to support the XDG Base Directory Specification.
+To use all bundled vim plugins, install vim with Python3 and Ruby support
 built-in.
 
 ## Configuration
 
-### Git configuration
+### Git Configuration
 
-Update `~/.config/git/local/user` with your email and name. Something like
+Update `~/.config/git/local/user` with your email and name. It should look like
 this:
 
 ```ini
@@ -118,51 +115,51 @@ this:
     name = John Doe
 ```
 
-Also you can put additional configuration in `~/.config/git/local/stuff`.
+You can also add additional configurations in `~/.config/git/local/stuff`.
 
-### Zsh configuration
+### Zsh Configuration
 
-Keep in mind that Zsh configuration skips every global configuration file
-except `/etc/zsh/zshenv`.
+Note that Zsh configuration skips every global configuration file except
+`/etc/zsh/zshenv`.
 
 You can add your local configuration into `$ZDOTDIR/env.d/9[0-9]_*` and
-`$ZDOTDIR/rc.d/9[0-9]_*`. The difference is that `env.d` is sourced always while
-`rc.d` is sourced in interactive session only.
+`$ZDOTDIR/rc.d/9[0-9]_*`. The difference is that `env.d` is sourced always,
+while `rc.d` is sourced only in interactive sessions.
 
-Also `$ZDOTDIR/.zlogin` and `$ZDOTDIR/.zlogout` are available for
-modifications, albeit missing by default.
+Additionally, `$ZDOTDIR/.zlogin` and `$ZDOTDIR/.zlogout` are available for
+modifications, though they are missing by default.
 
-### Vim configuration
+### Vim Configuration
 
 Add your local configuration to `$DOTFILES/vim/vimrc.local`.
 
-### Local paths
+### Local Paths
 
-Local binaries can be put into `$HOME/.local/bin`, it's added to `PATH` by
-default. Also man pages can be put into `$XDG_DATA_HOME/man`.
+Local binaries can be placed in `$HOME/.local/bin`; it's added to `PATH` by
+default. Man pages can be placed in `$XDG_DATA_HOME/man`.
 
 ### Lazy \*env
 
-Pyenv and similar wrappers are lazy-loaded, it means that they won't be
-initialized on shell start. Activation is done on the first execution. Check
-out output of `type -f pyenv` in shell and
-[implementation](zsh/rc.d/11_many_env.zsh). Also this means, that files like
-`.python-version` won't work as expected, it's recommended to use `autoenv.zsh`
-to explicitly activate needed environment.
+Pyenv and similar wrappers are lazy-loaded, meaning they won't be initialized
+at shell start. Activation occurs on the first execution. Check the output of
+`type -f pyenv` in the shell and the
+[implementation](zsh/rc.d/11_many_env.zsh). Because of this, files like
+`.python-version` won't work as expected; it's recommended to use `autoenv.zsh`
+to explicitly activate the needed environment.
 
-### Ignore config files changes locally
+### Ignore Config Files Changes Locally
 
 Midnight Commander is quite volatile in terms of writing to its configuration
-file. Running `mc` using different screen size results in updating panel size
-value in `mc.ini`. Same goes with `htop`.
+file. Running `mc` with different screen sizes results in updating the panel
+size value in `mc.ini`. The same goes for `htop`.
 
-In order to ignore local changes to configuration files you can do:
+To ignore local changes to configuration files, you can do:
 
 ```sh
 git update-index --assume-unchanged configs/mc.ini
 ```
 
-To restore git tracking of those files use:
+To restore git tracking of those files, use:
 
 ```
 git update-index --no-assume-unchanged configs/mc.ini
