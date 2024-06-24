@@ -8,33 +8,15 @@
 	autosetuprebase = always
 [merge]
 	ff = only
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [rebase]
 	autoStash = true
-[color]
-	ui = auto
 [alias]
 	lg = log --graph --pretty=fuller --decorate --color --show-signature
 	ls = log --oneline --abbrev-commit --color
 	amend = commit --amend
 [credential]
 	helper = cache --socket ~/.cache/git-credential-cache/socket
-[color "diff"]
-	meta = yellow bold
-	commit = green bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [diff]
 	algorithm = histogram
 	submodule = log
@@ -43,13 +25,25 @@
 	autocrlf = input
 	whitespace = cr-at-eol
 	pager = less --tabs=4 -RFX
+	untrackedCache = true
 [pager]
 	diff = which diff-so-fancy >/dev/null 2>&1 && diff-so-fancy | less --tabs=4 -RFX || less --tabs=4 -RFX
-	status = true
 [submodule]
-	fetchJobs = 5
+	fetchJobs = 0
 	recurse = true
 [help]
 	autocorrect = 5
 [status]
 	submoduleSummary = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
