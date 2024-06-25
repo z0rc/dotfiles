@@ -1,6 +1,16 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+if v:version < 910
+    " Set default 'runtimepath' without ~/.vim folders
+    let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+    " What is the name of the directory containing this file?
+    let s:portable=expand('<sfile>:p:h')
+    " Add the directory to 'runtimepath'
+    let &runtimepath=printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+    let &packpath=&runtimepath
+endif
+
 " Use sensible XDG paths
 set viminfo='1000,n$XDG_CACHE_HOME/vim/info
 set directory=$XDG_CACHE_HOME/vim/swap//
