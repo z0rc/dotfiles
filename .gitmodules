@@ -94,6 +94,61 @@
 [submodule "env-wrappers/rbenv/ruby-build"]
 	path = env-wrappers/rbenv/ruby-build
 	url = https://github.com/rbenv/ruby-build.git
+[submodule "nvim/plugins/cmp-buffer"]
+	path = nvim/plugins/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer.git
+[submodule "nvim/plugins/cmp-nvim-lua"]
+	path = nvim/plugins/cmp-nvim-lua
+	url = https://github.com/hrsh7th/cmp-nvim-lua.git
+[submodule "nvim/plugins/cmp-nvim-lsp"]
+	path = nvim/plugins/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
+[submodule "nvim/plugins/cmp-path"]
+	path = nvim/plugins/cmp-path
+	url = https://github.com/hrsh7th/cmp-path.git
+[submodule "nvim/plugins/gitsigns"]
+	path = nvim/plugins/gitsigns
+	url = https://github.com/lewis6991/gitsigns.nvim.git
+[submodule "nvim/plugins/indent-blankline"]
+	path = nvim/plugins/indent-blankline
+	url = https://github.com/lukas-reineke/indent-blankline.nvim.git
+[submodule "nvim/plugins/lsp-zero"]
+	path = nvim/plugins/lsp-zero
+	branch = v3.x
+	url = https://github.com/VonHeikemen/lsp-zero.nvim.git
+[submodule "nvim/plugins/mason"]
+	path = nvim/plugins/mason
+	url = https://github.com/williamboman/mason.nvim.git
+[submodule "nvim/plugins/mason-lspconfig"]
+	path = nvim/plugins/mason-lspconfig
+	url = https://github.com/williamboman/mason-lspconfig.nvim.git
+[submodule "nvim/plugins/nvim-autopairs"]
+	path = nvim/plugins/nvim-autopairs
+	url = https://github.com/windwp/nvim-autopairs.git
+[submodule "nvim/plugins/nvim-cmp"]
+	path = nvim/plugins/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp.git
+[submodule "nvim/plugins/nvim-lspconfig"]
+	path = nvim/plugins/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "nvim/plugins/nvim-surround"]
+	path = nvim/plugins/nvim-surround
+	url = https://github.com/kylechui/nvim-surround.git
+[submodule "nvim/plugins/nvim-treesitter"]
+	path = nvim/plugins/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter.git
+[submodule "nvim/plugins/nvim-treesitter-textobjects"]
+	path = nvim/plugins/nvim-treesitter-textobjects
+	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+[submodule "nvim/plugins/reticle"]
+	path = nvim/plugins/reticle
+	url = https://github.com/tummetott/reticle.nvim.git
+[submodule "nvim/plugins/solarized"]
+	path = nvim/plugins/solarized
+	url = https://github.com/maxmx03/solarized.nvim.git
+[submodule "nvim/plugins/vim-cool"]
+	path = nvim/plugins/vim-cool
+	url = https://github.com/romainl/vim-cool.git
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
