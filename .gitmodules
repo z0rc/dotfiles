@@ -143,6 +143,9 @@
 [submodule "nvim/plugins/nvim-treesitter-textobjects"]
 	path = nvim/plugins/nvim-treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+[submodule "nvim/plugins/project"]
+	path = nvim/plugins/project
+	url = https://github.com/DrKJeff16/project.nvim.git
 [submodule "nvim/plugins/reticle"]
 	path = nvim/plugins/reticle
 	url = https://github.com/tummetott/reticle.nvim.git
