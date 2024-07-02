@@ -158,6 +158,9 @@
 [submodule "nvim/plugins/vim-cool"]
 	path = nvim/plugins/vim-cool
 	url = https://github.com/romainl/vim-cool.git
+[submodule "nvim/plugins/vim-helm"]
+	path = nvim/plugins/vim-helm
+	url = https://github.com/towolf/vim-helm.git
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
