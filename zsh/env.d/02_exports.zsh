@@ -1,6 +1,3 @@
-# Prefered editor and pager
-export VISUAL=vim
-export EDITOR=vim
 export PAGER=less
 export LESS="--RAW-CONTROL-CHARS --ignore-case --hilite-unread --LONG-PROMPT --window=-4 --tabs=4"
 export READNULLCMD=${PAGER}

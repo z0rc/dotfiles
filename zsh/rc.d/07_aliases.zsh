@@ -4,6 +4,13 @@ alias -s log=less
 # Override regular 'clear' with custom one, that puts promt at bottom
 alias clear=clear-screen-soft-bottom
 
+# Prefer nvim when installed
+(( ${+commands[nvim]} )) && {
+    alias nv="nvim"
+    alias vi="nvim"
+    alias vim="nvim"
+}
+
 # Human file sizes
 (( ${+commands[df]} )) && alias df="df --human-readable --print-type"
 (( ${+commands[du]} )) && alias du="du --human-readable --total"

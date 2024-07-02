@@ -47,6 +47,10 @@ require("nvim-tree").setup {
 
 -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup
 local function open_nvim_tree(data)
+  local IGNORED_FT = {
+    "gitcommit",
+    "crontab",
+  }
 
   -- buffer is a real file on the disk
   local real_file = vim.fn.filereadable(data.file) == 1
@@ -55,6 +59,13 @@ local function open_nvim_tree(data)
   local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
 
   if not real_file and not no_name then
+    return
+  end
+
+  local filetype = vim.bo[data.buf].ft
+
+  -- skip ignored filetypes
+  if vim.tbl_contains(IGNORED_FT, filetype) then
     return
   end
 

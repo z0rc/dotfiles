@@ -1,6 +1,5 @@
 require('options')
 require('colorscheme')
-require('leader')
 require('keymaps')
 require('plugins')
 require('treesitter')
