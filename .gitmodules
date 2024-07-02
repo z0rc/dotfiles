@@ -134,6 +134,9 @@
 [submodule "nvim/plugins/nvim-surround"]
 	path = nvim/plugins/nvim-surround
 	url = https://github.com/kylechui/nvim-surround.git
+[submodule "nvim/plugins/nvim-tree"]
+	path = nvim/plugins/nvim-tree
+	url = https://github.com/nvim-tree/nvim-tree.lua.git
 [submodule "nvim/plugins/nvim-treesitter"]
 	path = nvim/plugins/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
