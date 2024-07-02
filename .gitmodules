@@ -97,9 +97,6 @@
 [submodule "nvim/plugins/cmp-buffer"]
 	path = nvim/plugins/cmp-buffer
 	url = https://github.com/hrsh7th/cmp-buffer.git
-[submodule "nvim/plugins/cmp-nvim-lua"]
-	path = nvim/plugins/cmp-nvim-lua
-	url = https://github.com/hrsh7th/cmp-nvim-lua.git
 [submodule "nvim/plugins/cmp-nvim-lsp"]
 	path = nvim/plugins/cmp-nvim-lsp
 	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
