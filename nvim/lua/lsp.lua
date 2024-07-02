@@ -4,28 +4,43 @@ lsp_zero.on_attach(function(_, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+lsp_zero.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
+})
+
 local cmp = require('cmp')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp_action = lsp_zero.cmp_action()
 
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
-    { name = 'buffer' },
+    { name = 'buffer', keyword_length = 3 },
     { name = 'path' },
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    ['<C-f>'] = cmp_action.vim_snippet_jump_forward(),
+    ['<C-b>'] = cmp_action.vim_snippet_jump_backward(),
   }),
   snippet = {
     expand = function(args)
       vim.snippet.expand(args.body)
     end,
   },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  formatting = lsp_zero.cmp_format({details = true}),
   preselect = 'item',
   completion = {
     completeopt = 'menu,menuone,noinsert'

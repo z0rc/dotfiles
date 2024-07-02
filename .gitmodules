@@ -116,6 +116,9 @@
 	path = nvim/plugins/lsp-zero
 	branch = v3.x
 	url = https://github.com/VonHeikemen/lsp-zero.nvim.git
+[submodule "nvim/plugins/lualine"]
+	path = nvim/plugins/lualine
+	url = https://github.com/nvim-lualine/lualine.nvim.git
 [submodule "nvim/plugins/mason"]
 	path = nvim/plugins/mason
 	url = https://github.com/williamboman/mason.nvim.git
