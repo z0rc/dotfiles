@@ -19,6 +19,7 @@
 	helper = cache --socket ~/.cache/git-credential-cache/socket
 [diff]
 	algorithm = histogram
+	ignoreSubmodules = dirty
 	submodule = log
 [core]
 	excludesfiles = ~/.config/git/ignore
@@ -47,3 +48,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+
+# vi: ft=gitconfig
