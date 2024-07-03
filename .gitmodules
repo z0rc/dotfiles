@@ -146,12 +146,18 @@
 [submodule "nvim/plugins/nvim-treesitter-textobjects"]
 	path = nvim/plugins/nvim-treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+[submodule "nvim/plugins/plenary"]
+	path = nvim/plugins/plenary
+	url = https://github.com/nvim-lua/plenary.nvim.git
 [submodule "nvim/plugins/project"]
 	path = nvim/plugins/project
 	url = https://github.com/DrKJeff16/project.nvim.git
 [submodule "nvim/plugins/reticle"]
 	path = nvim/plugins/reticle
 	url = https://github.com/tummetott/reticle.nvim.git
+[submodule "nvim/plugins/schemastore"]
+	path = nvim/plugins/schemastore
+	url = https://github.com/b0o/SchemaStore.nvim.git
 [submodule "nvim/plugins/solarized"]
 	path = nvim/plugins/solarized
 	url = https://github.com/maxmx03/solarized.nvim.git
@@ -161,6 +167,9 @@
 [submodule "nvim/plugins/vim-helm"]
 	path = nvim/plugins/vim-helm
 	url = https://github.com/towolf/vim-helm.git
+[submodule "nvim/plugins/yaml-companion"]
+	path = nvim/plugins/yaml-companion
+	url = https://github.com/someone-stole-my-name/yaml-companion.nvim.git
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git

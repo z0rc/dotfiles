@@ -59,6 +59,19 @@ require('mason-lspconfig').setup {
     lsp_zero.default_setup,
     lua_ls = function()
       require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
-    end
+    end,
+    jsonls = function()
+      require('lspconfig').jsonls.setup {
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
+        },
+      }
+    end,
+    yamlls = function()
+      require('lspconfig').yamlls.setup(require("yaml-companion").setup())
+    end,
   }
 }
