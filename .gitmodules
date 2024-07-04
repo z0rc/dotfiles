@@ -114,7 +114,7 @@
 	url = https://github.com/lukas-reineke/indent-blankline.nvim.git
 [submodule "nvim/plugins/lsp-zero"]
 	path = nvim/plugins/lsp-zero
-	branch = v3.x
+	branch = v4.x
 	url = https://github.com/VonHeikemen/lsp-zero.nvim.git
 [submodule "nvim/plugins/lualine"]
 	path = nvim/plugins/lualine

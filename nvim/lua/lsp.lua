@@ -1,14 +1,16 @@
 ---@diagnostic disable: undefined-field
 local lsp_zero = require('lsp-zero')
-lsp_zero.on_attach(function(_, bufnr)
-  lsp_zero.default_keymaps({buffer = bufnr})
-end)
 
-lsp_zero.set_sign_icons({
-  error = '✘',
-  warn = '▲',
-  hint = '⚑',
-  info = '»'
+local lsp_attach = function(client, bufnr)
+  lsp_zero.default_keymaps({ buffer = bufnr })
+  lsp_zero.highlight_symbol(client, bufnr)
+  lsp_zero.buffer_autoformat()
+end
+
+lsp_zero.extend_lspconfig({
+  sign_text = true,
+  lsp_attach = lsp_attach,
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
 local cmp = require('cmp')
@@ -18,7 +20,7 @@ local cmp_action = lsp_zero.cmp_action()
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'buffer', keyword_length = 3 },
+    { name = 'buffer',  keyword_length = 3 },
     { name = 'path' },
   },
   mapping = cmp.mapping.preset.insert({
@@ -39,7 +41,7 @@ cmp.setup({
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
-  formatting = lsp_zero.cmp_format({details = true}),
+  formatting = lsp_zero.cmp_format({ details = true }),
   preselect = 'item',
   completion = {
     completeopt = 'menu,menuone,noinsert'
