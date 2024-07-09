@@ -98,7 +98,7 @@ print "  ...done"
 
 print "Installing fzf..."
 pushd tools/fzf
-if ./install --bin &> /dev/null; then
+if ./install --bin > /dev/null; then
     zf_ln -sf "${SCRIPT_DIR}/tools/fzf/bin/fzf" "${HOME}/.local/bin/fzf"
     zf_ln -sf "${SCRIPT_DIR}/tools/fzf/bin/fzf-tmux" "${HOME}/.local/bin/fzf-tmux"
     zf_ln -sf "${SCRIPT_DIR}/tools/fzf/man/man1/fzf.1" "${XDG_DATA_HOME}/man/man1/fzf.1"
@@ -119,22 +119,22 @@ fi
 if (( ${+commands[vim]} )); then
     # Generate vim help tags
     print "Generating vim helptags..."
-    command vim --not-a-term -c "helptags ALL" -c "qall" &>/dev/null
+    command vim --not-a-term -c "helptags ALL" -c "qall" > /dev/null
     print "  ...done"
 fi
 
 if (( ${+commands[nvim]} )); then
     # Generate nvim help tags
     print "Generating nvim helptags..."
-    command nvim --headless -c "helptags ALL" -c "qall"
+    command nvim --headless -c "helptags ALL" -c "qall" > /dev/null
     print "  ...done"
     # Update treesitter config
     print "Updating treesitter config..."
-    command nvim --headless -c "TSUpdate" -c "qall"
+    command nvim --headless -c "TSUpdate" -c "qall" > /dev/null
     print "  ...done"
     # Update mason registries
     print "Updating mason registries..."
-    command nvim --headless -c "MasonUpdate" -c "qall"
+    command nvim --headless -c "MasonUpdate" -c "qall" > /dev/null
     print "  ...done"
 fi
 
@@ -198,12 +198,12 @@ print "  ...done"
 
 # Trigger zsh run with powerlevel10k prompt to download gitstatusd
 print "Downloading gitstatusd for powerlevel10k..."
-$SHELL -is <<<'' &>/dev/null
+${SHELL} -is <<<'' &> /dev/null
 print "  ...done"
 
 # Download/refresh TLDR pages
 print "Downloading TLDR pages..."
-tldr -u &> /dev/null
+${SCRIPT_DIR}/tools/tldr-bash-client/tldr -u > /dev/null
 print "  ...done"
 
 # Install crontab task to pull updates every midnight
