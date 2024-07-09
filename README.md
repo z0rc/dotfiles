@@ -30,6 +30,7 @@ home presence](#zero-home-presence).
   * [autopair plugin](https://github.com/hlissner/zsh-autopair)
   * [clean Zsh implementation of `z`](https://github.com/agkozak/zsh-z)
 * Vim [configuration](vim/vimrc) and [plugins](vim/pack)
+* Neovim [configuration](nvim/init.lua) and [plugins](nvim/plugins)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
 * Other configurations:
   * [Midnight Commander](configs/mc.ini)
@@ -53,6 +54,10 @@ home presence](#zero-home-presence).
   * [rbenv](https://github.com/rbenv/rbenv)
 
 ## Installation
+
+> [!WARNING]
+> I'm in process on switching to Neovim. Vim configuration isn't maintained
+> anymore, might be removed in future.
 
 ### Requirements
 
@@ -85,7 +90,7 @@ submodules after a successful pull.
 ## Zero Home Presence
 
 It's possible to install dotfiles without creating a `~/.zshenv` symlink. To do
-so, set the environment variable ZDOTDIR to `<installation dir>/zsh`, e.g.,
+so, set the environment variable `ZDOTDIR` to `<installation dir>/zsh`, e.g.,
 `$HOME/.local/dotfiles/zsh`. This variable should be set very early in the login
 process, before zsh starts sourcing the user's `.zshenv`. One possible option is
 to add:
@@ -96,10 +101,15 @@ export ZDOTDIR="$HOME/.local/dotfiles/zsh"
 
 into `/etc/zsh/zshenv`. Alternatively, you can set it with a PAM environment module.
 
+## Neovim Version
+
+Neovim configuration is tested with latest released Neovim version only. At the
+moment of writing it's version 0.10.0.
+
 ## Vim Version
 
 Vim 9.1 or higher is required to support the XDG Base Directory Specification.
-To use all bundled vim plugins, install vim with Python3 and Ruby support
+To use all bundled vim plugins, install vim with Python and Ruby support
 built-in.
 
 ## Configuration
@@ -128,6 +138,10 @@ while `rc.d` is sourced only in interactive sessions.
 
 Additionally, `$ZDOTDIR/.zlogin` and `$ZDOTDIR/.zlogout` are available for
 modifications, though they are missing by default.
+
+### Neovim Configuration
+
+Support of local configuration might be added in future.
 
 ### Vim Configuration
 
