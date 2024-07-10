@@ -119,22 +119,22 @@ fi
 if (( ${+commands[vim]} )); then
     # Generate vim help tags
     print "Generating vim helptags..."
-    command vim --not-a-term -c "helptags ALL" -c "qall" > /dev/null
+    command vim --not-a-term -c "helptags ALL" -c "qall" &> /dev/null
     print "  ...done"
 fi
 
 if (( ${+commands[nvim]} )); then
     # Generate nvim help tags
     print "Generating nvim helptags..."
-    command nvim --headless -c "helptags ALL" -c "qall" > /dev/null
+    command nvim --headless -c "helptags ALL" -c "qall" &> /dev/null
     print "  ...done"
     # Update treesitter config
     print "Updating treesitter config..."
-    command nvim --headless -c "TSUpdate" -c "qall" > /dev/null
+    command nvim --headless -c "TSUpdate" -c "qall" &> /dev/null
     print "  ...done"
     # Update mason registries
     print "Updating mason registries..."
-    command nvim --headless -c "MasonUpdate" -c "qall" > /dev/null
+    command nvim --headless -c "MasonUpdate" -c "qall" &> /dev/null
     print "  ...done"
 fi
 
