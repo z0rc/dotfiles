@@ -65,6 +65,7 @@ local function open_nvim_tree(data)
   -- skip specific filetypes
   local IGNORED_FILETYPES = {
     "gitcommit",
+    "gitrebase",
     "crontab",
   }
 

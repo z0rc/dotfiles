@@ -164,6 +164,9 @@
 [submodule "nvim/plugins/vim-cool"]
 	path = nvim/plugins/vim-cool
 	url = https://github.com/romainl/vim-cool.git
+[submodule "nvim/plugins/vim-fugitive"]
+	path = nvim/plugins/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "nvim/plugins/vim-helm"]
 	path = nvim/plugins/vim-helm
 	url = https://github.com/towolf/vim-helm.git
