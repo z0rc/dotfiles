@@ -173,24 +173,9 @@
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
-[submodule "tmux/plugins/copycat"]
-	path = tmux/plugins/copycat
-	url = https://github.com/tmux-plugins/tmux-copycat.git
-[submodule "tmux/plugins/open"]
-	path = tmux/plugins/open
-	url = https://github.com/tmux-plugins/tmux-open.git
-[submodule "tmux/plugins/pain-control"]
-	path = tmux/plugins/pain-control
-	url = https://github.com/tmux-plugins/tmux-pain-control.git
 [submodule "tmux/plugins/prefix-highlight"]
 	path = tmux/plugins/prefix-highlight
 	url = https://github.com/tmux-plugins/tmux-prefix-highlight.git
-[submodule "tmux/plugins/sensible"]
-	path = tmux/plugins/sensible
-	url = https://github.com/tmux-plugins/tmux-sensible.git
-[submodule "tmux/plugins/yank"]
-	path = tmux/plugins/yank
-	url = https://github.com/tmux-plugins/tmux-yank.git
 [submodule "tools/diff-so-fancy"]
 	path = tools/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git

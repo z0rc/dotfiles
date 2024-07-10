@@ -3,6 +3,7 @@ bindkey -e
 
 zmodload zsh/terminfo
 
+# First setup keys using terminfo database
 typeset -A key
 key[Home]=${terminfo[khome]}
 key[End]=${terminfo[kend]}
@@ -20,7 +21,7 @@ key[ShiftTab]=${terminfo[kcbt]}
 key[CtrlLeft]=${terminfo[kLFT5]}
 key[CtrlRight]=${terminfo[kRIT5]}
 
-# Setup keys accordingly
+# Bind detected keys to widgets
 [[ -n ${key[Home]}      ]] && bindkey ${key[Home]}      beginning-of-line
 [[ -n ${key[End]}       ]] && bindkey ${key[End]}       end-of-line
 [[ -n ${key[Insert]}    ]] && bindkey ${key[Insert]}    overwrite-mode
@@ -36,6 +37,19 @@ key[CtrlRight]=${terminfo[kRIT5]}
 [[ -n ${key[CtrlLeft]}  ]] && bindkey ${key[CtrlLeft]}  backward-word
 [[ -n ${key[CtrlRight]} ]] && bindkey ${key[CtrlRight]} forward-word
 unset key
+
+# Also bind some 'CSI u' keys, https://www.leonerd.org.uk/hacks/fixterms/
+# For now do this only for Ctrl-arrow keys, might extend later
+typeset -A csi
+csi[base]="\e["
+csi[really-special-prefix]=${csi[base]}"1;"
+csi[modifier-Ctrl]="5"
+csi[really-special-Right]="C"
+csi[really-special-Left]="D"
+
+bindkey ${csi[really-special-prefix]}${csi[modifier-Ctrl]}${csi[really-special-Left]} backward-word
+bindkey ${csi[really-special-prefix]}${csi[modifier-Ctrl]}${csi[really-special-Right]} forward-word
+unset csi
 
 # Make dot key autoexpand "..." to "../.." and so on
 _zsh-dot () {
