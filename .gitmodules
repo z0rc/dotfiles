@@ -170,6 +170,9 @@
 [submodule "nvim/plugins/vim-helm"]
 	path = nvim/plugins/vim-helm
 	url = https://github.com/towolf/vim-helm.git
+[submodule "nvim/plugins/which-key"]
+	path = nvim/plugins/which-key
+	url = https://github.com/folke/which-key.nvim.git
 [submodule "nvim/plugins/yaml-companion"]
 	path = nvim/plugins/yaml-companion
 	url = https://github.com/someone-stole-my-name/yaml-companion.nvim.git
