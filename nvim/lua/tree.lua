@@ -14,6 +14,7 @@ require("nvim-tree").setup {
       close = true,
     },
   },
+  hijack_cursor = true,
   renderer = {
     indent_markers = {
       enable = true
