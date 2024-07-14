@@ -33,9 +33,9 @@ require("nvim-tree").setup {
       git_placement = "signcolumn",
       glyphs = {
         git = {
-          unstaged = "!",
+          unstaged = "~",
           staged = "+",
-          unmerged = "~",
+          unmerged = "!",
           renamed = ">",
           untracked = "?",
           deleted = "x",
