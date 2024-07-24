@@ -13,9 +13,16 @@ vim.opt.sidescrolloff = 8
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
-vim.opt.listchars = {tab = '>-', trail = '·', extends ='►', precedes = '◄' }
+vim.opt.listchars = { tab = '>-', trail = '·', extends = '►', precedes = '◄' }
 vim.opt.backupdir:remove('.')
 vim.opt.backup = true
 vim.opt.undofile = true
 vim.opt.swapfile = true
 vim.opt.clipboard = 'unnamedplus'
+
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0
+
+vim.lsp.set_log_level(vim.log.levels.OFF)
