@@ -66,7 +66,15 @@ require('mason-lspconfig').setup {
       }
     end,
     yamlls = function()
-      require('lspconfig').yamlls.setup(require("yaml-companion").setup())
+      require('lspconfig').yamlls.setup(require('yaml-companion').setup {
+        lspconfig = {
+          settings = {
+            yaml = {
+              customTags = { '!reference sequence' },
+            },
+          },
+        },
+      })
     end,
   }
 }
