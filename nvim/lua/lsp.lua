@@ -70,6 +70,7 @@ require('mason-lspconfig').setup {
         lspconfig = {
           settings = {
             yaml = {
+              format = { enable = false },
               customTags = { '!reference sequence' },
             },
           },
