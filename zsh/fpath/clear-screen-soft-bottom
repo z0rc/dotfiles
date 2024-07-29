@@ -1,4 +1,6 @@
-# Put the cursor at the bottom of the terminal
+# vi: set ft=zsh
+
+# put the cursor at the bottom of the terminal
 # https://github.com/romkatv/powerlevel10k/issues/2442
 # https://github.com/romkatv/powerlevel10k/issues/1699
 

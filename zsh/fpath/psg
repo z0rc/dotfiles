@@ -1,4 +1,6 @@
-# Grep from ps output
+# vi: set ft=zsh
+
+# grep from ps output
 
 emulate -L zsh
 

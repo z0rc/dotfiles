@@ -1,3 +1,5 @@
+# vi: set ft=zsh
+
 # sudo wrapper which is able to expand aliases and handle noglob/nocorrect builtins
 
 emulate -L zsh

@@ -1,3 +1,5 @@
+# vi: set ft=zsh
+
 # cache output of generated compdef
 
 emulate -L zsh

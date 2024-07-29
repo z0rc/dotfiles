@@ -1,3 +1,5 @@
+# vi: set ft=zsh
+
 # cache generated output for eval
 
 emulate -L zsh

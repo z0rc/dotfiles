@@ -1,3 +1,5 @@
+# vi: set ft=zsh
+
 # z via fzf selector
 
 emulate -L zsh

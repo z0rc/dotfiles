@@ -1,3 +1,5 @@
+# vi: set ft=zsh
+
 # git diff by files with fzf
 
 emulate -L zsh

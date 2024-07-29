@@ -1,3 +1,5 @@
+# vi: set ft=zsh
+
 # vpaste uploader
 
 emulate -L zsh

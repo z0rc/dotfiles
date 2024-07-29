@@ -1,4 +1,6 @@
-# Do something in each subdirectory of current directory
+# vi: set ft=zsh
+
+# do something in each subdirectory of current directory
 
 emulate -L zsh
 

@@ -1,3 +1,5 @@
+# vi: set ft=zsh
+
 # git log browser with fzf
 
 emulate -L zsh

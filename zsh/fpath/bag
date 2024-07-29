@@ -1,3 +1,5 @@
+# vi: set ft=zsh
+
 # recursively search for string, feed matches to fzf with preview, launch vim with selected match
 
 emulate -L zsh

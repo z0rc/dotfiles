@@ -1,4 +1,6 @@
-# Color man without correction suggestions
+# vi: set ft=zsh
+
+# color man without correction suggestions
 
 emulate -L zsh
 
