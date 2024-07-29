@@ -8,12 +8,6 @@ require('nvim-tree').setup {
     enable = true,
     update_root = true
   },
-  tab = {
-    sync = {
-      open = true,
-      close = true,
-    },
-  },
   hijack_cursor = true,
   renderer = {
     indent_markers = {
