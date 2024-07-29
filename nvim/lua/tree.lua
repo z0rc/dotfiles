@@ -1,7 +1,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("nvim-tree").setup {
+require('nvim-tree').setup {
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
   update_focused_file = {
@@ -30,16 +30,16 @@ require("nvim-tree").setup {
         diagnostics = false,
         bookmarks = false,
       },
-      git_placement = "signcolumn",
+      git_placement = 'signcolumn',
       glyphs = {
         git = {
-          unstaged = "~",
-          staged = "+",
-          unmerged = "!",
-          renamed = ">",
-          untracked = "?",
-          deleted = "x",
-          ignored = "o",
+          unstaged = '~',
+          staged = '+',
+          unmerged = '!',
+          renamed = '>',
+          untracked = '?',
+          deleted = 'x',
+          ignored = 'o',
         },
       }
     }
@@ -52,23 +52,23 @@ local function open_nvim_tree(data)
   local real_file = vim.fn.filereadable(data.file) == 1
 
   -- buffer is a [No Name]
-  local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+  local no_name = data.file == '' and vim.bo[data.buf].buftype == ''
 
   if not real_file and not no_name then
     return
   end
 
   -- skip files in TMPDIR, kubectl does this when editing resources
-  local tmpdir = vim.env.TMPDIR or "/tmp/"
+  local tmpdir = vim.env.TMPDIR or '/tmp/'
   if string.find(data.file, tmpdir) then
     return
   end
 
   -- skip specific filetypes
   local IGNORED_FILETYPES = {
-    "gitcommit",
-    "gitrebase",
-    "crontab",
+    'gitcommit',
+    'gitrebase',
+    'crontab',
   }
 
   local filetype = vim.bo[data.buf].ft
@@ -78,20 +78,20 @@ local function open_nvim_tree(data)
   end
 
   -- open the tree, find the file but don't focus it
-  require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
+  require('nvim-tree.api').tree.toggle({ focus = false, find_file = true, })
 end
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
 
 -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Auto-Close
-vim.api.nvim_create_autocmd("QuitPre", {
+vim.api.nvim_create_autocmd('QuitPre', {
   callback = function()
     local tree_wins = {}
     local floating_wins = {}
     local wins = vim.api.nvim_list_wins()
     for _, w in ipairs(wins) do
       local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
-      if bufname:match("NvimTree_") ~= nil then
+      if bufname:match('NvimTree_') ~= nil then
         table.insert(tree_wins, w)
       end
       if vim.api.nvim_win_get_config(w).relative ~= '' then

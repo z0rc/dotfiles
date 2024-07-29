@@ -1,7 +1,7 @@
 require('gitsigns').setup({})
 require('ibl').setup {
   indent = {
-    char = "│",
+    char = '│',
   },
 }
 require('reticle').setup({})
