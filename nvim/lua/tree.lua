@@ -59,7 +59,8 @@ local function open_nvim_tree(data)
   end
 
   -- skip files in TMPDIR, kubectl does this when editing resources
-  if string.find(data.file, vim.env.TMPDIR) then
+  local tmpdir = vim.env.TMPDIR or "/tmp/"
+  if string.find(data.file, tmpdir) then
     return
   end
 
