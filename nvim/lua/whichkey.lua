@@ -1,6 +1,4 @@
-local wk = require('which-key')
-
-wk.setup({
+require('which-key').setup {
   icons = {
     rules = false,
     mappings = false,
@@ -31,4 +29,9 @@ wk.setup({
       F12 = 'F12',
     },
   },
-})
+}
+
+require('which-key').add {
+  { '<leader>t', group = '[t]oggle' },
+  { '<leader>g', group = '[g]it',   mode = { 'n', 'v' } },
+}
