@@ -13,7 +13,6 @@ require('lualine').setup {
     disabled_filetypes = {
       'NvimTree',
       'git',
-      'crontab',
     },
     icons_enabled = false,
     component_separators = '',
