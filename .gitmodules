@@ -121,6 +121,9 @@
 [submodule "nvim/plugins/indent-blankline"]
 	path = nvim/plugins/indent-blankline
 	url = https://github.com/lukas-reineke/indent-blankline.nvim.git
+[submodule "nvim/plugins/lazydev"]
+	path = nvim/plugins/lazydev
+	url = https://github.com/folke/lazydev.nvim.git
 [submodule "nvim/plugins/lsp-zero"]
 	path = nvim/plugins/lsp-zero
 	branch = v4.x

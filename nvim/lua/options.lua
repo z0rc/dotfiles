@@ -22,6 +22,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.showmode = false
 vim.opt.inccommand = 'split'
 vim.opt.timeoutlen = 300
+vim.opt.updatetime = 800
 
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0

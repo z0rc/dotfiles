@@ -1,3 +1,5 @@
+require('lazydev').setup({})
+
 local lsp_zero = require('lsp-zero')
 
 local lsp_attach = function(client, bufnr)
@@ -18,6 +20,7 @@ local cmp_action = lsp_zero.cmp_action()
 
 cmp.setup({
   sources = {
+    { name = 'lazydev', group_index = 0 },
     { name = 'nvim_lsp' },
     { name = 'buffer',  keyword_length = 3 },
     { name = 'path' },
@@ -51,7 +54,6 @@ cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 require('mason').setup()
 require('mason-lspconfig').setup {
   handlers = {
-    lsp_zero.default_setup,
     lua_ls = function()
       require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
     end,
