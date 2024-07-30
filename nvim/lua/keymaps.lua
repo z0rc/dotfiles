@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- sanity https://github.com/neovim/neovim/issues/9953#issuecomment-1732700161
 vim.keymap.set('c', '<Up>', function()

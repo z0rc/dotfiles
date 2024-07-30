@@ -6,27 +6,47 @@ require('nvim-tree').setup {
   respect_buf_cwd = true,
   update_focused_file = {
     enable = true,
-    update_root = true
+    update_root = {
+      enable = true,
+      ignore_list = {
+        'help',
+        'git',
+      },
+    },
+    exclude = function(event)
+      return event.file:find(vim.fn.getcwd() .. '/.git/', 1, true) == 1
+    end,
   },
   hijack_cursor = true,
+  git = {
+    show_on_open_dirs = false,
+  },
+  modified = {
+    enable = true,
+    show_on_open_dirs = false,
+  },
   renderer = {
+    highlight_opened_files = 'name',
     indent_markers = {
       enable = true
     },
     add_trailing = true,
+    full_name = true,
+    group_empty = true,
     icons = {
       show = {
         file = false,
         folder = false,
         folder_arrow = false,
         git = true,
-        modified = false,
+        modified = true,
         diagnostics = false,
         bookmarks = false,
       },
       git_placement = 'signcolumn',
       glyphs = {
         symlink = '~',
+        modified = "[+]",
         git = {
           unstaged = '~',
           staged = '+',

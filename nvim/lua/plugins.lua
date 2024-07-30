@@ -13,7 +13,6 @@ require('diffview').setup {
   signs = {
     fold_closed = '>',
     fold_open = 'v',
-    done = '✓',
   },
 }
 require('git-rebase-auto-diff').setup({})
