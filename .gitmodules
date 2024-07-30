@@ -109,6 +109,9 @@
 [submodule "nvim/plugins/diffview"]
 	path = nvim/plugins/diffview
 	url = https://github.com/sindrets/diffview.nvim.git
+[submodule "nvim/plugins/fidget"]
+	path = nvim/plugins/fidget
+	url = https://github.com/j-hui/fidget.nvim.git
 [submodule "nvim/plugins/git-rebase-auto-diff"]
 	path = nvim/plugins/git-rebase-auto-diff
 	url = https://github.com/yutkat/git-rebase-auto-diff.nvim.git

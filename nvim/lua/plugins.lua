@@ -16,3 +16,4 @@ require('diffview').setup {
   },
 }
 require('git-rebase-auto-diff').setup({})
+require('fidget').setup({})
