@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # grep from ps output
 
 emulate -L zsh
@@ -18,3 +16,5 @@ else
     echo "No process found matching pattern '${1}'"
     return 1
 fi
+
+# vim: ft=zsh

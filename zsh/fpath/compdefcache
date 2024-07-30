@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # cache output of generated compdef
 
 emulate -L zsh
@@ -26,3 +24,5 @@ elif [[ ! -e "${cache_file}" || -n "${cache_file}"(#qN.mh+20) ]]; then
 else
     # cache hit, do nothing
 fi
+
+# vim: ft=zsh

@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # recursively search for string, feed matches to fzf with preview, launch vim with selected match
 
 emulate -L zsh
@@ -22,3 +20,5 @@ fi | fzf --ansi --layout=reverse-list --no-sort --height=50% --delimiter=: \
          --preview=${preview_cmd} \
          --preview-window='right,50%,+{2}/2' \
          --bind='enter:become(vi {1} +{2})'
+
+# vim: ft=zsh

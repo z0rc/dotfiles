@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # cache generated output for eval
 
 emulate -L zsh
@@ -32,3 +30,5 @@ else
     # cache hit
     source "${cache_file}"
 fi
+
+# vim: ft=zsh

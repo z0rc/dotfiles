@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # color man without correction suggestions
 
 emulate -L zsh
@@ -24,3 +22,5 @@ local -x LESS_TERMCAP_us=$(echoti smul; echoti setaf 2)
 local -x LESS_TERMCAP_ue=$(echoti sgr0)
 
 nocorrect command man ${@}
+
+# vim: ft=zsh

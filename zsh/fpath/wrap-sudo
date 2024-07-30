@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # sudo wrapper which is able to expand aliases and handle noglob/nocorrect builtins
 
 emulate -L zsh
@@ -24,3 +22,5 @@ if (( glob )); then
 else
     ${run} $==*
 fi
+
+# vim: ft=zsh

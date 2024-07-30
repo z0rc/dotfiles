@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # list all directories leading up to a filename; this is useful to see
 # if some permissions are blocking access to a file.
 
@@ -23,3 +21,5 @@ for i in ${pathlist[@]}; do
 done
 allpaths=(${allpaths[@]} ${filepath})
 ls -ld "${allpaths[@]}"
+
+# vim: ft=zsh

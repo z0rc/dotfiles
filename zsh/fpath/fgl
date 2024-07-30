@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # git log browser with fzf
 
 emulate -L zsh
@@ -11,3 +9,5 @@ fzf --ansi --height=50% --no-sort --layout=reverse-list --multi --bind='ctrl-s:t
     --header='Press CTRL-S to toggle sort' \
     --preview='grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -200' |
 grep -o "[a-f0-9]\{7,\}"
+
+# vim: ft=zsh

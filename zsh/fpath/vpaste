@@ -1,5 +1,3 @@
-# vi: set ft=zsh
-
 # vpaste uploader
 
 emulate -L zsh
@@ -20,3 +18,5 @@ if (( ${+commands[xclip]} )) && [[ ! -z "${DISPLAY}" ]]; then
 elif (( ${+commands[pbcopy]} )); then
     echo -n "${out}" | pbcopy
 fi
+
+# vim: ft=zsh
