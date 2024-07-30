@@ -8,6 +8,10 @@ require('solarized').setup {
       -- fix cursorline visibility
       CursorLineNr = { bg = color.base02 },
       CursorLine = { bg = color.base02 },
+      -- fix lualine diff visibility
+      LuaLineDiffAdd = { fg = helper.darken(color.green, 30) },
+      LuaLineDiffChange = { fg = helper.darken(color.yellow, 30) },
+      LuaLineDiffDelete = { fg = helper.darken(color.red, 30) },
     }
   end,
 }
