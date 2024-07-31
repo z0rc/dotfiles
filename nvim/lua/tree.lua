@@ -43,7 +43,7 @@ require('nvim-tree').setup {
       git_placement = 'signcolumn',
       glyphs = {
         symlink = '@',
-        modified = "Δ",
+        modified = 'Δ',
         git = {
           unstaged = '~',
           staged = '+',
