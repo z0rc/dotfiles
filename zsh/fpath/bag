@@ -11,14 +11,16 @@ else
     preview_cmd='sed -E "s/(.*'$*'.*)/'$bg[grey]'\1'$reset_color'/gI;" < ${1}'
 fi
 
-# prefer ag to grep
-if (( ${+commands[ag]} )); then
-    ag --nogroup --color --silent "$*"
+# prefer rg over ag over grep
+if (( ${+commands[rg]} )); then
+    command rg --no-heading --line-number --smart-case --color=always "${*}"
+elif (( ${+commands[ag]} )); then
+    command ag --nogroup --color --silent "${*}"
 else
-    grep --line-number --recursive --ignore-case --color=always --no-messages "$*"
+    command grep --line-number --recursive --ignore-case --color=always --no-messages "${*}"
 fi | fzf --ansi --layout=reverse-list --no-sort --height=50% --delimiter=: \
          --preview=${preview_cmd} \
          --preview-window='right,50%,+{2}/2' \
-         --bind='enter:become(vi {1} +{2})'
+         --bind='enter:become(${EDITOR} {1} +{2})'
 
 # vim: ft=zsh

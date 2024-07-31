@@ -68,10 +68,15 @@ home presence](#zero-home-presence).
 
 * `make` (optional: required to install git helpers)
 * `perl` (optional: used by diff-so-fancy)
-* [`fd`](https://github.com/sharkdp/fd),
-  [`ag`](https://github.com/ggreer/the_silver_searcher), and
-  [`bat`](https://github.com/sharkdp/bat) (optional: will be used in fzf by
+* [`fd`](https://github.com/sharkdp/fd) (optional: will be used in fzf by
   default, if present)
+* [`rg`](https://github.com/BurntSushi/ripgrep) or
+  [`ag`](https://github.com/ggreer/the_silver_searcher) (optional: will be used
+  in fzf by default, if present)
+* [`bat`](https://github.com/sharkdp/bat) (optional: will be used in fzf by
+  default, if present)
+
+### Location
 
 Dotfiles can be installed in any directory, but probably somewhere under
 `$HOME`. Personally, I use `$HOME/.local/dotfiles`. The installation is simple:
@@ -99,7 +104,8 @@ to add:
 export ZDOTDIR="$HOME/.local/dotfiles/zsh"
 ```
 
-into `/etc/zsh/zshenv`. Alternatively, you can set it with a PAM environment module.
+into `/etc/zsh/zshenv`. Alternatively, you can set it with a PAM environment
+module.
 
 ## Neovim Version
 
