@@ -2,18 +2,18 @@
 
 emulate -L zsh
 
-# use bat with syntax highlight support, if it's avaialble
+# use bat, if it's avaialble...
 local preview_cmd
 if (( ${+commands[bat]} )); then
     preview_cmd='bat --style=numbers --color=always --highlight-line=${2} ${1}'
 else
-    # replace here used to highlight line with match
-    preview_cmd='sed -E "s/(.*'$*'.*)/'$bg[grey]'\1'$reset_color'/gI;" < ${1}'
+    # ...otherwise just highlight line with match using sed replace
+    preview_cmd='sed -E "s/(.*'${*}'.*)/'$bg[grey]'\1'$reset_color'/gI;" < ${1}'
 fi
 
 # prefer rg over ag over grep
 if (( ${+commands[rg]} )); then
-    command rg --no-heading --line-number --smart-case --color=always "${*}"
+    command rg --no-heading --line-number --smart-case --fixed-strings --color=always "${*}"
 elif (( ${+commands[ag]} )); then
     command ag --nogroup --color --silent "${*}"
 else
