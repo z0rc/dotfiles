@@ -53,6 +53,9 @@ cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 require('mason').setup()
 require('mason-lspconfig').setup {
   handlers = {
+    function(server_name) -- default handler for servers that don't require custom setup
+      require('lspconfig')[server_name].setup {}
+    end,
     lua_ls = function()
       require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
     end,
