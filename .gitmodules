@@ -218,9 +218,6 @@
 [submodule "tools/tldr-bash-client"]
 	path = tools/tldr-bash-client
 	url = https://github.com/pepa65/tldr-bash-client.git
-[submodule "tools/zsh-bin"]
-	path = tools/zsh-bin
-	url = https://github.com/romkatv/zsh-bin.git
 [submodule "vim/pack/01_sensible/start/sensible"]
 	path = vim/pack/01_sensible/start/sensible
 	url = https://github.com/tpope/vim-sensible.git
