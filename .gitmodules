@@ -173,6 +173,9 @@
 [submodule "nvim/plugins/solarized"]
 	path = nvim/plugins/solarized
 	url = https://github.com/maxmx03/solarized.nvim.git
+[submodule "nvim/plugins/surround-ui"]
+	path = nvim/plugins/surround-ui
+	url = https://github.com/roobert/surround-ui.nvim.git
 [submodule "nvim/plugins/telescope"]
 	path = nvim/plugins/telescope
 	url = https://github.com/nvim-telescope/telescope.nvim.git

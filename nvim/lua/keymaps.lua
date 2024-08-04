@@ -75,16 +75,16 @@ vim.keymap.set('n', '<leader>tt', require('nvim-tree.api').tree.toggle, { desc =
 
 -- telescope
 local telescope_builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>sh', telescope_builtin.help_tags, { desc = '[s]earch [h]elp' })
-vim.keymap.set('n', '<leader>sk', telescope_builtin.keymaps, { desc = '[s]earch [k]eymaps' })
-vim.keymap.set('n', '<leader>sf', telescope_builtin.find_files, { desc = '[s]earch [f]iles' })
-vim.keymap.set('n', '<leader>ss', telescope_builtin.builtin, { desc = '[s]earch [s]elect telescope' })
-vim.keymap.set('n', '<leader>sw', telescope_builtin.grep_string, { desc = '[s]earch current [w]ord' })
-vim.keymap.set('n', '<leader>sg', telescope_builtin.live_grep, { desc = '[s]earch by [g]rep' })
-vim.keymap.set('n', '<leader>sd', telescope_builtin.diagnostics, { desc = '[s]earch [d]iagnostics' })
-vim.keymap.set('n', '<leader>sr', telescope_builtin.resume, { desc = '[s]earch [r]esume' })
-vim.keymap.set('n', '<leader>s.', telescope_builtin.oldfiles, { desc = '[s]earch recent files ([.] for repeat)' })
-vim.keymap.set('n', '<leader><leader>', telescope_builtin.buffers, { desc = '[ ] find existing buffers' })
+vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = '[h]elp' })
+vim.keymap.set('n', '<leader>fk', telescope_builtin.keymaps, { desc = '[k]eymaps' })
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = '[f]iles' })
+vim.keymap.set('n', '<leader>fs', telescope_builtin.builtin, { desc = '[s]elect telescope' })
+vim.keymap.set('n', '<leader>fw', telescope_builtin.grep_string, { desc = 'current [w]ord' })
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = '[g]rep' })
+vim.keymap.set('n', '<leader>fd', telescope_builtin.diagnostics, { desc = '[d]iagnostics' })
+vim.keymap.set('n', '<leader>fr', telescope_builtin.resume, { desc = '[r]esume' })
+vim.keymap.set('n', '<leader>f.', telescope_builtin.oldfiles, { desc = 'recent files ([.] for repeat)' })
+vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = '[b]uffers' })
 
 -- lsp
 vim.api.nvim_create_autocmd('LspAttach', {

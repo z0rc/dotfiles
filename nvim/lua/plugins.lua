@@ -6,6 +6,9 @@ require('ibl').setup {
 }
 require('reticle').setup({})
 require('nvim-surround').setup({})
+require('surround-ui').setup {
+  root_key = 's'
+}
 require('nvim-autopairs').setup({})
 require('project_nvim').setup({})
 require('diffview').setup {

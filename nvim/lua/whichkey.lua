@@ -32,8 +32,9 @@ require('which-key').setup {
 }
 
 require('which-key').add {
-  { '<leader>l', group = '[l]sp' },
-  { '<leader>t', group = '[t]oggle' },
-  { '<leader>g', group = '[g]it',   mode = { 'n', 'v' } },
-  { '<leader>s', group = '[s]earch' },
+  { '<leader>l', group = 'Lsp' },
+  { '<leader>t', group = 'Toggle' },
+  { '<leader>g', group = 'Git',     mode = { 'n', 'v' } },
+  { '<leader>f', group = 'Find' },
+  { '<leader>s', group = 'Surround' },
 }
