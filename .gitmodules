@@ -173,6 +173,12 @@
 [submodule "nvim/plugins/solarized"]
 	path = nvim/plugins/solarized
 	url = https://github.com/maxmx03/solarized.nvim.git
+[submodule "nvim/plugins/telescope"]
+	path = nvim/plugins/telescope
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "nvim/plugins/telescope-ui-select"]
+	path = nvim/plugins/telescope-ui-select
+	url = https://github.com/nvim-telescope/telescope-ui-select.nvim.git
 [submodule "nvim/plugins/vim-cool"]
 	path = nvim/plugins/vim-cool
 	url = https://github.com/romainl/vim-cool.git

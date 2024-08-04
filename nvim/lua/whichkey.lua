@@ -34,4 +34,5 @@ require('which-key').setup {
 require('which-key').add {
   { '<leader>t', group = '[t]oggle' },
   { '<leader>g', group = '[g]it',   mode = { 'n', 'v' } },
+  { '<leader>s', group = '[s]earch' },
 }
