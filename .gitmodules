@@ -456,6 +456,9 @@
 	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 	branch = develop
+[submodule "zsh/plugins/autosuggestions-abbreviations-strategy"]
+	path = zsh/plugins/autosuggestions-abbreviations-strategy
+	url = https://github.com/olets/zsh-autosuggestions-abbreviations-strategy.git
 [submodule "zsh/plugins/completions"]
 	path = zsh/plugins/completions
 	url = https://github.com/zsh-users/zsh-completions.git
