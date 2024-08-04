@@ -85,3 +85,24 @@ vim.keymap.set('n', '<leader>sd', telescope_builtin.diagnostics, { desc = '[s]ea
 vim.keymap.set('n', '<leader>sr', telescope_builtin.resume, { desc = '[s]earch [r]esume' })
 vim.keymap.set('n', '<leader>s.', telescope_builtin.oldfiles, { desc = '[s]earch recent files ([.] for repeat)' })
 vim.keymap.set('n', '<leader><leader>', telescope_builtin.buffers, { desc = '[ ] find existing buffers' })
+
+-- lsp
+vim.api.nvim_create_autocmd('LspAttach', {
+  desc = 'LSP actions',
+  callback = function(event)
+    vim.keymap.set('n', '<leader>li', vim.lsp.buf.hover, { buffer = event.buf, desc = 'symbol [i]nformation hover' })
+    vim.keymap.set('n', '<leader>ld', telescope_builtin.lsp_definitions,
+      { buffer = event.buf, desc = 'goto [d]efinition' })
+    vim.keymap.set('n', '<leader>lm', telescope_builtin.lsp_implementations,
+      { buffer = event.buf, desc = 'goto i[m]plementation' })
+    vim.keymap.set('n', '<leader>lt', telescope_builtin.lsp_type_definitions,
+      { buffer = event.buf, desc = 'goto [t]ype definition' })
+    vim.keymap.set('n', '<leader>lr', telescope_builtin.lsp_references,
+      { buffer = event.buf, desc = 'list [r]eferences' })
+    vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, { buffer = event.buf, desc = '[s]iganture help' })
+    vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { buffer = event.buf, desc = '[r]ename symbol' })
+    vim.keymap.set({ 'n', 'x' }, '<leader>lf', vim.lsp.buf.format,
+      { buffer = event.buf, desc = '[f]ormat buffer' })
+    vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, { buffer = event.buf, desc = 'code [a]ction' })
+  end,
+})
