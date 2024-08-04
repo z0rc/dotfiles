@@ -85,6 +85,7 @@ vim.keymap.set('n', '<leader>fd', telescope_builtin.diagnostics, { desc = '[d]ia
 vim.keymap.set('n', '<leader>fr', telescope_builtin.resume, { desc = '[r]esume' })
 vim.keymap.set('n', '<leader>f.', telescope_builtin.oldfiles, { desc = 'recent files ([.] for repeat)' })
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = '[b]uffers' })
+vim.keymap.set('n', '<leader>fy', require('yaml-companion').open_ui_select, { desc = '[y]aml schema' })
 
 -- lsp
 vim.api.nvim_create_autocmd('LspAttach', {
