@@ -16,6 +16,7 @@ key[Right]=${terminfo[kcuf1]}
 key[PageUp]=${terminfo[kpp]}
 key[PageDown]=${terminfo[knp]}
 key[Backspace]=${terminfo[kbs]}
+key[Enter]=${terminfo[cr]}
 key[ShiftTab]=${terminfo[kcbt]}
 # man 5 user_caps
 key[CtrlLeft]=${terminfo[kLFT5]}
@@ -33,20 +34,45 @@ key[CtrlRight]=${terminfo[kRIT5]}
 [[ -n ${key[PageUp]}    ]] && bindkey ${key[PageUp]}    beginning-of-buffer-or-history
 [[ -n ${key[PageDown]}  ]] && bindkey ${key[PageDown]}  end-of-buffer-or-history
 [[ -n ${key[Backspace]} ]] && bindkey ${key[Backspace]} backward-delete-char
+[[ -n ${key[Enter]}     ]] && bindkey ${key[Enter]}     accept-line
 [[ -n ${key[ShiftTab]}  ]] && bindkey ${key[ShiftTab]}  reverse-menu-complete
 [[ -n ${key[CtrlLeft]}  ]] && bindkey ${key[CtrlLeft]}  backward-word
 [[ -n ${key[CtrlRight]} ]] && bindkey ${key[CtrlRight]} forward-word
 unset key
 
 # Also bind some 'CSI u' keys, https://www.leonerd.org.uk/hacks/fixterms/
-# For now do this only for Ctrl-arrow keys, might extend later
 typeset -A csi
 csi[base]="\e["
 csi[really-special-prefix]=${csi[base]}"1;"
+csi[special-suffix]="~"
 csi[modifier-Ctrl]="5"
+csi[special-Insert]="2"
+csi[special-Delete]="3"
+csi[special-PageUp]="5"
+csi[special-PageDown]="6"
+csi[special-Home]="7"
+csi[special-End]="8"
+csi[exception-ShiftTab]="Z"
+csi[really-special-Up]="A"
+csi[really-special-Down]="B"
 csi[really-special-Right]="C"
 csi[really-special-Left]="D"
+csi[really-special-End]="F"
+csi[really-special-Home]="H"
 
+bindkey ${csi[base]}${csi[really-special-Home]} beginning-of-line
+bindkey ${csi[base]}${csi[really-special-End]} end-of-line
+bindkey ${csi[base]}${csi[special-Home]}${csi[special-suffix]} beginning-of-line
+bindkey ${csi[base]}${csi[special-End]}${csi[special-suffix]} end-of-line
+bindkey ${csi[base]}${csi[special-Insert]}${csi[special-suffix]} overwrite-mode
+bindkey ${csi[base]}${csi[special-Delete]}${csi[special-suffix]} delete-char
+bindkey ${csi[base]}${csi[special-Left]}${csi[special-suffix]} backward-char
+bindkey ${csi[base]}${csi[special-Right]}${csi[special-suffix]} forward-char
+bindkey ${csi[base]}${csi[special-Up]}${csi[special-suffix]} up-line-or-beginning-search
+bindkey ${csi[base]}${csi[special-Down]}${csi[special-suffix]} down-line-or-beginning-search
+bindkey ${csi[base]}${csi[special-PageUp]}${csi[special-suffix]} beginning-of-buffer-or-history
+bindkey ${csi[base]}${csi[special-PageDown]}${csi[special-suffix]} end-of-buffer-or-history
+bindkey ${csi[base]}${csi[exception-ShiftTab]} reverse-menu-complete
 bindkey ${csi[really-special-prefix]}${csi[modifier-Ctrl]}${csi[really-special-Left]} backward-word
 bindkey ${csi[really-special-prefix]}${csi[modifier-Ctrl]}${csi[really-special-Right]} forward-word
 unset csi
