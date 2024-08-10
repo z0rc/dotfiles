@@ -13,6 +13,8 @@ require('lualine').setup {
     disabled_filetypes = {
       'NvimTree',
       'git',
+      'fugitive',
+      'fugitiveblame'
     },
     icons_enabled = false,
     component_separators = '',

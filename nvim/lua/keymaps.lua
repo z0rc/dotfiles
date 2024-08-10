@@ -107,3 +107,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, { buffer = event.buf, desc = 'code [a]ction' })
   end,
 })
+
+-- fugitive
+vim.keymap.set('n', '<leader>tB', function()
+  local windows = vim.api.nvim_list_wins()
+  for _, v in pairs(windows) do
+    if vim.fn.getbufvar(vim.fn.winbufnr(v), '&filetype') == 'fugitiveblame' then
+      vim.api.nvim_win_close(v, false)
+      return
+    end
+  end
+  vim.cmd.Git('blame')
+end, { desc = 'git [B]lame buffer' })
+vim.keymap.set('n', '<leader>tg', function()
+  local windows = vim.api.nvim_list_wins()
+  for _, v in pairs(windows) do
+    local status = pcall(vim.api.nvim_win_get_var, v, 'fugitive_status')
+    if status then
+      vim.api.nvim_win_close(v, false)
+      return
+    end
+  end
+  vim.cmd('Git')
+end, { desc = '[g]it status' })

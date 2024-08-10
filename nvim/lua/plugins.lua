@@ -1,4 +1,8 @@
-require('gitsigns').setup({})
+require('gitsigns').setup {
+  current_line_blame_opts = {
+    virt_text_pos = 'right_align',
+  },
+}
 require('ibl').setup {
   indent = {
     char = '│',
@@ -7,7 +11,7 @@ require('ibl').setup {
 require('reticle').setup({})
 require('nvim-surround').setup({})
 require('surround-ui').setup {
-  root_key = 's'
+  root_key = 's',
 }
 require('nvim-autopairs').setup({})
 require('project_nvim').setup({})
