@@ -60,21 +60,21 @@ csi[really-special-Left]="D"
 csi[really-special-End]="F"
 csi[really-special-Home]="H"
 
-bindkey ${csi[base]}${csi[really-special-Home]} beginning-of-line
-bindkey ${csi[base]}${csi[really-special-End]} end-of-line
-bindkey ${csi[base]}${csi[special-Home]}${csi[special-suffix]} beginning-of-line
-bindkey ${csi[base]}${csi[special-End]}${csi[special-suffix]} end-of-line
-bindkey ${csi[base]}${csi[special-Insert]}${csi[special-suffix]} overwrite-mode
-bindkey ${csi[base]}${csi[special-Delete]}${csi[special-suffix]} delete-char
-bindkey ${csi[base]}${csi[special-Left]}${csi[special-suffix]} backward-char
-bindkey ${csi[base]}${csi[special-Right]}${csi[special-suffix]} forward-char
-bindkey ${csi[base]}${csi[special-Up]}${csi[special-suffix]} up-line-or-beginning-search
-bindkey ${csi[base]}${csi[special-Down]}${csi[special-suffix]} down-line-or-beginning-search
-bindkey ${csi[base]}${csi[special-PageUp]}${csi[special-suffix]} beginning-of-buffer-or-history
-bindkey ${csi[base]}${csi[special-PageDown]}${csi[special-suffix]} end-of-buffer-or-history
-bindkey ${csi[base]}${csi[exception-ShiftTab]} reverse-menu-complete
-bindkey ${csi[really-special-prefix]}${csi[modifier-Ctrl]}${csi[really-special-Left]} backward-word
-bindkey ${csi[really-special-prefix]}${csi[modifier-Ctrl]}${csi[really-special-Right]} forward-word
+bindkey ${csi[base]}${csi[really-special-Home]}                                         beginning-of-line
+bindkey ${csi[base]}${csi[really-special-End]}                                          end-of-line
+bindkey ${csi[base]}${csi[special-Home]}${csi[special-suffix]}                          beginning-of-line
+bindkey ${csi[base]}${csi[special-End]}${csi[special-suffix]}                           end-of-line
+bindkey ${csi[base]}${csi[special-Insert]}${csi[special-suffix]}                        overwrite-mode
+bindkey ${csi[base]}${csi[special-Delete]}${csi[special-suffix]}                        delete-char
+bindkey ${csi[base]}${csi[special-Left]}${csi[special-suffix]}                          backward-char
+bindkey ${csi[base]}${csi[special-Right]}${csi[special-suffix]}                         forward-char
+bindkey ${csi[base]}${csi[special-Up]}${csi[special-suffix]}                            up-line-or-beginning-search
+bindkey ${csi[base]}${csi[special-Down]}${csi[special-suffix]}                          down-line-or-beginning-search
+bindkey ${csi[base]}${csi[special-PageUp]}${csi[special-suffix]}                        beginning-of-buffer-or-history
+bindkey ${csi[base]}${csi[special-PageDown]}${csi[special-suffix]}                      end-of-buffer-or-history
+bindkey ${csi[base]}${csi[exception-ShiftTab]}                                          reverse-menu-complete
+bindkey ${csi[really-special-prefix]}${csi[modifier-Ctrl]}${csi[really-special-Left]}   backward-word
+bindkey ${csi[really-special-prefix]}${csi[modifier-Ctrl]}${csi[really-special-Right]}  forward-word
 unset csi
 
 # Make dot key autoexpand "..." to "../.." and so on
