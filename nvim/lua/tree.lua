@@ -22,10 +22,13 @@ require('nvim-tree').setup {
     enable = true,
     show_on_open_dirs = false,
   },
+  filters = {
+    git_ignored = false,
+  },
   renderer = {
     highlight_opened_files = 'name',
     indent_markers = {
-      enable = true
+      enable = true,
     },
     add_trailing = true,
     full_name = true,
