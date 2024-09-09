@@ -1,17 +1,11 @@
 require('solarized').setup {
-  theme = 'neo',
-  highlights = function(color, helper)
+  variant = 'autumn',
+  on_highlights = function(colors, helper)
     return {
-      -- default green color is too contrast for this kind of symbols
-      IblIndent = { fg = helper.darken(color.base01, 30), nocombine = true },
-      IblScope = { fg = color.base01, nocombine = true },
-      -- fix cursorline visibility
-      CursorLineNr = { bg = color.base02 },
-      CursorLine = { bg = color.base02 },
       -- fix lualine diff visibility
-      LuaLineDiffAdd = { fg = helper.darken(color.green, 30) },
-      LuaLineDiffChange = { fg = helper.darken(color.yellow, 30) },
-      LuaLineDiffDelete = { fg = helper.darken(color.red, 30) },
+      LuaLineDiffAdd = { fg = helper.darken(colors.green, 30) },
+      LuaLineDiffChange = { fg = helper.darken(colors.yellow, 30) },
+      LuaLineDiffDelete = { fg = helper.darken(colors.red, 30) },
     }
   end,
 }
