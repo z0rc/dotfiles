@@ -1,31 +1,31 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.cursorline = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.wrap = false
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.list = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.cursorline = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.wrap = false
+vim.o.scrolloff = 8
+vim.o.sidescrolloff = 8
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.list = true
 vim.opt.listchars = { tab = '>-', trail = '·', extends = '▶', precedes = '◀', nbsp = '␣' }
 vim.opt.backupdir:remove('.')
-vim.opt.backup = true
-vim.opt.undofile = true
-vim.opt.swapfile = true
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.showmode = false
-vim.opt.inccommand = 'split'
-vim.opt.timeoutlen = 300
-vim.opt.updatetime = 800
+vim.o.backup = true
+vim.o.undofile = true
+vim.o.swapfile = true
+vim.o.clipboard = 'unnamedplus'
+vim.o.showmode = false
+vim.o.inccommand = 'split'
+vim.o.timeoutlen = 300
+vim.o.updatetime = 800
 
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
