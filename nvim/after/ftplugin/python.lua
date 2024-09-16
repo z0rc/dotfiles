@@ -1,1 +1,1 @@
-vim.opt_local.colorcolumn = 80
+vim.bo.colorcolumn = 80
