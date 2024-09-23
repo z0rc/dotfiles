@@ -4,8 +4,8 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'Cmdline
   pattern = '*',
   group = augroup,
   callback = function()
-    if vim.o.nu and vim.api.nvim_get_mode().mode ~= 'i' then
-      vim.opt.relativenumber = true
+    if vim.o.number and vim.api.nvim_get_mode().mode ~= 'i' then
+      vim.wo.relativenumber = true
     end
   end,
 })
@@ -14,8 +14,8 @@ vim.api.nvim_create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'CmdlineEn
   pattern = '*',
   group = augroup,
   callback = function()
-    if vim.o.nu then
-      vim.opt.relativenumber = false
+    if vim.o.number then
+      vim.wo.relativenumber = false
     end
   end,
 })
