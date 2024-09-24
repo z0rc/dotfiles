@@ -19,10 +19,33 @@ local cmp_action = lsp_zero.cmp_action()
 
 cmp.setup({
   sources = {
-    { name = 'lazydev', group_index = 0 },
-    { name = 'nvim_lsp' },
-    { name = 'buffer',  keyword_length = 3 },
+    { name = 'lazydev',  group_index = 0 },
+    { name = 'nvim_lsp', },
+    {
+      name = 'buffer',
+      keyword_length = 3,
+      entry_filter = function(entry)
+        -- filter out too long suggestions, they are usually some hashes, which aren't useful here
+        if string.len(entry.completion_item.label) >= 30 then
+          return false
+        else
+          return true
+        end
+      end,
+    },
     { name = 'path' },
+    {
+      name = 'spell',
+      keyword_length = 3,
+      entry_filter = function(entry)
+        -- don't suggest entries that contain space, they aren't helpful
+        if string.find(entry.completion_item.label, ' ') then
+          return false
+        else
+          return true
+        end
+      end,
+    },
   },
   mapping = cmp.mapping.preset.insert({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),

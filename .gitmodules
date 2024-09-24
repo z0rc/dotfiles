@@ -103,6 +103,9 @@
 [submodule "nvim/plugins/cmp-path"]
 	path = nvim/plugins/cmp-path
 	url = https://github.com/hrsh7th/cmp-path.git
+[submodule "nvim/plugins/cmp-spell"]
+	path = nvim/plugins/cmp-spell
+	url = https://github.com/f3fora/cmp-spell.git
 [submodule "nvim/plugins/committia"]
 	path = nvim/plugins/committia
 	url = https://github.com/rhysd/committia.vim.git
