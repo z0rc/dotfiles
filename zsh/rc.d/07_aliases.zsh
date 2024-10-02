@@ -19,7 +19,6 @@ alias clear=clear-screen-soft-bottom
 (( ${+commands[grep]} )) && alias grep="grep --color=auto --binary-files=without-match --devices=skip"
 (( ${+commands[quilt]} )) && alias quilt="quilt --quiltrc ${DOTFILES}/configs/quiltrc"
 (( ${+commands[tmux]} )) && {
-    alias tmux="tmux -f ${DOTFILES}/tmux/tmux.conf"
     alias stmux="tmux new-session 'sudo --login'"
 }
 (( ${+commands[wget]} )) && alias wget="wget --hsts-file=${XDG_CACHE_HOME}/wget-hsts"

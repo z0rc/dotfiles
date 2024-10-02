@@ -12,19 +12,31 @@ vim.keymap.set('c', '<Right>', function()
   return vim.fn.wildmenumode() == 1 and '<Down>' or '<Right>'
 end, { expr = true })
 
--- split navigation
-vim.keymap.set({ 'n', 'i' }, '<C-Up>', function()
-  vim.cmd.wincmd('k')
-end, { desc = 'Go to up window' })
-vim.keymap.set({ 'n', 'i' }, '<C-Down>', function()
-  vim.cmd.wincmd('j')
-end, { desc = 'Go to down window' })
-vim.keymap.set({ 'n', 'i' }, '<C-Left>', function()
-  vim.cmd.wincmd('h')
-end, { desc = 'Go to left window' })
-vim.keymap.set({ 'n', 'i' }, '<C-Right>', function()
-  vim.cmd.wincmd('l')
-end, { desc = 'Go to right window' })
+-- tmux/split navigation
+require('tmux').setup {
+  copy_sync = {
+    enable = false,
+  },
+  navigation = {
+    enable_default_keybindings = false,
+  },
+  resize = {
+    enable_default_keybindings = false,
+  },
+}
+
+vim.keymap.set({ 'n', 'i' }, '<S-Up>', function()
+  require('tmux').move_top()
+end, { desc = 'Go to up pane' })
+vim.keymap.set({ 'n', 'i' }, '<S-Down>', function()
+  require('tmux').move_bottom()
+end, { desc = 'Go to down pane' })
+vim.keymap.set({ 'n', 'i' }, '<S-Left>', function()
+  require('tmux').move_left()
+end, { desc = 'Go to left pane' })
+vim.keymap.set({ 'n', 'i' }, '<S-Right>', function()
+  require('tmux').move_right()
+end, { desc = 'Go to right pane' })
 
 -- visual shifting (does not exit visual mode)
 vim.keymap.set('v', '<', '<gv')
