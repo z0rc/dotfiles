@@ -185,6 +185,9 @@
 [submodule "nvim/plugins/telescope-ui-select"]
 	path = nvim/plugins/telescope-ui-select
 	url = https://github.com/nvim-telescope/telescope-ui-select.nvim.git
+[submodule "nvim/plugins/tmux"]
+	path = nvim/plugins/tmux
+	url = https://github.com/aserowy/tmux.nvim.git
 [submodule "nvim/plugins/vim-cool"]
 	path = nvim/plugins/vim-cool
 	url = https://github.com/romainl/vim-cool.git
@@ -498,9 +501,9 @@
 [submodule "zsh/plugins/syntax-highlighting"]
 	path = zsh/plugins/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/plugins/window-title"]
+	path = zsh/plugins/window-title
+	url = https://github.com/olets/zsh-window-title.git
 [submodule "zsh/plugins/z"]
 	path = zsh/plugins/z
 	url = https://github.com/agkozak/zsh-z.git
-[submodule "nvim/plugins/tmux"]
-	path = nvim/plugins/tmux
-	url = https://github.com/aserowy/tmux.nvim.git

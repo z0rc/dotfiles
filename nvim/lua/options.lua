@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.o.title = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.cursorline = true
