@@ -22,6 +22,7 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
         midnight_commander
         nnn
         ranger
+        yazi
         vim_shell
         context
         dir
@@ -394,6 +395,12 @@ source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
     typeset -g POWERLEVEL9K_RANGER_FOREGROUND=081
     # Custom icon.
     typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION='rngr'
+
+    ####################[ yazi: yazi shell (https://github.com/sxyazi/yazi) ]#####################
+    # Yazi shell color.
+    typeset -g POWERLEVEL9K_YAZI_FOREGROUND=081
+    # Custom icon.
+    typeset -g POWERLEVEL9K_YAZI_VISUAL_IDENTIFIER_EXPANSION='yazi'
 
     ######################[ nnn: nnn shell (https://github.com/jarun/nnn) ]#######################
     # Nnn shell color.
