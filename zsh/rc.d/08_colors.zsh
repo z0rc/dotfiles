@@ -1,7 +1,4 @@
-# Enable color support of ls
-if (( ${+commands[dircolors]} )); then
-    evalcache dircolors "${ZDOTDIR}/plugins/dircolors-solarized/dircolors.256dark"
-fi
+source "${ZDOTDIR}/plugins/ls-colors/lscolors.sh"
 
 # Enable diff with colors
 if (( ${+commands[colordiff]} )); then
