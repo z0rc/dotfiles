@@ -1,7 +1,8 @@
 # Completion tweaks
-zstyle ':completion:*:default'      list-colors         "${(s.:.)LS_COLORS}"
+zstyle ':completion:*'              list-colors         "${(s.:.)LS_COLORS}"
 zstyle ':completion:*'              list-dirs-first     true
 zstyle ':completion:*'              verbose             true
+zstyle ':completion:*'              menu                no
 zstyle ':completion:*'              matcher-list        'm:{[:lower:]}={[:upper:]}'
 zstyle ':completion::complete:*'    use-cache           true
 zstyle ':completion::complete:*'    cache-path          "${XDG_CACHE_HOME}/zsh/compcache"
