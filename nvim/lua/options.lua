@@ -2,6 +2,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.o.title = true
+vim.o.titlelen = 0
+vim.o.titlestring = 'nvim: %{expand("%:p")}'
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.cursorline = true
