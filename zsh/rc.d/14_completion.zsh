@@ -11,11 +11,12 @@ zstyle ':completion:*:manuals'      separate-sections   true
 
 # Enable cached completions, if present
 if [[ -d "${XDG_CACHE_HOME}/zsh/fpath" ]]; then
-    fpath+="${XDG_CACHE_HOME}/zsh/fpath"
+    fpath=("${XDG_CACHE_HOME}/zsh/fpath" ${fpath})
 fi
 
 # Additional completions
-fpath+="${ZDOTDIR}/plugins/completions/src"
+fpath=("${ZDOTDIR}/plugins/completions/src" ${fpath})
+fpath=("${ZDOTDIR}/plugins/git-completion/src" ${fpath})
 
 # Enable git-extras completions
 source "${DOTFILES}/tools/git-extras/etc/git-extras-completion.zsh"
