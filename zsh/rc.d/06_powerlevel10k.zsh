@@ -1,7 +1,7 @@
 # Enable powerlevel10k prompt
 source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
 
-# Losely based on results from `p10k configure`
+# Loosely based on results from `p10k configure`
 
 # Temporarily change options.
 'builtin' 'local' '-a' 'p10k_config_opts'

@@ -1,7 +1,7 @@
 # Some handy suffix aliases
 alias -s log=less
 
-# Override regular 'clear' with custom one, that puts promt at bottom
+# Override regular 'clear' with custom one, that puts prompt at bottom
 alias clear=clear-screen-soft-bottom
 
 # Prefer nvim when installed
