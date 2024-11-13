@@ -8,7 +8,7 @@
 	autosetuprebase = always
 [merge]
 	ff = only
-	conflictstyle = zdiff3
+	conflictStyle = zdiff3
 [rebase]
 	autoStash = true
 [alias]
