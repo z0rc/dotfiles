@@ -492,9 +492,6 @@
 [submodule "zsh/plugins/iterm2-shell-integration"]
 	path = zsh/plugins/iterm2-shell-integration
 	url = https://github.com/gnachman/iTerm2-shell-integration.git
-[submodule "zsh/plugins/ls-colors"]
-	path = zsh/plugins/ls-colors
-	url = https://github.com/trapd00r/LS_COLORS.git
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
