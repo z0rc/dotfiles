@@ -5,7 +5,7 @@
 	default = current
 	followTags = true
 [branch]
-	autosetuprebase = always
+	autoSetupRebase = always
 [merge]
 	ff = only
 	conflictStyle = zdiff3
@@ -22,10 +22,9 @@
 	ignoreSubmodules = dirty
 	submodule = log
 [core]
-	excludesfiles = ~/.config/git/ignore
+	excludesFile = ~/.config/git/ignore
 	autocrlf = input
 	whitespace = cr-at-eol
-	pager = less --tabs=4 -RFX
 	untrackedCache = true
 [pager]
 	diff = which diff-so-fancy >/dev/null 2>&1 && diff-so-fancy | less --tabs=4 -RFX || less --tabs=4 -RFX
@@ -33,7 +32,7 @@
 	fetchJobs = 0
 	recurse = true
 [help]
-	autocorrect = 5
+	autoCorrect = 5
 [status]
 	submoduleSummary = true
 [color "diff-highlight"]
