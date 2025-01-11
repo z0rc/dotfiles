@@ -473,7 +473,6 @@
 [submodule "zsh/plugins/autosuggestions"]
 	path = zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-	branch = develop
 [submodule "zsh/plugins/autosuggestions-abbreviations-strategy"]
 	path = zsh/plugins/autosuggestions-abbreviations-strategy
 	url = https://github.com/olets/zsh-autosuggestions-abbreviations-strategy.git
