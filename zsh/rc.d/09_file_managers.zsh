@@ -79,7 +79,7 @@ if (( ${+commands[yazi]} )); then
     # Change yazi CWD to PWD on subshell exit
     if [[ -v YAZI_ID ]]; then
         _yazi_cd () {
-            ya pub dds-cd --str "${PWD}"
+            ya emit cd "${PWD}"
         }
         add-zsh-hook zshexit _yazi_cd
     fi
