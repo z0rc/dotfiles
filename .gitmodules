@@ -497,9 +497,6 @@
 [submodule "zsh/plugins/syntax-highlighting"]
 	path = zsh/plugins/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/plugins/window-title"]
-	path = zsh/plugins/window-title
-	url = https://github.com/olets/zsh-window-title.git
 [submodule "zsh/plugins/z"]
 	path = zsh/plugins/z
 	url = https://github.com/agkozak/zsh-z.git
