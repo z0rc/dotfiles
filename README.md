@@ -110,7 +110,7 @@ module.
 ## Neovim Version
 
 Neovim configuration is tested with latest released Neovim version only. At the
-moment of writing it's version 0.10.0.
+moment of writing it's version 0.10.4.
 
 ## Vim Version
 
@@ -147,7 +147,8 @@ modifications, though they are missing by default.
 
 ### Neovim Configuration
 
-Support of local configuration might be added in future.
+Local configuration can be added to `$DOTFILES/nvim/lua/local_options.lua`.
+It's loaded after default options, but before any plugin.
 
 ### Vim Configuration
 

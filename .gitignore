@@ -4,6 +4,8 @@ vim/autoload/getopts/*.cache
 vim/.viminfo*
 vim/vimrc.local
 
+nvim/lua/local_options.lua
+
 zsh/rc.d/9[0-9]_*
 zsh/env.d/9[0-9]_*
 zsh/.zlogin

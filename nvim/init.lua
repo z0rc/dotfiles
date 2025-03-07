@@ -1,6 +1,7 @@
 vim.loader.enable()
 
 require('options')
+pcall(require, 'local_options') -- attempt to load local_options.lua, ignore missing
 require('colorscheme')
 require('keymaps')
 require('whichkey')
