@@ -131,7 +131,7 @@ if (( ${+commands[nvim]} )); then
     print "  ...done"
     # Update treesitter config
     print "Updating treesitter config..."
-    command nvim --headless -c "TSUpdate" -c "qall" &> /dev/null
+    command nvim --headless -c "TSUpdateSync" -c "qall" &> /dev/null
     print "  ...done"
     # Update mason registries
     print "Updating mason registries..."
