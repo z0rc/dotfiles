@@ -7,6 +7,7 @@ updates:
   groups:
     submodules:
       dependency-type: "production"
+  open-pull-requests-limit: 10000
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
