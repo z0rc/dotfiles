@@ -15,7 +15,7 @@ require('nvim-tree').setup {
     end,
   },
   sort = {
-    sorter = "case_sensitive",
+    sorter = 'case_sensitive',
   },
   hijack_cursor = true,
   git = {

@@ -94,18 +94,9 @@
 [submodule "env-wrappers/rbenv/ruby-build"]
 	path = env-wrappers/rbenv/ruby-build
 	url = https://github.com/rbenv/ruby-build.git
-[submodule "nvim/plugins/cmp-buffer"]
-	path = nvim/plugins/cmp-buffer
-	url = https://github.com/hrsh7th/cmp-buffer.git
-[submodule "nvim/plugins/cmp-nvim-lsp"]
-	path = nvim/plugins/cmp-nvim-lsp
-	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
-[submodule "nvim/plugins/cmp-path"]
-	path = nvim/plugins/cmp-path
-	url = https://github.com/hrsh7th/cmp-path.git
-[submodule "nvim/plugins/cmp-spell"]
-	path = nvim/plugins/cmp-spell
-	url = https://github.com/f3fora/cmp-spell.git
+[submodule "nvim/plugins/blink.cmp"]
+	path = nvim/plugins/blink.cmp
+	url = https://github.com/Saghen/blink.cmp.git
 [submodule "nvim/plugins/committia"]
 	path = nvim/plugins/committia
 	url = https://github.com/rhysd/committia.vim.git
@@ -127,10 +118,6 @@
 [submodule "nvim/plugins/lazydev"]
 	path = nvim/plugins/lazydev
 	url = https://github.com/folke/lazydev.nvim.git
-[submodule "nvim/plugins/lsp-zero"]
-	path = nvim/plugins/lsp-zero
-	branch = v4.x
-	url = https://github.com/VonHeikemen/lsp-zero.nvim.git
 [submodule "nvim/plugins/lualine"]
 	path = nvim/plugins/lualine
 	url = https://github.com/nvim-lualine/lualine.nvim.git
@@ -143,9 +130,6 @@
 [submodule "nvim/plugins/nvim-autopairs"]
 	path = nvim/plugins/nvim-autopairs
 	url = https://github.com/windwp/nvim-autopairs.git
-[submodule "nvim/plugins/nvim-cmp"]
-	path = nvim/plugins/nvim-cmp
-	url = https://github.com/hrsh7th/nvim-cmp.git
 [submodule "nvim/plugins/nvim-lspconfig"]
 	path = nvim/plugins/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git

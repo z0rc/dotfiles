@@ -68,7 +68,7 @@ end, { desc = '[r]eset hunk' })
 vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[s]tage hunk' })
 vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[r]eset hunk' })
 vim.keymap.set('n', '<leader>gS', gitsigns.stage_buffer, { desc = '[S]tage buffer' })
-vim.keymap.set('n', '<leader>gu', gitsigns.undo_stage_hunk, { desc = '[u]ndo stage hunk' })
+vim.keymap.set('n', '<leader>gu', gitsigns.stage_hunk, { desc = '[u]ndo stage hunk' })
 vim.keymap.set('n', '<leader>gR', gitsigns.reset_buffer, { desc = '[R]eset buffer' })
 vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[p]review hunk' })
 vim.keymap.set('n', '<leader>gb', gitsigns.blame_line, { desc = '[b]lame line' })
@@ -77,7 +77,7 @@ vim.keymap.set('n', '<leader>gD', function()
   gitsigns.diffthis '@'
 end, { desc = '[D]iff against last commit' })
 vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'git [b]lame line' })
-vim.keymap.set('n', '<leader>tD', gitsigns.toggle_deleted, { desc = 'git [D]eleted' })
+vim.keymap.set('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = 'git [D]eleted' })
 
 -- nvim-tree
 vim.keymap.set('n', '<leader>tt', require('nvim-tree.api').tree.toggle, { desc = 'nvim-[t]ree' })
@@ -94,6 +94,7 @@ vim.keymap.set('n', '<leader>fd', telescope_builtin.diagnostics, { desc = '[d]ia
 vim.keymap.set('n', '<leader>fr', telescope_builtin.resume, { desc = '[r]esume' })
 vim.keymap.set('n', '<leader>f.', telescope_builtin.oldfiles, { desc = 'recent files ([.] for repeat)' })
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = '[b]uffers' })
+vim.keymap.set('n', '<leader>fn', require('telescope').extensions.fidget.fidget, { desc = '[n]otification' })
 vim.keymap.set('n', '<leader>fy', require('yaml-companion').open_ui_select, { desc = '[y]aml schema' })
 
 -- lsp

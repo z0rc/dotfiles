@@ -41,3 +41,4 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.fugitive_no_maps = 1
 
 vim.lsp.set_log_level(vim.log.levels.OFF)
+vim.diagnostic.config { virtual_text = true }
