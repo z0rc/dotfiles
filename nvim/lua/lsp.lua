@@ -1,4 +1,4 @@
-require('lazydev').setup({})
+require('lazydev').setup()
 
 local lsp_zero = require('lsp-zero')
 
