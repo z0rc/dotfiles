@@ -14,6 +14,9 @@ require('nvim-tree').setup {
       return event.file:find(vim.fn.getcwd() .. '/.git/', 1, true) == 1
     end,
   },
+  sort = {
+    sorter = "case_sensitive",
+  },
   hijack_cursor = true,
   git = {
     show_on_open_dirs = false,
