@@ -110,7 +110,7 @@ module.
 ## Neovim Version
 
 Neovim configuration is tested with latest released Neovim version only. At the
-moment of writing it's version 0.10.4.
+moment of writing it's version 0.11.0.
 
 ## Vim Version
 

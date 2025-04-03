@@ -24,11 +24,16 @@ vim.opt.backupdir:remove('.')
 vim.o.backup = true
 vim.o.undofile = true
 vim.o.swapfile = true
-vim.o.clipboard = 'unnamedplus'
 vim.o.showmode = false
 vim.o.inccommand = 'split'
+vim.o.confirm = true
 vim.o.timeoutlen = 300
 vim.o.updatetime = 800
+
+-- https://github.com/nvim-lua/kickstart.nvim/pull/1049
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
@@ -41,4 +46,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.fugitive_no_maps = 1
 
 vim.lsp.set_log_level(vim.log.levels.OFF)
-vim.diagnostic.config { virtual_text = true }
+vim.diagnostic.config {
+  severity_sort = true,
+  virtual_text = { source = 'if_many' },
+}

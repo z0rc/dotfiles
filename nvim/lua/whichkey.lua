@@ -1,4 +1,6 @@
+---@diagnostic disable-next-line: missing-fields
 require('which-key').setup {
+  delay = 0,
   icons = {
     rules = false,
     mappings = false,
@@ -29,12 +31,11 @@ require('which-key').setup {
       F12 = 'F12',
     },
   },
-}
-
-require('which-key').add {
-  { '<leader>l', group = 'Lsp' },
-  { '<leader>t', group = 'Toggle' },
-  { '<leader>g', group = 'Git',     mode = { 'n', 'v' } },
-  { '<leader>f', group = 'Find' },
-  { '<leader>s', group = 'Surround' },
+  spec = {
+    { '<leader>l', group = 'Lsp' },
+    { '<leader>t', group = 'Toggle' },
+    { '<leader>g', group = 'Git',     mode = { 'n', 'v' } },
+    { '<leader>f', group = 'Find' },
+    { '<leader>s', group = 'Surround' },
+  },
 }

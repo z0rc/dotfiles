@@ -99,7 +99,8 @@ vim.keymap.set('n', '<leader>fy', require('yaml-companion').open_ui_select, { de
 
 -- lsp
 vim.api.nvim_create_autocmd('LspAttach', {
-  desc = 'LSP actions',
+  desc = 'LSP keymap actions',
+  group = vim.api.nvim_create_augroup('lsp-attach-keymap', { clear = true }),
   callback = function(event)
     vim.keymap.set('n', '<leader>li', vim.lsp.buf.hover, { buffer = event.buf, desc = 'symbol [i]nformation hover' })
     vim.keymap.set('n', '<leader>ld', telescope_builtin.lsp_definitions,
