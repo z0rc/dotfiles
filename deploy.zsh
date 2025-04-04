@@ -16,7 +16,7 @@ XDG_STATE_HOME="${HOME}/.local/state"
 
 # Create required directories
 print "Creating required directory tree..."
-zf_mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger,gem,tig,gnupg,nvim}
+zf_mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger,gem,tig,gnupg,nvim/plugin}
 zf_mkdir -p "${XDG_CACHE_HOME}"/{vim/{backup,swap,undo},zsh,tig}
 zf_mkdir -p "${XDG_DATA_HOME}"/{{goenv,jenv,luaenv,nodenv,phpenv,plenv,pyenv,rbenv}/plugins,zsh,man/man1,vim/spell,nvim/site/pack/plugins}
 zf_mkdir -p "${XDG_STATE_HOME}"
@@ -36,9 +36,8 @@ fi
 # Link config files
 print "Linking config files..."
 zf_ln -sfn "${SCRIPT_DIR}/vim" "${XDG_CONFIG_HOME}/vim"
-zf_ln -sf "${SCRIPT_DIR}/nvim/init.lua" "${XDG_CONFIG_HOME}/nvim/init.lua"
+zf_ln -sfn "${SCRIPT_DIR}/nvim/init" "${XDG_CONFIG_HOME}/nvim/plugin/init"
 zf_ln -sfn "${SCRIPT_DIR}/nvim/after" "${XDG_CONFIG_HOME}/nvim/after"
-zf_ln -sfn "${SCRIPT_DIR}/nvim/lua" "${XDG_CONFIG_HOME}/nvim/lua"
 zf_ln -sfn "${SCRIPT_DIR}/nvim/plugins" "${XDG_DATA_HOME}/nvim/site/pack/plugins/start"
 zf_ln -sfn "${SCRIPT_DIR}/tmux" "${XDG_CONFIG_HOME}/tmux"
 zf_ln -sf "${SCRIPT_DIR}/configs/gitconfig" "${XDG_CONFIG_HOME}/git/config"

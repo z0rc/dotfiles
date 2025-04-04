@@ -147,8 +147,11 @@ modifications, though they are missing by default.
 
 ### Neovim Configuration
 
-Local configuration can be added to `$DOTFILES/nvim/lua/local_options.lua`.
-It's loaded after default options, but before any plugin.
+Local configuration can be added to:
+
+* `$DOTFILES/nvim/init/0[1-9]_*` (like `01_local.lua`) to load after default
+  options, but before any plugin.
+* `$DOTFILES/nvim/init/9[0-9]_*` (like `99_local.vim`) to load after plugins.
 
 ### Vim Configuration
 
