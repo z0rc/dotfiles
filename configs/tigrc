@@ -1,0 +1,6 @@
+set mouse = true
+set truncation-delimiter = utf-8
+set line-graphics = utf-8
+set tab-size = 4
+set diff-highlight = true
+set ignore-case = smart-case
