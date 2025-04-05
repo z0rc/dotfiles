@@ -442,6 +442,9 @@
 [submodule "vim/pack/03_plugins/start/wilder"]
 	path = vim/pack/03_plugins/start/wilder
 	url = https://github.com/gelguy/wilder.nvim.git
+[submodule "yazi/plugins/smart-enter.yazi"]
+	path = yazi/plugins/smart-enter.yazi
+	url = https://github.com/Ape/smart-enter.yazi.git
 [submodule "yazi/yazi-rs-plugins"]
 	path = yazi/yazi-rs-plugins
 	url = https://github.com/yazi-rs/plugins.git
