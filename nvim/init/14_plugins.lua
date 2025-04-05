@@ -8,13 +8,13 @@ require('ibl').setup {
     char = '│',
   },
 }
-require('reticle').setup({})
-require('nvim-surround').setup({})
+require('reticle').setup()
+require('nvim-surround').setup()
 require('surround-ui').setup {
   root_key = 's',
 }
-require('nvim-autopairs').setup({})
-require('project_nvim').setup({})
+require('nvim-autopairs').setup()
+require('project_nvim').setup()
 require('diffview').setup {
   use_icons = false,
   signs = {
@@ -22,7 +22,7 @@ require('diffview').setup {
     fold_open = 'v',
   },
 }
-require('git-rebase-auto-diff').setup({})
+require('git-rebase-auto-diff').setup()
 require('fidget').setup {
   notification = {
     override_vim_notify = true,
@@ -30,4 +30,8 @@ require('fidget').setup {
       winblend = 30,
     },
   },
+}
+require('tmux').setup {
+  navigation = { enable_default_keybindings = false },
+  resize = { enable_default_keybindings = false },
 }

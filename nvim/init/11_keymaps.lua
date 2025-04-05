@@ -13,27 +13,11 @@ vim.keymap.set('c', '<Right>', function()
 end, { expr = true })
 
 -- tmux/split navigation
-require('tmux').setup {
-  navigation = {
-    enable_default_keybindings = false,
-  },
-  resize = {
-    enable_default_keybindings = false,
-  },
-}
-
-vim.keymap.set({ 'n', 'i' }, '<S-Up>', function()
-  require('tmux').move_top()
-end, { desc = 'Go to up pane' })
-vim.keymap.set({ 'n', 'i' }, '<S-Down>', function()
-  require('tmux').move_bottom()
-end, { desc = 'Go to down pane' })
-vim.keymap.set({ 'n', 'i' }, '<S-Left>', function()
-  require('tmux').move_left()
-end, { desc = 'Go to left pane' })
-vim.keymap.set({ 'n', 'i' }, '<S-Right>', function()
-  require('tmux').move_right()
-end, { desc = 'Go to right pane' })
+local tmux = require('tmux')
+vim.keymap.set({ 'n', 'i' }, '<S-Up>', tmux.move_top, { desc = 'Go to up pane' })
+vim.keymap.set({ 'n', 'i' }, '<S-Down>', tmux.move_bottom, { desc = 'Go to down pane' })
+vim.keymap.set({ 'n', 'i' }, '<S-Left>', tmux.move_left, { desc = 'Go to left pane' })
+vim.keymap.set({ 'n', 'i' }, '<S-Right>', tmux.move_right, { desc = 'Go to right pane' })
 
 -- visual shifting (does not exit visual mode)
 vim.keymap.set('v', '<', '<gv')
@@ -41,7 +25,6 @@ vim.keymap.set('v', '>', '>gv')
 
 -- gitsigns
 local gitsigns = require('gitsigns')
-
 vim.keymap.set('n', ']c', function()
   if vim.wo.diff then
     vim.cmd.normal { ']c', bang = true }
@@ -95,6 +78,7 @@ vim.keymap.set('n', '<leader>fr', telescope_builtin.resume, { desc = '[r]esume' 
 vim.keymap.set('n', '<leader>f.', telescope_builtin.oldfiles, { desc = 'recent files ([.] for repeat)' })
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = '[b]uffers' })
 vim.keymap.set('n', '<leader>fn', require('telescope').extensions.fidget.fidget, { desc = '[n]otification' })
+vim.keymap.set('n', '<leader>fp', require('telescope').extensions.projects.projects, { desc = '[p]rojects' })
 vim.keymap.set('n', '<leader>fy', require('yaml-companion').open_ui_select, { desc = '[y]aml schema' })
 
 -- lsp
