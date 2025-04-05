@@ -7,3 +7,9 @@ th.git.ignored_sign = 'o'
 th.git.updated_sign = '!'
 
 require('git'):setup { order = 0 }
+
+require("githead"):setup {
+  branch_prefix = "",
+  branch_symbol = "",
+  branch_borders = "",
+}
