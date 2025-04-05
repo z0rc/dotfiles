@@ -16,7 +16,7 @@ XDG_STATE_HOME="${HOME}/.local/state"
 
 # Create required directories
 print "Creating required directory tree..."
-zf_mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger,gem,tig,gnupg,nvim/plugin}
+zf_mkdir -p "${XDG_CONFIG_HOME}"/{git/local,mc,htop,ranger,gem,tig,gnupg,nvim/plugin,yazi}
 zf_mkdir -p "${XDG_CACHE_HOME}"/{vim/{backup,swap,undo},zsh,tig}
 zf_mkdir -p "${XDG_DATA_HOME}"/{{goenv,jenv,luaenv,nodenv,phpenv,plenv,pyenv,rbenv}/plugins,zsh,man/man1,vim/spell,nvim/site/pack/plugins}
 zf_mkdir -p "${XDG_STATE_HOME}"
@@ -48,7 +48,12 @@ zf_ln -sf "${SCRIPT_DIR}/configs/mc.ini" "${XDG_CONFIG_HOME}/mc/ini"
 zf_ln -sf "${SCRIPT_DIR}/configs/htoprc" "${XDG_CONFIG_HOME}/htop/htoprc"
 zf_ln -sf "${SCRIPT_DIR}/configs/ranger" "${XDG_CONFIG_HOME}/ranger/rc.conf"
 zf_ln -sf "${SCRIPT_DIR}/configs/gemrc" "${XDG_CONFIG_HOME}/gem/gemrc"
-zf_ln -snf "${SCRIPT_DIR}/configs/ranger-plugins" "${XDG_CONFIG_HOME}/ranger/plugins"
+zf_ln -sfn "${SCRIPT_DIR}/configs/ranger-plugins" "${XDG_CONFIG_HOME}/ranger/plugins"
+zf_ln -sf "${SCRIPT_DIR}/yazi/init.lua" "${XDG_CONFIG_HOME}/yazi/init.lua"
+zf_ln -sf "${SCRIPT_DIR}/yazi/keymap.toml" "${XDG_CONFIG_HOME}/yazi/keymap.toml"
+zf_ln -sf "${SCRIPT_DIR}/yazi/theme.toml" "${XDG_CONFIG_HOME}/yazi/theme.toml"
+zf_ln -sf "${SCRIPT_DIR}/yazi/yazi.toml" "${XDG_CONFIG_HOME}/yazi/yazi.toml"
+zf_ln -sfn "${SCRIPT_DIR}/yazi/plugins" "${XDG_CONFIG_HOME}/yazi/plugins"
 print "  ...done"
 
 # Make sure submodules are installed

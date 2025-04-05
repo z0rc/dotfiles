@@ -1,0 +1,19 @@
+[manager]
+sort_by = "natural"
+sort_sensitive = true
+sort_dir_first = true
+linemode = "size"
+show_hidden = true
+show_symlink = true
+scrolloff = 4
+title_format = "yazi: {cwd}"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
