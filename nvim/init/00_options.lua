@@ -35,6 +35,9 @@ vim.o.updatetime = 800
 -- https://github.com/nvim-lua/kickstart.nvim/pull/1049
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
+  if vim.env.SSH_TTY then
+    vim.g.clipboard = 'osc52'
+  end
 end)
 
 vim.g.loaded_python3_provider = 0
