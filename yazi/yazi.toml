@@ -8,6 +8,9 @@ show_symlink = true
 scrolloff = 4
 title_format = "yazi: {cwd}"
 
+[preview]
+tab_size = 4
+
 [[plugin.prepend_fetchers]]
 id   = "git"
 name = "*"
