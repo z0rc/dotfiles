@@ -37,12 +37,15 @@ require('blink.cmp').setup {
     },
     documentation = {
       auto_show = true,
-      auto_show_delay_ms = 500,
+    },
+  },
+  signature = {
+    enabled = true,
+    window = {
+      show_documentation = false,
     },
   },
 }
-
-local blink_capabilities = require('blink.cmp').get_lsp_capabilities()
 
 require('mason').setup()
 require('mason-lspconfig').setup {
@@ -50,25 +53,22 @@ require('mason-lspconfig').setup {
   automatic_installation = false,
   handlers = {
     function(server_name) -- default handler for servers that don't require custom setup
-      require('lspconfig')[server_name].setup {
-        capabilities = blink_capabilities
-      }
+      vim.lsp.enable(server_name)
     end,
     jsonls = function()
-      require('lspconfig').jsonls.setup {
-        capabilities = blink_capabilities,
+      vim.lsp.config('jsonls', {
         settings = {
           json = {
             schemas = require('schemastore').json.schemas(),
             validate = { enable = true },
           },
-        },
-      }
+        }
+      })
+      vim.lsp.enable('jsonls')
     end,
     yamlls = function()
-      require('lspconfig').yamlls.setup(require('yaml-companion').setup {
+      vim.lsp.config('yamlls', require('yaml-companion').setup {
         lspconfig = {
-          capabilities = require('blink.cmp').get_lsp_capabilities(),
           settings = {
             yaml = {
               format = { enable = false },
@@ -77,15 +77,16 @@ require('mason-lspconfig').setup {
           },
         },
       })
+      vim.lsp.enable('yamlls')
     end,
     terraformls = function()
-      require('lspconfig').terraformls.setup {
-        capabilities = blink_capabilities,
+      vim.lsp.config('terraformls', {
         -- disable this lsp server syntax highlighting, it's garbage compared to what treesitter provides
         on_init = function(client)
           client.server_capabilities.semanticTokensProvider = nil
         end,
-      }
+      })
+      vim.lsp.enable('terraformls')
     end,
   }
 }
@@ -95,11 +96,8 @@ vim.api.nvim_create_autocmd('User', {
   group = vim.api.nvim_create_augroup('copilot-suggestion-hide', { clear = true }),
   pattern = 'BlinkCmpMenuOpen',
   callback = function()
+    require('copilot.suggestion').dismiss()
     vim.b.copilot_suggestion_hidden = true
-    local copilot = require('copilot.suggestion')
-    if copilot.is_visible() then
-      copilot.dismiss()
-    end
   end,
 })
 
@@ -114,7 +112,7 @@ vim.api.nvim_create_autocmd('User', {
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP configuration',
-  group = vim.api.nvim_create_augroup('lsp-attach-configuration', { clear = true }),
+  group = vim.api.nvim_create_augroup('lsp-attach-configuration', { clear = false }),
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
