@@ -35,6 +35,11 @@ require('blink.cmp').setup {
         treesitter = { 'lsp' },
       },
     },
+    list = {
+      selection = {
+        preselect = false,
+      },
+    },
     documentation = {
       auto_show = true,
     },
@@ -90,25 +95,6 @@ require('mason-lspconfig').setup {
     end,
   }
 }
-
-vim.api.nvim_create_autocmd('User', {
-  desc = 'Hide Copilot suggestion when Blink menu is open',
-  group = vim.api.nvim_create_augroup('copilot-suggestion-hide', { clear = true }),
-  pattern = 'BlinkCmpMenuOpen',
-  callback = function()
-    require('copilot.suggestion').dismiss()
-    vim.b.copilot_suggestion_hidden = true
-  end,
-})
-
-vim.api.nvim_create_autocmd('User', {
-  desc = 'Show Copilot suggestion when Blink menu is closed',
-  group = vim.api.nvim_create_augroup('copilot-suggestion-show', { clear = true }),
-  pattern = "BlinkCmpMenuClose",
-  callback = function()
-    vim.b.copilot_suggestion_hidden = false
-  end,
-})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP configuration',
