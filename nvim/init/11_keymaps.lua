@@ -131,7 +131,5 @@ vim.keymap.set('i', '<Right>', 'copilot#Accept("<Right>")',
   { expr = true, replace_keycodes = false, desc = 'Accept Copilot suggestion' })
 vim.keymap.set('i', '<C-Right>', 'copilot#AcceptWord("<C-Right>")',
   { expr = true, replace_keycodes = false, desc = 'Accept Copilot word' })
-vim.keymap.set('i', '<C-Down>', 'copilot#Next("<C-Down>")',
-  { expr = true, replace_keycodes = false, desc = 'Next Copilot suggestion' })
-vim.keymap.set('i', '<C-Up>', 'copilot#Previous("<C-Up>")',
-  { expr = true, replace_keycodes = false, desc = 'Previous Copilot suggestion' })
+vim.keymap.set('i', '<C-Down>', 'copilot#AcceptLine("<C-Down>")',
+  { expr = true, replace_keycodes = false, desc = 'Accept Copilot line' })
