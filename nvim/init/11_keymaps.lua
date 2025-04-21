@@ -78,7 +78,7 @@ vim.keymap.set('n', '<leader>fr', telescope_builtin.resume, { desc = '[r]esume' 
 vim.keymap.set('n', '<leader>f.', telescope_builtin.oldfiles, { desc = 'recent files ([.] for repeat)' })
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = '[b]uffers' })
 vim.keymap.set('n', '<leader>fn', require('telescope').extensions.fidget.fidget, { desc = '[n]otification' })
-vim.keymap.set('n', '<leader>fp', require('telescope').extensions.projects.projects, { desc = '[p]rojects' })
+vim.keymap.set('n', '<leader>fp', require('telescope').extensions.project.project, { desc = '[p]rojects' })
 vim.keymap.set('n', '<leader>fy', require('yaml-companion').open_ui_select, { desc = '[y]aml schema' })
 
 -- lsp

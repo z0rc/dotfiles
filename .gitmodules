@@ -151,12 +151,12 @@
 [submodule "nvim/plugins/plenary"]
 	path = nvim/plugins/plenary
 	url = https://github.com/nvim-lua/plenary.nvim.git
-[submodule "nvim/plugins/project"]
-	path = nvim/plugins/project
-	url = https://github.com/DrKJeff16/project.nvim.git
 [submodule "nvim/plugins/reticle"]
 	path = nvim/plugins/reticle
 	url = https://github.com/tummetott/reticle.nvim.git
+[submodule "nvim/plugins/rooter"]
+	path = nvim/plugins/rooter
+	url = https://github.com/wsdjeg/rooter.nvim.git
 [submodule "nvim/plugins/schemastore"]
 	path = nvim/plugins/schemastore
 	url = https://github.com/b0o/SchemaStore.nvim.git

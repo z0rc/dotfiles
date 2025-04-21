@@ -17,4 +17,4 @@ require('telescope').setup {
 require('telescope').load_extension('ui-select')
 require('telescope').load_extension('yaml_schema')
 require('telescope').load_extension('fidget')
-require('telescope').load_extension('projects')
+require('telescope').load_extension('project')
