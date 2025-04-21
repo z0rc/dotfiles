@@ -60,6 +60,16 @@ require('mason-lspconfig').setup {
     function(server_name) -- default handler for servers that don't require custom setup
       vim.lsp.enable(server_name)
     end,
+    helm_ls = function()
+      vim.lsp.config('helm_ls', {
+        settings = {
+          yamlls = {
+            path = vim.fn.stdpath('data') .. '/mason/bin/yaml-language-server',
+          },
+        },
+      })
+      vim.lsp.enable('helm_ls')
+    end,
     jsonls = function()
       vim.lsp.config('jsonls', {
         settings = {
