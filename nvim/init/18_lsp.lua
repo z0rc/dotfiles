@@ -87,6 +87,8 @@ require('mason-lspconfig').setup {
           settings = {
             yaml = {
               format = { enable = false },
+              schemas = require('schemastore').yaml.schemas(),
+              schemaStore = { enable = false },
               customTags = { '!reference sequence' },
             },
           },
