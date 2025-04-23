@@ -23,6 +23,11 @@ vim.keymap.set({ 'n', 'i' }, '<S-Right>', tmux.move_right, { desc = 'Go to right
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
+-- duplicate and comment
+vim.keymap.set('n', 'ycc', function()
+    return 'yy' .. vim.v.count1 .. "gcc']p"
+end, { remap = true, expr = true, desc = 'Duplicate and comment lines' })
+
 -- gitsigns
 local gitsigns = require('gitsigns')
 vim.keymap.set('n', ']c', function()
