@@ -56,56 +56,7 @@ require('mason').setup()
 require('mason-lspconfig').setup {
   ensure_installed = {},
   automatic_installation = false,
-  handlers = {
-    function(server_name) -- default handler for servers that don't require custom setup
-      vim.lsp.enable(server_name)
-    end,
-    helm_ls = function()
-      vim.lsp.config('helm_ls', {
-        settings = {
-          yamlls = {
-            path = vim.fn.stdpath('data') .. '/mason/bin/yaml-language-server',
-          },
-        },
-      })
-      vim.lsp.enable('helm_ls')
-    end,
-    jsonls = function()
-      vim.lsp.config('jsonls', {
-        settings = {
-          json = {
-            schemas = require('schemastore').json.schemas(),
-            validate = { enable = true },
-          },
-        }
-      })
-      vim.lsp.enable('jsonls')
-    end,
-    yamlls = function()
-      vim.lsp.config('yamlls', require('yaml-companion').setup {
-        lspconfig = {
-          settings = {
-            yaml = {
-              format = { enable = false },
-              schemas = require('schemastore').yaml.schemas(),
-              schemaStore = { enable = false },
-              customTags = { '!reference sequence' },
-            },
-          },
-        },
-      })
-      vim.lsp.enable('yamlls')
-    end,
-    terraformls = function()
-      vim.lsp.config('terraformls', {
-        -- disable this lsp server syntax highlighting, it's garbage compared to what treesitter provides
-        on_init = function(client)
-          client.server_capabilities.semanticTokensProvider = nil
-        end,
-      })
-      vim.lsp.enable('terraformls')
-    end,
-  }
+  automatic_enable = true,
 }
 
 vim.api.nvim_create_autocmd('User', {
