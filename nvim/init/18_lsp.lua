@@ -5,17 +5,30 @@ require('lazydev').setup {
   },
 }
 
+require('copilot').setup {
+  suggestion = { enabled = false },
+  panel = { enabled = false },
+}
+
+require('blink-copilot').setup {}
+
 require('blink.cmp').setup {
   cmdline = {
     enabled = false,
   },
   sources = {
-    default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+    default = { 'copilot', 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
     providers = {
       lazydev = {
         name = 'LazyDev',
         module = 'lazydev.integrations.blink',
         score_offset = 100,
+      },
+      copilot = {
+        name = 'copilot',
+        module = 'blink-copilot',
+        score_offset = 200,
+        async = true,
       },
     },
   },
@@ -58,24 +71,6 @@ require('mason-lspconfig').setup {
   automatic_installation = false,
   automatic_enable = true,
 }
-
-vim.api.nvim_create_autocmd('User', {
-  desc = 'Hide Copilot suggestion when Blink menu is open',
-  group = vim.api.nvim_create_augroup('copilot-suggestion-hide', { clear = true }),
-  pattern = 'BlinkCmpMenuOpen',
-  callback = function()
-    vim.b.copilot_enabled = false
-  end,
-})
-
-vim.api.nvim_create_autocmd('User', {
-  desc = 'Show Copilot suggestion when Blink menu is closed',
-  group = vim.api.nvim_create_augroup('copilot-suggestion-show', { clear = true }),
-  pattern = "BlinkCmpMenuClose",
-  callback = function()
-    vim.b.copilot_enabled = true
-  end,
-})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP configuration',

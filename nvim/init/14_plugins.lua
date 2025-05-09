@@ -35,6 +35,3 @@ require('tmux').setup {
   navigation = { enable_default_keybindings = false },
   resize = { enable_default_keybindings = false },
 }
-
-vim.g.copilot_no_maps = true
-vim.g.copilot_workspace_folders = { require('rooter').current_root() }

@@ -130,11 +130,3 @@ vim.keymap.set('n', '<leader>tg', function()
   end
   vim.cmd('Git')
 end, { desc = '[g]it status' })
-
--- copilot
-vim.keymap.set('i', '<Right>', 'copilot#Accept("<Right>")',
-  { expr = true, replace_keycodes = false, desc = 'Accept Copilot suggestion' })
-vim.keymap.set('i', '<C-Right>', 'copilot#AcceptWord("<C-Right>")',
-  { expr = true, replace_keycodes = false, desc = 'Accept Copilot word' })
-vim.keymap.set('i', '<C-Down>', 'copilot#AcceptLine("<C-Down>")',
-  { expr = true, replace_keycodes = false, desc = 'Accept Copilot line' })
