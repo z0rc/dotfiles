@@ -8,10 +8,12 @@ require('lazydev').setup {
 require('copilot').setup {
   suggestion = { enabled = false },
   panel = { enabled = false },
+  filetypes = {
+    yaml = true,
+  }
 }
 
 require('blink-copilot').setup {}
-
 require('blink.cmp').setup {
   cmdline = {
     enabled = false,
@@ -43,7 +45,7 @@ require('blink.cmp').setup {
       draw = {
         columns = {
           { 'label', 'label_description', gap = 1 },
-          { 'kind' }
+          { 'kind' },
         },
         treesitter = { 'lsp' },
       },
@@ -66,21 +68,15 @@ require('blink.cmp').setup {
 }
 
 require('mason').setup()
-require('mason-lspconfig').setup {
-  ensure_installed = {},
-  automatic_installation = false,
-  automatic_enable = true,
-}
+require('mason-lspconfig').setup()
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP configuration',
-  group = vim.api.nvim_create_augroup('lsp-attach-configuration', { clear = false }),
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
       vim.api.nvim_create_autocmd('BufWritePre', {
         desc = 'Format on write',
-        group = vim.api.nvim_create_augroup('write-format', { clear = true }),
         buffer = event.buf,
         callback = function()
           vim.lsp.buf.format({ bufnr = event.buf })

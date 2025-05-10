@@ -1,12 +1,13 @@
-return require('yaml-companion').setup {
-  lspconfig = {
-    settings = {
-      yaml = {
-        format = { enable = false },
-        schemas = require('schemastore').yaml.schemas(),
-        schemaStore = { enable = false },
-        customTags = { '!reference sequence' },
+return {
+  settings = {
+    yaml = {
+      schemaStore = {
+        enable = true,
+        url = '',
       },
+      schemas = require('schemastore').yaml.schemas(),
+      format = { enable = false },
+      customTags = { '!reference sequence' },
     },
   },
 }
