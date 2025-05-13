@@ -30,6 +30,8 @@ if (( ${+commands[mc]} )); then
 fi
 
 if (( ${+commands[ranger]} )); then
+    alias rr=ranger
+
     ranger () {
         if [[ -v RANGER_LEVEL ]]; then
             exit
@@ -58,6 +60,8 @@ if (( ${+commands[ranger]} )); then
 fi
 
 if (( ${+commands[yazi]} )); then
+    alias yy=yazi
+
     yazi () {
         if [[ -v YAZI_LEVEL ]]; then
             exit

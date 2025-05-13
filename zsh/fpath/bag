@@ -2,7 +2,7 @@
 
 emulate -L zsh
 
-# use bat, if it's avaialble...
+# use bat, if it's available...
 local preview_cmd
 if (( ${+commands[bat]} )); then
     preview_cmd='bat --style=numbers --color=always --highlight-line=${2} ${1}'
