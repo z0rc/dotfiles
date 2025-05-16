@@ -5,32 +5,17 @@ require('lazydev').setup {
   },
 }
 
-require('copilot').setup {
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-  filetypes = {
-    yaml = true,
-  }
-}
-
-require('blink-copilot').setup {}
 require('blink.cmp').setup {
   cmdline = {
     enabled = false,
   },
   sources = {
-    default = { 'copilot', 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+    default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
     providers = {
       lazydev = {
         name = 'LazyDev',
         module = 'lazydev.integrations.blink',
         score_offset = 100,
-      },
-      copilot = {
-        name = 'copilot',
-        module = 'blink-copilot',
-        score_offset = 200,
-        async = true,
       },
     },
   },

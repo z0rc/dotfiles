@@ -94,18 +94,12 @@
 [submodule "env-wrappers/rbenv/ruby-build"]
 	path = env-wrappers/rbenv/ruby-build
 	url = https://github.com/rbenv/ruby-build.git
-[submodule "nvim/plugins/blink-copilot"]
-	path = nvim/plugins/blink-copilot
-	url = https://github.com/fang2hou/blink-copilot.git
 [submodule "nvim/plugins/blink.cmp"]
 	path = nvim/plugins/blink.cmp
 	url = https://github.com/Saghen/blink.cmp.git
 [submodule "nvim/plugins/committia"]
 	path = nvim/plugins/committia
 	url = https://github.com/rhysd/committia.vim.git
-[submodule "nvim/plugins/copilot"]
-	path = nvim/plugins/copilot
-	url = https://github.com/zbirenbaum/copilot.lua.git
 [submodule "nvim/plugins/diffview"]
 	path = nvim/plugins/diffview
 	url = https://github.com/sindrets/diffview.nvim.git
