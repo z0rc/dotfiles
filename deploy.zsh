@@ -4,8 +4,10 @@ set -e
 
 zmodload -m -F zsh/files b:zf_\*
 
-# Get the current path
-SCRIPT_DIR="${0:A:h}"
+# Get the current absolute path of script dir, but don't pass though zsh's `a` or `A` expansion
+# `a`/`A` expand bind mounted dirs to source dir, which is undesired with systemd-homed managed $HOME
+0="${${(M)0:#/*}:-$PWD/$0}"
+SCRIPT_DIR="${0:P:h}"
 cd "${SCRIPT_DIR}"
 
 # Default XDG paths
@@ -29,7 +31,7 @@ print "Checking for ZDOTDIR env variable..."
 if [[ "${ZDOTDIR}" = "${SCRIPT_DIR}/zsh" ]]; then
     print "  ...present and valid, skipping .zshenv symlink"
 else
-    ln -sf "${SCRIPT_DIR}/zsh/.zshenv" "${ZDOTDIR:-${HOME}}/.zshenv"
+    zf_ln -sf "${SCRIPT_DIR}/zsh/.zshenv" "${ZDOTDIR:-${HOME}}/.zshenv"
     print "  ...failed to match this script dir, symlinking .zshenv"
 fi
 
