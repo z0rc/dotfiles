@@ -32,6 +32,8 @@ vim.o.confirm = true
 vim.o.timeoutlen = 300
 vim.o.updatetime = 800
 vim.o.exrc = true
+vim.o.foldlevel = 20
+vim.o.foldtext = ''
 
 -- https://github.com/nvim-lua/kickstart.nvim/pull/1049
 vim.schedule(function()

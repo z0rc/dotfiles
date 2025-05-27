@@ -145,9 +145,11 @@
 [submodule "nvim/plugins/nvim-treesitter"]
 	path = nvim/plugins/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
+	branch = main
 [submodule "nvim/plugins/nvim-treesitter-textobjects"]
 	path = nvim/plugins/nvim-treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+	branch = main
 [submodule "nvim/plugins/plenary"]
 	path = nvim/plugins/plenary
 	url = https://github.com/nvim-lua/plenary.nvim.git
@@ -175,6 +177,9 @@
 [submodule "nvim/plugins/tmux"]
 	path = nvim/plugins/tmux
 	url = https://github.com/aserowy/tmux.nvim.git
+[submodule "nvim/plugins/ts-install"]
+	path = nvim/plugins/ts-install
+	url = https://github.com/lewis6991/ts-install.nvim.git
 [submodule "nvim/plugins/vim-fugitive"]
 	path = nvim/plugins/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git

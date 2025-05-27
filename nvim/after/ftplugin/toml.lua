@@ -1,5 +1,3 @@
-vim.wo.spell = true
-
 vim.treesitter.start()
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 vim.wo.foldmethod = 'expr'

@@ -35,3 +35,7 @@ require('tmux').setup {
   navigation = { enable_default_keybindings = false },
   resize = { enable_default_keybindings = false },
 }
+require('ts-install').setup {
+  auto_install = true,
+  auto_update = true,
+}
