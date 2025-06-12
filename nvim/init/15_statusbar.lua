@@ -12,7 +12,13 @@ require('lualine').setup {
     section_separators = '',
   },
   sections = {
-    lualine_x = { 'fileformat', 'filetype', get_yaml_schema },
+    lualine_x = {
+      'fileformat',
+      'filetype',
+      function()
+        return ('%s'):format(require('schema-companion.context').get_buffer_schema().name)
+      end,
+    },
   },
   extensions = { 'mason', 'quickfix' },
 }

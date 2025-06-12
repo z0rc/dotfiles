@@ -84,6 +84,8 @@ vim.keymap.set('n', '<leader>f.', telescope_builtin.oldfiles, { desc = 'recent f
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = '[b]uffers' })
 vim.keymap.set('n', '<leader>fn', require('telescope').extensions.fidget.fidget, { desc = '[n]otification' })
 vim.keymap.set('n', '<leader>fp', require('telescope').extensions.project.project, { desc = '[p]rojects' })
+vim.keymap.set('n', '<leader>fy', require('telescope').extensions.schema_companion.select_schema,
+  { desc = '[y]aml schema' })
 
 -- lsp
 vim.api.nvim_create_autocmd('LspAttach', {

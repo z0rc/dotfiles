@@ -1,4 +1,5 @@
-return {
+---@diagnostic disable-next-line: missing-fields
+return require('schema-companion').setup_client({
   settings = {
     yaml = {
       schemaStore = {
@@ -10,4 +11,4 @@ return {
       customTags = { '!reference sequence' },
     },
   },
-}
+})
