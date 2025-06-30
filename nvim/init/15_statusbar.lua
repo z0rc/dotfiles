@@ -1,24 +1,22 @@
 require('lualine').setup {
   options = {
+    globalstatus = true,
     theme = 'solarized',
-    disabled_filetypes = {
-      'NvimTree',
-      'git',
-      'fugitive',
-      'fugitiveblame'
-    },
     icons_enabled = false,
     component_separators = '',
     section_separators = '',
   },
   sections = {
     lualine_x = {
-      'fileformat',
       'filetype',
       function()
-        return ('%s'):format(require('schema-companion.context').get_buffer_schema().name)
+        if vim.bo.filetype == 'yaml' then
+          return ('%s'):format(require('schema-companion.context').get_buffer_schema().name)
+        else
+          return ''
+        end
       end,
     },
   },
-  extensions = { 'mason', 'quickfix' },
+  extensions = { 'nvim-tree', 'mason', 'quickfix', 'fugitive', },
 }

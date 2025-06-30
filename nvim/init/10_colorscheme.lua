@@ -6,6 +6,7 @@ require('solarized').setup {
       LuaLineDiffAdd = { fg = helper.darken(colors.green, 30) },
       LuaLineDiffChange = { fg = helper.darken(colors.yellow, 30) },
       LuaLineDiffDelete = { fg = helper.darken(colors.red, 30) },
+      SpellBad = { strikethrough = false },
     }
   end,
 }
