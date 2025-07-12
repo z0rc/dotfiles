@@ -97,6 +97,12 @@
 [submodule "nvim/plugins/blink.cmp"]
 	path = nvim/plugins/blink.cmp
 	url = https://github.com/Saghen/blink.cmp.git
+[submodule "nvim/plugins/codecompanion"]
+	path = nvim/plugins/codecompanion
+	url = https://github.com/olimorris/codecompanion.nvim.git
+[submodule "nvim/plugins/codecompanion-spinner"]
+	path = nvim/plugins/codecompanion-spinner
+	url = https://github.com/franco-ruggeri/codecompanion-spinner.nvim.git
 [submodule "nvim/plugins/committia"]
 	path = nvim/plugins/committia
 	url = https://github.com/rhysd/committia.vim.git
@@ -124,12 +130,18 @@
 [submodule "nvim/plugins/lualine"]
 	path = nvim/plugins/lualine
 	url = https://github.com/nvim-lualine/lualine.nvim.git
+[submodule "nvim/plugins/markview"]
+	path = nvim/plugins/markview
+	url = https://github.com/OXY2DEV/markview.nvim.git
 [submodule "nvim/plugins/mason"]
 	path = nvim/plugins/mason
 	url = https://github.com/williamboman/mason.nvim.git
 [submodule "nvim/plugins/mason-lspconfig"]
 	path = nvim/plugins/mason-lspconfig
 	url = https://github.com/williamboman/mason-lspconfig.nvim.git
+[submodule "nvim/plugins/menuet-ai"]
+	path = nvim/plugins/menuet-ai
+	url = https://github.com/milanglacier/minuet-ai.nvim.git
 [submodule "nvim/plugins/nvim-autopairs"]
 	path = nvim/plugins/nvim-autopairs
 	url = https://github.com/windwp/nvim-autopairs.git

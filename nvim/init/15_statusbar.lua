@@ -8,6 +8,9 @@ require('lualine').setup {
   },
   sections = {
     lualine_x = {
+      { require 'minuet.lualine',
+        display_name = 'provider',
+      },
       'filetype',
       function()
         if vim.bo.filetype == 'yaml' then

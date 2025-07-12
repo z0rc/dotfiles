@@ -86,6 +86,8 @@ vim.keymap.set('n', '<leader>fn', require('telescope').extensions.fidget.fidget,
 vim.keymap.set('n', '<leader>fp', require('telescope').extensions.project.project, { desc = '[p]rojects' })
 vim.keymap.set('n', '<leader>fy', require('telescope').extensions.schema_companion.select_schema,
   { desc = '[y]aml schema' })
+vim.keymap.set('n', '<leader>fc', require('telescope').extensions.codecompanion.codecompanion,
+  { desc = '[c]odecompanion actions' })
 
 -- lsp
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -131,3 +133,9 @@ vim.keymap.set('n', '<leader>tg', function()
   end
   vim.cmd('Git')
 end, { desc = '[g]it status' })
+
+-- markview
+vim.keymap.set('n', '<leader>tm', require('markview').commands.toggle, { desc = '[m]arkdown rendered' })
+
+-- codecompanion
+vim.keymap.set('n', '<leader>tc', require('codecompanion').toggle, { desc = '[c]odecompanion chat' })

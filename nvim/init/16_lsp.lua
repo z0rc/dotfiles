@@ -10,12 +10,23 @@ require('blink.cmp').setup {
     enabled = false,
   },
   sources = {
-    default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+    default = { 'lazydev', 'lsp', 'path', 'buffer', 'snippets', 'minuet' },
+    per_filetype = {
+      codecompanion = { inherit_defaults = false, 'codecompanion' },
+      lua = { inherit_defaults = true, 'lazydev' },
+    },
     providers = {
       lazydev = {
         name = 'LazyDev',
         module = 'lazydev.integrations.blink',
         score_offset = 100,
+      },
+      minuet = {
+        name = 'minuet',
+        module = 'minuet.blink',
+        async = true,
+        timeout_ms = 3000,
+        score_offset = 50,
       },
     },
   },
@@ -42,6 +53,9 @@ require('blink.cmp').setup {
     },
     documentation = {
       auto_show = true,
+    },
+    trigger = {
+      prefetch_on_insert = false,
     },
   },
   signature = {
