@@ -32,8 +32,8 @@ home presence](#zero-home-presence).
 * Vim [configuration](vim/vimrc) and [plugins](vim/pack)
 * Neovim [configuration](nvim/init.lua) and [plugins](nvim/plugins)
 * Tmux [configuration](tmux/tmux.conf) and [plugins](tmux/plugins)
+* Yazi [configuration](yazi/yazi.toml) and [plugins](yazi/plugins)
 * Other configurations:
-  * [Midnight Commander](configs/mc.ini)
   * [ranger](configs/ranger)
   * [quilt](configs/quiltrc)
   * [Git](configs/gitconfig)
@@ -81,7 +81,7 @@ home presence](#zero-home-presence).
 Dotfiles can be installed in any directory, but probably somewhere under
 `$HOME`. Personally, I use `$HOME/.local/dotfiles`. The installation is simple:
 
-```shell
+```sh
 git clone https://github.com/z0rc/dotfiles.git "$HOME/.local/dotfiles"
 $HOME/.local/dotfiles/deploy.zsh
 chsh -s /bin/zsh
@@ -173,18 +173,15 @@ to explicitly activate the needed environment.
 
 ### Ignore Config Files Changes Locally
 
-Midnight Commander is quite volatile in terms of writing to its configuration
-file. Running `mc` with different screen sizes results in updating the panel
-size value in `mc.ini`. The same goes for `htop`.
-
-To ignore local changes to configuration files, you can do:
+Htop updates its config file `htoprc` when changing any view mode or sort
+order. To ignore local changes to configuration files, you can do:
 
 ```sh
-git update-index --assume-unchanged configs/mc.ini
+git update-index --assume-unchanged configs/htoprc
 ```
 
 To restore git tracking of those files, use:
 
-```
-git update-index --no-assume-unchanged configs/mc.ini
+```sh
+git update-index --no-assume-unchanged configs/htoprc
 ```
