@@ -28,45 +28,6 @@ vim.keymap.set('n', 'ycc', function()
   return 'yy' .. vim.v.count1 .. "gcc']p"
 end, { remap = true, expr = true, desc = 'Duplicate and comment lines' })
 
--- gitsigns
-local gitsigns = require('gitsigns')
-vim.keymap.set('n', ']c', function()
-  if vim.wo.diff then
-    vim.cmd.normal({ ']c', bang = true })
-  else
-    gitsigns.nav_hunk('next')
-  end
-end, { desc = 'Jump to next git [c]hange' })
-
-vim.keymap.set('n', '[c', function()
-  if vim.wo.diff then
-    vim.cmd.normal({ '[c', bang = true })
-  else
-    gitsigns.nav_hunk('prev')
-  end
-end, { desc = 'Jump to previous git [c]hange' })
-
-vim.keymap.set('v', '<leader>gs', function()
-  gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-end, { desc = '[s]stage hunk' })
-vim.keymap.set('v', '<leader>gr', function()
-  gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-end, { desc = '[r]eset hunk' })
-
-vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[s]tage hunk' })
-vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[r]eset hunk' })
-vim.keymap.set('n', '<leader>gS', gitsigns.stage_buffer, { desc = '[S]tage buffer' })
-vim.keymap.set('n', '<leader>gu', gitsigns.stage_hunk, { desc = '[u]ndo stage hunk' })
-vim.keymap.set('n', '<leader>gR', gitsigns.reset_buffer, { desc = '[R]eset buffer' })
-vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[p]review hunk' })
-vim.keymap.set('n', '<leader>gb', gitsigns.blame_line, { desc = '[b]lame line' })
-vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { desc = '[d]iff against index' })
-vim.keymap.set('n', '<leader>gD', function()
-  gitsigns.diffthis '@'
-end, { desc = '[D]iff against last commit' })
-vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'git [b]lame line' })
-vim.keymap.set('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = 'git [D]eleted' })
-
 -- nvim-tree
 vim.keymap.set('n', '<leader>tt', require('nvim-tree.api').tree.toggle, { desc = 'nvim-[t]ree' })
 
@@ -111,31 +72,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- fugitive
-vim.keymap.set('n', '<leader>tB', function()
-  local windows = vim.api.nvim_list_wins()
-  for _, v in pairs(windows) do
-    if vim.fn.getbufvar(vim.fn.winbufnr(v), '&filetype') == 'fugitiveblame' then
-      vim.api.nvim_win_close(v, false)
-      return
-    end
-  end
-  vim.cmd.Git('blame')
-end, { desc = 'git [B]lame buffer' })
-vim.keymap.set('n', '<leader>tg', function()
-  local windows = vim.api.nvim_list_wins()
-  for _, v in pairs(windows) do
-    local status = pcall(vim.api.nvim_win_get_var, v, 'fugitive_status')
-    if status then
-      vim.api.nvim_win_close(v, false)
-      return
-    end
-  end
-  vim.cmd('Git')
-end, { desc = '[g]it status' })
-
 -- markview
-vim.keymap.set('n', '<leader>tm', require('markview').commands.toggle, { desc = '[m]arkdown rendered' })
+vim.keymap.set('n', '<leader>tm', require('markview').commands.toggle, { desc = '[m]arkdown rendering' })
 
 -- codecompanion
 vim.keymap.set('n', '<leader>tc', require('codecompanion').toggle, { desc = '[c]odecompanion chat' })
+
+-- mini.diff
+vim.keymap.set('n', '<leader>td', require('mini.diff').toggle_overlay, { desc = '[d]iff overlay' })

@@ -106,18 +106,12 @@
 [submodule "nvim/plugins/committia"]
 	path = nvim/plugins/committia
 	url = https://github.com/rhysd/committia.vim.git
-[submodule "nvim/plugins/diffview"]
-	path = nvim/plugins/diffview
-	url = https://github.com/sindrets/diffview.nvim.git
 [submodule "nvim/plugins/fidget"]
 	path = nvim/plugins/fidget
 	url = https://github.com/j-hui/fidget.nvim.git
 [submodule "nvim/plugins/git-rebase-auto-diff"]
 	path = nvim/plugins/git-rebase-auto-diff
 	url = https://github.com/yutkat/git-rebase-auto-diff.nvim.git
-[submodule "nvim/plugins/gitsigns"]
-	path = nvim/plugins/gitsigns
-	url = https://github.com/lewis6991/gitsigns.nvim.git
 [submodule "nvim/plugins/helm-ls"]
 	path = nvim/plugins/helm-ls
 	url = https://github.com/qvalentin/helm-ls.nvim.git
@@ -142,15 +136,12 @@
 [submodule "nvim/plugins/menuet-ai"]
 	path = nvim/plugins/menuet-ai
 	url = https://github.com/milanglacier/minuet-ai.nvim.git
-[submodule "nvim/plugins/nvim-autopairs"]
-	path = nvim/plugins/nvim-autopairs
-	url = https://github.com/windwp/nvim-autopairs.git
+[submodule "nvim/plugins/mini"]
+	path = nvim/plugins/mini
+	url = https://github.com/echasnovski/mini.nvim.git
 [submodule "nvim/plugins/nvim-lspconfig"]
 	path = nvim/plugins/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
-[submodule "nvim/plugins/nvim-surround"]
-	path = nvim/plugins/nvim-surround
-	url = https://github.com/kylechui/nvim-surround.git
 [submodule "nvim/plugins/nvim-tree"]
 	path = nvim/plugins/nvim-tree
 	url = https://github.com/nvim-tree/nvim-tree.lua.git
@@ -180,9 +171,6 @@
 [submodule "nvim/plugins/solarized"]
 	path = nvim/plugins/solarized
 	url = https://github.com/maxmx03/solarized.nvim.git
-[submodule "nvim/plugins/surround-ui"]
-	path = nvim/plugins/surround-ui
-	url = https://github.com/roobert/surround-ui.nvim.git
 [submodule "nvim/plugins/telescope"]
 	path = nvim/plugins/telescope
 	url = https://github.com/nvim-telescope/telescope.nvim.git
@@ -195,9 +183,6 @@
 [submodule "nvim/plugins/ts-install"]
 	path = nvim/plugins/ts-install
 	url = https://github.com/lewis6991/ts-install.nvim.git
-[submodule "nvim/plugins/vim-fugitive"]
-	path = nvim/plugins/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule "nvim/plugins/which-key"]
 	path = nvim/plugins/which-key
 	url = https://github.com/folke/which-key.nvim.git

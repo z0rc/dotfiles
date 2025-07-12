@@ -21,5 +21,5 @@ require('lualine').setup {
       end,
     },
   },
-  extensions = { 'nvim-tree', 'mason', 'quickfix', 'fugitive', },
+  extensions = { 'nvim-tree', 'mason', 'quickfix' },
 }

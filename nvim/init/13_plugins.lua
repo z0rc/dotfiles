@@ -1,27 +1,16 @@
-require('gitsigns').setup {
-  current_line_blame_opts = {
-    virt_text_pos = 'right_align',
-  },
-}
+require('mini.git').setup()
+require('mini.diff').setup()
+require('mini.pairs').setup()
+require('mini.surround').setup()
+require('mini.comment').setup()
+
 require('ibl').setup {
   indent = {
     char = '│',
   },
 }
 require('reticle').setup()
-require('nvim-surround').setup()
-require('surround-ui').setup {
-  root_key = 's',
-}
-require('nvim-autopairs').setup()
 require('rooter').setup({})
-require('diffview').setup {
-  use_icons = false,
-  signs = {
-    fold_closed = '>',
-    fold_open = 'v',
-  },
-}
 require('git-rebase-auto-diff').setup()
 require('fidget').setup {
   notification = {
