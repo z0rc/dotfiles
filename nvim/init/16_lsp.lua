@@ -12,7 +12,7 @@ require('blink.cmp').setup {
   sources = {
     default = { 'lsp', 'path', 'buffer', 'snippets', 'minuet' },
     per_filetype = {
-      codecompanion = { 'codecompanion' },
+      codecompanion = { 'codecompanion', 'markview' },
       lua = { inherit_defaults = true, 'lazydev' },
       markdown = { 'markview' },
     },
