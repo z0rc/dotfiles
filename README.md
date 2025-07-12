@@ -14,10 +14,10 @@ distributions, including Debian, Ubuntu, CentOS, and even WSL.
 I'm a big fan of the [XDG Base Directory
 Specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html)
 and organize my dotfiles in a way that they don't clutter the `$HOME`
-directory. I have reduced the files required in `$HOME` to a single `.zshenv`;
-everything else goes under standard XDG paths or is launched via aliases.
-Additionally, if you have root permissions, you can install dotfiles with [zero
-home presence](#zero-home-presence).
+directory. I have reduced the files required in `$HOME` to a single
+`.zshenv`; everything else goes under standard XDG paths or is launched via
+aliases. Additionally, if you have root permissions, you can install dotfiles
+with [zero home presence](#zero-home-presence).
 
 ## Features
 
@@ -79,7 +79,8 @@ home presence](#zero-home-presence).
 ### Location
 
 Dotfiles can be installed in any directory, but probably somewhere under
-`$HOME`. Personally, I use `$HOME/.local/dotfiles`. The installation is simple:
+`$HOME`. Personally, I use `$HOME/.local/dotfiles`. The installation is
+simple:
 
 ```sh
 git clone https://github.com/z0rc/dotfiles.git "$HOME/.local/dotfiles"
@@ -94,11 +95,11 @@ submodules after a successful pull.
 
 ## Zero Home Presence
 
-It's possible to install dotfiles without creating a `~/.zshenv` symlink. To do
-so, set the environment variable `ZDOTDIR` to `<installation dir>/zsh`, e.g.,
-`$HOME/.local/dotfiles/zsh`. This variable should be set very early in the login
-process, before zsh starts sourcing the user's `.zshenv`. One possible option is
-to add:
+It's possible to install dotfiles without creating a `~/.zshenv` symlink. To
+do so, set the environment variable `ZDOTDIR` to `<installation dir>/zsh`,
+e.g., `$HOME/.local/dotfiles/zsh`. This variable should be set very early in
+the login process, before zsh starts sourcing the user's `.zshenv`. One
+possible option is to add:
 
 ```sh
 export ZDOTDIR="$HOME/.local/dotfiles/zsh"
@@ -122,8 +123,8 @@ built-in.
 
 ### Git Configuration
 
-Update `~/.config/git/local/user` with your email and name. It should look like
-this:
+Update `~/.config/git/local/user` with your email and name. It should look
+like this:
 
 ```ini
 [user]
@@ -168,13 +169,13 @@ Pyenv and similar wrappers are lazy-loaded, meaning they won't be initialized
 at shell start. Activation occurs on the first execution. Check the output of
 `type -f pyenv` in the shell and the
 [implementation](zsh/rc.d/11_many_env.zsh). Because of this, files like
-`.python-version` won't work as expected; it's recommended to use `autoenv.zsh`
-to explicitly activate the needed environment.
+`.python-version` won't work as expected; it's recommended to use
+`autoenv.zsh` to explicitly activate the needed environment.
 
 ### Ignore Config Files Changes Locally
 
-Htop updates its config file `htoprc` when changing any view mode or sort
-order. To ignore local changes to configuration files, you can do:
+For example, Htop updates its config file `htoprc` when changing any view
+mode or sort order. To ignore local changes to configuration files, you can do:
 
 ```sh
 git update-index --assume-unchanged configs/htoprc
