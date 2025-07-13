@@ -40,5 +40,5 @@ alias exit=" exit"
 (( ${+commands[cp]} )) && alias cp="nocorrect cp --verbose"
 (( ${+commands[ag]} )) && alias ag="noglob ag"
 (( ${+commands[fd]} )) && alias fd="noglob fd"
-(( ${+commands[man]} )) && alias man="nocorrect wrap-man"
+(( ${+commands[man]} )) && alias man="nocorrect man"
 (( ${+commands[sudo]} )) && alias sudo="noglob wrap-sudo " # trailing space is needed to enable alias expansion

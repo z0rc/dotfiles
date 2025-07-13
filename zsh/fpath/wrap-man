@@ -2,6 +2,9 @@
 
 emulate -L zsh
 
+# with new groff we need to explicitly ask for color support
+local -x MANROFFOPT=-c
+
 # set originally "bold" as "bold and red"
 # set originally "underline" as "underline and green"
 
