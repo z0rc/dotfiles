@@ -22,6 +22,9 @@ require('codecompanion').setup {
         tool_failure = '❌ ',
       },
     },
+    diff = {
+      provider = 'mini_diff',
+    },
   },
   icons = {
     loading = '◷ ',
