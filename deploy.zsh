@@ -176,10 +176,18 @@ print "  ...done"
 # Install task to pull updates every midnight
 print "Installing periodic update task..."
 if (( ${+commands[systemctl]} )); then
-    print " ...systemd detected, installing timer for periodic updates..."
+    print "  ...systemd detected, installing timer for periodic updates..."
 
-    local systemd_user_dir="${XDG_CONFIG_HOME}/systemd/user"
-    zf_mkdir -p "${systemd_user_dir}"
+    if (( EUID == 0 )); then
+        local systemd_unit_dir="/etc/systemd/system"
+        local systemctl_cmd=("systemctl")
+        print "  ...running as root, installing system-wide timer..."
+    else
+        local systemd_unit_dir="${XDG_CONFIG_HOME}/systemd/user"
+        local systemctl_cmd=("systemctl" "--user")
+        print "  ...running as regular user, installing user timer..."
+    fi
+    zf_mkdir -p "${systemd_unit_dir}"
 
     local service_name="pull-dotfiles.service"
     local service_content="[Unit]
@@ -191,7 +199,7 @@ Type=oneshot
 ExecStart=/usr/bin/env zsh -c 'cd \"${SCRIPT_DIR}\" && git -c user.name=systemd.update -c user.email=systemd@localhost stash && git pull && git stash pop'
 WorkingDirectory=${SCRIPT_DIR}
 "
-    print -r -- "${service_content}" > "${systemd_user_dir}/${service_name}"
+    print -r -- "${service_content}" > "${systemd_unit_dir}/${service_name}"
 
     local timer_name="pull-dotfiles.timer"
     local timer_content="[Unit]
@@ -204,9 +212,9 @@ Persistent=true
 [Install]
 WantedBy=timers.target
 "
-    print -r -- "${timer_content}" > "${systemd_user_dir}/${timer_name}"
+    print -r -- "${timer_content}" > "${systemd_unit_dir}/${timer_name}"
 
-    if systemctl --user daemon-reload > /dev/null && systemctl --user enable --now "${timer_name}" > /dev/null; then
+    if ${systemctl_cmd[@]} daemon-reload > /dev/null && ${systemctl_cmd[@]} enable --now "${timer_name}" > /dev/null; then
        print "  ...done"
     else
        print "Failed to install systemd timer. Check permissions and systemd setup"
