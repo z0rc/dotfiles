@@ -196,7 +196,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/env zsh -c 'cd \"${SCRIPT_DIR}\" && git -c user.name=systemd.update -c user.email=systemd@localhost stash && git pull && git stash pop'
+ExecStart=/usr/bin/git -c user.name=systemd.update -c user.email=systemd@localhost pull
 WorkingDirectory=${SCRIPT_DIR}
 "
     print -r -- "${service_content}" > "${systemd_unit_dir}/${service_name}"
@@ -207,6 +207,7 @@ Description=Pull dotfiles update daily
 
 [Timer]
 OnCalendar=daily
+RandomizedDelaySec=120s
 Persistent=true
 
 [Install]
@@ -221,7 +222,7 @@ WantedBy=timers.target
     fi
 elif (( ${+commands[crontab]} )); then
     print "  ...cron detected, installing job for periodic updates..."
-    local cron_task="cd ${SCRIPT_DIR} && git -c user.name=cron.update -c user.email=cron@localhost stash && git pull && git stash pop"
+    local cron_task="cd ${SCRIPT_DIR} && git -c user.name=cron.update -c user.email=cron@localhost git pull"
     local cron_schedule="0 0 * * * ${cron_task}"
     if cat <(grep --ignore-case --invert-match --fixed-strings "${cron_task}" <(crontab -l)) <(echo "${cron_schedule}") | crontab -; then
         print "  ...done"

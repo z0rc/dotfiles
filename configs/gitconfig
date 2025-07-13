@@ -9,6 +9,8 @@
 [merge]
 	ff = only
 	conflictStyle = zdiff3
+[pull]
+	rebase = true
 [rebase]
 	autoStash = true
 [alias]
