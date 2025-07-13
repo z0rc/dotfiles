@@ -24,6 +24,7 @@ alias clear=clear-screen-soft-bottom
     alias ls="ls --group-directories-first --color=auto --hyperlink=auto --classify"
     alias ll="LC_COLLATE=C ls -l -v --almost-all --human-readable"
 }
+(( ${+commands[diff]} )) && alias diff="diff --color=auto --new-file --text --recursive --unified"
 
 # History suppression
 (( ${+commands[clear]} )) && alias clear=" clear"
