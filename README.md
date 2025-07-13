@@ -64,17 +64,13 @@ with [zero home presence](#zero-home-presence).
 * `zsh` version 5.9 or newer is strongly recommended
 * `git` all external components are added as git submodules
 
-### Recommended
+### Optional Dependencies
 
-* `make` (optional: required to install git helpers)
-* `perl` (optional: used by diff-so-fancy)
-* [`fd`](https://github.com/sharkdp/fd) (optional: will be used in fzf by
-  default, if present)
-* [`rg`](https://github.com/BurntSushi/ripgrep) or
-  [`ag`](https://github.com/ggreer/the_silver_searcher) (optional: will be used
-  in fzf by default, if present)
-* [`bat`](https://github.com/sharkdp/bat) (optional: will be used in fzf by
-  default, if present)
+* `make` required to install git helpers
+* `perl` diff-so-fancy runtime
+* [`delta`](https://github.com/dandavison/delta) will be used as git pager instead of diff-so-fancy
+* [`fd`](https://github.com/sharkdp/fd) or [`rg`](https://github.com/BurntSushi/ripgrep) or [`ag`](https://github.com/ggreer/the_silver_searcher) will be used as fzf default command
+* [`bat`](https://github.com/sharkdp/bat) will be used in fzf preview window and as man pager
 
 ### Location
 

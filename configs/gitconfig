@@ -21,13 +21,14 @@
 	algorithm = histogram
 	ignoreSubmodules = dirty
 	submodule = log
+	colorMoved = default
 [core]
 	excludesFile = ~/.config/git/ignore
 	autocrlf = input
 	whitespace = cr-at-eol
 	untrackedCache = true
 [pager]
-	diff = which diff-so-fancy >/dev/null 2>&1 && diff-so-fancy | less --tabs=4 -RFX || less --tabs=4 -RFX
+	diff = which delta &>/dev/null && delta || which diff-so-fancy &>/dev/null && diff-so-fancy | less --quit-if-one-screen || less --quit-if-one-screen
 [submodule]
 	fetchJobs = 0
 	recurse = true
@@ -41,11 +42,15 @@
 	newNormal = green bold
 	newHighlight = green bold 22
 [color "diff"]
-	meta = yellow
+	meta = 11
 	frag = magenta bold
+	func = 146 bold
 	commit = yellow bold
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[delta]
+	navigate = true
+	dark = true
 
 # vi: ft=gitconfig
