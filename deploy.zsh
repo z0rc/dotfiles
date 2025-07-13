@@ -172,12 +172,54 @@ print "Downloading TLDR pages..."
 "${SCRIPT_DIR}/tools/tldr-bash-client/tldr" -u > /dev/null
 print "  ...done"
 
-# Install crontab task to pull updates every midnight
-print "Installing cron job for periodic updates..."
-local cron_task="cd ${SCRIPT_DIR} && git -c user.name=cron.update -c user.email=cron@localhost stash && git pull && git stash pop"
-local cron_schedule="0 0 * * * ${cron_task}"
-if cat <(grep --ignore-case --invert-match --fixed-strings "${cron_task}" <(crontab -l)) <(echo "${cron_schedule}") | crontab -; then
-    print "  ...done"
+
+# Install task to pull updates every midnight
+print "Installing periodic update task..."
+if (( ${+commands[systemctl]} )); then
+    print " ...systemd detected, installing timer for periodic updates..."
+
+    local systemd_user_dir="${XDG_CONFIG_HOME}/systemd/user"
+    zf_mkdir -p "${systemd_user_dir}"
+
+    local service_name="pull-dotfiles.service"
+    local service_content="[Unit]
+Description=Pull dotfiles update
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env zsh -c 'cd \"${SCRIPT_DIR}\" && git -c user.name=systemd.update -c user.email=systemd@localhost stash && git pull && git stash pop'
+WorkingDirectory=${SCRIPT_DIR}
+"
+    print -r -- "${service_content}" > "${systemd_user_dir}/${service_name}"
+
+    local timer_name="pull-dotfiles.timer"
+    local timer_content="[Unit]
+Description=Pull dotfiles update daily
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+"
+    print -r -- "${timer_content}" > "${systemd_user_dir}/${timer_name}"
+
+    if systemctl --user daemon-reload > /dev/null && systemctl --user enable --now "${timer_name}" > /dev/null; then
+       print "  ...done"
+    else
+       print "Failed to install systemd timer. Check permissions and systemd setup"
+    fi
+elif (( ${+commands[crontab]} )); then
+    print "  ...cron detected, installing job for periodic updates..."
+    local cron_task="cd ${SCRIPT_DIR} && git -c user.name=cron.update -c user.email=cron@localhost stash && git pull && git stash pop"
+    local cron_schedule="0 0 * * * ${cron_task}"
+    if cat <(grep --ignore-case --invert-match --fixed-strings "${cron_task}" <(crontab -l)) <(echo "${cron_schedule}") | crontab -; then
+        print "  ...done"
+    else
+        print "Please add \`cd ${SCRIPT_DIR} && git pull\` to your crontab or just ignore this, you can always update dotfiles manually"
+    fi
 else
-    print "Please add \`cd ${SCRIPT_DIR} && git pull\` to your crontab or just ignore this, you can always update dotfiles manually"
+    print "  ...no systemd or cron detected, skipping"
 fi
