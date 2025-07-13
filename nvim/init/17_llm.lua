@@ -34,12 +34,3 @@ require('codecompanion').setup {
     spinner = {},
   },
 }
-
-require('minuet').setup {
-  provider = 'gemini',
-  provider_options = {
-    gemini = {
-      model = 'gemini-2.5-flash',
-    },
-  },
-}

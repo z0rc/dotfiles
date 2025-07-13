@@ -133,9 +133,6 @@
 [submodule "nvim/plugins/mason-lspconfig"]
 	path = nvim/plugins/mason-lspconfig
 	url = https://github.com/williamboman/mason-lspconfig.nvim.git
-[submodule "nvim/plugins/menuet-ai"]
-	path = nvim/plugins/menuet-ai
-	url = https://github.com/milanglacier/minuet-ai.nvim.git
 [submodule "nvim/plugins/mini"]
 	path = nvim/plugins/mini
 	url = https://github.com/echasnovski/mini.nvim.git
