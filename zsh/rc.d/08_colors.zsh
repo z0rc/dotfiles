@@ -11,7 +11,7 @@ if (( ${+commands[man]} )); then
         export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
     elif (( ${+commands[less]} )); then
         # https://wiki.archlinux.org/title/Color_output_in_console#Using_less
-        export MANPAGER="less"
+        export MANPAGER="less --use-color --color=d+r$ --color=u+g$"
         export MANROFFOPT="-P -c"
     else
         alias man="nocorrect wrap-man"
