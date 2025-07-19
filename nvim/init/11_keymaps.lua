@@ -28,9 +28,6 @@ vim.keymap.set('n', 'ycc', function()
   return 'yy' .. vim.v.count1 .. "gcc']p"
 end, { remap = true, expr = true, desc = 'Duplicate and comment lines' })
 
--- nvim-tree
-vim.keymap.set('n', '<leader>tt', require('nvim-tree.api').tree.toggle, { desc = 'nvim-[t]ree' })
-
 -- telescope
 local telescope_builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = '[h]elp' })
@@ -71,6 +68,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, { buffer = event.buf, desc = 'code [a]ction' })
   end,
 })
+
+-- nvim-tree
+vim.keymap.set('n', '<leader>tt', require('nvim-tree.api').tree.toggle, { desc = 'nvim-[t]ree' })
 
 -- markview
 vim.keymap.set('n', '<leader>tm', require('markview').commands.toggle, { desc = '[m]arkdown rendering' })

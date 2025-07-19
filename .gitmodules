@@ -180,9 +180,6 @@
 [submodule "nvim/plugins/ts-install"]
 	path = nvim/plugins/ts-install
 	url = https://github.com/lewis6991/ts-install.nvim.git
-[submodule "nvim/plugins/which-key"]
-	path = nvim/plugins/which-key
-	url = https://github.com/folke/which-key.nvim.git
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git

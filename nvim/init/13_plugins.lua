@@ -1,7 +1,9 @@
 require('mini.git').setup()
 require('mini.diff').setup()
 require('mini.pairs').setup()
-require('mini.surround').setup()
+require('mini.surround').setup {
+  search_method = 'cover_or_next',
+}
 require('mini.comment').setup()
 
 require('ibl').setup {
