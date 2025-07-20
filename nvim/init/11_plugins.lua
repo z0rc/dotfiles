@@ -2,7 +2,7 @@ require('mini.git').setup()
 require('mini.diff').setup()
 require('mini.pairs').setup()
 require('mini.surround').setup {
-  search_method = 'cover_or_next',
+  search_method = 'cover_or_nearest',
 }
 require('mini.comment').setup()
 

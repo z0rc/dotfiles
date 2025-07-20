@@ -35,7 +35,6 @@ miniclue.setup {
     { mode = 'n', keys = 's' },
     { mode = 'x', keys = 's' },
   },
-
   clues = {
     { mode = 'n', keys = '<leader>f', desc = '+Find' },
     { mode = 'n', keys = '<leader>l', desc = '+LSP' },
@@ -47,7 +46,6 @@ miniclue.setup {
     miniclue.gen_clues.windows(),
     miniclue.gen_clues.z(),
   },
-
   window = {
     delay = 0,
     width = 'auto',
