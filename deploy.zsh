@@ -169,8 +169,15 @@ print "  ...done"
 
 # Download/refresh TLDR pages
 print "Downloading TLDR pages..."
-"${SCRIPT_DIR}/tools/tldr-bash-client/tldr" -u > /dev/null
-print "  ...done"
+{
+    local tldr_u_output
+    if ! tldr_u_output="$("${SCRIPT_DIR}/tools/tldr-bash-client/tldr" -u)"; then
+        print ${tldr_u_output}
+        print "  ...error detected, ignoring"
+    else
+        print "  ...done"
+    fi
+}
 
 
 # Install task to pull updates every midnight

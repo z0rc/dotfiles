@@ -1,4 +1,4 @@
-# recursively search for string, feed matches to fzf with preview, launch vim with selected match
+# recursively search for string, feed matches to fzf with preview, launch $EDITOR with selected match
 
 emulate -L zsh
 
