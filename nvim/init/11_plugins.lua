@@ -17,9 +17,6 @@ require('git-rebase-auto-diff').setup()
 require('fidget').setup {
   notification = {
     override_vim_notify = true,
-    window = {
-      winblend = 30,
-    },
   },
 }
 require('tmux').setup {
@@ -28,7 +25,6 @@ require('tmux').setup {
 }
 require('ts-install').setup {
   auto_install = true,
-  auto_update = true,
 }
 ---@diagnostic disable-next-line: missing-fields
 require('schema-companion').setup {
