@@ -135,7 +135,7 @@
 	url = https://github.com/williamboman/mason-lspconfig.nvim.git
 [submodule "nvim/plugins/mini"]
 	path = nvim/plugins/mini
-	url = https://github.com/echasnovski/mini.nvim.git
+	url = https://github.com/nvim-mini/mini.nvim.git
 [submodule "nvim/plugins/nvim-lspconfig"]
 	path = nvim/plugins/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
