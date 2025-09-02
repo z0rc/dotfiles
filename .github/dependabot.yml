@@ -8,6 +8,8 @@ updates:
     submodules:
       dependency-type: "production"
   open-pull-requests-limit: 10000
+  ignore:
+  - dependency-name: "yazi/plugins/githead.yazi"
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
