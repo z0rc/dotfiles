@@ -55,7 +55,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       { buffer = event.buf, desc = 'Goto type definition' })
     vim.keymap.set('n', '<leader>lr', telescope_builtin.lsp_references, { buffer = event.buf, desc = 'List references' })
     vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, { buffer = event.buf, desc = 'Signature help' })
-    vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { buffer = event.buf, desc = 'Rename symbol' })
+    vim.keymap.set('n', '<leader>ln', vim.lsp.buf.rename, { buffer = event.buf, desc = 'Rename symbol' })
     vim.keymap.set({ 'n', 'x' }, '<leader>lf', vim.lsp.buf.format, { buffer = event.buf, desc = 'Format buffer' })
     vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, { buffer = event.buf, desc = 'Code action' })
   end,
