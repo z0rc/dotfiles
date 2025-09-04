@@ -11,6 +11,8 @@
 	conflictStyle = zdiff3
 [pull]
 	rebase = true
+[fetch]
+	prune = true
 [rebase]
 	autoStash = true
 [alias]
