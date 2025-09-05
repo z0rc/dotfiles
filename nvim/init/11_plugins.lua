@@ -23,13 +23,7 @@ require('tmux').setup {
   navigation = { enable_default_keybindings = false },
   resize = { enable_default_keybindings = false },
 }
----@diagnostic disable-next-line: missing-fields
-require('schema-companion').setup {
-  enable_telescope = true,
-  matchers = {
-    require('schema-companion.matchers.kubernetes').setup({}),
-  }
-}
+require('schema-companion').setup({})
 require('markview').setup(
   vim.tbl_deep_extend(
     'force',

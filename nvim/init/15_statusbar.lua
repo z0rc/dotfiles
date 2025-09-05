@@ -10,8 +10,8 @@ require('lualine').setup {
     lualine_x = {
       'filetype',
       function()
-        if vim.bo.filetype == 'yaml' then
-          return ('%s'):format(require('schema-companion.context').get_buffer_schema().name)
+        if vim.bo.filetype == 'yaml' or vim.bo.filetype == 'json' then
+          return ('%s'):format(require('schema-companion').get_current_schemas())
         else
           return ''
         end

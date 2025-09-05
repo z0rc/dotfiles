@@ -37,8 +37,7 @@ vim.keymap.set('n', '<leader>fo', telescope_builtin.oldfiles, { desc = 'Recent o
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>fn', require('telescope').extensions.fidget.fidget, { desc = 'Notifications' })
 vim.keymap.set('n', '<leader>fp', require('telescope').extensions.project.project, { desc = 'Projects' })
-vim.keymap.set('n', '<leader>fy', require('telescope').extensions.schema_companion.select_schema,
-  { desc = 'YAML schema' })
+vim.keymap.set('n', '<leader>fy', require('schema-companion').select_schema, { desc = 'YAML schema' })
 vim.keymap.set('n', '<leader>fc', require('telescope').extensions.codecompanion.codecompanion,
   { desc = 'CodeCompanion actions' })
 
