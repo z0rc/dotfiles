@@ -156,9 +156,6 @@
 [submodule "nvim/plugins/reticle"]
 	path = nvim/plugins/reticle
 	url = https://github.com/tummetott/reticle.nvim.git
-[submodule "nvim/plugins/rooter"]
-	path = nvim/plugins/rooter
-	url = https://github.com/wsdjeg/rooter.nvim.git
 [submodule "nvim/plugins/schema-companion"]
 	path = nvim/plugins/schema-companion
 	url = https://github.com/cenk1cenk2/schema-companion.nvim.git
