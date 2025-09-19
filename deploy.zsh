@@ -4,7 +4,7 @@ setopt extended_glob err_exit
 
 zmodload -m -F zsh/files b:zf_\*
 
-# Get the current absolute path of script dir, but don't pass though zsh's `a` or `A` expansion
+# Get the current absolute path of script dir, but don't pass through zsh's `a` or `A` expansion
 # `a`/`A` expand bind mounted dirs to source dir, which is undesired with systemd-homed managed $HOME
 0="${${(M)0:#/*}:-$PWD/$0}"
 SCRIPT_DIR="${0:P:h}"
@@ -31,8 +31,8 @@ print "Checking for ZDOTDIR env variable..."
 if [[ "${ZDOTDIR}" = "${SCRIPT_DIR}/zsh" ]]; then
     print "  ...present and valid, skipping .zshenv symlink"
 else
+    print "  ...failed to match this script dir. ZDOTDIR is \"${ZDOTDIR}\", which doesn't match expected value \"${SCRIPT_DIR}/zsh\". Symlinking .zshenv"
     zf_ln -sfn "${SCRIPT_DIR}/zsh/.zshenv" "${ZDOTDIR:-${HOME}}/.zshenv"
-    print "  ...failed to match this script dir, symlinking .zshenv"
 fi
 
 # Link config files
