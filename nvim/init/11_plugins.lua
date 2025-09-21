@@ -8,7 +8,6 @@ require('mini.surround').setup {
 require('mini.comment').setup()
 require('mini.misc').setup()
 MiniMisc.setup_auto_root()
-MiniMisc.setup_restore_cursor()
 
 require('ibl').setup {
   indent = {
