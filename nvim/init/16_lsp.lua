@@ -63,14 +63,17 @@ require('blink.cmp').setup {
 require('mason').setup()
 require('mason-lspconfig').setup()
 
+local augroup_lsp_format = vim.api.nvim_create_augroup('lsp-format-on-write', { clear = false })
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP configuration',
   group = vim.api.nvim_create_augroup('lsp-attach-config', { clear = true }),
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
+      vim.api.nvim_clear_autocmds({ group = augroup_lsp_format, buffer = event.buf })
       vim.api.nvim_create_autocmd('BufWritePre', {
         desc = 'Format on write',
+        group = augroup_lsp_format,
         buffer = event.buf,
         callback = function()
           vim.lsp.buf.format({ bufnr = event.buf })
