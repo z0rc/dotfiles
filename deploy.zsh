@@ -68,9 +68,8 @@ git clean -ffd
 print "  ...done"
 
 print "Compiling zsh plugins..."
-local plugin_file
 autoload -Uz zrecompile
-for plugin_file in "${SCRIPT_DIR}"/zsh/plugins/**/*.zsh{-theme,}(#q.); do
+for zsh_plugin_file in "${SCRIPT_DIR}"/zsh/plugins/**/*.zsh{-theme,}(#q.); do
     zrecompile -pq "${plugin_file}"
 done
 print "  ...done"
@@ -99,7 +98,6 @@ fi
 
 print "Installing fzf..."
 pushd tools/fzf
-local fzf_install_output
 if fzf_install_output=$(./install --bin); then
     zf_ln -sfn "${SCRIPT_DIR}/tools/fzf/bin/fzf" "${HOME}/.local/bin/fzf"
     zf_ln -sfn "${SCRIPT_DIR}/tools/fzf/bin/fzf-tmux" "${HOME}/.local/bin/fzf-tmux"
@@ -143,19 +141,16 @@ fi
 
 # For each env-wrapper link its plugins
 print "Linking env-wrappers' plugins..."
-{
-    local wrapper plugin
-    for wrapper in "${SCRIPT_DIR}"/env-wrappers/*; do
+    for env_wrapper in "${SCRIPT_DIR}"/env-wrappers/*; do
         # 'plugin' here is a directory with name which doesn't match env-wrapper's name
-        for plugin in "${wrapper}"/^${wrapper:t}$*(#qN/); do
-            zf_ln -sfn "${plugin}" "${XDG_DATA_HOME}/${wrapper:t}/plugins/${plugin:t}"
+        for env_wrapper_plugin in "${env_wrapper}"/^${env_wrapper:t}$*(#qN/); do
+            zf_ln -sfn "${env_wrapper_plugin}" "${XDG_DATA_HOME}/${env_wrapper:t}/plugins/${env_wrapper_plugin:t}"
         done
     done
     zf_ln -sfn "${SCRIPT_DIR}/env-wrappers/goenv/goenv/plugins/go-build" "${XDG_DATA_HOME}/goenv/plugins/go-build"
     zf_ln -sfn "${SCRIPT_DIR}/env-wrappers/jenv/jenv/available-plugins/export" "${XDG_DATA_HOME}/jenv/plugins/export"
     zf_ln -sfn "${SCRIPT_DIR}/env-wrappers/pyenv/default-packages" "${XDG_DATA_HOME}/pyenv/default-packages"
     zf_ln -sfn "${SCRIPT_DIR}/env-wrappers/rbenv/default-gems" "${XDG_DATA_HOME}/rbenv/default-gems"
-}
 print "  ...done"
 
 # Trigger zsh run with powerlevel10k prompt to download gitstatusd
@@ -165,7 +160,6 @@ print "  ...done"
 
 # Download/refresh TLDR pages
 print "Downloading TLDR pages..."
-local tldr_u_output
 if tldr_u_output="$("${SCRIPT_DIR}/tools/tldr-bash-client/tldr" -u)"; then
     print "  ...done"
 else
@@ -179,18 +173,18 @@ if (( ${+commands[systemctl]} )); then
     print "  ...systemd detected, installing timer for periodic updates..."
 
     if (( EUID == 0 )); then
-        local systemd_unit_dir="/etc/systemd/system"
-        local systemctl_cmd=("systemctl")
+        systemd_unit_dir="/etc/systemd/system"
+        systemctl_cmd=("systemctl")
         print "  ...running as root, installing system-wide timer..."
     else
-        local systemd_unit_dir="${XDG_CONFIG_HOME}/systemd/user"
-        local systemctl_cmd=("systemctl" "--user")
+        systemd_unit_dir="${XDG_CONFIG_HOME}/systemd/user"
+        systemctl_cmd=("systemctl" "--user")
         print "  ...running as regular user, installing user timer..."
     fi
     zf_mkdir -p "${systemd_unit_dir}"
 
-    local service_name="pull-dotfiles.service"
-    local service_content="[Unit]
+    service_name="pull-dotfiles.service"
+    service_content="[Unit]
 Description=Pull dotfiles update
 After=network-online.target
 
@@ -201,8 +195,8 @@ WorkingDirectory=${SCRIPT_DIR}
 "
     print -r -- "${service_content}" > "${systemd_unit_dir}/${service_name}"
 
-    local timer_name="pull-dotfiles.timer"
-    local timer_content="[Unit]
+timer_name="pull-dotfiles.timer"
+timer_content="[Unit]
 Description=Pull dotfiles update daily
 
 [Timer]
@@ -222,8 +216,8 @@ WantedBy=timers.target
     fi
 elif (( ${+commands[crontab]} )); then
     print "  ...cron detected, installing job for periodic updates..."
-    local cron_task="cd ${SCRIPT_DIR} && git -c user.name=cron.update -c user.email=cron@localhost pull"
-    local cron_schedule="0 0 * * * ${cron_task}"
+    cron_task="cd ${SCRIPT_DIR} && git -c user.name=cron.update -c user.email=cron@localhost pull"
+    cron_schedule="0 0 * * * ${cron_task}"
     if cat <(grep --ignore-case --invert-match --fixed-strings "${cron_task}" <(crontab -l)) <(echo "${cron_schedule}") | crontab -; then
         print "  ...done"
     else
