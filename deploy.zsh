@@ -70,7 +70,7 @@ print "  ...done"
 print "Compiling zsh plugins..."
 autoload -Uz zrecompile
 for zsh_plugin_file in "${SCRIPT_DIR}"/zsh/plugins/**/*.zsh{-theme,}(#q.); do
-    zrecompile -pq "${plugin_file}"
+    zrecompile -pq "${zsh_plugin_file}"
 done
 print "  ...done"
 
