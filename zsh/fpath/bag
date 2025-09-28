@@ -8,19 +8,20 @@ if (( ${+commands[bat]} )); then
     preview_cmd='bat --style=numbers --color=always --highlight-line=${2} ${1}'
 else
     # ...otherwise just highlight line with match using sed replace
-    preview_cmd='sed -E "s/(.*'${*}'.*)/'$bg[grey]'\1'$reset_color'/gI;" < ${1}'
+    preview_cmd='sed -E "s/(.*'$*'.*)/'${bg[grey]}'\1'$reset_color'/gI;" < ${1}'
 fi
 
 # prefer rg over ag over grep
+# use whole bag input as single search query
 if (( ${+commands[rg]} )); then
-    command rg --no-heading --line-number --smart-case --fixed-strings --color=always "${*}"
+    command rg --no-heading --line-number --smart-case --fixed-strings --color=always "$*"
 elif (( ${+commands[ag]} )); then
-    command ag --nogroup --color --silent "${*}"
+    command ag --nogroup --color --silent "$*"
 else
-    command grep --line-number --recursive --ignore-case --color=always --no-messages "${*}"
-fi | fzf --ansi --layout=reverse-list --no-sort --height=50% --delimiter=: \
-         --preview=${preview_cmd} \
+    command grep --line-number --recursive --ignore-case --color=always --no-messages "$*"
+fi | fzf --ansi --layout=reverse-list --no-sort --height=50% --tmux=bottom,50% --delimiter=: \
+         --preview=$preview_cmd \
          --preview-window='right,50%,+{2}/2' \
-         --bind='enter:become(${EDITOR} {1} +{2})'
+         --bind='enter:become($EDITOR {1} +{2})'
 
 # vim: ft=zsh

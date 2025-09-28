@@ -24,6 +24,6 @@ local -x LESS_TERMCAP_se=$(echoti rmso)
 local -x LESS_TERMCAP_us=$(echoti smul; echoti setaf 2)
 local -x LESS_TERMCAP_ue=$(echoti sgr0)
 
-nocorrect command man ${@}
+nocorrect command man $@
 
 # vim: ft=zsh

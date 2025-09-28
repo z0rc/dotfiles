@@ -7,10 +7,10 @@ git rev-parse --is-inside-work-tree &> /dev/null || return
 local preview_cmd files commit repo highlighter
 
 [[ $# -ne 0 ]] && {
-    if git rev-parse "$1" -- &>/dev/null ; then
-        commit="$1" && files=("${@:2}")
+    if git rev-parse $1 -- &>/dev/null ; then
+        commit=$1 && files=(${@:2})
     else
-        files=("$@")
+        files=($@)
     fi
 }
 
@@ -20,10 +20,10 @@ else
     highlighter=''
 fi
 
-repo="$(git rev-parse --show-toplevel)"
-preview_cmd="xargs -I% git --no-pager diff --color=always ${commit} -- '${repo}/%' <<< {} ${highlighter}"
+repo=$(git rev-parse --show-toplevel)
+preview_cmd="xargs -I% git --no-pager diff --color=always $commit -- '$repo/%' <<< {} $highlighter"
 
-git --no-pager diff --name-only ${commit} -- ${files[*]} |
-    fzf --exit-0 --ansi --height=50% --preview-window=right:50% --no-sort --tac --layout=reverse-list --preview="${preview_cmd}"
+git --no-pager diff --name-only $commit -- ${files[*]} |
+    fzf --exit-0 --ansi --height=50% --tmux=bottom,50% --preview-window=right:50% --no-sort --tac --layout=reverse-list --preview=$preview_cmd
 
 # vim: ft=zsh

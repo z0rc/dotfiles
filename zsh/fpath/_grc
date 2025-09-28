@@ -6,10 +6,10 @@ local environ e cmd
 local -a args
 local -a _comp_priv_prefix
 
-zstyle -a ":completion:${curcontext}:" environ environ
+zstyle -a ":completion:$curcontext:" environ environ
 
-for e in "${environ[@]}"; do
-    local -x "$e"
+for e in ${environ[@]}; do
+    local -x $e
 done
 
 args=(

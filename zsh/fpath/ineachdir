@@ -13,11 +13,11 @@ emulate -L zsh
 
     local cwd dir exitcode ied_opts
     local -A ied_status
-    cwd=${PWD}
+    cwd=$PWD
 
     zparseopts -E -D -M -A ied_opts -- -ignore-errors -status-table i=-ignore-errors s=-status-table
 
-    if [[ ${#} -eq 0 ]]; then
+    if [[ $# -eq 0 ]]; then
         cat <<- EOH
 Usage: ineachdir [-i | --ignore-errors] [-s | --status-table] <command>
 
@@ -36,19 +36,19 @@ EOH
     fi
 
     for dir in */; do
-        echo ${fg[white]}"--- IED: Executing '$@' in '${cwd}/${dir}'..."${fg[default]}
-        cd "${cwd}/${dir}"
+        echo ${fg[white]}"--- IED: Executing '$@' in '$cwd/$dir'..."${fg[default]}
+        cd $cwd/$dir
         $@
         exitcode=$?
         if (( ${+ied_opts[--status-table]} )); then
-            ied_status[${dir}]=${exitcode}
+            ied_status[$dir]=$exitcode
         fi
-        if [[ ${exitcode} -ne 0 ]]; then
+        if [[ $exitcode -ne 0 ]]; then
             if (( ${+ied_opts[--ignore-errors]} )); then
-                echo ${fg[yellow]}"--- IED: '$@' returned ${exitcode}, ignoring."${fg[default]}
+                echo ${fg[yellow]}"--- IED: '$@' returned $exitcode, ignoring."${fg[default]}
             else
-                echo ${fg[red]}"--- IED: '$@' returned ${exitcode}, aborting."${fg[default]}
-                return $(( 128 + ${exitcode} ))
+                echo ${fg[red]}"--- IED: '$@' returned $exitcode, aborting."${fg[default]}
+                return $(( 128 + $exitcode ))
             fi
         fi
         echo
@@ -57,14 +57,14 @@ EOH
     if (( ${+ied_opts[--status-table]} )); then
         echo ${fg[white]}"--- IED: Execution results"${fg[default]}
         for dir exitcode in ${(kv)ied_status}; do
-            if [[ ${exitcode} -ne 0 ]]; then
-                exitcode="${fg[yellow]}${exitcode}${fg[default]}"
+            if [[ $exitcode -ne 0 ]]; then
+                exitcode="${fg[yellow]}$exitcode${fg[default]}"
             fi
             printf '%s\n' "${(r:35:)dir}: ${(%)exitcode}"
         done
     fi
 } always {
-    cd "${cwd}"
+    cd $cwd
     unfunction TRAPINT
 }
 

@@ -24,7 +24,7 @@ fi
 
 # ensure that XDG_RUNTIME_DIR dir exists, as it can be under tmpfs
 if [[ ! -d $XDG_RUNTIME_DIR ]]; then
-    zf_mkdir -m 0700 -p $XDG_RUNTIME_DIR &!
+    zf_mkdir -m 0700 -p $XDG_RUNTIME_DIR
 fi
 
 # best effort to make tools compliant to XDG basedir spec
