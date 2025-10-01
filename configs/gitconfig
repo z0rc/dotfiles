@@ -55,6 +55,7 @@
 	whitespace = red reverse
 [delta]
 	navigate = true
+	hyperlinks = true
 	dark = true
 
 # vi: ft=gitconfig
