@@ -16,7 +16,7 @@ if (( ${+commands[man]} )); then
 fi
 
 # Try to use nearcolors, if terminal emulator doesn't report support of truecolor
-if [[ ${COLORTERM} != *(24bit|truecolor)* ]]; then
+if [[ $COLORTERM != *(24bit|truecolor)* ]]; then
     zmodload zsh/nearcolor
 fi
 

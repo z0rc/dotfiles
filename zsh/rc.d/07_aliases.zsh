@@ -1,8 +1,6 @@
-# Some handy suffix aliases
-alias -s log=less
-
 # Override regular 'clear' with custom one, that puts prompt at bottom
-alias clear=clear-screen-soft-bottom
+# Also suppress it from history
+alias clear=" clear-screen-soft-bottom"
 
 # Prefer nvim when installed
 (( ${+commands[nvim]} )) && {
@@ -17,9 +15,9 @@ alias clear=clear-screen-soft-bottom
 
 # Handy stuff and a bit of XDG compliance
 (( ${+commands[grep]} )) && alias grep="grep --color=auto --binary-files=without-match --devices=skip"
-(( ${+commands[quilt]} )) && alias quilt="quilt --quiltrc ${DOTFILES}/configs/quiltrc"
+(( ${+commands[quilt]} )) && alias quilt="quilt --quiltrc $DOTFILES/configs/quiltrc"
 (( ${+commands[tmux]} )) && alias stmux="tmux new-session 'sudo --login'"
-(( ${+commands[wget]} )) && alias wget="wget --hsts-file=${XDG_CACHE_HOME}/wget-hsts"
+(( ${+commands[wget]} )) && alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 (( ${+commands[ls]} )) && {
     alias ls="ls --group-directories-first --color=auto --hyperlink=auto --classify"
     alias ll="LC_COLLATE=C ls -l -v --almost-all --human-readable"
@@ -27,7 +25,6 @@ alias clear=clear-screen-soft-bottom
 (( ${+commands[diff]} )) && alias diff="diff --color=auto --new-file --text --recursive --unified"
 
 # History suppression
-(( ${+commands[clear]} )) && alias clear=" clear"
 alias pwd=" pwd"
 alias exit=" exit"
 

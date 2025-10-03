@@ -19,7 +19,7 @@ elif (( ${+commands[ag]} )); then
     command ag --nogroup --color --silent "$*"
 else
     command grep --line-number --recursive --ignore-case --color=always --no-messages "$*"
-fi | fzf --layout=reverse-list --no-sort --delimiter=: \
+fi | fzf --no-sort --delimiter=: \
          --preview=$preview_cmd \
          --preview-window='right,50%,+{2}/2' \
          --bind='enter:become($EDITOR {1} +{2})'

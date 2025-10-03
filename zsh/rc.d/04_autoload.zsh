@@ -12,7 +12,7 @@ autoload -Uz select-word-style
 select-word-style bash
 
 # Enable run-help module
-(( $+aliases[run-help] )) && unalias run-help
+(( ${+aliases[run-help]} )) && unalias run-help
 autoload -Uz run-help
 alias help=run-help
 
@@ -31,7 +31,7 @@ autoload -Uz down-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 # Enable functions from archive plugin
-fpath+="${ZDOTDIR}/plugins/archive"
+fpath+=$ZDOTDIR/plugins/archive
 autoload -Uz archive lsarchive unarchive
 
 # Ensure add-zsh-hook is loaded, as it's used in rc files

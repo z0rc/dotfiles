@@ -1,5 +1,5 @@
 # Enable powerlevel10k prompt
-source "${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme"
+source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 # Loosely based on results from `p10k configure`
 

@@ -1,1 +1,1 @@
-alias testssl="${DOTFILES}/tools/testssl.sh/testssl.sh"
+alias testssl=$DOTFILES/tools/testssl.sh/testssl.sh

@@ -1,2 +1,2 @@
 # Autopairs plugin
-source "${ZDOTDIR}/plugins/autopair/autopair.zsh"
+source $ZDOTDIR/plugins/autopair/autopair.zsh

@@ -5,7 +5,7 @@ emulate -L zsh
 local destination=$(
     z -l "$*" |
     sed 's/^[0-9. ]*//' |
-    fzf --no-sort --tac --layout=reverse-list --filepath-word --scheme=path --query="$*" --preview='LC_COLLATE=C ls -l -v --almost-all --group-directories-first --classify --color=always --human-readable {}'
+    fzf --no-sort --tac --filepath-word --scheme=path --query="$*" --preview='LC_COLLATE=C ls -l -v --almost-all --group-directories-first --classify --color=always --human-readable {}'
 )
 
 if [[ $destination != "" ]]; then

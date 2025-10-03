@@ -79,7 +79,7 @@ unset csi
 
 # Make dot key autoexpand "..." to "../.." and so on
 _zsh-dot () {
-    if [[ ${LBUFFER} = *.. ]]; then
+    if [[ $LBUFFER = *.. ]]; then
         LBUFFER+=/..
     else
         LBUFFER+=.

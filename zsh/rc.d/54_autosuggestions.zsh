@@ -1,7 +1,7 @@
 # Autosuggestions plugin
-source "${ZDOTDIR}/plugins/autosuggestions/zsh-autosuggestions.zsh"
+source $ZDOTDIR/plugins/autosuggestions/zsh-autosuggestions.zsh
 
-source "${ZDOTDIR}/plugins/autosuggestions-abbreviations-strategy/zsh-autosuggestions-abbreviations-strategy.zsh"
+source $ZDOTDIR/plugins/autosuggestions-abbreviations-strategy/zsh-autosuggestions-abbreviations-strategy.zsh
 
 # Don't rebind widgets by autosuggestion, it's already sourced pretty late
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1

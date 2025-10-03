@@ -11,7 +11,7 @@ if (( ${+commands[grc]} )); then
         for grc_command in ${grc_commands[@]}; do
             if (( ${+commands[$grc_command]} )); then
                 $grc_command() {
-                    grc --colour=auto ${commands[$0]} "${@}"
+                    grc --colour=auto ${commands[$0]} $@
                 }
             fi
         done

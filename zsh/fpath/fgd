@@ -26,6 +26,6 @@ repo=$(git rev-parse --show-toplevel)
 preview_cmd="xargs -I% git --no-pager diff --color=always $commit -- '$repo/%' <<< {} $highlighter"
 
 git --no-pager diff --name-only $commit -- ${files[*]} |
-    fzf --exit-0 --preview-window=right:50% --no-sort --tac --layout=reverse-list --preview=$preview_cmd
+fzf --no-sort --tac --exit-0 --preview-window=right:50% --preview=$preview_cmd
 
 # vim: ft=zsh
