@@ -8,12 +8,13 @@ if [[ $# -eq 0 ]]; then
 fi
 
 local psaux=$(ps aux)
+local query="$*" # cast input into local var, as splitting by character isn't doable with $*
 local result
 
-if result=$(grep --color=always -i "[${*[1]}]${*#?}" <<< $psaux); then
+if result=$(grep --color=always -i "[${query[1]}]${query#?}" <<< $psaux); then
     { echo ${${(f)psaux}[1]}; echo $result; } | less --quit-if-one-screen
 else
-    echo "No process found matching pattern '$*'"
+    echo "No process found matching pattern '$query'"
     return 1
 fi
 
