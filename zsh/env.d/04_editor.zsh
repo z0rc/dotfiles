@@ -2,7 +2,7 @@
 if (( ${+commands[nvim]} )); then
     export EDITOR=nvim
     export VISUAL=nvim
-else
+elif (( ${+commands[vim]} )); then
     export EDITOR=vim
     export VISUAL=vim
 fi
