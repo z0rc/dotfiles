@@ -1,6 +1,6 @@
 import re
-from ranger.api.commands import Command
-from ranger.ext.spawn import check_output
+from ranger.api.commands import Command  # type: ignore
+from ranger.ext.spawn import check_output  # type: ignore
 
 
 class z(Command):
