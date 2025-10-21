@@ -61,9 +61,8 @@ nmap_leader('gd', '<Cmd>Git diff<CR>', 'Diff')
 nmap_leader('gD', '<Cmd>Git diff -- %<CR>', 'Diff buffer')
 nmap_leader('gl', '<Cmd>' .. git_log_cmd .. '<CR>', 'Log')
 nmap_leader('gL', '<Cmd>' .. git_log_buf_cmd .. '<CR>', 'Log buffer')
-nmap_leader('go', '<Cmd>lua MiniDiff.toggle_overlay()<CR>', 'Toggle overlay')
-nmap_leader('gs', '<Cmd>lua MiniGit.show_at_cursor()<CR>', 'Show at cursor')
-xmap_leader('gs', '<Cmd>lua MiniGit.show_at_cursor()<CR>', 'Show at selection')
+nmap_leader('gs', MiniGit.show_at_cursor, 'Show at cursor')
+xmap_leader('gs', MiniGit.show_at_cursor, 'Show at selection')
 
 -- lsp
 nmap_leader('la', vim.lsp.buf.code_action, 'Actions')
@@ -76,6 +75,14 @@ nmap_leader('lr', vim.lsp.buf.rename, 'Rename')
 nmap_leader('lR', vim.lsp.buf.references, 'References')
 nmap_leader('ls', vim.lsp.buf.definition, 'Source definition')
 nmap_leader('lt', vim.lsp.buf.type_definition, 'Type definition')
+
+-- buffers
+nmap_leader('ba', '<Cmd>b#<CR>', 'Alternate')
+nmap_leader('bd', MiniBufremove.delete, 'Delete')
+nmap_leader('bD', function() MiniBufremove.delete(0, true) end, 'Delete!')
+nmap_leader('bs', function() vim.api.nvim_win_set_buf(0, vim.api.nvim_create_buf(true, true)) end, 'Scratch')
+nmap_leader('bw', MiniBufremove.wipeout, 'Wipeout')
+nmap_leader('bW', function() MiniBufremove.wipeout(0, true) end, 'Wipeout!')
 
 -- toggles
 nmap_leader('tt', require('nvim-tree.api').tree.toggle, 'NvimTree')

@@ -31,11 +31,21 @@ miniclue.setup({
     { mode = 'n', keys = 'z' },
     { mode = 'x', keys = 'z' },
 
-    -- `s` key
+    -- mini.surround
     { mode = 'n', keys = 's' },
     { mode = 'x', keys = 's' },
+
+    -- mini.basics
+    { mode = 'n', keys = '\\' },
+
+    -- mini.bracketed
+    { mode = 'n', keys = '[' },
+    { mode = 'n', keys = ']' },
+    { mode = 'x', keys = '[' },
+    { mode = 'x', keys = ']' },
   },
   clues = {
+    { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
     { mode = 'n', keys = '<leader>f', desc = '+Find' },
     { mode = 'n', keys = '<Leader>g', desc = '+Git' },
     { mode = 'n', keys = '<leader>l', desc = '+LSP' },

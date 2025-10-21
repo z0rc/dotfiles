@@ -14,6 +14,8 @@ require('mini.ai').setup({
     F = require('mini.ai').gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
   },
 })
+require('mini.bracketed').setup()
+require('mini.bufremove').setup()
 require('mini.git').setup()
 require('mini.diff').setup()
 require('mini.pairs').setup({

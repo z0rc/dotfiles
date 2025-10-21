@@ -14,8 +14,6 @@ vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 vim.o.switchbuf = 'usetab'
 vim.o.confirm = true
-vim.o.timeoutlen = 300
-vim.o.updatetime = 800
 vim.o.exrc = true
 vim.o.foldlevel = 20
 vim.o.foldtext = ''
@@ -24,6 +22,10 @@ vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
 vim.o.iskeyword = '@,48-57,_,192-255,-'
 
 vim.opt.backupdir:remove('.')
+
+vim.o.keymap = 'ukrainian-enhanced'
+vim.o.iminsert = 0
+vim.o.imsearch = 0
 
 -- https://github.com/nvim-lua/kickstart.nvim/pull/1049
 vim.schedule(function()
