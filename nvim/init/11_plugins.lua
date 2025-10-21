@@ -8,7 +8,7 @@ require('mini.basics').setup({
 })
 require('mini.extra').setup()
 require('mini.ai').setup({
-  search_method = 'cover',
+  search_method = 'cover_or_nearest',
   custom_textobjects = {
     B = MiniExtra.gen_ai_spec.buffer(),
     F = require('mini.ai').gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
