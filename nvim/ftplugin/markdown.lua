@@ -1,4 +1,5 @@
 vim.wo.spell = true
+vim.wo.wrap = true
 
 vim.treesitter.start()
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"

@@ -1,4 +1,4 @@
-require('solarized').setup {
+require('solarized').setup({
   variant = 'autumn',
   on_highlights = function(colors, helper)
     return {
@@ -17,6 +17,6 @@ require('solarized').setup {
       MiniDiffOverDelete = { fg = colors.git_delete },
     }
   end,
-}
+})
 
 vim.cmd.colorscheme('solarized')

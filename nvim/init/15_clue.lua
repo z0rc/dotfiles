@@ -1,5 +1,5 @@
 local miniclue = require('mini.clue')
-miniclue.setup {
+miniclue.setup({
   triggers = {
     -- Leader triggers
     { mode = 'n', keys = '<Leader>' },
@@ -37,8 +37,11 @@ miniclue.setup {
   },
   clues = {
     { mode = 'n', keys = '<leader>f', desc = '+Find' },
+    { mode = 'n', keys = '<Leader>g', desc = '+Git' },
     { mode = 'n', keys = '<leader>l', desc = '+LSP' },
     { mode = 'n', keys = '<leader>t', desc = '+Toggle' },
+    { mode = 'x', keys = '<Leader>g', desc = '+Git' },
+    { mode = 'x', keys = '<Leader>l', desc = '+LSP' },
     miniclue.gen_clues.builtin_completion(),
     miniclue.gen_clues.g(),
     miniclue.gen_clues.marks(),
@@ -50,4 +53,4 @@ miniclue.setup {
     delay = 0,
     width = 'auto',
   },
-}
+})

@@ -6,5 +6,5 @@ vim.api.nvim_create_autocmd('CursorMoved', {
     if vim.v.hlsearch == 1 and vim.fn.searchcount().exact_match == 0 then
       vim.schedule(function() vim.cmd.nohlsearch() end)
     end
-  end
+  end,
 })

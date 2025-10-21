@@ -1,4 +1,4 @@
-require('lualine').setup {
+require('lualine').setup({
   options = {
     globalstatus = true,
     theme = 'solarized',
@@ -19,4 +19,4 @@ require('lualine').setup {
     },
   },
   extensions = { 'nvim-tree', 'mason', 'quickfix' },
-}
+})

@@ -1,4 +1,4 @@
-vim.opt_local.spell = true
+vim.wo.spell = true
 vim.opt_local.sidescroll = 0
 vim.opt_local.sidescrolloff = 0
 

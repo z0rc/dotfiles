@@ -106,9 +106,9 @@
 [submodule "nvim/plugins/committia"]
 	path = nvim/plugins/committia
 	url = https://github.com/rhysd/committia.vim.git
-[submodule "nvim/plugins/fidget"]
-	path = nvim/plugins/fidget
-	url = https://github.com/j-hui/fidget.nvim.git
+[submodule "nvim/plugins/conform"]
+	path = nvim/plugins/conform
+	url = https://github.com/stevearc/conform.nvim.git
 [submodule "nvim/plugins/git-rebase-auto-diff"]
 	path = nvim/plugins/git-rebase-auto-diff
 	url = https://github.com/yutkat/git-rebase-auto-diff.nvim.git
@@ -165,12 +165,6 @@
 [submodule "nvim/plugins/solarized"]
 	path = nvim/plugins/solarized
 	url = https://github.com/maxmx03/solarized.nvim.git
-[submodule "nvim/plugins/telescope"]
-	path = nvim/plugins/telescope
-	url = https://github.com/nvim-telescope/telescope.nvim.git
-[submodule "nvim/plugins/telescope-ui-select"]
-	path = nvim/plugins/telescope-ui-select
-	url = https://github.com/nvim-telescope/telescope-ui-select.nvim.git
 [submodule "nvim/plugins/tmux"]
 	path = nvim/plugins/tmux
 	url = https://github.com/aserowy/tmux.nvim.git

@@ -1,4 +1,4 @@
-require('codecompanion').setup {
+require('codecompanion').setup({
   strategies = {
     chat = {
       adapter = 'gemini_cli',
@@ -8,7 +8,7 @@ require('codecompanion').setup {
     },
     cmd = {
       adapter = 'gemini_cli',
-    }
+    },
   },
   display = {
     chat = {
@@ -18,6 +18,9 @@ require('codecompanion').setup {
         tool_success = '✅ ',
         tool_failure = '❌ ',
       },
+    },
+    action_palette = {
+      provider = 'mini_pick',
     },
     diff = {
       provider = 'mini_diff',
@@ -30,4 +33,4 @@ require('codecompanion').setup {
   extensions = {
     spinner = {},
   },
-}
+})
