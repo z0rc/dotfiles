@@ -52,6 +52,11 @@ miniclue.setup({
     { mode = 'n', keys = '<leader>t', desc = '+Toggle' },
     { mode = 'x', keys = '<Leader>g', desc = '+Git' },
     { mode = 'x', keys = '<Leader>l', desc = '+LSP' },
+    { mode = 'n', keys = ']b', postkeys = ']' },
+    { mode = 'n', keys = ']w', postkeys = ']' },
+    { mode = 'n', keys = '[b', postkeys = '[' },
+    { mode = 'n', keys = '[w', postkeys = '[' },
+    miniclue.gen_clues.square_brackets(),
     miniclue.gen_clues.builtin_completion(),
     miniclue.gen_clues.g(),
     miniclue.gen_clues.marks(),
@@ -61,6 +66,8 @@ miniclue.setup({
   },
   window = {
     delay = 0,
-    width = 'auto',
+    config = {
+      width = 'auto',
+    },
   },
 })

@@ -121,9 +121,6 @@
 [submodule "nvim/plugins/lazydev"]
 	path = nvim/plugins/lazydev
 	url = https://github.com/folke/lazydev.nvim.git
-[submodule "nvim/plugins/lualine"]
-	path = nvim/plugins/lualine
-	url = https://github.com/nvim-lualine/lualine.nvim.git
 [submodule "nvim/plugins/markview"]
 	path = nvim/plugins/markview
 	url = https://github.com/OXY2DEV/markview.nvim.git

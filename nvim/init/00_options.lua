@@ -4,6 +4,7 @@ vim.o.title = true
 vim.o.titlelen = 0
 vim.o.titlestring = 'nvim: %{expand("%:p")}'
 vim.o.colorcolumn = '+1'
+vim.o.laststatus = 3
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
