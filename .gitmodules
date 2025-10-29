@@ -115,9 +115,6 @@
 [submodule "nvim/plugins/helm-ls"]
 	path = nvim/plugins/helm-ls
 	url = https://github.com/qvalentin/helm-ls.nvim.git
-[submodule "nvim/plugins/indent-blankline"]
-	path = nvim/plugins/indent-blankline
-	url = https://github.com/lukas-reineke/indent-blankline.nvim.git
 [submodule "nvim/plugins/lazydev"]
 	path = nvim/plugins/lazydev
 	url = https://github.com/folke/lazydev.nvim.git

@@ -27,15 +27,16 @@ require('mini.surround').setup({
 require('mini.comment').setup()
 require('mini.notify').setup()
 require('mini.pick').setup()
+require('mini.indentscope').setup({
+  draw = {
+    delay = 0,
+    animation = require('mini.indentscope').gen_animation.none(),
+  },
+})
 require('mini.misc').setup()
 MiniMisc.setup_auto_root()
 MiniMisc.setup_restore_cursor()
 
-require('ibl').setup({
-  indent = {
-    char = '│',
-  },
-})
 require('reticle').setup()
 require('git-rebase-auto-diff').setup()
 require('tmux').setup({
