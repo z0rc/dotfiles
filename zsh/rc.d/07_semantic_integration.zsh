@@ -21,3 +21,9 @@ if [[ -v KONSOLE_VERSION ]]; then
     add-zsh-hook precmd _konsole_precmd
     add-zsh-hook preexec _konsole_preexec
 fi
+
+# Ghostty integration
+if [[ -v GHOSTTY_RESOURCES_DIR ]]; then
+    export GHOSTTY_SHELL_FEATURES=cursor,path,title
+    source $GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration
+fi
