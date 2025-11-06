@@ -24,6 +24,5 @@ fi
 
 # Ghostty integration
 if [[ -v GHOSTTY_RESOURCES_DIR ]]; then
-    export GHOSTTY_SHELL_FEATURES=cursor,path,title
     source $GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration
 fi
