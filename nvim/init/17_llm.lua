@@ -11,24 +11,12 @@ require('codecompanion').setup({
     },
   },
   display = {
-    chat = {
-      icons = {
-        buffer_pin = '📌 ',
-        buffer_watch = '🔎 ',
-        tool_success = '✅ ',
-        tool_failure = '❌ ',
-      },
-    },
     action_palette = {
       provider = 'mini_pick',
     },
     diff = {
       provider = 'mini_diff',
     },
-  },
-  icons = {
-    loading = '◷ ',
-    warning = '⚠ ',
   },
   extensions = {
     spinner = {},

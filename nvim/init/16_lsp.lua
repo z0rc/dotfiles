@@ -33,10 +33,6 @@ require('blink.cmp').setup({
   completion = {
     menu = {
       draw = {
-        columns = {
-          { 'label', 'label_description', gap = 1 },
-          { 'kind' },
-        },
         treesitter = { 'lsp' },
       },
     },

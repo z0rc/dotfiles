@@ -29,5 +29,4 @@ require('mini.statusline').setup({
       })
     end,
   },
-  use_icons = false,
 })

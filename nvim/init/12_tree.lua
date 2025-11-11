@@ -30,33 +30,10 @@ require('nvim-tree').setup({
     indent_markers = {
       enable = true,
     },
-    add_trailing = true,
     full_name = true,
     group_empty = true,
     icons = {
-      show = {
-        file = false,
-        folder = false,
-        folder_arrow = false,
-        git = true,
-        modified = true,
-        diagnostics = false,
-        bookmarks = false,
-      },
-      git_placement = 'signcolumn',
-      glyphs = {
-        symlink = '@',
-        modified = 'Δ',
-        git = {
-          unstaged = '~',
-          staged = '+',
-          unmerged = '!',
-          renamed = '>',
-          untracked = '?',
-          deleted = 'x',
-          ignored = 'o',
-        },
-      },
+      git_placement = 'after',
     },
   },
 })

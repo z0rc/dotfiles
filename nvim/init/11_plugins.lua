@@ -36,6 +36,8 @@ require('mini.indentscope').setup({
 require('mini.misc').setup()
 MiniMisc.setup_auto_root()
 MiniMisc.setup_restore_cursor()
+require('mini.icons').setup()
+MiniIcons.mock_nvim_web_devicons()
 
 require('reticle').setup()
 require('git-rebase-auto-diff').setup()
@@ -44,9 +46,9 @@ require('tmux').setup({
   resize = { enable_default_keybindings = false },
 })
 require('schema-companion').setup({})
-require('markview').setup(vim.tbl_deep_extend('force', require('markview.presets').no_nerd_fonts, {
+require('markview').setup({
   preview = {
     filetypes = { 'markdown', 'codecompanion' },
     ignore_buftypes = {},
   },
-}))
+})

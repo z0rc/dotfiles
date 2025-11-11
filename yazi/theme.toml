@@ -2,21 +2,6 @@
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
-[notify]
-icon_info  = ""
-icon_warn  = ""
-icon_error = ""
-
-[icon]
-globs = []
-dirs  = []
-files = []
-exts  = []
-conds = []
-
-[which]
-separator = " ➜ "
-
 # https://github.com/Mellbourn/lsColorsToToml
 [filetype]
 rules = [
