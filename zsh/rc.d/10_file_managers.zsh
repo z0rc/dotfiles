@@ -56,10 +56,4 @@ if (( ${+commands[yazi]} )); then
         }
         add-zsh-hook zshexit _yazi_cd
     fi
-
-    function prompt_yazi() {
-        if [[ -v YAZI_LEVEL ]]; then
-            p10k segment
-        fi
-    }
 fi

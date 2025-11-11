@@ -49,7 +49,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
     typeset -g POWERLEVEL9K_DISABLE_RPROMPT=true
 
     # Defines character set used by powerlevel10k.
-    typeset -g POWERLEVEL9K_MODE=compatible
+    typeset -g POWERLEVEL9K_MODE=nerdfont-v3
     # When set to `moderate`, some icons will have an extra space after them. This is meant to avoid
     # icon overlap when using non-monospace fonts. When set to `none`, spaces are not added.
     typeset -g POWERLEVEL9K_ICON_PADDING=none
@@ -170,10 +170,61 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
     # The default icon shown next to non-writable and non-existent directories when
     # POWERLEVEL9K_DIR_SHOW_WRITABLE is set to v3.
-    typeset -g POWERLEVEL9K_LOCK_ICON='#'
+    # typeset -g POWERLEVEL9K_LOCK_ICON='#'
 
-    # Override default ETC_ICON as unicode cog symbol doesn't render properly with current font.
-    typeset -g POWERLEVEL9K_ETC_ICON=
+    # POWERLEVEL9K_DIR_CLASSES allows you to specify custom icons and colors for different
+    # directories. It must be an array with 3 * N elements. Each triplet consists of:
+    #
+    #   1. A pattern against which the current directory ($PWD) is matched. Matching is done with
+    #      extended_glob option enabled.
+    #   2. Directory class for the purpose of styling.
+    #   3. An empty string.
+    #
+    # Triplets are tried in order. The first triplet whose pattern matches $PWD wins.
+    #
+    # If POWERLEVEL9K_DIR_SHOW_WRITABLE is set to v3, non-writable and non-existent directories
+    # acquire class suffix _NOT_WRITABLE and NON_EXISTENT respectively.
+    #
+    # For example, given these settings:
+    #
+    #   typeset -g POWERLEVEL9K_DIR_CLASSES=(
+    #     '~/work(|/*)'  WORK     ''
+    #     '~(|/*)'       HOME     ''
+    #     '*'            DEFAULT  '')
+    #
+    # Whenever the current directory is ~/work or a subdirectory of ~/work, it gets styled with one
+    # of the following classes depending on its writability and existence: WORK, WORK_NOT_WRITABLE or
+    # WORK_NON_EXISTENT.
+    #
+    # Simply assigning classes to directories doesn't have any visible effects. It merely gives you an
+    # option to define custom colors and icons for different directory classes.
+    #
+    #   # Styling for WORK.
+    #   typeset -g POWERLEVEL9K_DIR_WORK_VISUAL_IDENTIFIER_EXPANSION='⭐'
+    #   typeset -g POWERLEVEL9K_DIR_WORK_FOREGROUND=31
+    #   typeset -g POWERLEVEL9K_DIR_WORK_SHORTENED_FOREGROUND=103
+    #   typeset -g POWERLEVEL9K_DIR_WORK_ANCHOR_FOREGROUND=39
+    #
+    #   # Styling for WORK_NOT_WRITABLE.
+    #   typeset -g POWERLEVEL9K_DIR_WORK_NOT_WRITABLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
+    #   typeset -g POWERLEVEL9K_DIR_WORK_NOT_WRITABLE_FOREGROUND=31
+    #   typeset -g POWERLEVEL9K_DIR_WORK_NOT_WRITABLE_SHORTENED_FOREGROUND=103
+    #   typeset -g POWERLEVEL9K_DIR_WORK_NOT_WRITABLE_ANCHOR_FOREGROUND=39
+    #
+    #   # Styling for WORK_NON_EXISTENT.
+    #   typeset -g POWERLEVEL9K_DIR_WORK_NON_EXISTENT_VISUAL_IDENTIFIER_EXPANSION='⭐'
+    #   typeset -g POWERLEVEL9K_DIR_WORK_NON_EXISTENT_FOREGROUND=31
+    #   typeset -g POWERLEVEL9K_DIR_WORK_NON_EXISTENT_SHORTENED_FOREGROUND=103
+    #   typeset -g POWERLEVEL9K_DIR_WORK_NON_EXISTENT_ANCHOR_FOREGROUND=39
+    #
+    # If a styling parameter isn't explicitly defined for some class, it falls back to the classless
+    # parameter. For example, if POWERLEVEL9K_DIR_WORK_NOT_WRITABLE_FOREGROUND is not set, it falls
+    # back to POWERLEVEL9K_DIR_FOREGROUND.
+    #
+    typeset -g POWERLEVEL9K_DIR_CLASSES=()
+
+    # Custom prefix.
+    # typeset -g POWERLEVEL9K_DIR_PREFIX='%fin '
 
     #####################################[ vcs: git status ]######################################
     # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
@@ -342,19 +393,19 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
     # it will signify success by turning green.
     typeset -g POWERLEVEL9K_STATUS_OK=false
     typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=70
-    typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='√'
+    typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
 
     # Status when some part of a pipe command fails but the overall exit status is zero. It may look
     # like this: 1|0.
     typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
     typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=70
-    typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION='√'
+    typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION='✔'
 
     # Status when it's just an error code (e.g., '1'). No need to show it if prompt_char is enabled as
     # it will signify error by turning red.
     typeset -g POWERLEVEL9K_STATUS_ERROR=false
     typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=160
-    typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='x'
+    typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='✘'
 
     # Status when the last command was terminated by a signal.
     typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL=true
@@ -366,7 +417,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
     # It may look like this: 1|0.
     typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE=true
     typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=160
-    typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION='х'
+    typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION='✘'
 
     ###################[ command_execution_time: duration of the last command ]###################
     # Show duration of the last command if takes at least this many seconds.
@@ -388,37 +439,37 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
     # Background jobs color.
     typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=70
     # Custom icon.
-    typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION='≡'
+    # typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION='≡'
 
     #################[ ranger: ranger shell (https://github.com/ranger/ranger) ]##################
     # Ranger shell color.
     typeset -g POWERLEVEL9K_RANGER_FOREGROUND=081
     # Custom icon.
-    typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION='rngr'
+    # typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION='rngr'
 
     ####################[ yazi: yazi shell (https://github.com/sxyazi/yazi) ]#####################
     # Yazi shell color.
     typeset -g POWERLEVEL9K_YAZI_FOREGROUND=081
     # Custom icon.
-    typeset -g POWERLEVEL9K_YAZI_VISUAL_IDENTIFIER_EXPANSION='yazi'
+    # typeset -g POWERLEVEL9K_YAZI_VISUAL_IDENTIFIER_EXPANSION='yazi'
 
     ######################[ nnn: nnn shell (https://github.com/jarun/nnn) ]#######################
     # Nnn shell color.
     typeset -g POWERLEVEL9K_NNN_FOREGROUND=72
     # Custom icon.
-    typeset -g POWERLEVEL9K_NNN_VISUAL_IDENTIFIER_EXPANSION='nnn'
+    # typeset -g POWERLEVEL9K_NNN_VISUAL_IDENTIFIER_EXPANSION='nnn'
 
     ###########################[ vim_shell: vim shell indicator (:sh) ]###########################
     # Vim shell indicator color.
     typeset -g POWERLEVEL9K_VIM_SHELL_FOREGROUND=28
     # Custom icon.
-    typeset -g POWERLEVEL9K_VIM_SHELL_VISUAL_IDENTIFIER_EXPANSION='vim'
+    # typeset -g POWERLEVEL9K_VIM_SHELL_VISUAL_IDENTIFIER_EXPANSION='vim'
 
     ######[ midnight_commander: midnight commander shell (https://midnight-commander.org/) ]######
     # Midnight Commander shell color.
     typeset -g POWERLEVEL9K_MIDNIGHT_COMMANDER_FOREGROUND=230
     # Custom icon.
-    typeset -g POWERLEVEL9K_MIDNIGHT_COMMANDER_VISUAL_IDENTIFIER_EXPANSION='mc'
+    # typeset -g POWERLEVEL9K_MIDNIGHT_COMMANDER_VISUAL_IDENTIFIER_EXPANSION='mc'
 
     ##################################[ context: user@hostname ]##################################
     # Context color when running with privileges.
