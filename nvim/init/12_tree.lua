@@ -33,7 +33,7 @@ require('nvim-tree').setup({
     full_name = true,
     group_empty = true,
     icons = {
-      git_placement = 'after',
+      git_placement = 'signcolumn',
     },
   },
 })
