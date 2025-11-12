@@ -122,6 +122,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
         .perl-version
         .php-version
         .tool-versions
+        .mise.toml
         .shorten_folder_marker
         .svn
         .terraform
@@ -309,7 +310,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
             (( VCS_STATUS_COMMITS_AHEAD && !VCS_STATUS_COMMITS_BEHIND )) && res+=" "
             (( VCS_STATUS_COMMITS_AHEAD  )) && res+="${clean}⇡${VCS_STATUS_COMMITS_AHEAD}"
         elif [[ -n $VCS_STATUS_REMOTE_BRANCH ]]; then
-            # = if up to date with the remote.
+            # '=' if up to date with the remote.
             res+=" ${clean}="
         fi
 
@@ -412,6 +413,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
     typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=160
     # Use terse signal names: "INT" instead of "SIGINT(2)".
     typeset -g POWERLEVEL9K_STATUS_VERBOSE_SIGNAME=true
+    typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION='✘'
 
     # Status when some part of a pipe command fails and the overall exit status is also non-zero.
     # It may look like this: 1|0.
@@ -530,7 +532,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
     typeset -g POWERLEVEL9K_PYENV_CONTENT_EXPANSION='${P9K_CONTENT}${${P9K_CONTENT:#$P9K_PYENV_PYTHON_VERSION(|/*)}:+ $P9K_PYENV_PYTHON_VERSION}'
 
     #############[ kubecontext: current kubernetes context (https://kubernetes.io/) ]#############
-    # Show kubecontext only when the the command you are typing invokes one of these tools.
+    # Show kubecontext only when the command you are typing invokes one of these tools.
     # Tip: Remove the next line to always show kubecontext.
     typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|flux|fluxctl|stern|kubeseal|skaffold|kubent|kubecolor|cmctl|sparkctl'
 
@@ -565,7 +567,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
     #              it incompatible with your zsh configuration files.
     #   - quiet:   Enable instant prompt and don't print warnings when detecting console output
     #              during zsh initialization. Choose this if you've read and understood
-    #              https://github.com/romkatv/powerlevel10k/blob/master/README.md#instant-prompt.
+    #              https://github.com/romkatv/powerlevel10k#instant-prompt
     #   - verbose: Enable instant prompt and print a warning when detecting console output during
     #              zsh initialization. Choose this if you've never tried instant prompt, haven't
     #              seen the warning, or if you are unsure what this all means.
