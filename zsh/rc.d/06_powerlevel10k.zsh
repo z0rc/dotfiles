@@ -540,6 +540,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
     # Don't show terraform workspace if it's literally "default".
     typeset -g POWERLEVEL9K_TERRAFORM_SHOW_DEFAULT=false
     typeset -g POWERLEVEL9K_TERRAFORM_SHOW_ON_COMMAND='terraform|make'
+    typeset -g POWERLEVEL9K_TERRAFORM_ICON='\uE8BD'
 
     #[ aws: aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) ]#
     # Show aws only when the the command you are typing invokes one of these tools.
