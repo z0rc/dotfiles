@@ -20,6 +20,21 @@ require('mini.git').setup()
 require('mini.diff').setup()
 require('mini.pairs').setup({
   modes = { command = true },
+  -- https://github.com/nvim-mini/mini.nvim/issues/835
+  mappings = {
+    -- prevents the action if the cursor is just before any character or next to a "\"
+    ['('] = { action = 'open', pair = '()', neigh_pattern = '[^\\][%s%)%]%}]' },
+    ['['] = { action = 'open', pair = '[]', neigh_pattern = '[^\\][%s%)%]%}]' },
+    ['{'] = { action = 'open', pair = '{}', neigh_pattern = '[^\\][%s%)%]%}]' },
+    -- this is default (prevents the action if the cursor is just next to a "\")
+    [')'] = { action = 'close', pair = '()', neigh_pattern = '[^\\].' },
+    [']'] = { action = 'close', pair = '[]', neigh_pattern = '[^\\].' },
+    ['}'] = { action = 'close', pair = '{}', neigh_pattern = '[^\\].' },
+    -- prevents the action if the cursor is just before or next to any character
+    ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = '[^%w][^%w]', register = { cr = false } },
+    ["'"] = { action = 'closeopen', pair = "''", neigh_pattern = '[^%w][^%w]', register = { cr = false } },
+    ['`'] = { action = 'closeopen', pair = '``', neigh_pattern = '[^%w][^%w]', register = { cr = false } },
+  },
 })
 require('mini.surround').setup({
   search_method = 'cover_or_nearest',
