@@ -42,6 +42,7 @@ require('mini.surround').setup({
 require('mini.comment').setup()
 require('mini.notify').setup()
 require('mini.pick').setup()
+require('mini.cmdline').setup()
 require('mini.indentscope').setup({
   draw = {
     delay = 0,
