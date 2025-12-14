@@ -1,0 +1,11 @@
+theme = Builtin Solarized Dark
+shell-integration = none
+confirm-close-surface = false
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+mouse-hide-while-typing = true
+window-padding-balance=true
+bell-features = no-attention
+link-previews = true
+
+config-file = ?config-local

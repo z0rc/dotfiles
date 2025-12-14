@@ -38,6 +38,7 @@ with [zero home presence](#zero-home-presence).
   * [quilt](configs/quiltrc)
   * [Git](configs/gitconfig)
   * [htop](configs/htoprc)
+  * [Ghostty](configs/ghostty)
 * Handy [utilities](tools), including:
   * [fzf](https://github.com/junegunn/fzf)
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
