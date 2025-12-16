@@ -1,1 +1,1 @@
-alias httpstat="bash $DOTFILES/tools/httpstat/httpstat.sh"
+alias httpstat="$DOTFILES/tools/httpstat/httpstat"
