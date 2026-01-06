@@ -1,4 +1,4 @@
-theme = Builtin Solarized Dark
+theme = iTerm2 Solarized Dark
 shell-integration = none
 confirm-close-surface = false
 keybind = alt+left=unbind
