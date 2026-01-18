@@ -11,12 +11,8 @@ title_format = "yazi: {cwd}"
 [preview]
 tab_size = 4
 
-[[plugin.prepend_fetchers]]
-id   = "git"
-name = "*"
-run  = "git"
-
-[[plugin.prepend_fetchers]]
-id   = "git"
-name = "*/"
-run  = "git"
+[plugin]
+prepend_fetchers = [
+  { id = "git", url = "*",  run = "git" },
+  { id = "git", url = "*/", run = "git" },
+]
