@@ -192,9 +192,6 @@
 [submodule "tools/testssl.sh"]
 	path = tools/testssl.sh
 	url = https://github.com/drwetter/testssl.sh.git
-[submodule "tools/tldr-bash-client"]
-	path = tools/tldr-bash-client
-	url = https://github.com/pepa65/tldr-bash-client.git
 [submodule "vim/pack/01_sensible/start/sensible"]
 	path = vim/pack/01_sensible/start/sensible
 	url = https://github.com/tpope/vim-sensible.git

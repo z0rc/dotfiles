@@ -161,17 +161,6 @@ print "Downloading gitstatusd for powerlevel10k..."
 zsh -is <<< '' &> /dev/null
 print "  ...done"
 
-# Download/refresh TLDR pages
-print "Downloading TLDR pages..."
-pushd tools/tldr-bash-client
-if tldr_u_output=$(./tldr -u); then
-    print "  ...done"
-else
-    print $tldr_u_output
-    print "  ...error detected, ignoring"
-fi
-popd
-
 # Install task to pull updates every midnight
 print "Installing periodic update task..."
 if (( ${+commands[systemctl]} )); then
