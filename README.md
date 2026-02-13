@@ -70,8 +70,7 @@ with [zero home presence](#zero-home-presence).
 * `make` required to install git helpers
 * `perl` diff-so-fancy runtime
 * [`delta`](https://github.com/dandavison/delta) will be used as git pager instead of diff-so-fancy
-* [`fd`](https://github.com/sharkdp/fd) or [`rg`](https://github.com/BurntSushi/ripgrep) or [`ag`](https://github.com/ggreer/the_silver_searcher) will be used as fzf default command
-* [`bat`](https://github.com/sharkdp/bat) will be used in fzf preview window and as man pager
+* [`bat`](https://github.com/sharkdp/bat) will be used as man pager
 * Nerd Fonts Symbols Only installed and enabled fallback in terminal emulator
 
 ### Location
