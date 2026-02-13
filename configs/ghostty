@@ -4,7 +4,7 @@ confirm-close-surface = false
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 mouse-hide-while-typing = true
-window-padding-balance=true
+window-padding-balance = true
 bell-features = no-attention
 link-previews = true
 
