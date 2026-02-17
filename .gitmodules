@@ -417,7 +417,6 @@
 [submodule "yazi/plugins/githead.yazi"]
 	path = yazi/plugins/githead.yazi
 	url = https://github.com/llanosrocas/githead.yazi.git
-	branch = nightly
 [submodule "yazi/yazi-rs-plugins"]
 	path = yazi/yazi-rs-plugins
 	url = https://github.com/yazi-rs/plugins.git
