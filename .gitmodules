@@ -139,11 +139,9 @@
 [submodule "nvim/plugins/nvim-treesitter"]
 	path = nvim/plugins/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
-	branch = main
 [submodule "nvim/plugins/nvim-treesitter-textobjects"]
 	path = nvim/plugins/nvim-treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
-	branch = main
 [submodule "nvim/plugins/plenary"]
 	path = nvim/plugins/plenary
 	url = https://github.com/nvim-lua/plenary.nvim.git
