@@ -1,4 +1,5 @@
 theme = iTerm2 Solarized Dark
+palette-generate = false
 shell-integration = none
 confirm-close-surface = false
 keybind = alt+left=unbind
