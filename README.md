@@ -165,7 +165,7 @@ default. Man pages can be placed in `$XDG_DATA_HOME/man`.
 Pyenv and similar wrappers are lazy-loaded, meaning they won't be initialized
 at shell start. Activation occurs on the first execution. Check the output of
 `type -f pyenv` in the shell and the
-[implementation](zsh/rc.d/11_many_env.zsh). Because of this, files like
+[implementation](zsh/rc.d/12_many_env.zsh). Because of this, files like
 `.python-version` won't work as expected; it's recommended to use
 `autoenv.zsh` to explicitly activate the needed environment.
 
