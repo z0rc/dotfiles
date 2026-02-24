@@ -23,6 +23,7 @@ if [[ $OSTYPE = darwin* ]]; then
                 MANPATH=$HOMEBREW_PREFIX/opt/$gnuutil/libexec/gnuman:$MANPATH
             fi
         done
+        unset gnuutil
         # Prefer curl installed via brew
         if [[ -d $HOMEBREW_PREFIX/opt/curl/bin ]]; then
             path=($HOMEBREW_PREFIX/opt/curl/bin $path)
