@@ -32,8 +32,11 @@ venv/
 
 ### Vim ###
 # swap
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
+[._]*.s[a-v][a-z]
+!*.svg
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
 # session
 Session.vim
 # temporary
@@ -42,8 +45,11 @@ Session.vim
 # plugin doc tags
 /doc/tags
 /doc/tags-*
-# local vimrc (per folder configuration)
+# local per folder configuration
 .lvimrc
+.nvim.lua
+.nvimrc
+.exrc
 
 ### Zsh ###
 # autoenv
