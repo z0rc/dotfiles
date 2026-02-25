@@ -2,7 +2,7 @@ vim.loader.enable()
 
 vim.o.title = true
 vim.o.titlelen = 0
-vim.o.titlestring = 'nvim: %{expand("%:p")}'
+vim.o.titlestring = 'nvim: %{substitute(expand("%:p"), $HOME, "~", "")}'
 vim.o.colorcolumn = '+1'
 vim.o.laststatus = 3
 vim.o.expandtab = true
