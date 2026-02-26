@@ -93,11 +93,13 @@ if (( ${+commands[make]} )); then
     popd
     print "  ...done"
 
-    print "Installing git-quick-stats..."
-    pushd tools/git-quick-stats
-    PREFIX=$HOME/.local make install > /dev/null
-    popd
-    print "  ...done"
+    if (( ${+commands[which]} )); then
+        print "Installing git-quick-stats..."
+        pushd tools/git-quick-stats
+        PREFIX=$HOME/.local make install > /dev/null
+        popd
+        print "  ...done"
+    fi
 fi
 
 print "Installing fzf..."
