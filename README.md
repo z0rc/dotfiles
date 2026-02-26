@@ -64,6 +64,7 @@ with [zero home presence](#zero-home-presence).
 
 * `zsh` version 5.9 or newer is strongly recommended
 * `git` all external components are added as git submodules
+* `which` required build dependecy
 
 ### Optional Dependencies
 
