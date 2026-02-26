@@ -72,8 +72,8 @@ nmap_leader('lh', vim.lsp.buf.hover, 'Hover')
 nmap_leader('lr', vim.lsp.buf.rename, 'Rename')
 nmap_leader('lR', vim.lsp.buf.references, 'References')
 nmap_leader('ls', vim.lsp.buf.definition, 'Source definition')
-nmap_leader('lt', vim.lsp.buf.type_definition, 'Type definition')
 nmap_leader('lS', require('schema-companion').select_schema, 'Select schema')
+nmap_leader('lt', vim.lsp.buf.type_definition, 'Type definition')
 
 -- buffers
 nmap_leader('ba', '<Cmd>b#<CR>', 'Alternate')
