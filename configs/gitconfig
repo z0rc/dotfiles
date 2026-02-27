@@ -58,5 +58,6 @@
 	navigate = true
 	hyperlinks = true
 	dark = true
+	line-numbers = true
 
 # vi: ft=gitconfig
