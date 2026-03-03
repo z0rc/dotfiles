@@ -38,7 +38,7 @@ else
 fi
 
 # Link config files
-print Linking config files...
+print "Linking config files..."
 zf_ln -sfn $SCRIPT_DIR/vim $XDG_CONFIG_HOME/vim
 zf_ln -sfn $SCRIPT_DIR/nvim/init.lua $XDG_CONFIG_HOME/nvim/init.lua
 zf_ln -sfn $SCRIPT_DIR/nvim/init $XDG_CONFIG_HOME/nvim/plugin/init
@@ -62,6 +62,7 @@ zf_ln -sfn $SCRIPT_DIR/yazi/yazi.toml $XDG_CONFIG_HOME/yazi/yazi.toml
 zf_ln -sfn $SCRIPT_DIR/yazi/plugins $XDG_CONFIG_HOME/yazi/plugins
 zf_ln -sfn $SCRIPT_DIR/gpg/gpg.conf $XDG_CONFIG_HOME/gnupg/gpg.conf
 zf_ln -sfn $SCRIPT_DIR/gpg/gpg-agent.conf $XDG_CONFIG_HOME/gnupg/gpg-agent.conf
+zf_ln -sfn $SCRIPT_DIR/tools/git-diff-pager $HOME/.local/bin/git-diff-pager
 print "  ...done"
 
 # Make sure submodules are installed
@@ -93,11 +94,13 @@ if (( ${+commands[make]} )); then
     popd
     print "  ...done"
 
-    print "Installing git-quick-stats..."
-    pushd tools/git-quick-stats
-    PREFIX=$HOME/.local make install > /dev/null
-    popd
-    print "  ...done"
+    if (( ${+commands[which]} )); then
+        print "Installing git-quick-stats..."
+        pushd tools/git-quick-stats
+        PREFIX=$HOME/.local make install > /dev/null
+        popd
+        print "  ...done"
+    fi
 fi
 
 print "Installing fzf..."

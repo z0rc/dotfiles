@@ -67,7 +67,7 @@ with [zero home presence](#zero-home-presence).
 
 ### Optional Dependencies
 
-* `make` required to install git helpers
+* `make` and `which` required to install git helpers
 * `perl` diff-so-fancy runtime
 * [`delta`](https://github.com/dandavison/delta) will be used as git pager instead of diff-so-fancy
 * [`bat`](https://github.com/sharkdp/bat) will be used as man pager
@@ -108,7 +108,7 @@ module.
 ## Neovim Version
 
 Neovim configuration is tested with latest released Neovim version only. At the
-moment of writing it's version 0.11.0.
+moment of writing it's version 0.11.
 
 ## Vim Version
 

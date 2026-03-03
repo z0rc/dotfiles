@@ -1,24 +1,33 @@
 [include]
 	path = local/user
 	path = local/stuff
+[pull]
+	rebase = true
 [push]
 	default = current
 	followTags = true
 	autoSetupRemote = true
 [branch]
 	autoSetupRebase = always
+	sort = -committerdate
+[tag]
+	sort = version:refname
 [merge]
 	ff = only
 	conflictStyle = zdiff3
-[pull]
-	rebase = true
 [fetch]
 	prune = true
+	pruneTags = true
+	all = true
 [rebase]
 	autoStash = true
+	autoSquash = true
+	updateRefs = true
 [alias]
 	lg = log --graph --pretty=fuller --decorate --color --show-signature
 	ls = log --oneline --abbrev-commit --color
+	df = diff --color
+	de = diff --color
 	amend = commit --amend
 [credential]
 	helper = cache --socket ~/.cache/git-credential-cache/socket
@@ -26,14 +35,19 @@
 	algorithm = histogram
 	ignoreSubmodules = dirty
 	submodule = log
-	colorMoved = default
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [core]
 	excludesFile = ~/.config/git/ignore
 	autocrlf = input
 	whitespace = cr-at-eol
 	untrackedCache = true
+	pager = less --quit-if-one-screen
 [pager]
-	diff = which delta &>/dev/null && delta || which diff-so-fancy &>/dev/null && diff-so-fancy | less --quit-if-one-screen || less --quit-if-one-screen
+	diff = git-diff-pager
+	df = diff-so-fancy | less --quit-if-one-screen --pattern '^(Date|added|deleted|modified): '
+	de = delta
 [submodule]
 	fetchJobs = 0
 	recurse = true
@@ -41,23 +55,13 @@
 	autoCorrect = 5
 [status]
 	submoduleSummary = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+[column]
+	ui = auto
 [delta]
 	navigate = true
 	hyperlinks = true
 	dark = true
 	line-numbers = true
+	syntax-theme = Solarized (dark)
 
 # vi: ft=gitconfig
