@@ -1,11 +1,9 @@
 #!/usr/bin/env zsh
 
-setopt extended_glob err_exit
-
 if (( ${+commands[delta]} )); then
-    delta
+    exec delta
 elif (( ${+commands[diff-so-fancy]} )); then
     diff-so-fancy | less --quit-if-one-screen --pattern '^(Date|added|deleted|modified): '
 else
-    less --quit-if-one-screen
+    exec less --quit-if-one-screen
 fi
