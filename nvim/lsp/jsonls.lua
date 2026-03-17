@@ -4,6 +4,7 @@ return require('schema-companion').setup_client(
       require('schema-companion').sources.lsp.setup(),
     },
   }),
+  ---@diagnostic disable-next-line: missing-fields
   {
     settings = {
       json = {
