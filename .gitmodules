@@ -97,6 +97,7 @@
 [submodule "nvim/plugins/blink.cmp"]
 	path = nvim/plugins/blink.cmp
 	url = https://github.com/Saghen/blink.cmp.git
+	branch = v1
 [submodule "nvim/plugins/codecompanion"]
 	path = nvim/plugins/codecompanion
 	url = https://github.com/olimorris/codecompanion.nvim.git
