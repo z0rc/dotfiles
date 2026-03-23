@@ -24,10 +24,6 @@
 	autoSquash = true
 	updateRefs = true
 [alias]
-	lg = log --graph --pretty=fuller --decorate --color --show-signature
-	ls = log --oneline --abbrev-commit --color
-	df = diff --color
-	de = diff --color
 	amend = commit --amend
 [credential]
 	helper = cache --socket ~/.cache/git-credential-cache/socket
@@ -46,8 +42,6 @@
 	pager = less --quit-if-one-screen
 [pager]
 	diff = git-diff-pager
-	df = diff-so-fancy | less --quit-if-one-screen --pattern '^(Date|added|deleted|modified): '
-	de = delta
 [submodule]
 	fetchJobs = 0
 	recurse = true
