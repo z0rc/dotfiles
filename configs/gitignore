@@ -67,4 +67,8 @@ Session.vim
 # MacOS
 .DS_Store
 
+### Agents ###
+# Claude
+**/.claude/settings.local.json
+
 # vi: ft=gitignore
