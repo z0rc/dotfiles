@@ -3,7 +3,7 @@
 if (( ${+commands[delta]} )); then
     exec delta
 elif (( ${+commands[diff-so-fancy]} )); then
-    diff-so-fancy | less --quit-if-one-screen --pattern '^(Date|added|deleted|modified): '
+    diff-so-fancy | exec less --quit-if-one-screen
 else
     exec less --quit-if-one-screen
 fi
