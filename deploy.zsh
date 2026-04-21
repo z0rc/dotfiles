@@ -188,7 +188,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/git -c user.name=systemd.update -c user.email=systemd@localhost pull
+ExecStart=/usr/bin/git -c user.name=systemd.update -c user.email=systemd@localhost pull --force
 WorkingDirectory=$SCRIPT_DIR"
     print -r -- $service_content > $systemd_unit_dir/$service_name
 
@@ -212,7 +212,7 @@ WantedBy=timers.target"
     fi
 elif (( ${+commands[crontab]} )); then
     print "  ...cron detected, installing job for periodic updates..."
-    cron_task="cd $SCRIPT_DIR && git -c user.name=cron.update -c user.email=cron@localhost pull"
+    cron_task="cd $SCRIPT_DIR && git -c user.name=cron.update -c user.email=cron@localhost pull --force"
     cron_schedule="0 0 * * * $cron_task"
     if cat <(grep --ignore-case --invert-match --fixed-strings $cron_task <(crontab -l)) <(echo $cron_schedule) | crontab -; then
         print "  ...done"
