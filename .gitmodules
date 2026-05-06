@@ -146,6 +146,9 @@
 [submodule "nvim/plugins/plenary"]
 	path = nvim/plugins/plenary
 	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "nvim/plugins/precognition"]
+	path = nvim/plugins/precognition
+	url = https://github.com/tris203/precognition.nvim.git
 [submodule "nvim/plugins/reticle"]
 	path = nvim/plugins/reticle
 	url = https://github.com/tummetott/reticle.nvim.git

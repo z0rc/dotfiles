@@ -68,3 +68,7 @@ require('markview').setup({
     ignore_buftypes = {},
   },
 })
+require('precognition').setup({
+  startVisible = false,
+  showBlankVirtLine = false,
+})
