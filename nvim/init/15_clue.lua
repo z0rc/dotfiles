@@ -1,48 +1,19 @@
 local miniclue = require('mini.clue')
 miniclue.setup({
   triggers = {
-    -- Leader triggers
-    { mode = 'n', keys = '<Leader>' },
-    { mode = 'x', keys = '<Leader>' },
-
-    -- Built-in completion
-    { mode = 'i', keys = '<C-x>' },
-
-    -- `g` key
-    { mode = 'n', keys = 'g' },
-    { mode = 'x', keys = 'g' },
-
-    -- Marks
-    { mode = 'n', keys = "'" },
-    { mode = 'n', keys = '`' },
-    { mode = 'x', keys = "'" },
-    { mode = 'x', keys = '`' },
-
-    -- Registers
-    { mode = 'n', keys = '"' },
-    { mode = 'x', keys = '"' },
-    { mode = 'i', keys = '<C-r>' },
-    { mode = 'c', keys = '<C-r>' },
-
-    -- Window commands
-    { mode = 'n', keys = '<C-w>' },
-
-    -- `z` key
-    { mode = 'n', keys = 'z' },
-    { mode = 'x', keys = 'z' },
-
-    -- mini.surround
-    { mode = 'n', keys = 's' },
-    { mode = 'x', keys = 's' },
-
-    -- mini.basics
-    { mode = 'n', keys = '\\' },
-
-    -- mini.bracketed
-    { mode = 'n', keys = '[' },
-    { mode = 'n', keys = ']' },
-    { mode = 'x', keys = '[' },
-    { mode = 'x', keys = ']' },
+    { mode = { 'n', 'x' }, keys = '<Leader>' }, -- Leader triggers
+    { mode = 'i', keys = '<C-x>' }, -- Built-in completion
+    { mode = { 'n', 'x' }, keys = 'g' }, -- `g` key
+    { mode = { 'n', 'x' }, keys = "'" }, -- Marks
+    { mode = { 'n', 'x' }, keys = '`' },
+    { mode = { 'n', 'x' }, keys = '"' }, -- Registers
+    { mode = { 'i', 'c' }, keys = '<C-r>' },
+    { mode = 'n', keys = '<C-w>' }, -- Window commands
+    { mode = { 'n', 'x' }, keys = 'z' }, -- `z` key
+    { mode = { 'n', 'x' }, keys = 's' }, -- mini.surround
+    { mode = 'n', keys = '\\' }, -- mini.basics
+    { mode = { 'n', 'x' }, keys = '[' }, -- mini.bracketed
+    { mode = { 'n', 'x' }, keys = ']' },
   },
   clues = {
     { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
