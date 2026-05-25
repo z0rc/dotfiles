@@ -10,3 +10,5 @@ vim.api.nvim_create_autocmd('BufLeave', {
   buffer = 0,
   callback = function() vim.o.laststatus = 3 end,
 })
+
+vim.b.miniindentscope_disable = true
