@@ -41,7 +41,7 @@
 	untrackedCache = true
 	pager = less --quit-if-one-screen
 [pager]
-	diff = git-diff-pager
+	diff = ~/.local/bin/git-diff-pager
 [submodule]
 	fetchJobs = 0
 	recurse = true
