@@ -15,7 +15,7 @@ if [[ $OSTYPE = darwin* ]]; then
         evalcache brew shellenv
 
         # Enable gnu version of utilities on macOS, if installed
-        for gnuutil in coreutils gnu-sed gnu-tar grep; do
+        for gnuutil in coreutils gnu-sed gnu-tar grep gpatch; do
             if [[ -d $HOMEBREW_PREFIX/opt/$gnuutil/libexec/gnubin ]]; then
                 path=($HOMEBREW_PREFIX/opt/$gnuutil/libexec/gnubin $path)
             fi
