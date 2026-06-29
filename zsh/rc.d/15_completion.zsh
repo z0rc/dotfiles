@@ -31,14 +31,14 @@ zmodload zsh/complist
 # - 'mh+20' matches files (or directories or whatever) that are older than 20 hours.
 autoload -Uz compinit
 if [[ -n $XDG_CACHE_HOME/zsh/compdump(#qN.mh+20) ]]; then
-    compinit -i -u -d $XDG_CACHE_HOME/zsh/compdump
+    compinit -u -d $XDG_CACHE_HOME/zsh/compdump
     # zrecompile fresh compdump in background
     {
         autoload -Uz zrecompile
         zrecompile -pq $XDG_CACHE_HOME/zsh/compdump
     } &!
 else
-    compinit -i -u -C -d $XDG_CACHE_HOME/zsh/compdump
+    compinit -u -C -d $XDG_CACHE_HOME/zsh/compdump
 fi
 
 # Enable bash completions too

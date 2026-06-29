@@ -13,7 +13,6 @@ rules = [
   { url = "*", is = "orphan", fg = "#dc322f", bg = "#eee8d5", bold = true },
   { url = "*", is = "fifo", fg = "#b58900", bg = "#eee8d5", bold = true },
   { url = "*", is = "sock", fg = "#d33682", bg = "#eee8d5", bold = true },
-  { url = "*", is = "sticky" },
   { url = "*.1", fg = "#839496" },
   { url = "*.a", fg = "#839496" },
   { url = "*.c", fg = "#839496" },

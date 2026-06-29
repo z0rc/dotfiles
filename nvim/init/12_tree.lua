@@ -6,10 +6,9 @@ require('nvim-tree').setup({
       enable = true,
       ignore_list = {
         'help',
-        'git',
       },
     },
-    exclude = function(event) return event.file:find(vim.fn.getcwd() .. '/.git/', 1, true) == 1 end,
+    exclude = function(event) return vim.tbl_contains({ 'help', 'gitcommit', 'gitrebase' }, vim.bo[event.buf].ft) end,
   },
   sort = {
     sorter = 'case_sensitive',
