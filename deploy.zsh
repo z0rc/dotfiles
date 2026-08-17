@@ -138,7 +138,7 @@ if (( ${+commands[nvim]} )); then
     print "  ...done"
     # Update treesitter config
     print "Updating tree-sitter parsers..."
-    command nvim --headless -c "TSUpdate" -c "qall" &> /dev/null
+    command nvim --headless -c 'lua require("nvim-treesitter").update():wait(600000)' -c "qall" &> /dev/null
     print "  ...done"
     # Update mason registries
     print "Updating mason registries..."

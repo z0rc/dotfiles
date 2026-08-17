@@ -4,6 +4,4 @@ vim.opt_local.sidescrolloff = 0
 
 vim.b.ministatusline_disable = true
 
-vim.treesitter.start()
-
 vim.cmd('startinsert')

@@ -164,6 +164,9 @@
 [submodule "nvim/plugins/tmux"]
 	path = nvim/plugins/tmux
 	url = https://github.com/aserowy/tmux.nvim.git
+[submodule "nvim/plugins/treesitter-modules"]
+	path = nvim/plugins/treesitter-modules
+	url = https://github.com/MeanderingProgrammer/treesitter-modules.nvim.git
 [submodule "tmux/plugins/colors-solarized"]
 	path = tmux/plugins/colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git

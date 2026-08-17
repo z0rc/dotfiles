@@ -55,6 +55,14 @@ MiniMisc.setup_restore_cursor()
 require('mini.icons').setup()
 MiniIcons.mock_nvim_web_devicons()
 
+require('treesitter-modules').setup({
+  auto_install = true,
+  highlight = { enable = true },
+  fold = { enable = true },
+  -- treesitter indentation is worse than built-in for these
+  indent = { enable = true, disable = { 'bash', 'yaml' } },
+})
+
 require('reticle').setup()
 require('git-rebase-auto-diff').setup()
 require('tmux').setup({
