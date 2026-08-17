@@ -1,6 +1,7 @@
 export PAGER=less
 export LESS="--RAW-CONTROL-CHARS --ignore-case --hilite-unread --LONG-PROMPT --window=-4 --tabs=4 --mouse --wheel-lines=3"
 export READNULLCMD=$PAGER
+export MANPATH
 
 # make sure gpg knows about current TTY
 export GPG_TTY=$TTY
