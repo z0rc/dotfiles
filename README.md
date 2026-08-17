@@ -62,8 +62,9 @@ with [zero home presence](#zero-home-presence).
 
 ### Requirements
 
-* `zsh` version 5.9 or newer is strongly recommended
+* `zsh` version 5.9 or newer
 * `git` all external components are added as git submodules
+* GNU coreutils on macOS and \*BSD, see [GNU userland](#gnu-userland)
 
 ### Optional Dependencies
 
@@ -72,6 +73,24 @@ with [zero home presence](#zero-home-presence).
 * [`delta`](https://github.com/dandavison/delta) will be used as git pager instead of diff-so-fancy
 * [`bat`](https://github.com/sharkdp/bat) will be used as man pager
 * Nerd Fonts Symbols Only installed and enabled fallback in terminal emulator
+
+### GNU Userland
+
+Shell aliases assume GNU versions of `ls`, `df`, `du`, `cp` and `rm`,
+as they use flags base BSD utilities don't provide. Without GNU coreutils these
+aliases fail with `unrecognized option`. Some \*BSD variants need GNU
+`grep` and `diff` too, their base versions don't support the long options
+used in aliases.
+
+Where coreutils is installed with a `g` prefix, like `gls` or `gdf`,
+symlink the binaries under their plain names into `$HOME/.local/bin`, which
+is already first in `PATH`:
+
+```sh
+for util in ls df du cp rm; do
+    ln -sf "$(command -v g$util)" "$HOME/.local/bin/$util"
+done
+```
 
 ### Location
 
@@ -107,8 +126,7 @@ module.
 
 ## Neovim Version
 
-Neovim configuration is tested with latest released Neovim version only. At the
-moment of writing it's version 0.11.
+Neovim configuration is tested with latest Neovim release only.
 
 ## Vim Version
 
