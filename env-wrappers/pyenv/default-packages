@@ -1,1 +1,4 @@
 futures; python_version < '2.7'
+ptpython
+icecream
+devtools
