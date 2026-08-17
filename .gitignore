@@ -1,7 +1,4 @@
-vim/spell/*.add*
 vim/.netrwhist*
-vim/autoload/getopts/*.cache
-vim/.viminfo*
 vim/vimrc.local
 
 nvim/init/0[1-9]_*

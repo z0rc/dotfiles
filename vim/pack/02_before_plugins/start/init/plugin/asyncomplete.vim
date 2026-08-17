@@ -34,10 +34,10 @@ function! s:my_asyncomplete_preprocessor(options, matches) abort
                 if has_key(l:dict,l:item['word'])
                     let l:old_item = get(l:dict, l:item['word'])
                     if l:old_item['priority'] <  l:source_priority
-                        let l:dict[item['word']] = l:item
+                        let l:dict[l:item['word']] = l:item
                     endif
                 else
-                    let l:dict[item['word']] = l:item
+                    let l:dict[l:item['word']] = l:item
                 endif
             endif
         endfor
@@ -54,5 +54,5 @@ let g:lsp_diagnostics_echo_cursor = 1
 " enable references highlight
 let g:lsp_highlight_references_enabled = 1
 
-" enable symantic highlighting
+" enable semantic highlighting
 let g:lsp_semantic_enabled = 1

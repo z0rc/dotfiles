@@ -8,15 +8,15 @@ let g:which_key_map={}
 " git menu
 let g:which_key_map.g={
     \ 'name' : 'Git',
-    \ 's' : ['Gstatus', 'Status'],
-    \ 'p' : ['Gpull', 'Pull'],
-    \ 'u' : ['Gpush', 'Push'],
-    \ 'c' : ['Gcommit', 'Commit'],
+    \ 's' : [':Git', 'Status'],
+    \ 'p' : [':Git pull', 'Pull'],
+    \ 'u' : [':Git push', 'Push'],
+    \ 'c' : [':Git commit', 'Commit'],
     \ 'w' : ['Gwrite', 'Write'],
-    \ 'd' : ['Gdiff', 'Diff'],
-    \ 'l' : ['Glog', 'Log'],
-    \ 'f' : ['Gfetch', 'Fetch'],
-    \ 'b' : ['Gblame', 'Blame'],
+    \ 'd' : ['Gdiffsplit', 'Diff'],
+    \ 'l' : ['Gclog', 'Log'],
+    \ 'f' : [':Git fetch', 'Fetch'],
+    \ 'b' : [':Git blame', 'Blame'],
     \ 'v' : ['GV', 'GV (history browser)'],
     \ 'h' : {
     \   'name' : 'Hunks',
@@ -66,7 +66,6 @@ let g:which_key_map.e={
 " toggles
 let g:which_key_map.t={
     \ 'name' : 'Toggles',
-    \ 'c' : ['<Plug>CapsLockToggle', 'Caps lock'],
     \ 'd' : [':Fern . -drawer -toggle -reveal=%', 'File drawer'],
     \ 'l' : ['LToggle', 'Location list'],
     \ 'q' : ['QToggle', 'Quickfix window'],

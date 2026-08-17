@@ -1,3 +1,3 @@
 " remove default listtoggle mappings
-unmap <leader>l
-unmap <leader>q
+silent! unmap <leader>l
+silent! unmap <leader>q

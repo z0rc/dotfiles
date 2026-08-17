@@ -3,7 +3,7 @@ map <Space> <leader>
 
 " if suggestions windows present, then <Enter> accepts selection
 " else use delimitMateCR mapping
-imap <silent> <expr> <CR> pumvisible() ? asyncomplete#close_popup() : '<Plug>delimitMateCR'
+imap <silent> <expr> <CR> pumvisible() ? asyncomplete#close_popup() : "\<Plug>delimitMateCR"
 
 " git hunks navigation
 nmap [c <Plug>GitGutterPrevHunk
@@ -26,7 +26,7 @@ vnoremap > >gv
 " visual paste without yanking
 vnoremap p "_c<C-r><C-o>+<Esc>
 
-" accept commands with accidential shift key pressed
+" accept commands with accidental shift key pressed
 command! -bang -nargs=* -complete=file E e<bang> <args>
 command! -bang -nargs=* -complete=file W w<bang> <args>
 command! -bang -nargs=* -complete=file Wq wq<bang> <args>
