@@ -7,8 +7,10 @@ return require('schema-companion').setup_client(
   ---@diagnostic disable-next-line: missing-fields
   {
     settings = {
-      yamlls = {
-        path = vim.fn.stdpath('data') .. '/mason/bin/yaml-language-server',
+      ['helm-ls'] = {
+        yamlls = {
+          path = vim.fn.stdpath('data') .. '/mason/bin/yaml-language-server',
+        },
       },
     },
   }
