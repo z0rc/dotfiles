@@ -37,3 +37,6 @@ MANPATH=$XDG_DATA_HOME/man:$MANPATH
 
 # Add go binaries to paths
 path=($GOPATH/bin $path)
+
+# Force path arrays to have unique values only
+typeset -U path cdpath fpath manpath
