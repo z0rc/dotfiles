@@ -28,14 +28,21 @@ alias clear=" clear-screen-soft-bottom"
 alias pwd=" pwd"
 alias exit=" exit"
 
+# Show progress on long copies
+(( ${+commands[dd]} )) && alias dd="dd status=progress"
+
 # Safety
 (( ${+commands[rm]} )) && alias rm="rm -I --preserve-root=all"
+(( ${+commands[chmod]} )) && alias chmod="chmod --preserve-root --changes"
+(( ${+commands[chown]} )) && alias chown="chown --preserve-root --changes"
+(( ${+commands[chgrp]} )) && alias chgrp="chgrp --preserve-root --changes"
 
 # Suppress suggestions and globbing, enable wrappers
 (( ${+commands[find]} )) && alias find="noglob find"
 (( ${+commands[touch]} )) && alias touch="nocorrect touch"
-(( ${+commands[mkdir]} )) && alias mkdir="nocorrect mkdir"
-(( ${+commands[cp]} )) && alias cp="nocorrect cp --verbose"
+(( ${+commands[mkdir]} )) && alias mkdir="nocorrect mkdir --parents --verbose"
+(( ${+commands[cp]} )) && alias cp="nocorrect cp --verbose --reflink=auto"
+(( ${+commands[mv]} )) && alias mv="nocorrect mv --verbose"
 (( ${+commands[ag]} )) && alias ag="noglob ag"
 (( ${+commands[fd]} )) && alias fd="noglob fd"
 (( ${+commands[man]} )) && alias man="nocorrect man"
