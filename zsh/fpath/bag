@@ -5,7 +5,7 @@ emulate -L zsh
 # use bat, if it's available...
 local preview_cmd
 if (( ${+commands[bat]} )); then
-    preview_cmd='bat --style=numbers --color=always --highlight-line=${2} ${1}'
+    preview_cmd='bat --style=numbers --color=always --highlight-line={2} {1}'
 else
     # ...otherwise just highlight line with match using sed replace
     preview_cmd='sed -E "s/(.*'$*'.*)/'${bg[grey]}'\1'${bg[default]}'/gI;" < ${1}'
