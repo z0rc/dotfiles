@@ -150,7 +150,7 @@ fi
 print "Linking env-wrappers' plugins..."
     for env_wrapper in $SCRIPT_DIR/env-wrappers/*; do
         # 'plugin' here is a directory with name which doesn't match env-wrapper's name
-        for env_wrapper_plugin in $env_wrapper/^${env_wrapper:t}$*(#qN/); do
+        for env_wrapper_plugin in $env_wrapper/^${env_wrapper:t}(#qN/); do
             zf_ln -sfn $env_wrapper_plugin $XDG_DATA_HOME/${env_wrapper:t}/plugins/${env_wrapper_plugin:t}
         done
     done
