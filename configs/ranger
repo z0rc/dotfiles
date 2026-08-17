@@ -8,4 +8,3 @@ set vcs_aware true
 set xterm_alt_key true
 set colorscheme solarized
 set update_tmux_title true
-set update_title true
