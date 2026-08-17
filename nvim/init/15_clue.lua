@@ -17,10 +17,10 @@ miniclue.setup({
   },
   clues = {
     { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
-    { mode = 'n', keys = '<leader>f', desc = '+Find' },
+    { mode = 'n', keys = '<Leader>f', desc = '+Find' },
     { mode = 'n', keys = '<Leader>g', desc = '+Git' },
-    { mode = 'n', keys = '<leader>l', desc = '+LSP' },
-    { mode = 'n', keys = '<leader>t', desc = '+Toggle' },
+    { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
+    { mode = 'n', keys = '<Leader>t', desc = '+Toggle' },
     { mode = 'x', keys = '<Leader>g', desc = '+Git' },
     { mode = 'x', keys = '<Leader>l', desc = '+LSP' },
     { mode = 'n', keys = ']b', postkeys = ']' },
