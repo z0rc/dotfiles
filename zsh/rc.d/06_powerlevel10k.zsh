@@ -33,7 +33,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
         nodenv
         rbenv
         plenv
-        luenv
+        luaenv
         jenv
         terraform
         kubecontext
