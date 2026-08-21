@@ -2,12 +2,16 @@
 
 emulate -L zsh
 
-setopt local_options extended_glob
+setopt extended_glob
 
 local cache_dir=$XDG_CACHE_HOME/zsh/eval
-local cache_file=$cache_dir/${(j:_:)@:gs/\//_}.zsh
 
-if [[ -r $cache_file ]] && ! whence $1 > /dev/null; then
+# FNV-1a inline hash
+local c h=2166136261
+for c in ${(s::)"${(qq)@}"}; do (( h = (h ^ #c) * 16777619 & 0xFFFFFFFF )); done
+local cache_file=$cache_dir/${1:t}-${(l:8::0:)$(([##16]h))}.zsh
+
+if [[ -e $cache_file ]] && (( ! ${+commands[$1]} )); then
     # remove cache file when it's present, but arg isn't executable
     echo "evalcache ERROR: $1 isn't executable, removing cache file" >&2
     zf_rm -f $cache_file*
@@ -16,13 +20,20 @@ elif [[ ! -e $cache_file || -n $cache_file(#qN.mh+20) ]]; then
     # cache miss
     if (( ${+commands[$1]} )); then
         zf_mkdir -p $cache_dir
-        command $@ > $cache_file
-        source $cache_file
-        # zrecompile cache file in background
-        {
-            autoload -Uz zrecompile
-            zrecompile -pq $cache_file
-        } &!
+        # generate into a pid-unique temp file and rename only on success
+        if command $@ > $cache_file.$$ && [[ -s $cache_file.$$ ]]; then
+            zf_mv -f $cache_file.$$ $cache_file
+            source $cache_file
+            # zrecompile cache file in background
+            {
+                autoload -Uz zrecompile
+                zrecompile -pq $cache_file
+            } &!
+        else
+            zf_rm -f $cache_file.$$
+            echo "evalcache ERROR: $* failed, falling back to previous cache" >&2
+            [[ -r $cache_file ]] && source $cache_file
+        fi
     else
         echo "evalcache ERROR: $1 is not available in PATH" >&2
     fi
