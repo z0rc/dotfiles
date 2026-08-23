@@ -11,7 +11,7 @@ if (( ${+commands[man]} )); then
         export MANPAGER="less --use-color --color=d+r$ --color=u+g$"
         export MANROFFOPT="-P -c"
     else
-        alias man="nocorrect wrap-man"
+        alias man=wrap-man
     fi
 fi
 

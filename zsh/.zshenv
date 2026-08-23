@@ -11,7 +11,7 @@ export DOTFILES=${ZDOTDIR:h}
 unsetopt GLOBAL_RCS
 
 # Source local env files
-for envfile in $ZDOTDIR/env.d/*; do
+for envfile in $ZDOTDIR/env.d/*.zsh(N.); do
     source $envfile
 done
 unset envfile homezshenv

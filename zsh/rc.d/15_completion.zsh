@@ -1,13 +1,17 @@
 # Completion tweaks
-zstyle ':completion:*'              list-colors         ${(s.:.)LS_COLORS}
-zstyle ':completion:*'              list-dirs-first     true
-zstyle ':completion:*'              verbose             true
-zstyle ':completion:*'              menu                no
-zstyle ':completion:*'              matcher-list        'm:{[:lower:]}={[:upper:]}'
-zstyle ':completion::complete:*'    use-cache           true
-zstyle ':completion::complete:*'    cache-path          $XDG_CACHE_HOME/zsh/compcache
-zstyle ':completion:*:descriptions' format              [%d]
-zstyle ':completion:*:manuals'      separate-sections   true
+zstyle ':completion:*'                          list-colors         ${(s.:.)LS_COLORS}
+zstyle ':completion:*'                          list-dirs-first     true
+zstyle ':completion:*'                          verbose             true
+zstyle ':completion:*'                          menu                no
+zstyle ':completion:*'                          matcher-list        'm:{[:lower:]}={[:upper:]}'
+zstyle ':completion::complete:*'                use-cache           true
+zstyle ':completion::complete:*'                cache-path          $XDG_CACHE_HOME/zsh/compcache
+zstyle ':completion:*:descriptions'             format              [%d]
+zstyle ':completion:*:manuals'                  separate-sections   true
+zstyle ':completion:*'                          completer           _complete _match _approximate
+zstyle ':completion:*:approximate:*'            max-errors          2 numeric
+zstyle ':completion:*:(approximate|correct)*:*' original            true
+zstyle ':completion:*:corrections'              format              '[%d (errors: %e)]'
 
 # Enable cached completions, if present
 if [[ -d $XDG_CACHE_HOME/zsh/fpath ]]; then
@@ -23,26 +27,28 @@ source $DOTFILES/tools/git-extras/etc/git-extras-completion.zsh
 # Make sure complist is loaded
 zmodload zsh/complist
 
+_compdump=$XDG_CACHE_HOME/zsh/compdump-$ZSH_VERSION
+autoload -Uz compinit
 # Init completions, but regenerate compdump only once a day.
 # The globbing is a little complicated here:
 # - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
 # - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
 # - '.' matches "regular files"
-# - 'mh+20' matches files (or directories or whatever) that are older than 20 hours.
-autoload -Uz compinit
-if [[ -n $XDG_CACHE_HOME/zsh/compdump(#qN.mh+20) ]]; then
-    compinit -d $XDG_CACHE_HOME/zsh/compdump
+# - 'mh-20' matches files (or directories or whatever) that are younger than 20 hours.
+if [[ -n $_compdump(#qN.mh-20) ]]; then
+    compinit -C -d $_compdump
+else
+    compinit -i -d $_compdump
     # zrecompile fresh compdump in background
     {
         # touch is needed to ensure that mtime is updated
-        # so next zsh init uses cached variant 
-        touch $XDG_CACHE_HOME/zsh/compdump
+        # so next zsh init uses cached variant
+        touch $_compdump
         autoload -Uz zrecompile
-        zrecompile -pq $XDG_CACHE_HOME/zsh/compdump
+        zrecompile -pq $_compdump
     } &!
-else
-    compinit -C -d $XDG_CACHE_HOME/zsh/compdump
 fi
+unset _compdump
 
 # Enable bash completions too
 autoload -Uz bashcompinit

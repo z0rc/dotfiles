@@ -39,11 +39,9 @@ alias exit=" exit"
 
 # Suppress suggestions and globbing, enable wrappers
 (( ${+commands[find]} )) && alias find="noglob find"
-(( ${+commands[touch]} )) && alias touch="nocorrect touch"
-(( ${+commands[mkdir]} )) && alias mkdir="nocorrect mkdir --parents --verbose"
-(( ${+commands[cp]} )) && alias cp="nocorrect cp --verbose --reflink=auto"
-(( ${+commands[mv]} )) && alias mv="nocorrect mv --verbose"
+(( ${+commands[mkdir]} )) && alias mkdir="mkdir --parents --verbose"
+(( ${+commands[cp]} )) && alias cp="cp --verbose --reflink=auto"
+(( ${+commands[mv]} )) && alias mv="mv --verbose"
 (( ${+commands[ag]} )) && alias ag="noglob ag"
 (( ${+commands[fd]} )) && alias fd="noglob fd"
-(( ${+commands[man]} )) && alias man="nocorrect man"
 (( ${+commands[sudo]} )) && alias sudo="noglob wrap-sudo " # trailing space is needed to enable alias expansion

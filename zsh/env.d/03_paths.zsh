@@ -2,7 +2,7 @@
 fpath=($ZDOTDIR/fpath $fpath)
 
 # Ensure we have local paths enabled
-path=(/usr/local/bin /usr/local/sbin $path)
+path=(/usr/local/{bin,sbin}(N-/) $path)
 
 if [[ $OSTYPE = darwin* ]]; then
     # Check whether homebrew available under new path
@@ -32,11 +32,11 @@ if [[ $OSTYPE = darwin* ]]; then
 fi
 
 # Enable local binaries and man pages
-path=($HOME/.local/bin $path)
+path=($HOME/.local/bin(N-/) $path)
 MANPATH=$XDG_DATA_HOME/man:$MANPATH
 
 # Add go binaries to paths
-path=($GOPATH/bin $path)
+path=($GOPATH/bin(N-/) $path)
 
 # Force path arrays to have unique values only
 typeset -U path cdpath fpath manpath

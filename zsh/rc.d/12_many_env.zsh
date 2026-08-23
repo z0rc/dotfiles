@@ -12,7 +12,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
             export ${wrapper:u}_ROOT=\$XDG_DATA_HOME/$wrapper
             PATH=\$DOTFILES/env-wrappers/$wrapper/$wrapper/bin:\$PATH
             evalcache $wrapper init -
-            $wrapper \$@
+            $wrapper \"\$@\"
         }"
     done
 }
