@@ -1,4 +1,9 @@
 require('codecompanion').setup({
+  adapters = {
+    acp = {
+      extend = vim.g.llm_acp_extend,
+    },
+  },
   strategies = {
     chat = {
       adapter = 'gemini_cli',
