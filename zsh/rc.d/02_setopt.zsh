@@ -28,3 +28,6 @@ setopt RM_STAR_WAIT # wait for 10 seconds confirmation when running rm with *
 
 # a bit fancy than default
 PROMPT_EOL_MARK='%K{red} %k'
+
+# keep the space a completion added when the next char is '|', ';', '&' etc
+ZLE_REMOVE_SUFFIX_CHARS=''

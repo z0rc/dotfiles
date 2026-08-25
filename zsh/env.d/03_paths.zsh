@@ -11,8 +11,13 @@ if [[ $OSTYPE = darwin* ]]; then
     fi
 
     if (( ${+commands[brew]} )); then
-        autoload -z evalcache
-        evalcache brew shellenv
+        # Same result as `brew shellenv`, without forking brew and path_helper
+        export HOMEBREW_PREFIX=${commands[brew]:h:h}
+        export HOMEBREW_CELLAR=$HOMEBREW_PREFIX/Cellar
+        export HOMEBREW_REPOSITORY=$HOMEBREW_PREFIX
+        export INFOPATH=$HOMEBREW_PREFIX/share/info
+        path=($HOMEBREW_PREFIX/{bin,sbin}(N-/) $path)
+        fpath=($HOMEBREW_PREFIX/share/zsh/site-functions(N-/) $fpath)
 
         # Enable gnu version of utilities on macOS, if installed
         for gnuutil in coreutils gnu-sed gnu-tar grep gpatch; do
