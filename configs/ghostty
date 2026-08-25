@@ -1,6 +1,8 @@
 theme = iTerm2 Solarized Dark
 palette-generate = false
 shell-integration = none
+# let zsh own the cursor shape, see zsh/rc.d/20_cursor_shape.zsh
+shell-integration-features = no-cursor
 confirm-close-surface = false
 keybind = alt+left=unbind
 keybind = alt+right=unbind
