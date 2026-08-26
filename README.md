@@ -35,7 +35,7 @@ with [zero home presence](#zero-home-presence).
 * Yazi [configuration](yazi/yazi.toml) and [plugins](yazi/plugins)
 * Other configurations:
   * [ranger](configs/ranger)
-  * [quilt](configs/quiltrc)
+  * [wget](configs/wgetrc)
   * [Git](configs/gitconfig)
   * [htop](configs/htoprc)
   * [Ghostty](configs/ghostty)

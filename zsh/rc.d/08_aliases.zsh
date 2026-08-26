@@ -9,10 +9,6 @@ alias clear=" clear-screen-soft-bottom"
     alias vim="nvim"
 }
 
-# Handy stuff and a bit of XDG compliance
-(( ${+commands[quilt]} )) && alias quilt="quilt --quiltrc $DOTFILES/configs/quiltrc"
-(( ${+commands[tmux]} )) && alias stmux="tmux new-session 'sudo --login'"
-
 # History suppression
 alias pwd=" pwd"
 alias exit=" exit"
