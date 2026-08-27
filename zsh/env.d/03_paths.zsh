@@ -17,7 +17,8 @@ if [[ $OSTYPE = darwin* ]]; then
         export HOMEBREW_REPOSITORY=$HOMEBREW_PREFIX
         export INFOPATH=$HOMEBREW_PREFIX/share/info
         path=($HOMEBREW_PREFIX/{bin,sbin}(N-/) $path)
-        fpath=($HOMEBREW_PREFIX/share/zsh/site-functions(N-/) $fpath)
+        # Prioritize zsh site-functions over brew shipped variants
+        fpath=(${fpath:#$HOMEBREW_PREFIX/share/zsh/site-functions} $HOMEBREW_PREFIX/share/zsh/site-functions(N-/))
 
         # Enable gnu version of utilities on macOS, if installed
         for gnuutil in coreutils gnu-sed gnu-tar grep gpatch; do

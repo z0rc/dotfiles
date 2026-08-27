@@ -452,9 +452,6 @@
 [submodule "zsh/plugins/fzf-tab"]
 	path = zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab.git
-[submodule "zsh/plugins/git-completion"]
-	path = zsh/plugins/git-completion
-	url = https://github.com/felipec/git-completion.git
 [submodule "zsh/plugins/iterm2-shell-integration"]
 	path = zsh/plugins/iterm2-shell-integration
 	url = https://github.com/gnachman/iTerm2-shell-integration.git

@@ -17,7 +17,7 @@ zstyle ':completion:*:corrections'              format              '[%d (errors
 # Ignore some non-useful completions
 zstyle ':completion:*:(rm|kill|diff):*'                    ignore-line      other
 zstyle ':completion:*:functions'                           ignored-patterns '_*'
-zstyle ':completion:*:git-*:argument-rest:heads'           ignored-patterns '(FETCH_|ORIG_|*/|)HEAD'
+zstyle ':completion:*:git-*:*:heads*'                      ignored-patterns '(FETCH_|ORIG_|MERGE_|*/|)HEAD'
 zstyle ':completion:*:*:(vi|vim|nvim|nv|bat|cat|less):*:*' ignored-patterns '*.zwc'
 zstyle ':completion:*:parameters'                          ignored-patterns \
     '_(p9k|_p9k|POWERLEVEL9K|gitstatus|GITSTATUS|zsh_highlight|ZSH_HIGHLIGHT|zsh_autosuggest|ZSH_AUTOSUGGEST|abbr|ABBR|ftb|FTB)*'
@@ -28,7 +28,7 @@ if [[ -d $XDG_CACHE_HOME/zsh/fpath ]]; then
 fi
 
 # Additional completions
-fpath=($ZDOTDIR/plugins/completions/src $ZDOTDIR/plugins/git-completion/src $fpath)
+fpath=($ZDOTDIR/plugins/completions/src $fpath)
 
 # Enable git-extras completions
 source $DOTFILES/tools/git-extras/etc/git-extras-completion.zsh
