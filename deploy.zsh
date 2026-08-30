@@ -78,6 +78,7 @@ autoload -Uz zrecompile
 for zsh_plugin_file in $SCRIPT_DIR/zsh/plugins/**/*.zsh{-theme,}(#q.); do
     zrecompile -pq $zsh_plugin_file
 done
+zrecompile -pq $SCRIPT_DIR/tools/git-extras/etc/git-extras-completion.zsh
 print "  ...done"
 
 # Install hook to call deploy script after successful pull
