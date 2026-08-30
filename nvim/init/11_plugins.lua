@@ -57,7 +57,7 @@ MiniIcons.mock_nvim_web_devicons()
 
 require('treesitter-modules').setup({
   auto_install = true,
-  highlight = { enable = true },
+  highlight = { enable = true, disable = { 'zsh' } },
   fold = { enable = true },
   -- treesitter indentation is worse than built-in for these
   indent = { enable = true, disable = { 'bash', 'yaml' } },
