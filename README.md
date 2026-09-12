@@ -44,6 +44,8 @@ with [zero home presence](#zero-home-presence).
   * [spark](https://github.com/holman/spark) to draw bar charts right in the console
   * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for a much better git diff layout
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
+  * [lesspipe](https://github.com/wofr06/lesspipe) to let `less` preview archives,
+    compressed files and other binary formats
 * [Environment wrappers](env-wrappers) for multiple programming languages:
   * [goenv](https://github.com/syndbg/goenv)
   * [jenv](https://github.com/jenv/jenv)
@@ -170,7 +172,7 @@ default. Man pages can be placed in `$XDG_DATA_HOME/man`.
 Pyenv and similar wrappers are lazy-loaded, meaning they won't be initialized
 at shell start. Activation occurs on the first execution. Check the output of
 `type -f pyenv` in the shell and the
-[implementation](zsh/rc.d/12_many_env.zsh). Because of this, files like
+[implementation](zsh/rc.d/11_many_env.zsh). Because of this, files like
 `.python-version` won't work as expected; it's recommended to use
 `autoenv.zsh` to explicitly activate the needed environment.
 

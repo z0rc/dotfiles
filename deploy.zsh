@@ -126,6 +126,15 @@ if (( ${+commands[perl]} )); then
     print "  ...done"
 fi
 
+if (( ${+commands[bash]} )); then
+    print "Installing lesspipe..."
+    zf_ln -sfn $SCRIPT_DIR/tools/lesspipe/lesspipe.sh $HOME/.local/bin/lesspipe.sh
+    zf_ln -sfn $SCRIPT_DIR/tools/lesspipe/archive_color $HOME/.local/bin/archive_color
+    zf_ln -sfn $SCRIPT_DIR/tools/lesspipe/vimcolor $HOME/.local/bin/vimcolor
+    zf_ln -sfn $SCRIPT_DIR/tools/lesspipe/lesspipe.1 $XDG_DATA_HOME/man/man1/lesspipe.1
+    print "  ...done"
+fi
+
 if (( ${+commands[vim]} )); then
     # Generate vim help tags
     print "Generating vim helptags..."

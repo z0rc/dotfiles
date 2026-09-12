@@ -188,6 +188,9 @@
 [submodule "tools/httpstat"]
 	path = tools/httpstat
 	url = https://github.com/b4b4r07/httpstat.git
+[submodule "tools/lesspipe"]
+	path = tools/lesspipe
+	url = https://github.com/wofr06/lesspipe.git
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git
