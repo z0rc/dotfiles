@@ -191,6 +191,9 @@
 [submodule "tools/lesspipe"]
 	path = tools/lesspipe
 	url = https://github.com/wofr06/lesspipe.git
+[submodule "tools/lynis"]
+	path = tools/lynis
+	url = https://github.com/CISOfy/lynis.git
 [submodule "tools/spark"]
 	path = tools/spark
 	url = https://github.com/holman/spark.git

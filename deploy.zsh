@@ -22,8 +22,7 @@ XDG_STATE_HOME=$HOME/.local/state
 print "Creating required directory tree..."
 zf_mkdir -p $XDG_CONFIG_HOME/{ghostty,git/local,htop,ranger,gem,tig,gnupg,nvim/{plugin,after},yazi}
 zf_mkdir -p $XDG_CACHE_HOME/{vim/{backup,swap,undo},zsh}
-zf_mkdir -p $XDG_DATA_HOME/{{goenv,jenv,luaenv,nodenv,phpenv,plenv,pyenv,rbenv}/plugins,zsh,man/man1,vim/spell,nvim/site/pack/plugins}
-zf_mkdir -p $XDG_STATE_HOME
+zf_mkdir -p $XDG_DATA_HOME/{{goenv,jenv,luaenv,nodenv,phpenv,plenv,pyenv,rbenv}/plugins,zsh,man/man{1,8},vim/spell,nvim/site/pack/plugins}
 zf_mkdir -p $HOME/.local/{bin,etc}
 zf_chmod 700 $XDG_CONFIG_HOME/gnupg
 print "  ...done"
@@ -134,6 +133,12 @@ if (( ${+commands[bash]} )); then
     zf_ln -sfn $SCRIPT_DIR/tools/lesspipe/lesspipe.1 $XDG_DATA_HOME/man/man1/lesspipe.1
     print "  ...done"
 fi
+
+# Install lynis, it has to run from its own directory, so link the wrapper
+print "Installing lynis..."
+zf_ln -sfn $SCRIPT_DIR/tools/lynis-wrapper $HOME/.local/bin/lynis
+zf_ln -sfn $SCRIPT_DIR/tools/lynis/lynis.8 $XDG_DATA_HOME/man/man8/lynis.8
+print "  ...done"
 
 if (( ${+commands[vim]} )); then
     # Generate vim help tags

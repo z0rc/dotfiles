@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+# make lynis XDG compliant
+zmodload -m -F zsh/files b:zf_mkdir
+
+lynis_state=$XDG_STATE_HOME/lynis
+zf_mkdir -p $lynis_sta  te
+
+cd ${0:A:h}/lynis
+
+exec ./lynis --usecwd \
+    --logfile $lynis_state/lynis.log \
+    --report-file $lynis_state/lynis-report.dat \
+    "$@"

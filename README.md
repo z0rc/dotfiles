@@ -46,6 +46,8 @@ with [zero home presence](#zero-home-presence).
   * [git-extras](https://github.com/tj/git-extras) additional helpers for Git
   * [lesspipe](https://github.com/wofr06/lesspipe) to let `less` preview archives,
     compressed files and other binary formats
+  * [spectre-meltdown-checker](https://github.com/speed47/spectre-meltdown-checker)
+  * [lynis](https://github.com/CISOfy/lynis) 
 * [Environment wrappers](env-wrappers) for multiple programming languages:
   * [goenv](https://github.com/syndbg/goenv)
   * [jenv](https://github.com/jenv/jenv)
