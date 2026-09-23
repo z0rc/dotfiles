@@ -4,7 +4,7 @@
 zmodload -m -F zsh/files b:zf_mkdir
 
 lynis_state=$XDG_STATE_HOME/lynis
-zf_mkdir -p $lynis_sta  te
+zf_mkdir -p $lynis_state
 
 cd ${0:A:h}/lynis
 
