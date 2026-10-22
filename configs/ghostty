@@ -10,5 +10,6 @@ mouse-hide-while-typing = true
 window-padding-balance = true
 bell-features = no-attention
 link-previews = true
+app-notifications = no-clipboard-copy
 
 config-file = ?config-local
