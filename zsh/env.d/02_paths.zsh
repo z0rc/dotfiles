@@ -37,6 +37,9 @@ if [[ $OSTYPE = darwin* ]]; then
     fi
 fi
 
+# Enable mise shims, if they are present
+path=($XDG_DATA_HOME/mise/shims(N-/) $path)
+
 # Enable local binaries and man pages
 path=($HOME/.local/bin(N-/) $path)
 MANPATH=$XDG_DATA_HOME/man:$MANPATH
