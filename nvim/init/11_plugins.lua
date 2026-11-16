@@ -54,6 +54,14 @@ MiniMisc.setup_auto_root()
 MiniMisc.setup_restore_cursor()
 require('mini.icons').setup()
 MiniIcons.mock_nvim_web_devicons()
+require('mini.map').setup({
+  integrations = {
+    require('mini.map').gen_integration.builtin_search(),
+    require('mini.map').gen_integration.diff(),
+    require('mini.map').gen_integration.diagnostic(),
+  },
+})
+MiniMap.open()
 
 require('treesitter-modules').setup({
   auto_install = true,
