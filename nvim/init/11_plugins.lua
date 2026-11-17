@@ -77,6 +77,7 @@ require('git-rebase-auto-diff').setup()
 require('tmux').setup({
   navigation = { enable_default_keybindings = false },
   resize = { enable_default_keybindings = false },
+  copy_sync = { enable = false },
 })
 require('schema-companion').setup({})
 require('helm-ls').setup()
