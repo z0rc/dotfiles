@@ -61,7 +61,8 @@ require('mini.map').setup({
     require('mini.map').gen_integration.diagnostic(),
   },
 })
-MiniMap.open()
+-- open() honors b:minimap_disable, which ftplugins set only after init
+vim.api.nvim_create_autocmd('VimEnter', { callback = function() MiniMap.open() end })
 
 require('treesitter-modules').setup({
   auto_install = true,
