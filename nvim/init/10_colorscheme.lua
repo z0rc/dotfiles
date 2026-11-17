@@ -21,3 +21,5 @@ require('solarized').setup({
 })
 
 vim.cmd.colorscheme('solarized')
+-- prevent termguicolor's flashing of dark-grey background on VimEnter
+vim.cmd.redraw()
