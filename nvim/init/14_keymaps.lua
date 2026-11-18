@@ -11,6 +11,15 @@ cmap('<Down>', function() return vim.fn.wildmenumode() == 1 and '<Right>' or '<D
 cmap('<Left>', function() return vim.fn.wildmenumode() == 1 and '<Up>' or '<Left>' end)
 cmap('<Right>', function() return vim.fn.wildmenumode() == 1 and '<Down>' or '<Right>' end)
 
+-- PgUp/PgDn move cursor in intuitive way
+for key, motion in pairs({ ['<PageUp>'] = 'k', ['<PageDown>'] = 'j' }) do
+  vim.keymap.set(
+    { 'n', 'x', 'i' },
+    key,
+    function() vim.cmd.normal({ vim.api.nvim_win_get_height(0) .. motion, bang = true }) end
+  )
+end
+
 -- tmux/split navigation
 local tmux = require('tmux')
 nimap('<S-Up>', tmux.move_top, 'Go to up pane')
