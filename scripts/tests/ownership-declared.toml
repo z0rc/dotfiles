@@ -45,6 +45,10 @@ reason = "brew is the macOS-only post-mise fallback (50_mise.zsh loop) when aqua
 mechanisms = ["mise", "brew"]
 reason = "brew is the macOS-only post-mise fallback (50_mise.zsh loop) when aqua drifts; never concurrent on Linux"
 
+[dual_install.lsd]
+mechanisms = ["mise", "brew"]
+reason = "brew is the macOS-only post-mise fallback (50_mise.zsh loop) when aqua drifts; never concurrent on Linux. Declared 2026-10-31: lsd has been in that loop since it joined mise.toml but was never listed here"
+
 [dual_install.neovim]
 mechanisms = ["mise", "brew"]
 reason = "brew is the macOS-only post-mise fallback (50_mise.zsh loop) when aqua drifts; never concurrent on Linux"
@@ -118,6 +122,10 @@ reason = "one system, two touchpoints: rustup (curl bootstrap, 70_runtime_instal
 [dual_install.tailscale]
 mechanisms = ["brew-cask", "curl", "pacman"]
 reason = "per-OS split (73_tailscale.zsh): cask on macOS, pacman on Arch, tailscale.com/install.sh only on other Linux. Never concurrent"
+
+[dual_install."trash-cli"]
+mechanisms = ["apt", "pacman"]
+reason = "per-distro recipes (40_tools.zsh): apt on Debian/Ubuntu, pacman on Arch. Never concurrent. Declared 2026-10-31 (same split as testssl.sh)"
 
 [dual_install."testssl.sh"]
 mechanisms = ["apt", "pacman"]

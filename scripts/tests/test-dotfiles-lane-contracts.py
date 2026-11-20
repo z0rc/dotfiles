@@ -259,6 +259,7 @@ exit 0''')
         self.copy("scripts/deploy.d/lib/helpers.zsh")
         fragment = self.copy("scripts/deploy.d/70_runtime_installs.zsh")
         (self.repo / ".default-npm-packages").write_text("\n".join(specs) + "\n")
+        self.npm_specs = list(specs)
         self.fake_mise()
         # Only this fixture exposes real node: it runs the production local
         # parser, never npm APIs or a network operation. All npm calls are fake.
@@ -305,7 +306,7 @@ elif args and args[0] == "install":
     with open(os.environ["NPM_FIXTURE_INSTALLED"], "a") as stream:
         for spec in specs:
             stream.write(json.dumps(spec) + "\\n")
-elif args and args[0] == "uninstall":
+elif args and args[0] in ("uninstall", "rebuild"):
     pass
 else:
     sys.exit("unexpected npm operation: " + repr(args))
@@ -341,8 +342,13 @@ else:
         calls = [json.loads(line) for line in self.npm_argv.read_text().splitlines()]
         self.assertEqual(calls.count(["prefix", "-g"]), 1)
         self.assertEqual(calls.count(["ls", "-g", "--depth", "0", "--json"]), 1)
-        self.assertTrue(all(call[0] in ("prefix", "ls", "uninstall", "install")
+        # `rebuild -g` (46c89976, 2026-10-02) relinks bins before the inventory:
+        # local and idempotent, so it belongs with the local-only operations.
+        self.assertTrue(all(call[0] in ("prefix", "ls", "uninstall", "rebuild", "install")
                             for call in calls), "inventory must use only local npm queries")
+        self.assertEqual([call for call in calls if call[0] == "rebuild"],
+                         [["rebuild", "-g", *self.npm_specs]],
+                         "bins must be relinked with the configured packages exactly once")
         # Parser/inventory/decision and batch/retry temp logs must be cleaned.
         for pattern in ("npm-inventory-parser.*", "npm-inventory.*",
                         "npm-decisions.*", "npm-global-batch.*", "npm-global.*"):

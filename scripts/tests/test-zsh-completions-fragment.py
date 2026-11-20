@@ -86,6 +86,13 @@ class CompletionsFragmentTest(unittest.TestCase):
             PATH=self.bin_dir + os.pathsep + self.env["PATH"],
             DEPLOY_DRY_RUN="0",
         )
+        # Same hazard for bash: a non-interactive `bash -c` sources $BASH_ENV,
+        # and on fleet hosts that file (~/.config/bash/env.sh) re-prepends the
+        # mise shims ahead of our fake bin, so the REAL uv/bun/codex ran and
+        # T2-T4 failed under /bin/bash (2026-10-31). CI has no BASH_ENV, which
+        # is why only fleet hosts saw it.
+        self.env.pop("BASH_ENV", None)
+        self.env.pop("ENV", None)
         # ensure the stock generators that would hit real tools are absent
         # from PATH (fragment skips them via `have`) — nothing real is called.
 
