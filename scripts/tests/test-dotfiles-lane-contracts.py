@@ -259,6 +259,7 @@ exit 0''')
         self.copy("scripts/deploy.d/lib/helpers.zsh")
         fragment = self.copy("scripts/deploy.d/70_runtime_installs.zsh")
         (self.repo / ".default-npm-packages").write_text("\n".join(specs) + "\n")
+        self.npm_specs = list(specs)
         self.fake_mise()
         # Only this fixture exposes real node: it runs the production local
         # parser, never npm APIs or a network operation. All npm calls are fake.
@@ -345,8 +346,9 @@ else:
         # local and idempotent, so it belongs with the local-only operations.
         self.assertTrue(all(call[0] in ("prefix", "ls", "uninstall", "rebuild", "install")
                             for call in calls), "inventory must use only local npm queries")
-        self.assertEqual([call[:2] for call in calls if call[0] == "rebuild"],
-                         [["rebuild", "-g"]], "bins must be relinked exactly once")
+        self.assertEqual([call for call in calls if call[0] == "rebuild"],
+                         [["rebuild", "-g", *self.npm_specs]],
+                         "bins must be relinked with the configured packages exactly once")
         # Parser/inventory/decision and batch/retry temp logs must be cleaned.
         for pattern in ("npm-inventory-parser.*", "npm-inventory.*",
                         "npm-decisions.*", "npm-global-batch.*", "npm-global.*"):
