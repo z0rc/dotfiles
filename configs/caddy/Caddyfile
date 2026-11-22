@@ -427,6 +427,19 @@ books.wedrifid.dev {
 	}
 }
 
+# Storyteller (added 2026-11-23): epub + audiobook readalouds. The phone apps
+# take this name as their server URL. flush_interval -1 for the same reason
+# as abs above: readaloud downloads and in-browser audio are long streamed
+# responses. No request_body cap, so chunked epub/audio uploads pass.
+storyteller.wedrifid.dev {
+	import wedrifid_tailnet
+	reverse_proxy makemake.local.wedrifid.dev:8001 100.87.185.24:8001 {
+		lb_policy first
+		fail_duration 30s
+		flush_interval -1
+	}
+}
+
 # ── downloaders ────────────────────────────────────────────────────────────
 
 # qBittorrent needs THREE header changes, and two of them are easy to miss:
