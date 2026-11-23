@@ -9,6 +9,9 @@ setopt EXTENDED_GLOB # treat special characters as part of patterns
 unsetopt FLOW_CONTROL # disable stupid annoying keys
 setopt MULTIOS # allows multiple input and output redirections
 setopt AUTO_CD # if the command is directory and cannot be executed, perfort cd to this directory
+setopt AUTO_PUSHD # cd pushes previous directory to the stack, `cd -<TAB>` picks from it
+setopt PUSHD_SILENT # do not print the stack on every pushd/popd
+setopt PUSHD_IGNORE_DUPS # keep only one copy of a directory in the stack
 setopt CLOBBER # allow > redirection to truncate existing files
 setopt BRACE_CCL # allow brace character class list expansion
 unsetopt BEEP # do not beep on errors

@@ -23,6 +23,8 @@
 	autoStash = true
 	autoSquash = true
 	updateRefs = true
+[rerere]
+	enabled = true
 [alias]
 	amend = commit --amend
 [credential]
@@ -42,6 +44,7 @@
 	pager = less --quit-if-one-screen
 [pager]
 	diff = ~/.local/bin/git-diff-pager
+	show = ~/.local/bin/git-diff-pager
 [submodule]
 	fetchJobs = 0
 	recurse = true

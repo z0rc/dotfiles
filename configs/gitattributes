@@ -3,4 +3,69 @@
 *.jpg binary
 *.gif binary
 
+# Built-in diff drivers aren't applied by default, they have to be assigned
+# They make hunk headers show enclosing function and improve word diff
+*.adb diff=ada
+*.ads diff=ada
+*.ada diff=ada
+*.sh diff=bash
+*.bash diff=bash
+*.zsh diff=bash
+*.bib diff=bibtex
+*.c diff=cpp
+*.h diff=cpp
+*.cc diff=cpp
+*.hh diff=cpp
+*.cpp diff=cpp
+*.hpp diff=cpp
+*.cxx diff=cpp
+*.hxx diff=cpp
+*.cs diff=csharp
+*.css diff=css
+*.scss diff=css
+*.dts diff=dts
+*.dtsi diff=dts
+*.ex diff=elixir
+*.exs diff=elixir
+*.f diff=fortran
+*.for diff=fortran
+*.f90 diff=fortran
+*.f95 diff=fortran
+*.f03 diff=fortran
+*.f08 diff=fortran
+*.fountain diff=fountain
+*.go diff=golang
+*.html diff=html
+*.htm diff=html
+*.xhtml diff=html
+*.java diff=java
+*.kt diff=kotlin
+*.kts diff=kotlin
+*.md diff=markdown
+*.markdown diff=markdown
+# matlab driver is left out, it shares *.m with objc
+*.m diff=objc
+*.mm diff=objc
+*.pas diff=pascal
+*.pp diff=pascal
+*.dpr diff=pascal
+*.pl diff=perl
+*.pm diff=perl
+*.t diff=perl
+*.php diff=php
+*.py diff=python
+*.pyi diff=python
+*.rb diff=ruby
+*.rake diff=ruby
+*.gemspec diff=ruby
+Rakefile diff=ruby
+Gemfile diff=ruby
+*.rs diff=rust
+*.scm diff=scheme
+*.ss diff=scheme
+*.swift diff=swift
+*.tex diff=tex
+*.sty diff=tex
+*.cls diff=tex
+
 # vi: ft=gitattributes

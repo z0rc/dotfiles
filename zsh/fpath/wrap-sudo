@@ -21,6 +21,9 @@ while (( $# )); do
     esac
 done
 
+# sudo's secure_path hides tools installed in user's paths
+(( ${+commands[$1]} )) && 1=$commands[$1]
+
 if (( glob )); then
     $run $~==*
 else

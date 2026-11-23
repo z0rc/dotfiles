@@ -32,10 +32,7 @@ venv/
 
 ### Vim ###
 # swap
-[._]*.s[a-v][a-z]
-!*.svg
 [._]*.sw[a-p]
-[._]s[a-v][a-z]
 [._]sw[a-p]
 # session
 Session.vim
@@ -70,5 +67,6 @@ Session.vim
 ### Agents ###
 # Claude
 **/.claude/settings.local.json
+**/.claude/worktrees/
 
 # vi: ft=gitignore

@@ -2,6 +2,11 @@
 
 setopt extended_glob err_exit
 
+# As a git hook this also fires on checkout, stash and restore, but only pull brings something to deploy
+if [[ ${0:t} == post-(checkout|merge) && $GIT_REFLOG_ACTION != pull* ]]; then
+    exit 0
+fi
+
 zmodload -m -F zsh/files b:zf_\*
 
 SCRIPT_DIR=${0:A:h}

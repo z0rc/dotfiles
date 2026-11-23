@@ -13,6 +13,9 @@ zstyle ':completion:*'                          completer           _complete _m
 zstyle ':completion:*:approximate:*'            max-errors          2 numeric
 zstyle ':completion:*:(approximate|correct)*:*' original            true
 zstyle ':completion:*:corrections'              format              '[%d (errors: %e)]'
+zstyle ':completion:complete:*:options'         sort                false
+zstyle ':completion:*:git-checkout:*'           sort                false
+zstyle ':completion:*:kill:*:processes'         command             'ps -x -U $USER -o pid,args'
 
 # Ignore some non-useful completions
 zstyle ':completion:*:(rm|kill|diff):*'                    ignore-line      other
@@ -60,6 +63,9 @@ autoload -Uz compinit
     fi
 }
 unset _compdump
+
+# Aliases expand to wrappers before completion sees the command
+compdef wrap-sudo=sudo wrap-man=man
 
 # Enable bash completions too
 autoload -Uz bashcompinit
