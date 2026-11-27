@@ -1,26 +1,12 @@
+local adapter = vim.g.llm_adapter or 'claude_code'
+
 require('codecompanion').setup({
-  adapters = {
-    acp = {
-      extend = vim.g.llm_acp_extend,
-    },
-  },
-  strategies = {
+  interactions = {
     chat = {
-      adapter = 'gemini_cli',
+      adapter = adapter,
     },
     inline = {
-      adapter = 'gemini_cli',
-    },
-    cmd = {
-      adapter = 'gemini_cli',
-    },
-  },
-  display = {
-    action_palette = {
-      provider = 'mini_pick',
-    },
-    diff = {
-      provider = 'mini_diff',
+      adapter = adapter,
     },
   },
   extensions = {

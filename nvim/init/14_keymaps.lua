@@ -83,6 +83,11 @@ nmap_leader('lR', vim.lsp.buf.references, 'References')
 nmap_leader('ls', vim.lsp.buf.definition, 'Source definition')
 nmap_leader('lt', vim.lsp.buf.type_definition, 'Type definition')
 
+-- codecompanion
+nmap_leader('ci', '<Cmd>CodeCompanion<CR>', 'Inline prompt')
+xmap_leader('ci', ':CodeCompanion<CR>', 'Inline prompt on selection')
+nmap_leader('cr', '<Cmd>CodeCompanionCodeReview<CR>', 'Code review')
+
 -- buffers
 nmap_leader('ba', '<Cmd>b#<CR>', 'Alternate')
 nmap_leader('bd', MiniBufremove.delete, 'Delete')
